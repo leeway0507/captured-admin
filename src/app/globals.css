@@ -2,6 +2,74 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components {
+  .link-animation {
+      @apply cursor-pointer hover:opacity-70 active:text-deep-gray;
+  }
+  .black-bar {
+      @apply bg-main-black flex-center text-white py-3 rounded-lg active:text-main-black active:bg-light-gray cursor-pointer text-sm;
+  }
+  .black-bar-modal {
+      @apply bg-main-black flex-center text-white py-3 rounded-lg active:text-main-black active:bg-light-gray cursor-pointer text-sm;
+  }
+  .black-bar-xl {
+      @apply black-bar tracking-[0.3rem] text-base;
+  }
+  .disabled-bar {
+      @apply bg-deep-gray flex-center text-white py-3 rounded-lg cursor-not-allowed text-sm;
+  }
+  .disabled-bar-xl {
+      @apply disabled-bar tracking-[0.3rem] text-base;
+  }
+  .custom-container {
+      @apply flex flex-col justify-between relative m-auto h-full;
+  }
+  .flex-center {
+      @apply flex items-center justify-center;
+  }
+
+  .flex-left {
+      @apply flex items-center justify-start;
+  }
+
+  .flex-right {
+      @apply flex items-center justify-end;
+  }
+
+  .brand-box {
+      @apply opacity-70 grow basis-1/5;
+  }
+  .text-xs-sm {
+      @apply text-xs tb:text-sm;
+  }
+  .text-sm-base {
+      @apply text-sm tb:text-base;
+  }
+  .text-base-lg {
+      @apply text-base tb:text-lg;
+  }
+  .text-lg-xl {
+      @apply text-lg tb:text-xl;
+  }
+  .text-xl-2xl {
+      @apply text-xl tb:text-2xl;
+  }
+  .text-2xl-3xl {
+      @apply text-2xl tb:text-3xl;
+  }
+  .click-effect {
+      @apply cursor-pointer rounded-full hover:ring-2 hover:ring-deep-gray active:bg-light-gray;
+  }
+  .triangle-right {
+      width: 0;
+      height: 0;
+      border-top: var(--triangle-size) solid transparent;
+      border-left: 15px solid white;
+      border-bottom: var(--triangle-size) solid transparent;
+  }
+}
+
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -16,12 +84,3 @@
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
