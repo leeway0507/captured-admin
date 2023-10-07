@@ -8,6 +8,9 @@ export default function SideNav() {
             <Link href="/product" className="w-full link-animation hover:bg-stone-200 flex-center py-8">
                 <div className="">Product</div>
             </Link>
+            <Link href="/order" className="w-full link-animation hover:bg-stone-200 flex-center py-8">
+                <div className="">Order</div>
+            </Link>
         </div>
     );
 }

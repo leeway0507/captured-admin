@@ -1,6 +1,6 @@
 "use client";
 
-import { CreateproductCardProps } from "@/app/types/type";
+import { orderHistoryProps } from "@/app/types/type";
 import { createColumnHelper } from "@tanstack/react-table";
 import { ChangeEvent, MouseEvent, useState, useEffect } from "react";
 import * as api from "@/app/product/component/fetch";
@@ -10,7 +10,7 @@ type Option = {
     value: string;
 };
 
-const columnHelper = createColumnHelper<CreateproductCardProps>();
+const columnHelper = createColumnHelper<orderHistoryProps>();
 
 const EditCell = ({ row, table }) => {
     const meta = table.options.meta;
@@ -101,87 +101,32 @@ const categoryArray = () => {
     });
 };
 
-export const productCardColumns = [
-    columnHelper.accessor("brand", {
-        header: "Brand",
-        cell: TableCell,
-        meta: {
-            type: "select",
-            options: brandArray(),
-        },
+export const column = [
+    columnHelper.accessor("orderDate", {
+        header: "주문일",
     }),
-    columnHelper.accessor("productName", {
-        header: "Product Name",
-        cell: TableCell,
-        meta: {
-            type: "text",
-        },
+    columnHelper.accessor("orderId", {
+        header: "주문 ID",
     }),
-    columnHelper.accessor("productId", {
-        header: "Product ID",
-        cell: TableCell,
-        meta: {
-            type: "text",
-        },
+    columnHelper.accessor("userId", {
+        header: "고객번호",
     }),
-    columnHelper.accessor("price", {
-        header: "Price",
-        cell: TableCell,
-        meta: {
-            type: "number",
-        },
+    columnHelper.accessor("userOrderNumber", {
+        header: "주문횟수",
     }),
-    columnHelper.accessor("shippingFee", {
-        header: "Shipping Fee",
-        cell: TableCell,
-        meta: {
-            type: "number",
-        },
+    columnHelper.accessor("addressId", {
+        header: "주소",
     }),
-    columnHelper.accessor("intl", {
-        header: "Intl",
-        cell: TableCell,
-        meta: {
-            type: "select",
-            options: [
-                { value: true, label: "true" },
-                { value: false, label: "false" },
-            ],
-        },
+    columnHelper.accessor("orderTotalPrice", {
+        header: "결제금액",
     }),
-    columnHelper.accessor("imgType", {
-        header: "Img Type",
-        cell: TableCell,
-        meta: {
-            type: "select",
-            options: imgArray(),
-        },
+    columnHelper.accessor("paymentMethod", {
+        header: "결제방법",
     }),
-    columnHelper.accessor("size", {
-        header: "Size",
-        cell: TableCell,
-        meta: {
-            type: "text",
-        },
+    columnHelper.accessor("paymentStatus", {
+        header: "결제현황",
     }),
-    columnHelper.accessor("color", {
-        header: "Color",
-        cell: TableCell,
-        meta: {
-            type: "text",
-        },
-    }),
-    columnHelper.accessor("category", {
-        header: "Category",
-        cell: TableCell,
-        meta: {
-            type: "select",
-            options: categoryArray(),
-        },
-    }),
-
-    columnHelper.display({
-        id: "edit",
-        cell: EditCell,
+    columnHelper.accessor("orderStatus", {
+        header: "배송현황",
     }),
 ];

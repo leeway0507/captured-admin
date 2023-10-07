@@ -59,7 +59,31 @@ export interface orderRowProps {
 }
 
 export interface cartItemProps {
-    id: number;
+    sku: number;
     quantity: number;
     size: string;
+}
+
+export interface orderHistoryProps {
+    userId: number;
+    orderDate: string;
+    addressId: string;
+    orderTotalPrice: number;
+    paymentMethod: string;
+    paymentInfo: string;
+    orderId: string;
+    userOrderNumber: number;
+    orderStatus: string;
+    paymentStatus: string;
+}
+
+export interface orderRowProps {
+    sku: number;
+    size: string;
+    quantity: number;
+    orderRowId: number;
+    orderId: string;
+    deliveryStatus: string;
+    deliveryCompany: string;
+    deliveryNumber: string;
 }

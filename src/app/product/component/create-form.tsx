@@ -2,7 +2,7 @@
 
 import CustomInput from "@/app/components/custom-input/cusotm-input";
 import { useEffect, useState } from "react";
-import { createProduct } from "./fetch";
+import * as api from "./fetch";
 import { CreateproductCardProps } from "@/app/types/type";
 
 export default function CreateForm({ openToggle }: { openToggle: () => void }) {
@@ -30,7 +30,7 @@ export default function CreateForm({ openToggle }: { openToggle: () => void }) {
         category: category,
     };
 
-    console.log(data);
+    console.log(brand ? "트루" : "펄스");
 
     if (process.env.NEXT_PUBLIC_IMAGE_TYPE === undefined) return <></>;
     if (process.env.NEXT_PUBLIC_BRAND === undefined) return <></>;
@@ -50,7 +50,7 @@ export default function CreateForm({ openToggle }: { openToggle: () => void }) {
                             value={brand ? brand : "브랜드"}
                             onChange={(e) => setBrand(e.target.value)}>
                             {JSON.parse(brandArray).map((v: string, i: number) => (
-                                <option value={v} key={i}>
+                                <option value={v} key={i} selected={!i && true}>
                                     {v}
                                 </option>
                             ))}
@@ -63,7 +63,7 @@ export default function CreateForm({ openToggle }: { openToggle: () => void }) {
                             value={category}
                             onChange={(e) => setCategory(e.target.value)}>
                             {JSON.parse(categoryArray).map((v: string, i: number) => (
-                                <option value={v} key={i}>
+                                <option value={v} key={i} selected={!i && true}>
                                     {v}
                                 </option>
                             ))}
@@ -73,9 +73,11 @@ export default function CreateForm({ openToggle }: { openToggle: () => void }) {
                         <div className="flex-center">Intl</div>
                         <select
                             className="border border-black rounded-md px-4 py-2"
-                            value={intl ? "true" : "false"}
+                            value={intl}
                             onChange={(e) => setIntl(e.target.value)}>
-                            <option value="true">true</option>
+                            <option value="true" selected={true}>
+                                true
+                            </option>
                             <option value="false">false</option>
                         </select>
                     </div>
@@ -86,71 +88,72 @@ export default function CreateForm({ openToggle }: { openToggle: () => void }) {
                             value={imgType}
                             onChange={(e) => setImgType(e.target.value)}>
                             {JSON.parse(imgArray).map((v: string, i: number) => (
-                                <option value={v} key={i}>
+                                <option value={v} key={i} selected={!i && true}>
                                     {v}
                                 </option>
                             ))}
                         </select>
                     </div>
                 </div>
-
-                <CustomInput
-                    label={"Product Name"}
-                    value={productName}
-                    setValue={setProductName}
-                    id="productName"
-                    info=""
-                    checkPolicy={() => true}
-                    type="text"
-                />
-                <CustomInput
-                    label={"Product ID"}
-                    value={productId}
-                    setValue={setProductId}
-                    id="productId"
-                    info=""
-                    checkPolicy={() => true}
-                    type="text"
-                />
-                <CustomInput
-                    label={"Price"}
-                    value={price}
-                    setValue={setPrice}
-                    id="price"
-                    info=""
-                    checkPolicy={() => true}
-                    type="text"
-                />
-                <CustomInput
-                    label={"Shipping Fee"}
-                    value={shippingFee}
-                    setValue={setShippingFee}
-                    id="shippingFee"
-                    info=""
-                    checkPolicy={() => true}
-                    type="number"
-                />
-                <CustomInput
-                    label={"Size"}
-                    value={size}
-                    setValue={setSize}
-                    id="size"
-                    info=""
-                    checkPolicy={() => true}
-                    type="text"
-                />
-                <CustomInput
-                    label={"Color"}
-                    value={color}
-                    setValue={setColor}
-                    id="color"
-                    info=""
-                    checkPolicy={() => true}
-                    type="text"
-                />
+                <div className="grid grid-cols-2">
+                    <CustomInput
+                        label={"Product Name"}
+                        value={productName}
+                        setValue={setProductName}
+                        id="productName"
+                        info=""
+                        checkPolicy={() => true}
+                        type="text"
+                    />
+                    <CustomInput
+                        label={"Product ID"}
+                        value={productId}
+                        setValue={setProductId}
+                        id="productId"
+                        info=""
+                        checkPolicy={() => true}
+                        type="text"
+                    />
+                    <CustomInput
+                        label={"Price"}
+                        value={price}
+                        setValue={setPrice}
+                        id="price"
+                        info=""
+                        checkPolicy={() => true}
+                        type="text"
+                    />
+                    <CustomInput
+                        label={"Shipping Fee"}
+                        value={shippingFee}
+                        setValue={setShippingFee}
+                        id="shippingFee"
+                        info=""
+                        checkPolicy={() => true}
+                        type="number"
+                    />
+                    <CustomInput
+                        label={"Size"}
+                        value={size}
+                        setValue={setSize}
+                        id="size"
+                        info=""
+                        checkPolicy={() => true}
+                        type="text"
+                    />
+                    <CustomInput
+                        label={"Color"}
+                        value={color}
+                        setValue={setColor}
+                        id="color"
+                        info=""
+                        checkPolicy={() => true}
+                        type="text"
+                    />
+                </div>
             </form>
             <div className="flex w-full gap-4 py-8">
-                <button className="black-bar basis-3/4 " onClick={() => createProduct(data).then(openToggle)}>
+                <button className="black-bar basis-3/4 " onClick={() => api.createProduct(data).then(openToggle)}>
                     등록하기
                 </button>
                 <button className="black-bar basis-1/4" onClick={openToggle}>

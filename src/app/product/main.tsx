@@ -1,8 +1,9 @@
 "use client";
+
 import { Table } from "@/app/components/table/table";
 import CreateForm from "./component/create-form";
 import { useEffect, useState } from "react";
-import { getProduct } from "./component/fetch";
+import * as api from "./component/fetch";
 import { CreateproductCardProps } from "@/app/types/type";
 
 export default function Main() {
@@ -15,8 +16,8 @@ export default function Main() {
     };
 
     useEffect(() => {
-        getProduct().then((res) => {
-            setData(res), console.log(res);
+        api.getProduct().then((res) => {
+            setData(res);
             setLoading(false);
         });
     }, []);

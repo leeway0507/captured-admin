@@ -1,14 +1,13 @@
 "use client";
 
-import { useState, useEffect, ChangeEvent, MouseEvent } from "react";
-import { productCardColumns } from "./header";
+import { useState } from "react";
+import { column } from "./header";
 import "./table.css";
 import { flexRender, getCoreRowModel, useReactTable } from "@tanstack/react-table";
-import { CreateproductCardProps } from "@/app/types/type";
-import * as api from "@/app/product/component/fetch";
+import { orderHistoryProps } from "@/app/types/type";
 
-export const Table = ({ defaultData }: { defaultData: CreateproductCardProps[] }) => {
-    const columns = productCardColumns;
+export const Table = ({ defaultData }: { defaultData: orderHistoryProps[] }) => {
+    const columns = column;
     const [data, setData] = useState(() => [...defaultData]);
     const [originalData, setOriginalData] = useState(() => [...defaultData]);
     const [editedRows, setEditedRows] = useState({});
@@ -24,9 +23,6 @@ export const Table = ({ defaultData }: { defaultData: CreateproductCardProps[] }
                     setData((old) => old.map((row, index) => (index === rowIndex ? originalData[rowIndex] : row)));
                 } else {
                     setOriginalData((old) => old.map((row, index) => (index === rowIndex ? data[rowIndex] : row)));
-                    api.updateProduct(data[rowIndex]).then((res) => {
-                        console.log(res);
-                    });
                 }
             },
             updateData: (rowIndex: number, columnId: string, value: string) => {
