@@ -1,4 +1,5 @@
 export interface CreateproductCardProps {
+    sku?: number;
     brand: string;
     productName: string;
     productId: string;

@@ -8,9 +8,14 @@ import { CreateproductCardProps } from "@/app/types/type";
 import * as api from "@/app/product/component/fetch";
 
 export const Table = ({ defaultData }: { defaultData: CreateproductCardProps[] }) => {
+    useEffect(() => {
+        setData(defaultData);
+        setOriginalData(defaultData);
+    }, [defaultData]);
+
     const columns = productCardColumns;
-    const [data, setData] = useState(() => [...defaultData]);
-    const [originalData, setOriginalData] = useState(() => [...defaultData]);
+    const [data, setData] = useState(defaultData);
+    const [originalData, setOriginalData] = useState(defaultData);
     const [editedRows, setEditedRows] = useState({});
     const table = useReactTable({
         data,

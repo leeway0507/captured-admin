@@ -102,6 +102,9 @@ const categoryArray = () => {
 };
 
 export const productCardColumns = [
+    columnHelper.accessor("sku", {
+        header: "Sku",
+    }),
     columnHelper.accessor("brand", {
         header: "Brand",
         cell: TableCell,

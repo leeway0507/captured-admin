@@ -30,8 +30,6 @@ export default function CreateForm({ openToggle }: { openToggle: () => void }) {
         category: category,
     };
 
-    console.log(brand ? "트루" : "펄스");
-
     if (process.env.NEXT_PUBLIC_IMAGE_TYPE === undefined) return <></>;
     if (process.env.NEXT_PUBLIC_BRAND === undefined) return <></>;
     if (process.env.NEXT_PUBLIC_CATEGORY === undefined) return <></>;
