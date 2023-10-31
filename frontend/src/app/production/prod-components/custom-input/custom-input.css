@@ -1,0 +1,19 @@
+@tailwind components;
+
+@layer components {
+    .flex-center {
+        @apply flex items-center justify-center;
+    }
+
+    .custom-input-class {
+        @apply mt-0 h-10 block w-full px-0.5 border-0 border-b border-gray-200 text-xs focus:ring-0 focus:border-main-black placeholder-transparent focus:placeholder:text-sm focus:outline-none
+    }
+    .custom-label-class {
+        @apply absolute -top-4 left-0 text-xs text-sub-black peer-placeholder-shown:text-sm peer-placeholder-shown:text-gray-800 peer-placeholder-shown:top-2 transition-all
+        peer-focus:-top-4 peer-focus:text-xs peer-focus:text-sub-black;
+    }
+    .custom-input-disabled {
+        @apply mt-1 block w-full px-3 py-2 bg-white border border-light-gray rounded-md text-sm shadow-sm     
+        disabled:bg-gray-200 disabled:text-blue-black disabled:border-light-gray;
+    }
+}
