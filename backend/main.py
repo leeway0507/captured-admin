@@ -1,9 +1,12 @@
 "fastapi app"
+
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi import FastAPI, Request
 from fastapi.exceptions import RequestValidationError
 from fastapi.responses import JSONResponse
 from router.production import production_router
+from router.dev import kream_router
+
 
 app = FastAPI()
 
@@ -25,6 +28,7 @@ app.add_middleware(
 )
 
 
+app.include_router(kream_router, prefix="/api/dev/kream", tags=["dev"])
 app.include_router(production_router, prefix="/api/production", tags=["production"])
 
 

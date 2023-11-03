@@ -1,9 +1,3 @@
-import Main from "./main";
-import NavFooter from "./prod-components/nav-footer/nav-footer";
-export default function Page() {
-    return (
-        <NavFooter>
-            <Main />
-        </NavFooter>
-    );
+export default function Main() {
+    return <div className="text-4xl flex-center h-full">Production Main Page</div>;
 }

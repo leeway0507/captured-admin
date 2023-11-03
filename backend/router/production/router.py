@@ -3,7 +3,7 @@
 from sqlalchemy.ext.asyncio import AsyncSession
 from fastapi import APIRouter, Depends, HTTPException
 
-from model.db_model import ProductInfoSchema, ProductInfoDBSchema
+from model.db_model_production import ProductInfoSchema, ProductInfoDBSchema
 
 from db.production_db import get_production_db
 from .utils import *

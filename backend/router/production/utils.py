@@ -5,11 +5,9 @@ from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy import select, delete, insert, text
 
 from logs.make_log import make_logger
-from db.tables import OrderHistoryTable, OrderRowTable, SizeTable
+from db.tables_production import OrderHistoryTable, OrderRowTable, SizeTable,ProductInfoTable
 from db.connection import commit
-from model.db_model import OrderHistoryInDBSchema, OrderRowInDBSchmea, SizeSchema
-from model.db_model import ProductInfoDBSchema
-from db.tables import ProductInfoTable
+from model.db_model_production import OrderHistoryInDBSchema, OrderRowInDBSchmea, SizeSchema,ProductInfoDBSchema
 from sqlalchemy.dialects.mysql import insert
 
 error_log = make_logger("logs/admin/util.log", "admin_router")
@@ -82,7 +80,7 @@ async def get_size_list(db: AsyncSession, sku: int):
 
 async def create_size(db: AsyncSession, sku: int, size_list: List[str]):
     size_objects = [
-        SizeSchema(sku=sku, size=size, updated_at=datetime.now(), available=True).model_dump()
+        SizeSchema(sku=sku, size=size, updated_at=datetime.now().replace(microsecond=0), available=True).model_dump()
         for size in size_list
     ]
     query = await db.execute(insert(SizeTable).values(size_objects))

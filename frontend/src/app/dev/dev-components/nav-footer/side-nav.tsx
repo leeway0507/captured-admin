@@ -5,8 +5,8 @@ export default function SideNav() {
             <Link href="/dev" className="w-full link-animation hover:bg-purple-500 flex-center py-4">
                 <div className="">Home</div>
             </Link>
-            <Link href="/dev/product" className="w-full link-animation hover:bg-purple-500 flex-center py-4">
-                <div className="">Product</div>
+            <Link href="/dev/kream" className="w-full link-animation hover:bg-purple-500 flex-center py-4">
+                <div className="">Kream</div>
             </Link>
             <Link href="/dev/order" className="w-full link-animation hover:bg-purple-500 flex-center py-4">
                 <div className="">Order</div>

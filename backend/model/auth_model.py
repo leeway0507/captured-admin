@@ -1,7 +1,7 @@
 """pydantic Schemas for Auth"""
 
 from pydantic import BaseModel, EmailStr, ConfigDict
-from model.db_model import UserSchema
+from model.db_model_production import UserSchema
 from pydantic.alias_generators import to_camel
 from typing import Optional
 

@@ -1,12 +1,12 @@
 import { CreateproductCardProps } from "@/app/types/type";
 
 export const getProduct = async () => {
-    const req = await fetch(`${process.env.NEXT_PUBLIC_FRONTEND_URL}/api/production/get-category`);
+    const req = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/production/get-category`);
     return await req.json();
 };
 
 export const createProduct = async (data: CreateproductCardProps) => {
-    const req = await fetch(`${process.env.NEXT_PUBLIC_FRONTEND_URL}/api/production/create-product`, {
+    const req = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/production/create-product`, {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
@@ -17,7 +17,7 @@ export const createProduct = async (data: CreateproductCardProps) => {
 };
 
 export const updateProduct = async (data: CreateproductCardProps) => {
-    const req = await fetch(`${process.env.NEXT_PUBLIC_FRONTEND_URL}/api/production/update-product`, {
+    const req = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/production/update-product`, {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
