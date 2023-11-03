@@ -32,3 +32,15 @@ export const ReloadBrowser = async () => {
     const res = await fetch(url);
     return { status: res.status, data: await res.json() };
 };
+
+export async function getScraptResult(scrapName: string) {
+    const url = `${process.env.NEXT_PUBLIC_API_URL}/api/dev/kream/get-scrap-result?scrapName=${scrapName}`;
+    const res = await fetch(url);
+    return { status: res.status, data: await res.json() };
+}
+
+export async function getScraptList() {
+    const url = `${process.env.NEXT_PUBLIC_API_URL}/api/dev/kream/get-scrap-list`;
+    const res = await fetch(url);
+    return { status: res.status, data: await res.json() };
+}

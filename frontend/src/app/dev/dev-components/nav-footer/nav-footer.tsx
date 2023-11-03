@@ -5,7 +5,9 @@ export default function NavFooter({ children }: { children: JSX.Element }) {
             <div className="w-[250px] bg-purple-900	shrink-0">
                 <SideNav />
             </div>
-            <div className="grow px-8 bg-slate-50">{children}</div>
+            <div className="grow px-8 bg-slate-50">
+                <div className="flex flex-col h-full gap-8 w-full max-w-5xl p-8">{children}</div>
+            </div>
         </main>
     );
 }

@@ -1,17 +1,22 @@
 """dev Router"""
 import asyncio
+import re
 from typing import Optional
 from sqlalchemy.ext.asyncio import AsyncSession
 from fastapi import APIRouter, Depends, HTTPException
+from dotenv import dotenv_values
 
 from model.db_model_production import ProductInfoSchema, ProductInfoDBSchema
 
 from db.dev_db import get_dev_db
 from .kream import *
 
+
 kream_router = APIRouter()
 
 kream_dict = {}
+
+config = dotenv_values(".env.dev")
 
 
 async def get_kream_page():
@@ -51,9 +56,7 @@ async def init_product_detail(
 
     # login
     await kream_page.login()
-
     result = await scrap_product_detail_main(kream_page, brandName, kreamIds, numProcess)
-
     return result
 
 
@@ -71,28 +74,61 @@ async def init_scraping_brand(
     return {"result": "success"}
 
 
+@kream_router.get("/get-scrap-list")
+def get_kream_scrap_list():
+    file_list = os.listdir(config["KREAM_SCRAP_RESULT_DIR"])
+    file_list = [x.split(".json")[0] for x in file_list]
+    file_list.sort(reverse=True)
+    return file_list
+
+
+@kream_router.get("/get-scrap-result")
+def get_kream_scrap_result(scrapName: str):
+    """scrap 결과 조회"""
+    return get_scrap_result(scrapName)
+
 
 @kream_router.get("/check-kream-product-card")
-def get_kream_product_card_data(brand: str):
+def get_last_update_kream_product_card_data(brand: str,sendDate:bool=False,sample:int=10):
     """kream_product_card_table 업데이트 전 조회"""
-    return get_kream_product_card(brand)
+    data = get_last_update_kream_product_card(brand,sample)
+
+    if not sendDate:
+        data.pop("data")
+
+    return data
 
 @kream_router.get("/check-kream-trading-volume")
-def get_kream_trading_volume_data(brand: str):
+def get_last_update_kream_trading_volume_data(brand: str,sendDate:bool=False,sample:int=10):
     """kream_trading_volume_table 업데이트 전 조회"""
-    return get_kream_trading_volume(brand)
+    data = get_last_update_kream_trading_volume(brand,sample)
+
+    if not sendDate:
+        data.pop("data")
+
+    return data
 
 @kream_router.get("/check-kream-buy-and-sell")
-def get_kream_buy_and_sell_data(brand:str):
+def get_last_update_kream_buy_and_sell_data(brand:str,sendDate:bool=False,sample:int=10):
     """kream_buy_and_sell_table 업데이트 전 조회"""
-    return get_kream_buy_and_sell(brand)
+    data = get_last_update_kream_buy_and_sell(brand,sample)
+
+    if not sendDate:
+        data.pop("data")
+
+    return data
 
 @kream_router.get("/check-kream-product-bridge")
-def get_kream_product_bridge_data(brand:str):
+def get_last_update_kream_product_bridge_data(brand:str,sendDate:bool=False,sample:int=10):
     """kream_product_bridge_table 업데이트 전 조회"""
-    return get_kream_product_bridge(brand)
+    data = get_last_update_kream_product_bridge(brand,sample)
 
-@kream_router.get("/update-scrap-files")
-async def update_scrap_files(brand:str):
+    if not sendDate:
+        data.pop("data")
+
+    return data
+
+@kream_router.get("/restart-saving-last-scraped-files")
+async def restart_saving_last_scraped_files(brand:str):
     """scrap 파일 업데이트"""
     return await save_scrap_files(brand)

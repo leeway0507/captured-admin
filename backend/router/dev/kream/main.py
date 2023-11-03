@@ -1,7 +1,7 @@
 import asyncio
 import base64
 from dotenv import dotenv_values
-from .utils import load_page,load_cookies
+from .utils import load_page,load_cookies,save_cookies
 
 from playwright.async_api import (
     async_playwright,
@@ -62,10 +62,10 @@ class KreamPage:
 
     async def login(self):
         assert isinstance(self.init_page, Page), init_page_error
-        kream_page = await load_page(self.init_page, "https://kream.co.kr/login")
+        login_page = await load_page(self.init_page, "https://kream.co.kr/login")
 
-        if not await self.is_login(kream_page):
-            return await self._login(kream_page, **self._get_secret())
+        if not await self.is_login(login_page):
+            return await self._login(login_page, **self._get_secret())
 
     def get_init_page(self):
         assert isinstance(self.init_page, Page), init_page_error
@@ -91,3 +91,4 @@ class KreamPage:
         await page.fill("input[type='password']", password)
         await page.keyboard.press("Enter")
         await page.wait_for_load_state(state="networkidle")
+        await save_cookies(page)

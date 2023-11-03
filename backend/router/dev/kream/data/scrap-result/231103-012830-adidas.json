@@ -1,0 +1,361 @@
+{
+    "scrap_name": "231103-012830-adidas",
+    "brand": "adidas",
+    "scrap_time": "231103-012830",
+    "scrap_result": {
+        "26344": "The object has been collected to prevent unbounded heap growth.",
+        "55267": "success",
+        "15248": "Timeout 30000ms exceeded.\n logs \nattempting click action\n  waiting for element to be visible, enabled and stable\n",
+        "15251": "Timeout 5000ms exceeded.\n logs \nwaiting for locator(\"a[class='btn outlinegrey full medium']\") to be visible\n",
+        "48974": "Timeout 5000ms exceeded.\n logs \nwaiting for locator(\"xpath=//li[contains(@class, \\\"select_item\\\")]\") to be visible\n",
+        "96172": "success",
+        "64283": "success",
+        "122782": "The object has been collected to prevent unbounded heap growth.",
+        "55955": "success",
+        "90918": "success"
+    },
+    "kream_product_card": {
+        "len": 10,
+        "kream_id_list": [55267, 90918, 26344, 96172, 48974, 15248, 55955, 15251, 64283, 122782],
+        "data": [
+            {
+                "kream_id": 96172,
+                "product_id": "GY7338",
+                "retail_price": 129000,
+                "product_release_date": "2023-01-19 00:00:00",
+                "color": "dark green/off white/cream white",
+                "kream_product_img_url": "https://kream-phinf.pstatic.net/MjAyMzAxMjBfMjg2/MDAxNjc0MTk3MDA1NDcw.vIvvPJQjNVmNmN39xl9EKE9TfGErdBwf8B7AjlYqffYg.KRJDO5k9iodMPxquDGnEO0pjROvm3bXSV1P5ScJayIMg.PNG/a_cd0af2a13d3d448bbc8be6e69865bd74.png?type=m",
+                "kream_product_name": "adidas gazelle dark green cream white",
+                "brand_name": "adidas",
+                "trading_volume": 10000,
+                "wish": 42000,
+                "review": 231,
+                "updated_at": "2023-11-02 01:36:05.368923"
+            },
+            {
+                "kream_id": 26344,
+                "product_id": "EG4959",
+                "retail_price": 119000,
+                "product_release_date": "2019-12-23 00:00:00",
+                "color": "core black/footwear white",
+                "kream_product_img_url": "https://kream-phinf.pstatic.net/MjAyMjA1MDNfNDcg/MDAxNjUxNTcxMzczNjY1.7_5uAFAC-O7LWDO8AmYuJxfhO6qwHNBopoci6A-1XzYg.EyYmxX6c0AUcpZQKIXC1OFym1fl9bRlZvmTso43Xqg8g.PNG/a_095f2500bc074b81867e777cf9ad8da0.png?type=m",
+                "kream_product_name": "adidas superstar core black white",
+                "brand_name": "adidas",
+                "trading_volume": 48000,
+                "wish": 86000,
+                "review": 1459,
+                "updated_at": "2023-11-02 01:36:05.350112"
+            },
+            {
+                "kream_id": 64283,
+                "product_id": "H01878",
+                "retail_price": 139000,
+                "product_release_date": "2021-06-16 00:00:00",
+                "color": "footwear white/core black/gum",
+                "kream_product_img_url": "https://kream-phinf.pstatic.net/MjAyMjA2MDNfMjQ2/MDAxNjU0MjQ3MzY0NDY4.Qr6h0d5tKFXIhhELHOVPYrF-SLC18INUATIcdmte-Cgg.OS9mmt8_t-B1hbNgSmswaiK84ObRoVS0yVbeaDNeKcYg.PNG/a_39ac1280f13c4da6a967e08cd978c0c4.png?type=m",
+                "kream_product_name": "adidas samba vegan black white",
+                "brand_name": "adidas",
+                "trading_volume": 20000,
+                "wish": 39000,
+                "review": 600,
+                "updated_at": "2023-11-02 01:36:05.372612"
+            },
+            {
+                "kream_id": 55267,
+                "product_id": "H01877",
+                "retail_price": 139000,
+                "product_release_date": "2021-07-27 00:00:00",
+                "color": "footwear white/core black/gum",
+                "kream_product_img_url": "https://kream-phinf.pstatic.net/MjAyMzA5MTFfMTA0/MDAxNjk0NDExNDYwMzk1.DycBzwXe799mQxXnvIyojtyGWOp1LmtIZreLNF04fzwg.QnLpUibIOeDbKRjiV1thZ688hB-Lbz71OdS83p56bZkg.PNG/a_dad9d406d80241519ef2c41f5a56a544.png?type=m",
+                "kream_product_name": "adidas samba vegan white black",
+                "brand_name": "adidas",
+                "trading_volume": 46000,
+                "wish": 83000,
+                "review": 1161,
+                "updated_at": "2023-11-02 01:36:05.353906"
+            },
+            {
+                "kream_id": 122782,
+                "product_id": "GY7386",
+                "retail_price": 139000,
+                "product_release_date": "2023-05-09 00:00:00",
+                "color": "glow pink/clear pink/gum",
+                "kream_product_img_url": "https://kream-phinf.pstatic.net/MjAyMzA1MDhfMzAw/MDAxNjgzNTA5MzYwNDgx.e2MvK0UoM34pcxUWkTdIuQIZlxgZO4r7tkIitMFvre8g.eDP8PGJ0dKL0aJvkJXpD5Cmrs_fqEVQisAemJBT3bWYg.PNG/a_1fb098111c5f4e9ba00215a95d059edf.png?type=m",
+                "kream_product_name": "adidas bermuda glow pink",
+                "brand_name": "adidas",
+                "trading_volume": 3597,
+                "wish": 35000,
+                "review": 232,
+                "updated_at": "2023-11-02 01:36:05.376170"
+            },
+            {
+                "kream_id": 15248,
+                "product_id": "B75807",
+                "retail_price": 139000,
+                "product_release_date": "2018-06-01 00:00:00",
+                "color": "core black/cloud white/gum",
+                "kream_product_img_url": "https://kream-phinf.pstatic.net/MjAyMTA4MjNfNjcg/MDAxNjI5NzA3NzQ5MjM1.8BSgjOBS89R2vmupO5G1h_XXAAYs4-DD3breNilvBfwg.JjPFmtmHC05SInImY2nkNkurF60i0TUtM17O1DO2SRUg.PNG/a_91f875b7e3bd4522a2dad91159818008.png?type=m",
+                "kream_product_name": "adidas samba og black white gum",
+                "brand_name": "adidas",
+                "trading_volume": 36000,
+                "wish": 79000,
+                "review": 739,
+                "updated_at": "2023-11-02 01:36:05.357764"
+            },
+            {
+                "kream_id": 55955,
+                "product_id": "GW3159",
+                "retail_price": 109000,
+                "product_release_date": "2022-03-25 00:00:00",
+                "color": "core black/cloud white/gold metallic",
+                "kream_product_img_url": "https://kream-phinf.pstatic.net/MjAyMjAzMjlfMjg5/MDAxNjQ4NTQ1MjgwMzUz.zeAuThIpfE7dJgvVGTTr8QoTlssmeC5sSivgSV9YkcQg.gaOAfvVwwa5IcExoPuj2ESC3b5a8OHMKGmsAeiaQ_Z4g.PNG/a_a6739132db034ef4855fdffcda109526.png?type=m",
+                "kream_product_name": "adidas samba adv black",
+                "brand_name": "adidas",
+                "trading_volume": 12000,
+                "wish": 32000,
+                "review": 259,
+                "updated_at": "2023-11-02 01:36:05.379746"
+            },
+            {
+                "kream_id": 90918,
+                "product_id": "HQ8717",
+                "retail_price": 169000,
+                "product_release_date": "2023-01-06 00:00:00",
+                "color": "blue fusion/cloud white/gold metallic",
+                "kream_product_img_url": "https://kream-phinf.pstatic.net/MjAyMjEyMjBfMTY0/MDAxNjcxNTI1OTI3OTQ4.Qey2tBuOkcTHazJqVHwxzIK7ZTFxIycqB8mmJfTAviAg.whlsUoFKt4QtQ-9laB7IHqxW2x_lRflHHy6ZKFGmG9Mg.PNG/a_4a6f11d9ab7944d9b309d8f048a77726.png?type=m",
+                "kream_product_name": "(w) adidas gazelle indoor blue fusion cloud white",
+                "brand_name": "adidas",
+                "trading_volume": 7568,
+                "wish": 32000,
+                "review": 315,
+                "updated_at": "2023-11-02 01:36:05.383425"
+            },
+            {
+                "kream_id": 15251,
+                "product_id": "B75806",
+                "retail_price": 139000,
+                "product_release_date": "2018-01-01 00:00:00",
+                "color": "cloud white/core black/clear granite",
+                "kream_product_img_url": "https://kream-phinf.pstatic.net/MjAyMTAzMDVfMjQz/MDAxNjE0OTE0NzIzMTQ4.tsuFUJtHGm4g4KE5EDikVMScORptOQqIB7afi1Nz2Qwg.sftz3YQOuw48xpNSJa1tV4uEsz5iU4mjIvpllgHWEn8g.PNG/p_8f7b72adbc924b5bbf7c670d55865e6b.png?type=m",
+                "kream_product_name": "adidas samba og cloud white",
+                "brand_name": "adidas",
+                "trading_volume": 41000,
+                "wish": 72000,
+                "review": 867,
+                "updated_at": "2023-11-02 01:36:05.361565"
+            },
+            {
+                "kream_id": 48974,
+                "product_id": "GY3428",
+                "retail_price": 141500,
+                "product_release_date": "2021-12-28 00:00:00",
+                "color": "core black/aluminium/cream white",
+                "kream_product_img_url": "https://kream-phinf.pstatic.net/MjAyMjA0MDVfNTkg/MDAxNjQ5MTM3NTE1MDM0.vqdqcOzzUt_MgHtPexUtEaivv_boFqYiu8KUWYNq0-Ug.BW4gybaTAGnQlCJCPMrMictzxiR94w_4kMgtKoqpXuEg.PNG/a_7620a1f506fe4f1480350eb43b9e5781.png?type=m",
+                "kream_product_name": "adidas superstar 82 black white",
+                "brand_name": "adidas",
+                "trading_volume": 22000,
+                "wish": 63000,
+                "review": 658,
+                "updated_at": "2023-11-02 01:36:05.365285"
+            }
+        ]
+    },
+    "kream_trading_volume": {
+        "len": 5,
+        "kream_id_list": [55267, 90918, 96172, 55955, 64283],
+        "data": [
+            {
+                "kream_id": 96172,
+                "kream_product_size": "275",
+                "price": 127000,
+                "lightening": false,
+                "trading_at": "2023-11-02 00:00:00"
+            },
+            {
+                "kream_id": 96172,
+                "kream_product_size": "230",
+                "price": 116000,
+                "lightening": false,
+                "trading_at": "2023-11-02 00:00:00"
+            },
+            {
+                "kream_id": 96172,
+                "kream_product_size": "235",
+                "price": 129000,
+                "lightening": true,
+                "trading_at": "2023-11-02 00:00:00"
+            },
+            {
+                "kream_id": 96172,
+                "kream_product_size": "270",
+                "price": 115000,
+                "lightening": true,
+                "trading_at": "2023-11-02 00:00:00"
+            },
+            {
+                "kream_id": 96172,
+                "kream_product_size": "225",
+                "price": 118000,
+                "lightening": false,
+                "trading_at": "2023-11-02 00:00:00"
+            },
+            {
+                "kream_id": 96172,
+                "kream_product_size": "265",
+                "price": 119000,
+                "lightening": false,
+                "trading_at": "2023-11-02 00:00:00"
+            },
+            {
+                "kream_id": 96172,
+                "kream_product_size": "245",
+                "price": 134000,
+                "lightening": true,
+                "trading_at": "2023-11-02 00:00:00"
+            },
+            {
+                "kream_id": 96172,
+                "kream_product_size": "270",
+                "price": 114000,
+                "lightening": true,
+                "trading_at": "2023-11-02 00:00:00"
+            },
+            {
+                "kream_id": 96172,
+                "kream_product_size": "235",
+                "price": 118000,
+                "lightening": false,
+                "trading_at": "2023-11-01 00:00:00"
+            },
+            {
+                "kream_id": 96172,
+                "kream_product_size": "230",
+                "price": 137000,
+                "lightening": true,
+                "trading_at": "2023-11-01 00:00:00"
+            }
+        ]
+    },
+    "kream_buy_and_sell": {
+        "len": 8,
+        "kream_id_list": [55267, 90918, 26344, 96172, 55955, 15251, 64283, 122782],
+        "data": [
+            {
+                "kream_id": 96172,
+                "kream_product_size": "220",
+                "buy": 81000,
+                "sell": 117000,
+                "updated_at": "2023-11-03 01:28:30"
+            },
+            {
+                "kream_id": 96172,
+                "kream_product_size": "225",
+                "buy": 0,
+                "sell": 119000,
+                "updated_at": "2023-11-03 01:28:30"
+            },
+            {
+                "kream_id": 96172,
+                "kream_product_size": "230",
+                "buy": 0,
+                "sell": 117000,
+                "updated_at": "2023-11-03 01:28:30"
+            },
+            {
+                "kream_id": 96172,
+                "kream_product_size": "235",
+                "buy": 70000,
+                "sell": 118000,
+                "updated_at": "2023-11-03 01:28:30"
+            },
+            {
+                "kream_id": 96172,
+                "kream_product_size": "240",
+                "buy": 0,
+                "sell": 114000,
+                "updated_at": "2023-11-03 01:28:30"
+            },
+            {
+                "kream_id": 96172,
+                "kream_product_size": "245",
+                "buy": 110000,
+                "sell": 120000,
+                "updated_at": "2023-11-03 01:28:30"
+            },
+            {
+                "kream_id": 96172,
+                "kream_product_size": "250",
+                "buy": 0,
+                "sell": 119000,
+                "updated_at": "2023-11-03 01:28:30"
+            },
+            {
+                "kream_id": 96172,
+                "kream_product_size": "255",
+                "buy": 0,
+                "sell": 123000,
+                "updated_at": "2023-11-03 01:28:30"
+            },
+            {
+                "kream_id": 96172,
+                "kream_product_size": "260",
+                "buy": 90000,
+                "sell": 115000,
+                "updated_at": "2023-11-03 01:28:30"
+            },
+            {
+                "kream_id": 96172,
+                "kream_product_size": "265",
+                "buy": 0,
+                "sell": 119000,
+                "updated_at": "2023-11-03 01:28:30"
+            }
+        ]
+    },
+    "kream_product_bridge": {
+        "len": 10,
+        "kream_id_list": [55267, 90918, 26344, 96172, 48974, 15248, 55955, 15251, 64283, 122782],
+        "data": [
+            {
+                "kream_id": 96172,
+                "product_id": "GY7338"
+            },
+            {
+                "kream_id": 26344,
+                "product_id": "EG4959"
+            },
+            {
+                "kream_id": 64283,
+                "product_id": "H01878"
+            },
+            {
+                "kream_id": 55267,
+                "product_id": "H01877"
+            },
+            {
+                "kream_id": 122782,
+                "product_id": "GY7386"
+            },
+            {
+                "kream_id": 15248,
+                "product_id": "B75807"
+            },
+            {
+                "kream_id": 55955,
+                "product_id": "GW3159"
+            },
+            {
+                "kream_id": 90918,
+                "product_id": "HQ8717"
+            },
+            {
+                "kream_id": 15251,
+                "product_id": "B75806"
+            },
+            {
+                "kream_id": 48974,
+                "product_id": "GY3428"
+            }
+        ]
+    }
+}

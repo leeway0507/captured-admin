@@ -1,6 +1,7 @@
 import os
 import asyncio
 from itertools import chain
+from traceback import format_exception
 
 from typing import Optional, List, Dict, Any, Union, Tuple
 from datetime import date, datetime, timedelta
@@ -12,12 +13,17 @@ import pandas as pd
 import aiofiles
 import json
 
+from dotenv import dotenv_values
 
 from .main import KreamPage
 from .utils import load_page,load_cookies
-
 from model.db_model_kream import KreamBuyAndSellSchema, KreamTradingVolumeSchema
 from model.scraping_brand_model import KreamProductDetailSchema
+from .create_log import create_last_update_kream_detail_log
+
+
+config = dotenv_values(".env.dev")
+
 
 
 async def scrap_product_detail_main(
@@ -33,12 +39,10 @@ async def scrap_product_detail_main(
     assert kream_page.init_page, none_init_error
     assert kream_page.context, none_context_error
 
-    is_saved_scrap_file = True
+    
 
     init_tempfiles()
-
     n_p = num_process - 1
-
     p_list = [await kream_page.context.new_page() for _ in range(n_p)]
     p_list.append(kream_page.init_page)
 
@@ -50,21 +54,28 @@ async def scrap_product_detail_main(
     print(f"scrap len : {len(k_list)}")
 
     split_k_list = split_size(k_list, num_process)
-
     co_list = [scrap_product_sub_process(p_list[i], split_k_list[i]) for i in range(num_process)]
-
     result = await asyncio.gather(*co_list)
+    merged_result = {k: v.replace("=","") for d in result for k, v in d.items()}
+    
+
 
     with open("router/dev/kream/data/detail/temp/process_result.json", "w") as f:
-        f.write(json.dumps(result, ensure_ascii=False))
+        meta = {"num_process":num_process,"scrap_result":merged_result}
+        f.write(json.dumps(meta, ensure_ascii=False))
 
+    scrap_name = None
     try : 
-        await save_scrap_files(brand)
+        scrap_name = await save_scrap_files(brand)
+        create_last_update_kream_detail_log(scrap_name)
+
     except Exception as e:
-        print(e)
-        is_saved_scrap_file = False
+        print("scrap_product_detail_main")
+        print(''.join(format_exception(None, e, e.__traceback__)))
+        return {"scrap_status":"fail","scrap_name": None, "scrap_result": merged_result,"error": str(e)}
+
     
-    return {"scrapLen":len(k_list) ,"scrapResult": result, "IsSavedScrapFile": is_saved_scrap_file}
+    return {"scrap_status":"success","scrap_name": scrap_name}
         
 
 
@@ -95,10 +106,14 @@ async def scrap_product_sub_process(page: Page, kream_id_list: List[int]):
             trading_volume = await get_product_volume(page, kream_id)
             await _save_temp_files("trading_volume", trading_volume)
 
-            lst[kream_id] = "success"
+            if trading_volume:
+                lst[kream_id] = "success"
+            else:
+                lst[kream_id] = "failed:not_trading_volume"
 
         except Exception as e:
-            print(e)
+            print("scrap_product_sub_process")
+            print(''.join(format_exception(None, e, e.__traceback__)))
             lst[kream_id] = str(e)
             continue
     
@@ -139,6 +154,7 @@ async def get_buy_and_sell(page: Page, kream_id: int):
 
     await page.go_back()
     await page.wait_for_selector("//div[contains(@class, 'btn_wrap')]/div/button[2]")
+    await asyncio.sleep(1)
 
     buy = await page.query_selector("//div[contains(@class, 'btn_wrap')]/div/button[2]")
     assert buy, "구매 버튼이 잡히지 않음"
@@ -243,7 +259,12 @@ async def _scrap_trading_volume_from(
     await trading_volume_button.click()
 
     price_btn = "div[class='price_body']"
-    await page.wait_for_selector(price_btn, timeout=5000)
+    try : 
+        await page.wait_for_selector(price_btn, timeout=5000)
+    except Exception as e:
+        print(f"{kream_id} : 체결내역 더보기가 없는 제품으로 추정")
+        return []
+
 
     modal = await page.query_selector(price_btn)
     assert modal, "modal not found"
@@ -252,17 +273,12 @@ async def _scrap_trading_volume_from(
     i = 0
     start = 0
     end = 1
-    global volumes
-    volumes = []
-    while start < end and i <= 20:
+    while start < end and i <= 10:
         i += 1
         start = end
         await asyncio.sleep(1)
-
-        volumes = await modal.query_selector_all(".list_txt.is_active")
-        end = len(volumes)
-
-        date_str = await volumes[-1].inner_text()
+        end = await page.evaluate("Array.from(document.querySelectorAll('.list_txt.is_active')).length")
+        date_str= await page.evaluate(f"Array.from(document.querySelectorAll('.list_txt.is_active')).slice(-1)[0].innerText")
         last_date = datetime.strptime(date_str, "%y/%m/%d").date()
 
         # print(f"kream_id:{kream_id},last_date : {last_date}, target_date : {target_date}, end : {end}")
@@ -274,9 +290,6 @@ async def _scrap_trading_volume_from(
             await page.evaluate(scroll_eval)
         else:
             break
-
-    if len(volumes) == 0:
-        return []
 
     volumes = await get_soup_all(page, ".body_list")
     body_list = _extract_volume_data_from(volumes)
@@ -354,10 +367,11 @@ def split_size(l: List, num_list: int) -> List[List]:
 
 
 def init_tempfiles():
-    path = "router/dev/kream/data/detail/temp/"
+    path = config["KREAM_DETAILS_TEMP_DIR"]
+    assert path, "Env KREAM_DETAILS_TEMP_DIR is not exist"
+
     file_list = os.listdir(path)
     for file in file_list:
-        os.remove(path + file)
         with open(path + file, "w") as f:
             f.write("")
 
@@ -371,6 +385,7 @@ async def get_soup(page: Page, value: str) -> BeautifulSoup | None:
 
 
 async def get_soup_all(page: Page, value: str) -> List[BeautifulSoup]:
+    await asyncio.sleep(2)
     e_list = await page.query_selector_all(value)
     if len(e_list) == 0:
         return []
@@ -379,7 +394,9 @@ async def get_soup_all(page: Page, value: str) -> List[BeautifulSoup]:
 
 
 async def _save_temp_files(file_name: str, data: Union[List, Dict]):
-    path = "router/dev/kream/data/detail/temp/"
+    path = config["KREAM_DETAILS_TEMP_DIR"]
+    assert path, "Env KREAM_DETAILS_TEMP_DIR is not exist"
+
     n = f"{file_name}.json"
     async with aiofiles.open(path + n, "a") as f:
         await f.write(json.dumps(data, ensure_ascii=False) + ",")
@@ -387,7 +404,9 @@ async def _save_temp_files(file_name: str, data: Union[List, Dict]):
 
 async def save_scrap_files(brand_name: str):
     path = f"router/dev/kream/data/detail/{brand_name}/"
-    temp_path = "router/dev/kream/data/detail/temp/"
+
+    temp_path = config["KREAM_DETAILS_TEMP_DIR"]
+    assert temp_path, "Env KREAM_DETAILS_TEMP_DIR is not exist"
 
     file_time = datetime.now().strftime("%y%m%d-%H%M%S")
 
@@ -396,7 +415,7 @@ async def save_scrap_files(brand_name: str):
 
     #### product_detail
     temp_file_name = f"product_detail.json"
-    async with aiofiles.open(temp_path + temp_file_name, "r+", encoding="utf-8") as f:
+    async with aiofiles.open(temp_path + temp_file_name, "r", encoding="utf-8") as f:
         v = await f.read()
         x = eval(v)
 
@@ -408,7 +427,7 @@ async def save_scrap_files(brand_name: str):
 
     #### trading_volume
     temp_file_name = f"trading_volume.json"
-    async with aiofiles.open(temp_path + temp_file_name, "r+", encoding="utf-8") as f:
+    async with aiofiles.open(temp_path + temp_file_name, "r", encoding="utf-8") as f:
         v = await f.read()
         v = v.replace("false", "False").replace("true", "True")
         x = eval(v)
@@ -421,7 +440,7 @@ async def save_scrap_files(brand_name: str):
 
     #### buy_and_sell
     temp_file_name = f"buy_and_sell.json"
-    async with aiofiles.open(temp_path + temp_file_name, "r+", encoding="utf-8") as f:
+    async with aiofiles.open(temp_path + temp_file_name, "r", encoding="utf-8") as f:
         v = await f.read()
         x = eval(v)
 
@@ -440,3 +459,4 @@ async def save_scrap_files(brand_name: str):
 
     file_name = f"{file_time}-buy_and_sell.parquet.gzip"
     df.to_parquet(path + file_name, compression="gzip")
+    return file_time+"-"+brand_name

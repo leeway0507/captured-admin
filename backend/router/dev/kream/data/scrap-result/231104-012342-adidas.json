@@ -1,0 +1,220 @@
+{
+    "scrap_name": "231104-012342-adidas",
+    "brand": "adidas",
+    "scrap_time": "231104-012342",
+    "scrap_result": {
+        "15251": "'dict' object has no attribute '_object'",
+        "90918": "success"
+    },
+    "kream_product_card": {
+        "len": 2,
+        "kream_id_list": [
+            15251,
+            90918
+        ],
+        "data": [
+            {
+                "kream_id": 15251,
+                "product_id": "B75806",
+                "retail_price": 139000,
+                "product_release_date": "2018-01-01 00:00:00",
+                "color": "cloud white/core black/clear granite",
+                "kream_product_img_url": "https://kream-phinf.pstatic.net/MjAyMTAzMDVfMjQz/MDAxNjE0OTE0NzIzMTQ4.tsuFUJtHGm4g4KE5EDikVMScORptOQqIB7afi1Nz2Qwg.sftz3YQOuw48xpNSJa1tV4uEsz5iU4mjIvpllgHWEn8g.PNG/p_8f7b72adbc924b5bbf7c670d55865e6b.png?type=m",
+                "kream_product_name": "adidas samba og cloud white",
+                "brand_name": "adidas",
+                "trading_volume": 41000,
+                "wish": 72000,
+                "review": 867,
+                "updated_at": "2023-11-02 01:36:05.361565"
+            },
+            {
+                "kream_id": 90918,
+                "product_id": "HQ8717",
+                "retail_price": 169000,
+                "product_release_date": "2023-01-06 00:00:00",
+                "color": "blue fusion/cloud white/gold metallic",
+                "kream_product_img_url": "https://kream-phinf.pstatic.net/MjAyMjEyMjBfMTY0/MDAxNjcxNTI1OTI3OTQ4.Qey2tBuOkcTHazJqVHwxzIK7ZTFxIycqB8mmJfTAviAg.whlsUoFKt4QtQ-9laB7IHqxW2x_lRflHHy6ZKFGmG9Mg.PNG/a_4a6f11d9ab7944d9b309d8f048a77726.png?type=m",
+                "kream_product_name": "(w) adidas gazelle indoor blue fusion cloud white",
+                "brand_name": "adidas",
+                "trading_volume": 7568,
+                "wish": 32000,
+                "review": 315,
+                "updated_at": "2023-11-02 01:36:05.383425"
+            }
+        ]
+    },
+    "kream_trading_volume": {
+        "len": 1,
+        "kream_id_list": [
+            90918
+        ],
+        "data": [
+            {
+                "kream_id": 90918,
+                "kream_product_size": "235",
+                "price": 146000,
+                "lightening": false,
+                "trading_at": "2023-11-04 00:00:00"
+            },
+            {
+                "kream_id": 90918,
+                "kream_product_size": "225",
+                "price": 149000,
+                "lightening": true,
+                "trading_at": "2023-11-03 00:00:00"
+            },
+            {
+                "kream_id": 90918,
+                "kream_product_size": "225",
+                "price": 148000,
+                "lightening": true,
+                "trading_at": "2023-11-03 00:00:00"
+            },
+            {
+                "kream_id": 90918,
+                "kream_product_size": "230",
+                "price": 130000,
+                "lightening": false,
+                "trading_at": "2023-11-03 00:00:00"
+            },
+            {
+                "kream_id": 90918,
+                "kream_product_size": "235",
+                "price": 146000,
+                "lightening": false,
+                "trading_at": "2023-11-03 00:00:00"
+            },
+            {
+                "kream_id": 90918,
+                "kream_product_size": "240",
+                "price": 138000,
+                "lightening": false,
+                "trading_at": "2023-11-03 00:00:00"
+            },
+            {
+                "kream_id": 90918,
+                "kream_product_size": "250",
+                "price": 143000,
+                "lightening": false,
+                "trading_at": "2023-11-03 00:00:00"
+            },
+            {
+                "kream_id": 90918,
+                "kream_product_size": "235",
+                "price": 146000,
+                "lightening": false,
+                "trading_at": "2023-11-03 00:00:00"
+            },
+            {
+                "kream_id": 90918,
+                "kream_product_size": "240",
+                "price": 144000,
+                "lightening": true,
+                "trading_at": "2023-11-03 00:00:00"
+            },
+            {
+                "kream_id": 90918,
+                "kream_product_size": "240",
+                "price": 140000,
+                "lightening": false,
+                "trading_at": "2023-11-03 00:00:00"
+            }
+        ]
+    },
+    "kream_buy_and_sell": {
+        "len": 2,
+        "kream_id_list": [
+            15251,
+            90918
+        ],
+        "data": [
+            {
+                "kream_id": 15251,
+                "kream_product_size": "215",
+                "buy": 0,
+                "sell": 129000,
+                "updated_at": "2023-11-04 01:23:42"
+            },
+            {
+                "kream_id": 15251,
+                "kream_product_size": "220",
+                "buy": 130000,
+                "sell": 139000,
+                "updated_at": "2023-11-04 01:23:42"
+            },
+            {
+                "kream_id": 15251,
+                "kream_product_size": "225",
+                "buy": 140000,
+                "sell": 142000,
+                "updated_at": "2023-11-04 01:23:42"
+            },
+            {
+                "kream_id": 15251,
+                "kream_product_size": "230",
+                "buy": 130000,
+                "sell": 143000,
+                "updated_at": "2023-11-04 01:23:42"
+            },
+            {
+                "kream_id": 15251,
+                "kream_product_size": "235",
+                "buy": 143000,
+                "sell": 147000,
+                "updated_at": "2023-11-04 01:23:42"
+            },
+            {
+                "kream_id": 15251,
+                "kream_product_size": "240",
+                "buy": 144000,
+                "sell": 150000,
+                "updated_at": "2023-11-04 01:23:42"
+            },
+            {
+                "kream_id": 15251,
+                "kream_product_size": "245",
+                "buy": 136000,
+                "sell": 143000,
+                "updated_at": "2023-11-04 01:23:42"
+            },
+            {
+                "kream_id": 15251,
+                "kream_product_size": "250",
+                "buy": 145000,
+                "sell": 153000,
+                "updated_at": "2023-11-04 01:23:42"
+            },
+            {
+                "kream_id": 15251,
+                "kream_product_size": "255",
+                "buy": 120000,
+                "sell": 152000,
+                "updated_at": "2023-11-04 01:23:42"
+            },
+            {
+                "kream_id": 15251,
+                "kream_product_size": "260",
+                "buy": 140000,
+                "sell": 148000,
+                "updated_at": "2023-11-04 01:23:42"
+            }
+        ]
+    },
+    "kream_product_bridge": {
+        "len": 2,
+        "kream_id_list": [
+            15251,
+            90918
+        ],
+        "data": [
+            {
+                "kream_id": 15251,
+                "product_id": "B75806"
+            },
+            {
+                "kream_id": 90918,
+                "product_id": "HQ8717"
+            }
+        ]
+    }
+}

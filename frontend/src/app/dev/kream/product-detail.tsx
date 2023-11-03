@@ -1,9 +1,11 @@
-import { useReducer, useRef } from "react";
+"use client";
+import { useEffect, useReducer, useRef, useState } from "react";
 import { InitProductDetail } from "./fetch";
+import { useRouter } from "next/navigation";
 
-interface scrapingProps {
+export interface scrapingProps {
     brandName: string;
-    numProcess: Number;
+    numProcess: number;
     kreamIds: string;
 }
 
@@ -27,9 +29,44 @@ const reducer = (state: scrapingProps, action: any) => {
     }
 };
 
+export const handleProductDtailSubmit = async (
+    state: scrapingProps,
+    setName: (scrapName: string) => void,
+    enableButton: () => void,
+    disableButton: () => void
+) => {
+    if (state.brandName === "") {
+        return alert("브랜드 네임을 입력해주세요");
+    }
+    if (state.numProcess === 0) {
+        return alert("최대 스크롤 수를 입력해주세요");
+    }
+
+    const start = confirm(`브랜드네임 [${state.brandName}]이 맞으면 시작합니다.`);
+
+    if (!start) {
+        return;
+    }
+
+    disableButton();
+    await InitProductDetail(state.brandName, state.numProcess, state.kreamIds)
+        .then((res) => {
+            const { scrap_status, ...restData } = res.data;
+            scrap_status === "success" ? setName(restData.scrap_name) : alert(`에러 발생`);
+            enableButton();
+        })
+        .catch((e) => {
+            console.log(e);
+            alert("네트워크 에러 발생");
+            enableButton();
+        });
+};
+
 export default function PrdoucCardList() {
+    const router = useRouter();
     const submitRef = useRef<HTMLButtonElement>(null);
     const [state, dispatch] = useReducer(reducer, initialState);
+    const [scrapName, setScrapName] = useState("");
 
     const enableButton = () => {
         if (submitRef.current) {
@@ -43,32 +80,11 @@ export default function PrdoucCardList() {
         }
     };
 
-    const handleSubmit = async (state: scrapingProps) => {
-        if (state.brandName === "") {
-            return alert("브랜드 네임을 입력해주세요");
-        }
-        if (state.numProcess === 0) {
-            return alert("최대 스크롤 수를 입력해주세요");
-        }
+    useEffect(() => {
+        if (scrapName === "") return;
+        router.push(`/dev/kream/scrap-result/${scrapName}`);
+    }, [scrapName]);
 
-        const start = confirm(`브랜드네임 [${state.brandName}]이 맞으면 시작합니다.`);
-
-        if (!start) {
-            return;
-        }
-
-        disableButton();
-        await InitProductDetail(state.brandName, state.numProcess, state.kreamIds)
-            .then((res) => {
-                res.status === 200 ? alert("요청 완료") : alert(`에러 발생 :${res.status}`);
-                enableButton();
-            })
-            .catch((e) => {
-                console.log(e);
-                alert("네트워크 에러 발생");
-                enableButton();
-            });
-    };
     return (
         <div className="flex pt-4 pb-24 gap-8 justify-between">
             <div className="min-w-[200px] flex flex-col">
@@ -114,7 +130,7 @@ export default function PrdoucCardList() {
             <button
                 ref={submitRef}
                 className="black-bar min-w-[150px] text-xl disabled:bg-rose-800 disabled:border disabled:border-main-black disabled:cursor-not-allowed disabled:text-white"
-                onClick={() => handleSubmit(state)}>
+                onClick={() => handleProductDtailSubmit(state, setScrapName, enableButton, disableButton)}>
                 요청하기
             </button>
         </div>
