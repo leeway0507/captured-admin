@@ -8,7 +8,8 @@ from bs4 import BeautifulSoup
 import pandas as pd
 
 from model.scraping_brand_model import KreamScrapingBrandSchema
-from .utils import load_page
+from .utils import load_page, convert_str_to_int
+
 
 async def scrap_product_card_list(
     page: Page, brand_name: str, max_scroll: int, min_volume: int, min_wish: int
@@ -74,19 +75,19 @@ async def _extract_info(element: ElementHandle):
     if trading_volume is None:
         trading_volume = 0
     else:
-        trading_volume = _convert_str_to_int(trading_volume.get_text(strip=True))
+        trading_volume = convert_str_to_int(trading_volume.get_text(strip=True))
 
     wish = soup.find("span", class_="wish_figure")
     if wish is None:
         wish = 0
     else:
-        wish = _convert_str_to_int(wish.get_text(strip=True))
+        wish = convert_str_to_int(wish.get_text(strip=True))
 
     review = soup.find("span", class_="review_figure")
     if review is None:
         review = 0
     else:
-        review = _convert_str_to_int(review.get_text(strip=True))
+        review = convert_str_to_int(review.get_text(strip=True))
 
     return {
         "kream_id": kream_id,
@@ -98,17 +99,3 @@ async def _extract_info(element: ElementHandle):
         "review": review,
         "updated_at": updated_at,
     }
-
-
-def _convert_str_to_int(value: str) -> int:
-    """문자열을 숫자로 변환"""
-
-    if "거래" in value:
-        value = value.replace("거래", "").replace(" ", "")
-
-    if "만" in value:
-        value = value.replace("만", "")
-        return int(float(value) * 10000)
-
-    value = value.replace(",", "")
-    return int(value)

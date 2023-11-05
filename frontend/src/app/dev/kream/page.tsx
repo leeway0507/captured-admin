@@ -2,13 +2,14 @@
 import { ReloadBrowser } from "./fetch";
 import PrdoucCardList from "./product-card-list";
 import ProductDetail from "./product-detail";
+import { toast } from "react-toastify";
 export default function Main() {
     const handleReloadBrowser = async () => {
         const res = await ReloadBrowser().then((res) => {
             if (res.status === 200) {
                 alert("브라우저 재실행 성공");
             } else {
-                alert(`${res.status} 에러 발생`);
+                toast.error(`${res.status} 에러 발생`);
             }
         });
     };

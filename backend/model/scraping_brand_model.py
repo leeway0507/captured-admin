@@ -20,24 +20,27 @@ class KreamScrapingBrandSchema(BaseModel):
 
 class KreamProductDetailSchema(BaseModel):
     kream_id: int
-    product_id:str
+    kream_product_img_url: str
+    kream_product_name: str
+    brand_name: str
+    product_id: str
     retail_price: int
     product_release_date: datetime
     color: str
+    wish: int
+    review: int
+    updated_at: datetime
 
     @field_validator("kream_id", mode="before")
     def convert_str_int(cls, value: str):
         return int(value)
-    
-    @field_validator("product_release_date", mode="before")
-    def change_str_to_datetime(cls, value: str):
-        if isinstance(value, datetime):
-            return value
-        return datetime.strptime(value, "%y/%m/%d")
+
+    @field_validator("brand_name", "kream_product_name")
+    def convert_to_lower(cls, value):
+        return value.lower()
 
     @field_validator("retail_price", mode="before")
     def extract_price(cls, value: str):
-
         if isinstance(value, int):
             return value
         match = re.search(r"\(([^)]+)\)", value)
@@ -46,3 +49,15 @@ class KreamProductDetailSchema(BaseModel):
 
         value = re.sub(r"\D", "", value)
         return int(value)
+
+    @field_validator("product_release_date", mode="before")
+    def change_str_to_date(cls, value: str):
+        if isinstance(value, datetime):
+            return value
+        return datetime.strptime(value, "%y/%m/%d")
+
+    @field_validator("updated_at", mode="before")
+    def change_str_to_datetime(cls, value: str):
+        if isinstance(value, datetime):
+            return value
+        return datetime.strptime(value, "%Y-%m-%d %H:%M:%S")

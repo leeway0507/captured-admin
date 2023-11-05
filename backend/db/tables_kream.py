@@ -18,12 +18,13 @@ class KreamProductCardTable(MyBase):
     __tablename__ = "kream_product_card"
 
     kream_id = Column(INTEGER, primary_key=True)
-    brand_name = Column(VARCHAR(255))
-    kream_product_name = Column(VARCHAR(255))
     kream_product_img_url = Column(VARCHAR(255))
+    kream_product_name = Column(VARCHAR(255))
+    brand_name = Column(VARCHAR(255))
     retail_price = Column(INTEGER, nullable=True)
     product_release_date = Column(DATETIME, nullable=True)
-    trading_volume = Column(INTEGER)
+    color = Column(VARCHAR(255), nullable=True)
+    trading_volume = Column(INTEGER, nullable=True)
     wish = Column(INTEGER)
     review = Column(INTEGER)
     updated_at = Column(DATETIME)

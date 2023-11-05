@@ -2,13 +2,15 @@
 import { CustomTable } from "./table/table";
 import Link from "next/link";
 import { handleProductDtailSubmit } from "../../product-detail";
-import { useRef, useMemo, useState, useEffect } from "react";
+import { useRef, useState, useEffect } from "react";
 import { scrapingProps } from "../../product-detail";
 import { useRouter } from "next/navigation";
+import { insertScarpToDB } from "../../fetch";
+import { toast } from "react-toastify";
 
 //css
 const restartBtn =
-    "black-bar p-4 text-xl disabled:bg-light-gray disabled:border disabled:border-main-black disabled:cursor-not-allowed disabled:text-main-black";
+    "black-bar-with-disabled p-4 text-xl disabled:bg-light-gray disabled:border disabled:border-main-black disabled:cursor-not-allowed disabled:text-main-black";
 
 const createTableData = (
     scrapPlan: [String, any][],
@@ -54,8 +56,12 @@ export default function ScrapResult({ fetchData }: { fetchData: any }) {
         kream_trading_volume: kreamTradingVolume,
         kream_buy_and_sell: kreamBuyandSell,
         kream_product_bridge: kreamProductBridge,
+        db_update: dbUpdate,
+        num_process: numProcess,
+        ref_product_card: refProductCard,
         ...res
     } = fetchData;
+
     const scrapPlan = Object.entries(scrapResult);
     const scrapSuccess = scrapPlan.filter(([key, value]) => value === "success");
     const scrapFailed = scrapPlan.filter(([key, value]) => value !== "success" && value !== "not_scrap");
@@ -71,7 +77,7 @@ export default function ScrapResult({ fetchData }: { fetchData: any }) {
     const submitRef = useRef<HTMLButtonElement>(null);
     const [configState, setConfigState] = useState<scrapingProps>({
         brandName,
-        numProcess: 4,
+        numProcess: numProcess,
         kreamIds: scrapFailed
             .reduce((acc, [kreamId, error]) => {
                 return acc + "," + kreamId;
@@ -102,7 +108,18 @@ export default function ScrapResult({ fetchData }: { fetchData: any }) {
     useEffect(() => {
         if (reStartScrapName === "") return;
         router.push(`/dev/kream/scrap-result/${reStartScrapName}`);
-    }, [reStartScrapName]);
+    }, [reStartScrapName, router]);
+
+    const handleDB = async (scrapName: string) => {
+        await insertScarpToDB(scrapName).then((res) => {
+            console.log(res);
+            if (res.status === 200) {
+                toast.success("DB 넣기 성공!");
+            } else {
+                toast.error("DB 넣기 실패!");
+            }
+        });
+    };
 
     return (
         <>
@@ -110,9 +127,13 @@ export default function ScrapResult({ fetchData }: { fetchData: any }) {
                 제품 상세정보 수집결과
                 <span className="ps-4 text-2xl">({scrapName})</span>
             </div>
-            <div className="flex gap-4 text-2xl">
-                <div>수집 브랜드</div>
+            <div className="grid text-xl grid-flow-col">
+                <div>수집 브랜드 </div>
                 <div>{brandName}</div>
+                <div>실행 프로세스</div>
+                <div>{numProcess} 개</div>
+                <div>참고 제품 리스트</div>
+                <div className="text-xl">{refProductCard.slice(0, 30)}</div>
             </div>
             <div className="border p-4 text-xl grid grid-rows-2">
                 <div className="grid grid-cols-8 border-b mb-4 pb-2">
@@ -141,7 +162,7 @@ export default function ScrapResult({ fetchData }: { fetchData: any }) {
                 <CustomTable defaultData={tableData} tableClassName="w-full text-xl    " />
             </div>
 
-            <div className="flex gap-4 max-w-[800px] text-xl">
+            <div className="flex gap-4 w-full text-xl">
                 <div className="flex flex-col">
                     <div>재실행 예정 </div>
                     <div className="flex-center grow bg-white py-2 border border-main-black">
@@ -166,6 +187,13 @@ export default function ScrapResult({ fetchData }: { fetchData: any }) {
                     className={`${restartBtn}`}
                     disabled={scrapFailed.length === 0}>
                     {scrapFailed.length === 0 ? "실패 목록 없음" : "실패 목록 재실행"}
+                </button>
+                <button
+                    className="black-bar-with-disabled flex-right p-2 text-xl"
+                    onClick={() => handleDB(scrapName)}
+                    disabled={dbUpdate}>
+                    {" "}
+                    {dbUpdate ? "DB 넣기 완료" : "DB에 넣기"}
                 </button>
                 <Link href="/dev/kream/scrap-result/result-list" className="black-bar p-4 text-xl">
                     돌아가기

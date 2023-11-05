@@ -9,14 +9,14 @@
   .black-bar {
       @apply bg-main-black flex-center text-white py-3 rounded-lg active:text-main-black active:bg-light-gray cursor-pointer text-sm;
   }
+  .black-bar-with-disabled{
+    @apply black-bar disabled:bg-rose-800 disabled:border disabled:border-main-black disabled:cursor-not-allowed disabled:text-white
+  }
   .black-bar-modal {
       @apply bg-main-black flex-center text-white py-3 rounded-lg active:text-main-black active:bg-light-gray cursor-pointer text-sm;
   }
   .black-bar-xl {
       @apply black-bar tracking-[0.3rem] text-base;
-  }
-  .disabled-bar {
-      @apply bg-deep-gray flex-center text-white py-3 rounded-lg cursor-not-allowed text-sm;
   }
   .disabled-bar-xl {
       @apply disabled-bar tracking-[0.3rem] text-base;

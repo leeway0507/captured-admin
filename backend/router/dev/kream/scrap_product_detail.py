@@ -16,14 +16,13 @@ import json
 from dotenv import dotenv_values
 
 from .main import KreamPage
-from .utils import load_page,load_cookies
+from .utils import load_page, load_cookies, convert_str_to_int
 from model.db_model_kream import KreamBuyAndSellSchema, KreamTradingVolumeSchema
 from model.scraping_brand_model import KreamProductDetailSchema
 from .create_log import create_last_update_kream_detail_log
 
 
 config = dotenv_values(".env.dev")
-
 
 
 async def scrap_product_detail_main(
@@ -39,8 +38,6 @@ async def scrap_product_detail_main(
     assert kream_page.init_page, none_init_error
     assert kream_page.context, none_context_error
 
-    
-
     init_tempfiles()
     n_p = num_process - 1
     p_list = [await kream_page.context.new_page() for _ in range(n_p)]
@@ -49,34 +46,48 @@ async def scrap_product_detail_main(
     if target_kream_ids:
         k_list = target_kream_ids.split(",")
     else:
-        k_list = load_kream_id_list(brand_name=brand)
+        k_list = load_kream_id_list(brand)
 
     print(f"scrap len : {len(k_list)}")
 
     split_k_list = split_size(k_list, num_process)
     co_list = [scrap_product_sub_process(p_list[i], split_k_list[i]) for i in range(num_process)]
     result = await asyncio.gather(*co_list)
-    merged_result = {k: v.replace("=","") for d in result for k, v in d.items()}
-    
+    merged_result = {k: v.replace("=", "") for d in result for k, v in d.items()}
 
+    path = config["KREAM_DETAILS_TEMP_DIR"]
+    assert path, "Env KREAM_DETAILS_TEMP_DIR is not exist"
+    path += "process_result.json"
+    if target_kream_ids:
+        ref_product_card = target_kream_ids
+    else:
+        ref_product_card = get_last_update_product_card_name(brand)[1]
 
-    with open("router/dev/kream/data/detail/temp/process_result.json", "w") as f:
-        meta = {"num_process":num_process,"scrap_result":merged_result}
+    with open(path, "w") as f:
+        meta = {
+            "num_process": num_process,
+            "ref_product_card": ref_product_card,
+            "scrap_result": merged_result,
+            "db_update": False,
+        }
         f.write(json.dumps(meta, ensure_ascii=False))
 
     scrap_name = None
-    try : 
+    try:
         scrap_name = await save_scrap_files(brand)
         create_last_update_kream_detail_log(scrap_name)
 
     except Exception as e:
         print("scrap_product_detail_main")
-        print(''.join(format_exception(None, e, e.__traceback__)))
-        return {"scrap_status":"fail","scrap_name": None, "scrap_result": merged_result,"error": str(e)}
+        print("".join(format_exception(None, e, e.__traceback__)))
+        return {
+            "scrap_status": "fail",
+            "scrap_name": None,
+            "scrap_result": merged_result,
+            "error": str(e),
+        }
 
-    
-    return {"scrap_status":"success","scrap_name": scrap_name}
-        
+    return {"scrap_status": "success", "scrap_name": scrap_name}
 
 
 async def scrap_product_sub_process(page: Page, kream_id_list: List[int]):
@@ -85,13 +96,11 @@ async def scrap_product_sub_process(page: Page, kream_id_list: List[int]):
     await load_cookies(page)
     await asyncio.sleep(2)
 
-    lst = {k: 'not_scrap' for k in kream_id_list}
+    lst = {k: "not_scrap" for k in kream_id_list}
     for i, kream_id in enumerate(kream_id_list):
-        
         print(f"{i+1}/{len(kream_id_list)}")
 
-        try : 
-
+        try:
             url = f"https://kream.co.kr/products/{kream_id}"
             await load_page(page, url)
 
@@ -113,10 +122,10 @@ async def scrap_product_sub_process(page: Page, kream_id_list: List[int]):
 
         except Exception as e:
             print("scrap_product_sub_process")
-            print(''.join(format_exception(None, e, e.__traceback__)))
+            print("".join(format_exception(None, e, e.__traceback__)))
             lst[kream_id] = str(e)
             continue
-    
+
     await page.close()
     return lst
 
@@ -130,12 +139,47 @@ async def get_product_detail(page: Page, kream_id: int) -> Dict[str, Any]:
     soup_list = await get_soup_all(page, ".detail-box")
 
     d_list = [soup.get_text(strip=True, separator="|").split("|") for soup in soup_list]
+
+    title = await page.query_selector("p.title")
+    assert title, "get_product_detail : p.title is None."
+    kream_product_name = await title.inner_text()
+
+    review = await page.query_selector(".product_detail_item_title.reviews")
+    assert review, "get_product_detail : review is None"
+    review = await review.inner_text()
+    review = review.split(" ")
+    if len(review) == 1:
+        review = "0"
+    else:
+        review = review[-1].strip()
+
+    img_url = await page.query_selector(".picture.product_img")
+    assert img_url, "get_product_detail : img_url is None"
+    img_url = BeautifulSoup(await img_url.inner_html(), "html.parser")
+    kream_product_img_url = img_url.find("img")["src"]  # type:ignore
+
+    brand = await page.query_selector(
+        "div.product-branding-feed-container > div > div > div > span "
+    )
+    assert brand, "get_product_detail : brand is None"
+    brand = await brand.inner_text()
+
+    wish = await page.query_selector(".wish_count_num")
+    assert wish, "get_product_detail : wish is None"
+    wish = await wish.inner_text()
+
     return {
         "kream_id": kream_id,
+        "kream_product_img_url": kream_product_img_url,
+        "kream_product_name": kream_product_name,
+        "brand_name": brand,
         "retail_price": d_list[0][1],
         "product_id": d_list[1][1],
         "product_release_date": d_list[2][1],
         "color": d_list[3][1],
+        "wish": convert_str_to_int(wish),
+        "review": convert_str_to_int(review),
+        "updated_at": datetime.now().replace(microsecond=0),
     }
 
 
@@ -259,12 +303,11 @@ async def _scrap_trading_volume_from(
     await trading_volume_button.click()
 
     price_btn = "div[class='price_body']"
-    try : 
+    try:
         await page.wait_for_selector(price_btn, timeout=5000)
     except Exception as e:
         print(f"{kream_id} : 체결내역 더보기가 없는 제품으로 추정")
         return []
-
 
     modal = await page.query_selector(price_btn)
     assert modal, "modal not found"
@@ -277,8 +320,12 @@ async def _scrap_trading_volume_from(
         i += 1
         start = end
         await asyncio.sleep(1)
-        end = await page.evaluate("Array.from(document.querySelectorAll('.list_txt.is_active')).length")
-        date_str= await page.evaluate(f"Array.from(document.querySelectorAll('.list_txt.is_active')).slice(-1)[0].innerText")
+        end = await page.evaluate(
+            "Array.from(document.querySelectorAll('.list_txt.is_active')).length"
+        )
+        date_str = await page.evaluate(
+            f"Array.from(document.querySelectorAll('.list_txt.is_active')).slice(-1)[0].innerText"
+        )
         last_date = datetime.strptime(date_str, "%y/%m/%d").date()
 
         # print(f"kream_id:{kream_id},last_date : {last_date}, target_date : {target_date}, end : {end}")
@@ -328,13 +375,22 @@ def _extract_volume_data_from(body_list: List) -> List[List]:
     return [preprocess_items(tags) for tags in body_list]
 
 
-def load_kream_id_list(brand_name: str, path: Optional[str] = None) -> List[str]:
+def get_last_update_product_card_name(brand_name: str, path=None) -> Tuple[str, str]:
     if path is None:
-        path = f"router/dev/kream/data/brand/{brand_name}"
+        path = config["KREAM_PRODUCT_CARD_LIST_DIR"]
+        assert path, "Env KREAM_PRODUCT_CARD_LIST_DIR is not exist"
+        path += brand_name
 
     file_list = os.listdir(path)
     file_list.sort()
+
     file_name = file_list[-1]
+
+    return path, file_name
+
+
+def load_kream_id_list(brand_name: str, path: Optional[str] = None) -> List[str]:
+    path, file_name = get_last_update_product_card_name(brand_name, path)
     print("load : ", file_name)
     df = pd.read_parquet(path + "/" + file_name)
     return df["kream_id"].tolist()[:10]
@@ -375,12 +431,13 @@ def init_tempfiles():
         with open(path + file, "w") as f:
             f.write("")
 
+
 async def get_soup(page: Page, value: str) -> BeautifulSoup | None:
     e = await page.query_selector(value)
     if e is None:
         return None
     html = await e.inner_html()
-    soup = BeautifulSoup(html,"html.parser")
+    soup = BeautifulSoup(html, "html.parser")
     return soup
 
 
@@ -389,7 +446,7 @@ async def get_soup_all(page: Page, value: str) -> List[BeautifulSoup]:
     e_list = await page.query_selector_all(value)
     if len(e_list) == 0:
         return []
-    soup_list = [BeautifulSoup(await e.inner_html(),"html.parser") for e in e_list]
+    soup_list = [BeautifulSoup(await e.inner_html(), "html.parser") for e in e_list]
     return soup_list
 
 
@@ -399,7 +456,8 @@ async def _save_temp_files(file_name: str, data: Union[List, Dict]):
 
     n = f"{file_name}.json"
     async with aiofiles.open(path + n, "a") as f:
-        await f.write(json.dumps(data, ensure_ascii=False) + ",")
+        await f.write(json.dumps(data, ensure_ascii=False, default=str) + ",")
+    return True
 
 
 async def save_scrap_files(brand_name: str):
@@ -413,7 +471,7 @@ async def save_scrap_files(brand_name: str):
     if not os.path.exists(path):
         os.makedirs(path, exist_ok=True)
 
-    #### product_detail
+    ######################## product_detail
     temp_file_name = f"product_detail.json"
     async with aiofiles.open(temp_path + temp_file_name, "r", encoding="utf-8") as f:
         v = await f.read()
@@ -425,7 +483,7 @@ async def save_scrap_files(brand_name: str):
     file_name = f"{file_time}-product_detail.parquet.gzip"
     df.to_parquet(path + file_name, compression="gzip")
 
-    #### trading_volume
+    ######################## trading_volume
     temp_file_name = f"trading_volume.json"
     async with aiofiles.open(temp_path + temp_file_name, "r", encoding="utf-8") as f:
         v = await f.read()
@@ -438,7 +496,7 @@ async def save_scrap_files(brand_name: str):
     file_name = f"{file_time}-trading_volume.parquet.gzip"
     df.to_parquet(path + file_name, compression="gzip")
 
-    #### buy_and_sell
+    ######################## buy_and_sell
     temp_file_name = f"buy_and_sell.json"
     async with aiofiles.open(temp_path + temp_file_name, "r", encoding="utf-8") as f:
         v = await f.read()
@@ -455,8 +513,8 @@ async def save_scrap_files(brand_name: str):
     df = df.rename(columns={"index": "kream_product_size"})
     df["updated_at"] = datetime.now().replace(microsecond=0)
 
-    df = pd.DataFrame([KreamBuyAndSellSchema(**row).model_dump() for row in df.to_dict("records")]) # type: ignore
+    df = pd.DataFrame([KreamBuyAndSellSchema(**row).model_dump() for row in df.to_dict("records")])  # type: ignore
 
     file_name = f"{file_time}-buy_and_sell.parquet.gzip"
     df.to_parquet(path + file_name, compression="gzip")
-    return file_time+"-"+brand_name
+    return file_time + "-" + brand_name

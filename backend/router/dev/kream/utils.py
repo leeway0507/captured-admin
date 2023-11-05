@@ -18,16 +18,30 @@ async def save_cookies(page):
 
     # Save cookies to a file or database
     # In this example, cookies are saved to a file named 'cookies.json'
-    with open('router/dev/kream/cookie/cookies.json', 'w') as file:
+    with open("router/dev/kream/cookie/cookies.json", "w") as file:
         file.write(str(cookies))
 
 
 async def load_cookies(page):
     # Load cookies from a file or database
     # In this example, cookies are loaded from a file named 'cookies.json'
-    
-    with open('router/dev/kream/cookie/cookies.json', 'r') as file:
+
+    with open("router/dev/kream/cookie/cookies.json", "r") as file:
         cookies = eval(file.read())
 
     # Set cookies in the current page
     await page.context.add_cookies(cookies)
+
+
+def convert_str_to_int(value: str) -> int:
+    """문자열을 숫자로 변환"""
+
+    if "거래" in value:
+        value = value.replace("거래", "").replace(" ", "")
+
+    if "만" in value:
+        value = value.replace("만", "")
+        return int(float(value) * 10000)
+
+    value = value.replace(",", "")
+    return int(value)

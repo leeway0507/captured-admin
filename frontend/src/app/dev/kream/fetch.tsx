@@ -44,3 +44,9 @@ export async function getScraptList() {
     const res = await fetch(url);
     return { status: res.status, data: await res.json() };
 }
+
+export async function insertScarpToDB(scrapName: string) {
+    const url = `${process.env.NEXT_PUBLIC_API_URL}/api/dev/kream/db/update-all-detail-kream-to-db?scrapName=${scrapName}`;
+    const res = await fetch(url);
+    return { status: res.status, data: await res.json() };
+}

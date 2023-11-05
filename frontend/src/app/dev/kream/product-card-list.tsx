@@ -1,5 +1,6 @@
 import { useReducer, useRef } from "react";
 import { InitProductCardList } from "./fetch";
+import { toast } from "react-toastify";
 
 interface scrapingProps {
     brandName: string;
@@ -48,10 +49,10 @@ export default function PrdoucCardList() {
 
     const handleSubmit = async (state: scrapingProps) => {
         if (state.brandName === "") {
-            return alert("브랜드 네임을 입력해주세요");
+            return toast.error("브랜드 네임을 입력해주세요.");
         }
         if (state.maxScroll === 0) {
-            return alert("최대 스크롤 수를 입력해주세요");
+            return toast.error("최대 스크롤 수를 입력해주세요.");
         }
 
         const start = confirm(`브랜드네임 [${state.brandName}]이 맞으면 시작합니다.`);
@@ -63,12 +64,12 @@ export default function PrdoucCardList() {
         disableButton();
         await InitProductCardList(state.brandName, state.maxScroll, state.minWish, state.minVolume)
             .then((res) => {
-                res.status === 200 ? alert("요청 완료") : alert(`에러 발생 :${res.status}`);
+                res.status === 200 ? toast.success("요청 성공") : toast.error(`에러 발생 :${res.status}`);
                 enableButton();
             })
             .catch((e) => {
                 console.log(e);
-                alert("네트워크 에러 발생");
+                toast.error("네트워크 에러 발생");
                 enableButton();
             });
     };
@@ -129,7 +130,7 @@ export default function PrdoucCardList() {
             </div>
             <button
                 ref={submitRef}
-                className="black-bar min-w-[150px] text-xl disabled:bg-rose-800 disabled:border disabled:border-main-black disabled:cursor-not-allowed disabled:text-white"
+                className="black-bar-with-disabled min-w-[150px] text-xl "
                 onClick={() => handleSubmit(state)}>
                 요청하기
             </button>

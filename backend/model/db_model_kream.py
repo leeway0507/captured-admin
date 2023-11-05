@@ -20,17 +20,20 @@ class KreamProductCardSchema(BaseModel):
     kream_product_img_url: str
     retail_price: Optional[int] = None
     product_release_date: Optional[datetime] = None
-    trading_volume: int
+    trading_volume: Optional[int] = None
     wish: int
     review: int
     updated_at: datetime
+
+    @field_validator("kream_id", mode="before")
+    def convert_str_int(cls, value: str):
+        return int(value)
 
     @field_validator("brand_name", "kream_product_name")
     def convert_to_lower(cls, value):
         return value.lower()
 
     @field_validator("retail_price", mode="before")
-    
     def extract_price(cls, value: str):
         if isinstance(value, int):
             return value
@@ -40,6 +43,12 @@ class KreamProductCardSchema(BaseModel):
 
         value = re.sub(r"\D", "", value)
         return int(value)
+
+    @field_validator("updated_at", mode="before")
+    def change_str_to_datetime(cls, value: str):
+        if isinstance(value, datetime):
+            return value
+        return datetime.strptime(value, "%Y-%m-%dT%H:%M:%S")
 
 
 class KreamTradingVolumeSchema(BaseModel):
@@ -62,7 +71,6 @@ class KreamTradingVolumeSchema(BaseModel):
 
     @field_validator("price", mode="before")
     def extract_price(cls, value: str):
-        
         if isinstance(value, int):
             return value
 
