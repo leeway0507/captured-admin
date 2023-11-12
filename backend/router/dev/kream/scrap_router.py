@@ -5,19 +5,17 @@ from sqlalchemy.ext.asyncio import AsyncSession
 from fastapi import APIRouter, Depends, HTTPException
 from dotenv import dotenv_values
 
-from db.dev_db import get_dev_db
-from .kream.load_scrap_result import *
-from .kream.scrap_product_detail import scrap_product_detail_main, save_scrap_files
-from .kream.create_log import get_scrap_result
-from .kream.scrap_product_card_list import *
+from .components.load_scrap_result import *
+from .components.scrap_product_detail import scrap_product_detail_main, save_scrap_files
+from .components.create_log import get_scrap_result
+from .components.scrap_product_card_list import *
+from .components.main import KreamPage
 
-from .kream.main import KreamPage
+config = dotenv_values(".env.dev")
 
 kream_scrap_router = APIRouter()
 
 kream_dict = {}
-
-config = dotenv_values(".env.dev")
 
 
 async def get_kream_page():
@@ -57,16 +55,21 @@ async def init_product_detail(
 
     # login
     await kream_page.login()
-    result = await scrap_product_detail_main(kream_page, brandName, kreamIds, numProcess)
+    result = await scrap_product_detail_main(
+        kream_page, brandName, kreamIds, numProcess
+    )
     return result
 
 
 @kream_scrap_router.get("/init-product-card-list")
 async def init_scraping_brand(
-    brandName: str, maxScroll: int, minWish: int, minVolume: int, kream_page=Depends(get_kream_page)
+    brandName: str,
+    maxScroll: int,
+    minWish: int,
+    minVolume: int,
+    kream_page=Depends(get_kream_page),
 ):
-    """order_history 조회"""
-    error_log = {}
+    """크림 제품 검색 페이지 스크랩"""
     page = kream_page.login()
     try:
         await scrap_product_card_list(page, brandName, maxScroll, minWish, minVolume)
@@ -77,6 +80,8 @@ async def init_scraping_brand(
 
 @kream_scrap_router.get("/get-scrap-list")
 def get_kream_scrap_list():
+    """scrap 결과 조회"""
+
     file_list = os.listdir(config["KREAM_SCRAP_RESULT_DIR"])
     file_list = [x.split(".json")[0] for x in file_list]
     file_list.sort(reverse=True)

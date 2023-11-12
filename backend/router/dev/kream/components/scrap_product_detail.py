@@ -18,7 +18,7 @@ from dotenv import dotenv_values
 from .main import KreamPage
 from .utils import load_page, load_cookies, convert_str_to_int
 from model.db_model_kream import KreamBuyAndSellSchema, KreamTradingVolumeSchema
-from model.scraping_brand_model import KreamProductDetailSchema
+from model.kream_scraping import KreamProductDetailSchema
 from .create_log import create_last_update_kream_detail_log
 
 
@@ -51,7 +51,10 @@ async def scrap_product_detail_main(
     print(f"scrap len : {len(k_list)}")
 
     split_k_list = split_size(k_list, num_process)
-    co_list = [scrap_product_sub_process(p_list[i], split_k_list[i]) for i in range(num_process)]
+    co_list = [
+        scrap_product_sub_process(p_list[i], split_k_list[i])
+        for i in range(num_process)
+    ]
     result = await asyncio.gather(*co_list)
     merged_result = {k: v.replace("=", "") for d in result for k, v in d.items()}
 
@@ -74,7 +77,7 @@ async def scrap_product_detail_main(
 
     scrap_name = None
     try:
-        scrap_name = await save_scrap_files(brand)
+        scrap_name = await save_scrap_files(brand)  # type:ignore
         create_last_update_kream_detail_log(scrap_name)
 
     except Exception as e:
@@ -97,8 +100,11 @@ async def scrap_product_sub_process(page: Page, kream_id_list: List[int]):
     await asyncio.sleep(2)
 
     lst = {k: "not_scrap" for k in kream_id_list}
-    for i, kream_id in enumerate(kream_id_list):
+    kream_id_list_list = [[k, 0] for k in kream_id_list]
+    for i, kream_id in enumerate(kream_id_list_list):
         print(f"{i+1}/{len(kream_id_list)}")
+
+        kream_id, iter_count = kream_id
 
         try:
             url = f"https://kream.co.kr/products/{kream_id}"
@@ -121,9 +127,12 @@ async def scrap_product_sub_process(page: Page, kream_id_list: List[int]):
                 lst[kream_id] = "failed:not_trading_volume"
 
         except Exception as e:
-            print("scrap_product_sub_process")
-            print("".join(format_exception(None, e, e.__traceback__)))
-            lst[kream_id] = str(e)
+            if iter_count == 0:
+                kream_id_list_list.append([kream_id, iter_count + 1])
+            else:
+                print("scrap_product_sub_process")
+                print("".join(format_exception(None, e, e.__traceback__)))
+                lst[kream_id] = str(e)
             continue
 
     await page.close()
@@ -190,7 +199,9 @@ async def get_product_detail(page: Page, kream_id: int) -> Dict[str, Any]:
 
 async def get_buy_and_sell(page: Page, kream_id: int):
     """sell과 buy 정보를 가져오는 함수"""
-    sell = await page.query_selector("//div[contains(@class, 'btn_wrap')]/div/button[1]")
+    sell = await page.query_selector(
+        "//div[contains(@class, 'btn_wrap')]/div/button[1]"
+    )
     assert sell, "판매 버튼이 잡히지 않음"
     await sell.click()
 
@@ -331,9 +342,7 @@ async def _scrap_trading_volume_from(
         # print(f"kream_id:{kream_id},last_date : {last_date}, target_date : {target_date}, end : {end}")
 
         if target_date < last_date:
-            scroll_eval = (
-                "(async () => { document.querySelector('.price_body').scrollBy(0, 3000); })()"
-            )
+            scroll_eval = "(async () => { document.querySelector('.price_body').scrollBy(0, 3000); })()"
             await page.evaluate(scroll_eval)
         else:
             break

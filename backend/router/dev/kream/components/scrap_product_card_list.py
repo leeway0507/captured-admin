@@ -1,4 +1,3 @@
-import asyncio
 from datetime import datetime
 from time import sleep
 import os
@@ -7,7 +6,7 @@ from playwright.async_api import Page, ElementHandle
 from bs4 import BeautifulSoup
 import pandas as pd
 
-from model.scraping_brand_model import KreamScrapingBrandSchema
+from model.kream_scraping import KreamScrapingBrandSchema
 from .utils import load_page, convert_str_to_int
 
 
@@ -28,20 +27,28 @@ async def scrap_product_card_list(
         os.makedirs(path, exist_ok=True)
 
     test_dir = f"test/playwright/scraping_raw/{brand_name}_raw.parquet"
-    pd.DataFrame([await card.inner_html() for card in product_card_list]).to_parquet(test_dir)
+    pd.DataFrame([await card.inner_html() for card in product_card_list]).to_parquet(
+        test_dir
+    )
 
     # data validation & filtering
     product_card_list = [
-        KreamScrapingBrandSchema(**await _extract_info(card)) for card in product_card_list
+        KreamScrapingBrandSchema(**await _extract_info(card))
+        for card in product_card_list
     ]
     product_card_list = list(
-        filter(lambda x: x.trading_volume >= min_volume and x.wish >= min_wish, product_card_list)
+        filter(
+            lambda x: x.trading_volume >= min_volume and x.wish >= min_wish,
+            product_card_list,
+        )
     )
 
     file_name = datetime.now().strftime("%y%m%d-%H%M%S")
 
     # saving data
-    product_card_list = [product_card.model_dump() for product_card in product_card_list]
+    product_card_list = [
+        product_card.model_dump() for product_card in product_card_list
+    ]
     return pd.DataFrame(product_card_list).to_parquet(
         f"{path}/{file_name}-product_card_list.parquet.gzip", compression="gzip"
     )
@@ -54,7 +61,9 @@ async def _scroll_page(page: Page, max_scroll: int):
 
     while i < max_scroll:
         i += 1
-        await page.evaluate(f"(async () => {{ window.scrollTo(0, {scroll_distance}); }})();")
+        await page.evaluate(
+            f"(async () => {{ window.scrollTo(0, {scroll_distance}); }})();"
+        )
         scroll_distance += scroll_distance
         sleep(delay)
 

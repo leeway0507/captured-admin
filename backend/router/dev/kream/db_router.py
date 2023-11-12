@@ -7,16 +7,15 @@ from dotenv import dotenv_values
 
 from db.dev_db import get_dev_db
 
-from .kream.scrap_product_card_list import *
-from .kream.update_to_db import (
+from .components.scrap_product_card_list import *
+from .components.update_to_db import (
     update_scrap_product_card_list_to_db,
     update_scrap_product_card_detail_to_db,
     update_scrap_trading_volume_to_db,
     update_scrap_buy_and_sell_to_db,
     update_scrap_kream_product_bridge_to_db,
 )
-
-from .kream.create_log import update_scrap_result
+from .components.create_log import update_scrap_result
 
 kream_db_router = APIRouter()
 

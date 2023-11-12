@@ -5,8 +5,8 @@ from fastapi import FastAPI, Request
 from fastapi.exceptions import RequestValidationError
 from fastapi.responses import JSONResponse
 from router.production import production_router
-from router.dev import kream_scrap_router, kream_db_router
-
+from router.dev.kream import kream_scrap_router, kream_db_router
+from router.dev.shop import shop_router, shop_db_router
 
 app = FastAPI()
 
@@ -28,8 +28,12 @@ app.add_middleware(
 )
 
 
-app.include_router(kream_db_router, prefix="/api/dev/kream/db", tags=["dev/db"])
-app.include_router(kream_scrap_router, prefix="/api/dev/kream", tags=["dev/scrap"])
+app.include_router(shop_db_router, prefix="/api/dev/shop/db", tags=["dev/shop/db"])
+app.include_router(shop_router, prefix="/api/dev/shop", tags=["dev/shop/scrap"])
+app.include_router(kream_db_router, prefix="/api/dev/kream/db", tags=["dev/kream/db"])
+app.include_router(
+    kream_scrap_router, prefix="/api/dev/kream", tags=["dev/kream/scrap"]
+)
 app.include_router(production_router, prefix="/api/production", tags=["production"])
 
 

@@ -1,7 +1,7 @@
 import asyncio
 import base64
 from dotenv import dotenv_values
-from .utils import load_page,load_cookies,save_cookies
+from .utils import load_page, load_cookies, save_cookies
 
 from playwright.async_api import (
     async_playwright,
@@ -19,8 +19,8 @@ def raise_timeout_error(inner_function):
             return await inner_function(*arg, **kwargs)
 
         except PlaywrightTimeoutError as e:
-            print("tile_out_error",e)
-            raise(e)
+            print("tile_out_error", e)
+            raise (e)
 
     return wrapper
 
@@ -30,7 +30,7 @@ browser_error = "browser가 None입니다. init 메서드를 먼저 실행해주
 login_password_error = "KREAM_PASSWORD가 설정되지 않았습니다. 재확인 바랍니다."
 
 
-class KreamPage:
+class customPage:
     def __init__(self):
         self.browser = None
         self.context = None
@@ -44,6 +44,22 @@ class KreamPage:
         self.init_page = await self.context.new_page()
         await load_cookies(self.init_page)
 
+    async def close_browser(self):
+        assert isinstance(self.browser, Browser), browser_error
+        return await self.browser.close()
+
+    async def close_page(self, page):
+        return await page.close()
+
+    def get_init_page(self):
+        assert isinstance(self.init_page, Page), init_page_error
+        return self.init_page
+
+    def get_context(self):
+        return self.context
+
+
+class KreamPage(customPage):
     async def is_login(self, page):
         """로그인 상태를 확인하는 메서드"""
         # top_link
@@ -53,26 +69,12 @@ class KreamPage:
             return True
         return False
 
-    async def close_browser(self):
-        assert isinstance(self.browser, Browser), browser_error
-        return await self.browser.close()
-
-    async def close_page(self, page):
-        return await page.close()
-
     async def login(self):
         assert isinstance(self.init_page, Page), init_page_error
         login_page = await load_page(self.init_page, "https://kream.co.kr/login")
 
         if not await self.is_login(login_page):
             return await self._login(login_page, **self._get_secret())
-
-    def get_init_page(self):
-        assert isinstance(self.init_page, Page), init_page_error
-        return self.init_page
-
-    def get_context(self):
-        return self.context
 
     def _get_secret(self):
         config = dotenv_values(".env.dev")

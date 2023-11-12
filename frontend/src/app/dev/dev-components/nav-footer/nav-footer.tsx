@@ -11,7 +11,7 @@ export default function NavFooter({ children }: { children: JSX.Element }) {
             <div className="grow px-8 bg-slate-50">
                 <div className="flex flex-col h-full gap-8 w-full max-w-5xl p-8">{children}</div>
             </div>
-            <ToastContainer position="top-center" autoClose={2000} transition={Flip} pauseOnFocusLoss={false} />
+            <ToastContainer position="top-right" autoClose={5000} transition={Flip} pauseOnFocusLoss={false} />
         </main>
     );
 }

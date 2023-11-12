@@ -1,0 +1,338 @@
+{
+    "brand_list": [
+        "adidas originals",
+        "afew goods",
+        "air jordan",
+        "arte antwerp",
+        "arys",
+        "asics sportstyle",
+        "autry action shoes",
+        "beams+",
+        "birkenstock",
+        "brandblack",
+        "by parra",
+        "carhartt wip",
+        "clarks",
+        "converse",
+        "crocs",
+        "daily paper",
+        "diadora",
+        "dr. martens",
+        "ewing athletics",
+        "filling pieces",
+        "g-shock",
+        "gestalten verlag",
+        "gramicci",
+        "hartcopy",
+        "hgbb studio",
+        "hoka one one",
+        "idea",
+        "jason markk",
+        "kangaroos",
+        "karhu",
+        "keen",
+        "lacoste",
+        "le coq sportif",
+        "market",
+        "mizuno",
+        "new balance",
+        "nike",
+        "on running",
+        "pal sporting goods",
+        "porter",
+        "puma",
+        "raf simons",
+        "reebok",
+        "salomon",
+        "saucony",
+        "snow peak",
+        "stance",
+        "suicoke",
+        "the new originals",
+        "the north face",
+        "timberland",
+        "universal works",
+        "vans",
+        "vault by vans",
+        "veja",
+        "viron",
+        "wood wood",
+        "y-3"
+    ],
+    "data": [
+        {
+            "shop_name": "a_few_store",
+            "brand_name": "adidas originals",
+            "brand_url": "https://en.afew-store.com./collections/adidas-originals"
+        },
+        {
+            "shop_name": "a_few_store",
+            "brand_name": "afew goods",
+            "brand_url": "https://en.afew-store.com./collections/afew-goods"
+        },
+        {
+            "shop_name": "a_few_store",
+            "brand_name": "air jordan",
+            "brand_url": "https://en.afew-store.com./collections/air-jordan"
+        },
+        {
+            "shop_name": "a_few_store",
+            "brand_name": "arte antwerp",
+            "brand_url": "https://en.afew-store.com./collections/arte-antwerp"
+        },
+        {
+            "shop_name": "a_few_store",
+            "brand_name": "arys",
+            "brand_url": "https://en.afew-store.com./collections/arys"
+        },
+        {
+            "shop_name": "a_few_store",
+            "brand_name": "asics sportstyle",
+            "brand_url": "https://en.afew-store.com./collections/asics"
+        },
+        {
+            "shop_name": "a_few_store",
+            "brand_name": "autry action shoes",
+            "brand_url": "https://en.afew-store.com./collections/autry-action-shoes"
+        },
+        {
+            "shop_name": "a_few_store",
+            "brand_name": "beams+",
+            "brand_url": "https://en.afew-store.com./collections/beams"
+        },
+        {
+            "shop_name": "a_few_store",
+            "brand_name": "birkenstock",
+            "brand_url": "https://en.afew-store.com/collections/birkenstock"
+        },
+        {
+            "shop_name": "a_few_store",
+            "brand_name": "brandblack",
+            "brand_url": "https://en.afew-store.com./collections/brandblack"
+        },
+        {
+            "shop_name": "a_few_store",
+            "brand_name": "by parra",
+            "brand_url": "https://en.afew-store.com./collections/by-parra"
+        },
+        {
+            "shop_name": "a_few_store",
+            "brand_name": "carhartt wip",
+            "brand_url": "https://en.afew-store.com./collections/carhartt-wip"
+        },
+        {
+            "shop_name": "a_few_store",
+            "brand_name": "clarks",
+            "brand_url": "https://en.afew-store.com./collections/clarks"
+        },
+        {
+            "shop_name": "a_few_store",
+            "brand_name": "converse",
+            "brand_url": "https://en.afew-store.com./collections/converse"
+        },
+        {
+            "shop_name": "a_few_store",
+            "brand_name": "crocs",
+            "brand_url": "https://en.afew-store.com./collections/crocs"
+        },
+        {
+            "shop_name": "a_few_store",
+            "brand_name": "daily paper",
+            "brand_url": "https://en.afew-store.com./collections/daily-paper"
+        },
+        {
+            "shop_name": "a_few_store",
+            "brand_name": "diadora",
+            "brand_url": "https://en.afew-store.com./collections/diadora"
+        },
+        { "shop_name": "a_few_store", "brand_name": "dr. martens", "brand_url": "/collections/dr-martens" },
+        {
+            "shop_name": "a_few_store",
+            "brand_name": "ewing athletics",
+            "brand_url": "https://en.afew-store.com./collections/ewing-athletics"
+        },
+        {
+            "shop_name": "a_few_store",
+            "brand_name": "filling pieces",
+            "brand_url": "https://en.afew-store.com./collections/filling-pieces"
+        },
+        {
+            "shop_name": "a_few_store",
+            "brand_name": "g-shock",
+            "brand_url": "https://en.afew-store.com./collections/g-shock"
+        },
+        { "shop_name": "a_few_store", "brand_name": "gestalten verlag", "brand_url": "/collections/gestalten-verlag" },
+        {
+            "shop_name": "a_few_store",
+            "brand_name": "gramicci",
+            "brand_url": "https://en.afew-store.com./collections/gramicci"
+        },
+        {
+            "shop_name": "a_few_store",
+            "brand_name": "hartcopy",
+            "brand_url": "https://en.afew-store.com./collections/hartcopy"
+        },
+        {
+            "shop_name": "a_few_store",
+            "brand_name": "hgbb studio",
+            "brand_url": "https://en.afew-store.com./collections/hgbb-studio"
+        },
+        {
+            "shop_name": "a_few_store",
+            "brand_name": "hoka one one",
+            "brand_url": "https://en.afew-store.com./collections/hoka-one-one"
+        },
+        {
+            "shop_name": "a_few_store",
+            "brand_name": "idea",
+            "brand_url": "https://en.afew-store.com./collections/idea"
+        },
+        {
+            "shop_name": "a_few_store",
+            "brand_name": "jason markk",
+            "brand_url": "https://en.afew-store.com./collections/jason-markk"
+        },
+        {
+            "shop_name": "a_few_store",
+            "brand_name": "kangaroos",
+            "brand_url": "https://en.afew-store.com./collections/kangaroos"
+        },
+        {
+            "shop_name": "a_few_store",
+            "brand_name": "karhu",
+            "brand_url": "https://en.afew-store.com./collections/karhu"
+        },
+        { "shop_name": "a_few_store", "brand_name": "keen", "brand_url": "/collections/keen" },
+        {
+            "shop_name": "a_few_store",
+            "brand_name": "lacoste",
+            "brand_url": "https://en.afew-store.com./collections/lacoste"
+        },
+        {
+            "shop_name": "a_few_store",
+            "brand_name": "le coq sportif",
+            "brand_url": "https://en.afew-store.com./collections/le-coq-sportif"
+        },
+        {
+            "shop_name": "a_few_store",
+            "brand_name": "market",
+            "brand_url": "https://en.afew-store.com./collections/market"
+        },
+        {
+            "shop_name": "a_few_store",
+            "brand_name": "mizuno",
+            "brand_url": "https://en.afew-store.com./collections/mizuno"
+        },
+        {
+            "shop_name": "a_few_store",
+            "brand_name": "new balance",
+            "brand_url": "https://en.afew-store.com./collections/new-balance"
+        },
+        {
+            "shop_name": "a_few_store",
+            "brand_name": "nike",
+            "brand_url": "https://en.afew-store.com./collections/nike"
+        },
+        {
+            "shop_name": "a_few_store",
+            "brand_name": "on running",
+            "brand_url": "https://en.afew-store.com./collections/on"
+        },
+        {
+            "shop_name": "a_few_store",
+            "brand_name": "pal sporting goods",
+            "brand_url": "https://en.afew-store.com./collections/pal-sporting-goods"
+        },
+        {
+            "shop_name": "a_few_store",
+            "brand_name": "porter",
+            "brand_url": "https://en.afew-store.com./collections/porter"
+        },
+        {
+            "shop_name": "a_few_store",
+            "brand_name": "puma",
+            "brand_url": "https://en.afew-store.com./collections/puma"
+        },
+        {
+            "shop_name": "a_few_store",
+            "brand_name": "raf simons",
+            "brand_url": "https://en.afew-store.com./collections/raf-simons"
+        },
+        {
+            "shop_name": "a_few_store",
+            "brand_name": "reebok",
+            "brand_url": "https://en.afew-store.com./collections/reebok"
+        },
+        {
+            "shop_name": "a_few_store",
+            "brand_name": "salomon",
+            "brand_url": "https://en.afew-store.com./collections/salomon"
+        },
+        {
+            "shop_name": "a_few_store",
+            "brand_name": "saucony",
+            "brand_url": "https://en.afew-store.com./collections/saucony"
+        },
+        {
+            "shop_name": "a_few_store",
+            "brand_name": "snow peak",
+            "brand_url": "https://en.afew-store.com./collections/snow-peak"
+        },
+        {
+            "shop_name": "a_few_store",
+            "brand_name": "stance",
+            "brand_url": "https://en.afew-store.com./collections/stance"
+        },
+        {
+            "shop_name": "a_few_store",
+            "brand_name": "suicoke",
+            "brand_url": "https://en.afew-store.com./collections/suicoke"
+        },
+        {
+            "shop_name": "a_few_store",
+            "brand_name": "the new originals",
+            "brand_url": "https://en.afew-store.com./collections/the-new-originals"
+        },
+        {
+            "shop_name": "a_few_store",
+            "brand_name": "the north face",
+            "brand_url": "https://en.afew-store.com./collections/the-north-face"
+        },
+        {
+            "shop_name": "a_few_store",
+            "brand_name": "timberland",
+            "brand_url": "https://en.afew-store.com./collections/timberland"
+        },
+        {
+            "shop_name": "a_few_store",
+            "brand_name": "universal works",
+            "brand_url": "https://en.afew-store.com./collections/universal-works"
+        },
+        {
+            "shop_name": "a_few_store",
+            "brand_name": "vans",
+            "brand_url": "https://en.afew-store.com./collections/vans"
+        },
+        {
+            "shop_name": "a_few_store",
+            "brand_name": "vault by vans",
+            "brand_url": "https://en.afew-store.com./collections/vault-by-vans"
+        },
+        {
+            "shop_name": "a_few_store",
+            "brand_name": "veja",
+            "brand_url": "https://en.afew-store.com./collections/veja"
+        },
+        {
+            "shop_name": "a_few_store",
+            "brand_name": "viron",
+            "brand_url": "https://en.afew-store.com./collections/viron"
+        },
+        {
+            "shop_name": "a_few_store",
+            "brand_name": "wood wood",
+            "brand_url": "https://en.afew-store.com./collections/wood-wood"
+        },
+        { "shop_name": "a_few_store", "brand_name": "y-3", "brand_url": "https://en.afew-store.com./collections/y-3" }
+    ]
+}

@@ -54,6 +54,8 @@ class KreamProductDetailSchema(BaseModel):
     def change_str_to_date(cls, value: str):
         if isinstance(value, datetime):
             return value
+        if value == "-":
+            value = "00/00/00"
         return datetime.strptime(value, "%y/%m/%d")
 
     @field_validator("updated_at", mode="before")
