@@ -22,7 +22,7 @@ class ShopInfoTable(MyBase):
     tax_reduction_rate = Column(FLOAT, nullable=True)
     del_agc_tax_reduction_rate = Column(FLOAT, nullable=True)
     dome_ship_price = Column(INTEGER, nullable=True)
-    intl_ship_price = Column(INTEGER, nullable=True)
+    intl_ship_price = Column(FLOAT, nullable=True)
     from_us_shipping = Column(BOOLEAN, nullable=True)
     is_ddp = Column(BOOLEAN, nullable=True)
     country = Column(VARCHAR(50), nullable=True)

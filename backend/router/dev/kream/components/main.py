@@ -11,20 +11,6 @@ from playwright.async_api import (
 )
 
 
-def raise_timeout_error(inner_function):
-    """Timeout Error를 처리하는 데코레이터"""
-
-    async def wrapper(*arg, **kwargs):
-        try:
-            return await inner_function(*arg, **kwargs)
-
-        except PlaywrightTimeoutError as e:
-            print("tile_out_error", e)
-            raise (e)
-
-    return wrapper
-
-
 init_page_error = "init_page가 None입니다. init 메서드를 먼저 실행해주세요."
 browser_error = "browser가 None입니다. init 메서드를 먼저 실행해주세요."
 login_password_error = "KREAM_PASSWORD가 설정되지 않았습니다. 재확인 바랍니다."
@@ -36,10 +22,9 @@ class customPage:
         self.context = None
         self.init_page = None
 
-    @raise_timeout_error
     async def init(self) -> None:
         pw = await async_playwright().start()
-        self.browser = await pw.firefox.launch(headless=False)
+        self.browser = await pw.firefox.launch(headless=False, timeout=5000)
         self.context = await self.browser.new_context()
         self.init_page = await self.context.new_page()
         await load_cookies(self.init_page)
@@ -60,6 +45,9 @@ class customPage:
 
 
 class KreamPage(customPage):
+    def __init__(self):
+        super().__init__()
+
     async def is_login(self, page):
         """로그인 상태를 확인하는 메서드"""
         # top_link
@@ -71,6 +59,10 @@ class KreamPage(customPage):
 
     async def login(self):
         assert isinstance(self.init_page, Page), init_page_error
+
+        if self.init_page.is_closed():
+            self.init_page = await self.context.new_page()
+
         login_page = await load_page(self.init_page, "https://kream.co.kr/login")
 
         if not await self.is_login(login_page):
@@ -94,3 +86,4 @@ class KreamPage(customPage):
         await page.keyboard.press("Enter")
         await page.wait_for_load_state(state="networkidle")
         await save_cookies(page)
+        print("save_login_cookies")

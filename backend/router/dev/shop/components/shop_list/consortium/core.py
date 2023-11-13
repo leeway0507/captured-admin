@@ -56,16 +56,12 @@ async def get_consortium_list(
             lst.reverse()
             return len(lst) - i - 1
 
-        product_id = ""
+        product_id = "-"
 
-        if shop_product_color_last is None:
-            product_id = "-"
-
-        elif shop_product_color_last in shop_product_name:
+        if shop_product_color_last in shop_product_name:
+            product_id = ""
             idx = rindex(shop_product_name.split("-"), shop_product_color_last) + 1
             product_id = "-".join(shop_product_name.split("-")[idx:])
-        else:
-            product_id = "-"
 
         return {
             "shop_product_name": shop_product_name,

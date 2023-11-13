@@ -1,14 +1,15 @@
+from ast import alias
 from typing import Dict, List, Optional
 from datetime import datetime
 
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.dialects.mysql import insert
-from sqlalchemy import update, bindparam, select
+from sqlalchemy import update, bindparam, select, and_
 
 from db.tables_shop import ShopInfoTable, ShopProductCardTable, ShopProductSizeTable
 from .load_scrap_result import get_last_scrap_product_dict, get_scrap_product_dict
 from model.shop_model import ShopProductId, RequestShopInfo
-from model.db_model_shop import ShopInfoSchema
+from model.db_model_shop import ShopInfoSchema, ShopProductCardSchema
 
 
 async def update_scrap_product_card_list_to_db(
@@ -125,3 +126,40 @@ async def get_shop_name_from_db(
     result = await db.execute(stmt)
     result = result.scalars().all()
     return result
+
+
+async def get_shop_info_by_name(db: AsyncSession, shopName: str):
+    stmt = select(ShopInfoTable).where(ShopInfoTable.shop_name == shopName)
+    result = await db.execute(stmt)
+    result = result.scalars().first()
+    return ShopInfoSchema(**result.to_dict()).model_dump(by_alias=True)
+
+
+async def get_shop_product_list(db: AsyncSession, shopName: str, brandName: str):
+    brand_name_list = brandName.split(",")
+    stmt = select(ShopProductCardTable).where(
+        and_(
+            ShopProductCardTable.shop_name == shopName,
+            ShopProductCardTable.brand_name.in_(brand_name_list),
+        )
+    )
+
+    result = await db.execute(stmt)
+    result = result.scalars().all()
+    return [
+        ShopProductCardSchema(**row.to_dict()).model_dump(by_alias=True)
+        for row in result
+    ]
+
+
+async def update_candidate_to_db(
+    db: AsyncSession, shopProductCardId: int, candidate: bool
+):
+    stmt = (
+        update(ShopProductCardTable)
+        .where(ShopProductCardTable.shop_product_card_id == shopProductCardId)
+        .values(candidate=candidate)
+    )
+    await db.execute(stmt)
+    await db.commit()
+    return {"message": "success"}

@@ -14,6 +14,7 @@ from .components.update_to_db import (
     get_shop_info_from_db,
     create_shop_info_to_db,
     get_shop_name_from_db,
+    update_candidate_to_db,
 )
 from .components.shop_product_card_list.create_log import update_scrap_result
 
@@ -59,3 +60,12 @@ async def get_last_scrap_product_list(
     db: AsyncSession = Depends(get_dev_db),
 ):
     return await get_shop_name_from_db(db)
+
+
+@shop_db_router.get("/update-candidate-status")
+async def update_candidate_status_api(
+    shopProductCardId: int,
+    candidate: bool,
+    db: AsyncSession = Depends(get_dev_db),
+):
+    return await update_candidate_to_db(db, shopProductCardId, candidate)

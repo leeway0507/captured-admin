@@ -59,6 +59,9 @@ class KreamBuyAndSellTable(MyBase):
     updated_at = Column(DATETIME)
 
     kream_product_card = relationship("KreamProductCardTable")
+    __table_args__ = (
+        UniqueConstraint("kream_id", "kream_product_size", name="kream_size_uc"),
+    )
 
     class Config:
         orm_mode = str

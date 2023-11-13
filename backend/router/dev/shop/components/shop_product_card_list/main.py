@@ -85,7 +85,7 @@ async def scrap_shop_product_card_main(
     try:
         shop_name, file_time = await save_scrap_data(shop_name)
         create_last_update_shop_detail_log(shop_name, file_time)
-        scrap_name = f"{shop_name}-{file_time}"
+        scrap_name = f"{file_time}-{shop_name}"
 
     except Exception as e:
         print("scrap_product_detail_main")
@@ -160,7 +160,7 @@ def _save_to_parquet(shop_name: str, scrap_data: list[ShopProductCardSchema]):
     assert path, "SHOP_PRODUCT_CARD_LIST_DIR is None"
 
     file_time = datetime.now().strftime("%y%m%d-%H%M%S")
-    file_path = f"{path}{file_time}-{shop_name}.parquet.gzip"
+    file_path = f"{path+shop_name}/{file_time}.parquet.gzip"
 
     if not os.path.exists(path + shop_name):
         os.makedirs(path + shop_name, exist_ok=True)

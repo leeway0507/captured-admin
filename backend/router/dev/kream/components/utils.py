@@ -31,6 +31,7 @@ async def load_cookies(page):
 
     # Set cookies in the current page
     await page.context.add_cookies(cookies)
+    print("cookies loaded")
 
 
 def convert_str_to_int(value: str) -> int:

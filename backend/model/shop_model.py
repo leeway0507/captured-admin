@@ -20,7 +20,7 @@ class RequestShopInfo(BaseModel):
     tax_reduction_rate: Optional[float] = None
     del_agc_tax_reduction_rate: Optional[float] = None
     dome_ship_price: Optional[int] = None
-    intl_ship_price: Optional[int] = None
+    intl_ship_price: Optional[float] = None
     from_us_shipping: Optional[bool] = None
     is_ddp: Optional[bool] = None
     country: Optional[str] = None

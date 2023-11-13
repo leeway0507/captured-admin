@@ -19,6 +19,7 @@ class KreamScrapingBrandSchema(BaseModel):
 
 
 class KreamProductDetailSchema(BaseModel):
+    model_config = ConfigDict(alias_generator=to_camel, populate_by_name=True)
     kream_id: int
     kream_product_img_url: str
     kream_product_name: str
@@ -43,6 +44,8 @@ class KreamProductDetailSchema(BaseModel):
     def extract_price(cls, value: str):
         if isinstance(value, int):
             return value
+        if value == "-":
+            return 0
         match = re.search(r"\(([^)]+)\)", value)
         if match:
             value = match.group(1)
@@ -55,7 +58,7 @@ class KreamProductDetailSchema(BaseModel):
         if isinstance(value, datetime):
             return value
         if value == "-":
-            value = "00/00/00"
+            value = "01/01/01"
         return datetime.strptime(value, "%y/%m/%d")
 
     @field_validator("updated_at", mode="before")
@@ -63,3 +66,15 @@ class KreamProductDetailSchema(BaseModel):
         if isinstance(value, datetime):
             return value
         return datetime.strptime(value, "%Y-%m-%d %H:%M:%S")
+
+
+class KreamProductSizeInfo(BaseModel):
+    model_config = ConfigDict(alias_generator=to_camel, populate_by_name=True)
+    kream_product_size: str
+    buy: int
+    sell: int
+    count: int
+    min: int
+    median: int
+    max: int
+    lightening: int

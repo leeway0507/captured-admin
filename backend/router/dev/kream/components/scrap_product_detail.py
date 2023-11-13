@@ -70,8 +70,8 @@ async def scrap_product_detail_main(
         meta = {
             "num_process": num_process,
             "ref_product_card": ref_product_card,
-            "scrap_result": merged_result,
             "db_update": False,
+            "scrap_result": merged_result,
         }
         f.write(json.dumps(meta, ensure_ascii=False))
 
@@ -96,13 +96,14 @@ async def scrap_product_detail_main(
 async def scrap_product_sub_process(page: Page, kream_id_list: List[int]):
     """브랜드별 상품 스크롤"""
     # load_cookies
-    await load_cookies(page)
-    await asyncio.sleep(2)
+    # await asyncio.sleep(2)
+    # await load_cookies(page)
+    # await asyncio.sleep(2)
 
     lst = {k: "not_scrap" for k in kream_id_list}
     kream_id_list_list = [[k, 0] for k in kream_id_list]
     for i, kream_id in enumerate(kream_id_list_list):
-        print(f"{i+1}/{len(kream_id_list)}")
+        print(f"{i+1}/{len(kream_id_list_list)}")
 
         kream_id, iter_count = kream_id
 
@@ -128,11 +129,16 @@ async def scrap_product_sub_process(page: Page, kream_id_list: List[int]):
 
         except Exception as e:
             if iter_count == 0:
+                print(f"{kream_id} 실패 :")
+                print("".join(format_exception(None, e, e.__traceback__)))
                 kream_id_list_list.append([kream_id, iter_count + 1])
+
             else:
                 print("scrap_product_sub_process")
                 print("".join(format_exception(None, e, e.__traceback__)))
                 lst[kream_id] = str(e)
+            await page.close()
+            page = await page.context.new_page()
             continue
 
     await page.close()
@@ -402,7 +408,7 @@ def load_kream_id_list(brand_name: str, path: Optional[str] = None) -> List[str]
     path, file_name = get_last_update_product_card_name(brand_name, path)
     print("load : ", file_name)
     df = pd.read_parquet(path + "/" + file_name)
-    return df["kream_id"].tolist()[:10]
+    return df["kream_id"].tolist()
 
 
 def split_size(l: List, num_list: int) -> List[List]:

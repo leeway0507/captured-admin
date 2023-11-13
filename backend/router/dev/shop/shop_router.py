@@ -1,6 +1,9 @@
 """shop Router"""
 import os
+import json
 from typing import Optional
+from urllib.parse import unquote
+
 from sqlalchemy.ext.asyncio import AsyncSession
 from fastapi import APIRouter, Depends, HTTPException
 from dotenv import dotenv_values
@@ -10,10 +13,9 @@ from .components.update_to_db import get_shop_name_from_db
 from ..kream.components.main import customPage
 from .components.shop_product_card_list import (
     load_brand_name,
-    get_shop_product_list,
     scrap_shop_product_card_main,
 )
-from .components.shop_product_card_list.main import save_scrap_data
+from .components.update_to_db import get_shop_info_by_name, get_shop_product_list
 from .components.shop_product_card_list.create_log import get_scrap_result
 
 shop_router = APIRouter()
@@ -73,3 +75,31 @@ def get_scrap_data(scrapName: str):
     """scrap 결과 조회"""
 
     return get_scrap_result(scrapName)
+
+
+@shop_router.get("/get-shop-product-list")
+async def get_shop_product_list_api(
+    shopName: str, brandName: str, db: AsyncSession = Depends(get_dev_db)
+):
+    """shop product list 조회"""
+
+    print(shopName, brandName)
+
+    return await get_shop_product_list(db, shopName, brandName)
+
+
+@shop_router.get("/get-shop-info")
+async def get_shop_info_api(shopName: str, db: AsyncSession = Depends(get_dev_db)):
+    """shop product list 조회"""
+
+    return await get_shop_info_by_name(db, shopName)
+
+
+@shop_router.get("/get-buying-currency")
+def get_buying_currency():
+    """구매 환율 조회"""
+    path = "router/dev/shop/components/currency/data/buying_currency.json"
+    with open(path, "r") as f:
+        data = json.load(f)
+
+    return data

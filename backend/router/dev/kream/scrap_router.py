@@ -5,11 +5,17 @@ from sqlalchemy.ext.asyncio import AsyncSession
 from fastapi import APIRouter, Depends, HTTPException
 from dotenv import dotenv_values
 
+from db.dev_db import get_dev_db
+
 from .components.load_scrap_result import *
 from .components.scrap_product_detail import scrap_product_detail_main, save_scrap_files
-from .components.create_log import get_scrap_result
+from .components.create_log import get_scrap_result, create_last_update_kream_detail_log
 from .components.scrap_product_card_list import *
 from .components.main import KreamPage
+from .components.update_to_db import (
+    get_kream_product_detail_list_from_db,
+    get_kream_product_size_info,
+)
 
 config = dotenv_values(".env.dev")
 
@@ -70,10 +76,12 @@ async def init_scraping_brand(
     kream_page=Depends(get_kream_page),
 ):
     """크림 제품 검색 페이지 스크랩"""
-    page = kream_page.login()
+    await kream_page.login()
+    page = kream_page.get_init_page()
     try:
         await scrap_product_card_list(page, brandName, maxScroll, minWish, minVolume)
-    except Exception:
+    except Exception as e:
+        print(e)
         raise HTTPException(status_code=500, detail="kream scrap error")
     return {"result": "success"}
 
@@ -173,3 +181,28 @@ def get_last_scrap_kream_product_bridge_data(
 async def restart_saving_last_scraped_files(brand: str):
     """scrap 파일 업데이트"""
     return await save_scrap_files(brand)
+
+
+@kream_scrap_router.get("/restart-saving-create-log")
+def restart_create_log(scrapName: str):
+    """kream_log 파일 업데이트"""
+    return create_last_update_kream_detail_log(scrapName)
+
+
+@kream_scrap_router.get("/get-kream-product-detail-list")
+async def get_kream_product_detail_list(
+    searchType: str,
+    content: str,
+    db: AsyncSession = Depends(get_dev_db),
+):
+    """kream_product_detail_table 조회"""
+
+    return await get_kream_product_detail_list_from_db(db, searchType, content)
+
+
+@kream_scrap_router.get("/get-kream-product-size-info")
+async def get_kream_product_size_info_api(
+    searchType: str, content: str, db: AsyncSession = Depends(get_dev_db)
+):
+    """kream_product_detail_table 조회"""
+    return await get_kream_product_size_info(db, searchType, content)
