@@ -65,7 +65,7 @@ async def get_last_scrap_product_list(
 @shop_db_router.get("/update-candidate-status")
 async def update_candidate_status_api(
     shopProductCardId: int,
-    candidate: bool,
+    candidate: int,
     db: AsyncSession = Depends(get_dev_db),
 ):
     return await update_candidate_to_db(db, shopProductCardId, candidate)

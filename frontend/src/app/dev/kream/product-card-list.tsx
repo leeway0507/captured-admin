@@ -12,8 +12,8 @@ interface scrapingProps {
 const initialState = {
     brandName: "",
     maxScroll: 20,
-    minWish: 100,
-    minVolume: 100,
+    minWish: 50,
+    minVolume: 50,
 };
 
 const reducer = (state: scrapingProps, action: any) => {
@@ -74,7 +74,7 @@ export default function PrdoucCardList() {
             });
     };
     return (
-        <div className="flex pt-4 pb-24 gap-8 justify-between">
+        <div className="flex gap-8 justify-between">
             <div className="min-w-[200px] flex flex-col">
                 <label htmlFor="brandName">브랜드 네임</label>
                 <input

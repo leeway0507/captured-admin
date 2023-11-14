@@ -30,7 +30,7 @@ export const getCustomCurrency = async () => {
     return { status: res.status, data: await res.json() };
 };
 
-export const updateCandidate = async (shopProductCardId: number, candidate: boolean) => {
+export const updateCandidate = async (shopProductCardId: number, candidate: number) => {
     const url = `${process.env.NEXT_PUBLIC_API_URL}/api/dev/shop/db/update-candidate-status`;
     const queryParams = new URLSearchParams({
         shopProductCardId: shopProductCardId.toString(),

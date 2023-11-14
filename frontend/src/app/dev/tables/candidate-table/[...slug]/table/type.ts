@@ -1,7 +1,7 @@
 
-export interface costTableRawDataProps {
+export interface candidateTableRawDataProps {
     shopProductCardId: number; 
-    candidate: boolean;
+    candidate: number;
     shopProductName: string;
     shopProductImgUrl: string;
     productId: string;

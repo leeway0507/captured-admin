@@ -50,3 +50,15 @@ export async function insertScarpToDB(scrapName: string) {
     const res = await fetch(url);
     return { status: res.status, data: await res.json() };
 }
+
+export async function RestartSavingCreatelog(scrapName: string) {
+    const url = `${process.env.NEXT_PUBLIC_API_URL}/api/dev/kream/restart-saving-create-log?scrapName=${scrapName}`;
+    const res = await fetch(url);
+    return { status: res.status, data: await res.json() };
+}
+
+export async function RestartSavingLastScrapedFiles(brandName: string) {
+    const url = `${process.env.NEXT_PUBLIC_API_URL}/api/dev/kream/restart-saving-last-scraped-files?brandName=${brandName}`;
+    const res = await fetch(url);
+    return { status: res.status, data: await res.json() };
+}

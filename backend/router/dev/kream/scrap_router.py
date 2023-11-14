@@ -178,9 +178,9 @@ def get_last_scrap_kream_product_bridge_data(
 
 
 @kream_scrap_router.get("/restart-saving-last-scraped-files")
-async def restart_saving_last_scraped_files(brand: str):
+async def restart_saving_last_scraped_files(brandName: str):
     """scrap 파일 업데이트"""
-    return await save_scrap_files(brand)
+    return await save_scrap_files(brandName)
 
 
 @kream_scrap_router.get("/restart-saving-create-log")

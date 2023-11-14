@@ -1,5 +1,6 @@
+import { getProductCardListForCostTable } from "../fetch";
 import Main from "./main";
-import { getShopInfoByName, getProductCardList } from "./fetch";
+import { productCardProps } from "./table/table";
 
 export default async function Page({
     params,
@@ -8,16 +9,20 @@ export default async function Page({
     params: { slug: string[] };
     searchParams: { [key: string]: string | undefined };
 }) {
-    const [shopName, brandName] = params.slug;
+    const [searchType, value] = params.slug;
 
-    const shopNameDecoded = decodeURIComponent(shopName);
-    const brandNameDecoded = decodeURIComponent(brandName);
-    const shopInfo = await getShopInfoByName(shopNameDecoded);
-    const productCardList = await getProductCardList(shopNameDecoded, brandNameDecoded);
+    const searchTypeDecoded = decodeURIComponent(searchType);
+    var valueDecoded = decodeURIComponent(value).replaceAll("-", " ");
+
+    if (searchTypeDecoded === "brandName") {
+        valueDecoded = valueDecoded.replaceAll(" ", "_");
+    }
+
+    const productCardList = await getProductCardListForCostTable(searchTypeDecoded, valueDecoded);
 
     return (
         <>
-            <Main shopInfo={shopInfo.data} productCardList={productCardList.data} />
+            <Main productCardList={productCardList.data} />
         </>
     );
 }

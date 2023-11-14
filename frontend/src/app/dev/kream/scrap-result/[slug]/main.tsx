@@ -62,9 +62,9 @@ export default function ScrapResult({ fetchData }: { fetchData: any }) {
         ...res
     } = fetchData;
 
-    const scrapPlan = Object.entries(scrapResult);
-    const scrapSuccess = scrapPlan.filter(([key, value]) => value === "success");
-    const scrapFailed = scrapPlan.filter(([key, value]) => value !== "success" && value !== "not_scrap");
+    const scrapPlan: [string, string][] = Object.entries(scrapResult);
+    const scrapSuccess = scrapPlan.filter(([key, value]) => value.includes("success"));
+    const scrapFailed = scrapPlan.filter(([key, value]) => !value.includes("success") && value !== "not_scrap");
 
     const tableData = createTableData(
         scrapPlan,

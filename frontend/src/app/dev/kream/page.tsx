@@ -2,6 +2,7 @@
 import { ReloadBrowser } from "./fetch";
 import PrdoucCardList from "./product-card-list";
 import ProductDetail from "./product-detail";
+import ReproduceReport from "./reproduce-report";
 import { toast } from "react-toastify";
 export default function Main() {
     const handleReloadBrowser = async () => {
@@ -28,6 +29,10 @@ export default function Main() {
             <div className="">
                 <div className="text-3xl pt-8">크림 상세 제품 수집</div>
                 <ProductDetail />
+            </div>
+            <div className="">
+                <div className="text-3xl pt-8">수집 결과 재생산</div>
+                <ReproduceReport />
             </div>
         </>
     );

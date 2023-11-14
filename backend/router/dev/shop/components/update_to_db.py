@@ -153,7 +153,7 @@ async def get_shop_product_list(db: AsyncSession, shopName: str, brandName: str)
 
 
 async def update_candidate_to_db(
-    db: AsyncSession, shopProductCardId: int, candidate: bool
+    db: AsyncSession, shopProductCardId: int, candidate: int
 ):
     stmt = (
         update(ShopProductCardTable)
@@ -163,3 +163,35 @@ async def update_candidate_to_db(
     await db.execute(stmt)
     await db.commit()
     return {"message": "success"}
+
+
+async def load_scraped_brand_name(db: AsyncSession, shopName: str):
+    stmt = select(ShopProductCardTable.brand_name.distinct()).where(
+        ShopProductCardTable.shop_name == shopName
+    )
+    result = await db.execute(stmt)
+    result = result.scalars().all()
+    return result
+
+
+async def get_shop_product_list_for_cost_table(
+    db: AsyncSession, searchType: str, value: str
+):
+    filter_dict = {
+        "brandName": ShopProductCardTable.brand_name.like(f"{value}%"),
+        "shopName": ShopProductCardTable.shop_name == value,
+    }
+
+    stmt = select(ShopProductCardTable).where(
+        and_(
+            ShopProductCardTable.candidate != 0,
+            filter_dict[searchType],
+        )
+    )
+
+    result = await db.execute(stmt)
+    result = result.scalars().all()
+    return [
+        ShopProductCardSchema(**row.to_dict()).model_dump(by_alias=True)
+        for row in result
+    ]

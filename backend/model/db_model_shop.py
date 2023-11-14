@@ -62,7 +62,7 @@ class ShopProductCardSchema(BaseModel):
     original_price_currency: str
     original_price: float
     sold_out: Optional[bool] = False
-    candidate: Optional[bool] = False
+    candidate: Optional[int] = -1
     updated_at: datetime
 
     @field_validator("shop_name", "brand_name", "shop_product_name")

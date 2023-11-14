@@ -38,7 +38,7 @@ class KreamTradingVolumeTable(MyBase):
 
     volume_id = Column(INTEGER, primary_key=True, autoincrement=True)
     kream_id = Column(INTEGER, ForeignKey("kream_product_card.kream_id"))
-    kream_product_size = Column(VARCHAR(10))
+    kream_product_size = Column(VARCHAR(50))
     price = Column(INTEGER)
     lightening = Column(BOOLEAN)
     trading_at = Column(DATETIME)
@@ -53,7 +53,7 @@ class KreamBuyAndSellTable(MyBase):
     __tablename__ = "kream_buy_and_sell"
     volume_id = Column(INTEGER, primary_key=True, autoincrement=True)
     kream_id = Column(INTEGER, ForeignKey("kream_product_card.kream_id"))
-    kream_product_size = Column(VARCHAR(10))
+    kream_product_size = Column(VARCHAR(50))
     buy = Column(INTEGER)
     sell = Column(INTEGER)
     updated_at = Column(DATETIME)

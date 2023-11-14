@@ -49,8 +49,10 @@ const KreamProductModal = ({
 
     const NotFoundModal = BaseModal({
         content: (
-            <div className="flex-center h-full w-full text-2xl text-sub-black underline grow">
-                해당 정보가 없습니다.
+            <div className="flex-center h-full w-full text-2xl text-blue-700 underline grow">
+                <Link href={`https://kream.co.kr/search?keyword=${value}`} target="_blank" rel="noreferrer">
+                    해당 정보({value})와 일치하는 크림 정보가 없습니다.
+                </Link>
             </div>
         ),
         isOpen: isOpen,
@@ -58,49 +60,17 @@ const KreamProductModal = ({
     });
 
     if (kreamProductCard === undefined) return NotFoundModal;
-    if (scrapDate === undefined) return NotFoundModal;
-    if (kreamProductSize === undefined) return NotFoundModal;
 
-    if (kreamProductSize?.length === 0)
-        return <div className="flex-center h-full w-full text-2xl text-sub-black underline">해당 정보가 없습니다.</div>;
+    const sizeInfo = () => {
+        if (scrapDate === undefined || kreamProductSize === undefined)
+            return (
+                <div className="flex-center h-full w-full text-2xl text-sub-black underline grow">
+                    사이즈 정보가 없습니다.
+                </div>
+            );
 
-    const content = (
-        <div className="flex flex-col">
-            <div className="text-2xl bold text-main-black">제품 정보</div>
-            <div className="flex-center pb-4">
-                <div className="relative h-[100px] w-[180px] ">
-                    <Image
-                        src={kreamProductCard.kreamProductImgUrl}
-                        alt={kreamProductCard.kreamProductName}
-                        fill
-                        style={{ objectFit: "cover" }}
-                    />
-                </div>
-                <div className="flex-center">
-                    <div className="grid grid-flow-row auto-rows-max gap-1">
-                        <div className="grid grid-cols-5 gap-4">
-                            <div className="col-span-1">제품명</div>
-                            <div className="col-span-4">{kreamProductCard.kreamProductName}</div>
-                        </div>
-                        <div className="grid grid-cols-5 gap-4">
-                            <div>제품 아이디</div>
-                            <div>{kreamProductCard.productId}</div>
-                        </div>
-                        <div className="grid grid-cols-5 gap-4">
-                            <div>크림 아이디</div>
-                            <Link
-                                href={`https://kream.co.kr/products/${kreamProductCard.kreamId}`}
-                                target="_blank"
-                                rel="noreferrer"
-                                className="underline text-blue-700 pointer-cursor">
-                                {kreamProductCard.kreamId}
-                            </Link>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div className="py-4">
-                <div className="text-2xl bold text-main-black">사이즈 정보</div>
+        return (
+            <div>
                 <div className="flex text-base w-full">
                     <div>
                         <span>스크랩 날짜 : </span>
@@ -155,7 +125,7 @@ const KreamProductModal = ({
                                     {info.min.toLocaleString()}
                                     {profit(minGap)}
                                 </div>
-                                <div>
+                                <div className="font-bold">
                                     {info.median.toLocaleString()}
                                     {profit(medianGap)}
                                 </div>
@@ -167,6 +137,48 @@ const KreamProductModal = ({
                         );
                     })}
                 </div>
+            </div>
+        );
+    };
+
+    const content = (
+        <div className="flex flex-col">
+            <div className="text-2xl bold text-main-black">제품 정보</div>
+            <div className="flex-center pb-4">
+                <div className="relative h-[100px] w-[180px] ">
+                    <Image
+                        src={kreamProductCard.kreamProductImgUrl}
+                        alt={kreamProductCard.kreamProductName}
+                        fill
+                        style={{ objectFit: "cover" }}
+                    />
+                </div>
+                <div className="flex-center">
+                    <div className="grid grid-flow-row auto-rows-max gap-1">
+                        <div className="grid grid-cols-5 gap-4">
+                            <div className="col-span-1">제품명</div>
+                            <div className="col-span-4">{kreamProductCard.kreamProductName}</div>
+                        </div>
+                        <div className="grid grid-cols-5 gap-4">
+                            <div>제품 아이디</div>
+                            <div>{kreamProductCard.productId}</div>
+                        </div>
+                        <div className="grid grid-cols-5 gap-4">
+                            <div>크림 아이디</div>
+                            <Link
+                                href={`https://kream.co.kr/products/${kreamProductCard.kreamId}`}
+                                target="_blank"
+                                rel="noreferrer"
+                                className="underline text-blue-700 pointer-cursor">
+                                {kreamProductCard.kreamId}
+                            </Link>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div className="py-4">
+                <div className="text-2xl bold text-main-black">사이즈 정보</div>
+                {sizeInfo()}
             </div>
         </div>
     );

@@ -119,13 +119,18 @@ async def scrap_product_sub_process(page: Page, kream_id_list: List[int]):
             await _save_temp_files("buy_and_sell", buy_and_sell)
 
             await asyncio.sleep(2)
-            trading_volume = await get_product_volume(page, kream_id)
+            result, trading_volume = await get_product_volume(page, kream_id)
             await _save_temp_files("trading_volume", trading_volume)
 
-            if trading_volume:
+            # success,no_trading_volume,failed
+            if result == "success":
                 lst[kream_id] = "success"
+
+            elif result == "no_trading_volume":
+                lst[kream_id] = "success:no_trading_volume"
+
             else:
-                lst[kream_id] = "failed:not_trading_volume"
+                lst[kream_id] = "failed:can't scrap trading_volume"
 
         except Exception as e:
             if iter_count == 0:
@@ -137,6 +142,7 @@ async def scrap_product_sub_process(page: Page, kream_id_list: List[int]):
                 print("scrap_product_sub_process")
                 print("".join(format_exception(None, e, e.__traceback__)))
                 lst[kream_id] = str(e)
+
             await page.close()
             page = await page.context.new_page()
             continue
@@ -259,14 +265,13 @@ async def _buy_and_sell(page, info: str):
 
 async def get_product_volume(
     page: Page, kream_id: int, max_scrap_days: int = 10, **_kwargs
-) -> List[List[str]]:
+) -> Tuple[str, List[List[str]]]:
     start_date = _get_start_date(kream_id, limit_days=max_scrap_days)
     if date.today() == start_date:
         print("당일 업데이트가 되었음")
-        return []
+        return "success", []
 
-    trading_volume_list = await _scrap_trading_volume_from(page, start_date, kream_id)
-    return trading_volume_list
+    return await _scrap_trading_volume_from(page, start_date, kream_id)
 
 
 def _get_start_date(kream_id: int, limit_days: int = 10) -> date:
@@ -310,7 +315,7 @@ def _get_start_date(kream_id: int, limit_days: int = 10) -> date:
 
 async def _scrap_trading_volume_from(
     page: Page, target_date: date, kream_id: int, **_kwargs
-) -> List:
+) -> Tuple[str, List]:
     volume_btn = "a[class='btn outlinegrey full medium']"
     await page.wait_for_selector(volume_btn, timeout=5000)
 
@@ -324,7 +329,7 @@ async def _scrap_trading_volume_from(
         await page.wait_for_selector(price_btn, timeout=5000)
     except Exception as e:
         print(f"{kream_id} : 체결내역 더보기가 없는 제품으로 추정")
-        return []
+        return "failed", []
 
     modal = await page.query_selector(price_btn)
     assert modal, "modal not found"
@@ -340,9 +345,10 @@ async def _scrap_trading_volume_from(
         end = await page.evaluate(
             "Array.from(document.querySelectorAll('.list_txt.is_active')).length"
         )
-        date_str = await page.evaluate(
+        date_str: str = await page.evaluate(
             f"Array.from(document.querySelectorAll('.list_txt.is_active')).slice(-1)[0].innerText"
         )
+        date_str = date_str.replace("빠른배송", "").strip()
         last_date = datetime.strptime(date_str, "%y/%m/%d").date()
 
         # print(f"kream_id:{kream_id},last_date : {last_date}, target_date : {target_date}, end : {end}")
@@ -362,7 +368,15 @@ async def _scrap_trading_volume_from(
     df["kream_id"] = kream_id
 
     target_date_str = target_date.strftime("%y/%m/%d")
-    return df[df["trading_at"] >= target_date_str].to_dict("records")
+    result = df[df["trading_at"] >= target_date_str].to_dict("records")
+
+    if len(df) > 0 and len(result) > 0:
+        return "success", result
+
+    if len(df) > 0 and len(result) == 0:
+        return "no_trading_volume", []
+
+    return "failed", []
 
 
 def _extract_volume_data_from(body_list: List) -> List[List]:
@@ -376,16 +390,15 @@ def _extract_volume_data_from(body_list: List) -> List[List]:
         List: 크롤링 결과 리스트로 반환
     """
 
-    def preprocess_items(tags: bs4.element.Tag) -> List:
-        l = []
+    def preprocess_items(tags) -> List:
+        x = []
         for tag in tags.find_all(class_="list_txt"):
-            l.append(tag.text.lstrip().rstrip())
+            x.append(tag.text.strip())
 
-        if "빠른" in l[1]:
-            l = l[:1] + l[1].split(" ")[:1] + [True] + l[2:3]
+        if "빠" in x[2]:
+            return [x[0], x[1], True, x[2].replace("빠른배송", "").strip()]
         else:
-            l = l[:2] + [False] + l[2:3]
-        return l
+            return [x[0], x[1], False, x[2].strip()]
 
     return [preprocess_items(tags) for tags in body_list]
 

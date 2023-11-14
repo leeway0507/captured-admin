@@ -32,7 +32,9 @@ export const KreamTable = ({ tableData }: { tableData: kreamTableRawDataProps[] 
                     {table.getHeaderGroups().map((headerGroup) => (
                         <tr key={headerGroup.id}>
                             {headerGroup.headers.map((header) => (
-                                <th key={header.id} className="text-sm py-2 px-4">
+                                <th
+                                    key={header.id}
+                                    className="text-sm py-2 px-4 sticky top-8 whitespace-nowrap bg-blue-100 z-10">
                                     {header.isPlaceholder
                                         ? null
                                         : flexRender(header.column.columnDef.header, header.getContext())}

@@ -15,7 +15,12 @@ from .components.shop_product_card_list import (
     load_brand_name,
     scrap_shop_product_card_main,
 )
-from .components.update_to_db import get_shop_info_by_name, get_shop_product_list
+from .components.update_to_db import (
+    get_shop_info_by_name,
+    get_shop_product_list,
+    load_scraped_brand_name,
+    get_shop_product_list_for_cost_table,
+)
 from .components.shop_product_card_list.create_log import get_scrap_result
 
 shop_router = APIRouter()
@@ -39,6 +44,11 @@ async def get_custom_page():
 @shop_router.get("/get-brand-name")
 def get_brand_name(shopName: str):
     return load_brand_name(shopName)
+
+
+@shop_router.get("/get-scraped-brand-name")
+async def get_scraped_brand_name(shopName: str, db: AsyncSession = Depends(get_dev_db)):
+    return await load_scraped_brand_name(db, shopName)
 
 
 @shop_router.get("/get-shop-name")
@@ -86,6 +96,15 @@ async def get_shop_product_list_api(
     print(shopName, brandName)
 
     return await get_shop_product_list(db, shopName, brandName)
+
+
+@shop_router.get("/get-shop-product-list-for-cost-table")
+async def get_shop_product_list_for_cost_table_api(
+    searchType: str, value: str, db: AsyncSession = Depends(get_dev_db)
+):
+    """shop product list 조회"""
+
+    return await get_shop_product_list_for_cost_table(db, searchType, value)
 
 
 @shop_router.get("/get-shop-info")

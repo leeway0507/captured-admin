@@ -1,79 +1,43 @@
 "use client";
-import { loadShopName, loadBrandName } from "../../shop/fetch";
-import { toast } from "react-toastify";
-import Select from "react-select";
-import { useEffect, useRef, useState } from "react";
-import { useRouter } from "next/navigation";
+import BrandList from "./brandList";
+import ShopList from "./shopList";
+
+import { Tab } from "@headlessui/react";
+
+function classNames(...classes: string[]) {
+    return classes.filter(Boolean).join(" ");
+}
+
+const tablClass = ({ selected }: { selected: boolean }) =>
+    classNames(
+        "w-full rounded-lg py-2.5 font-medium leading-5 text-main-black",
+        "ring-white/60 ring-offset-2 ring-offset-sub-black focus:outline-none focus:ring-2",
+        selected ? "bg-white shadow" : "text-light-gray hover:bg-white/[0.12] hover:text-white"
+    );
+
+function MyTabs() {
+    return (
+        <Tab.Group>
+            <Tab.List className="absolute top-0 flex space-x-1 rounded-xl bg-main-black p-1 min-w-[800px] max-w-[1080px]">
+                <Tab className={tablClass}>브랜드</Tab>
+                <Tab className={tablClass}>사이트</Tab>
+            </Tab.List>
+            <Tab.Panels className="pt-16">
+                <Tab.Panel>
+                    <BrandList />
+                </Tab.Panel>
+                <Tab.Panel className="h-full w-full m-auto">
+                    <ShopList />
+                </Tab.Panel>
+            </Tab.Panels>
+        </Tab.Group>
+    );
+}
 
 const Page = () => {
-    const router = useRouter();
-    const [search, setSearch] = useState<{ shopName: string; brandName: string }>({ shopName: "", brandName: "" });
-    const [shopList, setShopList] = useState<{ value: string; label: string }[]>([]);
-    const [brandList, setBrandList] = useState<{ value: string; label: string }[]>([]);
-
-    useEffect(() => {
-        loadShopName().then((res) => {
-            setShopList(res.data.map((option: string) => ({ value: option, label: option })));
-        });
-    }, []);
-
-    useEffect(() => {
-        if (search.shopName !== "")
-            loadBrandName(search.shopName).then((res) => {
-                setBrandList(res.data.map((option: string) => ({ value: option, label: option })));
-            });
-    }, [search.shopName]);
-
-    const handleSubmit = (search: { shopName: string; brandName: string }) => {
-        if (search.shopName === "") {
-            return toast.error("스크랩할 샵을 선택하세요.");
-        }
-        if (search.brandName === "") {
-            return toast.error("브랜드 네임을 입력해주세요.");
-        }
-        router.push(`/dev/tables/cost-table/${search.shopName}/${search.brandName}`);
-    };
-
     return (
-        <div className="h-full flex-center">
-            <div className="flex gap-8 justify-space">
-                <div className="min-w-[300px] flex flex-col">
-                    <div className="text-xl">스크랩 샵 이름</div>
-                    <Select
-                        instanceId="shopName"
-                        options={shopList}
-                        onChange={(e: any) => {
-                            setSearch({ ...search, shopName: e.value });
-                        }}
-                    />
-                </div>
-                <div className="min-w-[300px] flex flex-col">
-                    <div className="text-xl">브랜드 이름</div>
-                    <Select
-                        instanceId="brandName"
-                        options={brandList}
-                        isMulti
-                        onChange={(e: any) => {
-                            const result = e.reduce(
-                                (
-                                    accumulator: string,
-                                    currentValue: { value: string; label: string },
-                                    index: number
-                                ) => {
-                                    const separator = index === e.length - 1 ? "" : ",";
-                                    return accumulator + currentValue.value + separator;
-                                },
-                                ""
-                            );
-                            setSearch({ ...search, brandName: result });
-                        }}
-                    />
-                    <div>{search.brandName}</div>
-                </div>
-                <button className="black-bar-with-disabled min-w-[150px] text-xl " onClick={() => handleSubmit(search)}>
-                    요청하기
-                </button>
-            </div>
+        <div className="relative h-full w-full">
+            <MyTabs />;
         </div>
     );
 };

@@ -56,3 +56,12 @@ export const insertScarpToDB = async (scrapName: string) => {
     const res = await fetch(url + "?" + queryParams);
     return { status: res.status, data: await res.json() };
 };
+
+export const loadScrapedBrandName = async (shopName: string) => {
+    const url = `${process.env.NEXT_PUBLIC_API_URL}/api/dev/shop/get-scraped-brand-name`;
+    const queryParams = new URLSearchParams({
+        shopName,
+    });
+    const res = await fetch(url + "?" + queryParams);
+    return { status: res.status, data: await res.json() };
+};

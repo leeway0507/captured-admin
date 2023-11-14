@@ -57,7 +57,7 @@ class ShopProductCardTable(MyBase):
     original_price_currency = Column(VARCHAR(10))
     original_price = Column(FLOAT)
     sold_out = Column(BOOLEAN)
-    candidate = Column(BOOLEAN)
+    candidate = Column(INTEGER)  # 0: not condidate 1: candidate 2: selected
     updated_at = Column(DATETIME)
 
     __table_args__ = (

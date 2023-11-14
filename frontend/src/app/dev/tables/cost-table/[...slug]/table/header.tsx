@@ -2,82 +2,131 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import { costTableRawDataProps } from "./type";
+import { productCardProps } from "./table";
 import { createColumnHelper } from "@tanstack/react-table";
+import { ChangeEvent, MouseEvent, useState, useEffect } from "react";
+import { updateCandidate } from "../../../candidate-table/[...slug]/fetch";
 import { toast } from "react-toastify";
 
-import { updateCandidate } from "../fetch";
-import { useState } from "react";
-import KreamProductModal from "../../../kream-table/[...slug]/modal/kream-product-modal";
+const candidateClass = "p-2 h-[200px] flex-center";
 
-const OpenDetail = (props: any) => {
-    const { productId, totalPriceBeforeCardFee } = props.row.original;
-    const [isOpen, setIsOpen] = useState(false);
+type Option = {
+    label: string;
+    value: string;
+};
 
-    const cost = totalPriceBeforeCardFee * 1.05 + 3000;
+const columnHelper = createColumnHelper<productCardProps>();
 
+const EditCell = ({ row, table }) => {
+    const meta = table.options.meta;
+    const setEditedRows = (e: MouseEvent<HTMLButtonElement>) => {
+        const elName = e.currentTarget.name;
+        meta?.setEditedRows((old: []) => ({
+            ...old,
+            [row.id]: !old[row.id],
+        }));
+        if (elName !== "edit") {
+            meta?.revertData(row.index, e.currentTarget.name === "cancel");
+        }
+    };
     return (
-        <>
-            <button
-                className="bg-gray-200 hover:bg-gray-300 p-2"
-                onClick={() => {
-                    setIsOpen(true);
-                }}>
-                상세정보
-            </button>
-            {isOpen && (
-                <KreamProductModal
-                    searchType="productId"
-                    value={productId}
-                    isOpen={isOpen}
-                    setIsOpen={setIsOpen}
-                    cost={Math.round(cost)}
-                />
+        <div className="edit-cell-container w-[50px] flex-center">
+            {meta?.editedRows[row.id] ? (
+                <div className="edit-cell">
+                    <button onClick={setEditedRows} name="cancel">
+                        X
+                    </button>
+                    <button onClick={setEditedRows} name="done">
+                        ✔
+                    </button>
+                </div>
+            ) : (
+                <button onClick={setEditedRows} name="edit">
+                    ✐
+                </button>
             )}
-        </>
+        </div>
     );
+};
+
+const TableCell = ({ getValue, row, column, table }) => {
+    const initialValue = getValue();
+    const [value, setValue] = useState(typeof initialValue === "boolean" ? initialValue.toString() : initialValue);
+    const columnMeta = column.columnDef.meta;
+    const tableMeta = table.options.meta;
+
+    const onBlur = () => {
+        tableMeta?.updateData(row.index, column.id, value);
+    };
+    const onSelectChange = (e: ChangeEvent<HTMLSelectElement>) => {
+        setValue(e.target.value);
+        tableMeta?.updateData(row.index, column.id, e.target.value);
+    };
+    if (tableMeta?.editedRows[row.id]) {
+        return columnMeta?.type === "select" ? (
+            <select onChange={onSelectChange} value={initialValue}>
+                {columnMeta?.options?.map((option: Option) => (
+                    <option key={option.value} value={option.value}>
+                        {option.label}
+                    </option>
+                ))}
+            </select>
+        ) : (
+            <input
+                value={value}
+                onChange={(e) => setValue(e.target.value)}
+                onBlur={onBlur}
+                type={columnMeta?.type || "text"}
+                className="max-w-[100px]"
+            />
+        );
+    }
+    return <span>{value}</span>;
+};
+
+const boolArray = () => {
+    return [
+        { value: true, label: "true" },
+        { value: false, label: "false" },
+    ];
 };
 
 const handleCandidate = (event: any) => {
     const { id, status } = event.target.dataset;
 
-    const reverseStatus = status === "true" ? false : true;
-
-    console.log(event.target, id, reverseStatus);
+    const reverseStatus = status === "1" ? 2 : 1;
 
     updateCandidate(id, reverseStatus).then((res) => {
         if (res.status === 200) {
-            event.target.className = reverseStatus ? "bg-green-400 p-2" : "bg-rose-300 p-2";
+            event.target.className =
+                reverseStatus === 2 ? `bg-green-200 ${candidateClass}` : `bg-yellow-200 ${candidateClass}`;
             event.target.dataset.status = reverseStatus;
             toast.success("업데이트 성공", { position: "top-left", autoClose: 1000 });
         }
     });
 };
 
-const columnHelper = createColumnHelper<costTableRawDataProps>();
-
-export const CostTableColumn = [
+export const productCardColumns = [
     columnHelper.accessor("candidate", {
         header: "추적여부",
         cell: (props) => (
             <div
-                className={`${props.getValue() ? "bg-green-400" : "bg-rose-300"} p-2 `}
+                className={`${props.getValue() === 2 ? "bg-green-200" : "bg-yellow-200"} ${candidateClass}`}
                 data-id={props.row.original.shopProductCardId}
                 data-status={props.getValue()}
                 onClick={handleCandidate}>
-                {props.row.original.productId}
+                {props.getValue() === 2 ? "수집 제품" : "후보 제품"}
             </div>
         ),
     }),
-
-    columnHelper.accessor("shopProductName", {
+    columnHelper.accessor("shopProductImgUrl", {
         header: "이미지",
         cell: (props) => (
             <div>
                 <div className="relative h-[200px] w-[200px] ">
                     <Image
-                        src={props.row.original.shopProductImgUrl}
-                        alt={props.getValue()}
+                        src={props.getValue()}
+                        alt={props.row.original.shopProductName}
                         fill
                         style={{ objectFit: "contain" }}
                     />
@@ -85,82 +134,17 @@ export const CostTableColumn = [
             </div>
         ),
     }),
-    columnHelper.display({
-        header: "크림상세정보",
-        cell: OpenDetail,
-    }),
-    columnHelper.accessor("originalPrice", {
-        header: "구매가(외화)",
-        cell: (props) => (
-            <div className="flex-center flex-col">
-                <div className="text-xs">{props.row.original.originalPriceCurrency}</div>
-                <div
-                    className="text-xs text-blue-500 line-through
-">
-                    ({props.getValue()})
-                </div>
-                <div>{props.row.original.taxReductionOriginalPrice}</div>
 
-                <div>$ {props.row.original.usPrice}</div>
-            </div>
-        ),
-    }),
-    columnHelper.accessor("sellPrice10P", {
-        header: "마진 범위",
-        cell: (props) => {
-            const sell10P = props.getValue() - props.row.original.totalPrice;
-            const sell20P = props.row.original.sellPrice20P - props.row.original.totalPrice;
-            return (
-                <div className="flex flex-col gap-4">
-                    <div className="flex-center flex-col gap-1">
-                        <div className="text-green-700 text-bold">{props.getValue().toLocaleString()}</div>
-                        <div className="text-green-700 text-bold underline">(+ {sell10P.toLocaleString()})</div>
-                    </div>
-                    <div className="flex-center flex-col gap-1">
-                        <div className="text-green-500 text-bold">
-                            {props.row.original.sellPrice20P.toLocaleString()}
-                        </div>
-                        <div className="text-green-500 text-bold underline">(+ {sell20P.toLocaleString()})</div>
-                    </div>
-                </div>
-            );
+    columnHelper.accessor("productId", {
+        header: "상품 ID",
+        cell: TableCell,
+        meta: {
+            type: "text",
         },
     }),
 
-    columnHelper.accessor("totalPrice", {
-        header: "총 구매가",
-        cell: (props) => {
-            return (
-                <div>
-                    <div>{props.getValue().toLocaleString()}</div>
-                </div>
-            );
-        },
-    }),
-    columnHelper.accessor("korPrice", {
-        header: "구매가",
-        cell: (props) => <div>{props.getValue().toLocaleString()}</div>,
-    }),
-    columnHelper.accessor("intlShipKorPrice", {
-        header: "해외배송비",
-        cell: (props) => (
-            <div>
-                <div>{props.getValue().toLocaleString()}</div>
-                <div className="text-blue-500 text-xs">({props.row.original.intlShipPrice})</div>
-            </div>
-        ),
-    }),
-    columnHelper.accessor("customFee", {
-        header: "관세",
-        cell: (props) => <div>{props.getValue().toLocaleString()}</div>,
-    }),
-    columnHelper.accessor("VATFee", {
-        header: "부가세",
-        cell: (props) => <div>{props.getValue().toLocaleString()}</div>,
-    }),
-    columnHelper.accessor("cardFee", {
-        header: "카드수수료",
-        cell: (props) => <div>{props.getValue().toLocaleString()}</div>,
+    columnHelper.accessor("shopName", {
+        header: "스토어명",
     }),
     columnHelper.accessor("shopProductName", {
         header: "상품명",
@@ -175,5 +159,58 @@ export const CostTableColumn = [
                 </Link>
             </div>
         ),
+    }),
+
+    columnHelper.accessor("brandName", {
+        header: "브랜드명",
+        cell: TableCell,
+        meta: {
+            type: "text",
+        },
+    }),
+
+    columnHelper.accessor("korPrice", {
+        header: "한국 가격",
+        cell: TableCell,
+        meta: {
+            type: "number",
+        },
+    }),
+    columnHelper.accessor("usPrice", {
+        header: "미국 가격",
+        cell: TableCell,
+        meta: {
+            type: "number",
+        },
+    }),
+    columnHelper.accessor("originalPriceCurrency", {
+        header: "통화",
+        cell: TableCell,
+        meta: {
+            type: "text",
+        },
+    }),
+    columnHelper.accessor("originalPrice", {
+        header: "원래 가격",
+        cell: TableCell,
+        meta: {
+            type: "number",
+        },
+    }),
+    columnHelper.accessor("soldOut", {
+        header: "품절여부",
+        cell: TableCell,
+        meta: {
+            type: "select",
+            options: boolArray(),
+        },
+    }),
+    columnHelper.accessor("updatedAt", {
+        header: "업데이트 날짜",
+    }),
+
+    columnHelper.display({
+        id: "edit",
+        cell: EditCell,
     }),
 ];
