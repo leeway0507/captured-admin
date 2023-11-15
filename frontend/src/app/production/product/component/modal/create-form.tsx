@@ -2,7 +2,7 @@
 
 import CustomInput from "@/app/production/prod-components/custom-input/cusotm-input";
 import { useEffect, useState } from "react";
-import * as api from "./fetch";
+import * as api from "../fetch";
 import { CreateproductCardProps } from "@/app/types/type";
 
 export default function CreateForm({ openToggle }: { openToggle: () => void }) {

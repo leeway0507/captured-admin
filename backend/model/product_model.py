@@ -41,3 +41,28 @@ class ProductResponseSchema(BaseModel):
     data: List[Dict]
     currentPage: int
     lastPage: int
+
+
+class ProductInfoForCostTableSchema(BaseModel):
+    """ProductInfoForCostTable Schema"""
+
+    model_config = ConfigDict(alias_generator=to_camel, populate_by_name=True)
+    sku: int
+    product_id: str
+    price: int
+    shipping_fee: int
+
+
+class productInfoDraftSchema(BaseModel):
+    model_config = ConfigDict(alias_generator=to_camel, populate_by_name=True)
+    brand: str
+    product_name: str
+    product_id: str
+    size: Optional[str] = None
+    price: int
+    shipping_fee: int
+    intl: bool
+    color: str  # List[str]
+    category: str
+    category_spec: str
+    img_type: str

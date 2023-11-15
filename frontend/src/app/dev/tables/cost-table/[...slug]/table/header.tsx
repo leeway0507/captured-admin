@@ -2,87 +2,21 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import { productCardProps } from "./table";
+import { costTableDataProps } from "./table";
 import { createColumnHelper } from "@tanstack/react-table";
-import { ChangeEvent, MouseEvent, useState, useEffect } from "react";
-import { updateCandidate } from "../../../candidate-table/[...slug]/fetch";
-import { toast } from "react-toastify";
 
-const candidateClass = "p-2 h-[200px] flex-center";
+import {
+    OpenDetail,
+    TableCell,
+    GetPrices,
+    handleCandidate,
+    handleRemoveCandidate,
+    candidateClass,
+    updateToDB,
+    sendDraft,
+} from "./header-functions";
 
-type Option = {
-    label: string;
-    value: string;
-};
-
-const columnHelper = createColumnHelper<productCardProps>();
-
-const EditCell = ({ row, table }) => {
-    const meta = table.options.meta;
-    const setEditedRows = (e: MouseEvent<HTMLButtonElement>) => {
-        const elName = e.currentTarget.name;
-        meta?.setEditedRows((old: []) => ({
-            ...old,
-            [row.id]: !old[row.id],
-        }));
-        if (elName !== "edit") {
-            meta?.revertData(row.index, e.currentTarget.name === "cancel");
-        }
-    };
-    return (
-        <div className="edit-cell-container w-[50px] flex-center">
-            {meta?.editedRows[row.id] ? (
-                <div className="edit-cell">
-                    <button onClick={setEditedRows} name="cancel">
-                        X
-                    </button>
-                    <button onClick={setEditedRows} name="done">
-                        ✔
-                    </button>
-                </div>
-            ) : (
-                <button onClick={setEditedRows} name="edit">
-                    ✐
-                </button>
-            )}
-        </div>
-    );
-};
-
-const TableCell = ({ getValue, row, column, table }) => {
-    const initialValue = getValue();
-    const [value, setValue] = useState(typeof initialValue === "boolean" ? initialValue.toString() : initialValue);
-    const columnMeta = column.columnDef.meta;
-    const tableMeta = table.options.meta;
-
-    const onBlur = () => {
-        tableMeta?.updateData(row.index, column.id, value);
-    };
-    const onSelectChange = (e: ChangeEvent<HTMLSelectElement>) => {
-        setValue(e.target.value);
-        tableMeta?.updateData(row.index, column.id, e.target.value);
-    };
-    if (tableMeta?.editedRows[row.id]) {
-        return columnMeta?.type === "select" ? (
-            <select onChange={onSelectChange} value={initialValue}>
-                {columnMeta?.options?.map((option: Option) => (
-                    <option key={option.value} value={option.value}>
-                        {option.label}
-                    </option>
-                ))}
-            </select>
-        ) : (
-            <input
-                value={value}
-                onChange={(e) => setValue(e.target.value)}
-                onBlur={onBlur}
-                type={columnMeta?.type || "text"}
-                className="max-w-[100px]"
-            />
-        );
-    }
-    return <span>{value}</span>;
-};
+const columnHelper = createColumnHelper<costTableDataProps>();
 
 const boolArray = () => {
     return [
@@ -91,126 +25,232 @@ const boolArray = () => {
     ];
 };
 
-const handleCandidate = (event: any) => {
-    const { id, status } = event.target.dataset;
+const roundUpTwo = (num: number) => {
+    return Math.round(num * 100) / 100;
+};
 
-    const reverseStatus = status === "1" ? 2 : 1;
-
-    updateCandidate(id, reverseStatus).then((res) => {
-        if (res.status === 200) {
-            event.target.className =
-                reverseStatus === 2 ? `bg-green-200 ${candidateClass}` : `bg-yellow-200 ${candidateClass}`;
-            event.target.dataset.status = reverseStatus;
-            toast.success("업데이트 성공", { position: "top-left", autoClose: 1000 });
-        }
-    });
+const features = (props: any) => {
+    return (
+        <div className="flex flex-col h-[200px] justify-evenly">
+            {OpenDetail(props)}
+            {updateToDB(props)}
+            {sendDraft(props)}
+        </div>
+    );
 };
 
 export const productCardColumns = [
     columnHelper.accessor("candidate", {
         header: "추적여부",
         cell: (props) => (
-            <div
-                className={`${props.getValue() === 2 ? "bg-green-200" : "bg-yellow-200"} ${candidateClass}`}
-                data-id={props.row.original.shopProductCardId}
-                data-status={props.getValue()}
-                onClick={handleCandidate}>
-                {props.getValue() === 2 ? "수집 제품" : "후보 제품"}
-            </div>
+            <>
+                <div
+                    id={`status-${props.row.original.shopProductCardId}`}
+                    className={`${props.getValue() === 2 ? "bg-green-200" : "bg-yellow-200"} ${candidateClass}`}
+                    data-id={props.row.original.shopProductCardId}
+                    data-status={props.getValue()}
+                    onClick={handleCandidate}>
+                    {props.getValue() === 2 ? "수집 제품" : "후보 제품"}
+                </div>
+                <div
+                    className={`bg-rose-200 flex-center h-[50px] mt-2`}
+                    data-id={props.row.original.shopProductCardId}
+                    data-status={1}
+                    onClick={handleRemoveCandidate}>
+                    후보 제거
+                </div>
+            </>
         ),
     }),
     columnHelper.accessor("shopProductImgUrl", {
-        header: "이미지",
+        header: "이미지(링크)",
         cell: (props) => (
-            <div>
-                <div className="relative h-[200px] w-[200px] ">
-                    <Image
-                        src={props.getValue()}
-                        alt={props.row.original.shopProductName}
-                        fill
-                        style={{ objectFit: "contain" }}
-                    />
-                </div>
-            </div>
-        ),
-    }),
-
-    columnHelper.accessor("productId", {
-        header: "상품 ID",
-        cell: TableCell,
-        meta: {
-            type: "text",
-        },
-    }),
-
-    columnHelper.accessor("shopName", {
-        header: "스토어명",
-    }),
-    columnHelper.accessor("shopProductName", {
-        header: "상품명",
-        cell: (props) => (
-            <div className="max-w-[200px] overflow-hidden">
+            <div className="flex-center flex-col">
                 <Link
                     href={props.row.original.productUrl}
                     target="_blank"
                     rel="noreferrer"
-                    className="underline text-blue-700 pointer-cursor">
-                    <div>{props.getValue()}</div>
+                    className="underline text-blue-700 pointer-cursor hover:opacity-80">
+                    <div className="relative h-[150px] w-[150px] ">
+                        <Image
+                            src={props.getValue()}
+                            alt={props.row.original.shopProductName}
+                            fill
+                            sizes="150px"
+                            style={{ objectFit: "contain" }}
+                        />
+                    </div>
                 </Link>
+                <div>{props.row.original.shopName}</div>
+                <div>{props.row.original.brandName}</div>
             </div>
         ),
     }),
+    columnHelper.display({
+        header: "기능",
+        cell: features,
+    }),
 
-    columnHelper.accessor("brandName", {
-        header: "브랜드명",
-        cell: TableCell,
+    columnHelper.accessor("productId", {
+        header: "상품 ID",
+        cell: (props) => <div className="w-[150px]">{TableCell(props)}</div>,
         meta: {
             type: "text",
         },
     }),
 
-    columnHelper.accessor("korPrice", {
-        header: "한국 가격",
+    columnHelper.accessor("coupon", {
+        header: "쿠폰",
         cell: TableCell,
         meta: {
             type: "number",
         },
     }),
-    columnHelper.accessor("usPrice", {
-        header: "미국 가격",
-        cell: TableCell,
-        meta: {
-            type: "number",
+    columnHelper.accessor("sellingPrice", {
+        header: "실판매가",
+        cell: (props) => <div className="font-bold text-rose-500">{props.getValue()}</div>,
+    }),
+    columnHelper.display({
+        header: "예상이익",
+        cell: (props) => {
+            const { sellingPrice } = props.row.original;
+            const { totalPriceBeforeCardFee, cardFee } = GetPrices(props);
+            const value = Math.round(totalPriceBeforeCardFee + cardFee);
+            const profit = sellingPrice - value;
+            return <div className="text-green-700">{profit.toLocaleString()}</div>;
         },
     }),
-    columnHelper.accessor("originalPriceCurrency", {
-        header: "통화",
-        cell: TableCell,
-        meta: {
-            type: "text",
+    columnHelper.display({
+        header: "마진 범위",
+        cell: (props) => {
+            const { sellPrice10P, sellPrice20P, totalPriceBeforeCardFee, cardFee } = GetPrices(props);
+            const sell10P = Math.round(sellPrice10P - (totalPriceBeforeCardFee + cardFee));
+            const sell20P = Math.round(sellPrice20P - (totalPriceBeforeCardFee + cardFee));
+            return (
+                <div className="flex flex-col gap-4">
+                    <div className="flex-center flex-col gap-1">
+                        <div className="text-green-700 text-bold">{sellPrice10P.toLocaleString()}</div>
+                        <div className="text-green-700 text-bold underline">(+ {sell10P.toLocaleString()})</div>
+                    </div>
+                    <div className="flex-center flex-col gap-1">
+                        <div className="text-green-500 text-bold">{sellPrice20P.toLocaleString()}</div>
+                        <div className="text-green-500 text-bold underline">(+ {sell20P.toLocaleString()})</div>
+                    </div>
+                </div>
+            );
         },
     }),
-    columnHelper.accessor("originalPrice", {
-        header: "원래 가격",
-        cell: TableCell,
-        meta: {
-            type: "number",
+    columnHelper.display({
+        header: "원가",
+        cell: (props) => {
+            const { totalPriceBeforeCardFee, cardFee } = GetPrices(props);
+            const value = Math.round(totalPriceBeforeCardFee + cardFee);
+            return (
+                <div>
+                    <div>{value.toLocaleString()}</div>
+                </div>
+            );
         },
-    }),
-    columnHelper.accessor("soldOut", {
-        header: "품절여부",
-        cell: TableCell,
-        meta: {
-            type: "select",
-            options: boolArray(),
-        },
-    }),
-    columnHelper.accessor("updatedAt", {
-        header: "업데이트 날짜",
     }),
 
     columnHelper.display({
-        id: "edit",
-        cell: EditCell,
+        header: "구매가",
+        id: "koreaPrice",
+        cell: (props) => {
+            const { coupon, originalPrice, originalPriceCurrency } = props.row.original;
+
+            const { korPrice, usPrice, PriceWithCoupon, taxReductionOriginalPrice } = GetPrices(props);
+
+            return (
+                <div>
+                    <div className="text-deep-gray line-through ">({originalPrice})</div>
+                    <div>₩ {Math.round(korPrice).toLocaleString()}</div>
+                    <div className="text-blue-500 text-xs whitespace-nowrap">
+                        {coupon > 0 ? (
+                            <div>쿠폰가 : {roundUpTwo(PriceWithCoupon)}</div>
+                        ) : (
+                            <div>
+                                ({originalPriceCurrency} {roundUpTwo(taxReductionOriginalPrice)})
+                            </div>
+                        )}
+                    </div>
+
+                    <div>$ {roundUpTwo(usPrice)}</div>
+                </div>
+            );
+        },
+    }),
+
+    columnHelper.display({
+        header: "해외배송비",
+        cell: (props) => {
+            const { intlShipPrice } = props.row.original;
+            const { intlShipKorPrice } = GetPrices(props);
+
+            return (
+                <div>
+                    <div>
+                        <div>₩ {intlShipKorPrice.toLocaleString()}</div>
+                        <div className="text-blue-500 text-xs">({intlShipPrice})</div>
+                    </div>
+                </div>
+            );
+        },
+    }),
+    columnHelper.display({
+        header: "관세",
+        cell: (props) => {
+            const { customRate } = props.row.original;
+
+            const { customFee } = GetPrices(props);
+            return (
+                <div>
+                    <div>{customFee}</div>
+                    <div className="text-blue-500 text-xs">({customRate})</div>
+                </div>
+            );
+        },
+    }),
+    columnHelper.display({
+        header: "부가세",
+        cell: (props) => {
+            const { VATRate } = props.row.original;
+            const { VATFee } = GetPrices(props);
+            return (
+                <div>
+                    <div>{VATFee}</div>
+                    <div className="text-blue-500 text-xs">({VATRate})</div>
+                </div>
+            );
+        },
+    }),
+    columnHelper.display({
+        header: "카드수수료",
+        cell: (props) => {
+            const { cardRate } = props.row.original;
+            const { cardFee } = GetPrices(props);
+            return (
+                <div>
+                    <div>{cardFee}</div>
+                    <div className="text-blue-500 text-xs">({cardRate})</div>
+                </div>
+            );
+        },
+    }),
+
+    columnHelper.accessor("soldOut", {
+        header: "품절여부",
+    }),
+    columnHelper.accessor("updatedAt", {
+        header: "업데이트",
+        cell: (props) => {
+            const date = props.getValue().toString().split("T");
+            return (
+                <div className="flex flex-col gap-1">
+                    <div>{date[0]}</div>
+                    <div>{date[1]}</div>
+                </div>
+            );
+        },
     }),
 ];

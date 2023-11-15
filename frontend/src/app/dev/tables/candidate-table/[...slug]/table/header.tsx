@@ -2,7 +2,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import { costTableRawDataProps } from "./type";
+import { candidateTableRawDataProps } from "./type";
 import { createColumnHelper } from "@tanstack/react-table";
 import { toast } from "react-toastify";
 
@@ -55,7 +55,7 @@ const handleCandidate = (event: any) => {
     });
 };
 
-const columnHelper = createColumnHelper<costTableRawDataProps>();
+const columnHelper = createColumnHelper<candidateTableRawDataProps>();
 
 export const CostTableColumn = [
     columnHelper.accessor("candidate", {
@@ -71,19 +71,24 @@ export const CostTableColumn = [
         ),
     }),
 
-    columnHelper.accessor("shopProductName", {
+    columnHelper.accessor("shopProductImgUrl", {
         header: "이미지",
         cell: (props) => (
-            <div>
+            <Link
+                href={props.row.original.productUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="underline text-blue-700 pointer-cursor hover:opacity-80">
                 <div className="relative h-[200px] w-[200px] ">
                     <Image
-                        src={props.row.original.shopProductImgUrl}
-                        alt={props.getValue()}
+                        src={props.getValue()}
+                        alt={props.row.original.shopProductName}
                         fill
+                        sizes="200px"
                         style={{ objectFit: "contain" }}
                     />
                 </div>
-            </div>
+            </Link>
         ),
     }),
     columnHelper.display({

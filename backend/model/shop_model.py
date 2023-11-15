@@ -1,6 +1,6 @@
 from pydantic import BaseModel, validator, ConfigDict, EmailStr
 from pydantic.alias_generators import to_camel
-from typing import List, Optional, Dict
+from typing import List, Optional, Dict, Any
 
 
 class ShopProductId(BaseModel):
@@ -24,3 +24,12 @@ class RequestShopInfo(BaseModel):
     from_us_shipping: Optional[bool] = None
     is_ddp: Optional[bool] = None
     country: Optional[str] = None
+
+
+class updateShopProductCardSchema(BaseModel):
+    """ShopInfoTable Schema"""
+
+    model_config = ConfigDict(alias_generator=to_camel, populate_by_name=True)
+
+    shop_product_card_id: int
+    value: Dict[str, Any]

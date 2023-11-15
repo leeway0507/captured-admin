@@ -9,7 +9,7 @@ interface kreamDetailModalProps {
     closeModal: () => void;
 }
 
-const KreamDetailModal = (props: kreamDetailModalProps) => {
+const BaseModal = (props: kreamDetailModalProps) => {
     const { closeModal, isOpen, content } = props;
     return (
         <Transition appear show={isOpen} as={Fragment}>
@@ -25,8 +25,8 @@ const KreamDetailModal = (props: kreamDetailModalProps) => {
                     <div className="fixed inset-0 bg-black bg-opacity-60" />
                 </Transition.Child>
 
-                <div className="fixed left-0 right-0 top-0 overflow-y-auto">
-                    <div className="flex min-h-full items-center justify-center p-4 text-center">
+                <div className="fixed inset-0 overflow-y-auto">
+                    <div className="flex min-h-full items-center justify-center p-4 text-center ">
                         <Transition.Child
                             as={Fragment}
                             enter="ease-out duration-300"
@@ -35,7 +35,7 @@ const KreamDetailModal = (props: kreamDetailModalProps) => {
                             leave="ease-in duration-200"
                             leaveFrom="opacity-100 scale-100"
                             leaveTo="opacity-0 scale-80">
-                            <Dialog.Panel className="w-full max-w-[50vw] max-h-[90vh] h-full overflow-auto bg-white p-6 text-left align-middle">
+                            <Dialog.Panel className="w-full max-w-3xl max-h-[90vh] h-full overflow-auto bg-white p-6 text-left align-middle rounded-2xl">
                                 <div className="mt-2">
                                     <div className="text-sm text-gray-500 pb-4">{content}</div>
                                 </div>
@@ -48,4 +48,4 @@ const KreamDetailModal = (props: kreamDetailModalProps) => {
     );
 };
 
-export default KreamDetailModal;
+export default BaseModal;

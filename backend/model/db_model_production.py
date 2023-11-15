@@ -15,10 +15,7 @@ from model.order_model import OrderHistoryRequestSchema, OrderRowRequestchmea
 class ProductInfoSchema(BaseModel):
     """ProductInfoTable Schema"""
 
-    model_config = ConfigDict(
-        alias_generator=to_camel,
-        populate_by_name=True,
-    )
+    model_config = ConfigDict(alias_generator=to_camel, populate_by_name=True)
     sku: Optional[int] = None
     brand: str
     product_name: str
@@ -126,7 +123,7 @@ class OrderRowInDBSchmea(OrderRowRequestchmea):
 
     model_config = ConfigDict(alias_generator=to_camel, populate_by_name=True)
 
-    order_row_id: Optional[int] = Field(default=None, primary_key=True)
+    order_row_id: Optional[int] = Field(default=None)
     delivery_status: Optional[str] = "배송준비"
     delivery_company: Optional[str] = None
     delivery_number: Optional[str] = None

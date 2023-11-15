@@ -29,10 +29,10 @@ async def get_item_list(db: AsyncSession = Depends(get_production_db)):
     return await get_category(db)
 
 
-
-
 @production_router.post("/create-product")
-async def create(product: ProductInfoSchema, db: AsyncSession = Depends(get_production_db)):
+async def create(
+    product: ProductInfoSchema, db: AsyncSession = Depends(get_production_db)
+):
     """제품 생성"""
     product.sku = await create_new_sku(db)
     search_info = product.brand + " " + product.product_name + " " + product.product_id
@@ -55,7 +55,9 @@ async def create(product: ProductInfoSchema, db: AsyncSession = Depends(get_prod
 
 
 @production_router.post("/update-product")
-async def update(product_in_db: ProductInfoDBSchema, db: AsyncSession = Depends(get_production_db)):
+async def update(
+    product_in_db: ProductInfoDBSchema, db: AsyncSession = Depends(get_production_db)
+):
     """제품 수정"""
 
     if await update_product(db, product_in_db):
@@ -65,7 +67,9 @@ async def update(product_in_db: ProductInfoDBSchema, db: AsyncSession = Depends(
 
 
 @production_router.post("/delete-product")
-async def delete(product: ProductInfoSchema, db: AsyncSession = Depends(get_production_db)):
+async def delete(
+    product: ProductInfoSchema, db: AsyncSession = Depends(get_production_db)
+):
     """제품 삭제"""
 
     if product.sku == None:
@@ -75,3 +79,12 @@ async def delete(product: ProductInfoSchema, db: AsyncSession = Depends(get_prod
         return {"message": "success"}
     else:
         raise HTTPException(status_code=406, detail="제품 삭제에 실패했습니다. 다시 시도해주세요.")
+
+
+@production_router.get("/get-product-info-for-cost-product")
+async def get_product_info_for_cost_product(
+    db: AsyncSession = Depends(get_production_db),
+):
+    """product_unique_id 조회"""
+
+    return await get_product_info_for_cost_table(db)

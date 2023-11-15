@@ -1,9 +1,12 @@
-import NavFooter from "@/app/production/prod-components/nav-footer/nav-footer";
-import Main from "./main";
-export default function Page() {
+import { Table } from "@/app/production/order/component/table/table";
+import * as api from "./component/fetch";
+
+export default async function Main() {
+    const data = await api.getOrderHistory();
+
     return (
-        <NavFooter>
-            <Main />
-        </NavFooter>
+        <div className="py-12">
+            <Table defaultData={data} />
+        </div>
     );
 }

@@ -3,12 +3,23 @@ from datetime import datetime
 
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy import select, delete, insert, text
+from sqlalchemy.dialects.mysql import insert
 
 from logs.make_log import make_logger
-from db.tables_production import OrderHistoryTable, OrderRowTable, SizeTable,ProductInfoTable
+from db.tables_production import (
+    OrderHistoryTable,
+    OrderRowTable,
+    SizeTable,
+    ProductInfoTable,
+)
 from db.connection import commit
-from model.db_model_production import OrderHistoryInDBSchema, OrderRowInDBSchmea, SizeSchema,ProductInfoDBSchema
-from sqlalchemy.dialects.mysql import insert
+from model.db_model_production import (
+    OrderHistoryInDBSchema,
+    OrderRowInDBSchmea,
+    SizeSchema,
+    ProductInfoDBSchema,
+)
+from model.product_model import ProductInfoForCostTableSchema
 
 error_log = make_logger("logs/admin/util.log", "admin_router")
 
@@ -17,13 +28,18 @@ async def get_order_history(db: AsyncSession):
     result = await db.execute(select(OrderHistoryTable))
     result = result.all()
     print(result)
-    return [OrderHistoryInDBSchema(**row.to_dict()).model_dump(by_alias=True) for row in result]
+    return [
+        OrderHistoryInDBSchema(**row.to_dict()).model_dump(by_alias=True)
+        for row in result
+    ]
 
 
 async def get_order_row(db: AsyncSession):
     result = await db.execute(select(OrderRowTable))
     result = result.all()
-    return [OrderRowInDBSchmea(**row.to_dict()).model_dump(by_alias=True) for row in result]
+    return [
+        OrderRowInDBSchmea(**row.to_dict()).model_dump(by_alias=True) for row in result
+    ]
 
 
 async def create_new_sku(db: AsyncSession):
@@ -38,7 +54,7 @@ async def create_new_sku(db: AsyncSession):
 
 
 async def create_product(db: AsyncSession, product: ProductInfoDBSchema):
-    query = db.add(ProductInfoTable(**product.model_dump()))
+    query = db.add(ProductInfoTable(**product.model_dump()))  # type: ignore
     return await commit(db, query, error_log)
 
 
@@ -80,7 +96,12 @@ async def get_size_list(db: AsyncSession, sku: int):
 
 async def create_size(db: AsyncSession, sku: int, size_list: List[str]):
     size_objects = [
-        SizeSchema(sku=sku, size=size, updated_at=datetime.now().replace(microsecond=0), available=True).model_dump()
+        SizeSchema(
+            sku=sku,
+            size=size,
+            updated_at=datetime.now().replace(microsecond=0),
+            available=True,
+        ).model_dump()
         for size in size_list
     ]
     query = await db.execute(insert(SizeTable).values(size_objects))
@@ -105,8 +126,22 @@ async def delete_size(db: AsyncSession, sku: int):
     return await commit(db, query, error_log)
 
 
-async def get_category(db:AsyncSession) :
+async def get_category(db: AsyncSession):
     stmt = select(ProductInfoTable)
     query = await db.execute(stmt)
     result = query.all()
-    return [ProductInfoDBSchema(**row[0].to_dict()).model_dump(by_alias=True) for row in result]
+    return [
+        ProductInfoDBSchema(**row[0].to_dict()).model_dump(by_alias=True)
+        for row in result
+    ]
+
+
+async def get_product_info_for_cost_table(db: AsyncSession):
+    stmt = select(ProductInfoTable)
+    result = await db.execute(stmt)
+    result = result.scalars().all()
+
+    return [
+        ProductInfoForCostTableSchema(**row.to_dict()).model_dump(by_alias=True)
+        for row in result
+    ]

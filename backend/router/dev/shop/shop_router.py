@@ -20,6 +20,7 @@ from .components.update_to_db import (
     get_shop_product_list,
     load_scraped_brand_name,
     get_shop_product_list_for_cost_table,
+    get_currency_from_local,
 )
 from .components.shop_product_card_list.create_log import get_scrap_result
 
@@ -117,8 +118,4 @@ async def get_shop_info_api(shopName: str, db: AsyncSession = Depends(get_dev_db
 @shop_router.get("/get-buying-currency")
 def get_buying_currency():
     """구매 환율 조회"""
-    path = "router/dev/shop/components/currency/data/buying_currency.json"
-    with open(path, "r") as f:
-        data = json.load(f)
-
-    return data
+    return get_currency_from_local()

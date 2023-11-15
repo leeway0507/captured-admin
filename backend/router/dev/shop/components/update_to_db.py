@@ -1,5 +1,5 @@
-from ast import alias
-from typing import Dict, List, Optional
+import json
+from typing import Dict, List, Optional, Any
 from datetime import datetime
 
 from sqlalchemy.ext.asyncio import AsyncSession
@@ -10,6 +10,11 @@ from db.tables_shop import ShopInfoTable, ShopProductCardTable, ShopProductSizeT
 from .load_scrap_result import get_last_scrap_product_dict, get_scrap_product_dict
 from model.shop_model import ShopProductId, RequestShopInfo
 from model.db_model_shop import ShopInfoSchema, ShopProductCardSchema
+
+
+### production
+from db.tables_production import ProductInfoTable
+from db.production_db import session_local
 
 
 async def update_scrap_product_card_list_to_db(
@@ -129,10 +134,11 @@ async def get_shop_name_from_db(
 
 
 async def get_shop_info_by_name(db: AsyncSession, shopName: str):
-    stmt = select(ShopInfoTable).where(ShopInfoTable.shop_name == shopName)
+    shop_name_list = shopName.split(",")
+    stmt = select(ShopInfoTable).where(ShopInfoTable.shop_name.in_(shop_name_list))
     result = await db.execute(stmt)
-    result = result.scalars().first()
-    return ShopInfoSchema(**result.to_dict()).model_dump(by_alias=True)
+    result = result.scalars().all()
+    return [ShopInfoSchema(**row.to_dict()).model_dump(by_alias=True) for row in result]
 
 
 async def get_shop_product_list(db: AsyncSession, shopName: str, brandName: str):
@@ -191,7 +197,40 @@ async def get_shop_product_list_for_cost_table(
 
     result = await db.execute(stmt)
     result = result.scalars().all()
-    return [
+    db_data = [
         ShopProductCardSchema(**row.to_dict()).model_dump(by_alias=True)
         for row in result
     ]
+
+    shop_name = ",".join((set([row["shopName"] for row in db_data])))
+
+    print(shop_name)
+
+    return {
+        "shopInfos": await get_shop_info_by_name(db, shop_name),
+        "dbData": db_data,
+        "currency": get_currency_from_local(),
+    }
+
+
+def get_currency_from_local() -> Dict:
+    path = "router/dev/shop/components/currency/data/buying_currency.json"
+    with open(path, "r") as f:
+        data = json.load(f)
+
+    return data
+
+
+async def update_shop_product_card_list_for_cost_table(
+    db: AsyncSession,
+    shop_product_card_id: int,
+    value: Dict[str, Any],
+):
+    stmt = (
+        update(ShopProductCardTable)
+        .where(ShopProductCardTable.shop_product_card_id == shop_product_card_id)
+        .values(**value)
+    )
+    await db.execute(stmt)
+    await db.commit()
+    return {"message": "success"}

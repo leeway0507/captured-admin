@@ -35,7 +35,7 @@ const Page = () => {
     };
 
     return (
-        <div className="h-full flex-center">
+        <div className="flex-center w-full">
             <div className="flex gap-8 justify-space">
                 <div className="min-w-[300px] flex flex-col">
                     <div className="text-xl">스크랩 샵 이름</div>
@@ -70,7 +70,9 @@ const Page = () => {
                     />
                     <div>{search.brandName}</div>
                 </div>
-                <button className="black-bar-with-disabled min-w-[150px] text-xl " onClick={() => handleSubmit(search)}>
+                <button
+                    className="black-bar-with-disabled min-w-[150px] max-h-[100px] text-xl "
+                    onClick={() => handleSubmit(search)}>
                     요청하기
                 </button>
             </div>

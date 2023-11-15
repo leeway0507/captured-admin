@@ -1,7 +1,5 @@
-import { getProductCardListForCostTable } from "../fetch";
-import Main from "./main";
-import { productCardProps } from "./table/table";
-
+import { getCostTableDataSet, getProductInfoFromProduction } from "../fetch";
+import { CostTable } from "./table/table";
 export default async function Page({
     params,
     searchParams,
@@ -18,11 +16,12 @@ export default async function Page({
         valueDecoded = valueDecoded.replaceAll(" ", "_");
     }
 
-    const productCardList = await getProductCardListForCostTable(searchTypeDecoded, valueDecoded);
+    const costTableDataSet = await getCostTableDataSet(searchTypeDecoded, valueDecoded);
+    const productInfo = await getProductInfoFromProduction();
 
     return (
         <>
-            <Main productCardList={productCardList.data} />
+            <CostTable costTableDataSet={costTableDataSet.data} productInfo={productInfo.data} />
         </>
     );
 }

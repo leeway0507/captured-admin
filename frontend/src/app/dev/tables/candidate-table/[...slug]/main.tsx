@@ -17,6 +17,7 @@ export interface productCardProps {
     soldOut: boolean;
     candidate: number;
     updatedAt: Date;
+    coupon: number;
 }
 
 export interface shopInfoProps {

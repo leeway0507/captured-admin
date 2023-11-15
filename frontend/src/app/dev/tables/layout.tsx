@@ -10,23 +10,19 @@ function SideNav() {
             <Link href="/dev/kream" className="w-full link-animation flex-center py-4">
                 <div className="">Kream</div>
             </Link>
-            <Link
-                href="/dev/kream/scrap-result/result-list"
-                className="w-full link-animation hover:bg-purple-500 flex-center py-4">
+            <Link href="/dev/kream/scrap-result/result-list" className="w-full link-animation flex-center py-4">
                 <div className="">Scrap Result</div>
             </Link>
-            <Link href="/dev/shop" className="w-full link-animation hover:bg-purple-500 flex-center py-4">
+            <Link href="/dev/shop" className="w-full link-animation flex-center py-4">
                 <div className="">Shop</div>
             </Link>
-            <Link href="/dev/shop/shop-info" className="w-full link-animation hover:bg-purple-500 flex-center py-4">
+            <Link href="/dev/shop/shop-info" className="w-full link-animation flex-center py-4">
                 <div className="">Shop Info</div>
             </Link>
-            <Link
-                href="/dev/shop/scrap-result/result-list"
-                className="w-full link-animation hover:bg-purple-500 flex-center py-4">
+            <Link href="/dev/shop/scrap-result/result-list" className="w-full link-animation flex-center py-4">
                 <div className="">Scrap Result</div>
             </Link>
-            <Link href="/dev/tables" className="w-full link-animation hover:bg-purple-500 flex-center py-4">
+            <Link href="/dev/tables" className="w-full link-animation flex-center py-4">
                 <div className="">Table List</div>
             </Link>
         </div>
@@ -41,10 +37,8 @@ export default function DevLayout({ children }: { children: React.ReactNode }) {
             <div onClick={() => router.back()} className="absolute text-xl link-animation pt-16 z-10 left-8">
                 ← 돌아가기
             </div>
-            <div className="bg-white p-4 grow relative flex-center">
-                <div className="h-full pt-6">{children}</div>
-            </div>
-            <ToastContainer position="top-right" autoClose={5000} transition={Flip} pauseOnFocusLoss={false} />
+            <div className="bg-white py-8 px-4 items-stretch flex grow">{children}</div>
+            <ToastContainer position="top-left" autoClose={5000} transition={Flip} pauseOnFocusLoss={false} />
         </div>
     );
 }

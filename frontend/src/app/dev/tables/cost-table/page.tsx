@@ -26,7 +26,7 @@ function MyTabs() {
                 <Tab.Panel>
                     <BrandList />
                 </Tab.Panel>
-                <Tab.Panel className="h-full w-full m-auto">
+                <Tab.Panel>
                     <ShopList />
                 </Tab.Panel>
             </Tab.Panels>
@@ -36,8 +36,8 @@ function MyTabs() {
 
 const Page = () => {
     return (
-        <div className="relative h-full w-full">
-            <MyTabs />;
+        <div className="relative flex align-center justify-center w-full">
+            <MyTabs />
         </div>
     );
 };

@@ -17,7 +17,7 @@ export default async function Page({
 
     return (
         <>
-            <Main shopInfo={shopInfo.data} productCardList={productCardList.data} />
+            <Main shopInfo={shopInfo.data[0]} productCardList={productCardList.data} />
         </>
     );
 }

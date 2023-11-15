@@ -7,21 +7,19 @@ const box =
 const Page = () => {
     const router = useRouter();
     return (
-        <>
-            <div className="flex-center h-full">
-                <div className="grid grid-cols-3 gap-8">
-                    <div className={`${box}`} onClick={() => router.push("tables/candidate-table")}>
-                        후보 테이블
-                    </div>
-                    <div className={`${box}`} onClick={() => router.push("tables/kream-table")}>
-                        크림 테이블
-                    </div>
-                    <div className={`${box}`} onClick={() => router.push("tables/cost-table")}>
-                        단가 테이블
-                    </div>
+        <div className="flex-center w-full">
+            <div className="grid grid-cols-3 gap-8">
+                <div className={`${box}`} onClick={() => router.push("tables/candidate-table")}>
+                    후보 테이블
+                </div>
+                <div className={`${box}`} onClick={() => router.push("tables/kream-table")}>
+                    크림 테이블
+                </div>
+                <div className={`${box}`} onClick={() => router.push("tables/cost-table")}>
+                    단가 테이블
                 </div>
             </div>
-        </>
+        </div>
     );
 };
 

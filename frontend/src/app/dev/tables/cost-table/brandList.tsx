@@ -32,7 +32,12 @@ const BrandList = () => {
                             className={`relative ${childClass}  ${
                                 idx === hoveredIndex ? "hidden" : "display scale-[85%]"
                             }`}>
-                            <Image src={`/brands/white/${brandNameBar}-white-logo.png`} alt={brandNameBar} fill />
+                            <Image
+                                src={`/brands/white/${brandNameBar}-white-logo.png`}
+                                alt={brandNameBar}
+                                fill
+                                sizes="200px"
+                            />
                         </div>
                         <div className={`text ${childClass}  ${idx === hoveredIndex ? "display" : "hidden"}`}>
                             {brandName}
