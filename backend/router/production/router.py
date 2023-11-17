@@ -24,9 +24,11 @@ async def get_order_rows(db: AsyncSession = Depends(get_production_db)):
 
 
 @production_router.get("/get-category")
-async def get_item_list(db: AsyncSession = Depends(get_production_db)):
+async def get_item_list(
+    page: int, limit: int = 50, db: AsyncSession = Depends(get_production_db)
+):
     """리스트 불러오기"""
-    return await get_category(db)
+    return await get_init_category(page, limit, db)
 
 
 @production_router.post("/create-product")
@@ -66,16 +68,11 @@ async def update(
         raise HTTPException(status_code=406, detail="제품 업데이트에 실패했습니다. 다시 시도해주세요.")
 
 
-@production_router.post("/delete-product")
-async def delete(
-    product: ProductInfoSchema, db: AsyncSession = Depends(get_production_db)
-):
+@production_router.get("/delete-product")
+async def delete(sku: int, db: AsyncSession = Depends(get_production_db)):
     """제품 삭제"""
 
-    if product.sku == None:
-        raise HTTPException(status_code=406, detail="제품정보에 SKU가 존재하지 않아 삭제할 수 없습니다.")
-
-    if await delete_product(db, product.sku):
+    if await delete_product(db, sku):
         return {"message": "success"}
     else:
         raise HTTPException(status_code=406, detail="제품 삭제에 실패했습니다. 다시 시도해주세요.")

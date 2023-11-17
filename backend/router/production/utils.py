@@ -1,8 +1,11 @@
-from typing import List, Dict
+from pprint import pprint
+from typing import List, Dict, Any, Optional, Tuple, FrozenSet
+import time
+
 from datetime import datetime
 
 from sqlalchemy.ext.asyncio import AsyncSession
-from sqlalchemy import select, delete, insert, update
+from sqlalchemy import select, delete, insert, update, func, and_
 from sqlalchemy.dialects.mysql import insert
 
 from logs.make_log import make_logger
@@ -13,13 +16,18 @@ from db.tables_production import (
     ProductInfoTable,
 )
 from db.connection import commit
+from db.production_db import session_local
 from model.db_model_production import (
     OrderHistoryInDBSchema,
     OrderRowInDBSchmea,
     SizeSchema,
     ProductInfoDBSchema,
 )
-from model.product_model import ProductInfoForCostTableSchema
+from model.product_model import (
+    ProductInfoForCostTableSchema,
+    ProductResponseSchema,
+)
+from custom_alru import alru_cache
 
 error_log = make_logger("logs/admin/util.log", "admin_router")
 
@@ -67,26 +75,43 @@ async def update_product(db: AsyncSession, product: ProductInfoDBSchema):
     테이블에 해당 sku 사이즈가 존재하는지 확인하고, 존재하면 삭제 후 다시 생성해야함.
     """
 
-    assert isinstance(product.sku, int), f"sku is None"
+    stmt = (
+        update(ProductInfoTable)
+        .where(ProductInfoTable.sku == product.sku)
+        .values(product.model_dump())
+    )
+    await db.execute(stmt)
+    await db.commit()
 
-    size_rows = await get_size_list(db, product.sku)
+    # assert isinstance(product.sku, int), f"sku is None"
 
-    if size_rows:
-        await delete_size(db, product.sku)
+    # size_rows = await get_size_list(db, product.sku)
 
-    if await delete_product(db, product.sku):
-        await create_product(db, product)
+    # if size_rows:
+    #     await delete_size(db, product.sku)
 
-    if size_rows:
-        size_list = [row.size for row in size_rows]
-        await create_size(db, product.sku, size_list)
+    # if await delete_product(db, product.sku):
+    #     await create_product(db, product)
+
+    # if size_rows:
+    #     size_list = [row.size for row in size_rows]
+    #     await create_size(db, product.sku, size_list)
     return True
 
 
 async def delete_product(db: AsyncSession, sku: int):
+    assert isinstance(sku, int), f"sku is None"
+
+    size_rows = await get_size_list(db, sku)
+
+    if size_rows:
+        await delete_size(db, sku)
+
     stmt = delete(ProductInfoTable).where(ProductInfoTable.sku == sku)
-    query = await db.execute(stmt)
-    return await commit(db, query, error_log)
+    await db.execute(stmt)
+    await db.commit()
+
+    return {"message": "success"}
 
 
 async def get_size_list(db: AsyncSession, sku: int):
@@ -157,3 +182,105 @@ async def update_product_deploy_status(db: AsyncSession, sku: int, status: int):
     await db.execute(stmt)
     await db.commit()
     return {"message": "success"}
+
+
+################ get product List
+
+
+async def get_init_category(
+    page: int, limit: int, db: AsyncSession
+) -> ProductResponseSchema:
+    page_cursor, last_page = await get_page_cursor(page, limit, db)
+
+    # print(get_page_cursor.cache_info())
+
+    # print("get_init_category")
+    # print(page_cursor, last_page)
+
+    # query
+    stmt = (
+        select(ProductInfoTable, func.group_concat(SizeTable.size).label("size"))
+        .join(SizeTable, ProductInfoTable.sku == SizeTable.sku)
+        .where(and_(ProductInfoTable.sku < page_cursor))
+        .group_by(SizeTable.sku)
+        .order_by(ProductInfoTable.sku.desc())
+        .limit(limit)
+    )
+
+    result = await db.execute(stmt)
+
+    data = [
+        ProductInfoDBSchema(**row[0].to_dict(), size=row[1]).model_dump(by_alias=True)
+        for row in result
+    ]
+    data.reverse()
+
+    return ProductResponseSchema(data=data, currentPage=page, lastPage=last_page)
+
+
+async def get_page_cursor(
+    page: int, limit: int, db: AsyncSession, query=None
+) -> Tuple[int | str, int]:
+    """page index에서 페이지에 해당하는 sku를 추출"""
+    start = time.time()
+
+    query = {
+        "sort_type": "최신순",
+        "cursor_query": "ProductInfoTable.sku",
+        "order_by": "(ProductInfoTable.sku.desc(),)",
+    }
+
+    page_idx = await create_page_index(limit, str(query))
+    end = time.time()
+    print(
+        f"create_page_index time|| page_cursor:{page_idx}",
+        f"{end-start:.4f} ",
+        create_page_index.cache_info(),
+    )
+
+    # print("캐시 정보")
+    # pprint(create_page_index.cache_info())
+    # pprint(create_page_index.get_cache())
+
+    if not page_idx:
+        return 0, 0
+
+    last_page = max(page_idx.keys())
+    if page > last_page:
+        return page_idx[last_page], last_page
+
+    # print("page_idx 정상적으로 기입되는지 확인 ", "page : ", page, "page_index : ", page_idx)
+    return page_idx[page], last_page
+
+
+@alru_cache(maxsize=32)
+async def create_page_index(limit: int, query: str):
+    local_query = eval(query)
+    sort_type = local_query.get("sort_type")
+    cursor_query = eval(local_query.get("cursor_query"))
+    order_by = eval(local_query.get("order_by"))
+
+    assert sort_type, "sort_type is None"
+    assert cursor_query, "cursor_query is None"
+    assert order_by, "order_by is None"
+
+    db = session_local()
+    sku_list = await db.execute(select(cursor_query).order_by(*order_by))
+    sku_list = sku_list.all()
+    await db.close()  # type: ignore
+
+    return _get_index_by_sort_type(sort_type, sku_list, limit)
+
+
+def _get_index_by_sort_type(
+    sort_type: str, sku_list: List, limit: int
+) -> Dict[int, int | str]:
+    if len(sku_list) % limit == 0:
+        page = len(sku_list) // limit
+    else:
+        page = len(sku_list) // limit + 1
+
+    sku_list = list(map(lambda x: x[0], sku_list))
+    print("-----_get_index_by_sort_type-----")
+    print("sku_list", sku_list)
+    return {i + 1: int(sku_list[i * limit] + 1) for i in range(0, page)}

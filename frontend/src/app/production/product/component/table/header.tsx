@@ -8,7 +8,7 @@ import { TableCell } from "@/app/components/default-table/default-header-functio
 import Select from "react-select";
 import envJson from "@/app/env.json";
 import { toast } from "react-toastify";
-import { updateProductDeploy } from "../fetch";
+import { updateProductDeploy, updateProduct, deleteProduct } from "../fetch";
 
 type CategorySpec = {
     의류: string[];
@@ -64,6 +64,45 @@ const handleCandidate = (event: any) => {
     });
 };
 
+const handleUpdateProduct = (props: any) => {
+    const rowData = props.row.original;
+
+    const handler = async () => {
+        await updateProduct(rowData).then((res) => {
+            res.status === 200 ? toast.success("업데이트 성공") : toast.error("업데이트 실패");
+        });
+    };
+    return (
+        <button onClick={handler} className="bg-main-black text-white p-2 active:bg-blue-black whitespace-nowrap">
+            변경 저장
+        </button>
+    );
+};
+
+const handleDeleteProduct = (props: any) => {
+    const { sku } = props.row.original;
+    const handler = async () => {
+        confirm(`sku : ${sku} 제품을 삭제합니다.`) &&
+            (await deleteProduct(sku).then((res) => {
+                res.status === 200 ? toast.success("업데이트 성공") : toast.error("업데이트 실패");
+            }));
+    };
+    return (
+        <button onClick={handler} className="bg-rose-600 text-white p-2 active:bg-blue-black whitespace-nowrap">
+            DB 제거
+        </button>
+    );
+};
+
+const features = (props: any) => {
+    return (
+        <div className="flex flex-col h-[200px] justify-evenly">
+            {handleUpdateProduct(props)}
+            {handleDeleteProduct(props)}
+        </div>
+    );
+};
+
 export const productCardColumns = [
     columnHelper.accessor("sku", {
         header: "Sku",
@@ -83,6 +122,10 @@ export const productCardColumns = [
                 </div>
             );
         },
+        filterFn: (row, columnId, value, addMeta) => {
+            console.log(row.original.sku, value);
+            return row.original.sku === Number(value);
+        },
     }),
     columnHelper.display({
         header: "Img",
@@ -101,6 +144,10 @@ export const productCardColumns = [
                 </div>
             );
         },
+    }),
+    columnHelper.display({
+        header: "기능",
+        cell: features,
     }),
     columnHelper.accessor("brand", {
         header: "브랜드",

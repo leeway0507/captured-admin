@@ -2,25 +2,25 @@ const Pagination = ({ table }: { table: any }) => {
     return (
         <div className="flex items-center gap-2">
             <button
-                className="border rounded p-1"
+                className="border rounded p-1 disabled:opacity-50"
                 onClick={() => table.setPageIndex(0)}
                 disabled={!table.getCanPreviousPage()}>
                 {"<<"}
             </button>
             <button
-                className="border rounded p-1"
+                className="border rounded p-1 disabled:opacity-50"
                 onClick={() => (table.previousPage(), window.scrollTo(0, 0))}
                 disabled={!table.getCanPreviousPage()}>
                 {"<"}
             </button>
             <button
-                className="border rounded p-1"
+                className="border rounded p-1 disabled:opacity-50"
                 onClick={() => (table.nextPage(), window.scrollTo(0, 0))}
                 disabled={!table.getCanNextPage()}>
                 {">"}
             </button>
             <button
-                className="border rounded p-1"
+                className="border rounded p-1 disabled:opacity-50"
                 onClick={() => table.setPageIndex(table.getPageCount() - 1)}
                 disabled={!table.getCanNextPage()}>
                 {">>"}

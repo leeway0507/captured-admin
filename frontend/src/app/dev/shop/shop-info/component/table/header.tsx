@@ -41,9 +41,6 @@ export const productCardColumns = [
     columnHelper.display({
         header: "기능",
         cell: updateToDB,
-        meta: {
-            type: "text",
-        },
     }),
     columnHelper.accessor("shopName", {
         header: "스토어 이름",

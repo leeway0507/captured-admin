@@ -58,7 +58,6 @@ class productInfoDraftSchema(BaseModel):
     brand: str
     product_name: str
     product_id: str
-    size: Optional[str] = None
     price: int
     shipping_fee: int
     intl: bool
@@ -66,3 +65,15 @@ class productInfoDraftSchema(BaseModel):
     category: str
     category_spec: str
     img_type: str
+
+
+# class ProductInfoForAdminSchema(productInfoDraftSchema):
+#     """ProductInfoTable Schema"""
+
+#     model_config = ConfigDict(
+#         alias_generator=to_camel,
+#         populate_by_name=True,
+#     )
+#     sku: int
+#     deploy: Optional[int] = 0
+#     size: Optional[str] = None

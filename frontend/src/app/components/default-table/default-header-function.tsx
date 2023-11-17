@@ -31,7 +31,7 @@ export const TableCell = (props: any) => {
             onChange={(e) => setValue(e.target.value)}
             onBlur={onBlur}
             type={columnMeta?.type || "text"}
-            className="bg-transparent border-transparent border-b-sub-black focus:outline-none rounded-none text-center w-[100px] max-w-full"
+            className="bg-transparent border-transparent border-b-sub-black focus:outline-none rounded-none text-center w-[150px] max-w-full"
         />
     );
 };
