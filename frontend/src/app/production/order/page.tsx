@@ -1,12 +1,12 @@
-import { Table } from "@/app/production/order/component/table/table";
-import * as api from "./component/fetch";
+import { OrderHistoryTable } from "./table/order-history-table";
+import { getOrderHistory } from "./fetch";
 
 export default async function Main() {
-    const data = await api.getOrderHistory();
+    const data = await getOrderHistory();
 
     return (
         <div className="py-12">
-            <Table defaultData={data} />
+            <OrderHistoryTable tableData={data.data} />
         </div>
     );
 }

@@ -1,10 +1,9 @@
-import { kreamTableRawDataProps } from "./table/type";
+import { kreamTableRawDataProps, KreamTable } from "./table/kream-table";
 import SearchBar from "../searchBar";
-import { KreamTable } from "./table/table";
 
 const Main = async ({ kreamProductCardList }: { kreamProductCardList: kreamTableRawDataProps[] }) => {
     return (
-        <div className="py-4">
+        <div className="py-4 flex-center flex-col ">
             <div className="py-8">
                 <SearchBar />
             </div>

@@ -214,3 +214,14 @@ async def get_kream_product_size_info(db: AsyncSession, searchType: str, content
         "scrapDate": [least_date, last_date],
         "sizeData": [KreamProductSizeInfo(**row) for row in df.to_dict(orient="records")],  # type: ignore
     }
+
+
+async def get_kream_product_color_for_registration(db: AsyncSession, product_id: str):
+    stmt = (
+        select(KreamProductCardTable.color)
+        .join(KreamProductIdBridgeTable)
+        .filter(KreamProductIdBridgeTable.product_id == product_id)
+    )
+    result = await db.execute(stmt)
+    result = result.first()
+    return result if result else "no data"

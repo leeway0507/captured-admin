@@ -31,6 +31,7 @@ class ProductInfoTable(MyBase):
     img_type = Column(VARCHAR(10))
     price_desc_cursor = Column(VARCHAR(100))
     price_asc_cursor = Column(VARCHAR(100))
+    deploy = Column(INTEGER)
 
     class Config:
         orm_mode = str
@@ -93,7 +94,9 @@ class OrderHistoryTable(MyBase):
     __tablename__ = "order_history"
     order_id = Column(VARCHAR(255), primary_key=True)
     user_id = Column(VARCHAR(50), ForeignKey("user.user_id"), nullable=False)
-    address_id = Column(VARCHAR(255), ForeignKey("user_address.address_id"), nullable=False)
+    address_id = Column(
+        VARCHAR(255), ForeignKey("user_address.address_id"), nullable=False
+    )
     ordered_at = Column(DATETIME, nullable=False)
     user_order_number = Column(INTEGER, nullable=False)
     order_status = Column(VARCHAR(50), nullable=False)
@@ -113,7 +116,9 @@ class OrderHistoryTable(MyBase):
 class OrderRowTable(MyBase):
     __tablename__ = "order_row"
     order_row_id = Column(INTEGER, primary_key=True, autoincrement=True)
-    order_id = Column(VARCHAR(255), ForeignKey("order_history.order_id"), nullable=False)
+    order_id = Column(
+        VARCHAR(255), ForeignKey("order_history.order_id"), nullable=False
+    )
     sku = Column(INTEGER, ForeignKey("product_info.sku"), nullable=False)
     size = Column(VARCHAR(20), nullable=False)
     quantity = Column(INTEGER, nullable=False)

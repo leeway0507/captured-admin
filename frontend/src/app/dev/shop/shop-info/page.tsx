@@ -1,6 +1,6 @@
 "use client";
 
-import { ShopInfoTable } from "./component/table/table";
+import { ShopInfoTable } from "./component/table/shop-info-table";
 import CreateForm from "./component/create-form";
 import { useEffect, useState } from "react";
 import * as api from "./component/fetch";
@@ -38,7 +38,7 @@ export default function Page() {
                     </div>
                 </div>
             </div>
-            <ShopInfoTable defaultData={data} />
+            <ShopInfoTable tableData={data} />
         </div>
     );
 }

@@ -2,7 +2,7 @@ import { CreateproductCardProps } from "@/app/types/type";
 
 export const getProduct = async () => {
     const req = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/production/get-category`);
-    return await req.json();
+    return { status: req.status, data: await req.json() };
 };
 
 export const createProduct = async (data: CreateproductCardProps) => {
@@ -13,7 +13,7 @@ export const createProduct = async (data: CreateproductCardProps) => {
         },
         body: JSON.stringify(data),
     });
-    return await req.json();
+    return { status: req.status, data: await req.json() };
 };
 
 export const updateProduct = async (data: CreateproductCardProps) => {
@@ -24,5 +24,16 @@ export const updateProduct = async (data: CreateproductCardProps) => {
         },
         body: JSON.stringify(data),
     });
-    return await req.json();
+    return { status: req.status, data: await req.json() };
+};
+
+export const updateProductDeploy = async (sku: number, status: number) => {
+    const url = `${process.env.NEXT_PUBLIC_API_URL}/api/production/update-product-deploy-status`;
+    const queryParams = new URLSearchParams({
+        sku: sku.toString(),
+        status: status.toString(),
+    });
+
+    const res = await fetch(url + "?" + queryParams);
+    return { status: res.status, data: await res.json() };
 };

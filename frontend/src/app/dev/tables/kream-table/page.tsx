@@ -2,7 +2,7 @@
 import SearchBar from "./searchBar";
 const Page = () => {
     return (
-        <div className="h-full flex-center">
+        <div className="w-full flex-center">
             <SearchBar />
         </div>
     );

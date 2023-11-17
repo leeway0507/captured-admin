@@ -4,14 +4,10 @@ import "react-toastify/dist/ReactToastify.css";
 
 export default function NavFooter({ children }: { children: JSX.Element }) {
     return (
-        <main className="flex min-h-screen h-full min-max-w-5xl max-w-screen">
-            <div className="w-[250px] bg-purple-600	shrink-0">
-                <SideNav />
-            </div>
-            <div className="grow px-8 bg-slate-50">
-                <div className="flex flex-col h-full gap-8 w-full max-w-5xl p-8">{children}</div>
-            </div>
-            <ToastContainer position="top-right" autoClose={5000} transition={Flip} pauseOnFocusLoss={false} />
+        <main className="w-full h-full min-h-screen bg-purple-500 pb-6 flex flex-col relative">
+            <SideNav />
+            <div className="bg-white px-4 items-stretch flex grow">{children}</div>
+            <ToastContainer position="top-left" autoClose={5000} transition={Flip} pauseOnFocusLoss={false} />
         </main>
     );
 }

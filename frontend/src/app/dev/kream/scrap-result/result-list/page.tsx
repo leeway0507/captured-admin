@@ -38,7 +38,7 @@ export default function Main({ params }: { params: { slug: string } }) {
         router.push(`/dev/kream/scrap-result/${fileName}`);
     };
     return (
-        <>
+        <div className="flex flex-col w-full">
             <div className="grid">
                 <div className="grid grid-cols-2 pt-8 pb-4 border-b">
                     <div className={`${header}`}>순번</div>
@@ -55,6 +55,6 @@ export default function Main({ params }: { params: { slug: string } }) {
                     </div>
                 ))}
             </div>
-        </>
+        </div>
     );
 }

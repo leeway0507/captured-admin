@@ -2,43 +2,14 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import { candidateTableRawDataProps } from "./type";
+import { candidateTableRawDataProps } from "./candidate-table";
 import { createColumnHelper } from "@tanstack/react-table";
 import { toast } from "react-toastify";
 
 import { updateCandidate } from "../fetch";
-import { useState } from "react";
-import KreamProductModal from "../../../kream-table/[...slug]/modal/kream-product-modal";
+import { OpenKreamDetail } from "@/app/components/default-table/default-header-function";
 
 const candidateClass = "p-2 h-[200px] flex-center";
-
-const OpenDetail = (props: any) => {
-    const { productId, totalPriceBeforeCardFee } = props.row.original;
-    const [isOpen, setIsOpen] = useState(false);
-
-    const cost = totalPriceBeforeCardFee * 1.05 + 3000;
-
-    return (
-        <>
-            <button
-                className="bg-gray-200 hover:bg-gray-300 p-2"
-                onClick={() => {
-                    setIsOpen(true);
-                }}>
-                상세정보
-            </button>
-            {isOpen && (
-                <KreamProductModal
-                    searchType="productId"
-                    value={productId}
-                    isOpen={isOpen}
-                    setIsOpen={setIsOpen}
-                    cost={Math.round(cost)}
-                />
-            )}
-        </>
-    );
-};
 
 const handleCandidate = (event: any) => {
     const { id, status } = event.target.dataset;
@@ -72,36 +43,31 @@ export const CostTableColumn = [
     }),
 
     columnHelper.accessor("shopProductImgUrl", {
-        header: "이미지",
+        header: "이미지(링크)",
         cell: (props) => (
-            <Link
-                href={props.row.original.productUrl}
-                target="_blank"
-                rel="noreferrer"
-                className="underline text-blue-700 pointer-cursor hover:opacity-80">
-                <div className="relative h-[200px] w-[200px] ">
-                    <Image
-                        src={props.getValue()}
-                        alt={props.row.original.shopProductName}
-                        fill
-                        sizes="200px"
-                        style={{ objectFit: "contain" }}
-                    />
-                </div>
-            </Link>
+            <div className="flex-center flex-col">
+                <Link
+                    href={props.row.original.productUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="underline text-blue-700 pointer-cursor hover:opacity-80">
+                    <div className="relative h-[150px] w-[150px] ">
+                        <Image
+                            src={props.getValue()}
+                            alt={props.row.original.shopProductName}
+                            fill
+                            sizes="150px"
+                            style={{ objectFit: "contain" }}
+                        />
+                    </div>
+                </Link>
+                <div>{props.row.original.brandName}</div>
+            </div>
         ),
     }),
     columnHelper.display({
         header: "크림상세정보",
-        cell: OpenDetail,
-    }),
-    columnHelper.accessor("productUrl", {
-        header: "상품링크",
-        cell: (props) => (
-            <Link href={props.row.original.productUrl} target="_blank" rel="noreferrer">
-                <button className="my-2 m-auto block bg-blue-100 hover:bg-blue-300 p-2 ">사이트</button>
-            </Link>
-        ),
+        cell: OpenKreamDetail,
     }),
 
     columnHelper.accessor("originalPrice", {
@@ -109,11 +75,7 @@ export const CostTableColumn = [
         cell: (props) => (
             <div className="flex-center flex-col">
                 <div className="text-xs">{props.row.original.originalPriceCurrency}</div>
-                <div
-                    className="text-xs text-blue-500 line-through
-">
-                    ({props.getValue()})
-                </div>
+                <div className="text-xs text-blue-500 line-through">({props.getValue()})</div>
                 <div>{props.row.original.taxReductionOriginalPrice}</div>
 
                 <div>$ {props.row.original.usPrice}</div>
@@ -177,18 +139,4 @@ export const CostTableColumn = [
         header: "카드수수료",
         cell: (props) => <div>{props.getValue().toLocaleString()}</div>,
     }),
-    // columnHelper.accessor("shopProductName", {
-    //     header: "상품명",
-    //     cell: (props) => (
-    //         <div className="max-w-[200px] overflow-hidden">
-    //             <Link
-    //                 href={props.row.original.productUrl}
-    //                 target="_blank"
-    //                 rel="noreferrer"
-    //                 className="underline text-blue-700 pointer-cursor">
-    //                 <div>{props.getValue()}</div>
-    //             </Link>
-    //         </div>
-    //     ),
-    // }),
 ];

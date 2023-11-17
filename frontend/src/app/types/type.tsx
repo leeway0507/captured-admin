@@ -3,13 +3,14 @@ export interface CreateproductCardProps {
     brand: string;
     productName: string;
     productId: string;
-    size: string;
-    price: string;
-    shippingFee: string;
-    intl: string;
+    price: number;
+    shippingFee: number;
+    intl: boolean;
     color: string;
     category: string;
+    categorySpec: string;
     imgType: string;
+    deploy?: number;
 }
 export interface userAddressProps {
     addressId: string;

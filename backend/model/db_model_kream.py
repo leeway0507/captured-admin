@@ -24,6 +24,7 @@ class KreamProductCardSchema(BaseModel):
     wish: int
     review: int
     updated_at: datetime
+    color: Optional[str] = None
 
     @field_validator("kream_id", mode="before")
     def convert_str_int(cls, value: str):

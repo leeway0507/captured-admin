@@ -2,7 +2,7 @@ from typing import List, Dict
 from datetime import datetime
 
 from sqlalchemy.ext.asyncio import AsyncSession
-from sqlalchemy import select, delete, insert, text
+from sqlalchemy import select, delete, insert, update
 from sqlalchemy.dialects.mysql import insert
 
 from logs.make_log import make_logger
@@ -44,9 +44,9 @@ async def get_order_row(db: AsyncSession):
 
 async def create_new_sku(db: AsyncSession):
     column = ProductInfoTable.sku
-    last_number = await db.execute(select(column).order_by(column.desc()))
+    stmt = select(column).order_by(column.desc()).limit(1)
+    last_number = await db.execute(stmt)
     last_number = last_number.scalar()
-
     if last_number == None:
         return 1
 
@@ -54,8 +54,10 @@ async def create_new_sku(db: AsyncSession):
 
 
 async def create_product(db: AsyncSession, product: ProductInfoDBSchema):
-    query = db.add(ProductInfoTable(**product.model_dump()))  # type: ignore
-    return await commit(db, query, error_log)
+    stmt = insert(ProductInfoTable).values(product.model_dump())
+    await db.execute(stmt)
+    await db.commit()
+    return True
 
 
 async def update_product(db: AsyncSession, product: ProductInfoDBSchema):
@@ -127,9 +129,8 @@ async def delete_size(db: AsyncSession, sku: int):
 
 
 async def get_category(db: AsyncSession):
-    stmt = select(ProductInfoTable)
-    query = await db.execute(stmt)
-    result = query.all()
+    result = await db.execute(select(ProductInfoTable))
+    result = result.all()
     return [
         ProductInfoDBSchema(**row[0].to_dict()).model_dump(by_alias=True)
         for row in result
@@ -145,3 +146,14 @@ async def get_product_info_for_cost_table(db: AsyncSession):
         ProductInfoForCostTableSchema(**row.to_dict()).model_dump(by_alias=True)
         for row in result
     ]
+
+
+async def update_product_deploy_status(db: AsyncSession, sku: int, status: int):
+    stmt = (
+        update(ProductInfoTable)
+        .where(ProductInfoTable.sku == sku)
+        .values(deploy=status)
+    )
+    await db.execute(stmt)
+    await db.commit()
+    return {"message": "success"}

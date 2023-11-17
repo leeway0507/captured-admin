@@ -2,19 +2,17 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import { costTableDataProps } from "./table";
+import { costTableDataProps } from "./cost-table";
 import { createColumnHelper } from "@tanstack/react-table";
-
+import { TableCell, OpenKreamDetail } from "@/app/components/default-table/default-header-function";
 import {
-    OpenDetail,
-    TableCell,
     GetPrices,
     handleCandidate,
     handleRemoveCandidate,
     candidateClass,
     updateToDB,
-    sendDraft,
-} from "./header-functions";
+    SendDraft,
+} from "./cost-table-header-functions";
 
 const columnHelper = createColumnHelper<costTableDataProps>();
 
@@ -32,9 +30,9 @@ const roundUpTwo = (num: number) => {
 const features = (props: any) => {
     return (
         <div className="flex flex-col h-[200px] justify-evenly">
-            {OpenDetail(props)}
+            {OpenKreamDetail(props)}
             {updateToDB(props)}
-            {sendDraft(props)}
+            {SendDraft(props)}
         </div>
     );
 };
@@ -46,11 +44,14 @@ export const productCardColumns = [
             <>
                 <div
                     id={`status-${props.row.original.shopProductCardId}`}
-                    className={`${props.getValue() === 2 ? "bg-green-200" : "bg-yellow-200"} ${candidateClass}`}
+                    className={`${
+                        props.getValue() === 2 ? "bg-green-200" : "bg-yellow-200"
+                    } ${candidateClass} flex-col`}
                     data-id={props.row.original.shopProductCardId}
                     data-status={props.getValue()}
                     onClick={handleCandidate}>
-                    {props.getValue() === 2 ? "수집 제품" : "후보 제품"}
+                    <div>사이즈</div>
+                    <div>{props.getValue() === 2 ? "수집중" : "미수집"}</div>
                 </div>
                 <div
                     className={`bg-rose-200 flex-center h-[50px] mt-2`}
@@ -93,7 +94,7 @@ export const productCardColumns = [
 
     columnHelper.accessor("productId", {
         header: "상품 ID",
-        cell: (props) => <div className="w-[150px]">{TableCell(props)}</div>,
+        cell: TableCell,
         meta: {
             type: "text",
         },
@@ -106,18 +107,31 @@ export const productCardColumns = [
             type: "number",
         },
     }),
-    columnHelper.accessor("sellingPrice", {
+    columnHelper.display({
         header: "실판매가",
-        cell: (props) => <div className="font-bold text-rose-500">{props.getValue()}</div>,
+        cell: (props) => {
+            const productInfo = props.row.original.productInfo;
+            const value = productInfo ? (productInfo.price + productInfo.shippingFee).toLocaleString() : "미판매 상품";
+            const sellingPrice = productInfo ? productInfo.price.toLocaleString() : "-";
+            const shippingFee = productInfo ? productInfo.shippingFee.toLocaleString() : "-";
+            return (
+                <div className="flex-center flex-col">
+                    <div className="font-bold text-rose-500">{value}</div>
+                    <div className="font-bold text-rose-300">({sellingPrice})</div>
+                    <div className="font-bold text-rose-200">({shippingFee})</div>
+                </div>
+            );
+        },
     }),
     columnHelper.display({
         header: "예상이익",
         cell: (props) => {
-            const { sellingPrice } = props.row.original;
+            const productInfo = props.row.original.productInfo;
             const { totalPriceBeforeCardFee, cardFee } = GetPrices(props);
-            const value = Math.round(totalPriceBeforeCardFee + cardFee);
-            const profit = sellingPrice - value;
-            return <div className="text-green-700">{profit.toLocaleString()}</div>;
+            const cost = Math.round(totalPriceBeforeCardFee + cardFee);
+            const value = productInfo ? (productInfo.price + productInfo.shippingFee - cost).toLocaleString() : "-";
+
+            return <div className="text-green-700">{value}</div>;
         },
     }),
     columnHelper.display({
@@ -184,7 +198,7 @@ export const productCardColumns = [
     columnHelper.display({
         header: "해외배송비",
         cell: (props) => {
-            const { intlShipPrice } = props.row.original;
+            const intlShipPrice = props.row.original.shopInfo.intlShipPrice;
             const { intlShipKorPrice } = GetPrices(props);
 
             return (

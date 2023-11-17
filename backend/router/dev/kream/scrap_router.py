@@ -15,6 +15,7 @@ from .components.main import KreamPage
 from .components.update_to_db import (
     get_kream_product_detail_list_from_db,
     get_kream_product_size_info,
+    get_kream_product_color_for_registration,
 )
 
 config = dotenv_values(".env.dev")
@@ -206,3 +207,11 @@ async def get_kream_product_size_info_api(
 ):
     """kream_product_detail_table 조회"""
     return await get_kream_product_size_info(db, searchType, content)
+
+
+@kream_scrap_router.get("/get-product-color-for-registraion")
+async def get_product_color_for_registraion(
+    productId: str, db: AsyncSession = Depends(get_dev_db)
+):
+    """kream_product_detail_table 조회"""
+    return await get_kream_product_color_for_registration(db, productId)

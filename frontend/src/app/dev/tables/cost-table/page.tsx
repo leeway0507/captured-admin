@@ -12,7 +12,7 @@ const tablClass = ({ selected }: { selected: boolean }) =>
     classNames(
         "w-full rounded-lg py-2.5 font-medium leading-5 text-main-black",
         "ring-white/60 ring-offset-2 ring-offset-sub-black focus:outline-none focus:ring-2",
-        selected ? "bg-white shadow" : "text-light-gray hover:bg-white/[0.12] hover:text-white"
+        selected ? "bg-white shadow" : "text-white hover:bg-white/[0.12] hover:text-white"
     );
 
 function MyTabs() {

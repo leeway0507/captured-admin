@@ -1,5 +1,5 @@
 "use client";
-import { CustomTable } from "./table/table";
+import ScrapResultTable from "./table/scrap-result-table";
 import Link from "next/link";
 import { handleProductDtailSubmit } from "../../product-detail";
 import { useRef, useState, useEffect } from "react";
@@ -13,13 +13,13 @@ const restartBtn =
     "black-bar-with-disabled p-4 text-xl disabled:bg-light-gray disabled:border disabled:border-main-black disabled:cursor-not-allowed disabled:text-main-black";
 
 const createTableData = (
-    scrapPlan: [String, any][],
+    scrapPlan: [string, any][],
     kreamProductCardList: Number[],
     kreamTradingVolumeList: Number[],
     kreamBuyandSellList: Number[],
     kreamProductBridgeList: Number[]
 ) => {
-    return scrapPlan.map(([kreamIdStr, error]: [String, String]) => {
+    return scrapPlan.map(([kreamIdStr, error]: [string, string]) => {
         const kreamId = Number(kreamIdStr);
 
         const tableData = {
@@ -97,11 +97,6 @@ export default function ScrapResult({ fetchData }: { fetchData: any }) {
         }
     };
 
-    // console.log(scrapPlan);
-    // console.log(scrapSuccess);
-    // console.log(scrapFailed);
-    // console.log(configState);
-
     const [reStartScrapName, setReStartScrapName] = useState("");
     const router = useRouter();
 
@@ -122,27 +117,27 @@ export default function ScrapResult({ fetchData }: { fetchData: any }) {
     };
 
     return (
-        <>
-            <div className="text-3xl">
+        <div className="flex flex-col gap-4 max-w-3xl m-auto">
+            <div className="text-3xl pt-8 w-full border-b-2 pb-2">
                 제품 상세정보 수집결과
-                <span className="ps-4 text-2xl">({scrapName})</span>
+                <span className="ps-2 text-2xl">({scrapName})</span>
             </div>
-            <div className="grid text-xl grid-flow-col">
+            <div className="pt-4 pb-2 grid text-xl grid-flow-col ">
                 <div>수집 브랜드 </div>
                 <div>{brandName}</div>
                 <div>실행 프로세스</div>
                 <div>{numProcess} 개</div>
-                <div>참고 제품 리스트</div>
-                <div className="text-xl">{refProductCard.slice(0, 30)}</div>
+                <div>참고 제품 정보</div>
+                <div className="text-xl">{refProductCard.slice(0, 10)}...</div>
             </div>
-            <div className="border p-4 text-xl grid grid-rows-2">
-                <div className="grid grid-cols-8 border-b mb-4 pb-2">
-                    <div>계획</div>
-                    <div>{scrapPlan.length} 건</div>
-                    <div>성공</div>
-                    <div>{scrapSuccess.length} 건</div>
-                    <div>실패</div>
-                    <div>{scrapFailed.length} 건</div>
+            <div className="border pt-4 px-4 text-xl grid grid-rows-2 bg-slate-50">
+                <div className="grid grid-cols-8 mb-2 border-b pb-2">
+                    <div className="text-blue-600">계획</div>
+                    <div className="text-blue-600">{scrapPlan.length} 건</div>
+                    <div className="text-green-600">성공</div>
+                    <div className="text-green-600">{scrapSuccess.length} 건</div>
+                    <div className="text-rose-600">실패</div>
+                    <div className="text-rose-600">{scrapFailed.length} 건</div>
                     <div>미실행</div>
                     <div>{scrapPlan.length - (scrapSuccess.length + scrapFailed.length)} 건</div>
                 </div>
@@ -158,11 +153,11 @@ export default function ScrapResult({ fetchData }: { fetchData: any }) {
                 </div>
             </div>
             <div>
-                <div className="text-3xl pb-2">수집 목록 결과</div>
-                <CustomTable defaultData={tableData} tableClassName="w-full text-xl    " />
+                <div className="text-3xl py-4">수집 목록 결과</div>
+                <ScrapResultTable tableData={tableData} />
             </div>
 
-            <div className="flex gap-4 w-full text-xl">
+            <div className="flex gap-4 w-full text-lg py-8">
                 <div className="flex flex-col">
                     <div>재실행 예정 </div>
                     <div className="flex-center grow bg-white py-2 border border-main-black">
@@ -189,16 +184,16 @@ export default function ScrapResult({ fetchData }: { fetchData: any }) {
                     {scrapFailed.length === 0 ? "실패 목록 없음" : "실패 목록 재실행"}
                 </button>
                 <button
-                    className="black-bar-with-disabled flex-right p-2 text-xl"
+                    className="black-bar-with-disabled flex-right p-2 text-lg"
                     onClick={() => handleDB(scrapName)}
                     disabled={dbUpdate}>
                     {" "}
                     {dbUpdate ? "DB 넣기 완료" : "DB에 넣기"}
                 </button>
-                <Link href="/dev/kream/scrap-result/result-list" className="black-bar p-4 text-xl">
+                <Link href="/dev/kream/scrap-result/result-list" className="black-bar p-4 text-lg">
                     돌아가기
                 </Link>
             </div>
-        </>
+        </div>
     );
 }

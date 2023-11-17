@@ -1,5 +1,3 @@
-import React from "react";
-
 const Pagination = ({ table }: { table: any }) => {
     return (
         <div className="flex items-center gap-2">

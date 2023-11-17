@@ -1,5 +1,4 @@
 "use client";
-import { CustomTable } from "./table/table";
 import Link from "next/link";
 import { useRef, useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
@@ -85,31 +84,31 @@ export default function ScrapResult({ fetchData }: { fetchData: fetchDataProps }
     };
 
     return (
-        <>
-            <div>
+        <div className="flex flex-col gap-4 max-w-3xl m-auto py-8">
+            <div className="py-2">
                 <span className="text-3xl">제품 상세정보 수집결과</span>
                 <span className="text-2xl">({`${scrapTime}-${shopName}`})</span>
             </div>
             <div className="p-4 text-xl bg-gray-100">
                 <div className="grid grid-cols-8 border-b mb-4 pb-2">
-                    <div>계획</div>
-                    <div>{scrapPlan.length} 건</div>
-                    <div>성공</div>
-                    <div>{scrapSuccess.length} 건</div>
-                    <div>실패</div>
-                    <div>{scrapFailed.length} 건</div>
+                    <div className="text-blue-600">계획</div>
+                    <div className="text-blue-600">{scrapPlan.length} 건</div>
+                    <div className="text-green-600">성공</div>
+                    <div className="text-green-600">{scrapSuccess.length} 건</div>
+                    <div className="text-rose-600">실패</div>
+                    <div className="text-rose-600">{scrapFailed.length} 건</div>
                     <div>미실행</div>
                     <div>{scrapPlan.length - (scrapSuccess.length + scrapFailed.length)} 건</div>
                 </div>
             </div>
-            <div className="pb-12">
+            <div className="py-4 pb-12">
                 <div className="text-3xl pb-2">수집 목록 결과</div>
-                <div className="grid grid-cols-2 border-b mb-4 pb-2 gap-2 text-xl py-2">
+                <div className="grid grid-cols-2 border-b mb-4 pb-2 gap-2 text-xl py-2 text-center">
                     <div>브랜드명</div>
                     <div>결과</div>
                 </div>
                 {Object.entries(scrapResult).map(([brandName, status], idx) => (
-                    <div key={idx} className="grid grid-cols-2 mb-4 pb-2 gap-2">
+                    <div key={idx} className="grid grid-cols-2 mb-4 pb-2 gap-2 text-center">
                         <div>{brandName}</div>
                         <div>{status}</div>
                     </div>
@@ -150,6 +149,6 @@ export default function ScrapResult({ fetchData }: { fetchData: fetchDataProps }
                     돌아가기
                 </Link>
             </div>
-        </>
+        </div>
     );
 }

@@ -6,8 +6,16 @@ import CustomInput from "@/app/production/prod-components/custom-input/cusotm-in
 import { createProduct } from "../fetch";
 import { toast } from "react-toastify";
 import Select from "react-select";
+import envJson from "@/app/env.json";
 
-const reducer = (state: CreateproductCardProps, action: any) => {
+type CategorySpec = {
+    의류: string[];
+    신발: string[];
+    기타: string[];
+    [key: string]: string[]; // Index signature
+};
+
+const reducer = (state: CreateproductCardProps, action: { type: string; payload: any }) => {
     switch (action.type) {
         case "brand":
             return { ...state, brand: action.payload };
@@ -23,8 +31,6 @@ const reducer = (state: CreateproductCardProps, action: any) => {
             return { ...state, intl: action.payload };
         case "imgType":
             return { ...state, imgType: action.payload };
-        case "size":
-            return { ...state, size: action.payload };
         case "color":
             return { ...state, color: action.payload };
         case "category":
@@ -48,39 +54,51 @@ const CreateFormModal = ({
     const [state, dispatch] = useReducer(reducer, defaultData);
     const closeModal = () => setIsOpen(false);
 
-    const imgArray = process.env.NEXT_PUBLIC_IMAGE_TYPE;
-    const brandArray = process.env.NEXT_PUBLIC_BRAND_ARRAY;
-    const categoryArray = process.env.NEXT_PUBLIC_CATEGORY;
-    const categorySpecObject = process.env.NEXT_PUBLIC_CATEGORY_SPEC;
+    const imgArray = envJson.NEXT_PUBLIC_IMAGE_TYPE;
+    const brandArray = envJson.NEXT_PUBLIC_BRAND_ARRAY;
+    const categoryArray = envJson.NEXT_PUBLIC_CATEGORY;
+    const categorySpecObject: CategorySpec = envJson.NEXT_PUBLIC_CATEGORY_SPEC;
 
-    const brandName = JSON.parse(brandArray!).map((v: string) => ({ value: v, label: v }));
+    const imgType = imgArray.map((v: string) => ({ value: v, label: v }));
+    const category = categoryArray.map((v: string) => ({ value: v, label: v }));
 
-    const imgType = JSON.parse(imgArray!).map((v: string) => ({ value: v, label: v }));
-    const category = JSON.parse(categoryArray!).map((v: string) => ({ value: v, label: v }));
-
-    const categorySpec = JSON.parse(categorySpecObject!)[state.category ? state.category : category[0].value].map(
-        (v: string) => ({
-            value: v,
-            label: v,
-        })
-    );
+    const initCat = state.category === "" ? category[0].value : (state.category as string);
+    const categorySpec = categorySpecObject[initCat].map((v: string) => ({
+        value: v,
+        label: v,
+    }));
 
     const intl = [
-        { value: "true", label: "해외배송" },
-        { value: "false", label: "국내배송" },
+        { value: true, label: "해외배송" },
+        { value: false, label: "국내배송" },
     ];
+
+    const registrationHandler = async (state: CreateproductCardProps) => {
+        const isValid = Object.values(state).every((value) => value !== "");
+
+        if (!isValid)
+            return Object.entries(state).forEach((v) => {
+                if (v[1] === "") return toast.error(`${v[0]}이 비어있습니다.}`);
+            });
+
+        return await createProduct(state).then((res) =>
+            res.status === 200
+                ? (closeModal(), toast.success(`제품 등록에 성공했습니다. sku : ${res.data.sku}`, { autoClose: 5000 }))
+                : toast.error("제품 등록에 실패했습니다.")
+        );
+    };
 
     const content = (
         <div className="p-2 max-w-3xl m-auto flex flex-col">
             <form action="" className="flex flex-col gap-8 ">
                 <div className="flex  w-full justify-between">
                     <Select
-                        defaultValue={brandName[0]}
+                        defaultValue={brandArray.find((v) => v.value === state.brand)}
                         className="w-1/4"
-                        instanceId="brandName"
-                        options={brandName}
+                        instanceId="brandArray"
+                        options={brandArray}
                         onChange={(e: any) => {
-                            dispatch({ type: "brand", payload: e.value });
+                            dispatch({ type: "brand", payload: e.label });
                         }}
                     />
                     <Select
@@ -113,20 +131,22 @@ const CreateFormModal = ({
                         instanceId="intl"
                         options={intl}
                         onChange={(e: any) => {
-                            dispatch({ type: "intl", payload: e.target.value });
+                            dispatch({ type: "intl", payload: e.value });
                         }}
                     />
                 </div>
                 <div className="grid grid-cols-2 gap-8">
-                    <CustomInput
-                        label={"Product Name"}
-                        value={state.productName}
-                        setValue={(e) => dispatch({ type: "productName", payload: e })}
-                        id="productName"
-                        info=""
-                        checkPolicy={() => true}
-                        type="text"
-                    />
+                    <div className="col-span-2">
+                        <CustomInput
+                            label={"Product Name"}
+                            value={state.productName}
+                            setValue={(e) => dispatch({ type: "productName", payload: e })}
+                            id="productName"
+                            info=""
+                            checkPolicy={() => true}
+                            type="text"
+                        />
+                    </div>
                     <CustomInput
                         label={"Product ID"}
                         value={state.productId}
@@ -155,15 +175,6 @@ const CreateFormModal = ({
                         type="number"
                     />
                     <CustomInput
-                        label={"Size"}
-                        value={state.size}
-                        setValue={(e) => dispatch({ type: "size", payload: e })}
-                        id="size"
-                        info=""
-                        checkPolicy={() => true}
-                        type="text"
-                    />
-                    <CustomInput
                         label={"Color"}
                         value={state.color}
                         setValue={(e) => dispatch({ type: "color", payload: e })}
@@ -175,11 +186,7 @@ const CreateFormModal = ({
                 </div>
             </form>
             <div className="flex-center w-full gap-4 py-8">
-                <button
-                    className="black-bar-xl basis-2/4 "
-                    onClick={() =>
-                        createProduct(state).then((res) => res.status === 200 && (closeModal(), toast.success("성공")))
-                    }>
+                <button className="black-bar-xl basis-2/4 " onClick={() => registrationHandler(state)}>
                     등록하기
                 </button>
                 <button className="black-bar-xl basis-1/4" onClick={closeModal}>
@@ -189,9 +196,9 @@ const CreateFormModal = ({
         </div>
     );
 
-    if (process.env.NEXT_PUBLIC_IMAGE_TYPE === undefined) return toast.info("IMAGE_TYPE이 정의되지 않았습니다.");
-    if (process.env.NEXT_PUBLIC_BRAND_ARRAY === undefined) return toast.info("BRAND_ARRAY이 정의되지 않았습니다.");
-    if (process.env.NEXT_PUBLIC_CATEGORY === undefined) return toast.info("CATEGORY가 정의되지 않았습니다.");
+    if (envJson.NEXT_PUBLIC_IMAGE_TYPE === undefined) return toast.info("IMAGE_TYPE이 정의되지 않았습니다.");
+    if (envJson.NEXT_PUBLIC_BRAND_ARRAY === undefined) return toast.info("BRAND_ARRAY이 정의되지 않았습니다.");
+    if (envJson.NEXT_PUBLIC_CATEGORY === undefined) return toast.info("CATEGORY가 정의되지 않았습니다.");
 
     return BaseModal({
         content: content,

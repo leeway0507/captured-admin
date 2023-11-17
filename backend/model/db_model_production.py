@@ -20,7 +20,6 @@ class ProductInfoSchema(BaseModel):
     brand: str
     product_name: str
     product_id: str
-    size: Optional[str] = None
     price: int
     shipping_fee: int
     intl: bool
@@ -53,6 +52,7 @@ class ProductInfoDBSchema(ProductInfoSchema):
     price_desc_cursor: str
     price_asc_cursor: str
     search_info: Optional[str] = None
+    deploy: int
 
 
 class SizeSchema(BaseModel):

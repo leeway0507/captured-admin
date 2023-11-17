@@ -1,113 +1,12 @@
 "use client";
-import KreamProductModal from "../../../kream-table/[...slug]/modal/kream-product-modal";
 import { updateCandidate } from "../../../candidate-table/[...slug]/fetch";
-import { updateChangesToDB } from "../../fetch";
+import { getKreamColor, updateShopProductCard } from "../../fetch";
 import { useState, useCallback } from "react";
 import { toast } from "react-toastify";
+import CreateFormModal from "@/app/production/product/component/modal/create-form-modal";
 
 //css
 export const candidateClass = "p-2 h-[150px] flex-center cursor-pointer";
-
-interface optionProps {
-    label: string;
-    value: string;
-}
-
-export const OpenDetail = (props: any) => {
-    const { productId, totalPriceBeforeCardFee } = props.row.original;
-    const [isOpen, setIsOpen] = useState(false);
-
-    const cost = totalPriceBeforeCardFee * 1.05 + 3000;
-
-    return (
-        <>
-            <button
-                className="bg-gray-200 hover:bg-gray-300 p-2 whitespace-nowrap"
-                onClick={() => {
-                    setIsOpen(true);
-                }}>
-                크림정보
-            </button>
-            {isOpen && (
-                <KreamProductModal
-                    searchType="productId"
-                    value={productId}
-                    isOpen={isOpen}
-                    setIsOpen={setIsOpen}
-                    cost={Math.round(cost)}
-                />
-            )}
-        </>
-    );
-};
-
-export const EditCell = (props: any) => {
-    const { row, table } = props;
-
-    const meta = table.options.meta;
-    const setEditedRows = (e: React.MouseEvent<HTMLButtonElement>) => {
-        const elName = e.currentTarget.name;
-        meta?.setEditedRows((old: []) => ({
-            ...old,
-            [row.id]: !old[row.id],
-        }));
-        if (elName !== "edit") {
-            meta?.revertData(row.index, e.currentTarget.name === "cancel");
-        }
-    };
-    return (
-        <div className="edit-cell-container w-[50px] flex-center">
-            {meta?.editedRows[row.id] ? (
-                <div className="edit-cell">
-                    <button onClick={setEditedRows} name="cancel">
-                        X
-                    </button>
-                    <button onClick={setEditedRows} name="done">
-                        ✔
-                    </button>
-                </div>
-            ) : (
-                <button onClick={setEditedRows} name="edit">
-                    ✐
-                </button>
-            )}
-        </div>
-    );
-};
-
-export const TableCell = (props: any) => {
-    const { row, column, table, getValue } = props;
-    const initialValue = getValue();
-    const [value, setValue] = useState(typeof initialValue === "boolean" ? initialValue.toString() : initialValue);
-    const columnMeta = column.columnDef.meta;
-    const tableMeta = table.options.meta;
-
-    const onBlur = () => {
-        tableMeta?.updateData(row.index, column.id, value);
-    };
-    const onSelectChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-        setValue(e.target.value);
-        tableMeta?.updateData(row.index, column.id, e.target.value);
-    };
-
-    return columnMeta?.type === "select" ? (
-        <select onChange={onSelectChange} value={initialValue}>
-            {columnMeta?.options?.map((option: optionProps) => (
-                <option key={option.value} value={option.value}>
-                    {option.label}
-                </option>
-            ))}
-        </select>
-    ) : (
-        <input
-            value={value}
-            onChange={(e) => setValue(e.target.value)}
-            onBlur={onBlur}
-            type={columnMeta?.type || "text"}
-            className="bg-transparent w-full border-transparent border-b-sub-black focus:outline-none rounded-none text-center"
-        />
-    );
-};
 
 export const updateToDB = (props: any) => {
     const { shopProductCardId, coupon, productId } = props.row.original;
@@ -116,7 +15,7 @@ export const updateToDB = (props: any) => {
         product_id: productId,
     };
     const handler = async () => {
-        await updateChangesToDB(shopProductCardId, value).then((res) => {
+        await updateShopProductCard(shopProductCardId, value).then((res) => {
             res.status === 200 ? toast.success("업데이트 성공") : toast.error("업데이트 실패");
         });
     };
@@ -127,15 +26,39 @@ export const updateToDB = (props: any) => {
     );
 };
 
-export const sendDraft = (props: any) => {
+export const SendDraft = (props: any) => {
     const sku = props.row.original.productInfo?.sku;
-    // const handler = async () => {
-    //     await updateChangesToDB(shopProductCardId, value).then((res) => {
-    //         res.status === 200 ? toast.update("초안 보내기 성공") : toast.error("업데이트 실패");
-    //     });
-    // };
+    const [isOpen, setIsOpen] = useState(false);
+
+    const { brandName, shopProductName, productId } = props.row.original;
+    const { sellPrice20P } = GetPrices(props);
+    const shippingFee = 19000;
+    const [defaultData, setDefaultData] = useState({
+        brand: brandName,
+        productName: shopProductName.replaceAll("-", " "),
+        productId: productId,
+        price: Math.round((sellPrice20P - shippingFee) / 1000) * 1000,
+        shippingFee: shippingFee,
+        intl: true,
+        color: "",
+        category: "",
+        categorySpec: "",
+        imgType: "",
+    });
+    const openToggle = () => {
+        getKreamColor(productId).then((res) => {
+            setIsOpen(true);
+            setDefaultData((old) => ({ ...old, color: res.data }));
+        });
+    };
+
     return sku === undefined ? (
-        <button className="bg-blue-600 text-white p-2">초안 작성</button>
+        <>
+            <button className="bg-blue-600 text-white p-2" onClick={openToggle}>
+                초안 작성
+            </button>
+            {defaultData.color && <CreateFormModal defaultData={defaultData} isOpen={isOpen} setIsOpen={setIsOpen} />}
+        </>
     ) : (
         <div className="bg-green-600 text-white p-2">
             <div>배포 중</div>
@@ -179,8 +102,10 @@ function calcCustomAndVAT(
 // Assuming props.row.original is stable or doesn't change often
 export function GetPrices(props: any): Prices {
     const calculatePrices = useCallback(() => {
-        const { originalPrice, intlShipPrice, buyingCurrency, usCurrency, taxReductionRate, errorRate, coupon } =
-            props.row.original;
+        const { originalPrice, buyingCurrency, usCurrency, errorRate, coupon } = props.row.original;
+        const { taxReductionRate } = props.row.original.shopInfo;
+
+        const { intlShipPrice } = props.row.original.shopInfo;
 
         const currencyRate = buyingCurrency * errorRate;
         const taxReductionOriginalPrice = originalPrice / (1 + taxReductionRate);
@@ -198,8 +123,8 @@ export function GetPrices(props: any): Prices {
             intlShipKorPrice,
             props.row.original.customRate,
             props.row.original.VATRate,
-            props.row.original.isDdp,
-            props.row.original.fromUsShipping
+            props.row.original.shopInfo.isDdp,
+            props.row.original.shopInfo.fromUsShipping
         );
         const customFee = Math.round(d1);
         const VATFee = Math.round(d2);

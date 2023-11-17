@@ -505,8 +505,8 @@ async def save_scrap_files(brand_name: str):
         v = await f.read()
         x = eval(v)
 
-    df = pd.DataFrame(x)
-    df = pd.DataFrame([KreamProductDetailSchema(**row).model_dump() for row in df.to_dict("records")])  # type: ignore
+    iter_df = pd.DataFrame(x)
+    df = pd.DataFrame([KreamProductDetailSchema(**row).model_dump() for row in iter_df.to_dict("records")])  # type: ignore
 
     file_name = f"{file_time}-product_detail.parquet.gzip"
     df.to_parquet(path + file_name, compression="gzip")
@@ -518,8 +518,8 @@ async def save_scrap_files(brand_name: str):
         v = v.replace("false", "False").replace("true", "True")
         x = eval(v)
 
-    df = pd.DataFrame(list(chain(*x)))
-    df = pd.DataFrame([KreamTradingVolumeSchema(**row).model_dump() for row in df.to_dict("records")])  # type: ignore
+    iter_df = pd.DataFrame(list(chain(*x)))
+    df = pd.DataFrame([KreamTradingVolumeSchema(**row).model_dump() for row in iter_df.to_dict("records")])  # type: ignore
 
     file_name = f"{file_time}-trading_volume.parquet.gzip"
     df.to_parquet(path + file_name, compression="gzip")

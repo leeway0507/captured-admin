@@ -1,6 +1,5 @@
-import { candidateTableRawDataProps } from "./table/type";
+import { candidateTableRawDataProps, CandidateTable } from "./table/candidate-table";
 import { getBuyingCurrency } from "./fetch";
-import { CandidateTable } from "./table/table";
 
 export interface productCardProps {
     shopProductCardId: number;

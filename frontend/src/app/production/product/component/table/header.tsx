@@ -1,190 +1,175 @@
 "use client";
 
+import Image from "next/image";
+
 import { CreateproductCardProps } from "@/app/types/type";
 import { createColumnHelper } from "@tanstack/react-table";
-import { ChangeEvent, MouseEvent, useState, useEffect } from "react";
-import * as api from "@/app/production/product/component/fetch";
+import { TableCell } from "@/app/components/default-table/default-header-function";
+import Select from "react-select";
+import envJson from "@/app/env.json";
+import { toast } from "react-toastify";
+import { updateProductDeploy } from "../fetch";
 
-type Option = {
-    label: string;
-    value: string;
+type CategorySpec = {
+    의류: string[];
+    신발: string[];
+    기타: string[];
+    [key: string]: string[]; // Index signature
 };
 
 const columnHelper = createColumnHelper<CreateproductCardProps>();
 
-const EditCell = ({ row, table }) => {
-    const meta = table.options.meta;
-    const setEditedRows = (e: MouseEvent<HTMLButtonElement>) => {
-        const elName = e.currentTarget.name;
-        meta?.setEditedRows((old: []) => ({
-            ...old,
-            [row.id]: !old[row.id],
-        }));
-        if (elName !== "edit") {
-            meta?.revertData(row.index, e.currentTarget.name === "cancel");
-        }
-    };
-    return (
-        <div className="edit-cell-container w-[50px] flex-center">
-            {meta?.editedRows[row.id] ? (
-                <div className="edit-cell">
-                    <button onClick={setEditedRows} name="cancel">
-                        X
-                    </button>
-                    <button onClick={setEditedRows} name="done">
-                        ✔
-                    </button>
-                </div>
-            ) : (
-                <button onClick={setEditedRows} name="edit">
-                    ✐
-                </button>
-            )}
-        </div>
-    );
-};
-
-const TableCell = ({ getValue, row, column, table }) => {
-    const initialValue = getValue();
-    const [value, setValue] = useState(typeof initialValue === "boolean" ? initialValue.toString() : initialValue);
-    const columnMeta = column.columnDef.meta;
-    const tableMeta = table.options.meta;
-
-    const onBlur = () => {
-        tableMeta?.updateData(row.index, column.id, value);
-    };
-    const onSelectChange = (e: ChangeEvent<HTMLSelectElement>) => {
-        setValue(e.target.value);
-        tableMeta?.updateData(row.index, column.id, e.target.value);
-    };
-    if (tableMeta?.editedRows[row.id]) {
-        return columnMeta?.type === "select" ? (
-            <select onChange={onSelectChange} value={initialValue}>
-                {columnMeta?.options?.map((option: Option) => (
-                    <option key={option.value} value={option.value}>
-                        {option.label}
-                    </option>
-                ))}
-            </select>
-        ) : (
-            <input
-                value={value}
-                onChange={(e) => setValue(e.target.value)}
-                onBlur={onBlur}
-                type={columnMeta?.type || "text"}
-                className="max-w-[100px]"
-            />
-        );
-    }
-    return <span>{value}</span>;
-};
-
 const imgArray = () => {
-    if (process.env.NEXT_PUBLIC_IMAGE_TYPE === undefined) return null;
-
-    return JSON.parse(process.env.NEXT_PUBLIC_IMAGE_TYPE).map((v: string) => {
-        return { label: v, value: v };
-    });
+    const imgArray = envJson.NEXT_PUBLIC_IMAGE_TYPE;
+    return imgArray.map((v: string) => ({ value: v, label: v }));
 };
-const brandArray = () => {
-    if (process.env.NEXT_PUBLIC_BRAND === undefined) return null;
-
-    return JSON.parse(process.env.NEXT_PUBLIC_BRAND).map((v: string) => {
-        return { label: v, value: v };
-    });
+const brandNameCell = (props: any) => {
+    const { brand } = props.row.original;
+    const options = envJson.NEXT_PUBLIC_BRAND_ARRAY;
+    const defaultValue = options.find((v: { value: string; label: string }) => v.label === brand);
+    return <Select defaultValue={defaultValue} options={options} className="min-w-[150px] max-w-full" />;
 };
+
 const categoryArray = () => {
-    if (process.env.NEXT_PUBLIC_CATEGORY === undefined) return null;
+    const categoryArray = envJson.NEXT_PUBLIC_CATEGORY;
+    return categoryArray.map((v: string) => ({ value: v, label: v }));
+};
 
-    return JSON.parse(process.env.NEXT_PUBLIC_CATEGORY).map((v: string) => {
-        return { label: v, value: v };
+const categorySpecCell = (props: any) => {
+    const { categorySpec, category } = props.row.original;
+    const categorySpecObject: CategorySpec = envJson.NEXT_PUBLIC_CATEGORY_SPEC;
+    const categorySpecData = categorySpecObject[category];
+    const options = categorySpecData.map((v: string) => ({ value: v, label: v }));
+
+    const defaultValue = options.find((v: { value: string; label: string }) => v.value === categorySpec);
+
+    return <Select defaultValue={defaultValue} options={options} className="min-w-[100px] max-w-full" />;
+};
+
+const handleCandidate = (event: any) => {
+    const { sku, deploy } = event.target.dataset;
+    const reverseStatus = deploy === "1" ? 0 : 1;
+
+    event.target.dataset.deploy = reverseStatus;
+
+    updateProductDeploy(Number(sku), reverseStatus).then((res) => {
+        const candidateClass = "h-[180px] w-[80px] text-sm flex-center flex-col";
+
+        if (res.status === 200) {
+            event.target.className =
+                reverseStatus === 0 ? `bg-rose-300 ${candidateClass}` : `bg-green-300 ${candidateClass}`;
+            event.target.dataset.deploy = reverseStatus;
+            toast.success("업데이트 성공");
+        }
     });
 };
 
 export const productCardColumns = [
     columnHelper.accessor("sku", {
         header: "Sku",
-    }),
-    columnHelper.accessor("brand", {
-        header: "Brand",
-        cell: TableCell,
-        meta: {
-            type: "select",
-            options: brandArray(),
+        cell: (props) => {
+            const { sku, deploy } = props.row.original;
+
+            return (
+                <div
+                    onClick={handleCandidate}
+                    className={`${
+                        deploy === 0 ? "bg-rose-300" : "bg-green-300"
+                    } h-[180px] w-[80px] text-sm flex-center flex-col`}
+                    data-sku={sku}
+                    data-deploy={deploy}>
+                    <div>{deploy === 0 ? "미전시" : "전시중"}</div>
+                    <div>sku : {props.getValue()}</div>
+                </div>
+            );
         },
     }),
+    columnHelper.display({
+        header: "Img",
+        cell: (props) => {
+            const { brand, productName, productId } = props.row.original;
+            const productImgUrl = `${process.env.NEXT_PUBLIC_MOBILE_IMAGE_URL}/product/${brand}/${productName} ${productId}/thumbnail.png`;
+            return (
+                <div className="relative h-[180px] w-[180px] ">
+                    <Image
+                        src={productImgUrl}
+                        alt={props.row.original.productName}
+                        fill
+                        sizes="150px"
+                        style={{ objectFit: "contain" }}
+                    />
+                </div>
+            );
+        },
+    }),
+    columnHelper.accessor("brand", {
+        header: "브랜드",
+        cell: brandNameCell,
+    }),
     columnHelper.accessor("productName", {
-        header: "Product Name",
+        header: "제품명",
         cell: TableCell,
         meta: {
             type: "text",
         },
     }),
     columnHelper.accessor("productId", {
-        header: "Product ID",
+        header: "제품 아이디",
         cell: TableCell,
         meta: {
             type: "text",
         },
     }),
     columnHelper.accessor("price", {
-        header: "Price",
+        header: "판매가",
         cell: TableCell,
         meta: {
             type: "number",
         },
     }),
     columnHelper.accessor("shippingFee", {
-        header: "Shipping Fee",
+        header: "배송비",
         cell: TableCell,
         meta: {
             type: "number",
         },
     }),
     columnHelper.accessor("intl", {
-        header: "Intl",
+        header: "배송",
         cell: TableCell,
         meta: {
             type: "select",
             options: [
-                { value: true, label: "true" },
-                { value: false, label: "false" },
+                { value: true, label: "해외" },
+                { value: false, label: "국내" },
             ],
         },
     }),
     columnHelper.accessor("imgType", {
-        header: "Img Type",
+        header: "이미지 타입",
         cell: TableCell,
         meta: {
             type: "select",
             options: imgArray(),
         },
     }),
-    columnHelper.accessor("size", {
-        header: "Size",
-        cell: TableCell,
-        meta: {
-            type: "text",
-        },
-    }),
     columnHelper.accessor("color", {
-        header: "Color",
+        header: "색상",
         cell: TableCell,
         meta: {
             type: "text",
         },
     }),
     columnHelper.accessor("category", {
-        header: "Category",
+        header: "카테고리",
         cell: TableCell,
         meta: {
             type: "select",
             options: categoryArray(),
         },
     }),
-
-    columnHelper.display({
-        id: "edit",
-        cell: EditCell,
+    columnHelper.accessor("categorySpec", {
+        header: "Category",
+        cell: categorySpecCell,
     }),
 ];

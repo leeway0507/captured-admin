@@ -1,5 +1,5 @@
 import { getCostTableDataSet, getProductInfoFromProduction } from "../fetch";
-import { CostTable } from "./table/table";
+import { CostTable } from "./table/cost-table";
 export default async function Page({
     params,
     searchParams,
@@ -7,16 +7,16 @@ export default async function Page({
     params: { slug: string[] };
     searchParams: { [key: string]: string | undefined };
 }) {
-    const [searchType, value] = params.slug;
+    const [searchTypeEncoded, valueEncoded] = params.slug;
 
-    const searchTypeDecoded = decodeURIComponent(searchType);
-    var valueDecoded = decodeURIComponent(value).replaceAll("-", " ");
+    const searchType = decodeURIComponent(searchTypeEncoded);
+    var value = decodeURIComponent(valueEncoded).replaceAll("-", " ");
 
-    if (searchTypeDecoded === "brandName") {
-        valueDecoded = valueDecoded.replaceAll(" ", "_");
+    if (searchType === "brandName") {
+        value = value.replaceAll(" ", "_");
     }
 
-    const costTableDataSet = await getCostTableDataSet(searchTypeDecoded, valueDecoded);
+    const costTableDataSet = await getCostTableDataSet(searchType, value);
     const productInfo = await getProductInfoFromProduction();
 
     return (

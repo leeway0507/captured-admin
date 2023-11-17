@@ -48,8 +48,8 @@ async def create(
         **product.model_dump(),
     )
 
-    if create_product(db, product_info_db):
-        return {"message": "success"}
+    if await create_product(db, product_info_db):
+        return {"message": "success", "sku": product.sku}
     else:
         raise HTTPException(status_code=406, detail="제품 등록 실패. 다시 시도해주세요.")
 
@@ -88,3 +88,14 @@ async def get_product_info_for_cost_product(
     """product_unique_id 조회"""
 
     return await get_product_info_for_cost_table(db)
+
+
+@production_router.get("/update-product-deploy-status")
+async def update_product_deploy_status_api(
+    sku: int,
+    status: int,
+    db: AsyncSession = Depends(get_production_db),
+):
+    """update product_info deploy"""
+
+    return await update_product_deploy_status(db, sku, status)

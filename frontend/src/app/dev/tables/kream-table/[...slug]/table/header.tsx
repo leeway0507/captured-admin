@@ -2,56 +2,13 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import { kreamTableRawDataProps } from "./type";
+import { kreamTableRawDataProps } from "./kream-table";
 import { createColumnHelper } from "@tanstack/react-table";
-import KreamProductModal from "../modal/kream-product-modal";
-import { useState } from "react";
-
-// const handleCandidate = (event: any) => {
-//     const { id, status } = event.target.dataset;
-
-//     const reverseStatus = status === "true" ? false : true;
-
-//     console.log(event.target, id, reverseStatus);
-
-//     updateCandidate(id, reverseStatus).then((res) => {
-//         if (res.status === 200) {
-//             event.target.className = reverseStatus ? "bg-green-400 p-2" : "bg-rose-300 p-2";
-//             event.target.dataset.status = reverseStatus;
-//             toast.success("업데이트 성공", { position: "top-left", autoClose: 1000 });
-//         }
-//     });
-// };
-
-const OpenDetail = (props: any) => {
-    const { kreamId } = props.row.original;
-    const [isOpen, setIsOpen] = useState(false);
-
-    return (
-        <>
-            <button
-                className="bg-gray-200 hover:bg-gray-300 p-2"
-                onClick={() => {
-                    setIsOpen(true);
-                }}>
-                상세정보
-            </button>
-            {isOpen && (
-                <KreamProductModal
-                    searchType="kreamId"
-                    value={kreamId}
-                    isOpen={isOpen}
-                    setIsOpen={setIsOpen}
-                    cost={9000000}
-                />
-            )}
-        </>
-    );
-};
+import { OpenKreamDetail } from "@/app/components/default-table/default-header-function";
 
 const columnHelper = createColumnHelper<kreamTableRawDataProps>();
 
-export const CostTableColumn = [
+export const kreamTableColumns = [
     columnHelper.accessor("kreamId", {
         header: "크림 아이디",
         cell: (props) => (
@@ -90,6 +47,6 @@ export const CostTableColumn = [
     }),
     columnHelper.display({
         header: "상세정보",
-        cell: OpenDetail,
+        cell: OpenKreamDetail,
     }),
 ];

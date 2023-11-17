@@ -2,7 +2,9 @@
 
 import { shopInfoProps } from "../../../type";
 import { createColumnHelper } from "@tanstack/react-table";
-import { ChangeEvent, MouseEvent, useState, useEffect } from "react";
+import { TableCell } from "@/app/components/default-table/default-header-function";
+import { toast } from "react-toastify";
+import { createShopInfo } from "../fetch";
 
 type Option = {
     label: string;
@@ -11,73 +13,6 @@ type Option = {
 
 const columnHelper = createColumnHelper<shopInfoProps>();
 
-const EditCell = ({ row, table }) => {
-    const meta = table.options.meta;
-    const setEditedRows = (e: MouseEvent<HTMLButtonElement>) => {
-        const elName = e.currentTarget.name;
-        meta?.setEditedRows((old: []) => ({
-            ...old,
-            [row.id]: !old[row.id],
-        }));
-        if (elName !== "edit") {
-            meta?.revertData(row.index, e.currentTarget.name === "cancel");
-        }
-    };
-    return (
-        <div className="edit-cell-container w-[50px] flex-center">
-            {meta?.editedRows[row.id] ? (
-                <div className="edit-cell">
-                    <button onClick={setEditedRows} name="cancel">
-                        X
-                    </button>
-                    <button onClick={setEditedRows} name="done">
-                        ✔
-                    </button>
-                </div>
-            ) : (
-                <button onClick={setEditedRows} name="edit">
-                    ✐
-                </button>
-            )}
-        </div>
-    );
-};
-
-const TableCell = ({ getValue, row, column, table }) => {
-    const initialValue = getValue();
-    const [value, setValue] = useState(typeof initialValue === "boolean" ? initialValue.toString() : initialValue);
-    const columnMeta = column.columnDef.meta;
-    const tableMeta = table.options.meta;
-
-    const onBlur = () => {
-        tableMeta?.updateData(row.index, column.id, value);
-    };
-    const onSelectChange = (e: ChangeEvent<HTMLSelectElement>) => {
-        setValue(e.target.value);
-        tableMeta?.updateData(row.index, column.id, e.target.value);
-    };
-    if (tableMeta?.editedRows[row.id]) {
-        return columnMeta?.type === "select" ? (
-            <select onChange={onSelectChange} value={initialValue}>
-                {columnMeta?.options?.map((option: Option) => (
-                    <option key={option.value} value={option.value}>
-                        {option.label}
-                    </option>
-                ))}
-            </select>
-        ) : (
-            <input
-                value={value}
-                onChange={(e) => setValue(e.target.value)}
-                onBlur={onBlur}
-                type={columnMeta?.type || "text"}
-                className="max-w-[100px]"
-            />
-        );
-    }
-    return <span>{value}</span>;
-};
-
 const boolArray = () => {
     return [
         { value: true, label: "true" },
@@ -85,19 +20,47 @@ const boolArray = () => {
     ];
 };
 
+export const updateToDB = (props: any) => {
+    const rowData = props.row.original;
+
+    const handler = async () => {
+        console.log("rowData");
+        console.log(rowData);
+        await createShopInfo(rowData).then((res) => {
+            res.status === 200 ? toast.success("업데이트 성공") : toast.error("업데이트 실패");
+        });
+    };
+    return (
+        <button onClick={handler} className="bg-main-black text-white p-2 active:bg-blue-black whitespace-nowrap">
+            DB 저장
+        </button>
+    );
+};
+
 export const productCardColumns = [
+    columnHelper.display({
+        header: "기능",
+        cell: updateToDB,
+        meta: {
+            type: "text",
+        },
+    }),
     columnHelper.accessor("shopName", {
         header: "스토어 이름",
-    }),
-    columnHelper.accessor("country", {
-        header: "국가",
-    }),
-    columnHelper.accessor("shopUrl", {
-        header: "주소",
         cell: TableCell,
         meta: {
             type: "text",
         },
+    }),
+    columnHelper.accessor("country", {
+        header: "국가",
+        cell: TableCell,
+        meta: {
+            type: "text",
+        },
+    }),
+    columnHelper.accessor("shopUrl", {
+        header: "주소",
     }),
     columnHelper.accessor("taxReductionRate", {
         header: "부가세.감",
@@ -142,10 +105,5 @@ export const productCardColumns = [
             type: "select",
             options: boolArray(),
         },
-    }),
-
-    columnHelper.display({
-        id: "edit",
-        cell: EditCell,
     }),
 ];
