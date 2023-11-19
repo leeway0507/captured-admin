@@ -1,12 +1,12 @@
 "use client";
-import { ReloadBrowser } from "./fetch";
+import { CloseKreamBrowser } from "./fetch";
 import PrdoucCardList from "./product-card-list";
 import ProductDetail from "./product-detail";
 import ReproduceReport from "./reproduce-report";
 import { toast } from "react-toastify";
 export default function Main() {
-    const handleReloadBrowser = async () => {
-        const res = await ReloadBrowser().then((res) => {
+    const handleCloseBrowser = async () => {
+        const res = await CloseKreamBrowser().then((res) => {
             if (res.status === 200) {
                 alert("브라우저 재실행 성공");
             } else {
@@ -18,7 +18,7 @@ export default function Main() {
     return (
         <div className="flex flex-col mx-auto">
             <div className="w-full flex-right py-4">
-                <button className="black-bar w-[300px] p-4 text-xl" onClick={handleReloadBrowser}>
+                <button className="black-bar w-[300px] p-4 text-xl" onClick={handleCloseBrowser}>
                     브라우저 재실행
                 </button>
             </div>

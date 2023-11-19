@@ -65,7 +65,7 @@ class ScrapModule:
             await asyncio.sleep(time_delay)
 
     @classmethod
-    async def scrap_logic(
+    async def scrap_list_logic(
         cls,
         page: Page,
         shop_name: str,
@@ -117,7 +117,8 @@ class ScrapModule:
                     await button.evaluate("node => node.click()")
                     await page.wait_for_timeout(1000)
 
-        await ScrapModule.save_cookies(page)
+        if cookie_xpath:
+            await ScrapModule.save_cookies(page)
 
         # 1-2 page_reload after cookie
         if page_reload_after_cookies:
@@ -159,6 +160,47 @@ class ScrapModule:
             page_num += 1
 
         return cards_info
+
+    @classmethod
+    async def scrap_page_logic(
+        cls,
+        page: Page,
+        search_url: str,
+        shop_name: str,
+        cookie_xpath: str | List[str],
+        get_size_info: Callable,
+        get_product_id: Callable,
+        **kwargs,
+    ):
+        log = make_logger(f"logs/shop_product_card_page/{shop_name}.log", shop_name)
+
+        # 1. load_page
+        await ScrapModule.load_cookies(page)
+        local_page = await ScrapModule.load_page(page, search_url)
+        assert local_page, log.error(f"[{shop_name}] page load failed")
+
+        # 1-1. deal with cookies
+        if isinstance(cookie_xpath, str):
+            cookie_xpath = [cookie_xpath]
+        for xpath in cookie_xpath:
+            cookies = await page.is_visible(xpath)
+            if cookies:
+                button = await page.query_selector(xpath)
+                if button:
+                    await button.evaluate("node => node.click()")
+                    await page.wait_for_timeout(1000)
+
+        if cookie_xpath:
+            await ScrapModule.save_cookies(page)
+
+        size_info = await get_size_info(page)
+        product_id = await get_product_id(page)
+
+        assert {*size_info[0].keys()} == {
+            "shop_product_size",
+            "kor_product_size",
+        }, "size_info is not valid"
+        return {"size_info": size_info, "product_id": product_id}
 
     @classmethod
     def save_to_parquet(cls, cards_info: List[Dict]):

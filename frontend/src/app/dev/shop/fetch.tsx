@@ -12,8 +12,21 @@ export const InitshopCardList = async (shopName: string, brandName: string, numP
     return { status: res.status, data: await res.json() };
 };
 
-export const ReloadBrowser = async () => {
-    const url = `${process.env.NEXT_PUBLIC_API_URL}/api/dev/kream/reload-kream-page`;
+export const InitshopCardPage = async (searchType: string, content: string, numProcess: number) => {
+    const url = `${process.env.NEXT_PUBLIC_API_URL}/api/dev/shop/init-shop-product-card-page`;
+
+    const queryParams = new URLSearchParams({
+        searchType,
+        content,
+        numProcess: numProcess.toString(),
+    });
+
+    const res = await fetch(url + "?" + queryParams);
+
+    return { status: res.status, data: await res.json() };
+};
+export const CloseCustomPageBrowser = async () => {
+    const url = `${process.env.NEXT_PUBLIC_API_URL}/api/dev/shop/close-custom-page`;
     const res = await fetch(url);
     return { status: res.status, data: await res.json() };
 };
@@ -33,14 +46,29 @@ export const loadBrandName = async (shopName: string) => {
     return { status: res.status, data: await res.json() };
 };
 
-export const getScraptList = async () => {
+export const getScrapList = async () => {
     const url = `${process.env.NEXT_PUBLIC_API_URL}/api/dev/shop/get-scrap-list`;
     const res = await fetch(url);
     return { status: res.status, data: await res.json() };
 };
 
-export const getScraptResult = async (scrapName: string) => {
-    const url = `${process.env.NEXT_PUBLIC_API_URL}/api/dev/shop/get-scrap-data`;
+export const getScrapPageList = async () => {
+    const url = `${process.env.NEXT_PUBLIC_API_URL}/api/dev/shop/get-scrap-page-list`;
+    const res = await fetch(url);
+    return { status: res.status, data: await res.json() };
+};
+
+export const getProductListResult = async (scrapName: string) => {
+    const url = `${process.env.NEXT_PUBLIC_API_URL}/api/dev/shop/get-product-list-result`;
+    const queryParams = new URLSearchParams({
+        scrapName,
+    });
+    const res = await fetch(url + "?" + queryParams);
+    return { status: res.status, data: await res.json() };
+};
+
+export const getProductPageResult = async (scrapName: string) => {
+    const url = `${process.env.NEXT_PUBLIC_API_URL}/api/dev/shop/get-product-page-result`;
     const queryParams = new URLSearchParams({
         scrapName,
     });
@@ -61,6 +89,15 @@ export const loadScrapedBrandName = async (shopName: string) => {
     const url = `${process.env.NEXT_PUBLIC_API_URL}/api/dev/shop/get-scraped-brand-name`;
     const queryParams = new URLSearchParams({
         shopName,
+    });
+    const res = await fetch(url + "?" + queryParams);
+    return { status: res.status, data: await res.json() };
+};
+
+export const insertScrapPageToDB = async (scrapDate: string) => {
+    const url = `${process.env.NEXT_PUBLIC_API_URL}/api/dev/shop/db/upsert-size-table`;
+    const queryParams = new URLSearchParams({
+        scrapDate,
     });
     const res = await fetch(url + "?" + queryParams);
     return { status: res.status, data: await res.json() };

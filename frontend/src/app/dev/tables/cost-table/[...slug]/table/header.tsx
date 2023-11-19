@@ -12,25 +12,22 @@ import {
     candidateClass,
     updateToDB,
     SendDraft,
+    GetSizeTable,
 } from "./cost-table-header-functions";
 
 const columnHelper = createColumnHelper<costTableDataProps>();
-
-const boolArray = () => {
-    return [
-        { value: true, label: "true" },
-        { value: false, label: "false" },
-    ];
-};
 
 const roundUpTwo = (num: number) => {
     return Math.round(num * 100) / 100;
 };
 
 const features = (props: any) => {
+    const { totalPriceBeforeCardFee, cardFee } = GetPrices(props);
+    const cost = Math.round(totalPriceBeforeCardFee * 1.05 + cardFee);
     return (
         <div className="flex flex-col h-[200px] justify-evenly">
-            {OpenKreamDetail(props)}
+            {OpenKreamDetail("productId", props.row.original.productId, cost)}
+            {GetSizeTable(props)}
             {updateToDB(props)}
             {SendDraft(props)}
         </div>
@@ -62,6 +59,7 @@ export const productCardColumns = [
                 </div>
             </>
         ),
+        sortDescFirst: true,
     }),
     columnHelper.accessor("shopProductImgUrl", {
         header: "이미지(링크)",

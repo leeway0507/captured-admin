@@ -1,10 +1,10 @@
 from ..scrap_module import *
 
 
-async def consortium_product_list(
-    page: Page, brand_name: str, brand_url: str, **_kwargs
-):
-    return await get_consortium_list(page, brand_name, brand_url)
+# async def consortium_product_list(
+#     page: Page, brand_name: str, brand_url: str, **_kwargs
+# ) -> List[ShopProductCardSchema]:
+#     return await get_consortium_list(page, brand_name, brand_url)
 
 
 async def get_consortium_list(
@@ -97,7 +97,7 @@ async def get_consortium_list(
         await button.click()
         return True
 
-    return await ScrapModule.scrap_logic(
+    return await ScrapModule.scrap_list_logic(
         page=page,
         shop_name=shop_name,
         brand_name=brand_name,
@@ -111,4 +111,52 @@ async def get_consortium_list(
         get_next_page=get_next_page,
         reverse_not_found_result=True,
         scroll_on=True,
+    )
+
+
+async def get_consortium_page(
+    page: Page, shop_name: str, search_url: str
+) -> Dict[str, Any]:
+    """
+    consortium에 대한 Scraper
+
+        Args:
+            page (Page): Playwright Page
+            url (str): 제품 URL
+
+        Returns:
+            Dict[str, Any]: [sizes, product_id]
+    """
+
+    async def get_size_info(page) -> List[Dict[str, Any]]:
+        size_query = await page.query_selector_all("div.input-box>select > option")
+
+        size_list = [await s.inner_text() for s in size_query]
+        size_list = [size for size in size_list if "Out of Stock" not in size][1:]
+        if not size_list:
+            return [{"shop_product_size": "-", "kor_product_size": "-"}]
+
+        return [
+            {"shop_product_size": s, "kor_product_size": s.split("-")[0].strip()}
+            for s in size_list
+        ]
+
+    async def get_product_id(page) -> str:
+        product_id_text = await page.query_selector('//*[@id="detailsPanel"]/div')
+        product_id_text = await product_id_text.inner_text()
+        text = product_id_text.lower()
+        if "product code" in text:
+            product_id = text.split("product code")[1].strip()
+        else:
+            product_id = "-"
+
+        return product_id.upper()
+
+    return await ScrapModule.scrap_page_logic(
+        page=page,
+        search_url=search_url,
+        shop_name=shop_name,
+        get_size_info=get_size_info,
+        get_product_id=get_product_id,
+        cookie_xpath=[],
     )

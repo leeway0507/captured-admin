@@ -28,7 +28,7 @@ export default function Page() {
 
     return (
         <div className="py-12">
-            <div className="flex-right relative">
+            <div className="flex-left relative">
                 <button type="button" onClick={openToggle} className=" text-xl py-2 link-animation">
                     + 새로운 아이템 추가하기
                 </button>

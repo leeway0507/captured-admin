@@ -5,7 +5,7 @@ export const getCostTableDataSet = async (searchType: string, value: string) => 
         value,
     });
 
-    const res = await fetch(url + "?" + queryParams);
+    const res = await fetch(url + "?" + queryParams, { cache: "no-cache" });
     return { status: res.status, data: await res.json() };
 };
 
@@ -33,6 +33,15 @@ export const getProductInfoFromProduction = async () => {
 
 export const getKreamColor = async (productId: string) => {
     const url = `${process.env.NEXT_PUBLIC_API_URL}/api/dev/kream/get-product-color-for-registraion`;
+    const queryParams = new URLSearchParams({
+        productId,
+    });
+
+    const res = await fetch(url + "?" + queryParams);
+    return { status: res.status, data: await res.json() };
+};
+export const getSizeTableData = async (productId: string) => {
+    const url = `${process.env.NEXT_PUBLIC_API_URL}/api/dev/shop/db/get_size_table_data`;
     const queryParams = new URLSearchParams({
         productId,
     });

@@ -1,10 +1,11 @@
 """dev Router"""
 
 from itertools import product
-from typing import Optional
+from typing import List
 from sqlalchemy.ext.asyncio import AsyncSession
 from fastapi import APIRouter, Depends, HTTPException
 from dotenv import dotenv_values
+
 
 from db.dev_db import get_dev_db
 from model.shop_model import RequestShopInfo, updateShopProductCardSchema
@@ -17,8 +18,12 @@ from .components.update_to_db import (
     get_shop_name_from_db,
     update_candidate_to_db,
     update_shop_product_card_list_for_cost_table,
+    upsert_size_table,
+    get_size_table_data,
 )
 from .components.shop_product_card_list.create_log import update_scrap_result
+from .components.shop_product_card_page.create_log import update_product_page_result
+
 
 shop_db_router = APIRouter()
 
@@ -93,3 +98,21 @@ async def update_candidate_status_api(
 #     db: AsyncSession = Depends(get_dev_db),
 # ):
 #     return await get_product_unique_id(db)
+
+
+@shop_db_router.get("/upsert-size-table")
+async def upsert_size_table_api(
+    scrapDate: str,
+    db: AsyncSession = Depends(get_dev_db),
+):
+    await upsert_size_table(db, scrapDate)
+    update_product_page_result(scrapDate, "db_update", True)
+    return {"message": "success"}
+
+
+@shop_db_router.get("/get_size_table_data")
+async def get_size_table_data_api(
+    productId: str,
+    db: AsyncSession = Depends(get_dev_db),
+):
+    return await get_size_table_data(db, productId)

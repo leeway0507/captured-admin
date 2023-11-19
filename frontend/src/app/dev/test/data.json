@@ -1,0 +1,166 @@
+{
+    "sizeInfo": [
+        {
+            "shopProductCardId": 118,
+            "shopProductSize": "UK 4",
+            "korProductSize": "225",
+            "available": true,
+            "updatedAt": "2023-11-18T22:39:55"
+        },
+        {
+            "shopProductCardId": 118,
+            "shopProductSize": "UK 4.5",
+            "korProductSize": "230",
+            "available": true,
+            "updatedAt": "2023-11-18T22:39:55"
+        },
+        {
+            "shopProductCardId": 118,
+            "shopProductSize": "UK 5",
+            "korProductSize": "235",
+            "available": true,
+            "updatedAt": "2023-11-18T22:39:55"
+        },
+        {
+            "shopProductCardId": 118,
+            "shopProductSize": "UK 5.5",
+            "korProductSize": "240",
+            "available": true,
+            "updatedAt": "2023-11-18T22:39:55"
+        },
+        {
+            "shopProductCardId": 135,
+            "shopProductSize": "UK 4",
+            "korProductSize": "225",
+            "available": true,
+            "updatedAt": "2023-11-18T22:39:55"
+        },
+        {
+            "shopProductCardId": 135,
+            "shopProductSize": "UK 4.5",
+            "korProductSize": "230",
+            "available": true,
+            "updatedAt": "2023-11-18T22:39:55"
+        },
+        {
+            "shopProductCardId": 135,
+            "shopProductSize": "UK 5",
+            "korProductSize": "235",
+            "available": true,
+            "updatedAt": "2023-11-18T22:39:55"
+        },
+        {
+            "shopProductCardId": 135,
+            "shopProductSize": "UK 5.5",
+            "korProductSize": "240",
+            "available": true,
+            "updatedAt": "2023-11-18T22:39:55"
+        },
+        {
+            "shopProductCardId": 118,
+            "shopProductSize": "UK 6.5",
+            "korProductSize": "250",
+            "available": true,
+            "updatedAt": "2023-11-18T22:39:55"
+        },
+        {
+            "shopProductCardId": 118,
+            "shopProductSize": "UK 7",
+            "korProductSize": "255",
+            "available": true,
+            "updatedAt": "2023-11-18T22:39:55"
+        },
+        {
+            "shopProductCardId": 118,
+            "shopProductSize": "UK 7.5",
+            "korProductSize": "260",
+            "available": true,
+            "updatedAt": "2023-11-18T22:39:55"
+        },
+        {
+            "shopProductCardId": 118,
+            "shopProductSize": "UK 8",
+            "korProductSize": "265",
+            "available": true,
+            "updatedAt": "2023-11-18T22:39:55"
+        },
+        {
+            "shopProductCardId": 118,
+            "shopProductSize": "UK 9",
+            "korProductSize": "275",
+            "available": true,
+            "updatedAt": "2023-11-18T22:39:55"
+        },
+        {
+            "shopProductCardId": 118,
+            "shopProductSize": "UK 9.5",
+            "korProductSize": "280",
+            "available": true,
+            "updatedAt": "2023-11-18T22:39:55"
+        },
+        {
+            "shopProductCardId": 118,
+            "shopProductSize": "UK 10",
+            "korProductSize": "285",
+            "available": true,
+            "updatedAt": "2023-11-18T22:39:55"
+        },
+        {
+            "shopProductCardId": 118,
+            "shopProductSize": "UK 10.5",
+            "korProductSize": "290",
+            "available": true,
+            "updatedAt": "2023-11-18T22:39:55"
+        },
+        {
+            "shopProductCardId": 118,
+            "shopProductSize": "UK 11",
+            "korProductSize": "295",
+            "available": true,
+            "updatedAt": "2023-11-18T22:39:55"
+        },
+        {
+            "shopProductCardId": 118,
+            "shopProductSize": "UK 12",
+            "korProductSize": "305",
+            "available": true,
+            "updatedAt": "2023-11-18T22:39:55"
+        }
+    ],
+    "productInfo": [
+        {
+            "shopProductCardId": 118,
+            "shopProductName": "adidas-originals-handball-spezial-core-black-cloud-white-gum-5-db3021",
+            "shopProductImgUrl": "https://www.consortium.co.uk/media/catalog/product/cache/1/small_image/600x600/9df78eab33525d08d6e5fb8d27136e95/a/d/adidas-originals-handball-spezial-core-black-cloud-white-gum-5-db3021_0000_cat.jpg",
+            "productUrl": "https://www.consortium.co.uk/adidas-originals-handball-spezial-core-black-cloud-white-gum-5-db3021.html",
+            "shopName": "consortium",
+            "brandName": "adidas",
+            "productId": "DB3021",
+            "korPrice": 122000,
+            "usPrice": 92.27,
+            "originalPriceCurrency": "GBP",
+            "originalPrice": 74.99,
+            "soldOut": false,
+            "candidate": 2,
+            "coupon": 0,
+            "updatedAt": "2023-11-12T21:07:02"
+        },
+        {
+            "shopProductCardId": 135,
+            "shopProductName": "adidas-originals-handball-spezial-core-black-cloud-white-gum-5-db3021",
+            "shopProductImgUrl": "https://www.consortium.co.uk/media/catalog/product/cache/1/small_image/600x600/9df78eab33525d08d6e5fb8d27136e95/a/d/adidas-originals-handball-spezial-core-black-cloud-white-gum-5-db3021_0000_cat.jpg",
+            "productUrl": "https://www.consortium.co.uk/adidas-originals-handball-spezial-core-black-cloud-white-gum-5-db3021.html",
+            "shopName": "seven_store",
+            "brandName": "adidas",
+            "productId": "DB3021",
+            "korPrice": 122000,
+            "usPrice": 92.27,
+            "originalPriceCurrency": "GBP",
+            "originalPrice": 74.99,
+            "soldOut": false,
+            "candidate": 2,
+            "coupon": 0,
+            "updatedAt": "2023-11-12T21:07:02"
+        }
+    ]
+}

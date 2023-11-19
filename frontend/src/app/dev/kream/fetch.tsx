@@ -27,8 +27,8 @@ export const InitProductDetail = async (brandName: string, numProcess: Number, k
     return { status: res.status, data: await res.json() };
 };
 
-export const ReloadBrowser = async () => {
-    const url = `${process.env.NEXT_PUBLIC_API_URL}/api/dev/kream/reload-kream-page`;
+export const CloseKreamBrowser = async () => {
+    const url = `${process.env.NEXT_PUBLIC_API_URL}/api/dev/kream/close-kream-page`;
     const res = await fetch(url);
     return { status: res.status, data: await res.json() };
 };

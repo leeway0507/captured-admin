@@ -20,6 +20,9 @@ export default function SideNav() {
             <Link href="/dev/tables" className="w-full link-animation flex-center py-4">
                 <div className="">Table List</div>
             </Link>
+            <Link href="/production/product" className="w-full link-animation flex-center py-4">
+                <div className="">Prod</div>
+            </Link>
         </div>
     );
 }

@@ -58,7 +58,7 @@ class ShopProductCardTable(MyBase):
     original_price = Column(FLOAT)
     coupon = Column(FLOAT)
     sold_out = Column(BOOLEAN)
-    candidate = Column(INTEGER)  # 0: not condidate 1: candidate 2: selected
+    candidate = Column(INTEGER, index=True)  # 0: not condidate 1: candidate 2: selected
     updated_at = Column(DATETIME)
 
     __table_args__ = (

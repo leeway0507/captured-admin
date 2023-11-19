@@ -1,13 +1,13 @@
 from ..scrap_module import *
 
 
-async def seven_store_product_list(
-    page: Page, brand_name: str, brand_url: str, **_kwargs
-):
-    return await _scrap_seven_store(page, brand_name, brand_url)
+# async def seven_store_product_list(
+#     page: Page, brand_name: str, brand_url: str, **_kwargs
+# ):
+#     return await _scrap_seven_store(page, brand_name, brand_url)
 
 
-async def _scrap_seven_store(
+async def get_seven_store_list(
     page: Page, brand_name: str, search_url: str
 ) -> List[ShopProductCardSchema]:
     shop_name = "seven_store"
@@ -32,7 +32,7 @@ async def _scrap_seven_store(
     async def get_next_page(page, page_num, xpath):
         return False
 
-    return await ScrapModule.scrap_logic(
+    return await ScrapModule.scrap_list_logic(
         page=page,
         shop_name=shop_name,
         brand_name=brand_name,

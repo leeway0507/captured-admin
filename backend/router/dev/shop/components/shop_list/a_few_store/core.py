@@ -1,13 +1,13 @@
 from ..scrap_module import *
 
 
-async def a_few_store_product_list(
-    page: Page, brand_name: str, brand_url: str, **_kwargs
-):
-    return await _scrap_a_few_store(page, brand_name, brand_url)
+# async def a_few_store_product_list(
+#     page: Page, brand_name: str, brand_url: str, **_kwargs
+# ):
+#     return await get_a_few_store_product_list(page, brand_name, brand_url)
 
 
-async def _scrap_a_few_store(
+async def get_a_few_store_list(
     page: Page, brand_name: str, search_url: str
 ) -> List[ShopProductCardSchema]:
     """
@@ -50,7 +50,7 @@ async def _scrap_a_few_store(
         await button.click()
         return True
 
-    return await ScrapModule.scrap_logic(
+    return await ScrapModule.scrap_list_logic(
         page=page,
         shop_name=shop_name,
         brand_name=brand_name,

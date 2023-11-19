@@ -45,8 +45,15 @@ export const kreamTableColumns = [
         header: "제품명",
         cell: (props) => <div className="max-w-[250px]">{props.getValue()}</div>,
     }),
+    columnHelper.accessor("tradingVolume", {
+        header: "거래량",
+    }),
+    columnHelper.accessor("wish", {
+        header: "찜 수",
+    }),
+
     columnHelper.display({
         header: "상세정보",
-        cell: OpenKreamDetail,
+        cell: (props) => OpenKreamDetail("kreamId", String(props.row.original.kreamId), undefined),
     }),
 ];

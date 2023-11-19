@@ -4,6 +4,9 @@ import { getKreamColor, updateShopProductCard } from "../../fetch";
 import { useState, useCallback } from "react";
 import { toast } from "react-toastify";
 import CreateFormModal from "@/app/production/product/component/modal/create-form-modal";
+import SizeTableModal from "../modal/size-table-modal";
+import { getSizeTableData } from "../../fetch";
+import { productCardProps, sizeInfoprops } from "../modal/size-table-modal";
 
 //css
 export const candidateClass = "p-2 h-[150px] flex-center cursor-pointer";
@@ -23,6 +26,40 @@ export const updateToDB = (props: any) => {
         <button onClick={handler} className="bg-main-black text-white p-2 active:bg-blue-black">
             DB 저장
         </button>
+    );
+};
+
+export const GetSizeTable = (props: any) => {
+    const { productId, shopName } = props.row.original;
+
+    const [isOpen, setIsOpen] = useState(false);
+    const [sizeInfo, setSizeInfo] = useState<sizeInfoprops[]>();
+    const [productInfo, setProductInfo] = useState<productCardProps[]>();
+
+    const openToggle = () => {
+        getSizeTableData(productId).then((res) => {
+            setSizeInfo(res.data.sizeInfo);
+            setProductInfo(res.data.productInfo);
+            res.data.sizeInfo.length === 0 ? toast.info("일치하는 사이즈가 없습니다.") : setIsOpen(true);
+        });
+    };
+
+    return (
+        <>
+            <button className="bg-purple-600 text-white p-2 hover:bg-purple-500" onClick={openToggle}>
+                사이즈
+            </button>
+
+            {sizeInfo && productInfo && (
+                <SizeTableModal
+                    initShopName={shopName}
+                    sizeInfo={sizeInfo}
+                    productInfo={productInfo}
+                    isOpen={isOpen}
+                    setIsOpen={setIsOpen}
+                />
+            )}
+        </>
     );
 };
 
@@ -55,7 +92,7 @@ export const SendDraft = (props: any) => {
     return sku === undefined ? (
         <>
             <button className="bg-blue-600 text-white p-2" onClick={openToggle}>
-                초안 작성
+                초안작성
             </button>
             {defaultData.color && <CreateFormModal defaultData={defaultData} isOpen={isOpen} setIsOpen={setIsOpen} />}
         </>
@@ -99,7 +136,6 @@ function calcCustomAndVAT(
     return [customFee, VATFee];
 }
 
-// Assuming props.row.original is stable or doesn't change often
 export function GetPrices(props: any): Prices {
     const calculatePrices = useCallback(() => {
         const { originalPrice, buyingCurrency, usCurrency, errorRate, coupon } = props.row.original;

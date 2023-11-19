@@ -67,7 +67,10 @@ export const CostTableColumn = [
     }),
     columnHelper.display({
         header: "크림상세정보",
-        cell: OpenKreamDetail,
+        cell: (props) => {
+            const cost = props.row.original.totalPriceBeforeCardFee * 1.05;
+            return <div>{OpenKreamDetail("productId", props.row.original.productId, cost)}</div>;
+        },
     }),
 
     columnHelper.accessor("originalPrice", {

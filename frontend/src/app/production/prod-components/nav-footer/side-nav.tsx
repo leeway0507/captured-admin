@@ -11,8 +11,8 @@ export default function SideNav() {
             <Link href="/production/order" className="w-full link-animation hover:bg-deep-gray flex-center py-4">
                 <div className="">Order</div>
             </Link>
-            <Link href="/production/test" className="w-full link-animation hover:bg-deep-gray flex-center py-4">
-                <div className="">Test</div>
+            <Link href="/dev/kream" className="w-full link-animation hover:bg-deep-gray flex-center py-4">
+                <div className="">Dev</div>
             </Link>
         </div>
     );

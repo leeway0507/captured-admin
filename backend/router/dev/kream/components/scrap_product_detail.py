@@ -15,7 +15,7 @@ import json
 
 from dotenv import dotenv_values
 
-from .main import KreamPage
+from ...custom_playwright.page import KreamPage
 from .utils import load_page, load_cookies, convert_str_to_int
 from model.db_model_kream import KreamBuyAndSellSchema, KreamTradingVolumeSchema
 from model.kream_scraping import KreamProductDetailSchema
@@ -59,7 +59,7 @@ async def scrap_product_detail_main(
     merged_result = {k: v.replace("=", "") for d in result for k, v in d.items()}
 
     path = config["KREAM_DETAILS_TEMP_DIR"]
-    assert path, "Env KREAM_DETAILS_TEMP_DIR is not exist"
+    assert path, "Env KREAM_DETAILS_TEMP_DIR does not exist"
     path += "process_result.json"
     if target_kream_ids:
         ref_product_card = target_kream_ids
@@ -406,7 +406,7 @@ def _extract_volume_data_from(body_list: List) -> List[List]:
 def get_last_update_product_card_name(brand_name: str, path=None) -> Tuple[str, str]:
     if path is None:
         path = config["KREAM_PRODUCT_CARD_LIST_DIR"]
-        assert path, "Env KREAM_PRODUCT_CARD_LIST_DIR is not exist"
+        assert path, "Env KREAM_PRODUCT_CARD_LIST_DIR does not exist"
         path += brand_name
 
     file_list = os.listdir(path)
@@ -452,7 +452,7 @@ def split_size(l: List, num_list: int) -> List[List]:
 
 def init_tempfiles():
     path = config["KREAM_DETAILS_TEMP_DIR"]
-    assert path, "Env KREAM_DETAILS_TEMP_DIR is not exist"
+    assert path, "Env KREAM_DETAILS_TEMP_DIR does not exist"
 
     file_list = os.listdir(path)
     for file in file_list:
@@ -480,7 +480,7 @@ async def get_soup_all(page: Page, value: str) -> List[BeautifulSoup]:
 
 async def _save_temp_files(file_name: str, data: Union[List, Dict]):
     path = config["KREAM_DETAILS_TEMP_DIR"]
-    assert path, "Env KREAM_DETAILS_TEMP_DIR is not exist"
+    assert path, "Env KREAM_DETAILS_TEMP_DIR does not exist"
 
     n = f"{file_name}.json"
     async with aiofiles.open(path + n, "a") as f:
@@ -492,7 +492,7 @@ async def save_scrap_files(brand_name: str):
     path = f"router/dev/kream/data/detail/{brand_name}/"
 
     temp_path = config["KREAM_DETAILS_TEMP_DIR"]
-    assert temp_path, "Env KREAM_DETAILS_TEMP_DIR is not exist"
+    assert temp_path, "Env KREAM_DETAILS_TEMP_DIR does not exist"
 
     file_time = datetime.now().strftime("%y%m%d-%H%M%S")
 

@@ -60,7 +60,7 @@ export const CostTable = ({
 }) => {
     // @ts-ignore
     const tableData: costTableDataProps[] = createTableData(costTableDataSet, productInfo);
-
+    tableData.reverse();
     // @ts-ignore
     return <DefaultTable data={tableData} columns={productCardColumns} />;
 };

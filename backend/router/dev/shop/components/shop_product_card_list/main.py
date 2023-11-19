@@ -13,7 +13,7 @@ from dotenv import dotenv_values
 from model.db_model_shop import ShopProductCardSchema
 from ..shop_list import *
 from playwright.async_api import Page
-from ....kream.components.main import customPage
+from ....custom_playwright.page import customPage
 from ..currency import Currency
 from .create_log import create_last_update_shop_detail_log
 
@@ -26,9 +26,9 @@ currency = Currency()
 config = dotenv_values(".env.dev")
 
 shop_product_list_dict = {
-    "consortium": consortium_product_list,
-    "a_few_store": a_few_store_product_list,
-    "seven_store": seven_store_product_list,
+    "consortium": get_consortium_list,
+    "a_few_store": get_a_few_store_list,
+    "seven_store": get_seven_store_list,
 }
 
 
@@ -39,14 +39,16 @@ def get_shop_product_list():
 async def scrap_shop_product_card_main(
     custom_page: customPage, shop_name: str, brand_name: str, num_process: int
 ):
-    path = config.get("SHOP_PRODUCT_CARD_LIST_DIR")
-    assert path, "SHOP_PRODUCT_CARD_LIST_DIR is None"
+    path = config.get("SHOP_PRODUCT_LIST_DIR")
+    assert path, "SHOP_PRODUCT_LIST_DIR is None"
 
     none_init_error = "page가 None입니다. init 메서드를 먼저 실행해주세요."
     none_context_error = "context가 None입니다. init 메서드를 먼저 실행해주세요."
 
     assert custom_page.init_page, none_init_error
     assert custom_page.context, none_context_error
+
+    init_tempfiles()
 
     n_p = num_process - 1
     p_list = [await custom_page.context.new_page() for _ in range(n_p)]
@@ -68,11 +70,11 @@ async def scrap_shop_product_card_main(
     result = await asyncio.gather(*co_list)
     merged_result = {k: v.replace("=", "") for d in result for k, v in d.items()}
 
-    path = config["SHOP_SCRAP_TEMP_DIR"]
-    assert path, "Env SHOP_SCRAP_TEMP_DIR is not exist"
-    path += "process_result.json"
+    path = config["SHOP_PRODUCT_LIST_DIR"]
+    assert path, "Env SHOP_PRODUCT_LIST_DIR does not exist"
+    temp_path = path + "_temp/"
 
-    with open(path, "w") as f:
+    with open(temp_path + "process_result.json", "w") as f:
         meta = {
             "num_process": num_process,
             "brand_list": b_list,
@@ -83,7 +85,7 @@ async def scrap_shop_product_card_main(
 
     scrap_name = None
     try:
-        shop_name, file_time = await save_scrap_data(shop_name)
+        shop_name, file_time = await save_scrap_result_to_parquet(shop_name)
         create_last_update_shop_detail_log(shop_name, file_time)
         scrap_name = f"{file_time}-{shop_name}"
 
@@ -156,8 +158,8 @@ def _load_brand(shop_name: str) -> Dict:
 
 
 def _save_to_parquet(shop_name: str, scrap_data: list[ShopProductCardSchema]):
-    path = config.get("SHOP_PRODUCT_CARD_LIST_DIR")
-    assert path, "SHOP_PRODUCT_CARD_LIST_DIR is None"
+    path = config.get("SHOP_PRODUCT_LIST_DIR")
+    assert path, "SHOP_PRODUCT_LIST_DIR is None"
 
     file_time = datetime.now().strftime("%y%m%d-%H%M%S")
     file_path = f"{path+shop_name}/{file_time}.parquet.gzip"
@@ -225,21 +227,24 @@ def preprocess_data(cards_info: List[Dict]) -> List[ShopProductCardSchema]:
 
 
 async def _save_temp_files(file_name: str, data: List | Dict):
-    path = config["SHOP_SCRAP_TEMP_DIR"]
-    assert path, "Env SHOP_SCRAP_TEMP_DIR is not exist"
+    path = config["SHOP_PRODUCT_LIST_DIR"]
+    assert path, "SHOP_PRODUCT_LIST_DIR is not defined in .env"
+    temp_path = path + "_temp/"
 
     n = f"{file_name}.json"
-    async with aiofiles.open(path + n, "a") as f:
+    async with aiofiles.open(temp_path + n, "a") as f:
         await f.write(json.dumps(data, ensure_ascii=False, default=str) + ",")
     return True
 
 
-async def save_scrap_data(shop_name):
-    path = config["SHOP_SCRAP_TEMP_DIR"]
-    assert path, "Env SHOP_SCRAP_TEMP_DIR is not exist"
-    path += "product_card_list.json"
+async def save_scrap_result_to_parquet(shop_name):
+    path = config["SHOP_PRODUCT_LIST_DIR"]
+    assert path, "SHOP_PRODUCT_LIST_DIR is not defined in .env"
+    temp_path = path + "_temp/"
 
-    async with aiofiles.open(path, "r", encoding="utf-8") as f:
+    async with aiofiles.open(
+        temp_path + "product_card_list.json", "r", encoding="utf-8"
+    ) as f:
         v = await f.read()
         v = v.replace("null", "None").replace("true", "True").replace("false", "False")
         v = eval(v)
@@ -247,3 +252,14 @@ async def save_scrap_data(shop_name):
 
     scrap_data = preprocess_data(raw_data)
     return _save_to_parquet(shop_name, scrap_data)
+
+
+def init_tempfiles():
+    path = config["SHOP_PRODUCT_LIST_DIR"]
+    assert path, "SHOP_PRODUCT_LIST_DIR is not defined in .env"
+    temp_path = path + "_temp/"
+
+    file_list = os.listdir(temp_path)
+    for file in file_list:
+        with open(temp_path + file, "w") as f:
+            f.write("")

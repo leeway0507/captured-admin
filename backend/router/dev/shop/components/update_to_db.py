@@ -4,12 +4,21 @@ from datetime import datetime
 
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.dialects.mysql import insert
-from sqlalchemy import update, bindparam, select, and_
+from sqlalchemy import update, bindparam, select, and_, delete
+
 
 from db.tables_shop import ShopInfoTable, ShopProductCardTable, ShopProductSizeTable
-from .load_scrap_result import get_last_scrap_product_dict, get_scrap_product_dict
+from .load_scrap_result import (
+    get_last_scrap_product_dict,
+    get_scrap_product_dict,
+    get_scrap_size_dict,
+)
 from model.shop_model import ShopProductId, RequestShopInfo
-from model.db_model_shop import ShopInfoSchema, ShopProductCardSchema
+from model.db_model_shop import (
+    ShopInfoSchema,
+    ShopProductCardSchema,
+    ShopProductSizeSchema,
+)
 
 
 ### production
@@ -53,37 +62,6 @@ async def update_scrap_product_card_product_id_to_db(
     await db.execute(stmt, data)
     await db.commit()
     return {"message": "success"}
-
-
-# async def update_scrap_product_size_to_db(
-#     db: AsyncSession,
-#     shop_name: str,
-#     list_scrap_at: Optional[str] = None,
-# ):
-#     if list_scrap_at:
-#         data = get_scrap_product_list(shop_name, list_scrap_at)["data"]
-#     else:
-#         data = get_last_scrap_product_list(shop_name)["data"]
-
-#     data = list(
-#         map(
-#             lambda x: {
-#                 "shop_product_card_id": x.get("shop_product_card_id"),
-#                 "size": x.get("size"),
-#             },
-#             data,
-#         )
-#     )
-
-#     stmt = insert(ShopProductSizeTable).values(data)
-#     stmt = stmt.on_duplicate_key_update(
-#         shop_product_card_id=stmt.inserted.shop_product_card_id,
-#         size=stmt.inserted.size,
-#         updated_at=stmt.inserted.updated_at,
-#     )
-#     await db.execute(stmt)
-#     await db.commit()
-#     return {"message": "success"}
 
 
 #### shop_info ####
@@ -234,3 +212,58 @@ async def update_shop_product_card_list_for_cost_table(
     await db.execute(stmt)
     await db.commit()
     return {"message": "success"}
+
+
+async def update_product_id_by_shop_product_card_id(
+    db: AsyncSession, product_info: List[dict[str, Any]]
+):
+    await db.execute(update(ShopProductCardTable), product_info)
+    await db.commit()
+    return {"message": "success"}
+
+
+async def upsert_size_table(db: AsyncSession, scrapDate: str):
+    """size table에 insert"""
+
+    size_dict = get_scrap_size_dict(scrapDate)
+
+    # delete
+    stmt = delete(ShopProductSizeTable).where(
+        ShopProductSizeTable.shop_product_card_id.in_(size_dict.get("unique_id"))
+    )
+    await db.execute(stmt)
+
+    # insert
+    stmt = insert(ShopProductSizeTable).values(size_dict.get("data"))
+    await db.execute(stmt)
+
+    await db.commit()
+    return True
+
+    # # update product_id
+    # size_dict = get_scrap_size_dict(scrapDate)
+    # product_id_info = size_dict.get("product_id_info")
+    # assert product_id_info, "product_id_info is None"
+    # await update_product_id_by_shop_product_card_id(db, product_id_info)
+
+
+async def get_size_table_data(db: AsyncSession, product_id):
+    product_id_list = product_id.split(",")
+
+    stmt = (
+        select(ShopProductSizeTable)
+        .join(ShopProductCardTable)
+        .where(ShopProductCardTable.product_id.in_(product_id_list))
+    )
+    size_rows = await db.execute(stmt)
+    size_rows = size_rows.scalars().all()
+
+    stmt = select(ShopProductCardTable).where(
+        ShopProductCardTable.product_id.in_(product_id_list)
+    )
+    prod_rows = await db.execute(stmt)
+    prod_rows = prod_rows.scalars().all()
+    return {
+        "sizeInfo": [ShopProductSizeSchema(**row.to_dict()) for row in size_rows],
+        "productInfo": [ShopProductCardSchema(**row.to_dict()) for row in prod_rows],
+    }

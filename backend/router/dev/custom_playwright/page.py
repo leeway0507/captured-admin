@@ -1,7 +1,6 @@
 import asyncio
 import base64
 from dotenv import dotenv_values
-from .utils import load_page, load_cookies, save_cookies
 
 from playwright.async_api import (
     async_playwright,
@@ -10,6 +9,7 @@ from playwright.async_api import (
     TimeoutError as PlaywrightTimeoutError,
 )
 
+page_dict = {}
 
 init_page_error = "init_page가 None입니다. init 메서드를 먼저 실행해주세요."
 browser_error = "browser가 None입니다. init 메서드를 먼저 실행해주세요."
@@ -27,7 +27,7 @@ class customPage:
         self.browser = await pw.firefox.launch(headless=False, timeout=5000)
         self.context = await self.browser.new_context()
         self.init_page = await self.context.new_page()
-        await load_cookies(self.init_page)
+        await customPage.load_cookies(self.init_page)
 
     async def close_browser(self):
         assert isinstance(self.browser, Browser), browser_error
@@ -42,6 +42,37 @@ class customPage:
 
     def get_context(self):
         return self.context
+
+    @classmethod
+    async def save_cookies(cls, page):
+        # Get cookies from the current page
+        cookies = await page.context.cookies()
+
+        # Save cookies to a file or database
+        # In this example, cookies are saved to a file named 'cookies.json'
+        with open("router/dev/kream/cookie/cookies.json", "w") as file:
+            file.write(str(cookies))
+
+    @classmethod
+    async def load_cookies(cls, page):
+        # Load cookies from a file or database
+        # In this example, cookies are loaded from a file named 'cookies.json'
+
+        with open("router/dev/kream/cookie/cookies.json", "r") as file:
+            cookies = eval(file.read())
+
+        # Set cookies in the current page
+        await page.context.add_cookies(cookies)
+        print("cookies loaded")
+
+    @classmethod
+    async def load_page(cls, page: Page, url):
+        """페이지 로드"""
+        await asyncio.sleep(1)
+        await page.goto(url)
+        await page.wait_for_load_state(state="networkidle")
+        await page.wait_for_timeout(1000)
+        return page
 
 
 class KreamPage(customPage):
@@ -63,7 +94,9 @@ class KreamPage(customPage):
         if self.init_page.is_closed():
             self.init_page = await self.context.new_page()
 
-        login_page = await load_page(self.init_page, "https://kream.co.kr/login")
+        login_page = await KreamPage.load_page(
+            self.init_page, "https://kream.co.kr/login"
+        )
 
         if not await self.is_login(login_page):
             return await self._login(login_page, **self._get_secret())
@@ -85,5 +118,5 @@ class KreamPage(customPage):
         await page.fill("input[type='password']", password)
         await page.keyboard.press("Enter")
         await page.wait_for_load_state(state="networkidle")
-        await save_cookies(page)
+        await KreamPage.save_cookies(page)
         print("save_login_cookies")

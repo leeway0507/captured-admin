@@ -36,11 +36,8 @@ export const TableCell = (props: any) => {
     );
 };
 
-export const OpenKreamDetail = (props: any) => {
-    const { productId, totalPriceBeforeCardFee } = props.row.original;
+export const OpenKreamDetail = (searchType: string, value: string, cost: number) => {
     const [isOpen, setIsOpen] = useState(false);
-
-    const cost = totalPriceBeforeCardFee * 1.05 + 3000;
 
     return (
         <>
@@ -53,8 +50,8 @@ export const OpenKreamDetail = (props: any) => {
             </button>
             {isOpen && (
                 <KreamProductModal
-                    searchType="productId"
-                    value={productId}
+                    searchType={searchType}
+                    value={value}
                     isOpen={isOpen}
                     setIsOpen={setIsOpen}
                     cost={Math.round(cost)}

@@ -11,7 +11,7 @@ const ShopList = () => {
     return (
         <div className="grid grid-cols-6 gap-1">
             {shopArray.map((shopName: string, idx: number) => {
-                const shopNameBar = shopName.replaceAll(" ", "-");
+                const shopNameBar = shopName.replaceAll("-", "_");
                 return (
                     <Link
                         href={`cost-table/shopName/${shopNameBar}`}

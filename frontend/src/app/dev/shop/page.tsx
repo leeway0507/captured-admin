@@ -1,12 +1,14 @@
 "use client";
-import { ReloadBrowser } from "./fetch";
-import ShopCardList from "./shop-card-list";
+import { CloseCustomPageBrowser } from "./fetch";
 import { toast } from "react-toastify";
+import ShopCardList from "./shop-card-list";
+import ShopCardPage from "./shop-card-page";
+
 export default function Main() {
-    const handleReloadBrowser = async () => {
-        const res = await ReloadBrowser().then((res) => {
+    const handleCloseBrowser = async () => {
+        const res = await CloseCustomPageBrowser().then((res) => {
             if (res.status === 200) {
-                alert("브라우저 재실행 성공");
+                alert("브라우저 종료 성공");
             } else {
                 toast.error(`${res.status} 에러 발생`);
             }
@@ -16,13 +18,17 @@ export default function Main() {
     return (
         <div className="flex flex-col mx-auto">
             <div className="w-full flex-right py-4">
-                <button className="black-bar w-[300px] p-4 text-xl" onClick={handleReloadBrowser}>
+                <button className="black-bar w-[300px] p-4 text-xl" onClick={handleCloseBrowser}>
                     브라우저 재실행
                 </button>
             </div>
-            <div className="bg-slate-50 py-16 px-8 ">
-                <div className="text-3xl pt-8">페이지 브랜드 수집</div>
+            <div className="bg-slate-50 px-8 ">
+                <div className="text-3xl pt-8">Shop Product List</div>
                 <ShopCardList />
+            </div>
+            <div className="bg-slate-50 px-8 ">
+                <div className="text-3xl pt-8">Shop Product Page</div>
+                <ShopCardPage />
             </div>
         </div>
     );

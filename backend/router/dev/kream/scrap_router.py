@@ -11,7 +11,7 @@ from .components.load_scrap_result import *
 from .components.scrap_product_detail import scrap_product_detail_main, save_scrap_files
 from .components.create_log import get_scrap_result, create_last_update_kream_detail_log
 from .components.scrap_product_card_list import *
-from .components.main import KreamPage
+from ..custom_playwright.access_page import KreamPage, get_kream_page, close_kream_page
 from .components.update_to_db import (
     get_kream_product_detail_list_from_db,
     get_kream_product_size_info,
@@ -22,33 +22,10 @@ config = dotenv_values(".env.dev")
 
 kream_scrap_router = APIRouter()
 
-kream_dict = {}
 
-
-async def get_kream_page():
-    """kream page 로드"""
-    print("""kream page 로드""")
-    if kream_dict.get("kream_page") is None:
-        kream_page = KreamPage()
-        await kream_page.init()
-        kream_dict.update({"kream_page": kream_page})
-
-    return kream_dict.get("kream_page")
-
-
-@kream_scrap_router.get("/reload-kream-page")
-async def reload_kream_page():
-    """kream page 리로드"""
-
-    if kream_dict.get("kream_page"):
-        b = kream_dict.get("kream_page")
-        assert isinstance(b, KreamPage), "kream_page is not KreamPage"
-        assert b.browser, "browser is not exist"
-        await b.close_browser()  # type: ignore
-        kream_dict.pop("kream_page")
-
-    await get_kream_page()
-    return {"result": "success"}
+@kream_scrap_router.get("/close-kream-page")
+async def close_kream_page_api():
+    return await close_kream_page()
 
 
 @kream_scrap_router.get("/init-product-detail")

@@ -99,7 +99,7 @@ export default function ShopCardList() {
 
     useEffect(() => {
         if (scrapName === "") return;
-        router.push(`/dev/shop/scrap-result/${scrapName}`);
+        router.push(`/dev/shop/scrap-result/list/${scrapName}`);
     }, [scrapName, router]);
 
     return (
