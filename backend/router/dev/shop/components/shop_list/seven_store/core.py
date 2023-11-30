@@ -1,5 +1,5 @@
 from ..scrap_module import *
-
+from playwright.async_api import expect
 
 # async def seven_store_product_list(
 #     page: Page, brand_name: str, brand_url: str, **_kwargs
@@ -46,4 +46,65 @@ async def get_seven_store_list(
         get_item_info=get_item_info,
         get_next_page=get_next_page,
         scroll_on=True,
+    )
+
+
+async def get_seven_store_page(
+    page: Page, shop_name: str, search_url: str
+) -> Dict[str, Any]:
+    """
+    consortium에 대한 Scraper
+
+        Args:
+            page (Page): Playwright Page
+            url (str): 제품 URL
+
+        Returns:
+            Dict[str, Any]: [sizes, product_id]
+    """
+
+    async def get_size_info(page: Page) -> List[Dict[str, Any]]:
+        await expect(page.get_by_text("Sizes")).to_be_visible(timeout=10000)
+
+        size_query = await page.query_selector_all(
+            '//div[contains(@class, "size-wrapper")]',
+        )
+
+        size_list = [await s.inner_text() for s in size_query]
+
+        if not size_list:
+            return [{"shop_product_size": "-", "kor_product_size": "-"}]
+
+        l = []
+        for s in size_list:
+            kor_size = s
+            try:
+                if float(s) < 15:
+                    kor_size = "UK " + s
+            except:
+                pass
+            l.append({"shop_product_size": s, "kor_product_size": kor_size})
+
+        return l
+
+    async def get_product_id(page) -> str:
+        product_id_text = await page.query_selector(
+            '//meta[contains(@name, "description")]',
+        )
+
+        try:
+            product_id_text = await product_id_text.get_attribute("content")
+            product_id = product_id_text.split(":")[1].replace(" ", "")
+        except:
+            product_id = "-"
+
+        return product_id.upper()
+
+    return await ScrapModule.scrap_page_logic(
+        page=page,
+        search_url=search_url,
+        shop_name=shop_name,
+        get_size_info=get_size_info,
+        get_product_id=get_product_id,
+        cookie_xpath=[],
     )

@@ -32,13 +32,7 @@ class ProductInfoSchema(BaseModel):
     @validator("color", pre=True)
     def str_to_list(cls, v: str) -> str:
         """str to list to str"""
-        lst = eval(v)
-
-        # list empty or list[0] is str => return v
-        if not lst and isinstance(lst[0], str):
-            return v
-
-        return str([str(i) for i in eval(v)])
+        return v.replace(",", "/")
 
 
 class ProductInfoDBSchema(ProductInfoSchema):
@@ -52,7 +46,7 @@ class ProductInfoDBSchema(ProductInfoSchema):
     price_desc_cursor: str
     price_asc_cursor: str
     search_info: Optional[str] = None
-    deploy: int
+    deploy: Optional[int] = 0
 
 
 class SizeSchema(BaseModel):

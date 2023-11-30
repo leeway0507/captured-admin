@@ -117,7 +117,7 @@ export default function ScrapResult({ fetchData }: { fetchData: any }) {
     };
 
     return (
-        <div className="flex flex-col gap-4 max-w-3xl m-auto">
+        <div className="flex flex-col gap-4 max-w-3xl mx-auto">
             <div className="text-3xl pt-8 w-full border-b-2 pb-2">
                 제품 상세정보 수집결과
                 <span className="ps-2 text-2xl">({scrapName})</span>

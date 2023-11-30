@@ -68,10 +68,17 @@ class customPage:
     @classmethod
     async def load_page(cls, page: Page, url):
         """페이지 로드"""
-        await asyncio.sleep(1)
-        await page.goto(url)
-        await page.wait_for_load_state(state="networkidle")
-        await page.wait_for_timeout(1000)
+        init = 0
+        await page.goto(url, wait_until="domcontentloaded", timeout=20000)
+        # try:
+        #     await page.goto(url, wait_until="domcontentloaded", timeout=3000)
+        # except PlaywrightTimeoutError:
+        #     if init > 3:
+        #         raise TimeoutError
+        #     init += 1
+        #     await page.wait_for_timeout(1000)
+        #     await page.reload()
+
         return page
 
 

@@ -102,7 +102,6 @@ const CreateFormModal = ({
                         }}
                     />
                     <Select
-                        defaultValue={imgType[0]}
                         instanceId="imgType"
                         options={imgType}
                         onChange={(e: any) => {
@@ -110,7 +109,6 @@ const CreateFormModal = ({
                         }}
                     />
                     <Select
-                        defaultValue={category[0]}
                         instanceId="category"
                         options={category}
                         onChange={(e: any) => {
@@ -118,7 +116,6 @@ const CreateFormModal = ({
                         }}
                     />
                     <Select
-                        defaultValue={categorySpec[0]}
                         instanceId="categorySpec"
                         className="w-1/5"
                         options={categorySpec}

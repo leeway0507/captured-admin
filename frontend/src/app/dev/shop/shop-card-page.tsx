@@ -1,7 +1,7 @@
 "use client";
 import { useRouter } from "next/navigation";
 import { useReducer, useRef, useEffect, useState } from "react";
-import { InitshopCardPage } from "./fetch";
+import { InitshopCardPage, getShopPageList } from "./fetch";
 import { toast } from "react-toastify";
 import Select from "react-select";
 
@@ -64,6 +64,56 @@ export const handleScrapProductPage = async (
         });
 };
 
+const InputList = ({
+    searchType,
+    value,
+    dispatch,
+}: {
+    searchType: string;
+    value: string;
+    dispatch: (e: any) => void;
+}) => {
+    const [shopOptions, setShopOptions] = useState([""]);
+
+    useEffect(() => {
+        if (searchType === "shopName") {
+            getShopPageList().then((res) => {
+                setShopOptions(res.data.map((item: any) => ({ label: item, value: item })));
+                console.log(res.data.map((item: any) => ({ label: item, value: item })));
+            });
+        }
+    }, [searchType]);
+
+    const Input = (
+        <>
+            <label htmlFor="content">값 입력</label>
+            <input
+                value={value}
+                type="text"
+                name="content"
+                id="content"
+                onChange={(e) => dispatch({ type: "content", payload: e.target.value })}
+                className="border border-main-black h-[50px] rounded-md px-4"
+            />
+            <span className="text-xs">전체 수집 선택시 최대 수집 페이지 입력</span>
+        </>
+    );
+    const storeSelect = (
+        <>
+            <div className="text-xl">스토어 선택</div>
+            <Select
+                className="w-[200px] h-[50px]"
+                defaultValue={shopOptions[0]}
+                instanceId="searchType"
+                options={shopOptions}
+                onChange={(e) => dispatch({ type: "content", payload: e.value })}
+            />
+        </>
+    );
+
+    return <>{searchType === "shopName" ? storeSelect : Input}</>;
+};
+
 export default function ShopCardPage() {
     const submitRef = useRef<HTMLButtonElement>(null);
     const [state, dispatch] = useReducer(reducer, initialState);
@@ -88,11 +138,15 @@ export default function ShopCardPage() {
         router.push(`/dev/shop/scrap-result/page/${scrapName}`);
     }, [scrapName, router]);
 
+    const customOnChange = (e: any) => {
+        return dispatch({ type: "content", payload: e.value });
+    };
+
     const selectCat = [
-        { value: "productId", label: "제품 아이디" },
-        { value: "shopProductCardId", label: "제품코드" },
-        { value: "brandName", label: "브랜드명" },
         { value: "shopName", label: "사이트명" },
+        { value: "productId", label: "제품 아이디" },
+        { value: "shopProductCardId", label: "SKU" },
+        { value: "brandName", label: "브랜드명" },
         { value: "all", label: "전체 수집" },
     ];
 
@@ -112,18 +166,7 @@ export default function ShopCardPage() {
                     />
                 </div>
                 <div className="min-w-[150px] flex flex-col">
-                    <label htmlFor="content">값 입력</label>
-                    <input
-                        value={state.content}
-                        type="text"
-                        name="content"
-                        id="content"
-                        onChange={(e) => {
-                            dispatch({ type: "content", payload: e.target.value });
-                        }}
-                        className="border border-main-black h-[50px] rounded-md px-4"
-                    />
-                    <span className="text-xs">전체 수집 선택시 최대 수집 페이지 입력</span>
+                    <InputList searchType={state.searchType} value={state.content} dispatch={dispatch} />
                 </div>
             </div>
             <div className="min-w-[150px] flex flex-col">

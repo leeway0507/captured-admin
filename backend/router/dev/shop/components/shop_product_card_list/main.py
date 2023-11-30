@@ -16,6 +16,7 @@ from playwright.async_api import Page
 from ....custom_playwright.page import customPage
 from ..currency import Currency
 from .create_log import create_last_update_shop_detail_log
+from ...._utils import save_to_parquet, split_size
 
 currency = Currency()
 
@@ -157,49 +158,6 @@ def _load_brand(shop_name: str) -> Dict:
     return brand_dict
 
 
-def _save_to_parquet(shop_name: str, scrap_data: list[ShopProductCardSchema]):
-    path = config.get("SHOP_PRODUCT_LIST_DIR")
-    assert path, "SHOP_PRODUCT_LIST_DIR is None"
-
-    file_time = datetime.now().strftime("%y%m%d-%H%M%S")
-    file_path = f"{path+shop_name}/{file_time}.parquet.gzip"
-
-    if not os.path.exists(path + shop_name):
-        os.makedirs(path + shop_name, exist_ok=True)
-
-    raw_data = [row.model_dump() for row in scrap_data]
-    pd.DataFrame(raw_data).drop_duplicates().to_parquet(
-        path=file_path, compression="gzip"
-    )
-    return shop_name, file_time
-
-
-def split_size(l: List, num_list: int) -> List[List]:
-    """
-    l: list
-    n_l : number of list
-    """
-    q, r = divmod(len(l), num_list)
-
-    if r > 0:
-        # ex 10 | 3
-        # 4,4,2
-        # l_size = list size
-        l_size = len(l) // num_list
-        l_size += 1
-
-        output = [l[i * l_size : (i + 1) * l_size] for i in range(num_list - 1)]
-        output.append(l[(num_list - 1) * l_size :])
-
-    else:
-        # ex 9 | 3
-        # 3,3,3
-        l_size = len(l) // num_list
-        output = [l[i : i + q] for i in range(0, len(l), l_size)]
-
-    return output
-
-
 def preprocess_data(cards_info: List[Dict]) -> List[ShopProductCardSchema]:
     # currency
 
@@ -240,6 +198,24 @@ async def _save_temp_files(file_name: str, data: List | Dict):
 async def save_scrap_result_to_parquet(shop_name):
     path = config["SHOP_PRODUCT_LIST_DIR"]
     assert path, "SHOP_PRODUCT_LIST_DIR is not defined in .env"
+
+    time_now = datetime.now().strftime("%y%m%d-%H%M%S")
+
+    if not os.path.exists(path + shop_name):
+        os.makedirs(path + shop_name, exist_ok=True)
+
+    raw_data = await load_product_card_list_json()
+
+    scrap_data = preprocess_data(raw_data)
+    save_to_parquet(shop_name, time_now, scrap_data)
+
+    return shop_name, time_now
+
+
+async def load_product_card_list_json():
+    path = config["SHOP_PRODUCT_LIST_DIR"]
+    assert path, "SHOP_PRODUCT_LIST_DIR is not defined in .env"
+
     temp_path = path + "_temp/"
 
     async with aiofiles.open(
@@ -248,10 +224,7 @@ async def save_scrap_result_to_parquet(shop_name):
         v = await f.read()
         v = v.replace("null", "None").replace("true", "True").replace("false", "False")
         v = eval(v)
-        raw_data = list(chain(*v))
-
-    scrap_data = preprocess_data(raw_data)
-    return _save_to_parquet(shop_name, scrap_data)
+        return list(chain(*v))
 
 
 def init_tempfiles():

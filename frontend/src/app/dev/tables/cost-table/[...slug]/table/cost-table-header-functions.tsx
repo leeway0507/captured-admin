@@ -36,11 +36,11 @@ export const GetSizeTable = (props: any) => {
     const [sizeInfo, setSizeInfo] = useState<sizeInfoprops[]>();
     const [productInfo, setProductInfo] = useState<productCardProps[]>();
 
-    const openToggle = () => {
-        getSizeTableData(productId).then((res) => {
+    const openToggle = async () => {
+        await getSizeTableData(productId).then((res) => {
             setSizeInfo(res.data.sizeInfo);
             setProductInfo(res.data.productInfo);
-            res.data.sizeInfo.length === 0 ? toast.info("일치하는 사이즈가 없습니다.") : setIsOpen(true);
+            res.data.sizeInfo.length === 0 ? toast.info("사이즈가 존재하지 않습니다.") : setIsOpen(true);
         });
     };
 
@@ -85,10 +85,11 @@ export const SendDraft = (props: any) => {
     const openToggle = () => {
         getKreamColor(productId).then((res) => {
             setIsOpen(true);
-            setDefaultData((old) => ({ ...old, color: res.data }));
+            setDefaultData((old) => ({ ...old, color: res.data.color ?? "/" }));
         });
     };
 
+    console.log(isOpen);
     return sku === undefined ? (
         <>
             <button className="bg-blue-600 text-white p-2" onClick={openToggle}>

@@ -12,6 +12,7 @@ from .load_scrap_result import (
     get_last_scrap_product_dict,
     get_scrap_product_dict,
     get_scrap_size_dict,
+    get_scrap_size_product_id_dict,
 )
 from model.shop_model import ShopProductId, RequestShopInfo
 from model.db_model_shop import (
@@ -217,7 +218,20 @@ async def update_shop_product_card_list_for_cost_table(
 async def update_product_id_by_shop_product_card_id(
     db: AsyncSession, product_info: List[dict[str, Any]]
 ):
-    await db.execute(update(ShopProductCardTable), product_info)
+    """
+    product_info = [
+    key: shop_product_card_id
+    value: product_id
+    ]
+    key,value로 이름을 변경한 이유는 bindparam 사용을 위해서는 column 이름과 달라야 하기 때문임.
+    """
+
+    stmt = (
+        update(ShopProductCardTable)
+        .where(ShopProductCardTable.shop_product_card_id == bindparam("key"))
+        .values(product_id=bindparam("value"))
+    )
+    await db.execute(stmt, product_info)
     await db.commit()
     return {"message": "success"}
 
@@ -226,6 +240,7 @@ async def upsert_size_table(db: AsyncSession, scrapDate: str):
     """size table에 insert"""
 
     size_dict = get_scrap_size_dict(scrapDate)
+    product_id_dict = get_scrap_size_product_id_dict(scrapDate)
 
     # delete
     stmt = delete(ShopProductSizeTable).where(
@@ -237,14 +252,14 @@ async def upsert_size_table(db: AsyncSession, scrapDate: str):
     stmt = insert(ShopProductSizeTable).values(size_dict.get("data"))
     await db.execute(stmt)
 
+    # update product_id
+    product_id_info = product_id_dict.get("data")
+    assert product_id_info, "product_id_info is None"
+
+    await update_product_id_by_shop_product_card_id(db, product_id_info)
+
     await db.commit()
     return True
-
-    # # update product_id
-    # size_dict = get_scrap_size_dict(scrapDate)
-    # product_id_info = size_dict.get("product_id_info")
-    # assert product_id_info, "product_id_info is None"
-    # await update_product_id_by_shop_product_card_id(db, product_id_info)
 
 
 async def get_size_table_data(db: AsyncSession, product_id):

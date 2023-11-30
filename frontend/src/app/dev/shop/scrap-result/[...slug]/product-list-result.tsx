@@ -84,7 +84,7 @@ export default function ProductListResult({ fetchData }: { fetchData: fetchDataP
     };
 
     return (
-        <div className="flex flex-col gap-4 max-w-3xl m-auto py-8">
+        <div className="flex flex-col gap-4 max-w-3xl mx-auto py-8">
             <div className="py-2">
                 <span className="text-3xl">제품 상세정보 수집결과</span>
                 <span className="text-2xl">({`${scrapTime}-${shopName}`})</span>

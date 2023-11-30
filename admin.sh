@@ -3,7 +3,7 @@
 source ~/.zshrc
 
 cleanup() {
-    ports=(3000 3001 3002 3003)
+    ports=(4000)
 
     for port in "${ports[@]}"; do
         pid=$(lsof -i :"$port" | awk 'NR==2 {print $2}')
@@ -20,7 +20,7 @@ cleanup
 
 
 cd /Users/yangwoolee/repo/captured/admin/frontend
-yarn dev &
+yarn dev --port 4000 &
 
 cd /Users/yangwoolee/repo/captured/admin/backend
 pyenv activate py310-admin

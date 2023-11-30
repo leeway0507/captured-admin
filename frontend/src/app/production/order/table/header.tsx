@@ -6,7 +6,7 @@ import { createColumnHelper } from "@tanstack/react-table";
 const columnHelper = createColumnHelper<orderHistoryProps>();
 
 export const column = [
-    columnHelper.accessor("orderDate", {
+    columnHelper.accessor("orderedAt", {
         header: "주문일",
     }),
     columnHelper.accessor("orderId", {

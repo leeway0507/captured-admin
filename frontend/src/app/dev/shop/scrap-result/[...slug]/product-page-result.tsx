@@ -61,7 +61,7 @@ export default function ProductPageResult({ fetchData }: { fetchData: fetchDataP
 
     useEffect(() => {
         if (reStartScrapName === "") return;
-        router.push(`/dev/kream/scrap-result/${reStartScrapName}`);
+        router.push(`/dev/shop/scrap-result/page/${reStartScrapName}`);
     }, [reStartScrapName, router]);
 
     const handleDB = async (scrapDate: string) => {
@@ -88,7 +88,7 @@ export default function ProductPageResult({ fetchData }: { fetchData: fetchDataP
     };
 
     return (
-        <div className="flex flex-col gap-4 max-w-3xl m-auto py-8 ">
+        <div className="flex flex-col gap-4 max-w-3xl mx-auto py-8 ">
             <div className="py-2">
                 <span className="text-3xl">제품 상세정보 수집결과</span>
                 <span className="text-2xl">({scrapTime})</span>
@@ -107,17 +107,17 @@ export default function ProductPageResult({ fetchData }: { fetchData: fetchDataP
             </div>
             <div className="text-3xl pb-2">수집 목록 결과</div>
             <div className="py-4 pb-12 bg-gray-100">
-                <div className="grid grid-cols-5 border-b mb-4 pb-2 gap-2 text-lg py-2 text-center">
+                <div className="grid grid-cols-6 border-b mb-4 pb-2 gap-2 text-lg py-2 text-center">
                     <div>SKU</div>
                     <div>스토어</div>
                     <div>브랜드</div>
                     <div>제품코드</div>
-                    <div>결과</div>
+                    <div className="col-span-2">결과</div>
                 </div>
                 {scrapResult.map((obj, idx) => (
                     <div
                         key={obj.shop_product_card_id}
-                        className="grid grid-cols-5 border-b mb-4 pb-2 gap-2 py-2 text-center">
+                        className="grid grid-cols-6 border-b mb-4 pb-2 gap-2 py-2 text-center">
                         <Link
                             href={obj.url}
                             className="text-blue-700 cursor-pointer underline"
@@ -128,7 +128,7 @@ export default function ProductPageResult({ fetchData }: { fetchData: fetchDataP
                         <div>{obj.shop_name}</div>
                         <div>{obj.brand_name}</div>
                         <div>{obj.product_id}</div>
-                        <div>{obj.status}</div>
+                        <div className="col-span-2">{obj.status}</div>
                     </div>
                 ))}
             </div>

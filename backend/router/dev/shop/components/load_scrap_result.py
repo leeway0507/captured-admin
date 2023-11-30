@@ -52,14 +52,25 @@ def get_last_scrap_size_dict():
 
 
 def get_scrap_size_dict(scrap_date: str):
-    df = pd.read_parquet(page_path + scrap_date + ".parquet.gzip")
-    new_df = df.drop(["product_id"], axis=1)
+    df = pd.read_parquet(page_path + scrap_date + "-size" + ".parquet.gzip")
 
     return {
         "len": len(df),
-        "data": new_df.to_dict("records"),
+        "data": df.to_dict("records"),
         "unique_id": df["shop_product_card_id"].unique().tolist(),
-        "product_id_info": df[["product_id", "shop_product_card_id"]]
-        .drop_duplicates()
-        .to_dict("records"),
+    }
+
+
+def get_scrap_size_product_id_dict(scrap_date: str):
+    df = pd.read_parquet(page_path + scrap_date + "-product-id" + ".parquet.gzip")
+
+    ## update_product_id_by_shop_product_card_id 매서드에 맞추기 위해 이름을 key, value로 변경
+    df.rename(
+        columns={"shop_product_card_id": "key", "product_id": "value"}, inplace=True
+    )
+
+    return {
+        "len": len(df),
+        "data": df.to_dict("records"),
+        "unique_id": df["key"].unique().tolist(),
     }

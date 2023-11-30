@@ -44,7 +44,7 @@ export interface userProps {
 export interface orderHistoryProps {
     orderId: string;
     orderNumber: string;
-    orderDate: string;
+    orderedAt: string;
     orderStatus: string;
     orderPrice: string;
 }

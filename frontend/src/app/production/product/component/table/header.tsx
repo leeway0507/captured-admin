@@ -8,7 +8,7 @@ import { TableCell } from "@/app/components/default-table/default-header-functio
 import Select from "react-select";
 import envJson from "@/app/env.json";
 import { toast } from "react-toastify";
-import { updateProductDeploy, updateProduct, deleteProduct } from "../fetch";
+import { updateProductDeploy, updateProduct, deleteProduct, uploadImageToS3 } from "../fetch";
 
 type CategorySpec = {
     의류: string[];
@@ -46,13 +46,13 @@ const categorySpecCell = (props: any) => {
     return <Select defaultValue={defaultValue} options={options} className="min-w-[100px] max-w-full" />;
 };
 
-const handleCandidate = (event: any) => {
-    const { sku, deploy } = event.target.dataset;
-    const reverseStatus = deploy === "1" ? 0 : 1;
+const handleCandidate = (event: any, sku: number, deploy: number) => {
+    // const { sku, deploy } = event.target.dataset;
+    const reverseStatus = deploy === 1 ? 0 : 1;
 
     event.target.dataset.deploy = reverseStatus;
 
-    updateProductDeploy(Number(sku), reverseStatus).then((res) => {
+    updateProductDeploy(sku, reverseStatus).then((res) => {
         const candidateClass = "h-[180px] w-[80px] text-sm flex-center flex-col";
 
         if (res.status === 200) {
@@ -60,6 +60,8 @@ const handleCandidate = (event: any) => {
                 reverseStatus === 0 ? `bg-rose-300 ${candidateClass}` : `bg-green-300 ${candidateClass}`;
             event.target.dataset.deploy = reverseStatus;
             toast.success("업데이트 성공");
+        } else {
+            toast.error("업데이트 실패");
         }
     });
 };
@@ -94,10 +96,40 @@ const handleDeleteProduct = (props: any) => {
     );
 };
 
+const reloadImage = (sku: number) => {
+    const img = document.getElementById(sku.toString()) as HTMLImageElement;
+    img.src = `${process.env.NEXT_PUBLIC_MOBILE_IMAGE_URL}/product/${sku}/thumbnail.png`;
+};
+
+const UploadImage = (props: any) => {
+    const { sku } = props.row.original;
+    const handler = async () => {
+        await uploadImageToS3(sku).then((res) => {
+            switch (res.status) {
+                case 200:
+                    reloadImage(sku);
+                    return toast.success("이미지 업로드 성공");
+
+                case 404:
+                    return toast.warn("파일이 존재하지 않습니다.");
+
+                default:
+                    return toast.error("이미지 업로드 실패");
+            }
+        });
+    };
+    return (
+        <button onClick={handler} className="bg-amber-600 text-white p-2 active:bg-blue-black">
+            사진 저장
+        </button>
+    );
+};
+
 const features = (props: any) => {
     return (
         <div className="flex flex-col h-[200px] justify-evenly">
             {handleUpdateProduct(props)}
+            {UploadImage(props)}
             {handleDeleteProduct(props)}
         </div>
     );
@@ -108,10 +140,12 @@ export const productCardColumns = [
         header: "Sku",
         cell: (props) => {
             const { sku, deploy } = props.row.original;
-
+            if (sku === undefined) {
+                return toast.error("sku가 없습니다.");
+            }
             return (
-                <div
-                    onClick={handleCandidate}
+                <button
+                    onClick={(e) => handleCandidate(e, sku, deploy!)}
                     className={`${
                         deploy === 0 ? "bg-rose-300" : "bg-green-300"
                     } h-[180px] w-[80px] text-sm flex-center flex-col`}
@@ -119,22 +153,22 @@ export const productCardColumns = [
                     data-deploy={deploy}>
                     <div>{deploy === 0 ? "미전시" : "전시중"}</div>
                     <div>sku : {props.getValue()}</div>
-                </div>
+                </button>
             );
         },
         filterFn: (row, columnId, value, addMeta) => {
-            console.log(row.original.sku, value);
             return row.original.sku === Number(value);
         },
     }),
     columnHelper.display({
         header: "Img",
         cell: (props) => {
-            const { brand, productName, productId } = props.row.original;
-            const productImgUrl = `${process.env.NEXT_PUBLIC_MOBILE_IMAGE_URL}/product/${brand}/${productName} ${productId}/thumbnail.png`;
+            const { sku } = props.row.original;
+            const productImgUrl = `${process.env.NEXT_PUBLIC_MOBILE_IMAGE_URL}/product/${sku}/thumbnail.png`;
             return (
                 <div className="relative h-[180px] w-[180px] ">
                     <Image
+                        id={sku!.toString()}
                         src={productImgUrl}
                         alt={props.row.original.productName}
                         fill

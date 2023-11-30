@@ -1,6 +1,6 @@
 import SideNav from "./side-nav";
-import { ToastContainer, Flip } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { ToastContainer, Flip } from "react-toastify";
 
 export default function NavFooter({ children }: { children: JSX.Element }) {
     return (

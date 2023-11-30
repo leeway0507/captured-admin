@@ -1,24 +1,26 @@
-from lib2to3.pytree import convert
 import os
 import json
 import asyncio
 from itertools import chain
 from datetime import datetime
-from typing import Dict, List, Callable
+from typing import Dict, List, Callable, Sequence
 from traceback import format_exception
 
 import pandas as pd
 import aiofiles
 from dotenv import dotenv_values
-
-from model.db_model_shop import ShopProductCardSchema
-from ..shop_list import *
 from playwright.async_api import Page
+import pydantic
+
+from model.db_model_shop import ShopProductCardSchema, ShopProductSizeSchema
+from ..shop_list import *
 from ....custom_playwright.page import customPage
 from ..size_converter import convert_size
 
 from .access_db import get_track_size_list
 from .create_log import create_last_update_shop_detail_log
+
+from ...._utils import save_to_parquet, split_size
 
 
 config = dotenv_values(".env.dev")
@@ -26,7 +28,7 @@ config = dotenv_values(".env.dev")
 shop_product_page_dict = {
     "consortium": get_consortium_page,
     # "a_few_store": get_a_few_store_page,
-    # "seven_store": get_seven_store_page,
+    "seven_store": get_seven_store_page,
 }
 
 
@@ -107,7 +109,7 @@ async def scrap_shop_product_page_sub_process(
         page_callback = shop_product_page_dict.get(shop_name)
         assert page_callback, f"{shop_name} does not exist in shop_product_page_dict"
 
-        for i in range(3):
+        for i in range(2):
             try:
                 scrap_data = await page_callback(page, shop_name, url)
 
@@ -116,7 +118,9 @@ async def scrap_shop_product_page_sub_process(
                     data["shop_product_card_id"] = shop_product_card_id
                     data["updated_at"] = datetime.now().replace(microsecond=0)
                     data["available"] = True
-                    data["kor_product_size"] = convert_size(data["kor_product_size"])
+                    data["kor_product_size"] = str(
+                        convert_size(data["kor_product_size"])
+                    )
                     data["product_id"] = scrap_data["product_id"]
                     preprocessed_data.append(data)
 
@@ -127,15 +131,16 @@ async def scrap_shop_product_page_sub_process(
                         "shop_name": shop_name,
                         "brand_name": brand_name,
                         "url": url,
-                        "product_id": page_info.product_id,
+                        "product_id": scrap_data["product_id"],
                         "status": "success",
                     }
                 )
                 break
+
             except Exception as e:
                 print(f"scrap_error: {shop_name}-{brand_name}-{i+1} 실패")
                 print("".join(format_exception(None, e, e.__traceback__)))
-                if i == 2:
+                if i == 1:
                     lst.append(
                         {
                             "shop_product_card_id": shop_product_card_id,
@@ -145,49 +150,13 @@ async def scrap_shop_product_page_sub_process(
                             "status": str(e),
                         }
                     )
+
+                await page.close()
+                page = await page.context.new_page()
                 continue
 
     await page.close()
     return lst
-
-
-def _save_to_parquet(scrap_data: list[Dict]):
-    path = config.get("SHOP_PRODUCT_PAGE_DIR")
-    assert path, "SHOP_PRODUCT_PAGE_DIR is None"
-
-    file_time = datetime.now().strftime("%y%m%d-%H%M%S")
-    file_path = f"{path}/{file_time}.parquet.gzip"
-
-    pd.DataFrame(scrap_data).drop_duplicates().to_parquet(
-        path=file_path, compression="gzip"
-    )
-    return file_time
-
-
-def split_size(l: List, num_list: int) -> List[List]:
-    """
-    l: list
-    n_l : number of list
-    """
-    q, r = divmod(len(l), num_list)
-
-    if r > 0:
-        # ex 10 | 3
-        # 4,4,2
-        # l_size = list size
-        l_size = len(l) // num_list
-        l_size += 1
-
-        output = [l[i * l_size : (i + 1) * l_size] for i in range(num_list - 1)]
-        output.append(l[(num_list - 1) * l_size :])
-
-    else:
-        # ex 9 | 3
-        # 3,3,3
-        l_size = len(l) // num_list
-        output = [l[i : i + q] for i in range(0, len(l), l_size)]
-
-    return output
 
 
 async def _save_temp_files(file_name: str, data: List | Dict):
@@ -204,6 +173,37 @@ async def _save_temp_files(file_name: str, data: List | Dict):
 async def save_scrap_result_to_parquet():
     path = config["SHOP_PRODUCT_PAGE_DIR"]
     assert path, "SHOP_PRODUCT_PAGE_DIR is not defined in .env"
+    time_now = datetime.now().strftime("%y%m%d-%H%M%S")
+
+    raw_data = await load_product_card_page_json()
+
+    size_schema = [ShopProductSizeSchema(**row).model_dump() for row in raw_data]
+
+    product_id_Schema = {}
+    for row in raw_data:
+        key = row["shop_product_card_id"]
+        value = row["product_id"]
+        if value not in product_id_Schema.values():
+            product_id_Schema[key] = value
+
+    product_id_Schema_list = [
+        {
+            "shop_product_card_id": k,
+            "product_id": v,
+        }
+        for k, v in product_id_Schema.items()
+    ]
+
+    save_to_parquet(path, time_now + "-size", size_schema)
+    save_to_parquet(path, time_now + "-product-id", product_id_Schema_list)
+
+    return time_now
+
+
+async def load_product_card_page_json():
+    path = config["SHOP_PRODUCT_PAGE_DIR"]
+    assert path, "SHOP_PRODUCT_PAGE_DIR is not defined in .env"
+
     temp_path = path + "_temp/"
 
     async with aiofiles.open(
@@ -212,9 +212,7 @@ async def save_scrap_result_to_parquet():
         v = await f.read()
         v = v.replace("null", "None").replace("true", "True").replace("false", "False")
         v = eval(v)
-        raw_data = list(chain(*v))
-
-    return _save_to_parquet(raw_data)
+        return list(chain(*v))
 
 
 def init_tempfiles():

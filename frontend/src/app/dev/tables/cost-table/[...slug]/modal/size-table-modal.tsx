@@ -39,7 +39,7 @@ const createSizeDict = (sizeInfo: sizeInfoprops[]) => {
     return sizeInfo.reduce((acc: accType, cur) => {
         return {
             ...acc,
-            [`${cur.korProductSize},${cur.shopProductSize}`]: [
+            [cur.korProductSize]: [
                 ...(acc[cur.korProductSize] || []), // Preserve existing data
                 cur.shopProductCardId,
             ],
@@ -75,16 +75,16 @@ const SizeTableModal = ({
     const [selectedShopName, setSelectedShopName] = useState<string[]>([initShopName]);
     const [selectedShopInfo, setSelectedShopInfo] = useState<productCardProps[]>(productInfo);
 
+    const handleSize = (size: string) => {
+        const ids = sizeDict[size];
+        return setSelectedShopInfo(productInfo.filter((obj) => ids.includes(obj.shopProductCardId)));
+    };
+
     const handleAllShop = () => {
         setSelectedSize(sizeName);
         setSelectedShopName(shopName);
         setSelectedShopInfo(productInfo);
         return;
-    };
-
-    const handleSize = (size: string) => {
-        const ids = sizeDict[size];
-        return setSelectedShopInfo(productInfo.filter((obj) => ids.includes(obj.shopProductCardId)));
     };
 
     const handleShop = (shop: string) => {
@@ -95,7 +95,7 @@ const SizeTableModal = ({
         const shopProductCardId = shopInfo?.shopProductCardId;
         const selectedSizes = sizeInfo
             .filter((obj) => obj.shopProductCardId === shopProductCardId)
-            .map((obj) => `${obj.korProductSize},${obj.shopProductSize}`);
+            .map((obj) => obj.korProductSize);
         setSelectedSize(selectedSizes);
         return setSelectedShopName([shop]);
     };
@@ -138,8 +138,7 @@ const SizeTableModal = ({
                         key={`${v}`}
                         className="py-2 focus:bg-main-black focus:text-deep-gray disabled:bg-rose-100"
                         disabled={!selectedSize.includes(v)}>
-                        <div>{v.split(",")[0]}</div>
-                        <div className="text-sm">({v.split(",")[1]})</div>
+                        <div>{v}</div>
                     </button>
                 ))}
             </div>

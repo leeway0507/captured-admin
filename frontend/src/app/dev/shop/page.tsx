@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import { CloseCustomPageBrowser } from "./fetch";
 import { toast } from "react-toastify";
 import ShopCardList from "./shop-card-list";
@@ -17,7 +18,10 @@ export default function Main() {
 
     return (
         <div className="flex flex-col mx-auto">
-            <div className="w-full flex-right py-4">
+            <div className="w-full flex-right py-4 gap-8">
+                <Link href="/dev/shop/scrap-result/result-list">
+                    <button className="black-bar w-[300px] p-4 text-xl">수집결과 보기</button>
+                </Link>
                 <button className="black-bar w-[300px] p-4 text-xl" onClick={handleCloseBrowser}>
                     브라우저 재실행
                 </button>

@@ -53,3 +53,10 @@ export const deleteProduct = async (sku: number) => {
     const res = await fetch(url + "?" + queryParams);
     return { status: res.status, data: await res.json() };
 };
+
+export const uploadImageToS3 = async (sku: number) => {
+    const res = await fetch(
+        `${process.env.NEXT_PUBLIC_API_URL}/api/production/s3/upload-product-image-to-s3?sku=${sku}`
+    );
+    return { status: res.status, data: await res.json() };
+};

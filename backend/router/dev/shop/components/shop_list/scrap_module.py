@@ -10,20 +10,12 @@ import asyncio
 import pandas as pd
 from logs.make_log import make_logger
 from model.db_model_shop import ShopProductCardSchema
+from ....custom_playwright.page import customPage
 
 config = dotenv_values(".env.dev")
 
 
-class ScrapModule:
-    @classmethod
-    async def load_page(cls, page: Page, url, sleep_time=1):
-        """페이지 로드"""
-        await page.goto(url)
-        await page.wait_for_load_state(state="networkidle", timeout=30000)
-        await page.wait_for_timeout(1000)
-        await asyncio.sleep(sleep_time)
-        return page
-
+class ScrapModule(customPage):
     @classmethod
     async def load_product_card(cls, page, xpath, attr: Dict):
         product_cards = await page.query_selector(xpath)
@@ -201,20 +193,6 @@ class ScrapModule:
             "kor_product_size",
         }, "size_info is not valid"
         return {"size_info": size_info, "product_id": product_id}
-
-    @classmethod
-    def save_to_parquet(cls, cards_info: List[Dict]):
-        path = ScrapModule.get_current_dir()
-        path = path + "data/scrap_list/"
-
-        if not os.path.exists(path):
-            os.makedirs(path, exist_ok=True)
-
-        file_name = datetime.now().strftime("%y%m%d-%H%M%S")
-        cards_info = [ShopProductCardSchema(**card).model_dump() for card in cards_info]
-        pd.DataFrame(cards_info).to_parquet(
-            path + file_name + "-scrap_list.parquet.gzip", compression="gzip"
-        )
 
     @classmethod
     async def save_cookies(cls, page: Page):

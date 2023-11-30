@@ -34,7 +34,7 @@ error_log = make_logger("logs/admin/util.log", "admin_router")
 
 async def get_order_history(db: AsyncSession):
     result = await db.execute(select(OrderHistoryTable))
-    result = result.all()
+    result = result.scalars().all()
     print(result)
     return [
         OrderHistoryInDBSchema(**row.to_dict()).model_dump(by_alias=True)
@@ -185,6 +185,14 @@ async def update_product_deploy_status(db: AsyncSession, sku: int, status: int):
 
 
 ################ get product List
+################ get product List
+################ get product List
+################ get product List
+################ get product List
+################ get product List
+################ get product List
+################ get product List
+################ get product List
 
 
 async def get_init_category(
@@ -199,21 +207,18 @@ async def get_init_category(
 
     # query
     stmt = (
-        select(ProductInfoTable, func.group_concat(SizeTable.size).label("size"))
-        .join(SizeTable, ProductInfoTable.sku == SizeTable.sku)
+        select(ProductInfoTable)
         .where(and_(ProductInfoTable.sku < page_cursor))
-        .group_by(SizeTable.sku)
-        .order_by(ProductInfoTable.sku.desc())
+        .order_by(ProductInfoTable.deploy.desc(), ProductInfoTable.sku.desc())
         .limit(limit)
     )
 
     result = await db.execute(stmt)
+    result = result.scalars().all()
 
     data = [
-        ProductInfoDBSchema(**row[0].to_dict(), size=row[1]).model_dump(by_alias=True)
-        for row in result
+        ProductInfoDBSchema(**row.to_dict()).model_dump(by_alias=True) for row in result
     ]
-    data.reverse()
 
     return ProductResponseSchema(data=data, currentPage=page, lastPage=last_page)
 
@@ -235,7 +240,7 @@ async def get_page_cursor(
     print(
         f"create_page_index time|| page_cursor:{page_idx}",
         f"{end-start:.4f} ",
-        create_page_index.cache_info(),
+        # create_page_index.cache_info(),
     )
 
     # print("캐시 정보")
@@ -253,7 +258,6 @@ async def get_page_cursor(
     return page_idx[page], last_page
 
 
-@alru_cache(maxsize=32)
 async def create_page_index(limit: int, query: str):
     local_query = eval(query)
     sort_type = local_query.get("sort_type")

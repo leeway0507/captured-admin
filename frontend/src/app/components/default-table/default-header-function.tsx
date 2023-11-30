@@ -13,9 +13,9 @@ export const TableCell = (props: any) => {
     const onBlur = () => {
         tableMeta?.updateData(row.index, column.id, value);
     };
-    const onSelectChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-        setValue(e.target.value);
-        tableMeta?.updateData(row.index, column.id, e.target.value);
+    const onSelectChange = (e: any) => {
+        setValue(e.value);
+        tableMeta?.updateData(row.index, column.id, e.value);
     };
 
     return columnMeta?.type === "select" ? (

@@ -12,6 +12,12 @@ export const InitshopCardList = async (shopName: string, brandName: string, numP
     return { status: res.status, data: await res.json() };
 };
 
+export const getShopPageList = async () => {
+    const url = `${process.env.NEXT_PUBLIC_API_URL}/api/dev/shop/get-shop-product-page`;
+    const res = await fetch(url);
+    return { status: res.status, data: await res.json() };
+};
+
 export const InitshopCardPage = async (searchType: string, content: string, numProcess: number) => {
     const url = `${process.env.NEXT_PUBLIC_API_URL}/api/dev/shop/init-shop-product-card-page`;
 
