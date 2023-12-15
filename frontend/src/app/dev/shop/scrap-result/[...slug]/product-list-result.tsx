@@ -3,7 +3,7 @@ import Link from "next/link";
 import { useRef, useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { toast } from "react-toastify";
-import { insertScarpToDB } from "../../fetch";
+import { insertScarpToDB, deleteScrapList } from "../../fetch";
 import { handleSubmit } from "../../shop-card-list";
 
 interface scrapingProps {
@@ -70,6 +70,16 @@ export default function ProductListResult({ fetchData }: { fetchData: fetchDataP
             }
         });
     };
+    const handleDelete = async (scrapName: string) => {
+        await deleteScrapList(scrapName).then((res) => {
+            if (res.status === 200) {
+                toast.success("삭제 성공");
+                router.replace("/dev/shop/scrap-result/result-list");
+            } else {
+                toast.error("삭제 실패");
+            }
+        });
+    };
 
     const enableButton = () => {
         if (submitRef.current) {
@@ -115,20 +125,20 @@ export default function ProductListResult({ fetchData }: { fetchData: fetchDataP
                 ))}
             </div>
             <div className="flex gap-4 w-full text-xl">
-                <div className="flex flex-col">
+                <div className="flex flex-col w-20">
                     <div>재실행 예정 </div>
                     <div className="flex-center grow bg-white py-2 border border-main-black">
                         {configState.brandName.split(",").filter((v) => v !== "").length} 건
                     </div>
                 </div>
-                <div className="flex flex-col">
+                <div className="flex flex-col w-20">
                     <label htmlFor="numProcess">재실행 프로세스 수</label>
                     <input
                         type="text"
                         id="numProcess"
                         onChange={(e) => setConfigState({ ...configState, numProcess: Number(e.target.value) })}
                         value={configState.numProcess}
-                        className="border border-main-black p-2"
+                        className="border border-main-black p-2 "
                     />
                 </div>
                 <button
@@ -144,6 +154,12 @@ export default function ProductListResult({ fetchData }: { fetchData: fetchDataP
                     disabled={dbUpdate}>
                     {" "}
                     {dbUpdate ? "DB 넣기 완료" : "DB에 넣기"}
+                </button>
+                <button
+                    className="black-bar bg-rose-700 flex-right p-2 text-xl"
+                    onClick={() => handleDelete(`${scrapTime}-${shopName}`)}>
+                    {" "}
+                    수집 결과 삭제
                 </button>
                 <Link href="/dev/shop/scrap-result/result-list" className="black-bar p-4 text-xl">
                     돌아가기

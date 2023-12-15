@@ -10,10 +10,12 @@ import {
     getSortedRowModel,
     ColumnFiltersState,
     SortingState,
+    ColumnMeta,
 } from "@tanstack/react-table";
 import "./table.css";
 import Pagination from "./default-pagination";
 import { useState, InputHTMLAttributes, useEffect } from "react";
+import Select from "react-select";
 
 interface TableDataProps<TData> {
     data: TData[];
@@ -53,19 +55,46 @@ function DebouncedInput({
 
 function ColumnFiltering({ column, table }: { column: Column<any, unknown>; table: Table<any> }) {
     const columnFilterValue = column.getFilterValue();
+    const columnMeta = column.columnDef.meta as { type: string; options?: object[] } | undefined;
 
-    return (
-        <div>
-            <DebouncedInput
-                type="text"
-                value={(columnFilterValue ?? "") as string}
-                onChange={(value) => column.setFilterValue(value)}
-                placeholder={`검색하기`}
-                className="w-36 border shadow rounded"
-                list={column.id + "list"}
-            />
-        </div>
-    );
+    switch (columnMeta?.type) {
+        case "select":
+            if (!columnMeta.options) return null;
+            return (
+                <div>
+                    <Select
+                        options={columnMeta?.options}
+                        onChange={(value) => column.setFilterValue(value)}
+                        className="min-w-[100px] max-w-full"
+                    />
+                </div>
+            );
+        case "text":
+            return (
+                <div>
+                    <DebouncedInput
+                        type="text"
+                        value={(columnFilterValue ?? "") as string}
+                        onChange={(value) => column.setFilterValue(value)}
+                        placeholder={`검색하기`}
+                        className="w-36 border shadow rounded"
+                        list={column.id + "list"}
+                    />
+                </div>
+            );
+        default: {
+            <div>
+                <DebouncedInput
+                    type="text"
+                    value={(columnFilterValue ?? "") as string}
+                    onChange={(value) => column.setFilterValue(value)}
+                    placeholder={`검색하기`}
+                    className="w-36 border shadow rounded"
+                    list={column.id + "list"}
+                />
+            </div>;
+        }
+    }
 }
 
 export const BasicTable = ({ table }: tableProps<any>) => {

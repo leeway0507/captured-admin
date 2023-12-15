@@ -14,12 +14,12 @@ const candidateClass = "p-2 h-[200px] flex-center";
 const handleCandidate = (event: any) => {
     const { id, status } = event.target.dataset;
 
-    const reverseStatus = status === "0" ? 1 : 0;
+    const reverseStatus = status === "0" ? 2 : 0;
 
     updateCandidate(id, reverseStatus).then((res) => {
         if (res.status === 200) {
             event.target.className =
-                reverseStatus === 1 ? `bg-yellow-200 ${candidateClass}` : `bg-rose-200 ${candidateClass}`;
+                reverseStatus === 2 ? `bg-yellow-200 ${candidateClass}` : `bg-rose-200 ${candidateClass}`;
             event.target.dataset.status = reverseStatus;
             toast.success("업데이트 성공", { position: "top-left", autoClose: 1000 });
         }

@@ -32,7 +32,7 @@ class ProductInfoSchema(BaseModel):
     @validator("color", pre=True)
     def str_to_list(cls, v: str) -> str:
         """str to list to str"""
-        return v.replace(",", "/")
+        return v.replace(",", "/").upper()
 
 
 class ProductInfoDBSchema(ProductInfoSchema):
@@ -67,7 +67,6 @@ class UserSchema(BaseModel):
     user_id: str
     email: Optional[EmailStr] = None
     kr_name: str
-    email_verification: bool
     sign_up_type: str
 
 

@@ -101,10 +101,21 @@ export const loadScrapedBrandName = async (shopName: string) => {
 };
 
 export const insertScrapPageToDB = async (scrapDate: string) => {
-    const url = `${process.env.NEXT_PUBLIC_API_URL}/api/dev/shop/db/upsert-size-table`;
+    const url = `${process.env.NEXT_PUBLIC_API_URL}/api/dev/shop/db/upsert-shop-product-size-table`;
     const queryParams = new URLSearchParams({
         scrapDate,
     });
     const res = await fetch(url + "?" + queryParams);
+    return { status: res.status, data: await res.json() };
+};
+
+export const deleteScrapList = async (scrapName: string) => {
+    const url = `${process.env.NEXT_PUBLIC_API_URL}/api/dev/shop/delete-product-list-result`;
+    const queryParams = new URLSearchParams({
+        scrapName,
+    });
+    const res = await fetch(url + "?" + queryParams, {
+        method: "DELETE",
+    });
     return { status: res.status, data: await res.json() };
 };

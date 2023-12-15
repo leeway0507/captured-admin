@@ -1,13 +1,13 @@
 from typing import Dict, Callable, List, Any
 from playwright.async_api import Page, TimeoutError as PlaywrightTimeoutError
-from shop.schema import ShopPageOutput
-from utils.make_log import make_logger
+
 from bs4 import BeautifulSoup
 import asyncio
 import re
 import json
 
 page_log = make_logger(path="logs/page_shop.log", name="AsyncShopPageScraper")
+
 
 # PageScraper
 def raise_timeout_error_page(inner_function: Callable):
@@ -23,7 +23,9 @@ def raise_timeout_error_page(inner_function: Callable):
 
             except (Exception, PlaywrightTimeoutError) as e:
                 if retry_count < max_retries:
-                    page_log.error(f'"{retry_count}.... [ {inner_function.__name__} ]  {e}')
+                    page_log.error(
+                        f'"{retry_count}.... [ {inner_function.__name__} ]  {e}'
+                    )
                     await asyncio.sleep(retry_delay)
                 else:
                     page_log.error(f'"최종 실패" : [ {inner_function.__name__} ]  {e}')
@@ -61,7 +63,9 @@ class AsyncShopPageScraper:
     @raise_timeout_error_page
     async def scrap_thehipstore(self, page: Page, url: str) -> Dict[str, Any]:
         local_page = await self._load_page(page, url)
-        sizes = await local_page.query_selector('//div[contains(@id,"productSizeStock")]')
+        sizes = await local_page.query_selector(
+            '//div[contains(@id,"productSizeStock")]'
+        )
         if sizes:
             sizes = await sizes.inner_html()
             soup = BeautifulSoup(sizes, "html.parser")
@@ -84,10 +88,11 @@ class AsyncShopPageScraper:
 
     @raise_timeout_error_page
     async def scrap_oneblockdown(self, page: Page, url: str) -> Dict[str, Any]:
-
         local_page = await self._load_page(page, url)
 
-        sizes = await local_page.query_selector('//div[contains(@class,"special-select")]')
+        sizes = await local_page.query_selector(
+            '//div[contains(@class,"special-select")]'
+        )
         if sizes:
             sizes = await sizes.inner_html()
             soup = BeautifulSoup(sizes, "html.parser")
@@ -100,7 +105,6 @@ class AsyncShopPageScraper:
 
     @raise_timeout_error_page
     async def scrap_nakedcph(self, page: Page, url: str) -> Dict[str, Any]:
-
         local_page = await self._load_page(page, url)
 
         sizes = await local_page.query_selector(
@@ -110,7 +114,9 @@ class AsyncShopPageScraper:
             sizes = await sizes.inner_html()
             soup = BeautifulSoup(sizes, "html.parser")
             sizes = soup.find_all(class_="dropdown-item")
-            sizes = [size.text.strip() for size in sizes if "disabled" not in size["class"]]
+            sizes = [
+                size.text.strip() for size in sizes if "disabled" not in size["class"]
+            ]
         else:
             sizes = []
 
@@ -170,7 +176,9 @@ class AsyncShopPageScraper:
             sizes = await sizes.inner_html()
             soup = BeautifulSoup(sizes, "html.parser")
             sizes = soup.find_all("a")
-            sizes = [size.text for size in sizes if "disabled" not in size.get("class", [])]
+            sizes = [
+                size.text for size in sizes if "disabled" not in size.get("class", [])
+            ]
         else:
             sizes = []
 
@@ -208,17 +216,25 @@ class AsyncShopPageScraper:
             soup = BeautifulSoup(sizes, "html.parser")
             sizes = soup.find_all("label")
             if sizes:
-                sizes = [size.text for size in sizes if "disabled" not in size.get("class", [])]
+                sizes = [
+                    size.text
+                    for size in sizes
+                    if "disabled" not in size.get("class", [])
+                ]
             else:
                 sizes = []
         else:
             sizes = []
 
-        product_id_text = await local_page.query_selector('//div[@class="product-block"][4]')
+        product_id_text = await local_page.query_selector(
+            '//div[@class="product-block"][4]'
+        )
         if product_id_text:
             product_id_text = await product_id_text.inner_text()
             product_id = re.search(r"(?i)style code\s*:\s*(\w+)", product_id_text)
-            assert product_id, f"crossoverconceptstore - product_id에 대한 regex가 잘못되었을 수 있음."
+            assert (
+                product_id
+            ), f"crossoverconceptstore - product_id에 대한 regex가 잘못되었을 수 있음."
             product_id = product_id.group(1).split(" ")[0]
         else:
             product_id = "-"
@@ -246,7 +262,9 @@ class AsyncShopPageScraper:
             sizes = await sizes.inner_html()
             soup = BeautifulSoup(sizes, "html.parser")
             sizes = soup.find_all("label")
-            sizes = [size.text for size in sizes if "disabled" not in size.get("class", [])]
+            sizes = [
+                size.text for size in sizes if "disabled" not in size.get("class", [])
+            ]
         else:
             sizes = []
 
@@ -342,7 +360,9 @@ class AsyncShopPageScraper:
         if sizes:
             soup = BeautifulSoup(await sizes.inner_html(), "html.parser")
             sizes = soup.find_all("li")
-            sizes = [size.span.text for size in sizes if size.span and "품절" not in size.text]
+            sizes = [
+                size.span.text for size in sizes if size.span and "품절" not in size.text
+            ]
         else:
             sizes = []
 
@@ -408,7 +428,9 @@ class AsyncShopPageScraper:
         size_list = await local_page.query_selector('//*[@data-test-id="Size__List"]')
         if size_list:
             size_list = await size_list.inner_text()
-            sizes = [size for size in size_list.split("\n") if "Out of Stock" not in size]
+            sizes = [
+                size for size in size_list.split("\n") if "Out of Stock" not in size
+            ]
         else:
             sizes = []
 
@@ -434,7 +456,9 @@ class AsyncShopPageScraper:
         size_list = await local_page.query_selector('//*[@data-label-text="Shoe Size"]')
         if size_list:
             size_list = await size_list.inner_text()
-            sizes = [size for size in size_list.split("\n") if "Out of Stock" not in size][1:]
+            sizes = [
+                size for size in size_list.split("\n") if "Out of Stock" not in size
+            ][1:]
         else:
             sizes = []
 
@@ -469,7 +493,9 @@ class AsyncShopPageScraper:
         else:
             sizes = []
 
-        product_id_text = await local_page.query_selector('//*[@id="itemInfo"]/ul/li[1]/ul')
+        product_id_text = await local_page.query_selector(
+            '//*[@id="itemInfo"]/ul/li[1]/ul'
+        )
         if product_id_text:
             product_id_text = await product_id_text.inner_html()
             product_id = product_id_text.split("|")[-1].split("\n")[0].split(" ")[1]
@@ -502,7 +528,9 @@ class AsyncShopPageScraper:
             sizes.append(s)
         sizes = [size.split(" : ")[0] for size in sizes]
 
-        product_id = await local_page.query_selector(f"(//*[contains(@class, 'variant-sku')])")
+        product_id = await local_page.query_selector(
+            f"(//*[contains(@class, 'variant-sku')])"
+        )
         if product_id:
             product_id = await product_id.inner_html()
             product_id = product_id.split(" ")[2]
@@ -525,7 +553,9 @@ class AsyncShopPageScraper:
         """
         local_page = await self._load_page(page, url)
 
-        size_list = await local_page.query_selector(f'//*[@class="product-form__input__options"]')
+        size_list = await local_page.query_selector(
+            f'//*[@class="product-form__input__options"]'
+        )
         product_id = await local_page.query_selector('//*[@class="product__title"]/p')
 
         sizes = []

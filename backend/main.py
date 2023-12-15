@@ -6,7 +6,8 @@ from fastapi.exceptions import RequestValidationError
 from fastapi.responses import JSONResponse
 from router.production import production_router
 from router.production.s3 import s3_router
-from router.dev.kream import kream_scrap_router, kream_db_router
+from router.production.size_batch import size_batch_router
+from router.dev.platform import platform_router, kream_db_router
 from router.dev.shop import list_router, page_router, shop_db_router
 
 app = FastAPI()
@@ -26,15 +27,16 @@ app.add_middleware(
 )
 
 
-app.include_router(s3_router, prefix="/api/production/s3", tags=["s3_router"])
+app.include_router(
+    size_batch_router, prefix="/api/production/size_batch", tags=["size_batch"]
+)
+app.include_router(platform_router, prefix="/api/dev/kream", tags=["PLATFORM"])
+app.include_router(s3_router, prefix="/api/production/s3", tags=["s3"])
 app.include_router(production_router, prefix="/api/production", tags=["production"])
 app.include_router(shop_db_router, prefix="/api/dev/shop/db", tags=["dev/shop/db"])
 app.include_router(list_router, prefix="/api/dev/shop", tags=["dev/shop/scrap/list"])
 app.include_router(page_router, prefix="/api/dev/shop", tags=["dev/shop/scrap/page"])
 app.include_router(kream_db_router, prefix="/api/dev/kream/db", tags=["dev/kream/db"])
-app.include_router(
-    kream_scrap_router, prefix="/api/dev/kream", tags=["dev/kream/scrap"]
-)
 
 
 # 422 error handler
@@ -56,4 +58,4 @@ if __name__ == "__main__":
     LOGGING_CONFIG["formatters"]["access"][
         "fmt"
     ] = '%(levelprefix)s %(asctime)s - %(client_addr)s - "%(request_line)s" %(status_code)s'
-    uvicorn.run("main:app", port=9000, reload=True, host="0.0.0.0")
+    uvicorn.run("main:app", port=8005, reload=True, host="0.0.0.0")

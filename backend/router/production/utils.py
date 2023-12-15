@@ -28,6 +28,7 @@ from model.product_model import (
     ProductResponseSchema,
 )
 from custom_alru import alru_cache
+from sqlalchemy.exc import IntegrityError
 
 error_log = make_logger("logs/admin/util.log", "admin_router")
 
@@ -104,12 +105,19 @@ async def delete_product(db: AsyncSession, sku: int):
 
     size_rows = await get_size_list(db, sku)
 
-    if size_rows:
-        await delete_size(db, sku)
+    try:
+        if size_rows:
+            stmt = delete(SizeTable).where(SizeTable.sku == sku)
+            await db.execute(stmt)
 
-    stmt = delete(ProductInfoTable).where(ProductInfoTable.sku == sku)
-    await db.execute(stmt)
-    await db.commit()
+        stmt = delete(ProductInfoTable).where(ProductInfoTable.sku == sku)
+        await db.execute(stmt)
+        await db.commit()
+
+    except IntegrityError as ie:
+        await db.rollback()
+        print(ie)
+        return {"message": "IntegrityError", "detail": str(ie)}
 
     return {"message": "success"}
 

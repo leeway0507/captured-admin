@@ -228,7 +228,10 @@ async def update_product_id_by_shop_product_card_id(
 
     stmt = (
         update(ShopProductCardTable)
-        .where(ShopProductCardTable.shop_product_card_id == bindparam("key"))
+        .where(
+            ShopProductCardTable.shop_product_card_id == bindparam("key"),
+            ShopProductCardTable.product_id == "-",
+        )
         .values(product_id=bindparam("value"))
     )
     await db.execute(stmt, product_info)
@@ -236,8 +239,8 @@ async def update_product_id_by_shop_product_card_id(
     return {"message": "success"}
 
 
-async def upsert_size_table(db: AsyncSession, scrapDate: str):
-    """size table에 insert"""
+async def upsert_shop_product_size_table(db: AsyncSession, scrapDate: str):
+    """shop_product_size_table에 insert"""
 
     size_dict = get_scrap_size_dict(scrapDate)
     product_id_dict = get_scrap_size_product_id_dict(scrapDate)
@@ -262,7 +265,7 @@ async def upsert_size_table(db: AsyncSession, scrapDate: str):
     return True
 
 
-async def get_size_table_data(db: AsyncSession, product_id):
+async def get_shop_product_size_table_data(db: AsyncSession, product_id):
     product_id_list = product_id.split(",")
 
     stmt = (

@@ -35,24 +35,25 @@ const features = (props: any) => {
 };
 
 export const productCardColumns = [
-    columnHelper.accessor("candidate", {
-        header: "추적여부",
+    columnHelper.accessor("shopProductCardId", {
+        header: "추적여부/제품번호",
         cell: (props) => (
             <>
                 <div
-                    id={`status-${props.row.original.shopProductCardId}`}
+                    id={`status-${props.getValue()}`}
                     className={`${
-                        props.getValue() === 2 ? "bg-green-200" : "bg-yellow-200"
+                        props.row.original.candidate === 2 ? "bg-green-200" : "bg-yellow-200"
                     } ${candidateClass} flex-col`}
-                    data-id={props.row.original.shopProductCardId}
-                    data-status={props.getValue()}
+                    data-id={props.getValue()}
+                    data-status={props.row.original.candidate}
                     onClick={handleCandidate}>
                     <div>사이즈</div>
-                    <div>{props.getValue() === 2 ? "수집중" : "미수집"}</div>
+                    <div>{props.row.original.candidate === 2 ? "수집중" : "미수집"}</div>
+                    <div className="text-black">({props.getValue()})</div>
                 </div>
                 <div
                     className={`bg-rose-200 flex-center h-[50px] mt-2`}
-                    data-id={props.row.original.shopProductCardId}
+                    data-id={props.getValue()}
                     data-status={1}
                     onClick={handleRemoveCandidate}>
                     후보 제거
@@ -60,6 +61,12 @@ export const productCardColumns = [
             </>
         ),
         sortDescFirst: true,
+        filterFn: (rows, id, filterValue) => {
+            return rows.original.shopProductCardId === filterValue;
+        },
+        meta: {
+            type: "text",
+        },
     }),
     columnHelper.accessor("shopProductImgUrl", {
         header: "이미지(링크)",
@@ -85,7 +92,7 @@ export const productCardColumns = [
             </div>
         ),
     }),
-    columnHelper.display({
+    columnHelper.accessor((original) => original.productInfo?.sku, {
         header: "기능",
         cell: features,
     }),

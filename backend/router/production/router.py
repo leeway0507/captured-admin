@@ -1,7 +1,7 @@
 """admin Router"""
 
 from sqlalchemy.ext.asyncio import AsyncSession
-from fastapi import APIRouter, Depends, HTTPException
+from fastapi import APIRouter, Depends, HTTPException, status
 
 from model.db_model_production import ProductInfoSchema, ProductInfoDBSchema
 
@@ -72,10 +72,19 @@ async def update(
 async def delete(sku: int, db: AsyncSession = Depends(get_production_db)):
     """제품 삭제"""
 
-    if await delete_product(db, sku):
+    result = await delete_product(db, sku)
+    if result["message"] == "success":
         return {"message": "success"}
+
+    if result["message"] == "IntegrityError":
+        raise HTTPException(
+            status_code=status.HTTP_409_CONFLICT, detail=result["detail"]
+        )
     else:
-        raise HTTPException(status_code=406, detail="제품 삭제에 실패했습니다. 다시 시도해주세요.")
+        raise HTTPException(
+            status_code=status.HTTP_406_NOT_ACCEPTABLE,
+            detail="제품 삭제에 실패했습니다. 다시 시도해주세요.",
+        )
 
 
 @production_router.get("/get-product-info-for-cost-product")

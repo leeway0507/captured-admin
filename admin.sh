@@ -3,7 +3,7 @@
 source ~/.zshrc
 
 cleanup() {
-    ports=(4000)
+    ports=(4000,8005)
 
     for port in "${ports[@]}"; do
         pid=$(lsof -i :"$port" | awk 'NR==2 {print $2}')

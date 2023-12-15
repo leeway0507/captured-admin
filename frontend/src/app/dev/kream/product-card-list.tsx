@@ -68,7 +68,6 @@ export default function PrdoucCardList() {
                 enableButton();
             })
             .catch((e) => {
-                console.log(e);
                 toast.error("네트워크 에러 발생");
                 enableButton();
             });

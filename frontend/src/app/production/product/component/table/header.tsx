@@ -9,6 +9,7 @@ import Select from "react-select";
 import envJson from "@/app/env.json";
 import { toast } from "react-toastify";
 import { updateProductDeploy, updateProduct, deleteProduct, uploadImageToS3 } from "../fetch";
+import { useState } from "react";
 
 type CategorySpec = {
     의류: string[];
@@ -23,11 +24,27 @@ const imgArray = () => {
     const imgArray = envJson.NEXT_PUBLIC_IMAGE_TYPE;
     return imgArray.map((v: string) => ({ value: v, label: v }));
 };
-const brandNameCell = (props: any) => {
+const BrandNameCell = (props: any) => {
+    const { row, column, table, getValue } = props;
     const { brand } = props.row.original;
     const options = envJson.NEXT_PUBLIC_BRAND_ARRAY;
+    const tableMeta = table.options.meta;
+    const initialValue = getValue();
+
+    const [value, setValue] = useState(initialValue);
+    const onSelectChange = (e: any) => {
+        setValue(e.label);
+        tableMeta?.updateData(row.index, column.id, e.label);
+    };
     const defaultValue = options.find((v: { value: string; label: string }) => v.label === brand);
-    return <Select defaultValue={defaultValue} options={options} className="min-w-[150px] max-w-full" />;
+    return (
+        <Select
+            defaultValue={defaultValue}
+            onChange={onSelectChange}
+            options={options}
+            className="min-w-[150px] max-w-full"
+        />
+    );
 };
 
 const categoryArray = () => {
@@ -35,15 +52,31 @@ const categoryArray = () => {
     return categoryArray.map((v: string) => ({ value: v, label: v }));
 };
 
-const categorySpecCell = (props: any) => {
-    const { categorySpec, category } = props.row.original;
+const CategorySpecCell = (props: any) => {
+    const { row, column, table, getValue } = props;
+    const { categorySpec, category } = row.original;
     const categorySpecObject: CategorySpec = envJson.NEXT_PUBLIC_CATEGORY_SPEC;
     const categorySpecData = categorySpecObject[category];
     const options = categorySpecData.map((v: string) => ({ value: v, label: v }));
+    const tableMeta = table.options.meta;
+    const initialValue = getValue();
+
+    const [value, setValue] = useState(initialValue);
+    const onSelectChange = (e: any) => {
+        setValue(e.value);
+        tableMeta?.updateData(row.index, column.id, e.value);
+    };
 
     const defaultValue = options.find((v: { value: string; label: string }) => v.value === categorySpec);
 
-    return <Select defaultValue={defaultValue} options={options} className="min-w-[100px] max-w-full" />;
+    return (
+        <Select
+            defaultValue={defaultValue}
+            onChange={onSelectChange}
+            options={options}
+            className="min-w-[100px] max-w-full"
+        />
+    );
 };
 
 const handleCandidate = (event: any, sku: number, deploy: number) => {
@@ -86,7 +119,10 @@ const handleDeleteProduct = (props: any) => {
     const handler = async () => {
         confirm(`sku : ${sku} 제품을 삭제합니다.`) &&
             (await deleteProduct(sku).then((res) => {
-                res.status === 200 ? toast.success("업데이트 성공") : toast.error("업데이트 실패");
+                if (res.status === 200) return toast.success("업데이트 성공");
+                res.status === 409
+                    ? toast.warning("Intergrity Error: \n 다른 테이블에 연결된 데이터가 있습니다.")
+                    : toast.error("업데이트 실패");
             }));
     };
     return (
@@ -98,7 +134,7 @@ const handleDeleteProduct = (props: any) => {
 
 const reloadImage = (sku: number) => {
     const img = document.getElementById(sku.toString()) as HTMLImageElement;
-    img.src = `${process.env.NEXT_PUBLIC_MOBILE_IMAGE_URL}/product/${sku}/thumbnail.png`;
+    img.src = `${process.env.NEXT_PUBLIC_MOBILE_IMAGE_URL}/product/${sku}/thumbnail.webp`;
 };
 
 const UploadImage = (props: any) => {
@@ -136,8 +172,8 @@ const features = (props: any) => {
 };
 
 export const productCardColumns = [
-    columnHelper.accessor("sku", {
-        header: "Sku",
+    columnHelper.accessor("deploy", {
+        header: "전시/미전시",
         cell: (props) => {
             const { sku, deploy } = props.row.original;
             if (sku === undefined) {
@@ -152,19 +188,37 @@ export const productCardColumns = [
                     data-sku={sku}
                     data-deploy={deploy}>
                     <div>{deploy === 0 ? "미전시" : "전시중"}</div>
-                    <div>sku : {props.getValue()}</div>
+                    <div>sku : {sku}</div>
                 </button>
             );
         },
+
         filterFn: (row, columnId, value, addMeta) => {
-            return row.original.sku === Number(value);
+            switch (value.label) {
+                case "전체":
+                    return true;
+                case "전시":
+                    return row.original.deploy === 1;
+                case "미전시":
+                    return row.original.deploy === 0;
+                default:
+                    return true;
+            }
+        },
+        meta: {
+            type: "select",
+            options: [
+                { value: "전체", label: "전체" },
+                { value: "미전시", label: "미전시" },
+                { value: "전시", label: "전시" },
+            ],
         },
     }),
-    columnHelper.display({
-        header: "Img",
+    columnHelper.accessor("sku", {
+        header: "SKU",
         cell: (props) => {
-            const { sku } = props.row.original;
-            const productImgUrl = `${process.env.NEXT_PUBLIC_MOBILE_IMAGE_URL}/product/${sku}/thumbnail.png`;
+            const sku = props.getValue();
+            const productImgUrl = `${process.env.NEXT_PUBLIC_MOBILE_IMAGE_URL}/product/${sku}/thumbnail.webp`;
             return (
                 <div className="relative h-[180px] w-[180px] ">
                     <Image
@@ -178,6 +232,12 @@ export const productCardColumns = [
                 </div>
             );
         },
+        filterFn: (row, columnId, value, addMeta) => {
+            return row.original.sku === Number(value);
+        },
+        meta: {
+            type: "text",
+        },
     }),
     columnHelper.display({
         header: "기능",
@@ -185,7 +245,7 @@ export const productCardColumns = [
     }),
     columnHelper.accessor("brand", {
         header: "브랜드",
-        cell: brandNameCell,
+        cell: BrandNameCell,
     }),
     columnHelper.accessor("productName", {
         header: "제품명",
@@ -250,7 +310,14 @@ export const productCardColumns = [
         },
     }),
     columnHelper.accessor("categorySpec", {
-        header: "Category",
-        cell: categorySpecCell,
+        header: "카테고리 상세",
+        cell: CategorySpecCell,
+    }),
+    columnHelper.accessor("searchInfo", {
+        header: "검색어",
+        cell: TableCell,
+        meta: {
+            type: "text",
+        },
     }),
 ];

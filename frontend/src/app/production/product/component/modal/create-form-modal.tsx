@@ -102,6 +102,7 @@ const CreateFormModal = ({
                         }}
                     />
                     <Select
+                        defaultValue={imgType[1]}
                         instanceId="imgType"
                         options={imgType}
                         onChange={(e: any) => {

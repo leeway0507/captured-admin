@@ -1,0 +1,7 @@
+{
+    "num_of_plan": 1,
+    "num_process": 1,
+    "scrap_log": [{ "platform_type": "kream", "sku": "15248", "status": "success" }],
+    "db_update": false,
+    "plan_list": [15248]
+}

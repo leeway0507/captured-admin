@@ -5,7 +5,7 @@ import { useState, useCallback } from "react";
 import { toast } from "react-toastify";
 import CreateFormModal from "@/app/production/product/component/modal/create-form-modal";
 import SizeTableModal from "../modal/size-table-modal";
-import { getSizeTableData } from "../../fetch";
+import { getShopProductSizeTableData } from "../../fetch";
 import { productCardProps, sizeInfoprops } from "../modal/size-table-modal";
 
 //css
@@ -37,7 +37,7 @@ export const GetSizeTable = (props: any) => {
     const [productInfo, setProductInfo] = useState<productCardProps[]>();
 
     const openToggle = async () => {
-        await getSizeTableData(productId).then((res) => {
+        await getShopProductSizeTableData(productId).then((res) => {
             setSizeInfo(res.data.sizeInfo);
             setProductInfo(res.data.productInfo);
             res.data.sizeInfo.length === 0 ? toast.info("사이즈가 존재하지 않습니다.") : setIsOpen(true);
@@ -80,7 +80,7 @@ export const SendDraft = (props: any) => {
         color: "",
         category: "",
         categorySpec: "",
-        imgType: "",
+        imgType: "webp",
     });
     const openToggle = () => {
         getKreamColor(productId).then((res) => {
@@ -89,7 +89,6 @@ export const SendDraft = (props: any) => {
         });
     };
 
-    console.log(isOpen);
     return sku === undefined ? (
         <>
             <button className="bg-blue-600 text-white p-2" onClick={openToggle}>

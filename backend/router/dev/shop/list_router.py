@@ -6,14 +6,15 @@ from dotenv import dotenv_values
 
 from db.dev_db import get_dev_db
 from .components.update_to_db import get_shop_name_from_db
-from ..custom_playwright.page import customPage
-from ..custom_playwright.access_page import get_custom_page, close_custom_page
+from ..utils.browser_controller import PwBrowserController
 
-from .components.shop_product_card_list import (
-    load_brand_name,
-    scrap_shop_product_card_main,
+from .components.scrapable_list import get_brand_name
+from ..utils.scrap_report import ScrapReport
+from .components.shop_product_card_list import ShopListMain
+from .components.shop_product_card_list.list_module_factory import (
+    PwShopListModuleFactory,
 )
-from .components.shop_product_card_list.create_log import get_scrap_result
+
 
 from .components.update_to_db import (
     get_shop_info_by_name,
@@ -25,17 +26,12 @@ from .components.update_to_db import (
 
 list_router = APIRouter()
 
-config = dotenv_values(".env.dev")
-
-
-@list_router.get("/close-custom-page")
-async def close_custom_page_api():
-    return await close_custom_page()
+scrap_report = ScrapReport("shop_list")
 
 
 @list_router.get("/get-brand-name")
-def get_brand_name(shopName: str):
-    return load_brand_name(shopName)
+def get_brand_name_api(shopName: str):
+    return get_brand_name(shopName)
 
 
 @list_router.get("/get-scraped-brand-name")
@@ -53,34 +49,41 @@ async def scrap_shop_product_card_list(
     shopName: str,
     brandName: str,
     numProcess: int,
-    custom_page: customPage = Depends(get_custom_page),
 ):
-    result = await scrap_shop_product_card_main(
-        custom_page, shopName, brandName, numProcess
-    )
+    scraper_type = "playwright"
+
+    if scraper_type == "playwright":
+        module_factory = PwShopListModuleFactory()
+        browser_controller = PwBrowserController()
+
+    else:
+        # TODO: selenium 추가하면 selenium으로 변경하기
+        module_factory = PwShopListModuleFactory()
+        browser_controller = PwBrowserController()
+
+    ListMain = ShopListMain(numProcess, browser_controller, module_factory, shopName)
+
+    result = await ListMain.main(brandName)
 
     return result
 
 
 @list_router.get("/get-scrap-list")
 def get_shop_scrap_list():
-    """scrap 결과 조회"""
-
-    path = config["SHOP_PRODUCT_LIST_DIR"]
-    assert path, "SHOP_PRODUCT_LIST_DIR is not defined in .env"
-    result_path = path + "_scrap-result/"
-
-    file_list = os.listdir(result_path)
-    file_list = [x.split(".json")[0] for x in file_list]
-    file_list.sort(reverse=True)
-    return file_list
+    """scrap 목록 조회"""
+    return scrap_report.get_report_list()
 
 
 @list_router.get("/get-product-list-result")
 def get_product_list_result_api(scrapName: str):
     """scrap 결과 조회"""
+    return scrap_report.get_report(scrapName)
 
-    return get_scrap_result(scrapName)
+
+@list_router.delete("/delete-product-list-result")
+def delete_product_list_result_api(scrapName: str):
+    """scrap 결과 삭제"""
+    return scrap_report.delete_report(scrapName)
 
 
 @list_router.get("/get-shop-product-list")
@@ -97,6 +100,8 @@ async def get_shop_product_list_for_cost_table_api(
     searchType: str, value: str, db: AsyncSession = Depends(get_dev_db)
 ):
     """shop product list 조회"""
+    value = value.replace("c%27", "'")
+    print(value)
 
     return await get_shop_product_list_for_cost_table(db, searchType, value)
 

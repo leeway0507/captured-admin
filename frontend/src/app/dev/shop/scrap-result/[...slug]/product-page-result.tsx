@@ -108,7 +108,7 @@ export default function ProductPageResult({ fetchData }: { fetchData: fetchDataP
             <div className="text-3xl pb-2">수집 목록 결과</div>
             <div className="py-4 pb-12 bg-gray-100">
                 <div className="grid grid-cols-6 border-b mb-4 pb-2 gap-2 text-lg py-2 text-center">
-                    <div>SKU</div>
+                    <div>SHOP_CARD_ID</div>
                     <div>스토어</div>
                     <div>브랜드</div>
                     <div>제품코드</div>

@@ -11,6 +11,7 @@ export interface CreateproductCardProps {
     categorySpec: string;
     imgType: string;
     deploy?: number;
+    searchInfo?: string;
 }
 export interface userAddressProps {
     addressId: string;

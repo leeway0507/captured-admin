@@ -60,31 +60,11 @@
     "sameSite": "None"
   },
   {
-    "name": "uid-bp-26913",
-    "value": "AAIiRU7Kn0IAABNZb3ei7Q",
-    "domain": ".ads.stickyadstv.com",
-    "path": "/",
-    "expires": 1702309361,
-    "httpOnly": false,
-    "secure": false,
-    "sameSite": "None"
-  },
-  {
     "name": "uid-bp-892",
     "value": "8da2fe5b-3c41-4af2-b785-860968a9e80e",
     "domain": ".ads.stickyadstv.com",
     "path": "/",
     "expires": 1704901361,
-    "httpOnly": false,
-    "secure": false,
-    "sameSite": "None"
-  },
-  {
-    "name": "uid-bp-717",
-    "value": "y-gWVsithE2oPx2BPvzw1IY.prUjn39jeOB0tUeTdw~A",
-    "domain": ".ads.stickyadstv.com",
-    "path": "/",
-    "expires": 1702309362,
     "httpOnly": false,
     "secure": false,
     "sameSite": "None"
@@ -190,26 +170,6 @@
     "sameSite": "None"
   },
   {
-    "name": "_orig_referrer",
-    "value": "",
-    "domain": ".afew-store.com",
-    "path": "/",
-    "expires": 1700926691,
-    "httpOnly": true,
-    "secure": false,
-    "sameSite": "Lax"
-  },
-  {
-    "name": "_landing_page",
-    "value": "%2Fcollections%2Fy-3",
-    "domain": ".afew-store.com",
-    "path": "/",
-    "expires": 1700926691,
-    "httpOnly": true,
-    "secure": false,
-    "sameSite": "Lax"
-  },
-  {
     "name": "_tracking_consent",
     "value": "%7B%22reg%22%3A%22%22%2C%22con%22%3A%7B%22CMP%22%3A%7B%22s%22%3A%22%22%2C%22p%22%3A%221%22%2C%22m%22%3A%221%22%2C%22a%22%3A%221%22%7D%7D%2C%22lim%22%3A%5B%22GDPR_BLOCK_ALL%22%5D%2C%22v%22%3A%222.1%22%2C%22region%22%3A%22KR11%22%7D",
     "domain": ".afew-store.com",
@@ -270,36 +230,6 @@
     "sameSite": "Lax"
   },
   {
-    "name": "cart",
-    "value": "a0a07c815304dd334465bd52f2316ba8",
-    "domain": "de.afew-store.com",
-    "path": "/",
-    "expires": 1700926711,
-    "httpOnly": false,
-    "secure": false,
-    "sameSite": "Lax"
-  },
-  {
-    "name": "cart_ts",
-    "value": "1699717111",
-    "domain": "de.afew-store.com",
-    "path": "/",
-    "expires": 1700926711,
-    "httpOnly": true,
-    "secure": false,
-    "sameSite": "Lax"
-  },
-  {
-    "name": "cart_currency",
-    "value": "EUR",
-    "domain": "de.afew-store.com",
-    "path": "/",
-    "expires": 1700926711,
-    "httpOnly": false,
-    "secure": false,
-    "sameSite": "Lax"
-  },
-  {
     "name": "secure_customer_sig",
     "value": "",
     "domain": "de.afew-store.com",
@@ -316,16 +246,6 @@
     "path": "/",
     "expires": 1731253111,
     "httpOnly": false,
-    "secure": false,
-    "sameSite": "Lax"
-  },
-  {
-    "name": "cart_sig",
-    "value": "5503de037c8ab5115d1419137eb4a453",
-    "domain": "de.afew-store.com",
-    "path": "/",
-    "expires": 1700926711,
-    "httpOnly": true,
     "secure": false,
     "sameSite": "Lax"
   },
@@ -650,16 +570,6 @@
     "sameSite": "None"
   },
   {
-    "name": "matchfreewheel",
-    "value": "5",
-    "domain": ".w55c.net",
-    "path": "/",
-    "expires": 1702309635,
-    "httpOnly": false,
-    "secure": true,
-    "sameSite": "None"
-  },
-  {
     "name": "uid",
     "value": "2965993536260296622",
     "domain": ".turn.com",
@@ -910,16 +820,6 @@
     "sameSite": "None"
   },
   {
-    "name": "session%5Fsrc",
-    "value": "src=",
-    "domain": ".www.sevenstore.com",
-    "path": "/",
-    "expires": 1702252800,
-    "httpOnly": false,
-    "secure": false,
-    "sameSite": "None"
-  },
-  {
     "name": "countrypref",
     "value": "KR",
     "domain": ".www.sevenstore.com",
@@ -990,26 +890,6 @@
     "sameSite": "None"
   },
   {
-    "name": "AKA_A2",
-    "value": "A",
-    "domain": ".sevenstore.com",
-    "path": "/",
-    "expires": 1700409433,
-    "httpOnly": true,
-    "secure": true,
-    "sameSite": "None"
-  },
-  {
-    "name": "mt.sc",
-    "value": "%7B%22i%22%3A1700405834141%2C%22d%22%3A%5B%5D%7D",
-    "domain": ".sevenstore.com",
-    "path": "/",
-    "expires": 1700407634,
-    "httpOnly": false,
-    "secure": false,
-    "sameSite": "None"
-  },
-  {
     "name": "ometria",
     "value": "2_cid%3DhnkkmSRIN1x9nqG1%26nses%3D2%26osts%3D1699717167%26sid%3D840e831203kpMipTCZ4Sr%26npv%3D1%26tids%3D%26slt%3D1700405834",
     "domain": ".sevenstore.com",
@@ -1050,26 +930,6 @@
     "sameSite": "None"
   },
   {
-    "name": "ak_bmsc",
-    "value": "65C9ACDB241BB5791E8156D8B7549D48~000000000000000000000000000000~YAAQR3XTFz5sPN6LAQAATPcV6BX15As/hCcDq9M0ZD5BV9qBr/dcjOK5YsuaMfZHJkhBlU7K5Wh43xRSN+YIZv7PWwMpSCkjfHycn0U43Yi/K2+hucUy37YsxYYqnmHVJ6lNvf9CfSOD/nB0vAl9K/tP62/bn9TKCl59kUhSIHzi3x/d4qtduPJgKbtGWz4RTX4Wkb+278FretF1Cy9M8UHXe6BMz3aKVkRQirLl727VUDrdV693B1OG89Gy4V8T9kB5fZ6wYKpvLVfG/0uRKQpTDojSjNFx5XaZNoxsI0n6tQ4rc1d2pnTDxkJRcMFsN/YVf2S+o1b5kemSgmHTH7xYpO/RzaXv4Ikch+dp2Dhy7Mej2Om/H0tyXXooAQVsm7bt3HP89WAsnZFJzH9jNfrVp+jw1DCg3vMcqGue0QgGQ7JG6wj9TEvVAf09/h/BBNmGAOYYLMgRedEvHcIePuOctplYpNihZUWISusfUDdtZvESgPIwGAixYGIpcUNpDo+RJ9mc",
-    "domain": ".sevenstore.com",
-    "path": "/",
-    "expires": 1700413032,
-    "httpOnly": true,
-    "secure": false,
-    "sameSite": "None"
-  },
-  {
-    "name": "_uetsid",
-    "value": "ed9c640086eb11ee97849f475d4cde0f",
-    "domain": ".sevenstore.com",
-    "path": "/",
-    "expires": 1700492235,
-    "httpOnly": false,
-    "secure": false,
-    "sameSite": "None"
-  },
-  {
     "name": "_uetvid",
     "value": "7fe37ad080a811ee8f9fd1915e59ef16",
     "domain": ".sevenstore.com",
@@ -1097,26 +957,6 @@
     "expires": 1703084235,
     "httpOnly": false,
     "secure": true,
-    "sameSite": "None"
-  },
-  {
-    "name": "_gat_UA-83699526-1",
-    "value": "1",
-    "domain": ".sevenstore.com",
-    "path": "/",
-    "expires": 1700405895,
-    "httpOnly": false,
-    "secure": false,
-    "sameSite": "None"
-  },
-  {
-    "name": "_gat_UA-83699526-3",
-    "value": "1",
-    "domain": ".sevenstore.com",
-    "path": "/",
-    "expires": 1700405895,
-    "httpOnly": false,
-    "secure": false,
     "sameSite": "None"
   },
   {
@@ -1150,46 +990,6 @@
     "sameSite": "None"
   },
   {
-    "name": "__attentive_pv",
-    "value": "1",
-    "domain": "www.sevenstore.com",
-    "path": "/",
-    "expires": 1700407636,
-    "httpOnly": false,
-    "secure": true,
-    "sameSite": "None"
-  },
-  {
-    "name": "__attentive_ss_referrer",
-    "value": "ORGANIC",
-    "domain": "www.sevenstore.com",
-    "path": "/",
-    "expires": 1700407636,
-    "httpOnly": false,
-    "secure": true,
-    "sameSite": "None"
-  },
-  {
-    "name": "_cs_s",
-    "value": "1.5.0.1700407636636",
-    "domain": ".sevenstore.com",
-    "path": "/",
-    "expires": 1700407636,
-    "httpOnly": false,
-    "secure": false,
-    "sameSite": "Lax"
-  },
-  {
-    "name": "__attentive_dv",
-    "value": "1",
-    "domain": "www.sevenstore.com",
-    "path": "/",
-    "expires": 1700492236,
-    "httpOnly": false,
-    "secure": true,
-    "sameSite": "None"
-  },
-  {
     "name": "mt.v",
     "value": "2.488570009.1699717166459",
     "domain": ".sevenstore.com",
@@ -1210,26 +1010,6 @@
     "sameSite": "None"
   },
   {
-    "name": "_gid",
-    "value": "GA1.2.1425849267.1700405836",
-    "domain": ".sevenstore.com",
-    "path": "/",
-    "expires": 1700492237,
-    "httpOnly": false,
-    "secure": false,
-    "sameSite": "None"
-  },
-  {
-    "name": "RT",
-    "value": "\"z=1&dm=www.sevenstore.com&si=838659c1-9c7a-4fb8-9020-f6ce17802b7e&ss=lp5lq974&sl=1&tt=4a4&bcn=%2F%2F684d0d41.akstat.io%2F&ld=4a6\"",
-    "domain": ".www.sevenstore.com",
-    "path": "/",
-    "expires": 1701010637,
-    "httpOnly": false,
-    "secure": false,
-    "sameSite": "Lax"
-  },
-  {
     "name": "cto_bundle",
     "value": "q9j22F9BNDg0UFpnc205JTJGNE4wMWhLamxQMGJhbFRzMyUyQnB6WWY0TEt0ZmhyaTdOQzgxN01lYzkzVDNQSXhTaDNTTUppc3lteW8zTXFVTG4zUUFibVlSc1JNYVk3SHlTcEpZWnFkJTJCeSUyQkJYNVBYWmlkbXlvS09odkRSNmxPNlY3akV3alBMU2VBbWROdkk3ZDZQQ2JPZmVsUUFsWENNa2plJTJCUkVNcUtCd2ZFaTBDbk5WVk1Xa0ZPdmc1UEk1cHkwdzhjaUFKNWc2eFpiRGx4YkxiUkZUJTJCWSUyRldwdXdHN2FnVnVhQTRWaEFJQWh5eEQwaTQlM0Q",
     "domain": ".sevenstore.com",
@@ -1237,16 +1017,6 @@
     "expires": 1734569838,
     "httpOnly": false,
     "secure": false,
-    "sameSite": "None"
-  },
-  {
-    "name": "QuantumMetricSessionID",
-    "value": "02594399354c9cee54a674fb46720d81",
-    "domain": ".sevenstore.com",
-    "path": "/",
-    "expires": 1700407640,
-    "httpOnly": false,
-    "secure": true,
     "sameSite": "None"
   },
   {
@@ -1440,41 +1210,11 @@
     "sameSite": "None"
   },
   {
-    "name": "criteo",
-    "value": "k-MAiX56DkKgBDozxjEw81sPWMjEABPpSREw1wyUh8Fn5jg40T",
-    "domain": ".tpmn.co.kr",
-    "path": "/",
-    "expires": 1702309965,
-    "httpOnly": false,
-    "secure": true,
-    "sameSite": "None"
-  },
-  {
-    "name": "MR",
-    "value": "0",
-    "domain": ".bat.bing.com",
-    "path": "/",
-    "expires": 1701010635,
-    "httpOnly": false,
-    "secure": true,
-    "sameSite": "None"
-  },
-  {
     "name": "MUID",
     "value": "3D11E685EC2369CE0E54F543ED0B68B4",
     "domain": ".bing.com",
     "path": "/",
     "expires": 1734101839,
-    "httpOnly": false,
-    "secure": true,
-    "sameSite": "None"
-  },
-  {
-    "name": "MR",
-    "value": "0",
-    "domain": ".c.bing.com",
-    "path": "/",
-    "expires": 1701010639,
     "httpOnly": false,
     "secure": true,
     "sameSite": "None"
@@ -1770,16 +1510,6 @@
     "sameSite": "None"
   },
   {
-    "name": "newsletter_popup_increment",
-    "value": "35",
-    "domain": "www.consortium.co.uk",
-    "path": "/",
-    "expires": 1731484910,
-    "httpOnly": false,
-    "secure": false,
-    "sameSite": "None"
-  },
-  {
     "name": "_fbp",
     "value": "fb.2.1699712892999.2057200643",
     "domain": ".consortium.co.uk",
@@ -1818,6 +1548,46 @@
     "httpOnly": false,
     "secure": false,
     "sameSite": "Lax"
+  },
+  {
+    "name": "segment_checksum",
+    "value": "21e6f548875403ac0d77d33cd3ac1d14",
+    "domain": "www.consortium.co.uk",
+    "path": "/",
+    "expires": -1,
+    "httpOnly": false,
+    "secure": false,
+    "sameSite": "None"
+  },
+  {
+    "name": "store",
+    "value": "default",
+    "domain": "www.consortium.co.uk",
+    "path": "/",
+    "expires": -1,
+    "httpOnly": false,
+    "secure": false,
+    "sameSite": "None"
+  },
+  {
+    "name": "external_no_cache",
+    "value": "1",
+    "domain": ".www.consortium.co.uk",
+    "path": "/",
+    "expires": 1702436046,
+    "httpOnly": false,
+    "secure": false,
+    "sameSite": "None"
+  },
+  {
+    "name": "newsletter_popup_increment",
+    "value": "36",
+    "domain": "www.consortium.co.uk",
+    "path": "/",
+    "expires": 1733968446,
+    "httpOnly": false,
+    "secure": false,
+    "sameSite": "None"
   },
   {
     "name": "rlas3",

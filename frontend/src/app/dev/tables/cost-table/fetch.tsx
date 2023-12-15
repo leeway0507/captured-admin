@@ -40,8 +40,8 @@ export const getKreamColor = async (productId: string) => {
     const res = await fetch(url + "?" + queryParams);
     return { status: res.status, data: await res.json() };
 };
-export const getSizeTableData = async (productId: string) => {
-    const url = `${process.env.NEXT_PUBLIC_API_URL}/api/dev/shop/db/get_size_table_data`;
+export const getShopProductSizeTableData = async (productId: string) => {
+    const url = `${process.env.NEXT_PUBLIC_API_URL}/api/dev/shop/db/get-shop-product-size-table-data`;
     const queryParams = new URLSearchParams({
         productId,
     });

@@ -27,9 +27,7 @@ def upload_product_image(sku: int):
     if req["status"] == "file_not_found":
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail=req)
     if req["status"] == "error":
-        raise HTTPException(
-            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR, detail=req
-        )
+        raise HTTPException(status_code=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
 
 @s3_router.get("/load-objects-from-s3")
@@ -40,3 +38,15 @@ def load_objects_from_s3(folder_name: str):
 @s3_router.get("/create-thumbnail")
 def crop_white_bg(root_dir: str, file_name: str):
     return create_thumbnail(root_dir, file_name)
+
+
+# @s3_router.put("/update-file-to-s3")
+# def update_file_to_s3(s3_path: str, local_path: str):
+#     "update s3 file with local file"
+#     return update_file(s3_path, local_path,)
+
+
+@s3_router.put("/change-image-file")
+def change_image_file_to_s3(sku: int, file_name: str):
+    "change image file with local file"
+    return change_image_file(sku, file_name)

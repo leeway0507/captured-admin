@@ -50,17 +50,23 @@ const createTableData = (
 export default function ScrapResult({ fetchData }: { fetchData: any }) {
     const {
         scrap_name: scrapName,
-        scrap_result: scrapResult,
+        scrap_log: scrapLog,
         brand: brandName,
-        kream_product_card: kreamProductCard,
-        kream_trading_volume: kreamTradingVolume,
-        kream_buy_and_sell: kreamBuyandSell,
-        kream_product_bridge: kreamProductBridge,
+        product_detail: ProductDetail,
+        trading_volume: TradingVolume,
+        buy_and_sell: BuyandSell,
+        product_bridge: ProductBridge,
         db_update: dbUpdate,
         num_process: numProcess,
-        ref_product_card: refProductCard,
         ...res
     } = fetchData;
+
+    const scrapResult = scrapLog.reduce((acc: any, cur: any) => {
+        acc[cur.sku] = cur.status;
+        return acc;
+    }, {});
+
+    console.log(scrapResult);
 
     const scrapPlan: [string, string][] = Object.entries(scrapResult);
     const scrapSuccess = scrapPlan.filter(([key, value]) => value.includes("success"));
@@ -68,10 +74,10 @@ export default function ScrapResult({ fetchData }: { fetchData: any }) {
 
     const tableData = createTableData(
         scrapPlan,
-        kreamProductCard.kream_id_list,
-        kreamTradingVolume.kream_id_list,
-        kreamBuyandSell.kream_id_list,
-        kreamProductBridge.kream_id_list
+        ProductDetail.kream_id_list,
+        TradingVolume.kream_id_list,
+        BuyandSell.kream_id_list,
+        ProductBridge.kream_id_list
     );
 
     const submitRef = useRef<HTMLButtonElement>(null);
@@ -107,7 +113,6 @@ export default function ScrapResult({ fetchData }: { fetchData: any }) {
 
     const handleDB = async (scrapName: string) => {
         await insertScarpToDB(scrapName).then((res) => {
-            console.log(res);
             if (res.status === 200) {
                 toast.success("DB 넣기 성공!");
             } else {
@@ -128,7 +133,6 @@ export default function ScrapResult({ fetchData }: { fetchData: any }) {
                 <div>실행 프로세스</div>
                 <div>{numProcess} 개</div>
                 <div>참고 제품 정보</div>
-                <div className="text-xl">{refProductCard.slice(0, 10)}...</div>
             </div>
             <div className="border pt-4 px-4 text-xl grid grid-rows-2 bg-slate-50">
                 <div className="grid grid-cols-8 mb-2 border-b pb-2">
@@ -143,13 +147,13 @@ export default function ScrapResult({ fetchData }: { fetchData: any }) {
                 </div>
                 <div className="grid grid-cols-8 text-lg text-sub-black">
                     <div>세부정보</div>
-                    <div>{kreamProductCard.len} 건</div>
+                    <div>{ProductDetail.len} 건</div>
                     <div>거래량</div>
-                    <div>{kreamTradingVolume.len} 건</div>
+                    <div>{TradingVolume.len} 건</div>
                     <div>판매구매</div>
-                    <div>{kreamBuyandSell.len} 건</div>
+                    <div>{BuyandSell.len} 건</div>
                     <div>브릿지</div>
-                    <div>{kreamProductBridge.len} 건</div>
+                    <div>{ProductBridge.len} 건</div>
                 </div>
             </div>
             <div>

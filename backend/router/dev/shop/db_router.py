@@ -1,10 +1,7 @@
 """dev Router"""
 
-from itertools import product
-from typing import List
 from sqlalchemy.ext.asyncio import AsyncSession
 from fastapi import APIRouter, Depends, HTTPException
-from dotenv import dotenv_values
 
 
 from db.dev_db import get_dev_db
@@ -18,16 +15,13 @@ from .components.update_to_db import (
     get_shop_name_from_db,
     update_candidate_to_db,
     update_shop_product_card_list_for_cost_table,
-    upsert_size_table,
-    get_size_table_data,
+    upsert_shop_product_size_table,
+    get_shop_product_size_table_data,
 )
-from .components.shop_product_card_list.create_log import update_scrap_result
-from .components.shop_product_card_page.create_log import update_product_page_result
+from ..utils.scrap_report import ScrapReport
 
 
 shop_db_router = APIRouter()
-
-config = dotenv_values(".env.dev")
 
 
 @shop_db_router.get("/update-last-scrap-shop-product-card-list")
@@ -39,7 +33,7 @@ async def update_shop_product_card_list_to_db(
     detail_scrap_date, shop_name = scrapName.rsplit("-", 1)
     print(detail_scrap_date, shop_name)
     await update_scrap_product_card_list_to_db(db, shop_name, detail_scrap_date)
-    update_scrap_result(scrapName, "db_update", True)
+    ScrapReport("shop_list").update_report(scrapName, "db_update", True)
     return {"message": "success"}
 
 
@@ -100,19 +94,19 @@ async def update_candidate_status_api(
 #     return await get_product_unique_id(db)
 
 
-@shop_db_router.get("/upsert-size-table")
+@shop_db_router.get("/upsert-shop-product-size-table")
 async def upsert_size_table_api(
     scrapDate: str,
     db: AsyncSession = Depends(get_dev_db),
 ):
-    await upsert_size_table(db, scrapDate)
-    update_product_page_result(scrapDate, "db_update", True)
+    await upsert_shop_product_size_table(db, scrapDate)
+    ScrapReport("shop_list").update_report(scrapDate, "db_update", True)
     return {"message": "success"}
 
 
-@shop_db_router.get("/get_size_table_data")
-async def get_size_table_data_api(
+@shop_db_router.get("/get-shop-product-size-table-data")
+async def get_shop_product_size_table_data_api(
     productId: str,
     db: AsyncSession = Depends(get_dev_db),
 ):
-    return await get_size_table_data(db, productId)
+    return await get_shop_product_size_table_data(db, productId)
