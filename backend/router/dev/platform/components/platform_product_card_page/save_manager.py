@@ -98,6 +98,11 @@ class SaveManager:
         self.preprocess_module = preprocess_module
         self.return_data = return_data
         self.tfm = TempFileManager("platform_page")
+        self._make_dir(path)
+
+    def _make_dir(self, path: str):
+        if not os.path.exists(path):
+            os.makedirs(path, exist_ok=True)
 
     async def save(self, type: PreprocessType):
         module = getattr(self.preprocess_module, type.value)

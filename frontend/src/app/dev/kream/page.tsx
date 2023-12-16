@@ -1,8 +1,8 @@
 "use client";
 import Link from "next/link";
 import { CloseKreamBrowser } from "./fetch";
-import PrdoucCardList from "./product-card-list";
-import ProductDetail from "./product-detail";
+import PlatformList from "./platform-list";
+import PlatformPage from "./platform-page";
 import ReproduceReport from "./reproduce-report";
 import { toast } from "react-toastify";
 export default function Main() {
@@ -27,17 +27,17 @@ export default function Main() {
                 </button>
             </div>
             <div className="bg-slate-50 py-16 px-8 ">
-                <div className="text-3xl ">크림 브랜드 수집</div>
-                <PrdoucCardList />
+                <div className="text-3xl pb-4 ">크림 브랜드 수집</div>
+                <PlatformList />
             </div>
             <div className="bg-slate-100 py-16 px-8">
-                <div className="text-3xl ">크림 상세 제품 수집</div>
-                <ProductDetail />
+                <div className="text-3xl pb-4 ">크림 상세 제품 수집</div>
+                <PlatformPage />
             </div>
-            <div className="bg-slate-50 py-16 px-8">
+            {/* <div className="bg-slate-50 py-16 px-8">
                 <div className="text-3xl ">수집 결과 재생산</div>
                 <ReproduceReport />
-            </div>
+            </div> */}
         </div>
     );
 }

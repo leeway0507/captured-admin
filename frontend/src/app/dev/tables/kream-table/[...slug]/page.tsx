@@ -13,7 +13,6 @@ export default async function Page({
     const searchTypeDecoded = decodeURIComponent(searchType);
     const contentDecoded = decodeURIComponent(content);
     const kreamProductCardList = await getKreamProductCardList(searchTypeDecoded, contentDecoded);
-
     return (
         <>
             <Main kreamProductCardList={kreamProductCardList.data} />

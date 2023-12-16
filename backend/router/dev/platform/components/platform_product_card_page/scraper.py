@@ -5,7 +5,6 @@ from ....utils.browser_controller import PageController as P
 from ....utils.temp_file_manager import TempFileManager
 from .module_factory import PlatformPageModule as M
 from env import dev_env
-from playwright.async_api import Page
 
 
 class PlatformPageScrapMachine:

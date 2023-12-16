@@ -55,7 +55,9 @@ class PwKreamBrowserController(PwBrowserController):
 
         if not await self.is_login(page):
             await self._login(page, **self._get_secret())
-            await page.wait_for_timeout(1000)
+
+        await page.wait_for_timeout(3000)
+        await page.close()
 
     async def is_login(self, page):
         """로그인 상태를 확인하는 메서드"""

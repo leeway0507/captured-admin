@@ -50,7 +50,7 @@ class RDBExtractor:
 class LocalExtractor:
     def __init__(self, platform_type: str, file_name: Optional[str] = None):
         self.path = dev_env.PLATFORM_PRODUCT_LIST_DIR
-        self.platform_path = os.path.join(self.path, platform_type)
+        self.file_path = os.path.join(self.path, platform_type)
 
         if file_name:
             self.file_name = file_name
@@ -58,25 +58,26 @@ class LocalExtractor:
             self.file_name = self._get_last_file_name()
 
     def extract_data(self) -> List[int]:
-        file_path = os.path.join(self.platform_path, self.file_name)
+        file_path = os.path.join(self.file_path, self.file_name)
         df = pd.read_parquet(file_path)
         return df["kream_id"].tolist()
 
     def _get_last_file_name(self) -> str:
-        file_list = os.listdir(self.platform_path)
+        file_list = os.listdir(self.file_path)
         file_list.sort()
         return file_list[-1]
 
 
 class CandidateExtractor:
-    def __init__(self, search_type: PageSearchType, value: str):
+    def __init__(self, platform_type: str, search_type: PageSearchType, value: str):
+        self.platform_type = platform_type
         self.search_type = search_type
         self.value = value
 
     async def extract_candidate(self):
         match self.search_type:
             case PageSearchType.LAST_SCRAP:
-                return LocalExtractor(self.value).extract_data()
+                return LocalExtractor(self.platform_type).extract_data()
 
             case PageSearchType.SKU:
                 return self.str_to_int_list(self.value)

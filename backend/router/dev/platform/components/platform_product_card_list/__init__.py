@@ -46,16 +46,17 @@ class PlatformListMain:
         self.reporter = ScrapReport("platform_list")
         self.tfm = TempFileManager("platform_list")
         self.browser_controller = browser_controller
-        self.path = dev_env.SHOP_PRODUCT_LIST_DIR
+        self.path = dev_env.PLATFORM_PRODUCT_LIST_DIR
         self.min_volume = min_volume
         self.min_wish = min_wish
         self.platform_type = platform_type
 
-    async def main(self, brand_name_list: str):
+    async def main(self, brand_name: str):
+        self.brand_name = brand_name
         self.tfm.init_temp_file()
-        await self.browser_controller.login()
+        scrap_list = await self.extract_scrap_list(brand_name)
 
-        scrap_list = await self.extract_scrap_list(brand_name_list)
+        await self.browser_controller.login()
         scrap_log = await self.execute_sub_scraper(scrap_list)
 
         # parquet로 저장 전 수집 상태 json 형태로 저장(파일 저장 에러 시 복구 목적)
@@ -94,8 +95,6 @@ class PlatformListMain:
         job = split_size(scrap_brand_list, self.num_process)
         co_list = [self.sub_process(P_list[i], job[i]) for i in range(self.num_process)]
         result = await asyncio.gather(*co_list)
-        await self.browser_controller.close_browser()
-
         return list(chain(*result))
 
     async def sub_process(
@@ -128,13 +127,13 @@ class PlatformListMain:
                         status=str(e),
                     )
                 )
-
+        await page_controller.close_page()
         return log
 
     async def save_scrap_result_to_parquet(self):
         time_now = datetime.now().strftime("%y%m%d-%H%M%S")
         save_path = os.path.join(self.path, self.platform_type)
-        file_name = time_now + "-" + self.platform_type
+        file_name = time_now + "-" + self.brand_name + "-product_card_list"
         list_data = await self.tfm.load_temp_file("product_card_list")
         save_to_parquet(save_path, file_name, list_data)
 

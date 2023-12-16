@@ -41,7 +41,7 @@ platformList = ScrapReport("platform_list")
 
 @platform_router.get("/init-product-page")
 async def scrap_product_page(
-    search_type: str,
+    searchType: str,
     value: str,
     numProcess: int,
     platformType: str = "kream",
@@ -59,7 +59,7 @@ async def scrap_product_page(
         min_wish=50,
         platform_type=platformType,
     )
-    return await Scraper.main(PageSearchType(search_type), value)
+    return await Scraper.main(PageSearchType(searchType), value)
 
 
 @platform_router.get("/save-last-product-page")
@@ -111,6 +111,7 @@ async def scrap_product_list(
 ):
     browser_controller = getattr(PwPlatformBrowserControllerFactory(), platformType)()
     browser_controller = await browser_controller.create()
+    print(browser_controller)
 
     module = getattr(PwPlatformListModuleFactory(), platformType)()
     Scraper = PlatformListMain(

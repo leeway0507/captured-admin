@@ -11,8 +11,10 @@ from db.tables_kream import (
     KreamProductIdBridgeTable,
 )
 from .data_loader import *
-from model.kream_scraping import KreamProductDetailSchema
-from model.kream_scraping import KreamProductSizeInfo
+from model.kream_scraping import (
+    KreamProductDetailWithProductIdSchema,
+    KreamProductSizeInfo,
+)
 from .data_loader import loader, LoadType
 
 
@@ -41,7 +43,6 @@ async def update_scrap_product_card_detail_to_db(
     scrap_at: Optional[str] = None,
 ):
     data = loader(LoadType.PRODUCT_DETAIL, brand_name, scrap_at, 100000)["data"]
-
     stmt = insert(KreamProductCardTable).values(data)
     stmt = stmt.on_duplicate_key_update(
         retail_price=stmt.inserted.retail_price,
@@ -114,9 +115,9 @@ async def get_kream_product_detail_list_from_db(
     result = await db.execute(stmt)
     result = result.fetchall()
     return [
-        KreamProductDetailSchema(**row[0].to_dict(), product_id=row[1]).model_dump(
-            by_alias=True
-        )
+        KreamProductDetailWithProductIdSchema(
+            **row[0].to_dict(), product_id=row[1]
+        ).model_dump(by_alias=True)
         for row in result
     ]
 
@@ -166,8 +167,12 @@ async def get_kream_product_size_info(db: AsyncSession, searchType: str, content
     if not data["KreamTradingVolume"]:
         return {"date": [], "data": []}
 
+    # TODO: buy_and_sell 수집 시 공백이 제거되는 문제 발생, 임의로 kream_product_size의 공백 제거
     buy_and_sell_df = pd.DataFrame(data["KreamBuyAndSell"])
     trading_volume_df = pd.DataFrame(data["KreamTradingVolume"])
+    trading_volume_df["kream_product_size"] = trading_volume_df[
+        "kream_product_size"
+    ].str.replace(" ", "")
 
     # get least and last date
     date = sorted(trading_volume_df["trading_at"].unique())

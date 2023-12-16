@@ -1,0 +1,13 @@
+{
+    "scrap_time": "231216-152031",
+    "num_of_plan": 1,
+    "num_process": 1,
+    "scrap_log": [
+        {
+            "platform_type": "kream",
+            "brand_name": "nike acg",
+            "status": "success : 100 개"
+        }
+    ],
+    "db_update": false
+}

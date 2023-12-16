@@ -1,60 +1,45 @@
 "use client";
-import { useRouter } from "next/navigation";
-import { useEffect, useState } from "react";
-import { getScraptList } from "../../fetch";
+import KreamList from "./kream-list";
+import KreamPage from "./kream-page";
 
-interface ScrapResultProps {
-    brandName: string;
-    scrapType: string;
-    scrapAt: string;
+import { Tab } from "@headlessui/react";
+
+function classNames(...classes: string[]) {
+    return classes.filter(Boolean).join(" ");
 }
 
-//css
-const header = "border-main-black text-center";
-const item = "grid grid-cols-2 text-center py-3 link-animation text-sm";
+const tablClass = ({ selected }: { selected: boolean }) =>
+    classNames(
+        "w-full rounded-lg py-2.5 font-medium leading-5 text-main-black",
+        "ring-white/60 ring-offset-2 ring-offset-purple-400 focus:outline-none focus:ring-2",
+        selected ? "bg-white text-purple-700 shadow" : "text-white hover:bg-white/[0.12]"
+    );
 
-const isOdd = (num: number) => {
-    return num % 2 != 0;
-};
-
-export default function Main({ params }: { params: { slug: string } }) {
-    const router = useRouter();
-    const [data, setData] = useState([]);
-
-    useEffect(() => {
-        const fetchData = async () => {
-            const { status, data } = await getScraptList();
-            if (status === 200) {
-                setData(data);
-            }
-        };
-        fetchData();
-    }, []);
-
-    if (data.length === 0) return <div>로딩중</div>;
-
-    const openDetailOrderToggle = (e: any) => {
-        const fileName = e.currentTarget.getAttribute("scrap-name");
-        router.push(`/dev/kream/scrap-result/${fileName}`);
-    };
+function MyTabs() {
     return (
-        <div className="flex flex-col w-full">
-            <div className="grid">
-                <div className="grid grid-cols-2 pt-8 pb-4 border-b">
-                    <div className={`${header}`}>순번</div>
-                    <div className={`${header}`}>파일명</div>
-                </div>
-                {data.map((d, idx) => (
-                    <div
-                        className={`${item} ${isOdd(idx) && "bg-light-gray"}`}
-                        key={idx}
-                        scrap-name={d}
-                        onClick={openDetailOrderToggle}>
-                        <div>{idx + 1}</div>
-                        <div>{d}</div>
-                    </div>
-                ))}
-            </div>
-        </div>
+        <Tab.Group>
+            <Tab.List className="absolute top-4 flex space-x-1 rounded-xl bg-purple-500 p-1 min-w-[800px] max-w-[1080px]">
+                <Tab className={tablClass}>리스트 수집</Tab>
+                <Tab className={tablClass}>페이지 수집</Tab>
+            </Tab.List>
+            <Tab.Panels className="pt-16 w-full">
+                <Tab.Panel>
+                    <KreamList />
+                </Tab.Panel>
+                <Tab.Panel>
+                    <KreamPage />
+                </Tab.Panel>
+            </Tab.Panels>
+        </Tab.Group>
     );
 }
+
+const Page = () => {
+    return (
+        <div className="relative flex align-center justify-center w-full">
+            <MyTabs />
+        </div>
+    );
+};
+
+export default Page;

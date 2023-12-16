@@ -24,7 +24,6 @@ class KreamProductDetailSchema(BaseModel):
     kream_product_img_url: str
     kream_product_name: str
     brand_name: str
-    product_id: str
     retail_price: int
     product_release_date: datetime
     color: str
@@ -78,3 +77,8 @@ class KreamProductSizeInfo(BaseModel):
     median: int
     max: int
     lightening: int
+
+
+class KreamProductDetailWithProductIdSchema(KreamProductDetailSchema):
+    product_id: str
+    trading_volume: int

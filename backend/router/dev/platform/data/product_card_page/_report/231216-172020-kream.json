@@ -1,0 +1,1300 @@
+{
+    "scrap_time": "231216-172020",
+    "num_of_plan": 99,
+    "num_process": 4,
+    "scrap_log": [
+        {
+            "platform_type": "kream",
+            "sku": "33186",
+            "status": "success"
+        },
+        {
+            "platform_type": "kream",
+            "sku": "32323",
+            "status": "success"
+        },
+        {
+            "platform_type": "kream",
+            "sku": "30959",
+            "status": "success"
+        },
+        {
+            "platform_type": "kream",
+            "sku": "32212",
+            "status": "success"
+        },
+        {
+            "platform_type": "kream",
+            "sku": "30955",
+            "status": "success"
+        },
+        {
+            "platform_type": "kream",
+            "sku": "30968",
+            "status": "success"
+        },
+        {
+            "platform_type": "kream",
+            "sku": "47923",
+            "status": "success"
+        },
+        {
+            "platform_type": "kream",
+            "sku": "30958",
+            "status": "success"
+        },
+        {
+            "platform_type": "kream",
+            "sku": "79228",
+            "status": "success"
+        },
+        {
+            "platform_type": "kream",
+            "sku": "30963",
+            "status": "Timeout 30000ms exceeded.\n=========================== logs ===========================\nwaiting for locator(\"xpath=//div[contains(@class, 'btn_wrap')]/div/button[2]\") to be visible\n============================================================"
+        },
+        {
+            "platform_type": "kream",
+            "sku": "30967",
+            "status": "success"
+        },
+        {
+            "platform_type": "kream",
+            "sku": "40801",
+            "status": "success"
+        },
+        {
+            "platform_type": "kream",
+            "sku": "45787",
+            "status": "success"
+        },
+        {
+            "platform_type": "kream",
+            "sku": "79229",
+            "status": "success"
+        },
+        {
+            "platform_type": "kream",
+            "sku": "42307",
+            "status": "success"
+        },
+        {
+            "platform_type": "kream",
+            "sku": "33306",
+            "status": "success"
+        },
+        {
+            "platform_type": "kream",
+            "sku": "81905",
+            "status": "success"
+        },
+        {
+            "platform_type": "kream",
+            "sku": "35417",
+            "status": "success"
+        },
+        {
+            "platform_type": "kream",
+            "sku": "47064",
+            "status": "Timeout 30000ms exceeded.\n=========================== logs ===========================\nattempting click action\n  waiting for element to be visible, enabled and stable\n  element is visible, enabled and stable\n  scrolling into view if needed\n  done scrolling\n  performing click action\n============================================================"
+        },
+        {
+            "platform_type": "kream",
+            "sku": "68268",
+            "status": "success"
+        },
+        {
+            "platform_type": "kream",
+            "sku": "30957",
+            "status": "success"
+        },
+        {
+            "platform_type": "kream",
+            "sku": "32143",
+            "status": "success"
+        },
+        {
+            "platform_type": "kream",
+            "sku": "33607",
+            "status": "success:no_trading_volume"
+        },
+        {
+            "platform_type": "kream",
+            "sku": "39691",
+            "status": "success"
+        },
+        {
+            "platform_type": "kream",
+            "sku": "30966",
+            "status": "success"
+        },
+        {
+            "platform_type": "kream",
+            "sku": "91497",
+            "status": "success"
+        },
+        {
+            "platform_type": "kream",
+            "sku": "53857",
+            "status": "success"
+        },
+        {
+            "platform_type": "kream",
+            "sku": "44794",
+            "status": "success"
+        },
+        {
+            "platform_type": "kream",
+            "sku": "163540",
+            "status": "success"
+        },
+        {
+            "platform_type": "kream",
+            "sku": "36030",
+            "status": "success"
+        },
+        {
+            "platform_type": "kream",
+            "sku": "41207",
+            "status": "success:no_trading_volume"
+        },
+        {
+            "platform_type": "kream",
+            "sku": "56948",
+            "status": "success"
+        },
+        {
+            "platform_type": "kream",
+            "sku": "35416",
+            "status": "success"
+        },
+        {
+            "platform_type": "kream",
+            "sku": "32106",
+            "status": "success:no_trading_volume"
+        },
+        {
+            "platform_type": "kream",
+            "sku": "30969",
+            "status": "success"
+        },
+        {
+            "platform_type": "kream",
+            "sku": "58796",
+            "status": "success:no_trading_volume"
+        },
+        {
+            "platform_type": "kream",
+            "sku": "68976",
+            "status": "success"
+        },
+        {
+            "platform_type": "kream",
+            "sku": "33311",
+            "status": "success:no_trading_volume"
+        },
+        {
+            "platform_type": "kream",
+            "sku": "67305",
+            "status": "success"
+        },
+        {
+            "platform_type": "kream",
+            "sku": "30976",
+            "status": "success"
+        },
+        {
+            "platform_type": "kream",
+            "sku": "30980",
+            "status": "success"
+        },
+        {
+            "platform_type": "kream",
+            "sku": "32096",
+            "status": "success"
+        },
+        {
+            "platform_type": "kream",
+            "sku": "45788",
+            "status": "success"
+        },
+        {
+            "platform_type": "kream",
+            "sku": "123986",
+            "status": "success"
+        },
+        {
+            "platform_type": "kream",
+            "sku": "100165",
+            "status": "success:no_trading_volume"
+        },
+        {
+            "platform_type": "kream",
+            "sku": "39770",
+            "status": "Timeout 30000ms exceeded.\n=========================== logs ===========================\nattempting click action\n  waiting for element to be visible, enabled and stable\n  element is visible, enabled and stable\n  scrolling into view if needed\n  done scrolling\n  performing click action\n============================================================"
+        },
+        {
+            "platform_type": "kream",
+            "sku": "32098",
+            "status": "success"
+        },
+        {
+            "platform_type": "kream",
+            "sku": "59435",
+            "status": "success"
+        },
+        {
+            "platform_type": "kream",
+            "sku": "84657",
+            "status": "success"
+        },
+        {
+            "platform_type": "kream",
+            "sku": "40249",
+            "status": "success"
+        },
+        {
+            "platform_type": "kream",
+            "sku": "30962",
+            "status": "success"
+        },
+        {
+            "platform_type": "kream",
+            "sku": "30971",
+            "status": "success"
+        },
+        {
+            "platform_type": "kream",
+            "sku": "30982",
+            "status": "success"
+        },
+        {
+            "platform_type": "kream",
+            "sku": "50827",
+            "status": "success"
+        },
+        {
+            "platform_type": "kream",
+            "sku": "82911",
+            "status": "success"
+        },
+        {
+            "platform_type": "kream",
+            "sku": "45786",
+            "status": "success"
+        },
+        {
+            "platform_type": "kream",
+            "sku": "33312",
+            "status": "success:no_trading_volume"
+        },
+        {
+            "platform_type": "kream",
+            "sku": "48780",
+            "status": "success"
+        },
+        {
+            "platform_type": "kream",
+            "sku": "53068",
+            "status": "success"
+        },
+        {
+            "platform_type": "kream",
+            "sku": "30979",
+            "status": "success"
+        },
+        {
+            "platform_type": "kream",
+            "sku": "42551",
+            "status": "success:no_trading_volume"
+        },
+        {
+            "platform_type": "kream",
+            "sku": "33315",
+            "status": "Timeout 5000ms exceeded.\n=========================== logs ===========================\nwaiting for locator(\"xpath=//li[contains(@class, \\\"select_item\\\")]\") to be visible\n============================================================"
+        },
+        {
+            "platform_type": "kream",
+            "sku": "44834",
+            "status": "success:no_trading_volume"
+        },
+        {
+            "platform_type": "kream",
+            "sku": "125250",
+            "status": "success"
+        },
+        {
+            "platform_type": "kream",
+            "sku": "57692",
+            "status": "success"
+        },
+        {
+            "platform_type": "kream",
+            "sku": "130369",
+            "status": "success"
+        },
+        {
+            "platform_type": "kream",
+            "sku": "68977",
+            "status": "success"
+        },
+        {
+            "platform_type": "kream",
+            "sku": "43931",
+            "status": "success:no_trading_volume"
+        },
+        {
+            "platform_type": "kream",
+            "sku": "33307",
+            "status": "success:no_trading_volume"
+        },
+        {
+            "platform_type": "kream",
+            "sku": "115935",
+            "status": "success"
+        },
+        {
+            "platform_type": "kream",
+            "sku": "45785",
+            "status": "success"
+        },
+        {
+            "platform_type": "kream",
+            "sku": "84578",
+            "status": "success:no_trading_volume"
+        },
+        {
+            "platform_type": "kream",
+            "sku": "62981",
+            "status": "failed:can't scrap trading_volume"
+        },
+        {
+            "platform_type": "kream",
+            "sku": "38929",
+            "status": "success"
+        },
+        {
+            "platform_type": "kream",
+            "sku": "33310",
+            "status": "success"
+        },
+        {
+            "platform_type": "kream",
+            "sku": "47523",
+            "status": "success:no_trading_volume"
+        },
+        {
+            "platform_type": "kream",
+            "sku": "61645",
+            "status": "success"
+        },
+        {
+            "platform_type": "kream",
+            "sku": "30960",
+            "status": "success"
+        },
+        {
+            "platform_type": "kream",
+            "sku": "30981",
+            "status": "success"
+        },
+        {
+            "platform_type": "kream",
+            "sku": "30965",
+            "status": "success:no_trading_volume"
+        },
+        {
+            "platform_type": "kream",
+            "sku": "70906",
+            "status": "success:no_trading_volume"
+        },
+        {
+            "platform_type": "kream",
+            "sku": "43932",
+            "status": "success"
+        },
+        {
+            "platform_type": "kream",
+            "sku": "84823",
+            "status": "success:no_trading_volume"
+        },
+        {
+            "platform_type": "kream",
+            "sku": "55559",
+            "status": "success:no_trading_volume"
+        },
+        {
+            "platform_type": "kream",
+            "sku": "83214",
+            "status": "success"
+        },
+        {
+            "platform_type": "kream",
+            "sku": "110636",
+            "status": "success"
+        },
+        {
+            "platform_type": "kream",
+            "sku": "44009",
+            "status": "success:no_trading_volume"
+        },
+        {
+            "platform_type": "kream",
+            "sku": "93255",
+            "status": "success"
+        },
+        {
+            "platform_type": "kream",
+            "sku": "53382",
+            "status": "success:no_trading_volume"
+        },
+        {
+            "platform_type": "kream",
+            "sku": "115270",
+            "status": "success"
+        },
+        {
+            "platform_type": "kream",
+            "sku": "129559",
+            "status": "success"
+        },
+        {
+            "platform_type": "kream",
+            "sku": "113286",
+            "status": "success"
+        },
+        {
+            "platform_type": "kream",
+            "sku": "72286",
+            "status": "success"
+        },
+        {
+            "platform_type": "kream",
+            "sku": "131438",
+            "status": "success"
+        },
+        {
+            "platform_type": "kream",
+            "sku": "104214",
+            "status": "success:no_trading_volume"
+        },
+        {
+            "platform_type": "kream",
+            "sku": "100799",
+            "status": "success"
+        },
+        {
+            "platform_type": "kream",
+            "sku": "117854",
+            "status": "success"
+        },
+        {
+            "platform_type": "kream",
+            "sku": "62982",
+            "status": "success:no_trading_volume"
+        },
+        {
+            "platform_type": "kream",
+            "sku": "163521",
+            "status": "success"
+        }
+    ],
+    "db_update": false,
+    "plan_list": [
+        33186,
+        32323,
+        30959,
+        32212,
+        30955,
+        30968,
+        47923,
+        30958,
+        79228,
+        30963,
+        30967,
+        40801,
+        45787,
+        79229,
+        42307,
+        33306,
+        81905,
+        35417,
+        47064,
+        68268,
+        30957,
+        32143,
+        33607,
+        39691,
+        30966,
+        91497,
+        53857,
+        44794,
+        163540,
+        36030,
+        41207,
+        56948,
+        35416,
+        32106,
+        30969,
+        58796,
+        68976,
+        33311,
+        67305,
+        30976,
+        30980,
+        32096,
+        45788,
+        123986,
+        100165,
+        39770,
+        32098,
+        59435,
+        84657,
+        40249,
+        30962,
+        30971,
+        30982,
+        50827,
+        82911,
+        45786,
+        33312,
+        48780,
+        53068,
+        30979,
+        42551,
+        33315,
+        44834,
+        125250,
+        57692,
+        130369,
+        68977,
+        43931,
+        33307,
+        115935,
+        45785,
+        84578,
+        62981,
+        38929,
+        33310,
+        47523,
+        61645,
+        30960,
+        30981,
+        30965,
+        70906,
+        43932,
+        84823,
+        55559,
+        83214,
+        110636,
+        44009,
+        93255,
+        53382,
+        115270,
+        129559,
+        113286,
+        72286,
+        131438,
+        104214,
+        100799,
+        117854,
+        62982,
+        163521
+    ],
+    "search_value": "maison kitsune",
+    "product_detail": {
+        "len": 99,
+        "kream_id_list": [
+            62981,
+            62982,
+            38929,
+            129559,
+            33306,
+            33307,
+            33310,
+            33311,
+            33312,
+            33315,
+            59435,
+            110636,
+            42551,
+            32323,
+            115270,
+            93255,
+            123986,
+            35416,
+            35417,
+            72286,
+            117854,
+            53857,
+            84578,
+            56948,
+            53382,
+            113286,
+            50827,
+            48780,
+            68268,
+            84657,
+            36030,
+            163521,
+            61645,
+            163540,
+            45785,
+            45786,
+            45787,
+            45788,
+            115935,
+            67305,
+            30955,
+            30957,
+            30958,
+            30959,
+            30960,
+            30962,
+            30963,
+            30965,
+            30966,
+            30967,
+            41207,
+            30968,
+            70906,
+            30969,
+            44794,
+            30971,
+            30976,
+            30979,
+            30980,
+            30981,
+            30982,
+            55559,
+            39691,
+            83214,
+            104214,
+            44834,
+            47923,
+            40249,
+            130369,
+            125250,
+            42307,
+            100165,
+            33607,
+            53068,
+            84823,
+            39770,
+            57692,
+            32096,
+            40801,
+            32098,
+            91497,
+            32106,
+            131438,
+            68976,
+            68977,
+            79228,
+            79229,
+            32143,
+            43931,
+            43932,
+            33186,
+            47523,
+            58796,
+            100799,
+            32212,
+            47064,
+            82911,
+            44009,
+            81905
+        ],
+        "data": [
+            {
+                "kream_id": 30962,
+                "kream_product_img_url": "https://kream-phinf.pstatic.net/MjAyMTAzMTFfMTAg/MDAxNjE1NDYwMDA3MTY3.KzFkNbby6BcjpLembLUQY-HCwIunUpZgkQ2qXoBW1fcg.a8Hg5EdOntuUYzuCSQmXEP1un_UyXnDW2MZ9c5wy39Eg.JPEG/p_30c2f282335049cd9631b3e3ec302cfc.jpg?type=l",
+                "kream_product_name": "maison kitsune fox head patch regular long sleeve t-shirt white",
+                "brand_name": "maison kitsune",
+                "retail_price": 181800,
+                "product_release_date": "2001-01-01 00:00:00",
+                "color": "white",
+                "wish": 1304,
+                "review": 5,
+                "updated_at": "2023-12-16 17:04:53"
+            },
+            {
+                "kream_id": 47523,
+                "kream_product_img_url": "https://kream-phinf.pstatic.net/MjAyMTEyMjJfMTQ4/MDAxNjQwMTM2Nzk5Njc3.gK4izZJUcL8gCph93301l07UpB3LfXm47W5skvh2evEg.dcKhiiYgRUw3rjHyLcYQYnns5PY_qkFqGEnPn_ttsfog.PNG/a_12f772fefc004a05ad5e4b2e8352ce40.png?type=l",
+                "kream_product_name": "maison kitsune tricolor fox tote bag navy",
+                "brand_name": "maison kitsune",
+                "retail_price": 70800,
+                "product_release_date": "2001-01-01 00:00:00",
+                "color": "navy",
+                "wish": 839,
+                "review": 8,
+                "updated_at": "2023-12-16 17:04:53"
+            },
+            {
+                "kream_id": 91497,
+                "kream_product_img_url": "https://kream-phinf.pstatic.net/MjAyMjEyMjNfNTUg/MDAxNjcxNzgzMjQwMjQ5._wtSo5DVYOy_nVo1u2NiEyY_3BPc7hoiXSR-Zy1lmksg.QbEvTdBtwtIoe6mZITzuhgjbpjKMB87566Q1zuTxkUwg.JPEG/a_bc7da90528e64311a016c0a2b8747643.jpg?type=l",
+                "kream_product_name": "maison kitsune grey fox head patch relaxed cardigan black",
+                "brand_name": "maison kitsune",
+                "retail_price": 487000,
+                "product_release_date": "2001-01-01 00:00:00",
+                "color": "black",
+                "wish": 2623,
+                "review": 3,
+                "updated_at": "2023-12-16 17:04:53"
+            },
+            {
+                "kream_id": 33186,
+                "kream_product_img_url": "https://kream-phinf.pstatic.net/MjAyMjA5MjBfODIg/MDAxNjYzNjU4ODcwMjQ1.tnW6y7d9uoeaqc2F_wmh3mULnvOAbEOWPZoIgk_Wwwsg.1Nsvul4qlhy7vv5huU2YY0ofRDGD9nRpXXZCBmud3Usg.JPEG/a_18aa7783c3864b28b234557c28958fc0.jpg?type=l",
+                "kream_product_name": "maison kitsune double fox head patch classic sweatshirt anthracite",
+                "brand_name": "maison kitsune",
+                "retail_price": 305100,
+                "product_release_date": "2001-01-01 00:00:00",
+                "color": "anthracite",
+                "wish": 14000,
+                "review": 72,
+                "updated_at": "2023-12-16 17:04:53"
+            },
+            {
+                "kream_id": 61645,
+                "kream_product_img_url": "https://kream-phinf.pstatic.net/MjAyMjA2MzBfODYg/MDAxNjU2NTY2MzkwMzE1.9_uZfqdBHKX3KT_gJs6Ta8UMG8CLk0vuaQS741hupG8g.NlJExUBS1nnxvRXYKPZxjl4guTALTsmFcc8pSnLkYX4g.JPEG/a_2230da959f4f4197bef4855e44eabb9e.jpg?type=l",
+                "kream_product_name": "maison kitsune double monochrome fox head patch classic t-shirt white",
+                "brand_name": "maison kitsune",
+                "retail_price": 149300,
+                "product_release_date": "2001-01-01 00:00:00",
+                "color": "white",
+                "wish": 825,
+                "review": 6,
+                "updated_at": "2023-12-16 17:05:08"
+            },
+            {
+                "kream_id": 53857,
+                "kream_product_img_url": "https://kream-phinf.pstatic.net/MjAyMjAzMTFfMTMz/MDAxNjQ2OTc0MDI0MzUz.b5GqLtYlJNnRDwAHDmzyqrtrAvIE-OktjK5ej_UE654g.rFaHPJ6gQxbWMuVI3VJC33wlDE-Cth80aX0Mz51svmEg.JPEG/a_56f30e0ebf0747979493c76f54b71b73.jpg?type=l",
+                "kream_product_name": "maison kitsune fox head tote bag ecru",
+                "brand_name": "maison kitsune",
+                "retail_price": 90900,
+                "product_release_date": "2001-01-01 00:00:00",
+                "color": "ecru",
+                "wish": 2606,
+                "review": 28,
+                "updated_at": "2023-12-16 17:05:08"
+            },
+            {
+                "kream_id": 30971,
+                "kream_product_img_url": "https://kream-phinf.pstatic.net/MjAyMTAzMTFfMTQ2/MDAxNjE1NDYwMDM4ODc3.URqss0LMZ_mdOQ8WR_Wh3Pxpc_htiwDb9DUowKE74zYg.nCPlAbuthwIktGVZv81J8Fu9XjaG0tLJ8wE0ggVr0cgg.JPEG/p_7da1427f673f4dbe922dbe941c6cf09a.jpg?type=l",
+                "kream_product_name": "maison kitsune tricolor fox patch classic cardigan navy",
+                "brand_name": "maison kitsune",
+                "retail_price": 435000,
+                "product_release_date": "2001-01-01 00:00:00",
+                "color": "navy",
+                "wish": 1295,
+                "review": 13,
+                "updated_at": "2023-12-16 17:05:09"
+            },
+            {
+                "kream_id": 32323,
+                "kream_product_img_url": "https://kream-phinf.pstatic.net/MjAyMTA0MjVfMTkg/MDAxNjE5MjgwOTUwMTI5.WSVFB1BNnxSoxbkxLP5rJO1z__z-yztjAGijOlOtE5Ag.Q1Oyrf_vDRe87yezXvGZHtzN0cOqMXcxNnWgUydhJNQg.JPEG/p_e31777519b50416aae481471d39e6d2b.jpg?type=l",
+                "kream_product_name": "maison kitsune double fox head patch classic t-shirt anthracite",
+                "brand_name": "maison kitsune",
+                "retail_price": 0,
+                "product_release_date": "2001-01-01 00:00:00",
+                "color": "anthracite",
+                "wish": 14000,
+                "review": 93,
+                "updated_at": "2023-12-16 17:05:12"
+            },
+            {
+                "kream_id": 53857,
+                "kream_product_img_url": "https://kream-phinf.pstatic.net/MjAyMjAzMTFfMTMz/MDAxNjQ2OTc0MDI0MzUz.b5GqLtYlJNnRDwAHDmzyqrtrAvIE-OktjK5ej_UE654g.rFaHPJ6gQxbWMuVI3VJC33wlDE-Cth80aX0Mz51svmEg.JPEG/a_56f30e0ebf0747979493c76f54b71b73.jpg?type=l",
+                "kream_product_name": "maison kitsune fox head tote bag ecru",
+                "brand_name": "maison kitsune",
+                "retail_price": 90900,
+                "product_release_date": "2001-01-01 00:00:00",
+                "color": "ecru",
+                "wish": 2606,
+                "review": 28,
+                "updated_at": "2023-12-16 17:05:30"
+            },
+            {
+                "kream_id": 30971,
+                "kream_product_img_url": "https://kream-phinf.pstatic.net/MjAyMTAzMTFfMTQ2/MDAxNjE1NDYwMDM4ODc3.URqss0LMZ_mdOQ8WR_Wh3Pxpc_htiwDb9DUowKE74zYg.nCPlAbuthwIktGVZv81J8Fu9XjaG0tLJ8wE0ggVr0cgg.JPEG/p_7da1427f673f4dbe922dbe941c6cf09a.jpg?type=l",
+                "kream_product_name": "maison kitsune tricolor fox patch classic cardigan navy",
+                "brand_name": "maison kitsune",
+                "retail_price": 435000,
+                "product_release_date": "2001-01-01 00:00:00",
+                "color": "navy",
+                "wish": 1295,
+                "review": 13,
+                "updated_at": "2023-12-16 17:05:34"
+            }
+        ]
+    },
+    "product_bridge": {
+        "len": 99,
+        "kream_id_list": [
+            62981,
+            62982,
+            38929,
+            129559,
+            33306,
+            33307,
+            33310,
+            33311,
+            33312,
+            33315,
+            59435,
+            110636,
+            42551,
+            32323,
+            115270,
+            93255,
+            123986,
+            35416,
+            35417,
+            72286,
+            117854,
+            53857,
+            84578,
+            56948,
+            53382,
+            113286,
+            50827,
+            48780,
+            68268,
+            84657,
+            36030,
+            163521,
+            61645,
+            163540,
+            45785,
+            45786,
+            45787,
+            45788,
+            115935,
+            67305,
+            30955,
+            30957,
+            30958,
+            30959,
+            30960,
+            30962,
+            30963,
+            30965,
+            30966,
+            30967,
+            41207,
+            30968,
+            70906,
+            30969,
+            44794,
+            30971,
+            30976,
+            30979,
+            30980,
+            30981,
+            30982,
+            55559,
+            39691,
+            83214,
+            104214,
+            44834,
+            47923,
+            40249,
+            130369,
+            125250,
+            42307,
+            100165,
+            33607,
+            53068,
+            84823,
+            39770,
+            57692,
+            32096,
+            40801,
+            32098,
+            91497,
+            32106,
+            131438,
+            68976,
+            68977,
+            79228,
+            79229,
+            32143,
+            43931,
+            43932,
+            33186,
+            47523,
+            58796,
+            100799,
+            32212,
+            47064,
+            82911,
+            44009,
+            81905
+        ],
+        "data": [
+            {
+                "product_id": "FU00163KJ0010",
+                "kream_id": 30962
+            },
+            {
+                "product_id": "AU05101WW0007-P480",
+                "kream_id": 47523
+            },
+            {
+                "product_id": "JM00518KT1006-P199",
+                "kream_id": 91497
+            },
+            {
+                "product_id": "FM00358KM0002",
+                "kream_id": 33186
+            },
+            {
+                "product_id": "IU00122KJ0008-P100",
+                "kream_id": 61645
+            },
+            {
+                "product_id": "EU05110WW0008-P700",
+                "kream_id": 53857
+            },
+            {
+                "product_id": "FU00501KT1036",
+                "kream_id": 30971
+            },
+            {
+                "product_id": "BU00103KJ0008",
+                "kream_id": 32323
+            },
+            {
+                "product_id": "EU05110WW0008-P700",
+                "kream_id": 53857
+            },
+            {
+                "product_id": "FU00501KT1036",
+                "kream_id": 30971
+            }
+        ]
+    },
+    "trading_volume": {
+        "len": 73,
+        "kream_id_list": [
+            30976,
+            30979,
+            30980,
+            30981,
+            30982,
+            113286,
+            50827,
+            48780,
+            39691,
+            83214,
+            32143,
+            38929,
+            129559,
+            33306,
+            43932,
+            33310,
+            33186,
+            59435,
+            110636,
+            68268,
+            84657,
+            47923,
+            40249,
+            36030,
+            100799,
+            130369,
+            125250,
+            32323,
+            42307,
+            163521,
+            115270,
+            93255,
+            53068,
+            61645,
+            123986,
+            163540,
+            32212,
+            45785,
+            35416,
+            35417,
+            45786,
+            45787,
+            57692,
+            45788,
+            72286,
+            82911,
+            32096,
+            53857,
+            40801,
+            115935,
+            117854,
+            32098,
+            91497,
+            67305,
+            30955,
+            30957,
+            30958,
+            30959,
+            30960,
+            68976,
+            30962,
+            68977,
+            56948,
+            81905,
+            131438,
+            30967,
+            30968,
+            30969,
+            44794,
+            30971,
+            79228,
+            79229,
+            30966
+        ],
+        "data": [
+            {
+                "kream_id": 91497,
+                "kream_product_size": "XL",
+                "price": 345000,
+                "lightening": false,
+                "trading_at": "2023-12-15 00:00:00"
+            },
+            {
+                "kream_id": 91497,
+                "kream_product_size": "L",
+                "price": 319000,
+                "lightening": false,
+                "trading_at": "2023-12-14 00:00:00"
+            },
+            {
+                "kream_id": 91497,
+                "kream_product_size": "M",
+                "price": 334000,
+                "lightening": false,
+                "trading_at": "2023-12-13 00:00:00"
+            },
+            {
+                "kream_id": 91497,
+                "kream_product_size": "L",
+                "price": 299000,
+                "lightening": true,
+                "trading_at": "2023-12-13 00:00:00"
+            },
+            {
+                "kream_id": 91497,
+                "kream_product_size": "XL",
+                "price": 375000,
+                "lightening": true,
+                "trading_at": "2023-12-12 00:00:00"
+            },
+            {
+                "kream_id": 91497,
+                "kream_product_size": "XXL",
+                "price": 384000,
+                "lightening": false,
+                "trading_at": "2023-12-12 00:00:00"
+            },
+            {
+                "kream_id": 91497,
+                "kream_product_size": "XL",
+                "price": 369000,
+                "lightening": false,
+                "trading_at": "2023-12-12 00:00:00"
+            },
+            {
+                "kream_id": 91497,
+                "kream_product_size": "L",
+                "price": 327000,
+                "lightening": true,
+                "trading_at": "2023-12-12 00:00:00"
+            },
+            {
+                "kream_id": 91497,
+                "kream_product_size": "M",
+                "price": 329000,
+                "lightening": false,
+                "trading_at": "2023-12-10 00:00:00"
+            },
+            {
+                "kream_id": 91497,
+                "kream_product_size": "L",
+                "price": 319000,
+                "lightening": false,
+                "trading_at": "2023-12-10 00:00:00"
+            }
+        ]
+    },
+    "buy_and_sell": {
+        "len": 96,
+        "kream_id_list": [
+            62981,
+            62982,
+            38929,
+            129559,
+            33306,
+            33307,
+            33310,
+            33311,
+            33312,
+            33315,
+            59435,
+            110636,
+            42551,
+            32323,
+            115270,
+            93255,
+            123986,
+            35416,
+            35417,
+            72286,
+            117854,
+            53857,
+            84578,
+            56948,
+            53382,
+            113286,
+            50827,
+            48780,
+            68268,
+            84657,
+            36030,
+            163521,
+            61645,
+            163540,
+            45785,
+            45786,
+            45787,
+            45788,
+            115935,
+            67305,
+            30955,
+            30957,
+            30958,
+            30959,
+            30960,
+            30962,
+            30965,
+            30966,
+            30967,
+            41207,
+            30968,
+            70906,
+            30969,
+            44794,
+            30971,
+            30976,
+            30979,
+            30980,
+            30981,
+            30982,
+            55559,
+            39691,
+            83214,
+            104214,
+            44834,
+            47923,
+            40249,
+            130369,
+            125250,
+            42307,
+            100165,
+            33607,
+            53068,
+            84823,
+            57692,
+            32096,
+            40801,
+            32098,
+            91497,
+            32106,
+            131438,
+            68976,
+            68977,
+            79228,
+            79229,
+            32143,
+            43931,
+            43932,
+            33186,
+            47523,
+            58796,
+            100799,
+            32212,
+            82911,
+            44009,
+            81905
+        ],
+        "data": [
+            {
+                "kream_id": 47523,
+                "kream_product_size": "ONESIZE",
+                "buy": 37000,
+                "sell": 58000,
+                "updated_at": "2023-12-16 17:20:20"
+            },
+            {
+                "kream_id": 91497,
+                "kream_product_size": "S",
+                "buy": 0,
+                "sell": 313000,
+                "updated_at": "2023-12-16 17:20:20"
+            },
+            {
+                "kream_id": 91497,
+                "kream_product_size": "M",
+                "buy": 155000,
+                "sell": 340000,
+                "updated_at": "2023-12-16 17:20:20"
+            },
+            {
+                "kream_id": 91497,
+                "kream_product_size": "L",
+                "buy": 210000,
+                "sell": 319000,
+                "updated_at": "2023-12-16 17:20:20"
+            },
+            {
+                "kream_id": 91497,
+                "kream_product_size": "XL",
+                "buy": 300000,
+                "sell": 369000,
+                "updated_at": "2023-12-16 17:20:20"
+            },
+            {
+                "kream_id": 91497,
+                "kream_product_size": "XXL",
+                "buy": 151000,
+                "sell": 389000,
+                "updated_at": "2023-12-16 17:20:20"
+            },
+            {
+                "kream_id": 30962,
+                "kream_product_size": "XS",
+                "buy": 0,
+                "sell": 149000,
+                "updated_at": "2023-12-16 17:20:20"
+            },
+            {
+                "kream_id": 30962,
+                "kream_product_size": "S",
+                "buy": 0,
+                "sell": 129000,
+                "updated_at": "2023-12-16 17:20:20"
+            },
+            {
+                "kream_id": 30962,
+                "kream_product_size": "M",
+                "buy": 0,
+                "sell": 100000,
+                "updated_at": "2023-12-16 17:20:20"
+            },
+            {
+                "kream_id": 30962,
+                "kream_product_size": "L",
+                "buy": 0,
+                "sell": 126000,
+                "updated_at": "2023-12-16 17:20:20"
+            }
+        ]
+    }
+}

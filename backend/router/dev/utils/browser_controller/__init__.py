@@ -33,6 +33,9 @@ class PageController(Protocol):
     async def extract_html(self, query: str) -> List[Tag] | None:
         ...
 
+    async def close_page(self):
+        ...
+
 
 class BrowserController(Protocol):
     @classmethod
@@ -117,13 +120,27 @@ class PwPageController:
         value = await self.page.query_selector_all(query)
         return [BeautifulSoup(await row.inner_html(), "html.parser") for row in value]
 
+    async def close_page(self):
+        await self.page.close()
+
 
 class PwBrowserController:
+    _instance = None
+
+    def __new__(cls):
+        if cls._instance is None:
+            cls._instance = super().__new__(cls)
+            cls._instance.context = None  # Initialize context to None
+        return cls._instance
+
     @classmethod
     async def create(cls) -> "PwBrowserController":
-        self = cls()
-        self.context = await self.init_pw()
-        return self
+        if cls._instance is None or cls._instance.context is None:
+            self = cls()
+            self.context = await self.init_pw()
+            return self
+        else:
+            return cls._instance
 
     async def init_pw(self) -> pw.BrowserContext:
         pw = await async_playwright().start()

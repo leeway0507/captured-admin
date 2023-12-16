@@ -112,7 +112,9 @@ class PwKreamPage:
             s = await i.query_selector('span[class="size"]')
             assert s, "size가 잡히지 않음"
             size = await s.inner_text()
-            size = size.replace(" ", "")
+            # TODO: buy_and_sell 수집 시 문자열 중간의 공백이 제거되는 문제 발생 replace(" ","")를
+            # strip()으로 변경, 문제 발생 시 다시 replace(" ","")로 변경
+            size = size.strip()
 
             p = await i.query_selector('span[class="price"]')
             assert p, "price가 잡히지 않음"

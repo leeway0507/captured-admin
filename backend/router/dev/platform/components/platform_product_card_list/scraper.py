@@ -18,7 +18,7 @@ class PlatformListScrapMachine:
         url = self.platform.get_url(brand_name)
         await self.page_controller.go_to(url)
         await self.page_controller.sleep_until(2000)
-        await self.page_controller.scroll_down(max_scroll=1, time_delay=500)
+        await self.page_controller.scroll_down(max_scroll=20, time_delay=500)
 
         card_query = self.platform.get_card_query()
         card_list = await self.page_controller.extract_html(card_query)

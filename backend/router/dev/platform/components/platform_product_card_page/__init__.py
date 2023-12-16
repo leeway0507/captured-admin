@@ -19,6 +19,7 @@ from .save_manager import SaveManager, PreprocessType, ModuleFactory
 from ....utils.browser_controller import PageController as P
 from ....utils.scrap_report import ScrapReport, ScrapMeta
 from ....utils.util import split_size
+from ....utils.temp_file_manager import TempFileManager
 from ..data_loader import loader, LoadType
 
 
@@ -33,8 +34,9 @@ class ListScrapResult(BaseModel):
     status: str
 
 
-class PlatfromScrapMeta(ScrapMeta):
+class PlatformScrapMeta(ScrapMeta):
     plan_list: List[int]
+    search_value: str
 
 
 class PlatformPageMain:
@@ -49,12 +51,13 @@ class PlatformPageMain:
     ):
         self.num_process = n_p
         self.module = module
-        self.reporter = ScrapReport("platform_list")
+        self.reporter = ScrapReport("platform_page")
         self.browser_controller = browser_controller
-        self.path = dev_env.SHOP_PRODUCT_PAGE_DIR
+        self.path = dev_env.PLATFORM_PRODUCT_PAGE_DIR
         self.min_volume = min_volume
         self.min_wish = min_wish
         self.platform_type = platform_type
+        self.tfm = TempFileManager("platform_page")
 
     async def main(self, search_type: PageSearchType, value: str):
         if search_type == PageSearchType.LAST_SCRAP:
@@ -66,17 +69,20 @@ class PlatformPageMain:
         else:
             raise Exception("Invalid Search Type")
 
-        await self.browser_controller.login()
+        self.tfm.init_temp_file()
+
         scrap_list = await self.extract_candidate_list(search_type, value)
+        await self.browser_controller.login()
         scrap_log = await self.execute_sub_scraper(scrap_list)
 
         # parquet로 저장 전 수집 상태 json 형태로 저장(파일 저장 에러 시 복구 목적)
         self.reporter.save_temp_report(
-            PlatfromScrapMeta(
-                plan_list=scrap_list,
+            PlatformScrapMeta(
                 num_of_plan=len(scrap_list),
                 num_process=self.num_process,
                 scrap_log=scrap_log,
+                plan_list=scrap_list,
+                search_value=value,
             )
         )
 
@@ -116,7 +122,9 @@ class PlatformPageMain:
     async def extract_candidate_list(
         self, search_type: PageSearchType, value: str
     ) -> List[int]:
-        return await CandidateExtractor(search_type, value).extract_candidate()
+        return await CandidateExtractor(
+            self.platform_type, search_type, value
+        ).extract_candidate()
 
     async def execute_sub_scraper(
         self, platform_sku_list: List[int]
@@ -128,7 +136,6 @@ class PlatformPageMain:
         job = split_size(platform_sku_list, self.num_process)
         co_list = [self.sub_process(P_list[i], job[i]) for i in range(self.num_process)]
         result = await asyncio.gather(*co_list)
-        await self.browser_controller.close_browser()
 
         return list(chain(*result))
 
@@ -165,7 +172,7 @@ class PlatformPageMain:
                         )
                     await page_controller.reopen_new_page()
                     continue
-
+        await page_controller.close_page()
         return log
 
     async def save_scrap_data(self):

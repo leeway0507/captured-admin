@@ -24,30 +24,30 @@ platform_list_report = ScrapReport("platform_list")
 
 
 @kream_db_router.get("/update-all-detail-kream-to-db")
-async def updat_all(
-    scrapName: str,
+async def update_all(
+    searchValue: str,
+    scrapTime: str,
     db: AsyncSession = Depends(get_dev_db),
 ):
-    detail_scrap_date, brand = scrapName.rsplit("-", 1)
+    await update_scrap_product_card_detail_to_db(db, searchValue, scrapTime)
+    await update_scrap_trading_volume_to_db(db, searchValue, scrapTime)
+    await update_scrap_buy_and_sell_to_db(db, searchValue, scrapTime)
+    await update_scrap_kream_product_bridge_to_db(db, searchValue, scrapTime)
 
-    await update_scrap_product_card_detail_to_db(db, brand, detail_scrap_date)
-    await update_scrap_trading_volume_to_db(db, brand, detail_scrap_date)
-    await update_scrap_buy_and_sell_to_db(db, brand, detail_scrap_date)
-    await update_scrap_kream_product_bridge_to_db(db, brand, detail_scrap_date)
-
-    platform_page_report.update_report(scrapName, "db_update", True)
+    platform_page_report.update_report(scrapTime + "-kream", "db_update", True)
 
     return {"message": "success"}
 
 
-@kream_db_router.get("/update-last-scrap-kream-product-card-list")
+@kream_db_router.get("/update-scrap-kream-product-card-list")
 async def update_kream_product_card_list_to_db(
-    brand: str,
-    listScrapAt: Optional[str] = None,
+    platformType: str,
+    scrapTime: str,
     db: AsyncSession = Depends(get_dev_db),
 ):
     """kream_product_card_table 업데이트"""
-    return await update_scrap_product_card_list_to_db(db, brand, listScrapAt)
+    platform_list_report.update_report(scrapTime + "-kream", "db_update", True)
+    return await update_scrap_product_card_list_to_db(db, platformType, scrapTime)
 
 
 @kream_db_router.get("/update-last-scrap-kream-product-card-detail")
