@@ -3,22 +3,20 @@ from sqlalchemy.ext.asyncio import AsyncSession
 from fastapi import APIRouter, Depends
 
 from db.dev_db import get_dev_db
-from ..utils.browser_controller import PwBrowserController
+from components.dev.utils.browser_controller import PwBrowserController
+from components.dev.utils.scrap_report import ScrapReport
 
-from .components.shop_product_card_page import ShopPageMain
-from .components.shop_product_card_page.candidate_extractor import (
+from components.dev.shop.shop_product_card_page import ShopPageMain
+from components.dev.shop.shop_product_card_page.candidate_extractor import (
     RDBCandidateExtractor as RDB_Extractor,
 )
-
-from .components.scrapable_list import get_scrapable_page_module_list
-from .components.shop_product_card_page.page_module_factory import (
+from components.dev.shop.scrapable_list import get_scrapable_page_module_list
+from components.dev.shop.shop_product_card_page.page_module_factory import (
     PwShopPageModuleFactory,
 )
-from ..utils.scrap_report import ScrapReport
 
 
 page_router = APIRouter()
-
 scrap_report = ScrapReport("shop_page")
 
 
@@ -48,34 +46,6 @@ async def scrap_shop_product_card_page(
     result = await PageMain.main(search_type=searchType, value=content)
 
     return result
-
-
-# @page_router.get("/test")
-# async def test(searchType: str, content: str):
-#     return await get_track_size_list(searchType, content)
-
-
-# @page_router.get("/test2")
-# async def test2():
-#     raw_data = await load_product_card_page_json()
-#     size_schema = [ShopProductSizeSchema(**row).model_dump() for row in raw_data]
-
-#     product_id_Schema = {}
-#     for row in raw_data:
-#         key = row["shop_product_card_id"]
-#         value = row["product_id"]
-#         if value not in product_id_Schema.values():
-#             product_id_Schema[key] = value
-
-#     product_id_Schema_list = [
-#         {
-#             "shop_product_card_id": k,
-#             "product_id": v,
-#         }
-#         for k, v in product_id_Schema.items()
-#     ]
-
-#     return {"a": size_schema, "b": product_id_Schema_list}
 
 
 @page_router.get("/get-shop-product-page")

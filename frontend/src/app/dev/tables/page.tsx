@@ -9,13 +9,13 @@ const Page = () => {
     return (
         <div className="flex-center w-full">
             <div className="grid grid-cols-3 gap-8">
-                <div className={`${box}`} onClick={() => router.push("tables/candidate-table")}>
+                <div className={`${box}`} onClick={() => router.push("tables/shop-table/candidate-table")}>
                     후보 테이블
                 </div>
                 <div className={`${box}`} onClick={() => router.push("tables/kream-table")}>
                     크림 테이블
                 </div>
-                <div className={`${box}`} onClick={() => router.push("tables/cost-table")}>
+                <div className={`${box}`} onClick={() => router.push("tables/shop-table/cost-table")}>
                     단가 테이블
                 </div>
             </div>

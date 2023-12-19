@@ -43,8 +43,8 @@ class ProductResponseSchema(BaseModel):
     lastPage: int
 
 
-class ProductInfoForCostTableSchema(BaseModel):
-    """ProductInfoForCostTable Schema"""
+class ProductInfoForTableDataSchema(BaseModel):
+    """ProductInfoForTableData Schema"""
 
     model_config = ConfigDict(alias_generator=to_camel, populate_by_name=True)
     sku: int

@@ -6,7 +6,7 @@ from fastapi import APIRouter, Depends, HTTPException, status
 from model.db_model_production import ProductInfoSchema, ProductInfoDBSchema
 
 from db.production_db import get_production_db
-from .utils import *
+from components.production.production_db import *
 
 production_router = APIRouter()
 

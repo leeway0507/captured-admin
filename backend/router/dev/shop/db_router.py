@@ -8,17 +8,17 @@ from db.dev_db import get_dev_db
 from model.shop_model import RequestShopInfo, updateShopProductCardSchema
 from model.db_model_shop import ShopInfoSchema
 
-from .components.update_to_db import (
+from components.dev.shop.update_to_db import (
     update_scrap_product_card_list_to_db,
     get_shop_info_from_db,
     create_shop_info_to_db,
     get_shop_name_from_db,
-    update_candidate_to_db,
-    update_shop_product_card_list_for_cost_table,
+    update_candidate_status,
+    update_shop_product_card_table,
     upsert_shop_product_size_table,
     get_shop_product_size_table_data,
 )
-from ..utils.scrap_report import ScrapReport
+from components.dev.utils.scrap_report import ScrapReport
 
 
 shop_db_router = APIRouter()
@@ -37,17 +37,17 @@ async def update_shop_product_card_list_to_db(
     return {"message": "success"}
 
 
-@shop_db_router.post("/update-shop-product-card-for-cost-table")
-async def update_shop_product_card_list_for_cost_table_api(
+@shop_db_router.put("/update-shop-product-card-for-cost-table")
+async def update_shop_product_card_table_api(
     updateShopProductCard: updateShopProductCardSchema,
     db: AsyncSession = Depends(get_dev_db),
 ):
-    """kream_product_card_table 업데이트"""
+    """camel : updateShopProductCardTable"""
 
     shop_product_card_id = updateShopProductCard.shop_product_card_id
     value = updateShopProductCard.value
 
-    await update_shop_product_card_list_for_cost_table(db, shop_product_card_id, value)
+    await update_shop_product_card_table(db, shop_product_card_id, value)
     return {"message": "success"}
 
 
@@ -65,7 +65,7 @@ async def create_shop_info(
     data: RequestShopInfo,
     db: AsyncSession = Depends(get_dev_db),
 ):
-    """kream_product_card_table 업데이트"""
+    """camel : upsertShopInfo"""
     await create_shop_info_to_db(db, data)
     return {"message": "success"}
 
@@ -83,15 +83,7 @@ async def update_candidate_status_api(
     candidate: int,
     db: AsyncSession = Depends(get_dev_db),
 ):
-    return await update_candidate_to_db(db, shopProductCardId, candidate)
-
-
-# @shop_db_router.post("/post-product-info-draft-to-production-level")
-# async def post_product_info_draft_to_production_level(
-#     data: productInfoDraftSchema,
-#     db: AsyncSession = Depends(get_dev_db),
-# ):
-#     return await get_product_unique_id(db)
+    return await update_candidate_status(db, shopProductCardId, candidate)
 
 
 @shop_db_router.get("/upsert-shop-product-size-table")
@@ -100,7 +92,7 @@ async def upsert_size_table_api(
     db: AsyncSession = Depends(get_dev_db),
 ):
     await upsert_shop_product_size_table(db, scrapDate)
-    ScrapReport("shop_list").update_report(scrapDate, "db_update", True)
+    ScrapReport("shop_page").update_report(scrapDate, "db_update", True)
     return {"message": "success"}
 
 

@@ -4,11 +4,9 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi import FastAPI, Request
 from fastapi.exceptions import RequestValidationError
 from fastapi.responses import JSONResponse
-from router.production import production_router
-from router.production.s3 import s3_router
-from router.production.size_batch import size_batch_router
+from router.production import production_router, size_batch_router, s3_storage_router
 from router.dev.platform import platform_router, kream_db_router
-from router.dev.shop import list_router, page_router, shop_db_router
+from router.dev.shop import list_router, page_router, shop_db_router, table_router
 
 app = FastAPI()
 
@@ -28,10 +26,13 @@ app.add_middleware(
 
 
 app.include_router(
-    size_batch_router, prefix="/api/production/size_batch", tags=["size_batch"]
+    table_router, prefix="/api/dev/shop/table", tags=["SHOP_TABLE_ROUTER"]
+)
+app.include_router(
+    size_batch_router, prefix="/api/production/size_batch", tags=["SIZE_BATCH"]
 )
 app.include_router(platform_router, prefix="/api/dev/kream", tags=["PLATFORM"])
-app.include_router(s3_router, prefix="/api/production/s3", tags=["s3"])
+app.include_router(s3_storage_router, prefix="/api/production/s3", tags=["S3_STORAGE"])
 app.include_router(production_router, prefix="/api/production", tags=["production"])
 app.include_router(shop_db_router, prefix="/api/dev/shop/db", tags=["dev/shop/db"])
 app.include_router(list_router, prefix="/api/dev/shop", tags=["dev/shop/scrap/list"])

@@ -99,11 +99,11 @@ export default function ShopCardList() {
 
     useEffect(() => {
         if (scrapName === "") return;
-        router.push(`/dev/shop/scrap-result/list/${scrapName}`);
-    }, [scrapName, router]);
+        router.push(`/dev/shop/scrap-result/list/${scrapName}-${state.shopName}`);
+    }, [scrapName, router, state.shopName]);
 
     return (
-        <div className="flex pt-4 pb-24 gap-1 justify-between">
+        <div className="flex pt-4 pb-24 gap-1 justify-between max-w-5xl">
             <div className="min-w-[300px] flex flex-col">
                 <div>스크랩 샵 이름</div>
                 <Select
@@ -114,9 +114,10 @@ export default function ShopCardList() {
                     }}
                 />
             </div>
-            <div className="min-w-[300px] flex flex-col">
+            <div className="w-[300px] flex flex-col">
                 <div>브랜드 이름</div>
                 <Select
+                    closeMenuOnSelect={false}
                     instanceId="brandName"
                     options={brandList}
                     isMulti
@@ -149,8 +150,8 @@ export default function ShopCardList() {
             </div>
             <button
                 ref={submitRef}
-                className="black-bar-with-disabled min-w-[150px] text-xl "
-                onClick={() => handleSubmit(state, setScrapName, disableButton, enableButton)}>
+                className="black-bar-with-disabled min-w-[150px] text-xl h-[100px] "
+                onClick={() => handleSubmit(state, setScrapName, enableButton, disableButton)}>
                 요청하기
             </button>
         </div>

@@ -36,18 +36,30 @@ export const TableCell = (props: any) => {
     );
 };
 
-export const OpenKreamDetail = (searchType: string, value: string, cost: number) => {
+export const OpenKreamDetail = (searchType: string, value: string, cost: number, isKreamMatch: boolean = true) => {
     const [isOpen, setIsOpen] = useState(false);
 
     return (
         <>
-            <button
-                className="bg-gray-200 hover:bg-gray-300 p-2 whitespace-nowrap"
-                onClick={() => {
-                    setIsOpen(true);
-                }}>
-                크림정보
-            </button>
+            {isKreamMatch ? (
+                <button
+                    className="bg-orange-600 hover:bg-orange-700 p-2  text-white whitespace-nowrap"
+                    onClick={() => {
+                        setIsOpen(true);
+                    }}>
+                    {" "}
+                    크림정보{" "}
+                </button>
+            ) : (
+                <button
+                    className="bg-gray-200 hover:bg-gray-300 p-2 whitespace-nowrap"
+                    onClick={() => {
+                        setIsOpen(true);
+                    }}>
+                    {" "}
+                    정보없음{" "}
+                </button>
+            )}
             {isOpen && (
                 <KreamProductModal
                     searchType={searchType}

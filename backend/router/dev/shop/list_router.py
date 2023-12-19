@@ -2,21 +2,24 @@
 import os
 from sqlalchemy.ext.asyncio import AsyncSession
 from fastapi import APIRouter, Depends, HTTPException
-from dotenv import dotenv_values
+
 
 from db.dev_db import get_dev_db
-from .components.update_to_db import get_shop_name_from_db
-from ..utils.browser_controller import PwBrowserController
+from components.dev.utils.browser_controller import PwBrowserController
+from components.dev.utils.scrap_report import ScrapReport
 
-from .components.scrapable_list import get_brand_name
-from ..utils.scrap_report import ScrapReport
-from .components.shop_product_card_list import ShopListMain
-from .components.shop_product_card_list.list_module_factory import (
+from components.dev.shop.update_to_db import get_shop_name_from_db
+from components.dev.shop.shop_product_card_list import ShopListMain
+from components.dev.shop.shop_product_card_list.list_module_factory import (
     PwShopListModuleFactory,
+)
+from components.dev.shop.scrapable_list import (
+    get_scrapable_list_module_list,
+    get_brand_name,
 )
 
 
-from .components.update_to_db import (
+from components.dev.shop.update_to_db import (
     get_shop_info_by_name,
     get_shop_product_list,
     load_scraped_brand_name,
@@ -40,8 +43,8 @@ async def get_scraped_brand_name(shopName: str, db: AsyncSession = Depends(get_d
 
 
 @list_router.get("/get-shop-name")
-async def get_shop_name(db: AsyncSession = Depends(get_dev_db)):
-    return await get_shop_name_from_db(db)
+def get_shop_name():
+    return get_scrapable_list_module_list()
 
 
 @list_router.get("/init-shop-product-card-list")
@@ -60,7 +63,7 @@ async def scrap_shop_product_card_list(
         # TODO: selenium 추가하면 selenium으로 변경하기
         module_factory = PwShopListModuleFactory()
         browser_controller = PwBrowserController()
-
+    browser_controller = await browser_controller.create()
     ListMain = ShopListMain(numProcess, browser_controller, module_factory, shopName)
 
     result = await ListMain.main(brandName)
@@ -101,7 +104,6 @@ async def get_shop_product_list_for_cost_table_api(
 ):
     """shop product list 조회"""
     value = value.replace("c%27", "'")
-    print(value)
 
     return await get_shop_product_list_for_cost_table(db, searchType, value)
 

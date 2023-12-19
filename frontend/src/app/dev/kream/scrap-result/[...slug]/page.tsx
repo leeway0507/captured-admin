@@ -7,7 +7,6 @@ export default async function Main({ params }: { params: { slug: string[] } }) {
 
     if (type == "list") {
         const { data: ListData } = await getScrapListReport(fileName);
-        console.log(ListData);
         return <ListReport fetchData={ListData} />;
     }
     if (type == "page") {

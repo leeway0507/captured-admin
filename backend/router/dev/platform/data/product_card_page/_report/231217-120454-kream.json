@@ -1,0 +1,1281 @@
+{
+    "scrap_time": "231217-120454",
+    "num_of_plan": 100,
+    "num_process": 6,
+    "scrap_log": [
+        {
+            "platform_type": "kream",
+            "sku": "50998",
+            "status": "success"
+        },
+        {
+            "platform_type": "kream",
+            "sku": "65628",
+            "status": "success"
+        },
+        {
+            "platform_type": "kream",
+            "sku": "72020",
+            "status": "success"
+        },
+        {
+            "platform_type": "kream",
+            "sku": "99049",
+            "status": "failed:can't scrap trading_volume"
+        },
+        {
+            "platform_type": "kream",
+            "sku": "97779",
+            "status": "success"
+        },
+        {
+            "platform_type": "kream",
+            "sku": "101161",
+            "status": "success"
+        },
+        {
+            "platform_type": "kream",
+            "sku": "91049",
+            "status": "success"
+        },
+        {
+            "platform_type": "kream",
+            "sku": "57456",
+            "status": "failed:can't scrap trading_volume"
+        },
+        {
+            "platform_type": "kream",
+            "sku": "129482",
+            "status": "failed:can't scrap trading_volume"
+        },
+        {
+            "platform_type": "kream",
+            "sku": "36038",
+            "status": "failed:can't scrap trading_volume"
+        },
+        {
+            "platform_type": "kream",
+            "sku": "17018",
+            "status": "failed:can't scrap trading_volume"
+        },
+        {
+            "platform_type": "kream",
+            "sku": "95203",
+            "status": "failed:can't scrap trading_volume"
+        },
+        {
+            "platform_type": "kream",
+            "sku": "99184",
+            "status": "failed:can't scrap trading_volume"
+        },
+        {
+            "platform_type": "kream",
+            "sku": "119424",
+            "status": "failed:can't scrap trading_volume"
+        },
+        {
+            "platform_type": "kream",
+            "sku": "56582",
+            "status": "NS_ERROR_ABORT\n=========================== logs ===========================\nnavigating to \"https://kream.co.kr/products/56582\", waiting until \"domcontentloaded\"\n============================================================"
+        },
+        {
+            "platform_type": "kream",
+            "sku": "105687",
+            "status": "failed:can't scrap trading_volume"
+        },
+        {
+            "platform_type": "kream",
+            "sku": "45562",
+            "status": "failed:can't scrap trading_volume"
+        },
+        {
+            "platform_type": "kream",
+            "sku": "85577",
+            "status": "success"
+        },
+        {
+            "platform_type": "kream",
+            "sku": "61862",
+            "status": "success"
+        },
+        {
+            "platform_type": "kream",
+            "sku": "99156",
+            "status": "success"
+        },
+        {
+            "platform_type": "kream",
+            "sku": "154837",
+            "status": "success"
+        },
+        {
+            "platform_type": "kream",
+            "sku": "74800",
+            "status": "success"
+        },
+        {
+            "platform_type": "kream",
+            "sku": "52235",
+            "status": "success"
+        },
+        {
+            "platform_type": "kream",
+            "sku": "67244",
+            "status": "success"
+        },
+        {
+            "platform_type": "kream",
+            "sku": "41153",
+            "status": "success"
+        },
+        {
+            "platform_type": "kream",
+            "sku": "189961",
+            "status": "success"
+        },
+        {
+            "platform_type": "kream",
+            "sku": "107181",
+            "status": "failed:can't scrap trading_volume"
+        },
+        {
+            "platform_type": "kream",
+            "sku": "83104",
+            "status": "failed:can't scrap trading_volume"
+        },
+        {
+            "platform_type": "kream",
+            "sku": "100374",
+            "status": "failed:can't scrap trading_volume"
+        },
+        {
+            "platform_type": "kream",
+            "sku": "82462",
+            "status": "failed:can't scrap trading_volume"
+        },
+        {
+            "platform_type": "kream",
+            "sku": "52237",
+            "status": "failed:can't scrap trading_volume"
+        },
+        {
+            "platform_type": "kream",
+            "sku": "104600",
+            "status": "failed:can't scrap trading_volume"
+        },
+        {
+            "platform_type": "kream",
+            "sku": "119973",
+            "status": "failed:can't scrap trading_volume"
+        },
+        {
+            "platform_type": "kream",
+            "sku": "57273",
+            "status": "failed:can't scrap trading_volume"
+        },
+        {
+            "platform_type": "kream",
+            "sku": "40814",
+            "status": "success"
+        },
+        {
+            "platform_type": "kream",
+            "sku": "153967",
+            "status": "success"
+        },
+        {
+            "platform_type": "kream",
+            "sku": "91051",
+            "status": "success"
+        },
+        {
+            "platform_type": "kream",
+            "sku": "74130",
+            "status": "success"
+        },
+        {
+            "platform_type": "kream",
+            "sku": "52238",
+            "status": "success"
+        },
+        {
+            "platform_type": "kream",
+            "sku": "161671",
+            "status": "success"
+        },
+        {
+            "platform_type": "kream",
+            "sku": "141528",
+            "status": "success"
+        },
+        {
+            "platform_type": "kream",
+            "sku": "73795",
+            "status": "success"
+        },
+        {
+            "platform_type": "kream",
+            "sku": "106939",
+            "status": "failed:can't scrap trading_volume"
+        },
+        {
+            "platform_type": "kream",
+            "sku": "50106",
+            "status": "failed:can't scrap trading_volume"
+        },
+        {
+            "platform_type": "kream",
+            "sku": "152300",
+            "status": "failed:can't scrap trading_volume"
+        },
+        {
+            "platform_type": "kream",
+            "sku": "178192",
+            "status": "failed:can't scrap trading_volume"
+        },
+        {
+            "platform_type": "kream",
+            "sku": "142281",
+            "status": "failed:can't scrap trading_volume"
+        },
+        {
+            "platform_type": "kream",
+            "sku": "97780",
+            "status": "failed:can't scrap trading_volume"
+        },
+        {
+            "platform_type": "kream",
+            "sku": "152299",
+            "status": "failed:can't scrap trading_volume"
+        },
+        {
+            "platform_type": "kream",
+            "sku": "110707",
+            "status": "failed:can't scrap trading_volume"
+        },
+        {
+            "platform_type": "kream",
+            "sku": "158332",
+            "status": "NS_ERROR_ABORT\n=========================== logs ===========================\nnavigating to \"https://kream.co.kr/products/158332\", waiting until \"domcontentloaded\"\n============================================================"
+        },
+        {
+            "platform_type": "kream",
+            "sku": "31704",
+            "status": "success"
+        },
+        {
+            "platform_type": "kream",
+            "sku": "104659",
+            "status": "success"
+        },
+        {
+            "platform_type": "kream",
+            "sku": "104598",
+            "status": "success"
+        },
+        {
+            "platform_type": "kream",
+            "sku": "55231",
+            "status": "success"
+        },
+        {
+            "platform_type": "kream",
+            "sku": "94616",
+            "status": "success"
+        },
+        {
+            "platform_type": "kream",
+            "sku": "72480",
+            "status": "success"
+        },
+        {
+            "platform_type": "kream",
+            "sku": "89826",
+            "status": "success:no_trading_volume"
+        },
+        {
+            "platform_type": "kream",
+            "sku": "141527",
+            "status": "success"
+        },
+        {
+            "platform_type": "kream",
+            "sku": "76135",
+            "status": "success"
+        },
+        {
+            "platform_type": "kream",
+            "sku": "72909",
+            "status": "success"
+        },
+        {
+            "platform_type": "kream",
+            "sku": "63166",
+            "status": "success"
+        },
+        {
+            "platform_type": "kream",
+            "sku": "63165",
+            "status": "failed:can't scrap trading_volume"
+        },
+        {
+            "platform_type": "kream",
+            "sku": "106952",
+            "status": "failed:can't scrap trading_volume"
+        },
+        {
+            "platform_type": "kream",
+            "sku": "61869",
+            "status": "failed:can't scrap trading_volume"
+        },
+        {
+            "platform_type": "kream",
+            "sku": "62566",
+            "status": "failed:can't scrap trading_volume"
+        },
+        {
+            "platform_type": "kream",
+            "sku": "107180",
+            "status": "failed:can't scrap trading_volume"
+        },
+        {
+            "platform_type": "kream",
+            "sku": "178566",
+            "status": "failed:can't scrap trading_volume"
+        },
+        {
+            "platform_type": "kream",
+            "sku": "42637",
+            "status": "success"
+        },
+        {
+            "platform_type": "kream",
+            "sku": "96598",
+            "status": "success"
+        },
+        {
+            "platform_type": "kream",
+            "sku": "91053",
+            "status": "success"
+        },
+        {
+            "platform_type": "kream",
+            "sku": "39607",
+            "status": "success"
+        },
+        {
+            "platform_type": "kream",
+            "sku": "74550",
+            "status": "success"
+        },
+        {
+            "platform_type": "kream",
+            "sku": "107182",
+            "status": "success"
+        },
+        {
+            "platform_type": "kream",
+            "sku": "97541",
+            "status": "success"
+        },
+        {
+            "platform_type": "kream",
+            "sku": "36537",
+            "status": "success"
+        },
+        {
+            "platform_type": "kream",
+            "sku": "33551",
+            "status": "failed:can't scrap trading_volume"
+        },
+        {
+            "platform_type": "kream",
+            "sku": "53645",
+            "status": "failed:can't scrap trading_volume"
+        },
+        {
+            "platform_type": "kream",
+            "sku": "161669",
+            "status": "failed:can't scrap trading_volume"
+        },
+        {
+            "platform_type": "kream",
+            "sku": "112517",
+            "status": "failed:can't scrap trading_volume"
+        },
+        {
+            "platform_type": "kream",
+            "sku": "103315",
+            "status": "failed:can't scrap trading_volume"
+        },
+        {
+            "platform_type": "kream",
+            "sku": "29473",
+            "status": "NS_ERROR_ABORT\n=========================== logs ===========================\nnavigating to \"https://kream.co.kr/products/29473\", waiting until \"domcontentloaded\"\n============================================================"
+        },
+        {
+            "platform_type": "kream",
+            "sku": "85567",
+            "status": "NS_ERROR_ABORT\n=========================== logs ===========================\nnavigating to \"https://kream.co.kr/products/85567\", waiting until \"domcontentloaded\"\n============================================================"
+        },
+        {
+            "platform_type": "kream",
+            "sku": "141531",
+            "status": "failed:can't scrap trading_volume"
+        },
+        {
+            "platform_type": "kream",
+            "sku": "71040",
+            "status": "failed:can't scrap trading_volume"
+        },
+        {
+            "platform_type": "kream",
+            "sku": "89093",
+            "status": "success"
+        },
+        {
+            "platform_type": "kream",
+            "sku": "106940",
+            "status": "failed:can't scrap trading_volume"
+        },
+        {
+            "platform_type": "kream",
+            "sku": "202326",
+            "status": "success"
+        },
+        {
+            "platform_type": "kream",
+            "sku": "39530",
+            "status": "success"
+        },
+        {
+            "platform_type": "kream",
+            "sku": "69567",
+            "status": "success"
+        },
+        {
+            "platform_type": "kream",
+            "sku": "65575",
+            "status": "success"
+        },
+        {
+            "platform_type": "kream",
+            "sku": "50477",
+            "status": "success"
+        },
+        {
+            "platform_type": "kream",
+            "sku": "27279",
+            "status": "success:no_trading_volume"
+        },
+        {
+            "platform_type": "kream",
+            "sku": "71081",
+            "status": "failed:can't scrap trading_volume"
+        },
+        {
+            "platform_type": "kream",
+            "sku": "56591",
+            "status": "failed:can't scrap trading_volume"
+        },
+        {
+            "platform_type": "kream",
+            "sku": "139347",
+            "status": "failed:can't scrap trading_volume"
+        },
+        {
+            "platform_type": "kream",
+            "sku": "95957",
+            "status": "failed:can't scrap trading_volume"
+        },
+        {
+            "platform_type": "kream",
+            "sku": "91054",
+            "status": "failed:can't scrap trading_volume"
+        },
+        {
+            "platform_type": "kream",
+            "sku": "71082",
+            "status": "failed:can't scrap trading_volume"
+        },
+        {
+            "platform_type": "kream",
+            "sku": "114911",
+            "status": "Timeout 30000ms exceeded.\n=========================== logs ===========================\nattempting click action\n  waiting for element to be visible, enabled and stable\n============================================================"
+        }
+    ],
+    "db_update": false,
+    "plan_list": [
+        50998,
+        65628,
+        72020,
+        99049,
+        97779,
+        101161,
+        91049,
+        57456,
+        129482,
+        36038,
+        17018,
+        95203,
+        99184,
+        119424,
+        56582,
+        105687,
+        45562,
+        85577,
+        61862,
+        99156,
+        154837,
+        74800,
+        52235,
+        67244,
+        41153,
+        189961,
+        107181,
+        83104,
+        100374,
+        82462,
+        52237,
+        104600,
+        119973,
+        57273,
+        40814,
+        153967,
+        91051,
+        74130,
+        52238,
+        161671,
+        141528,
+        73795,
+        106939,
+        50106,
+        152300,
+        178192,
+        142281,
+        97780,
+        152299,
+        110707,
+        158332,
+        31704,
+        104659,
+        104598,
+        55231,
+        94616,
+        72480,
+        89826,
+        141527,
+        76135,
+        72909,
+        63166,
+        63165,
+        106952,
+        61869,
+        62566,
+        107180,
+        178566,
+        42637,
+        96598,
+        91053,
+        39607,
+        74550,
+        107182,
+        97541,
+        36537,
+        33551,
+        53645,
+        161669,
+        112517,
+        103315,
+        29473,
+        85567,
+        141531,
+        71040,
+        89093,
+        106940,
+        202326,
+        39530,
+        69567,
+        65575,
+        50477,
+        27279,
+        71081,
+        56591,
+        139347,
+        95957,
+        91054,
+        71082,
+        114911
+    ],
+    "search_value": "asics",
+    "search_type": "lastScrap",
+    "product_detail": {
+        "len": 99,
+        "kream_id_list": [
+            89093,
+            189961,
+            52235,
+            52237,
+            52238,
+            178192,
+            100374,
+            82462,
+            65575,
+            74800,
+            85567,
+            73795,
+            85577,
+            139347,
+            202326,
+            65628,
+            62566,
+            39530,
+            57456,
+            110707,
+            17018,
+            119424,
+            42637,
+            27279,
+            104598,
+            104600,
+            83104,
+            119973,
+            67244,
+            107181,
+            107182,
+            107180,
+            39607,
+            36537,
+            63165,
+            63166,
+            41153,
+            36038,
+            72909,
+            104659,
+            154837,
+            95957,
+            141527,
+            141528,
+            105687,
+            141531,
+            114911,
+            89826,
+            99049,
+            152299,
+            152300,
+            97541,
+            56582,
+            33551,
+            56591,
+            72480,
+            29473,
+            101161,
+            50477,
+            50998,
+            74550,
+            99156,
+            72020,
+            96598,
+            76135,
+            40814,
+            153967,
+            99184,
+            71040,
+            161669,
+            112517,
+            161671,
+            178566,
+            53645,
+            74130,
+            103315,
+            94616,
+            61862,
+            91049,
+            71081,
+            91051,
+            71082,
+            91053,
+            61869,
+            91054,
+            57273,
+            50106,
+            106939,
+            106940,
+            55231,
+            69567,
+            106952,
+            142281,
+            129482,
+            31704,
+            95203,
+            97779,
+            97780,
+            45562
+        ],
+        "data": [
+            {
+                "kream_id": 42637,
+                "kream_product_img_url": "https://kream-phinf.pstatic.net/MjAyMTEwMDZfMzAw/MDAxNjMzNTA1NzQ4MTI3.1cOpEGNHBXvxZ9dVqQ8qllbbS8epAzpap8n5NYAjIikg.1qlDLXwgCXwhervM97eHi4a9krQddCTeZm-EekHJgvIg.PNG/a_8efba3912129472fb3a7b5997caf00af.png?type=l",
+                "kream_product_name": "asics gel-1130 black graphite grey",
+                "brand_name": "asics",
+                "retail_price": 126000,
+                "product_release_date": "2001-01-01 00:00:00",
+                "color": "black/graphite grey",
+                "wish": 5689,
+                "review": 42,
+                "updated_at": "2023-12-17 11:52:03"
+            },
+            {
+                "kream_id": 85577,
+                "kream_product_img_url": "https://kream-phinf.pstatic.net/MjAyMjExMTZfMTA5/MDAxNjY4NTY2NDA5MDYz.Sj4ro2iJoaxA-UJPAVF5KK4mTq2xbi6643Ids6gy3RUg.ColiC_djCrco8WBB-8FgL_VjNKhh7n8Y7gQ1C4_-bzYg.PNG/a_7bdbdcc3b6594d229c6a6da155657cc9.png?type=l",
+                "kream_product_name": "asics x freja wewer gel-1090 v2 clay grey pure silver",
+                "brand_name": "asics",
+                "retail_price": 209600,
+                "product_release_date": "2022-11-19 00:00:00",
+                "color": "clay grey/pure silver",
+                "wish": 17000,
+                "review": 187,
+                "updated_at": "2023-12-17 11:52:03"
+            },
+            {
+                "kream_id": 31704,
+                "kream_product_img_url": "https://kream-phinf.pstatic.net/MjAyMTAzMThfMTkz/MDAxNjE2MDU5NDMwMzk2.mDTxinWWD_ndAHXeNgJV13zRd9bQjzDgrOw4Xd7GCD8g.hdgSMjBN80QInLc9Xw4bQs1VD-iMJp5u1561PWrdVRcg.PNG/p_7b27f21e12834be0895864a9b45537dd.png?type=l",
+                "kream_product_name": "asics x andersson bell gel-1090 glacier grey silver",
+                "brand_name": "asics",
+                "retail_price": 139000,
+                "product_release_date": "2021-03-20 00:00:00",
+                "color": "glacier grey/silver",
+                "wish": 7225,
+                "review": 370,
+                "updated_at": "2023-12-17 11:52:03"
+            },
+            {
+                "kream_id": 40814,
+                "kream_product_img_url": "https://kream-phinf.pstatic.net/MjAyMTA5MDZfMTA3/MDAxNjMwOTA3NzI3NDIx.dfIDGf3vo98fuK57N5oPZc5u66nc3JXtSW3OvC-uFlsg.ZKOLYHmK3KE4nhkD1VMMl143FXPKmoymhSTOc36fIeog.PNG/a_7f66a81959cb4945a59be44a7f7bd062.png?type=l",
+                "kream_product_name": "asics jog 100 t black - 4e extra wide",
+                "brand_name": "asics",
+                "retail_price": 59000,
+                "product_release_date": "2001-01-01 00:00:00",
+                "color": "black/black",
+                "wish": 10000,
+                "review": 144,
+                "updated_at": "2023-12-17 11:52:04"
+            },
+            {
+                "kream_id": 89093,
+                "kream_product_img_url": "https://kream-phinf.pstatic.net/MjAyMjEyMDlfMjA4/MDAxNjcwNTUwODMzNDg4.zyjnLbo_GH7ZL8li8IngS2KZPlAAFW8wia476L0ABTkg.p3UT0t-9b3DnUx9z-G-wovaEqluN8cRLur7hErub-jog.PNG/a_dad35d9082504770862720f0d8fd8d1a.png?type=l",
+                "kream_product_name": "asics x a.p.c. gel-sonoma 15-50 beige",
+                "brand_name": "asics",
+                "retail_price": 289000,
+                "product_release_date": "2022-12-16 00:00:00",
+                "color": "beige",
+                "wish": 4188,
+                "review": 58,
+                "updated_at": "2023-12-17 11:52:04"
+            },
+            {
+                "kream_id": 50998,
+                "kream_product_img_url": "https://kream-phinf.pstatic.net/MjAyMjA2MzBfODQg/MDAxNjU2NTY1NTE4MzY4.hhY5HK8hVvRorN74BpbbLjSlmdsqsdAvdotASDIpCe4g._sHV_DX8HOw06PUPiTkFQCz4UeidiYdhYzkXvX6vgmUg.PNG/a_0a59df13dfad4ca381d422b984417e5c.png?type=l",
+                "kream_product_name": "asics jog 100 s sheet rock - 2e wide",
+                "brand_name": "asics",
+                "retail_price": 79000,
+                "product_release_date": "2022-02-09 00:00:00",
+                "color": "sheet rock/black",
+                "wish": 46000,
+                "review": 1132,
+                "updated_at": "2023-12-17 11:52:07"
+            },
+            {
+                "kream_id": 96598,
+                "kream_product_img_url": "https://kream-phinf.pstatic.net/MjAyMzAxMjVfMTg5/MDAxNjc0NjI3NTc0NzU5.NjBNjfePZBmBGSQfEe5nJmBXvtxu69iOPnzUXPLPbUUg.bwks8bq5L8dcMq7JlhbjykfJhCPWnxf-MMXTVWD9QwAg.PNG/a_f1c95f7f8a564931948c85e102dec14b.png?type=l",
+                "kream_product_name": "(w) asics gel-venture 6 glacier grey sheet rock",
+                "brand_name": "asics",
+                "retail_price": 89000,
+                "product_release_date": "2001-01-01 00:00:00",
+                "color": "glacier grey/sheet rock",
+                "wish": 5666,
+                "review": 68,
+                "updated_at": "2023-12-17 11:52:21"
+            },
+            {
+                "kream_id": 61862,
+                "kream_product_img_url": "https://kream-phinf.pstatic.net/MjAyMjA1MThfMTA0/MDAxNjUyODU1ODg5MTM0.BDlnQLiG8V10_s_5elk6OFNmMiEIK6ZxBBreID6nMhkg.5nAWzTghPqkkqUDH7z82W_N62V1C8kfgr-dENfjshSUg.PNG/a_f9fd2066d55043e4843434037c31bc11.png?type=l",
+                "kream_product_name": "(w) asics gel-1130 cream pure silver",
+                "brand_name": "asics",
+                "retail_price": 99000,
+                "product_release_date": "2001-01-01 00:00:00",
+                "color": "cream/pure silver",
+                "wish": 17000,
+                "review": 89,
+                "updated_at": "2023-12-17 11:52:22"
+            },
+            {
+                "kream_id": 104659,
+                "kream_product_img_url": "https://kream-phinf.pstatic.net/MjAyMzAzMDJfMTA1/MDAxNjc3NzM2MTQwMDc3.uBvdfYl_P7EqITwqOzVS6cxIWbdEj8lXviAyZqfPE0Qg._verzQ6DEMpSIosIooztUNpARC3gvv-6bj5SbigX6Gkg.PNG/a_f3a2e4c082184aa78de0b3b0158c397f.png?type=l",
+                "kream_product_name": "onitsuka tiger mexico 66 birch",
+                "brand_name": "onitsuka tiger",
+                "retail_price": 155800,
+                "product_release_date": "2001-01-01 00:00:00",
+                "color": "birch/peacoat",
+                "wish": 7197,
+                "review": 36,
+                "updated_at": "2023-12-17 11:52:22"
+            },
+            {
+                "kream_id": 153967,
+                "kream_product_img_url": "https://kream-phinf.pstatic.net/MjAyMzA3MjdfMjU0/MDAxNjkwNDM2NDI1NjIw.bksZPdEAYdM8AUQAENunRVUeIrEBU2GbU7jydpRqxugg.k35pC-RuzSEJGOtqoEhguMbYX-WV9_bXW3iKOimgwUUg.PNG/a_cc6bfd2f882e475c8e9d2136548555b1.png?type=l",
+                "kream_product_name": "asics gel-1130 steel grey pure silver",
+                "brand_name": "asics",
+                "retail_price": 109000,
+                "product_release_date": "2023-07-26 00:00:00",
+                "color": "steel grey/pure silver",
+                "wish": 10000,
+                "review": 84,
+                "updated_at": "2023-12-17 11:52:22"
+            }
+        ]
+    },
+    "product_bridge": {
+        "len": 99,
+        "kream_id_list": [
+            89093,
+            189961,
+            52235,
+            52237,
+            52238,
+            178192,
+            100374,
+            82462,
+            65575,
+            74800,
+            85567,
+            73795,
+            85577,
+            139347,
+            202326,
+            65628,
+            62566,
+            39530,
+            57456,
+            110707,
+            17018,
+            119424,
+            42637,
+            27279,
+            104598,
+            104600,
+            83104,
+            119973,
+            67244,
+            107181,
+            107182,
+            107180,
+            39607,
+            36537,
+            63165,
+            63166,
+            41153,
+            36038,
+            72909,
+            104659,
+            154837,
+            95957,
+            141527,
+            141528,
+            105687,
+            141531,
+            114911,
+            89826,
+            99049,
+            152299,
+            152300,
+            97541,
+            56582,
+            33551,
+            56591,
+            72480,
+            29473,
+            101161,
+            50477,
+            50998,
+            74550,
+            99156,
+            72020,
+            96598,
+            76135,
+            40814,
+            153967,
+            99184,
+            71040,
+            161669,
+            112517,
+            161671,
+            178566,
+            53645,
+            74130,
+            103315,
+            94616,
+            61862,
+            91049,
+            71081,
+            91051,
+            71082,
+            91053,
+            61869,
+            91054,
+            57273,
+            50106,
+            106939,
+            106940,
+            55231,
+            69567,
+            106952,
+            142281,
+            129482,
+            31704,
+            95203,
+            97779,
+            97780,
+            45562
+        ],
+        "data": [
+            {
+                "product_id": "1201A256-002",
+                "kream_id": 42637
+            },
+            {
+                "product_id": "1203A254-020",
+                "kream_id": 85577
+            },
+            {
+                "product_id": "1203A115-025",
+                "kream_id": 31704
+            },
+            {
+                "product_id": "1021A463-001",
+                "kream_id": 40814
+            },
+            {
+                "product_id": "1203A226-200",
+                "kream_id": 89093
+            },
+            {
+                "product_id": "1201A715-020",
+                "kream_id": 50998
+            },
+            {
+                "product_id": "1202A431-020",
+                "kream_id": 96598
+            },
+            {
+                "product_id": "1202A164-107",
+                "kream_id": 61862
+            },
+            {
+                "product_id": "1183C102-200",
+                "kream_id": 104659
+            },
+            {
+                "product_id": "1201A934-020",
+                "kream_id": 153967
+            }
+        ]
+    },
+    "trading_volume": {
+        "len": 47,
+        "kream_id_list": [
+            89093,
+            97541,
+            161671,
+            189961,
+            52235,
+            42637,
+            52238,
+            74130,
+            104598,
+            94616,
+            72480,
+            61862,
+            65575,
+            101161,
+            91049,
+            91051,
+            67244,
+            91053,
+            107182,
+            50477,
+            74800,
+            50998,
+            39607,
+            74550,
+            36537,
+            63166,
+            55231,
+            69567,
+            41153,
+            73795,
+            85577,
+            72909,
+            104659,
+            99156,
+            72020,
+            96598,
+            154837,
+            31704,
+            202326,
+            141527,
+            141528,
+            65628,
+            76135,
+            39530,
+            40814,
+            153967,
+            97779
+        ],
+        "data": [
+            {
+                "kream_id": 42637,
+                "kream_product_size": "265",
+                "price": 188000,
+                "lightening": false,
+                "trading_at": "2023-12-12 00:00:00"
+            },
+            {
+                "kream_id": 42637,
+                "kream_product_size": "265",
+                "price": 190000,
+                "lightening": false,
+                "trading_at": "2023-12-11 00:00:00"
+            },
+            {
+                "kream_id": 85577,
+                "kream_product_size": "295",
+                "price": 229000,
+                "lightening": false,
+                "trading_at": "2023-12-15 00:00:00"
+            },
+            {
+                "kream_id": 85577,
+                "kream_product_size": "275",
+                "price": 339000,
+                "lightening": false,
+                "trading_at": "2023-12-15 00:00:00"
+            },
+            {
+                "kream_id": 85577,
+                "kream_product_size": "225",
+                "price": 549000,
+                "lightening": true,
+                "trading_at": "2023-12-13 00:00:00"
+            },
+            {
+                "kream_id": 85577,
+                "kream_product_size": "295",
+                "price": 240000,
+                "lightening": true,
+                "trading_at": "2023-12-12 00:00:00"
+            },
+            {
+                "kream_id": 85577,
+                "kream_product_size": "270",
+                "price": 355000,
+                "lightening": false,
+                "trading_at": "2023-12-10 00:00:00"
+            },
+            {
+                "kream_id": 85577,
+                "kream_product_size": "255",
+                "price": 398000,
+                "lightening": true,
+                "trading_at": "2023-12-09 00:00:00"
+            },
+            {
+                "kream_id": 85577,
+                "kream_product_size": "285",
+                "price": 300000,
+                "lightening": true,
+                "trading_at": "2023-12-07 00:00:00"
+            },
+            {
+                "kream_id": 85577,
+                "kream_product_size": "280",
+                "price": 280000,
+                "lightening": false,
+                "trading_at": "2023-12-07 00:00:00"
+            }
+        ]
+    },
+    "buy_and_sell": {
+        "len": 96,
+        "kream_id_list": [
+            89093,
+            189961,
+            52235,
+            52237,
+            52238,
+            178192,
+            100374,
+            82462,
+            65575,
+            74800,
+            73795,
+            85577,
+            139347,
+            202326,
+            65628,
+            62566,
+            39530,
+            57456,
+            110707,
+            17018,
+            119424,
+            42637,
+            27279,
+            104598,
+            104600,
+            83104,
+            119973,
+            67244,
+            107181,
+            107182,
+            107180,
+            39607,
+            36537,
+            63165,
+            63166,
+            41153,
+            36038,
+            72909,
+            104659,
+            154837,
+            95957,
+            141527,
+            141528,
+            105687,
+            141531,
+            89826,
+            99049,
+            152299,
+            152300,
+            97541,
+            33551,
+            56591,
+            72480,
+            29473,
+            101161,
+            50477,
+            50998,
+            74550,
+            99156,
+            72020,
+            96598,
+            76135,
+            40814,
+            153967,
+            99184,
+            71040,
+            161669,
+            112517,
+            161671,
+            178566,
+            53645,
+            74130,
+            103315,
+            94616,
+            61862,
+            91049,
+            71081,
+            91051,
+            71082,
+            91053,
+            61869,
+            91054,
+            57273,
+            50106,
+            106939,
+            106940,
+            55231,
+            69567,
+            106952,
+            142281,
+            129482,
+            31704,
+            95203,
+            97779,
+            97780,
+            45562
+        ],
+        "data": [
+            {
+                "kream_id": 42637,
+                "kream_product_size": "235",
+                "buy": 160000,
+                "sell": 0,
+                "updated_at": "2023-12-17 12:04:54"
+            },
+            {
+                "kream_id": 42637,
+                "kream_product_size": "240",
+                "buy": 0,
+                "sell": 750000,
+                "updated_at": "2023-12-17 12:04:54"
+            },
+            {
+                "kream_id": 42637,
+                "kream_product_size": "250",
+                "buy": 130000,
+                "sell": 0,
+                "updated_at": "2023-12-17 12:04:54"
+            },
+            {
+                "kream_id": 42637,
+                "kream_product_size": "265",
+                "buy": 160000,
+                "sell": 0,
+                "updated_at": "2023-12-17 12:04:54"
+            },
+            {
+                "kream_id": 42637,
+                "kream_product_size": "270",
+                "buy": 160000,
+                "sell": 0,
+                "updated_at": "2023-12-17 12:04:54"
+            },
+            {
+                "kream_id": 42637,
+                "kream_product_size": "275",
+                "buy": 0,
+                "sell": 295000,
+                "updated_at": "2023-12-17 12:04:54"
+            },
+            {
+                "kream_id": 42637,
+                "kream_product_size": "280",
+                "buy": 121000,
+                "sell": 0,
+                "updated_at": "2023-12-17 12:04:54"
+            },
+            {
+                "kream_id": 42637,
+                "kream_product_size": "290",
+                "buy": 95000,
+                "sell": 0,
+                "updated_at": "2023-12-17 12:04:54"
+            },
+            {
+                "kream_id": 89093,
+                "kream_product_size": "225",
+                "buy": 100000,
+                "sell": 280000,
+                "updated_at": "2023-12-17 12:04:54"
+            },
+            {
+                "kream_id": 89093,
+                "kream_product_size": "230",
+                "buy": 120000,
+                "sell": 298000,
+                "updated_at": "2023-12-17 12:04:54"
+            }
+        ]
+    }
+}

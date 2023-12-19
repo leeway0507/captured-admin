@@ -1,6 +1,5 @@
 """dev Router"""
 
-from typing import Optional
 from datetime import datetime
 from sqlalchemy.ext.asyncio import AsyncSession
 from fastapi import APIRouter, Depends, HTTPException
@@ -8,30 +7,35 @@ from env import dev_env
 
 from db.dev_db import get_dev_db
 
-from .components.data_loader import *
-from .components.platform_product_card_page import PlatformPageMain, PageSearchType
-from .components.platform_product_card_list import PlatformListMain
-from .components.update_to_db import (
+from components.dev.platform.data_loader import *
+from components.dev.platform.platform_product_card_page import (
+    PlatformPageMain,
+    PageSearchType,
+)
+from components.dev.platform.platform_product_card_list import PlatformListMain
+from components.dev.platform.platform_db import (
     get_kream_product_detail_list_from_db,
     get_kream_product_size_info,
     get_kream_product_color_for_registration,
 )
-from .components.platform_browser_controller import PwPlatformBrowserControllerFactory
-from .components.platform_product_card_page.module_factory import (
+from components.dev.platform.platform_browser_controller import (
+    PwPlatformBrowserControllerFactory,
+)
+from components.dev.platform.platform_product_card_page.module_factory import (
     PwPlatformPageModuleFactory,
 )
-from .components.platform_product_card_list.module_factory import (
+from components.dev.platform.platform_product_card_list.module_factory import (
     PwPlatformListModuleFactory,
 )
-from .components.platform_product_card_page.save_manager import (
+from components.dev.platform.platform_product_card_page.save_manager import (
     SaveManager,
     ModuleFactory,
     PreprocessType,
 )
-from .components.data_loader import loader, LoadType
-from ..utils.scrap_report import ScrapReport
-from ..utils.temp_file_manager import TempFileManager
-from ..utils.util import save_to_parquet
+from components.dev.platform.data_loader import loader, LoadType
+from components.dev.utils.scrap_report import ScrapReport
+from components.dev.utils.temp_file_manager import TempFileManager
+from components.dev.utils.util import save_to_parquet
 
 platform_router = APIRouter()
 

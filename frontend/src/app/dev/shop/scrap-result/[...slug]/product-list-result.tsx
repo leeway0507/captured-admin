@@ -15,7 +15,7 @@ interface scrapingProps {
 interface fetchDataProps {
     shop_name: string;
     scrap_time: string;
-    scrap_result: object;
+    scrap_log: { shop_name: string; brand_name: string; status: string }[];
     brand_list: string[];
     db_update: boolean;
     num_process: number;
@@ -29,7 +29,7 @@ export default function ProductListResult({ fetchData }: { fetchData: fetchDataP
     const {
         shop_name: shopName,
         scrap_time: scrapTime,
-        scrap_result: scrapResult,
+        scrap_log: scrapLog,
         brand_list: brandList,
         db_update: dbUpdate,
         num_process: numProcess,
@@ -37,6 +37,11 @@ export default function ProductListResult({ fetchData }: { fetchData: fetchDataP
     } = fetchData;
 
     const submitRef = useRef<HTMLButtonElement>(null);
+
+    const scrapResult = scrapLog.reduce((acc: any, cur: any) => {
+        acc[cur.brand_name] = cur.status;
+        return acc;
+    }, {});
 
     const scrapPlan = Object.entries(scrapResult);
     const scrapSuccess = scrapPlan.filter(([key, value]) => value === "success");
@@ -97,7 +102,7 @@ export default function ProductListResult({ fetchData }: { fetchData: fetchDataP
         <div className="flex flex-col gap-4 max-w-3xl mx-auto py-8">
             <div className="py-2">
                 <span className="text-3xl">제품 상세정보 수집결과</span>
-                <span className="text-2xl">({`${scrapTime}-${shopName}`})</span>
+                <span className="text-2xl">({`${scrapTime}-${scrapLog[0].shop_name}`})</span>
             </div>
             <div className="p-4 text-xl bg-gray-100">
                 <div className="grid grid-cols-8 border-b mb-4 pb-2">
@@ -150,14 +155,14 @@ export default function ProductListResult({ fetchData }: { fetchData: fetchDataP
                 </button>
                 <button
                     className="black-bar-with-disabled flex-right p-2 text-xl"
-                    onClick={() => handleDB(`${scrapTime}-${shopName}`)}
+                    onClick={() => handleDB(`${scrapTime}-${scrapLog[0].shop_name}`)}
                     disabled={dbUpdate}>
                     {" "}
                     {dbUpdate ? "DB 넣기 완료" : "DB에 넣기"}
                 </button>
                 <button
                     className="black-bar bg-rose-700 flex-right p-2 text-xl"
-                    onClick={() => handleDelete(`${scrapTime}-${shopName}`)}>
+                    onClick={() => handleDelete(`${scrapTime}-${scrapLog[0].shop_name}`)}>
                     {" "}
                     수집 결과 삭제
                 </button>

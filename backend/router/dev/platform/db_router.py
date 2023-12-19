@@ -6,14 +6,14 @@ from fastapi import APIRouter, Depends, HTTPException
 
 from db.dev_db import get_dev_db
 
-from .components.update_to_db import (
+from components.dev.platform.platform_db import (
     update_scrap_product_card_list_to_db,
     update_scrap_product_card_detail_to_db,
     update_scrap_trading_volume_to_db,
     update_scrap_buy_and_sell_to_db,
     update_scrap_kream_product_bridge_to_db,
 )
-from ..utils.scrap_report import ScrapReport
+from components.dev.utils.scrap_report import ScrapReport
 
 kream_db_router = APIRouter()
 
@@ -45,9 +45,13 @@ async def update_kream_product_card_list_to_db(
     scrapTime: str,
     db: AsyncSession = Depends(get_dev_db),
 ):
-    """kream_product_card_table 업데이트"""
+    """camel : insertListScrapToDB"""
     platform_list_report.update_report(scrapTime + "-kream", "db_update", True)
-    return await update_scrap_product_card_list_to_db(db, platformType, scrapTime)
+    return await update_scrap_product_card_list_to_db(
+        db,
+        platformType,
+        scrapTime,
+    )
 
 
 @kream_db_router.get("/update-last-scrap-kream-product-card-detail")

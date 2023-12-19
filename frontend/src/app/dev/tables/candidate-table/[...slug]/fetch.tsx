@@ -1,3 +1,20 @@
+export const getCandidateTableBrandNameData = async (value: string) => {
+    const url = `${process.env.NEXT_PUBLIC_API_URL}/api/dev/shop/table/get-candidate-table-brand-name-data`;
+    const queryParams = new URLSearchParams({
+        value,
+    });
+    const res = await fetch(url + "?" + queryParams);
+    return { status: res.status, data: await res.json() };
+};
+export const getCandidateTableShopNameData = async (value: string) => {
+    const url = `${process.env.NEXT_PUBLIC_API_URL}/api/dev/shop/table/get-candidate-table-shop-name-data`;
+    const queryParams = new URLSearchParams({
+        value,
+    });
+    const res = await fetch(url + "?" + queryParams);
+    return { status: res.status, data: await res.json() };
+};
+
 export const getShopInfoByName = async (shopName: string) => {
     const url = `${process.env.NEXT_PUBLIC_API_URL}/api/dev/shop/get-shop-info`;
     const queryParams = new URLSearchParams({

@@ -52,6 +52,7 @@ export default function ScrapResult({ fetchData }: { fetchData: any }) {
         scrap_time: scrapTime,
         scrap_log: scrapLog,
         search_value: searchValue,
+        search_type: searchType,
         product_detail: ProductDetail,
         trading_volume: TradingVolume,
         buy_and_sell: BuyandSell,
@@ -106,7 +107,7 @@ export default function ScrapResult({ fetchData }: { fetchData: any }) {
 
     useEffect(() => {
         if (newScrapName === "") return;
-        router.push(`/dev/kream/scrap-result/${newScrapName}`);
+        router.push(`/dev/kream/scrap-result/page/${newScrapName}-kream`);
     }, [newScrapName, router]);
 
     const handleDB = async (searchValue: string, scrapName: string) => {
@@ -184,7 +185,7 @@ export default function ScrapResult({ fetchData }: { fetchData: any }) {
                 </button>
                 <button
                     className="black-bar-with-disabled flex-right p-2 text-lg"
-                    onClick={() => handleDB(searchValue, scrapTime)}
+                    onClick={() => handleDB(searchType === "sku" ? searchType : searchValue, scrapTime)}
                     disabled={dbUpdate}>
                     {" "}
                     {dbUpdate ? "DB 넣기 완료" : "DB에 넣기"}

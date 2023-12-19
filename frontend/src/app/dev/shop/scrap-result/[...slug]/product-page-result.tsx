@@ -9,12 +9,12 @@ import { handleScrapProductPage, searchProps } from "../../shop-card-page";
 interface fetchDataProps {
     num_of_plan: string;
     scrap_time: string;
-    scrap_result: scrapResultProps[];
+    scrap_log: scrapLogProps[];
     db_update: boolean;
     num_process: number;
 }
 
-interface scrapResultProps {
+interface scrapLogProps {
     shop_product_card_id: number;
     shop_name: string;
     brand_name: string;
@@ -24,7 +24,7 @@ interface scrapResultProps {
     product_name: string;
 }
 interface scrapingProps {
-    scrapList: scrapResultProps[];
+    scrapList: scrapLogProps[];
     numProcess: number;
 }
 
@@ -36,10 +36,15 @@ export default function ProductPageResult({ fetchData }: { fetchData: fetchDataP
     const {
         num_of_plan: numOfPlan,
         scrap_time: scrapTime,
-        scrap_result: scrapResult,
+        scrap_log: scrapResult,
         db_update: dbUpdate,
         num_process: numProcess,
     } = fetchData;
+
+    // const scrapResult = scrapLog.reduce((acc: any, cur: any) => {
+    //     acc[cur.sku] = cur.status;
+    //     return acc;
+    // }, {});
 
     const submitRef = useRef<HTMLButtonElement>(null);
 

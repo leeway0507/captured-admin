@@ -144,14 +144,20 @@ const KreamProductModal = ({
     const content = (
         <div className="flex flex-col">
             <div className="text-2xl bold text-main-black">제품 정보</div>
-            <div className="flex-center pb-4">
+            <div className="flex-left pb-4">
                 <div className="relative h-[100px] w-[180px] ">
-                    <Image
-                        src={kreamProductCard.kreamProductImgUrl}
-                        alt={kreamProductCard.kreamProductName}
-                        fill
-                        style={{ objectFit: "cover" }}
-                    />
+                    <Link
+                        href={`https://kream.co.kr/products/${kreamProductCard.kreamId}`}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="underline text-blue-700 pointer-cursor">
+                        <Image
+                            src={kreamProductCard.kreamProductImgUrl}
+                            alt={kreamProductCard.kreamProductName}
+                            fill
+                            style={{ objectFit: "cover" }}
+                        />
+                    </Link>
                 </div>
                 <div className="flex-center">
                     <div className="grid grid-flow-row auto-rows-max gap-1">
