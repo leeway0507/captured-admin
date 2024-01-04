@@ -7,12 +7,12 @@ from env import dev_env
 
 from db.dev_db import get_dev_db
 
-from components.dev.platform.data_loader import *
-from components.dev.platform.platform_product_card_page import (
+from backend.components.dev.platform.platform_data_loader import *
+from backend.components.dev.platform.page.legacy import (
     PlatformPageMain,
     PageSearchType,
 )
-from components.dev.platform.platform_product_card_list import PlatformListMain
+from components.dev.platform.list import PlatformListMain
 from components.dev.platform.platform_db import (
     get_kream_product_detail_list_from_db,
     get_kream_product_size_info,
@@ -21,20 +21,18 @@ from components.dev.platform.platform_db import (
 from components.dev.platform.platform_browser_controller import (
     PwPlatformBrowserControllerFactory,
 )
-from components.dev.platform.platform_product_card_page.module_factory import (
+from backend.components.dev.platform.page.sub_scraper_factory import (
     PwPlatformPageModuleFactory,
 )
-from components.dev.platform.platform_product_card_list.module_factory import (
-    PwPlatformListModuleFactory,
-)
-from components.dev.platform.platform_product_card_page.save_manager import (
+
+
+from backend.components.dev.platform.page.platform_page_data_converter import (
     SaveManager,
     ModuleFactory,
     PreprocessType,
 )
-from components.dev.platform.data_loader import loader, LoadType
-from components.dev.utils.scrap_report import ScrapReport
-from components.dev.utils.temp_file_manager import TempFileManager
+from backend.components.dev.platform.platform_data_loader import loader, LoadType
+from components.dev.utils.file_manager import ScrapTempFile
 from components.dev.utils.util import save_to_parquet
 
 platform_router = APIRouter()
@@ -132,9 +130,7 @@ async def scrap_product_list(
 @platform_router.get("/save-last-product-card-list")
 async def save_last_product_card_list():
     time_now = datetime.now().strftime("%y%m%d-%H%M%S")
-    list_data = await TempFileManager("platform_list").load_temp_file(
-        "product_card_list"
-    )
+    list_data = await ScrapTempFile("platform_list").load_temp_file("product_card_list")
 
     path = dev_env.PLATFORM_PRODUCT_LIST_DIR
     save_path = os.path.join(path, "kream")

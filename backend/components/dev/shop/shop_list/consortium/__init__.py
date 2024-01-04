@@ -1,39 +1,61 @@
-import json
 from typing import List, Dict, Any
 from bs4 import BeautifulSoup, Tag
-from playwright.async_api import Page
-from ..parent_class import PwShopList, PwShopPage
+from components.dev.shop.list.sub_scraper import (
+    PwShopListSubScraper,
+    ListScrapData,
+)
 
-from ...shop_product_card_list.schema import ListConfig, ListScrapData
+from backend.components.dev.shop.page.sub_scraper import (
+    PwShopPageSubScraper,
+)
 
 
-class PwConsortiumList(PwShopList):
-    def __name__(self) -> str:
-        return "consortium"
+class PwConsortiumListSubScraper(PwShopListSubScraper):
+    def __init__(self):
+        super().__init__()
+        self.scroll_on = False
+        self.shop_name = "consortium"
+        self.reverse_not_found_result = True
+        self.page_reload_after_cookies = False
+        self.cookie_button_xpath = ["#newsletter-modal > a"]
+        self.not_found_xpath = '//ul[contains(@class,"products-grid")]'
 
-    def config(self) -> ListConfig:
-        return ListConfig(
-            scroll_on=False,
-            reverse_not_found_result=True,
-            page_reload_after_cookies=False,
-            cookie_button_xpath=["#newsletter-modal > a"],
-            not_found_xpath='//ul[contains(@class,"products-grid")]',
-        )
-
-    async def extract_card_html(self, page) -> List[Tag] | None:
-        product_cards = await page.query_selector(
+    # concrete_method
+    async def extract_card_html(self) -> List[Tag] | None:
+        product_cards = await self.page.query_selector(
             '//ul[contains(@class,"products-grid")]'
         )
+
         if product_cards:
             cards = await product_cards.inner_html()
             cards = BeautifulSoup(cards, "html.parser")
-            cards = cards.find_all(attrs={"class": "item"})
+            cards = cards.find_all(class_="item")
             assert cards, "load_product_card : No product cards found"
             return cards
         else:
             return None
 
-    def extract_info(self, card: Tag, brand_name: str) -> ListScrapData:
+    # concrete_method
+    async def has_next_page(self, page_num: int) -> bool:
+        button = await self.page.query_selector("//a[contains(@class,'next i-next')]")
+
+        # Consortium Search Engine이 효율적이지 못해 불필요한 데이터가 수집됨.
+        num = await self.page.query_selector("//div[@class='page-title']/p")
+        if num:
+            num = await num.inner_text()
+            num = int(num.split(" ")[0])
+
+            if num > 100:
+                return False
+
+        if not button:
+            return False
+
+        await button.click()
+        return True
+
+    # concrete_method
+    def extract_info(self, card: Tag) -> Dict:
         price = card.find(attrs={"class": "special-price"})
         if price:
             price = price.text
@@ -76,62 +98,58 @@ class PwConsortiumList(PwShopList):
             product_id = "-".join(shop_product_name.split("-")[idx:])
 
         return ListScrapData(
-            shop_name=self.__name__(),
-            brand_name=brand_name,
+            shop_name=self.shop_name,
+            brand_name=self.job,
             shop_product_name=shop_product_name,
             shop_product_img_url=card.img["src"],  # type: ignore
             product_url=card.a["href"],  # type: ignore
             product_id=product_id,
             price=price,
-        )
-
-    async def get_next_page(self, page: Page, page_num: int) -> bool:
-        button = await page.query_selector("//a[contains(@class,'next i-next')]")
-
-        # Consortium Search Engine이 효율적이지 못해 불필요한 데이터가 수집됨.
-        # 이를 방지하기 위한 용도임(brand search에는 불필요)
-        num = await page.query_selector("//div[@class='page-title']/p")
-        if num:
-            num = await num.inner_text()
-            num = int(num.split(" ")[0])
-
-            if num > 100:
-                return False
-
-        if not button:
-            return False
-
-        await button.click()
-        return True
+        ).model_dump()
 
 
-class PwConsortiumPage(PwShopPage):
-    def __name__(self) -> str:
-        return "consortium"
+class PwConsortiumPageSubScraper(PwShopPageSubScraper):
+    def __init__(self):
+        super().__init__()
+        self.cookie_button_xpath = ["//*[@id='CybotCookiebotDialogBodyButtonAccept']"]
 
-    def get_cookie_button_xpath(self) -> List[str]:
-        return ['//*[@id="CybotCookiebotDialogBodyButtonAccept"]']
+    async def get_size(self) -> List[Dict[str, Any]]:
+        size = await self.scrap_size_from_html()
+        return self.size_template(size)
 
-    async def get_size_info(self, page: Page) -> List[Dict[str, Any]]:
-        size_query = await page.query_selector_all("div.input-box>select > option")
+    async def scrap_size_from_html(self):
+        size = await self.extract_size_from_html()
+        return self.remove_out_of_stock(size)
 
-        size_list = [await s.inner_text() for s in size_query]
-        size_list = [size for size in size_list if "Out of Stock" not in size][1:]
-        if not size_list:
+    async def extract_size_from_html(self):
+        size_query = await self.page.query_selector_all("div.input-box>select > option")
+        return [await s.inner_text() for s in size_query]
+
+    def remove_out_of_stock(self, size: List[str]) -> List[str]:
+        # [1:] 이유 = "Shoe Size" 제거
+        return [s for s in size if "Out of Stock" not in s][1:]
+
+    def size_template(self, size: List[str]):
+        if not size:
             return [{"shop_product_size": "-", "kor_product_size": "-"}]
-
         return [
             {"shop_product_size": s, "kor_product_size": s.split("-")[0].strip()}
-            for s in size_list
+            for s in size
         ]
 
-    async def get_product_id(self, page: Page) -> str:
-        product_id_text = await page.query_selector('//*[@id="detailsPanel"]/div')
-        product_id_text = await product_id_text.inner_text()  # type: ignore
-        text = product_id_text.lower()
+    async def get_product_id(self) -> str:
+        product_id = await self.scrap_product_id_from_html()
+        return await self.product_id_template(product_id)
+
+    async def scrap_product_id_from_html(self):
+        element = await self.page.query_selector('//*[@id="detailsPanel"]/div')
+        product_id = await element.inner_text()  # type: ignore
+        return product_id.lower()
+
+    async def product_id_template(self, text: str):
+        product_id = "-"
+
         if "product code" in text:
             product_id = text.split("product code")[1].strip()
-        else:
-            product_id = "-"
 
         return product_id.upper()

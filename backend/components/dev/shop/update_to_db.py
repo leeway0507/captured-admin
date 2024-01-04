@@ -212,32 +212,6 @@ async def update_shop_product_card_table(
     return {"message": "success"}
 
 
-async def update_product_id_by_shop_product_card_id(
-    db: AsyncSession, product_info: List[dict[str, Any]]
-):
-    """
-    product_info = [
-    key: shop_product_card_id
-    value: product_id
-    ]
-    key,value로 이름을 변경한 이유는 bindparam 사용을 위해서는 column 이름과 달라야 하기 때문임.
-    """
-
-    stmt = (
-        update(ShopProductCardTable)
-        .where(
-            and_(
-                ShopProductCardTable.shop_product_card_id == bindparam("key"),
-                ShopProductCardTable.product_id.in_([null(), "-"]),
-            )
-        )
-        .values(product_id=bindparam("value"))
-    )
-    await db.execute(stmt, product_info)
-    await db.commit()
-    return {"message": "success"}
-
-
 async def upsert_shop_product_size_table(db: AsyncSession, scrapDate: str):
     """shop_product_size_table에 insert"""
 
@@ -261,6 +235,32 @@ async def upsert_shop_product_size_table(db: AsyncSession, scrapDate: str):
 
     await db.commit()
     return True
+
+
+async def update_product_id_by_shop_product_card_id(
+    db: AsyncSession, product_info: List[dict[str, Any]]
+):
+    """
+    product_info = [
+    key: shop_product_card_id
+    value: product_id
+    ]
+    key,value로 이름을 변경한 이유는 bindparam 사용을 위해서는 column 이름과 달라야 하기 때문임.
+    """
+
+    stmt = (
+        select(ShopProductCardTable)
+        .where(
+            and_(
+                ShopProductCardTable.shop_product_card_id == bindparam("key"),
+                ShopProductCardTable.product_id.in_([null(), "-"]),
+            )
+        )
+        .values(product_id=bindparam("value"))
+    )
+    await db.execute(stmt, product_info)
+    await db.commit()
+    return {"message": "success"}
 
 
 async def get_shop_product_size_table_data(db: AsyncSession, product_id):

@@ -6,12 +6,12 @@ from db.dev_db import get_dev_db
 from components.dev.utils.browser_controller import PwBrowserController
 from components.dev.utils.scrap_report import ScrapReport
 
-from components.dev.shop.shop_product_card_page import ShopPageMain
-from components.dev.shop.shop_product_card_page.candidate_extractor import (
+from components.dev.shop.page import ShopPageMain
+from components.dev.shop.page.candidate_extractor import (
     RDBCandidateExtractor as RDB_Extractor,
 )
 from components.dev.shop.scrapable_list import get_scrapable_page_module_list
-from components.dev.shop.shop_product_card_page.page_module_factory import (
+from components.dev.shop.page.page_module_factory import (
     PwShopPageModuleFactory,
 )
 

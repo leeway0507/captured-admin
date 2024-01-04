@@ -9,8 +9,8 @@ from components.dev.utils.browser_controller import PwBrowserController
 from components.dev.utils.scrap_report import ScrapReport
 
 from components.dev.shop.update_to_db import get_shop_name_from_db
-from components.dev.shop.shop_product_card_list import ShopListMain
-from components.dev.shop.shop_product_card_list.list_module_factory import (
+from components.dev.shop.list import ShopListMain
+from backend.components.dev.shop.list.sub_scraper_factory import (
     PwShopListModuleFactory,
 )
 from components.dev.shop.scrapable_list import (

@@ -2,7 +2,8 @@ import os
 from typing import List, Dict, Any
 import json
 from playwright.async_api import Page
-from ..shop_product_card_list.schema import ListConfig, ListScrapData
+
+
 from bs4 import Tag
 from env import dev_env
 from abc import ABC, abstractmethod
@@ -27,22 +28,6 @@ class PwShopList(ABC):
                 return brand["brand_url"]
 
         raise Exception(f"brand_name: {brand_name} not found")
-
-    @abstractmethod
-    def config(self) -> ListConfig:
-        ...
-
-    @abstractmethod
-    async def extract_card_html(self, page) -> List[Tag] | None:
-        ...
-
-    @abstractmethod
-    def extract_info(self, card: Tag) -> ListScrapData:
-        ...
-
-    @abstractmethod
-    async def get_next_page(self, page: Page, page_num: int) -> bool:
-        ...
 
 
 class PwShopPage(ABC):

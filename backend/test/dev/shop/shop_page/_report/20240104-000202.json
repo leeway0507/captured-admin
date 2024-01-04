@@ -1,0 +1,12 @@
+{
+    "scrap_time": "20240104-000202",
+    "num_of_plan": 1,
+    "num_processor": 1,
+    "db_update": false,
+    "job": [
+        {
+            "job": "12345",
+            "status": "success"
+        }
+    ]
+}

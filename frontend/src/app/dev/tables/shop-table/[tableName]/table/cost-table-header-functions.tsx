@@ -3,7 +3,7 @@ import { updateCandidate } from "../../../candidate-table/[...slug]/fetch";
 import { getKreamColor, updateShopProductCard } from "../fetch";
 import { useState, useCallback } from "react";
 import { toast } from "react-toastify";
-import CreateFormModal from "@/app/production/product/component/modal/create-form-modal";
+import RegisterProductFormModal from "@/app/production/product/component/modal/register-product-form-modal";
 import SizeTableModal from "../modal/size-table-modal";
 import { getShopProductSizeTableData } from "../fetch";
 import { productCardProps, sizeInfoprops } from "../modal/size-table-modal";
@@ -68,13 +68,14 @@ export const SendDraft = (props: any) => {
     const [isOpen, setIsOpen] = useState(false);
 
     const { brandName, shopProductName, productId } = props.row.original;
-    const { sellPrice20P } = GetPrices(props);
-    const shippingFee = 19000;
+    const { sellPrice20P, sellPrice10P } = GetPrices(props);
+    const shippingFee = 15000;
+    const avgRetailPrice = Math.round((sellPrice10P + sellPrice20P) / 2);
     const [defaultData, setDefaultData] = useState({
         brand: brandName,
         productName: shopProductName.replaceAll("-", " "),
         productId: productId,
-        price: Math.round((sellPrice20P - shippingFee) / 1000) * 1000,
+        price: Math.round((avgRetailPrice - shippingFee) / 1000) * 1000,
         shippingFee: shippingFee,
         intl: true,
         color: "",
@@ -94,7 +95,9 @@ export const SendDraft = (props: any) => {
             <button className="bg-blue-600 text-white p-2" onClick={openToggle}>
                 초안작성
             </button>
-            {defaultData.color && <CreateFormModal defaultData={defaultData} isOpen={isOpen} setIsOpen={setIsOpen} />}
+            {defaultData.color && (
+                <RegisterProductFormModal defaultData={defaultData} isOpen={isOpen} setIsOpen={setIsOpen} />
+            )}
         </>
     ) : (
         <div className="bg-green-600 text-white p-2">

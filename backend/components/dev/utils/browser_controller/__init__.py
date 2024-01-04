@@ -4,7 +4,7 @@ import os
 
 
 import playwright.async_api as pw
-from playwright.async_api import async_playwright
+from playwright.async_api import async_playwright, Page
 from bs4 import Tag, BeautifulSoup
 
 
@@ -12,10 +12,10 @@ class PageController(Protocol):
     async def go_to(self, url) -> pw.Response | None:
         ...
 
-    async def deal_with_cookies(self, xpath_list: List[str]) -> None:
+    async def handle_cookies(self, query_list: List[str]) -> None:
         ...
 
-    async def get_page(self) -> pw.Page:
+    def get_page(self) -> pw.Page:
         ...
 
     async def scroll_down(self, max_scroll: int, time_delay: float) -> None:
@@ -39,10 +39,10 @@ class PageController(Protocol):
 
 class BrowserController(Protocol):
     @classmethod
-    async def create(cls) -> "BrowserController":
+    async def start(cls) -> "BrowserController":
         ...
 
-    async def create_page_controller(self) -> PageController:
+    async def create_page(self) -> PageController:
         ...
 
     async def load_cookies(self) -> None:
@@ -52,17 +52,14 @@ class BrowserController(Protocol):
         ...
 
 
-class PwPageController:
+class PwPageController(Page):
     def __init__(self, page: pw.Page):
         self.page = page
 
     async def go_to(self, url: str):
         return await self.page.goto(url, wait_until="domcontentloaded", timeout=20000)
 
-    async def get_page(self) -> pw.Page:
-        return self.page
-
-    async def deal_with_cookies(self, query_list: List[str]):
+    async def handle_cookies(self, query_list: List[str]):
         for xpath in query_list:
             cookies = await self.page.is_visible(xpath)
             if cookies:
@@ -73,6 +70,9 @@ class PwPageController:
 
         if query_list:
             await self.save_cookies()
+
+    def get_page(self) -> pw.Page:
+        return self.page
 
     async def save_cookies(self):
         # Get cookies from the current page
@@ -134,22 +134,22 @@ class PwBrowserController:
         return cls._instance
 
     @classmethod
-    async def create(cls) -> "PwBrowserController":
+    async def start(cls) -> "PwBrowserController":
         if cls._instance is None or cls._instance.context is None:
             self = cls()
-            self.context = await self.init_pw()
+            self.context = await self._init_pw()
             return self
         else:
             return cls._instance
 
-    async def init_pw(self) -> pw.BrowserContext:
+    async def _init_pw(self) -> pw.BrowserContext:
         pw = await async_playwright().start()
         self.browser = await pw.firefox.launch(headless=False, timeout=5000)
         self.context = await self.browser.new_context()
         await self.load_cookies()
         return self.context
 
-    async def create_page_controller(self) -> PwPageController:
+    async def create_page(self) -> PwPageController:
         page = await self.context.new_page()
         return PwPageController(page)
 

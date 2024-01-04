@@ -41,8 +41,19 @@ class SePlatformBrowserControllerFactory:
 
 
 class PwKreamBrowserController(PwBrowserController):
+    _instance = None
+
+    @classmethod
+    async def start(cls) -> "PwKreamBrowserController":
+        if cls._instance is None or cls._instance.context is None:
+            self = cls()
+            self.context = await self._init_pw()
+            return self
+        else:
+            return cls._instance
+
     async def login(self):
-        page_controller = await self.create_page_controller()
+        page_controller = await self.create_page()
         page = await page_controller.get_page()
 
         if page.is_closed():

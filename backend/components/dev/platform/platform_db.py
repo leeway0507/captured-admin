@@ -10,12 +10,12 @@ from db.tables_kream import (
     KreamBuyAndSellTable,
     KreamProductIdBridgeTable,
 )
-from .data_loader import *
+from .platform_data_loader import *
 from model.kream_scraping import (
     KreamProductDetailWithProductIdSchema,
     KreamProductSizeInfo,
 )
-from .data_loader import loader, LoadType
+from .platform_data_loader import PlatformData
 
 
 async def update_scrap_product_card_list_to_db(

@@ -5,7 +5,7 @@ from bs4 import BeautifulSoup, Tag
 from playwright.async_api import expect, Page
 from ..parent_class import PwShopList, PwShopPage
 
-from ...shop_product_card_list.schema import ListConfig, ListScrapData
+from ...list.schema import ListConfig, ListScrapData
 
 nextpage = "//a[contains(@title,'Next Page')]"
 

@@ -1,7 +1,7 @@
 import json
 from typing import List, Dict, Any
 from playwright.async_api import Page
-from ...shop_product_card_list.schema import ListConfig, ListScrapData
+from ...list.schema import ListConfig, ListScrapData
 from bs4 import BeautifulSoup, Tag
 from ..parent_class import PwShopList, PwShopPage
 

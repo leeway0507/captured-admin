@@ -4,17 +4,16 @@ from typing import Dict, List
 
 from env import dev_env
 
-from .shop_product_card_page.page_module_factory import ShopPageModuleFactory
-from .shop_product_card_list.list_module_factory import ShopListModuleFactory
+from .page.page_module_factory import ShopPageModuleFactory
 
 
 def get_scrapable_page_module_list():
-    method_list = [m for m in dir(ShopPageModuleFactory) if m.startswith("__") is False]
+    method_list = [m for m in dir(ShopPageModuleFactory) if not m.startswith("__")]
     return method_list
 
 
 def get_scrapable_list_module_list():
-    method_list = [m for m in dir(ShopListModuleFactory) if m.startswith("__") is False]
+    method_list = [m for m in dir(ShopListModuleFactory) if not m.startswith("__")]
     return method_list
 
 

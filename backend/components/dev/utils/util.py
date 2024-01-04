@@ -14,27 +14,33 @@ def save_to_parquet(path: str, file_name: str, scrap_data: List[Dict[str, Any]])
     return True
 
 
-def split_size(l: List, num_list: int) -> List[List]:
-    """
-    l: list
-    n_l : number of list
-    """
-    q, r = divmod(len(l), num_list)
+class ListSeparator:
+    @classmethod
+    def split(cls, target_list: List, group_num: int) -> List[List]:
+        group_size, rest = divmod(len(target_list), group_num)
 
-    if r > 0:
-        # ex 10 | 3
-        # 4,4,2
-        # l_size = list size
-        l_size = len(l) // num_list
-        l_size += 1
+        if rest == 0:
+            output = cls.split_rest_zero(target_list, group_size)
 
-        output = [l[i * l_size : (i + 1) * l_size] for i in range(num_list - 1)]
-        output.append(l[(num_list - 1) * l_size :])
+        else:
+            output = cls.split_rest_not_zero(target_list, group_size)
 
-    else:
-        # ex 9 | 3
-        # 3,3,3
-        l_size = len(l) // num_list
-        output = [l[i : i + q] for i in range(0, len(l), l_size)]
+        return output
 
-    return output
+    @staticmethod
+    def split_rest_zero(target_list: List, group_size: int) -> List[List]:
+        output = [
+            target_list[idx : idx + group_size]
+            for idx in range(0, len(target_list), group_size)
+        ]
+        return output
+
+    @staticmethod
+    def split_rest_not_zero(target_list: List, group_size: int) -> List[List]:
+        group_size += 1
+        output = [
+            target_list[idx * group_size : (idx + 1) * group_size]
+            for idx in range(len(target_list) // group_size)
+        ]
+        output.append(target_list[(len(target_list) // group_size) * group_size :])
+        return output

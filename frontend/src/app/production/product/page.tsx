@@ -3,7 +3,7 @@
 import { ProductInfoTable } from "./component/table/product-info-table";
 import { useEffect, useState } from "react";
 import { CreateproductCardProps } from "@/app/types/type";
-import CreateFormModal from "./component/modal/create-form-modal";
+import RegisterProductFormModal from "./component/modal/register-product-form-modal";
 
 export default function Page() {
     const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -33,7 +33,7 @@ export default function Page() {
                 </div>
             </div>
             <ProductInfoTable />
-            <CreateFormModal defaultData={defaultData} isOpen={isOpen} setIsOpen={setIsOpen} />
+            <RegisterProductFormModal defaultData={defaultData} isOpen={isOpen} setIsOpen={setIsOpen} />
         </div>
     );
 }

@@ -1,0 +1,24 @@
+{
+    "scrap_time": "20240103-175111",
+    "num_of_plan": 3,
+    "num_processor": 1,
+    "db_update": false,
+    "job": [
+        {
+            "job": "the north face",
+            "status": "success : 1 개",
+            "platform_type": "kream"
+        },
+        {
+            "job": "the north face",
+            "status": "success : 1 개",
+            "platform_type": "kream"
+        },
+        {
+            "job": "the north face",
+            "status": "success : 1 개",
+            "platform_type": "kream"
+        }
+    ],
+    "platform_type": "kream"
+}

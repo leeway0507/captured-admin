@@ -1,5 +1,5 @@
 from components.dev.utils.browser_controller import BrowserController, PageController
-from components.dev.shop.shop_product_card_page.candidate_extractor import (
+from components.dev.shop.page.candidate_extractor import (
     CandidateExtractor,
     SearchType,
     schema,
