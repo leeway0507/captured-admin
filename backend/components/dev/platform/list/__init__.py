@@ -98,7 +98,7 @@ class PlatformListScraper(PlatformScraper):
         self._save_parquet(file_path, list_data)
 
     def generate_folder_path(self):
-        return os.path.join(self.path, self.platform_type)
+        return os.path.join(self.path, self.platform_type, self.scrap_folder_name)
 
     def generate_file_path(self):
         file_name = self.scrap_time + "-product_card_list" + ".parquet.gzip"

@@ -1,5 +1,5 @@
 from abc import ABC, abstractmethod
-from typing import Any, List, Protocol
+from typing import Any, List, Tuple
 
 from ...utils.browser_controller import PageController as P
 from bs4 import Tag
@@ -25,7 +25,7 @@ class PlatformListSubScraper(SubScraper):
 
     async def execute(
         self, max_scroll=20, time_delay=500
-    ) -> List[KreamScrapingBrandSchema] | List:
+    ) -> Tuple[str, List[KreamScrapingBrandSchema] | List]:
         await self._goto_list_page()
         await self.page_controller.scroll_down(
             max_scroll=max_scroll, time_delay=time_delay
@@ -45,20 +45,6 @@ class PlatformListSubScraper(SubScraper):
     @page_controller.setter
     def page_controller(self, value):
         self._page_controller = value
-
-    @property
-    def brand_name(self):
-        if not self._brand_name:
-            raise ValueError(
-                """
-                brand_name is None. Plase update brand_name.
-                """
-            )
-        return self._brand_name
-
-    @brand_name.setter
-    def brand_name(self, value):
-        self._brand_name = value
 
     @property
     def min_volume(self):
@@ -90,7 +76,9 @@ class PlatformListSubScraper(SubScraper):
         ...
 
     @abstractmethod
-    async def get_product_card_list(self) -> List[Any]:
+    async def get_product_card_list(
+        self,
+    ) -> Tuple[str, List[KreamScrapingBrandSchema] | List]:
         ...
 
 
@@ -101,17 +89,19 @@ class PwKreamListSubScraper(PlatformListSubScraper):
     def get_url(self) -> str:
         return f"https://kream.co.kr/search?keyword={self.job}&sort=wish"
 
-    async def get_product_card_list(self) -> List[KreamScrapingBrandSchema] | List:
+    async def get_product_card_list(
+        self,
+    ) -> Tuple[str, List[KreamScrapingBrandSchema] | List]:
         raw_card = await self._extract_card_list_from_page()
         if not raw_card:
             print(f"[{self.__name__}] has no [{self.job}] cards items")
-            return []
+            return "failed", []
 
         card_data = [self._extract_info(card) for card in raw_card]
 
         filtered_card_data = self._filter_card_data(card_data)
 
-        return filtered_card_data
+        return "success", filtered_card_data
 
     async def _extract_card_list_from_page(self):
         return await self.page_controller.extract_html(".product_card")

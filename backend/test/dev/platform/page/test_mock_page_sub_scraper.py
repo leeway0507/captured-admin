@@ -8,6 +8,7 @@ from bs4 import Tag, BeautifulSoup
 
 from components.dev.utils.browser_controller import PwPageController
 from components.dev.platform.page.sub_scraper import PwKreamPageSubScraper
+from components.dev.platform.platform_browser_controller import PwKreamBrowserController
 
 
 path = "/Users/yangwoolee/repo/captured/admin/backend/test/dev/platform/page"
@@ -29,42 +30,42 @@ def anyio_backend():
 
 
 @pytest.fixture(scope="module")
-async def sub_scraper() -> AsyncGenerator:
+async def mock_sub_scraper() -> AsyncGenerator:
     pw = await async_playwright().start()
     browser = await pw.firefox.launch(timeout=5000)
     page = await browser.new_page()
     pw_page = PwPageController(page)
     scraper = PwKreamPageSubScraper()
     scraper.late_binding(pw_page)
-    scraper.allocate_job(96970)
+    scraper.allocate_job(12345)
     yield scraper
 
 
 @pytest.fixture(scope="module")
-async def product_detail_scraper(sub_scraper: PwKreamPageSubScraper):
-    await sub_scraper.page_controller.go_to(product_detail_path)
-    yield sub_scraper
+async def product_detail_scraper(mock_sub_scraper: PwKreamPageSubScraper):
+    await mock_sub_scraper.page_controller.go_to(product_detail_path)
+    yield mock_sub_scraper
 
 
 @pytest.fixture(scope="module")
-async def buy_and_sell_scraper(sub_scraper: PwKreamPageSubScraper):
-    await sub_scraper.page_controller.go_to(buy_and_sell_path)
-    yield sub_scraper
+async def buy_and_sell_scraper(mock_sub_scraper: PwKreamPageSubScraper):
+    await mock_sub_scraper.page_controller.go_to(buy_and_sell_path)
+    yield mock_sub_scraper
 
 
 @pytest.fixture(scope="module")
-async def trading_volume_scraper(sub_scraper: PwKreamPageSubScraper):
-    await sub_scraper.page_controller.go_to(trading_volume_path)
-    yield sub_scraper
+async def trading_volume_scraper(mock_sub_scraper: PwKreamPageSubScraper):
+    await mock_sub_scraper.page_controller.go_to(trading_volume_path)
+    yield mock_sub_scraper
 
 
 @pytest.mark.anyio
-async def test_go_to_card_page(sub_scraper: PwKreamPageSubScraper):
+async def test_go_to_card_page(mock_sub_scraper: PwKreamPageSubScraper):
     # When
-    await sub_scraper.go_to_card_page()
+    await mock_sub_scraper.go_to_card_page()
 
     # Then
-    assert sub_scraper.page.url == sub_scraper.get_url()
+    assert mock_sub_scraper.page.url == mock_sub_scraper.get_url()
 
 
 @pytest.mark.anyio
@@ -300,6 +301,9 @@ async def test_trading_volume_extract_trading_volume(
     assert scrap_result[0] == "success"
 
 
+####
+
+
 # @pytest.mark.anyio
 # async def test_trading_volume(
 #     trading_volume_scraper: PwKreamPageSubScraper,
@@ -314,29 +318,29 @@ async def test_trading_volume_extract_trading_volume(
 
 
 # @pytest.mark.anyio
-# async def test_execute_sub_process_job(sub_scraper: PwKreamPageSubScraper):
-#     await sub_scraper.page_controller.go_to(product_detail_path)
+# async def test_execute_sub_process_job(mock_sub_scraper: PwKreamPageSubScraper):
+#     await mock_sub_scraper.page_controller.go_to(product_detail_path)
 #     (
 #         product_detail_status,
 #         product_detail_data,
-#     ) = await sub_scraper.scrap_product_detail()
+#     ) = await mock_sub_scraper.scrap_product_detail()
 
 #     # Json Serialize 때문에 어쩔 수 없이 넣음
 #     strf_time = product_detail_data["updated_at"].strftime("%Y-%m-%d %H:%M:%S")
 #     product_detail_data.update({"updated_at": strf_time})
 
-#     await sub_scraper.page_controller.go_to(buy_path)
-#     buy_data = await sub_scraper._scrap_buy_and_sell_page("buy")
+#     await mock_sub_scraper.page_controller.go_to(buy_path)
+#     buy_data = await mock_sub_scraper._scrap_buy_and_sell_page("buy")
 
-#     await sub_scraper.page_controller.go_to(sell_path)
-#     sell_data = await sub_scraper._scrap_buy_and_sell_page("sell")
+#     await mock_sub_scraper.page_controller.go_to(sell_path)
+#     sell_data = await mock_sub_scraper._scrap_buy_and_sell_page("sell")
 
-#     await sub_scraper.page_controller.go_to(trading_volume_path)
-#     sub_scraper._set_target_date()
+#     await mock_sub_scraper.page_controller.go_to(trading_volume_path)
+#     mock_sub_scraper._set_target_date()
 #     (
 #         trading_volume_status,
 #         trading_volume_data,
-#     ) = await sub_scraper._extract_trading_volume()
+#     ) = await mock_sub_scraper._extract_trading_volume()
 
 #     data = {
 #         "status": {

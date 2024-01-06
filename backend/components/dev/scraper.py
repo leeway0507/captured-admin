@@ -39,6 +39,7 @@ class Scraper(ABC):
         self.sub_scraper = sub_scraper
         self.scrap_time = ""
         self._target_list = []
+        self._scrap_folder_name = None
 
     async def scrap(self):
         try:
@@ -48,12 +49,13 @@ class Scraper(ABC):
             self.exception_error(e)
 
     async def main(self):
-        self.TempFile.init()
-        self.browser_login()
-        await self.execute_sub_processors()
         self.set_scrap_time()
+        self.check_necessary_property()
+        self.TempFile.init()
+        await self.browser_login()
+        await self.execute_sub_processors()
         await self.create_scrap_report()
-        self.save_scrap_data()
+        await self.save_scrap_data()
 
     def exception_error(self, e: Exception):
         print("shop_product_card_page scrap error")
@@ -63,8 +65,18 @@ class Scraper(ABC):
             "error": str(e),
         }
 
+    def check_necessary_property(self):
+        if not self.scrap_folder_name:
+            raise ValueError("scrap_folder_name is None!")
+
+        if not self.target_list:
+            raise ValueError("target_list is None!")
+
+        if not self.scrap_time:
+            raise ValueError("scrap_time is None!")
+
     @abstractmethod
-    def browser_login():
+    async def browser_login():
         ...
 
     @property
@@ -80,13 +92,13 @@ class Scraper(ABC):
         self._target_list = target_list
 
     async def execute_sub_processors(self):
-        sub_processors = await self.allocate_target_to_sub_processor(self.target_list)
+        sub_processors = await self.allocate_target_to_sub_processor()
         await asyncio.gather(*sub_processors)
 
-    async def allocate_target_to_sub_processor(self, target_list: List):
+    async def allocate_target_to_sub_processor(self):
         pages = [await self.browser.create_page() for _ in range(self.num_processor)]
 
-        job = ListSeparator.split(target_list, self.num_processor)
+        job = ListSeparator.split(self.target_list, self.num_processor)
 
         sub_processors = [
             self.sub_processor(pages[i], job[i]) for i in range(self.num_processor)
@@ -107,7 +119,7 @@ class Scraper(ABC):
         for job in jobs:
             for _ in range(retry):
                 try:
-                    status, data = await self.execute_job(job)
+                    status, data = await self.execute_sub_scraper(job)
                     await self.save_data_to_temp(data)
                     break
 
@@ -118,11 +130,7 @@ class Scraper(ABC):
             scrap_temp_template = self.set_scrap_status_temp_template(job, status)
             await self.save_scrap_status_to_temp(scrap_temp_template)
 
-    # concrete_method
-    async def execute_job(self, job: str):
-        return await self.excute_sub_process_job(job)
-
-    async def excute_sub_process_job(self, job: str):
+    async def execute_sub_scraper(self, job: str):
         self.sub_scraper.allocate_job(job)
         return await self.sub_scraper.execute()
 
@@ -169,8 +177,18 @@ class Scraper(ABC):
     def create_report_template(self, temp_scrap_status: List) -> ScrapReportDataBase:
         pass
 
+    @property
+    def scrap_folder_name(self):
+        if not self._scrap_folder_name:
+            raise ValueError("scrap_folder_name is not set")
+        return self._scrap_folder_name
+
+    @scrap_folder_name.setter
+    def scrap_folder_name(self, scrap_folder_name: str):
+        self._scrap_folder_name = scrap_folder_name
+
     @abstractmethod
-    def save_scrap_data(self):
+    async def save_scrap_data(self):
         pass
 
     def _save_parquet(self, path: str, data: List):

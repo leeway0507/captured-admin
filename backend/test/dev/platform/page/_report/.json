@@ -1,0 +1,19 @@
+{
+    "scrap_time": "",
+    "num_of_plan": 1,
+    "num_processor": 1,
+    "db_update": false,
+    "job": [
+        "74749"
+    ],
+    "product_detail": [
+        "success"
+    ],
+    "trading_volume": [
+        "success"
+    ],
+    "buy_and_sell": [
+        "success"
+    ],
+    "platform_type": "kream"
+}

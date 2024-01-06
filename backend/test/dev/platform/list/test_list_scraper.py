@@ -13,44 +13,17 @@ from components.dev.platform.platform_browser_controller import (
 from components.dev.platform.list import PlatformListScraper, PlatformScrapStatus
 from components.dev.platform.list.sub_scraper import (
     PwKreamListSubScraper,
-    KreamScrapingBrandSchema,
 )
-
-from .utils import KreamLogin
 
 path = "/Users/yangwoolee/repo/captured/admin/backend/test/dev/platform/list"
 test_min_volume = 50
 test_min_wish = 50
 test_brand_name = "the north face"
 
-test_card_data = {
-    "kream_id": 93545,
-    "kream_product_img_url": "https://kream-phinf.pstatic.net/MjAyMzAxMDVfMTgy/MDAxNjcyODk5Mjc1OTgw.yXEXH3igWJ4-N-Y06kN0D1vg0OzDaeRZR_y9-94sDPIg.R1y0HFw0_MoHmxRJbUsEMiOQ4FiOPmh3prb3X_a4kAEg.JPEG/a_3757826722ac4b00877f3c6588932b37.jpg?type=m",
-    "kream_product_name": "the north face 1996 retro nuptse jacket dark oak",
-    "brand_name": "the north face",
-    "trading_volume": 2027,
-    "wish": 7645,
-    "review": 119,
-}
 
-
-@pytest.fixture(scope="session")
-def raw_tag():
-    html = open_html()
-    soup = BeautifulSoup(html, "html.parser")
-    card_list = extract_card_list(soup)
-    yield card_list[0]
-
-
-def open_html():
-    html_path = os.path.join(path, "test.html")
-    with open(html_path, "r") as f:
-        r = f.read()
-    return r
-
-
-def extract_card_list(soup: Tag):
-    return soup.find_all(class_="product_card")
+def remove_test_folder(path: str):
+    if os.path.exists(path):
+        shutil.rmtree(path)
 
 
 # anyio settings do not remove
@@ -72,113 +45,52 @@ async def scraper() -> AsyncGenerator:
         test_min_volume,
         test_min_wish,
     )
+    # necessary for test
+    scraper.target_list = [test_brand_name]
+    scraper.scrap_folder_name = "real_scrap_result"
+    scraper.set_scrap_time()
+
     yield scraper
 
 
-# @pytest.mark.anyio
-# async def test_kream_login(scraper: PlatformListScraper):
-#     await scraper.browser_login()
-#     assert scraper.browser.is_login
+@pytest.mark.anyio
+async def test(scraper: PlatformListScraper):
+    scraper.check_necessary_property()
 
 
 @pytest.mark.anyio
-async def test_extract_target_list(
-    scraper: PlatformListScraper,
-):
-    scraper.target_list = [test_brand_name]
-    assert scraper.target_list == [test_brand_name]
+async def test_kream_login(scraper: PlatformListScraper):
+    await scraper.browser_login()
+    assert scraper.browser.is_login
 
 
 @pytest.mark.anyio
-async def test_save_data_to_temp(scraper: PlatformListScraper):
-    # Given
-    os.remove(os.path.join(path, "_temp", "product_card_list.json"))
+async def test_execute_sub_processor(scraper: PlatformListScraper):
+    temp_path = scraper.TempFile.path
+    remove_test_folder(temp_path)
 
-    mock_card_data = [
-        KreamScrapingBrandSchema(
-            updated_at=datetime.now().replace(microsecond=0),
-            **test_card_data,
-        )
-    ]
+    await scraper.execute_sub_processors()
 
-    # When
-    await scraper._save_data_to_temp(mock_card_data)
-
-    # Then
-    assert os.path.exists(os.path.join(path, "_temp", "product_card_list.json"))
-
-
-@pytest.mark.anyio
-async def test_save_scrap_status_to_temp(scraper: PlatformListScraper):
-    # Given
-    os.remove(os.path.join(path, "_temp", "scrap_status.json"))
-
-    # When
-    for _ in range(3):
-        status = f"success : 1 개"
-        template = PlatformScrapStatus(
-            platform_type="kream", job="the north face", status=status
-        )
-        await scraper.save_scrap_status_to_temp(template)
-
-    # Then
-    assert os.path.exists(os.path.join(path, "_temp", "scrap_status.json"))
-
-
-@pytest.mark.anyio
-async def test_create_report_data(scraper: PlatformListScraper):
-    # Given
-    scraper.set_scrap_time()
-    data = await scraper.load_temp_scrap_data()
-
-    # When
-    report_data = scraper.create_report_template(data)
-
-    # Then
-    assert report_data.db_update == False
+    assert os.path.exists(temp_path) == True
 
 
 @pytest.mark.anyio
 async def test_create_scrap_report(scraper: PlatformListScraper):
     # Given
-    shutil.rmtree(os.path.join(path, "_report"))
+    report_path = scraper.Report.report_path
+    remove_test_folder(report_path)
 
-    # When
     await scraper.create_scrap_report()
 
-    # Then
-    assert os.path.exists(os.path.join(path, "_report"))
-
-
-@pytest.mark.anyio
-async def test_generate_file_path(scraper: PlatformListScraper):
-    # Given
-    scrap_time = scraper.set_scrap_time()
-    print(scrap_time)
-    file_name = scrap_time + "-product_card_list" + ".parquet.gzip"
-    test_file_path = os.path.join(path, "kream", file_name)
-
-    file_path = scraper.generate_file_path()
-
-    assert file_path == test_file_path
-
-
-@pytest.mark.anyio
-async def test_load_scrap_data(scraper: PlatformListScraper):
-    # When
-    data = await scraper.load_scrap_data()
-
-    # Then
-    assert data[0]["kream_id"] == 93545
+    assert os.path.exists(report_path) == True
 
 
 @pytest.mark.anyio
 async def test_save_scrap_data(scraper: PlatformListScraper):
     # Given
-    scrap_time = scraper.set_scrap_time()
+    data_path = os.path.join(path, scraper.platform_type, "real_scrap_result")
+    remove_test_folder(data_path)
 
-    # When
     await scraper.save_scrap_data()
 
-    # Then
-    assert os.path.exists(os.path.join(path, "kream"))
+    assert os.path.exists(data_path) == True

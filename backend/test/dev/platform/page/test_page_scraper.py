@@ -21,123 +21,68 @@ def anyio_backend():
     return "asyncio"
 
 
+def remove_test_folder(path: str):
+    if os.path.exists(path):
+        shutil.rmtree(path)
+
+
 @pytest.fixture(scope="module")
 async def scraper() -> AsyncGenerator:
     browser = await PwKreamBrowserController.start()
     sub_scraper = PwKreamPageSubScraper()
     scraper = PlatformPageScraper(path, 1, browser, sub_scraper, "kream")
+
+    # necessary for test
+    scraper.target_list = ["74749"]
+    scraper.scrap_folder_name = "real_scrap_result"
+    scraper.set_scrap_time()
+
     yield scraper
 
 
-@pytest.fixture(scope="module")
-async def scrap_result():
-    with open(scrap_result_path, "r") as f:
-        data = json.load(f)
-    yield data
+@pytest.mark.anyio
+async def test_necessary_property(scraper: PlatformPageScraper):
+    scraper.check_necessary_property()
 
 
 @pytest.mark.anyio
-async def test_save_data_to_temp(scraper: PlatformPageScraper, scrap_result):
-    # Given
-    shutil.rmtree(os.path.join(path, "_temp"))
+async def test_is_login(scraper: PlatformPageScraper):
+    await scraper.browser.login()
 
-    # When
-    data = scrap_result["data"]
-    await scraper.save_data_to_temp(data)
-
-    # Then
-    assert os.path.exists(os.path.join(path, "_temp"))
+    assert await scraper.browser.is_login() == True
 
 
 @pytest.mark.anyio
-async def test_handle_scrap_error(scraper: PlatformPageScraper):
-    err_status = "Test Exception Error"
-    err = await scraper.handle_scrap_error("test", Exception(err_status))
-    assert err == f"failed: {err_status}"
+async def test_execute_sub_processor(scraper: PlatformPageScraper):
+    temp_path = scraper.TempFile.path
+    remove_test_folder(temp_path)
 
+    await scraper.execute_sub_processors()
 
-def test_set_scrap_status_temp_template(scraper: PlatformPageScraper, scrap_result):
-    template = scraper.set_scrap_status_temp_template("test", scrap_result["status"])
-    assert template.model_dump() == {
-        "job": "test",
-        "status": scrap_result["status"],
-    }
-
-
-@pytest.mark.anyio
-async def test_save_scrap_status_to_temp(scraper: PlatformPageScraper, scrap_result):
-    for i in range(1, 6):
-        template = scraper.set_scrap_status_temp_template(
-            str(i), scrap_result["status"]
-        )
-        await scraper.save_scrap_status_to_temp(template)
-
-    assert os.path.exists(os.path.join(path, "_temp", "scrap_status.json"))
-
-
-@pytest.mark.anyio
-async def test_get_params_list(scraper: PlatformPageScraper):
-    temp_scrap_status = await scraper.TempFile.load_temp_file("scrap_status")
-
-    params_list = scraper._get_params_list(temp_scrap_status)
-
-    assert params_list == ["1", "2", "3", "4", "5"]
-
-
-@pytest.mark.anyio
-async def test_get_product_detail_list(scraper: PlatformPageScraper):
-    temp_scrap_status = await scraper.TempFile.load_temp_file("scrap_status")
-
-    product_detail = scraper._get_product_detail(temp_scrap_status)
-
-    assert product_detail == ["success", "success", "success", "success", "success"]
-
-
-@pytest.mark.anyio
-async def test_get_trading_volume_list(scraper: PlatformPageScraper):
-    temp_scrap_status = await scraper.TempFile.load_temp_file("scrap_status")
-
-    trading_volume = scraper._get_trading_volume(temp_scrap_status)
-
-    assert trading_volume == ["success", "success", "success", "success", "success"]
-
-
-@pytest.mark.anyio
-async def test_get_buy_and_sell_list(scraper: PlatformPageScraper):
-    temp_scrap_status = await scraper.TempFile.load_temp_file("scrap_status")
-
-    buy_and_sell = scraper._get_buy_and_sell(temp_scrap_status)
-
-    assert buy_and_sell == ["success", "success", "success", "success", "success"]
-
-
-@pytest.mark.anyio
-async def test_create_report_template(scraper: PlatformPageScraper):
-    temp_scrap_status = await scraper.TempFile.load_temp_file("scrap_status")
-    scraper.set_scrap_time()
-
-    report_template = scraper.create_report_template(temp_scrap_status)
-
-    assert report_template.model_dump() == {
-        "scrap_time": scraper.scrap_time,
-        "num_of_plan": 5,
-        "num_processor": 1,
-        "job": ["1", "2", "3", "4", "5"],
-        "product_detail": ["success", "success", "success", "success", "success"],
-        "trading_volume": ["success", "success", "success", "success", "success"],
-        "buy_and_sell": ["success", "success", "success", "success", "success"],
-        "platform_type": "kream",
-        "db_update": False,
-    }
+    assert os.path.exists(temp_path) == True
 
 
 @pytest.mark.anyio
 async def test_create_scrap_report(scraper: PlatformPageScraper):
     # Given
-    scraper.set_scrap_time()
+    report_path = scraper.Report.report_path
+    remove_test_folder(report_path)
 
-    # When
     await scraper.create_scrap_report()
 
-    # Then
-    assert os.path.exists(os.path.join(path, "_report"))
+    assert os.path.exists(report_path) == True
+
+
+@pytest.mark.anyio
+async def test_save_scrap_data(scraper: PlatformPageScraper):
+    data_path = os.path.join(path, "real_scrap_result")
+    remove_test_folder(data_path)
+
+    await scraper.save_scrap_data()
+
+    assert os.path.exists(data_path) == True
+
+
+# @pytest.mark.anyio
+# async def test_all_scrap(scraper: PlatformPageScraper):
+#     await scraper.scrap()

@@ -19,10 +19,10 @@ class PwKreamPageSubScraper(SubScraper):
         self.page = page_controller.get_page()
 
     # concrete_method
-    async def execute(self):
+    async def execute(self) -> Tuple:
         await self.go_to_card_page()
 
-        page_detail_status, page_detail_data = await self.scrap_product_detail()
+        product_detail_status, product_detail_data = await self.scrap_product_detail()
         await self.page_controller.sleep_until(2000)
 
         buy_and_sell_status, buy_and_sell_data = await self.scrap_buy_and_sell()
@@ -30,18 +30,18 @@ class PwKreamPageSubScraper(SubScraper):
 
         trading_volume_status, trading_volume_data = await self.scrap_trading_volume()
 
-        return {
-            "status": {
-                "page_detail": page_detail_status,
+        return (
+            {
+                "product_detail": product_detail_status,
                 "buy_and_sell": buy_and_sell_status,
                 "trading_volume": trading_volume_status,
             },
-            "data": {
-                "page_detail": page_detail_data,
+            {
+                "product_detail": product_detail_data,
                 "buy_and_sell": buy_and_sell_data,
                 "trading_volume": trading_volume_data,
             },
-        }
+        )
 
     def get_url(self) -> str:
         return f"https://kream.co.kr/products/{self.job}"
@@ -130,7 +130,7 @@ class PwKreamPageSubScraper(SubScraper):
         sell_list = await self._scrap_sell()
         await self.page.go_back()
 
-        await self.page.wait_for_timeout(1)
+        await self.page.wait_for_timeout(1000)
 
         buy_list = await self._scrap_buy()
         await self.page.go_back()
@@ -141,20 +141,13 @@ class PwKreamPageSubScraper(SubScraper):
         )
 
     async def _scrap_sell(self):
-        sell = await self.page.query_selector(
-            "//div[contains(@class, 'btn_wrap')]/div/button[1]"
-        )
-        assert sell, "판매 버튼이 잡히지 않음"
-        await sell.click()
-
+        element = "//div[contains(@class, 'btn_wrap')]/div/button[1]"
+        await self.page.locator(element).click()
         return await self._scrap_buy_and_sell_page(f"sell : {self.job}")
 
     async def _scrap_buy(self):
-        buy = await self.page.query_selector(
-            "//div[contains(@class, 'btn_wrap')]/div/button[2]"
-        )
-        assert buy, "구매 버튼이 잡히지 않음"
-        await buy.click()
+        element = "//div[contains(@class, 'btn_wrap')]/div/button[2]"
+        await self.page.locator(element).click()
         return await self._scrap_buy_and_sell_page(f"buy : {self.job}")
 
     async def _scrap_buy_and_sell_page(self, info: str):
@@ -256,9 +249,10 @@ class PwKreamPageSubScraper(SubScraper):
         return await self._extract_trading_volume()
 
     async def _click_trading_volume_button_element(self):
-        volume_btn = "a[class='btn outlinegrey full medium']"
-        await self.page.wait_for_selector(volume_btn, timeout=5000)
-        await self.page.locator(volume_btn).click()
+        volume_btn = "#panel1 > a"
+        locator = self.page.locator(volume_btn)
+        await locator.wait_for()
+        await locator.click()
 
     async def _is_trading_volume_loaded(self):
         price_btn = "div[class='price_body']"

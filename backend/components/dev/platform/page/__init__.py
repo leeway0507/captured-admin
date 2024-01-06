@@ -42,7 +42,6 @@ class PlatformPageScraper(PlatformScraper):
         )
         self.path = path
         self.browser = browser
-        self._scrap_folder_name = None
 
     # concrete_method
     def init_sub_scraper(self, page: PageController):
@@ -83,16 +82,6 @@ class PlatformPageScraper(PlatformScraper):
 
     def _get_buy_and_sell(self, temp_scrap_status: List):
         return [status["status"]["buy_and_sell"] for status in temp_scrap_status]
-
-    @property
-    def scrap_folder_name(self):
-        if not self._scrap_folder_name:
-            raise ValueError("scrap_folder_name is not set")
-        return self._scrap_folder_name
-
-    @scrap_folder_name.setter
-    def scrap_folder_name(self, scrap_folder_name: str):
-        self._scrap_folder_name = scrap_folder_name
 
     # concrete_method
     async def save_scrap_data(self):
