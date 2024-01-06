@@ -26,7 +26,19 @@ class ScrapReport:
 
     def __init__(self, report_path: str) -> None:
         self.report_path = report_path
-        self.report_file_path = None
+        self._report_file_name = ""
+        self.report_file_path = ""
+
+    @property
+    def report_file_name(self):
+        if not self._report_file_name:
+            raise ValueError("self.report_name is not set.")
+        return self._report_file_name
+
+    @report_file_name.setter
+    def report_file_name(self, value: str):
+        self._report_file_name = value
+        self.report_file_path = os.path.join(self.report_path, value + ".json")
 
     def __new__(cls, report_path: str):
         """싱글톤 패턴 적용"""
@@ -34,11 +46,6 @@ class ScrapReport:
             cls._instance = super().__new__(cls)
         cls._instance.report_path = report_path
         return cls._instance
-
-    def set_report_name(self, report_file_name: str):
-        self.report_file_path = os.path.join(
-            self.report_path, report_file_name + ".json"
-        )
 
     def get_report_list(self):
         file_list = os.listdir(self.report_path)
@@ -68,29 +75,19 @@ class ScrapReport:
             f.write(json.dumps(data, indent=4, default=str, ensure_ascii=False))
 
     def load_report(self):
-        file_path = self.get_report_file_path()
+        file_path = self.report_file_path
         with open(file_path, "r") as f:
             scrap_result = json.load(f)
 
         return scrap_result
 
-    def get_report_file_path(self):
-        if not self.report_file_path:
-            raise ValueError(
-                """
-                self.report_name is not set. 
-                please update report_name using "set_report_name" method.
-                """
-            )
-        return self.report_file_path
-
     def update_report(self, update_value: Dict):
         report = self.load_report()
         report.update(update_value)
 
-        report_file_path = self.get_report_file_path()
+        report_file_path = self.report_file_path
         self._save_json(report_file_path, report)
 
     def delete_report(self):
-        file_path = self.get_report_file_path()
+        file_path = self.report_file_path
         os.remove(file_path)

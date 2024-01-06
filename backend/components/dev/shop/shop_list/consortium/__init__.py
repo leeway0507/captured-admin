@@ -5,12 +5,15 @@ from components.dev.shop.list.sub_scraper import (
     ListScrapData,
 )
 
-from backend.components.dev.shop.page.sub_scraper import (
+from components.dev.shop.page.sub_scraper import (
     PwShopPageSubScraper,
 )
 
 
 class PwConsortiumListSubScraper(PwShopListSubScraper):
+    def __name__(self) -> str:
+        return "consortium"
+
     def __init__(self):
         super().__init__()
         self.scroll_on = False
@@ -109,6 +112,9 @@ class PwConsortiumListSubScraper(PwShopListSubScraper):
 
 
 class PwConsortiumPageSubScraper(PwShopPageSubScraper):
+    def __name__(self) -> str:
+        return "consortium"
+
     def __init__(self):
         super().__init__()
         self.cookie_button_xpath = ["//*[@id='CybotCookiebotDialogBodyButtonAccept']"]

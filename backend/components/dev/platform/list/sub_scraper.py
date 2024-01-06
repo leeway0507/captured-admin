@@ -1,4 +1,4 @@
-from abc import ABC, abstractmethod
+from abc import abstractmethod
 from typing import Any, List, Tuple
 
 from ...utils.browser_controller import PageController as P

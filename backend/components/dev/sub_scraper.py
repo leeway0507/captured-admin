@@ -9,6 +9,10 @@ class SubScraper(ABC):
         self._job = None
 
     @abstractmethod
+    def __name__(self) -> str:
+        pass
+
+    @abstractmethod
     def late_binding(self, page_controller: P):
         pass
 
@@ -17,7 +21,7 @@ class SubScraper(ABC):
 
     @abstractmethod
     async def execute() -> Tuple[str, Dict | List]:
-        ...
+        pass
 
     async def reopen_new_page(self):
         await self.page_controller.reopen_new_page()

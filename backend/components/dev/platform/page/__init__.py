@@ -1,15 +1,14 @@
 """Kream Page Scrap Main"""
 import os
 
-from traceback import format_exception
 
 from typing import List, Dict
-from pydantic import BaseModel
+
 
 from ...scraper import PlatformScraper, ScrapReportDataBase
-from ..platform_browser_controller import PlatformBrowserController
+
 from components.dev.utils.browser_controller import PageController
-from .sub_scraper import SubScraper
+
 from .platform_page_data_converter import (
     PlatformPageDataConverter,
     PlatformPageStrategyFactory as fac,
@@ -27,21 +26,12 @@ class PlatformPageScraper(PlatformScraper):
     def __init__(
         self,
         path: str,
-        num_processor: int,
-        browser: PlatformBrowserController,
-        sub_scraper: SubScraper,
-        platform_type: str,
     ):
         super().__init__(
-            os.path.join(path, "_temp"),
-            os.path.join(path, "_report"),
-            browser,
-            num_processor,
-            platform_type,
-            sub_scraper,
+            temp_path=os.path.join(path, "_temp"),
+            report_path=os.path.join(path, "_report"),
         )
         self.path = path
-        self.browser = browser
 
     # concrete_method
     def init_sub_scraper(self, page: PageController):

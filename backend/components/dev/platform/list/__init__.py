@@ -7,10 +7,10 @@ from typing import List
 from pydantic import BaseModel
 
 from components.dev.utils.browser_controller import PageController as P
-from ..platform_browser_controller import PlatformBrowserController
-from .sub_scraper import PlatformListSubScraper
+
 
 from ...scraper import PlatformScraper, PlatformScrapStatus, ScrapReportDataBase
+from components.dev.platform.list.sub_scraper import PwKreamListSubScraper
 
 
 class PlatformListReportData(ScrapReportDataBase):
@@ -21,25 +21,17 @@ class PlatformListScraper(PlatformScraper):
     def __init__(
         self,
         path: str,
-        num_processor: int,
-        browser: PlatformBrowserController,
-        sub_scraper: PlatformListSubScraper,
-        platform_type: str,
         min_volume: int = 100,
         min_wish: int = 50,
     ):
         super().__init__(
-            os.path.join(path, "_temp"),
-            os.path.join(path, "_report"),
-            browser,
-            num_processor,
-            platform_type,
-            sub_scraper,
+            temp_path=os.path.join(path, "_temp"),
+            report_path=os.path.join(path, "_report"),
         )
         self.path = path
         self.min_volume = min_volume
         self.min_wish = min_wish
-        self.sub_scraper = sub_scraper
+        self.sub_scraper: PwKreamListSubScraper
 
     ####
     # self.TempFile.init()
@@ -51,7 +43,7 @@ class PlatformListScraper(PlatformScraper):
 
     # concrete_method
     def init_sub_scraper(self, page: P):
-        return self.sub_scraper.late_binding(page, self.min_volume, self.min_wish)
+        self.sub_scraper.late_binding(page, self.min_volume, self.min_wish)
 
     # concrete_method
     async def execute_job(self, job: str):

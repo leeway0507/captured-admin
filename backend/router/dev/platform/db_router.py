@@ -1,10 +1,13 @@
-# """dev Router"""
+"""dev Router"""
 
-# from typing import Optional
-# from sqlalchemy.ext.asyncio import AsyncSession
-# from fastapi import APIRouter, Depends, HTTPException
+from typing import Optional
+from sqlalchemy.ext.asyncio import AsyncSession
+from fastapi import APIRouter, Depends
 
-# from db.dev_db import get_dev_db
+from db.dev_db import get_dev_db
+
+from env import get_path
+from components.dev.utils import ScrapReport
 
 # from components.dev.platform.platform_db import (
 #     update_scrap_product_card_list_to_db,
@@ -15,16 +18,20 @@
 # )
 
 
-# kream_db_router = APIRouter()
+kream_db_router = APIRouter()
 
-# kream_dict = {}
+kream_dict = {}
 
-# platform_page_report = ScrapReport("platform_page")
-# platform_list_report = ScrapReport("platform_list")
+platform_list_path = get_path("platform_list")
+platform_page_path = get_path("platform_page")
+
+
+platform_list_report = ScrapReport(platform_list_path)
+platform_page_report = ScrapReport(platform_page_path)
 
 
 # @kream_db_router.get("/update-all-detail-kream-to-db")
-# async def update_all(
+# async def update_kream_product_card_page_to_db(
 #     searchValue: str,
 #     scrapTime: str,
 #     db: AsyncSession = Depends(get_dev_db),
@@ -34,7 +41,8 @@
 #     await update_scrap_buy_and_sell_to_db(db, searchValue, scrapTime)
 #     await update_scrap_kream_product_bridge_to_db(db, searchValue, scrapTime)
 
-#     platform_page_report.update_report(scrapTime + "-kream", "db_update", True)
+#     platform_page_report.report_file_name = scrapTime
+#     platform_page_report.update_report({"db_update": True})
 
 #     return {"message": "success"}
 
@@ -46,7 +54,10 @@
 #     db: AsyncSession = Depends(get_dev_db),
 # ):
 #     """camel : insertListScrapToDB"""
-#     platform_list_report.update_report(scrapTime + "-kream", "db_update", True)
+
+#     platform_list_report.report_file_name = scrapTime
+#     platform_list_report.update_report({"db_update": True})
+
 #     return await update_scrap_product_card_list_to_db(
 #         db,
 #         platformType,

@@ -6,7 +6,7 @@ from fastapi.exceptions import RequestValidationError
 from fastapi.responses import JSONResponse
 from router.production import production_router, size_batch_router, s3_storage_router
 from router.dev.platform import platform_router, kream_db_router
-from router.dev.shop import list_router, page_router, shop_db_router, table_router
+from router.dev.shop import shop_router, shop_db_router, table_router
 
 app = FastAPI()
 
@@ -35,8 +35,7 @@ app.include_router(platform_router, prefix="/api/dev/kream", tags=["PLATFORM"])
 app.include_router(s3_storage_router, prefix="/api/production/s3", tags=["S3_STORAGE"])
 app.include_router(production_router, prefix="/api/production", tags=["production"])
 app.include_router(shop_db_router, prefix="/api/dev/shop/db", tags=["dev/shop/db"])
-app.include_router(list_router, prefix="/api/dev/shop", tags=["dev/shop/scrap/list"])
-app.include_router(page_router, prefix="/api/dev/shop", tags=["dev/shop/scrap/page"])
+app.include_router(shop_router, prefix="/api/dev/shop", tags=["dev/shop/scrap/list"])
 app.include_router(kream_db_router, prefix="/api/dev/kream/db", tags=["dev/kream/db"])
 
 

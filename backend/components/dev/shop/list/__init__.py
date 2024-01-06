@@ -12,8 +12,6 @@ from ..currency import Currency
 
 
 from components.dev.scraper import ShopScraper
-from components.dev.utils.browser_controller import BrowserController
-from components.dev.sub_scraper import SubScraper
 
 
 class ListScrapData(BaseModel):
@@ -38,20 +36,12 @@ class PreProcessData(BaseModel):
 class ShopListScraper(ShopScraper):
     def __init__(
         self,
-        num_processor: int,
         path: str,
-        browser_controller: BrowserController,
-        sub_scraper: SubScraper,
-        shop_name: str,
         scrap_type: str = "shop_card_list",
     ):
         super().__init__(
             path,
-            browser_controller,
-            num_processor,
-            sub_scraper,
             scrap_type,
-            shop_name,
         )
 
     def preprocess_data(self, list_data: List[Dict]) -> List[Dict]:

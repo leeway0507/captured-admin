@@ -8,8 +8,7 @@ from typing import List, Dict
 from model.db_model_shop import ShopProductSizeSchema
 
 from components.dev.scraper import ShopScraper
-from components.dev.utils.browser_controller import BrowserController
-from components.dev.sub_scraper import SubScraper
+
 from components.dev.shop.size_converter import convert_size
 
 
@@ -21,20 +20,12 @@ class ShopPageData(ShopProductSizeSchema):
 class ShopPageScraper(ShopScraper):
     def __init__(
         self,
-        num_processor: int,
         path: str,
-        browser_controller: BrowserController,
-        sub_scraper: SubScraper,
-        shop_name: str,
         scrap_type: str = "product_card_page",
     ):
         super().__init__(
             path,
-            browser_controller,
-            num_processor,
-            sub_scraper,
             scrap_type,
-            shop_name,
         )
 
     def preprocess_data(self, list_data: List[Dict]) -> List[Dict]:

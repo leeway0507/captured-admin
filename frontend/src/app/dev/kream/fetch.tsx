@@ -1,5 +1,5 @@
 export const InitProductCardList = async (brandName: string, maxScroll: Number, minWish: Number, minVolume: Number) => {
-    const url = `${process.env.NEXT_PUBLIC_API_URL}/api/dev/kream/init-product-card-list`;
+    const url = `${process.env.NEXT_PUBLIC_API_URL}/api/dev/kream/scrap-platform-list`;
 
     const queryParams = new URLSearchParams({
         brandName: brandName,
@@ -14,7 +14,7 @@ export const InitProductCardList = async (brandName: string, maxScroll: Number, 
 };
 
 export const InitProductPage = async (searchType: string, value: string, numProcess: Number) => {
-    const url = `${process.env.NEXT_PUBLIC_API_URL}/api/dev/kream/init-product-page`;
+    const url = `${process.env.NEXT_PUBLIC_API_URL}/api/dev/kream/scrap-platform-page`;
 
     const queryParams = new URLSearchParams({
         searchType,

@@ -1,6 +1,3 @@
-from typing import List, Any
-from abc import ABC, abstractmethod
-from bs4 import Tag
 from components.dev.utils.browser_controller import PageController as P
 from .sub_scraper import PwKreamListSubScraper, PlatformListSubScraper
 
@@ -20,4 +17,4 @@ class PwPlatformListSubScraperFactory(PlatformListSubScraperFactory):
         self.min_wish = min_wish
 
     def kream(self) -> "PlatformListSubScraper":
-        return PwKreamListSubScraper(self.page, self.min_volume, self.min_wish)
+        return PwKreamListSubScraper()

@@ -1,56 +1,50 @@
-from typing import Protocol, List, Any, TypeVar
+from typing import Protocol, List, Any
 from sqlalchemy import select
 from db.tables_shop import ShopProductCardTable
 from db.dev_db import session_local
 from model.db_model_shop import ShopProductCardSchema as schema
-from enum import Enum
 from db.tables_shop import MyBase
 
 
-class SearchType(Enum):
-    ALL = "all"
-    PRODUCT_ID = "productId"
-    SHOP_PRODUCT_CARD_ID = "shopProductCardId"
-    SHOP_NAME = "shopName"
-
-
 class CandidateExtractor(Protocol):
-    async def extract_data(self, search_type: SearchType, value: str) -> List[schema]:
+    async def extract_data(self, search_type: str, value: str) -> List:
         ...
 
 
 class RDBCandidateExtractor:
-    async def extract_data(self, search_type: SearchType, value: str) -> List[schema]:
+    @classmethod
+    async def extract_data(cls, search_type: str, value: str) -> List:
         stmt = SearchTypeHandler(search_type, value).get_stmt()
-        result = await self.execute_stmt(stmt)
-        return [schema(**r.to_dict()) for r in result]
+        result = await cls.execute_stmt(stmt)
+        return [schema(**r.to_dict()).shop_product_card_id for r in result]
 
-    async def execute_stmt(self, statement) -> List[MyBase]:
+    @classmethod
+    async def execute_stmt(cls, statement) -> List[MyBase]:
         async with session_local() as session:  # type: ignore
             result = await session.execute(statement)
             return result.scalars().all()
 
 
 class SearchTypeHandler:
-    def __init__(self, search_type: SearchType, value: str):
+    def __init__(self, search_type: str, value: str):
         self.search_type = search_type
         self.value = value
 
     def get_stmt(self):
         match self.search_type:
-            case SearchType.ALL:
+            case "all":
                 value = self.str_to_int(self.value)
                 return AllStmt().get_stmt(value)
 
-            case SearchType.PRODUCT_ID:
+            case "productId":
                 value = self.str_to_list(self.value)
                 return ProductIdStmt().get_stmt(value)
 
-            case SearchType.SHOP_PRODUCT_CARD_ID:
+            case "shopProductCardId":
                 value = self.str_to_list(self.value)
                 return ShopProductCardIdStmt().get_stmt(value)
 
-            case SearchType.SHOP_NAME:
+            case "shopName":
                 value = self.str_to_list(self.value)
                 return ShopNameStmt().get_stmt(value)
 

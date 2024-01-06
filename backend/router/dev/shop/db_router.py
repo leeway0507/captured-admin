@@ -5,6 +5,7 @@ from fastapi import APIRouter, Depends, HTTPException
 
 
 from db.dev_db import get_dev_db
+from env import get_path
 from model.shop_model import RequestShopInfo, updateShopProductCardSchema
 from model.db_model_shop import ShopInfoSchema
 
@@ -18,7 +19,16 @@ from components.dev.shop.update_to_db import (
     upsert_shop_product_size_table,
     get_shop_product_size_table_data,
 )
-from components.dev.utils.scrap_report import ScrapReport
+
+from components.dev.utils import ScrapReport
+
+
+platform_list_path = get_path("platform_list")
+platform_page_path = get_path("platform_page")
+
+
+platform_list_report = ScrapReport(platform_list_path)
+platform_page_report = ScrapReport(platform_page_path)
 
 
 shop_db_router = APIRouter()
@@ -31,9 +41,12 @@ async def update_shop_product_card_list_to_db(
 ):
     """kream_product_card_table 업데이트"""
     detail_scrap_date, shop_name = scrapName.rsplit("-", 1)
-    print(detail_scrap_date, shop_name)
+
     await update_scrap_product_card_list_to_db(db, shop_name, detail_scrap_date)
-    ScrapReport("shop_list").update_report(scrapName, "db_update", True)
+
+    platform_list_report.report_file_name = detail_scrap_date
+    platform_list_report.update_report({"db_update": True})
+
     return {"message": "success"}
 
 
@@ -92,7 +105,10 @@ async def upsert_size_table_api(
     db: AsyncSession = Depends(get_dev_db),
 ):
     await upsert_shop_product_size_table(db, scrapDate)
-    ScrapReport("shop_page").update_report(scrapDate, "db_update", True)
+
+    platform_list_report.report_file_name = scrapDate
+    platform_list_report.update_report({"db_update": True})
+
     return {"message": "success"}
 
 

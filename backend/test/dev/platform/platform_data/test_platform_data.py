@@ -2,7 +2,7 @@ import pytest
 import os
 
 import pandas as pd
-from backend.components.dev.platform.platform_data_loader import PlatformDataLoader
+components.dev.platform.platform_data_loader import PlatformDataLoader
 
 path = "/Users/yangwoolee/repo/captured/admin/backend/test/dev/platform/platform_data/product_card_page"
 report_path = os.path.join(path, "_report")

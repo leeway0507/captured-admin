@@ -11,15 +11,14 @@ export interface scrapingProps {
 }
 
 const initialState = {
-    searchType: "lastScrap",
-    searchValue: "",
+    searchType: "scrapDate",
+    searchValue: null,
     numProcess: 1,
 };
 
 const searchTypeOptions = [
-    { value: "lastScrap", label: "최신 수집" },
-    { value: "sku", label: "SKU" },
-    { value: "product_id", label: "제품 아이디" },
+    { value: "scrapDate", label: "수집일" },
+    { value: "kreamId", label: "크림 아이디" },
 ];
 
 const reducer = (state: scrapingProps, action: any) => {

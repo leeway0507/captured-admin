@@ -1,11 +1,10 @@
 import os
-from typing import Protocol, List, Any, Optional
+from typing import List, Optional
 
 import pandas as pd
 from sqlalchemy import select
 from db.tables_kream import KreamProductCardTable, KreamProductIdBridgeTable
 from db.dev_db import session_local
-from sqlalchemy.ext.asyncio import AsyncSession
 from enum import Enum
 from db.tables_shop import MyBase
 from env import dev_env

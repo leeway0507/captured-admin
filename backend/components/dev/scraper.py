@@ -28,18 +28,20 @@ class Scraper(ABC):
         self,
         temp_path: str,
         report_path: str,
-        browser: BrowserController,
-        sub_scraper: SubScraper,
-        num_processor: int,
     ):
         self.TempFile = ScrapTempFile(temp_path)
         self.Report = ScrapReport(report_path)
-        self.browser = browser
-        self.num_processor = num_processor
-        self.sub_scraper = sub_scraper
+
         self.scrap_time = ""
         self._target_list = []
         self._scrap_folder_name = None
+
+    def late_binding(
+        self, browser: BrowserController, sub_scraper: SubScraper, num_processor: int
+    ):
+        self.browser = browser
+        self.num_processor = num_processor
+        self.sub_scraper = sub_scraper
 
     async def scrap(self):
         try:
@@ -56,6 +58,7 @@ class Scraper(ABC):
         await self.execute_sub_processors()
         await self.create_scrap_report()
         await self.save_scrap_data()
+        print(f"scrap done")
 
     def exception_error(self, e: Exception):
         print("shop_product_card_page scrap error")
@@ -129,6 +132,8 @@ class Scraper(ABC):
 
             scrap_temp_template = self.set_scrap_status_temp_template(job, status)
             await self.save_scrap_status_to_temp(scrap_temp_template)
+
+        await self.sub_scraper.page_controller.close_page()
 
     async def execute_sub_scraper(self, job: str):
         self.sub_scraper.allocate_job(job)
@@ -205,20 +210,23 @@ class PlatformScraper(Scraper):
         self,
         temp_path: str,
         report_path: str,
-        browser: PlatformBrowserController,
-        num_processor: int,
-        platform_type: str,
-        sub_scraper: SubScraper,
     ):
         super().__init__(
             temp_path,
             report_path,
-            browser,
-            sub_scraper,
-            num_processor,
         )
-        self.platform_type = platform_type
+
+    def late_binding(
+        self,
+        browser: PlatformBrowserController,
+        sub_scraper: SubScraper,
+        num_processor: int,
+        platform_type: str,
+    ):
         self.browser = browser
+        self.num_processor = num_processor
+        self.sub_scraper = sub_scraper
+        self.platform_type = platform_type
 
     async def browser_login(self):
         await self.browser.login()
@@ -228,21 +236,25 @@ class ShopScraper(Scraper):
     def __init__(
         self,
         path: str,
-        browser: BrowserController,
-        num_processor: int,
-        sub_scraper: SubScraper,
         scrap_type: str,
-        shop_name: str,
     ):
         super().__init__(
             os.path.join(path, "_temp"),
             os.path.join(path, "_report"),
-            browser,
-            sub_scraper,
-            num_processor,
         )
         self.scrap_type = scrap_type
         self.path = path
+
+    def late_binding(
+        self,
+        browser: BrowserController,
+        sub_scraper: SubScraper,
+        num_processor: int,
+        shop_name: str,
+    ):
+        self.browser = browser
+        self.num_processor = num_processor
+        self.sub_scraper = sub_scraper
         self.shop_name = shop_name
 
     # concrete_method
