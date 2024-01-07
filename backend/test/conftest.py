@@ -1,11 +1,12 @@
 #
 # conftest.py
 import sys
-from os.path import dirname as d
-from os.path import abspath, join
+from os.path import dirname, abspath
+
 import os
 
-root_dir = d(d(abspath(__file__)))
+root_dir = dirname(dirname(abspath(__file__)))
+
 sys.path.append(root_dir)
 
 # default Root

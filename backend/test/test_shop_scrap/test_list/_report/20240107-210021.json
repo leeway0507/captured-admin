@@ -1,0 +1,18 @@
+{
+    "scrap_time": "20240107-210021",
+    "num_of_plan": 2,
+    "num_processor": 1,
+    "db_update": false,
+    "job": [
+        {
+            "job": "a.p.c. children",
+            "status": "success"
+        },
+        {
+            "job": "a.p.c.",
+            "status": "success"
+        }
+    ],
+    "brand_name": "a.p.c. children,a.p.c.",
+    "shop_name": "consortium"
+}
