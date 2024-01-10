@@ -18,7 +18,4 @@ async def ShopList():
 
 @pytest.mark.anyio
 async def test_PlatformList(ShopList: ShopListMain):
-    await ShopList.init_main_scraper(
-        "consortium", target_list=["a.p.c."], num_processor=1
-    )
-    await ShopList.execute()
+    await ShopList.execute("consortium", target_list=["a.p.c."], num_processor=1)

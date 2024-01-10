@@ -12,14 +12,20 @@ def anyio_backend():
 
 
 @pytest.fixture(scope="module")
-async def Scraper():
+async def Fac():
     factory = ShopListScraperFactory(curr_path)
-    PwKreamScraper = await factory.consortium()
-    PwKreamScraper.late_binding(num_processor=1)
-    yield PwKreamScraper
+    yield factory
+
+
+# @pytest.mark.anyio
+# async def test_consortium(Fac: ShopListScraperFactory):
+#     target_list = ["a.p.c. children", "a.p.c."]
+#     scraper = await Fac.playwright("consortium", target_list, 2)
+#     await scraper.scrap()
 
 
 @pytest.mark.anyio
-async def test_scrap(Scraper: PwShopListScraper):
-    Scraper.target_list = ["a.p.c. children", "a.p.c."]
-    await Scraper.scrap()
+async def test_seven_store(Fac: ShopListScraperFactory):
+    target_list = ["arcteryx", "asics"]
+    scraper = await Fac.playwright("seven_store", target_list, 2)
+    await scraper.scrap()

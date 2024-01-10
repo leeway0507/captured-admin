@@ -1,7 +1,7 @@
 "use client";
 import { useRouter } from "next/navigation";
 import { useReducer, useRef, useEffect, useState } from "react";
-import { InitshopCardPage, getShopPageList } from "./fetch";
+import { ScrapShopPage, getShopPageList } from "./fetch-scrap";
 import { toast } from "react-toastify";
 import Select from "react-select";
 
@@ -50,7 +50,7 @@ export const handleScrapProductPage = async (
     }
 
     disableButton();
-    await InitshopCardPage(state.searchType, state.content, state.numProcess)
+    await ScrapShopPage(state.searchType, state.content, state.numProcess)
         .then((res) => {
             const { scrap_status, ...restData } = res.data;
             scrap_status === "success"

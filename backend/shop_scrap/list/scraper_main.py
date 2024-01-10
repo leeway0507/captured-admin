@@ -1,39 +1,77 @@
-from typing import List, Callable, Dict
+from typing import List, Callable, Dict, Any
 from datetime import datetime
 
 
-from components.abstract_class.scraper_main import ShopScraper
+from components.abstract_class.scraper_main import Scraper
 from components.abstract_class.scraper_sub import PwShopListSubScraper
 
-from components.browser_handler import PwContextHandler
+from components.browser_handler import PwContextHandler, PwPageHandler
 from ..shop_list.consortium import PwConsortiumListSubScraper
+from ..shop_list.seven_store import PwSevenStoreListSubScraper
 
 
 class ShopListScraperFactory:
     def __init__(self, path: str):
         self.path = path
+        self._browser = None
 
-    async def consortium(self):
-        pw_browser = await PwContextHandler.start()
+    @property
+    async def browser(self):
+        if not self._browser:
+            self._browser = await PwContextHandler().start()
+        return self._browser
+
+    async def playwright(self, shop_name: str, target_list: List, num_processor: int):
         return PwShopListScraper(
-            self.path, pw_browser, PwConsortiumListSubScraper, "consortium"
+            target_list,
+            self.path,
+            await self.browser,
+            num_processor,
+            PwConsortiumListSubScraper,
+            shop_name,
         )
 
 
-class PwShopListScraper(ShopScraper):
+class PwShopListSubScraperFactory:
+    def consortium(self):
+        return PwConsortiumListSubScraper()
+
+    def seven_store(self):
+        return PwSevenStoreListSubScraper()
+
+
+class PwShopListScraper(Scraper):
     def __init__(
         self,
+        target_list: List,
         path: str,
         browser: PwContextHandler,
-        sub_scraper: Callable[..., PwShopListSubScraper],
+        num_processor: int,
+        sub_scraper_class: Callable[..., PwShopListSubScraper],
         shop_name: str,
     ):
-        super().__init__(path, "product_card_list", browser)
+        super().__init__(path, browser, num_processor, sub_scraper_class)
+        self.target_list = target_list
         self.shop_name = shop_name
-        self.sub_scraper_class = sub_scraper
+        self.temp_file_name = "product_card_list"
 
     def set_sub_scraper_params(self):
-        return {}
+        return {"shop_name": self.shop_name}
+
+    async def browser_login(self):
+        pass
+
+    async def sub_processor(self, page: PwPageHandler, jobs: List[Any]):
+        sub_scraper = None
+
+        for job in jobs:
+            sub_scraper = getattr(PwShopListSubScraperFactory(), self.shop_name)()
+            sub_scraper.late_binding(page_handler=page, **self.set_sub_scraper_params())
+            status = await self.execute_job(sub_scraper, job)
+            await self.save_scrap_status_to_temp_file(job, status)
+
+        if sub_scraper:
+            await sub_scraper.page_handler.close_page()
 
     async def save_scrap_config_to_temp_file(self):
         config = {
@@ -45,3 +83,7 @@ class PwShopListScraper(ShopScraper):
             "num_processor": self.num_processor,
         }
         await self.TempFile.append_temp_file("scrap_config", config)
+
+    async def save_data_to_temp_file(self, data: List):
+        if data:
+            await self.TempFile.append_temp_file(self.temp_file_name, data)

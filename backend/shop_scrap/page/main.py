@@ -1,16 +1,18 @@
-from typing import List
 from shop_scrap.page.scraper_main import ShopPageScraperFactory
 from shop_scrap.page.report import ShopPageReport
 from shop_scrap.page.data_save import ShopPageDataSave
-from components.abstract_class.scraper_main import ShopScraper
+from shop_scrap.page.target_extractor import TargetExractor, load_target_strategy
+from components.abstract_class.scraper_main import Scraper
+from sqlalchemy.orm import sessionmaker
 
 
 class ShopPageMain:
-    def __init__(self, path: str):
+    def __init__(self, path: str, dev_session: sessionmaker):
         self.main_scraper_factory = ShopPageScraperFactory(path)
         self.Report = ShopPageReport(path)
         self.DataSave = ShopPageDataSave(path)
         self._main_scraper = None
+        self.Target = TargetExractor(dev_session)
 
     @property
     def main_scraper(self):
@@ -19,17 +21,18 @@ class ShopPageMain:
         return self._main_scraper
 
     @main_scraper.setter
-    def main_scraper(self, main_scraper: ShopScraper):
+    def main_scraper(self, main_scraper: Scraper):
         self._main_scraper = main_scraper
 
-    async def execute(self):
+    async def execute(self, searchType: str, value: str, num_processor: int):
+        target_list = await self.extract_target_list(searchType, value)
+        self.main_scraper = await self.main_scraper_factory.playwright(
+            target_list, num_processor
+        )
         await self.main_scraper.scrap()
         await self.Report.save_report()
         await self.DataSave.save_scrap_data()
 
-    async def init_main_scraper(
-        self, shop_name: str, target_list: List, num_processor: int
-    ):
-        self.main_scraper = await getattr(self.main_scraper_factory, shop_name)()
-        self.main_scraper.target_list = target_list
-        self.main_scraper.late_binding(num_processor)
+    async def extract_target_list(self, searchType: str, value: str):
+        self.Target.strategy = load_target_strategy(searchType)
+        return await self.Target.extract_data(value)

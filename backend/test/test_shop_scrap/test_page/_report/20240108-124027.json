@@ -1,0 +1,19 @@
+{
+    "scrap_time": "20240108-124027",
+    "num_of_plan": 2,
+    "num_processor": 2,
+    "db_update": false,
+    "job": [
+        {
+            "shop_product_card_id": "67890",
+            "product_url": "https://www.consortium.co.uk/adidas-originals-gazelle-indoor-bliss-pink-core-black-collegiate-purple-ie7002.html",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": "12345",
+            "product_url": "https://www.consortium.co.uk/adidas-originals-x-fucking-awesome-samba-fa-core-black-footwear-white-gold-metallic-id7339.html",
+            "status": "success"
+        }
+    ],
+    "shop_name": "consortium"
+}

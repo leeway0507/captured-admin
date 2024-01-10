@@ -3,23 +3,69 @@ from datetime import datetime
 
 from typing import Tuple, List
 
-from components.abstract_class.scraper_sub import PwPlatformSubScaper
+from components.abstract_class.scraper_sub import SubScraper
 from model.kream_scraping import KreamScrapingBrandSchema
 from components.browser_handler import PwPageHandler
 
 
-class PwKreamListSubScraper(PwPlatformSubScaper):
+class PwPlatformSubScaper(SubScraper):
+    def __init__(self):
+        self._page_handler = None
+        self._brand_name = None
+
+
+class PwKreamListSubScraper(SubScraper):
     def __name__(self) -> str:
         return "kream"
 
-    def late_binding(self, page_handler: PwPageHandler, min_volume, min_wish):
+    def late_binding(
+        self,
+        page_handler: PwPageHandler,
+        max_scroll: int,
+        min_volume: int,
+        min_wish: int,
+    ):
         self.page_handler = page_handler
         self.page = page_handler.get_page()
-        self.min_volume = min_volume
-        self.min_wish = min_wish
+        self._max_scroll = max_scroll
+        self._min_volume = min_volume
+        self._min_wish = min_wish
 
-    def get_url(self) -> str:
-        return f"https://kream.co.kr/search?keyword={self.job}&sort=wish"
+    @property
+    def max_scroll(self):
+        return self._max_scroll
+
+    @max_scroll.setter
+    def max_scroll(self, value):
+        self._max_scroll = value
+
+    @property
+    def min_volume(self):
+        return self._min_volume
+
+    @min_volume.setter
+    def min_volume(self, value):
+        self._min_volume = value
+
+    @property
+    def min_wish(self):
+        return self._min_wish
+
+    @min_wish.setter
+    def min_wish(self, value):
+        self._min_wish = value
+
+    async def execute(self, time_delay=500) -> Tuple[str, List]:
+        await self._go_to_page()
+        await self.page_handler.scroll_down(
+            max_scroll=self.max_scroll, time_delay=time_delay
+        )
+        return await self.get_product_card_list()
+
+    async def _go_to_page(self):
+        url = f"https://kream.co.kr/search?keyword={self.job}&sort=wish"
+        await self.page_handler.go_to(url)
+        await self.page_handler.sleep_until(2000)
 
     async def get_product_card_list(
         self,

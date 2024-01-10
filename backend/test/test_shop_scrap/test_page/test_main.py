@@ -17,18 +17,5 @@ async def ShopPage():
 
 
 @pytest.mark.anyio
-async def test_PlatformPage(ShopPage: ShopPageMain):
-    target_list = [
-        {
-            "shop_product_card_id": "12345",
-            "product_url": "https://www.consortium.co.uk/adidas-originals-x-fucking-awesome-samba-fa-core-black-footwear-white-gold-metallic-id7339.html",
-        },
-        {
-            "shop_product_card_id": "67890",
-            "product_url": "https://www.consortium.co.uk/adidas-originals-gazelle-indoor-bliss-pink-core-black-collegiate-purple-ie7002.html",
-        },
-    ]
-    await ShopPage.init_main_scraper(
-        "consortium", target_list=target_list, num_processor=2
-    )
-    await ShopPage.execute()
+async def test_ShopPage(ShopPage: ShopPageMain):
+    await ShopPage.execute("shop_product_card", "116", num_processor=1)

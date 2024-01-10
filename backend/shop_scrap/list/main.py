@@ -1,8 +1,8 @@
 from typing import List
-from shop_scrap.list.scraper_main import ShopListScraperFactory
+from shop_scrap.list.scraper_main import ShopListScraperFactory, PwShopListScraper
 from shop_scrap.list.report import ShopListReport
 from shop_scrap.list.data_save import ShopListDataSave
-from components.abstract_class.scraper_main import ShopScraper
+from components.abstract_class.scraper_main import Scraper
 
 
 class ShopListMain:
@@ -10,7 +10,7 @@ class ShopListMain:
         self.main_scraper_factory = ShopListScraperFactory(path)
         self.Report = ShopListReport(path)
         self.DataSave = ShopListDataSave(path)
-        self._main_scraper = None
+        self._main_scraper: PwShopListScraper
 
     @property
     def main_scraper(self):
@@ -19,17 +19,14 @@ class ShopListMain:
         return self._main_scraper
 
     @main_scraper.setter
-    def main_scraper(self, main_scraper: ShopScraper):
+    def main_scraper(self, main_scraper: PwShopListScraper):
         self._main_scraper = main_scraper
 
-    async def execute(self):
+    async def execute(self, shop_name: str, target_list: List[str], num_processor: int):
+        self.main_scraper = await getattr(self.main_scraper_factory, shop_name)(
+            target_list, num_processor
+        )
         await self.main_scraper.scrap()
-        await self.Report.save_report()
+        report_name = await self.Report.save_report()
         await self.DataSave.save_scrap_data()
-
-    async def init_main_scraper(
-        self, shop_name: str, target_list: List[str], num_processor: int
-    ):
-        self.main_scraper = await getattr(self.main_scraper_factory, shop_name)()
-        self.main_scraper.target_list = target_list
-        self.main_scraper.late_binding(num_processor)
+        return report_name

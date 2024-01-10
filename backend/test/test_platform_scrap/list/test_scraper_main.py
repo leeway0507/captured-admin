@@ -1,9 +1,6 @@
 import pytest
 
-from platform_scrap.list.scraper_main import (
-    PlatformListScraperFactory,
-    PwKreamListScraper,
-)
+from platform_scrap.list.scraper_main import PlatformListScraperFactory
 
 curr_path = __file__.rsplit("/", 1)[0]
 
@@ -15,14 +12,12 @@ def anyio_backend():
 
 
 @pytest.fixture(scope="module")
-async def Scraper():
-    factory = PlatformListScraperFactory(curr_path)
-    PwKreamScraper = await factory.pw_kream()
-    PwKreamScraper.late_binding(num_processor=1)
-    yield PwKreamScraper
+async def Fac():
+    yield PlatformListScraperFactory(curr_path)
 
 
 @pytest.mark.anyio
-async def test_scrap(Scraper: PwKreamListScraper):
-    Scraper.target_list = ["the north face"]
-    await Scraper.scrap()
+async def test_scrap(Fac: PlatformListScraperFactory):
+    target_list = ["the north face"]
+    scraper = await Fac.kream(target_list, 1)
+    await scraper.scrap()

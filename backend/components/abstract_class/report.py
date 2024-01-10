@@ -39,3 +39,4 @@ class PlatformReport(ABC):
         await self.Report.create_report_with_scrap_time_as_file_name(
             report_data=template
         )
+        return template.scrap_time

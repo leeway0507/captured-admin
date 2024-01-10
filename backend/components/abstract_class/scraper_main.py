@@ -3,10 +3,8 @@ import asyncio
 from traceback import format_exception
 from abc import ABC, abstractmethod
 from typing import List, Tuple, Any, Dict, Callable
-from itertools import chain
 from datetime import datetime
 
-import pandas as pd
 from pydantic import BaseModel
 
 from ..file_manager import ScrapTempFile
@@ -25,9 +23,14 @@ class Scraper(ABC):
         self,
         path,
         browser: ContextHandler,
+        num_processor: int,
+        sub_scraper_class: Callable[..., SubScraper],
     ):
         self.TempFile = ScrapTempFile(os.path.join(path, "_temp"))
         self.browser = browser
+        self.num_processor = num_processor
+        # TODO:sub_scraper_class말고 sub_scraper_factory로 변경 필요. shop_page main.py 참조
+        self.sub_scraper_class = sub_scraper_class
         self.path = path
 
         self.scrap_time = ""
@@ -44,12 +47,6 @@ class Scraper(ABC):
         if not isinstance(target_list, list) and not isinstance(target_list, tuple):
             raise TypeError("target_list is not list type")
         self._target_list = target_list
-
-    def late_binding(
-        self, sub_scraper_class: Callable[..., SubScraper], num_processor: int
-    ):
-        self.num_processor = num_processor
-        self.sub_scraper_class = sub_scraper_class
 
     async def scrap(self):
         try:
@@ -68,19 +65,19 @@ class Scraper(ABC):
         print("shop_product_card_page scrap error")
         print("".join(format_exception(None, e, e.__traceback__)))
         return {
-            "scrap_status": "fail",
+            "scrap_status": "main scraper failed:",
             "error": str(e),
         }
-
-    def init_scrap_time(self):
-        self.scrap_time = datetime.now().strftime("%Y%m%d-%H%M%S")
-        return self.scrap_time
 
     async def init(self):
         self.init_scrap_time()
         self.TempFile.init()
         self._check_necessary_property()
         await self.save_scrap_config_to_temp_file()
+
+    def init_scrap_time(self):
+        self.scrap_time = datetime.now().strftime("%Y%m%d-%H%M%S")
+        return self.scrap_time
 
     def _check_necessary_property(self):
         error = []
@@ -148,60 +145,8 @@ class Scraper(ABC):
     async def handle_scrap_error(self, job: str, e: Exception):
         print(f"scrap_error: {job} 실패")
         print("".join(format_exception(None, e, e.__traceback__)))
-        return f"failed: {str(e)}"
+        return f"sub scraper failed: {str(e)}"
 
     async def save_scrap_status_to_temp_file(self, job: str, status: str):
         template = ScrapStatusBase(job=str(job), status=status)
         await self.TempFile.append_temp_file("scrap_status", template.model_dump())
-
-
-class PlatformScrapStatus(ScrapStatusBase):
-    platform_type: str
-
-
-class PlatformScraper(Scraper):
-    def __init__(
-        self,
-        path,
-        browser: PlatformContextHandler,
-        sub_scraper_class: Callable[..., SubScraper],
-        platform_type: str,
-    ):
-        super().__init__(path, browser)
-        self.browser: PlatformContextHandler
-        self.sub_scraper_class = sub_scraper_class
-        self.platform_type = platform_type
-
-    def late_binding(self, num_processor: int):
-        self.num_processor = num_processor
-
-    async def browser_login(self):
-        await self.browser.login()
-
-
-class ShopScraper(Scraper):
-    def __init__(
-        self,
-        path: str,
-        temp_file_name: str,
-        browser: ContextHandler,
-    ):
-        super().__init__(path, browser)
-        self.sub_scraper_class = Callable[..., SubScraper]
-        self.temp_file_name = temp_file_name
-        self.path = path
-
-    def late_binding(
-        self,
-        num_processor: int,
-    ):
-        self.num_processor = num_processor
-
-    # concrete_method
-    async def browser_login(self):
-        pass
-
-    # concrete_method
-    async def save_data_to_temp_file(self, data: List):
-        if data:
-            await self.TempFile.append_temp_file(self.temp_file_name, data)

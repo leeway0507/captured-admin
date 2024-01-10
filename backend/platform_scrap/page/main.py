@@ -1,13 +1,12 @@
 import os
-from typing import List
+from typing import Optional
 
 import pandas as pd
 
 from platform_scrap.page.scraper_main import PlatformPageScraperFactory
 from platform_scrap.page.report import PlatformPageReport
 from platform_scrap.page.data_save import PlatformPageDataSave
-from components.abstract_class.scraper_main import PlatformScraper
-from components.file_manager import ScrapReport
+from components.abstract_class.scraper_main import Scraper
 
 
 class PlatformPageMain:
@@ -25,25 +24,34 @@ class PlatformPageMain:
         return self._main_scraper
 
     @main_scraper.setter
-    def main_scraper(self, main_scraper: PlatformScraper):
+    def main_scraper(self, main_scraper: Scraper):
         self._main_scraper = main_scraper
 
-    async def execute(self):
-        await self.main_scraper.scrap()
-        await self.Report.save_report()
-        await self.DataSave.save_scrap_data()
-
-    async def init_pw_kream_scraper(
-        self, searchType: str, value: str, num_processor: int
+    async def kream_execute(
+        self, searchType: str, value: Optional[str], num_processor: int
     ):
+        await self.init(searchType, value, num_processor)
+        await self.main_scraper.scrap()
+        report_name = await self.Report.save_report()
+        await self.DataSave.save_scrap_data()
+        return report_name
+
+    async def init(self, searchType: str, value: Optional[str], num_processor: int):
         self.set_values(searchType, value)
-        self.main_scraper = await self.main_scraper_factory.pw_kream()
+        self.main_scraper = await self.main_scraper_factory.kream(num_processor)
         self.set_target_list_and_folder_name()
-        self.main_scraper.late_binding(num_processor)
 
     def set_values(self, searchType, value):
         self.searchType = searchType
         self.value = value
+        self.check_value_is_lastScrap()
+
+    def check_value_is_lastScrap(self):
+        if not self.value:
+            if self.searchType == "scrapDate":
+                self.value = "lastScrap"
+            else:
+                raise ValueError("Only scrapDate can have None value")
 
     def set_target_list_and_folder_name(self):
         folder_name, target_list = self.extract_folder_name_and_target_data()

@@ -1,7 +1,7 @@
 "use client";
 import { useRouter } from "next/navigation";
 import { useReducer, useRef, useEffect, useState } from "react";
-import { InitshopCardList, loadShopName, loadBrandName } from "./fetch";
+import { ScrapShopList, loadShopName, loadBrandName } from "./fetch-scrap";
 import { toast } from "react-toastify";
 import Select from "react-select";
 
@@ -50,7 +50,7 @@ export const handleSubmit = async (
     }
 
     disableButton();
-    await InitshopCardList(state.shopName, state.brandName, state.numProcess)
+    await ScrapShopList(state.shopName, state.brandName, state.numProcess)
         .then((res) => {
             const { scrap_status, ...restData } = res.data;
             scrap_status === "success" ? setName(restData.scrap_name) : toast.error("에러 발생");

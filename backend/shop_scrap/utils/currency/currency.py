@@ -50,8 +50,16 @@ class Currency:
                 json_data = json.load(file)
 
             if json_data.get("update", "00/01/01") < self.date.strftime("%y/%m/%d"):
-                self._get_buying_currency_from_API()
-                self._get_custom_currency_from_API()
+                try:
+                    self._get_buying_currency_from_API()
+                    self._get_custom_currency_from_API()
+                except Exception as e:
+                    print("환율 불러오기 실패")
+                    print(e)
+
+                    print(f"{json_data['update']} 데이터 활용")
+                    break
+
                 i += 1
             else:
                 break

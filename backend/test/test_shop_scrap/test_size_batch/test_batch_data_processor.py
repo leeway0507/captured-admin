@@ -1,0 +1,70 @@
+import os
+import pytest
+from pandas import DataFrame
+from shop_scrap.size_batch.batch_data_processor import SizeBatchProcessor
+
+current_path = __file__.rsplit("/", 1)[0]
+pytestmark = pytest.mark.asyncio(scope="module")
+batch_time = "20240110-145730"
+
+
+@pytest.fixture(scope="module")
+def anyio_backend():
+    return "asyncio"
+
+
+@pytest.fixture(scope="module")
+def ComD(test_session):
+    processor = SizeBatchProcessor(
+        test_session,
+        test_session,
+        current_path,
+        batch_time,
+    )
+
+    yield processor
+
+
+@pytest.mark.anyio
+async def test_load_data(ComD: SizeBatchProcessor):
+    data = await ComD._shop_size_data()
+    assert isinstance(data[0], dict)
+
+    data = await ComD._shop_card_data()
+    assert isinstance(data[0], dict)
+
+    data = await ComD._prod_card_data()
+    assert isinstance(data[0], dict)
+
+
+@pytest.mark.anyio
+async def test_create_batch_folder(ComD: SizeBatchProcessor):
+    ComD.create_batch_folder()
+    assert os.path.exists(os.path.join(current_path, batch_time))
+
+
+@pytest.mark.anyio
+async def test_save_db_data(ComD: SizeBatchProcessor):
+    # Then
+    await ComD.save_db_data()
+
+
+@pytest.mark.anyio
+async def test_load_db_data_and_size_batch_data(ComD: SizeBatchProcessor):
+    # When
+    ComD.load_db_data()
+
+    # Then
+    assert isinstance(ComD.shop_size_data_df, DataFrame)
+    assert isinstance(ComD.shop_card_data_df, DataFrame)
+    assert isinstance(ComD.prod_card_data_df, DataFrame)
+
+    ComD.create_prod_size_data()
+
+    assert os.path.exists(
+        os.path.join(
+            current_path,
+            batch_time,
+            "prod_size_data.parquet.gzip",
+        )
+    )

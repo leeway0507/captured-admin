@@ -1,0 +1,16 @@
+{
+    "scrap_time": "20240108-155653",
+    "num_of_plan": 1,
+    "num_processor": 1,
+    "db_update": false,
+    "job": [
+        {
+            "shop_product_card_id": 116,
+            "product_url": "https://www.consortium.co.uk/adidas-originals-handball-spezial-collegiate-navy-clear-sky-gum-5-bd7633.html",
+            "shop_name": "consortium",
+            "brand_name": "adidas",
+            "product_id": "BD7633",
+            "status": "success"
+        }
+    ]
+}

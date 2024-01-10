@@ -17,8 +17,7 @@ def anyio_backend():
 @pytest.fixture(scope="module")
 async def Scraper():
     factory = PlatformPageScraperFactory(curr_path)
-    PwKreamScraper = await factory.pw_kream()
-    PwKreamScraper.late_binding(num_processor=1)
+    PwKreamScraper = await factory.kream(num_processor=1)
     yield PwKreamScraper
 
 

@@ -1,11 +1,9 @@
 from abc import ABC, abstractmethod
-from typing import List, Tuple, Dict, Any, Optional, TypeVar
+from typing import List, Tuple, Dict, Any, Optional
 from ..browser_handler import PageHandler, PwPageHandler
 from bs4 import Tag
 from pydantic import BaseModel
 from ..env import dev_env
-
-T = TypeVar("T")
 
 
 class SubScraper(ABC):
@@ -50,66 +48,6 @@ class SubScraper(ABC):
         self._job = job
 
 
-class PwPlatformSubScaper(SubScraper):
-    def __init__(self):
-        self._page_handler = None
-        self._brand_name = None
-
-    async def execute(self, max_scroll=20, time_delay=500) -> Tuple[str, List]:
-        await self._goto_list_page()
-        await self.page_handler.scroll_down(
-            max_scroll=max_scroll, time_delay=time_delay
-        )
-        return await self.get_product_card_list()
-
-    @property
-    def page_handler(self):
-        if not self._page_handler:
-            raise ValueError(
-                """
-                page_handler is None. Plase update page_handler 
-                """
-            )
-        return self._page_handler
-
-    @page_handler.setter
-    def page_handler(self, value):
-        self._page_handler = value
-
-    @property
-    def min_volume(self):
-        return self._min_volume
-
-    @min_volume.setter
-    def min_volume(self, value):
-        self._min_volume = value
-
-    @property
-    def min_wish(self):
-        return self._min_wish
-
-    @min_wish.setter
-    def min_wish(self, value):
-        self._min_wish = value
-
-    async def _goto_list_page(self):
-        url = self.get_url()
-        await self.page_handler.go_to(url)
-        await self.page_handler.sleep_until(2000)
-
-    @abstractmethod
-    def __name__(self) -> str:
-        ...
-
-    @abstractmethod
-    def get_url(self) -> str:
-        ...
-
-    @abstractmethod
-    async def get_product_card_list(self) -> Tuple[str, List]:
-        ...
-
-
 class ListScrapData(BaseModel):
     shop_name: str
     brand_name: str = ""
@@ -121,22 +59,33 @@ class ListScrapData(BaseModel):
 
 
 class PwShopListSubScraper(SubScraper):
-    def __init__(self):
+    def __init__(
+        self,
+        not_found_xpath: str,
+        shop_name: str = "",
+        reverse_not_found_result: bool = False,
+        page_reload_after_cookies: bool = False,
+        cookie_button_xpath: List[str] = [],
+        wait_until_load: int = 2000,
+        using_scroll=False,
+        scroll_down_time_delay=1000,
+        max_scroll: int = 10,
+    ):
         super().__init__()
-        self.shop_name: str = ""
-        self.wait_until_load = 2000
-        self.reverse_not_found_result: bool = False
-        self.page_reload_after_cookies: bool = False
-        self.cookie_button_xpath: List[str] = []
-        self.not_found_xpath: str
-        self.wait_until_load: int = 2000
-        self.using_scroll = False
-        self.scroll_down_time_delay = 1000
-        self.max_scroll: int = 10
+        self.not_found_xpath: str = not_found_xpath
+        self.shop_name: str = shop_name
+        self.reverse_not_found_result: bool = reverse_not_found_result
+        self.page_reload_after_cookies: bool = page_reload_after_cookies
+        self.cookie_button_xpath: List[str] = cookie_button_xpath
+        self.wait_until_load: int = wait_until_load
+        self.using_scroll = using_scroll
+        self.scroll_down_time_delay = scroll_down_time_delay
+        self.max_scroll: int = max_scroll
 
-    def late_binding(self, page_handler: PwPageHandler):
+    def late_binding(self, page_handler: PwPageHandler, shop_name: str):
         self.page_handler = page_handler
         self.page = page_handler.get_page()
+        self.shop_name = shop_name
 
     async def execute(self) -> Tuple[str, List[ListScrapData] | List]:
         await self.load_page()
@@ -267,12 +216,12 @@ class PwShopPageSubScraper(SubScraper):
 
         # scrap size and product_id
         size = await self.get_size()
-        product_id = await self.get_product_id()
+        card_info = await self.get_card_info()
         return "success", {
             "shop_product_card_id": self.job["shop_product_card_id"],
             "product_url": self.job["product_url"],
             "size": size,
-            "product_id": product_id,
+            "card_info": card_info,
         }
 
     async def load_page(self):
@@ -288,7 +237,7 @@ class PwShopPageSubScraper(SubScraper):
             await self.page_handler.handle_cookies(self.cookie_button_xpath)
 
     @abstractmethod
-    async def get_product_id(self):
+    async def get_card_info(self):
         pass
 
     @abstractmethod

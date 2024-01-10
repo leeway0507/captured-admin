@@ -35,6 +35,9 @@ class DataSave(ABC):
         return self.TempFile.create_folder(self.folder_path())
 
     def _adaptor(self, file) -> List[Dict]:
+        if isinstance(file, dict):
+            return [file]
+
         if isinstance(file[0], List):
             from itertools import chain
 

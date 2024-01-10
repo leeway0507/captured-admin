@@ -1,31 +1,34 @@
-import json
 from typing import List, Dict, Any
-
 from bs4 import BeautifulSoup, Tag
-from playwright.async_api import expect, Page
+from playwright.async_api import expect
+
+from components.abstract_class.scraper_sub import (
+    PwShopListSubScraper,
+    ListScrapData,
+)
+
+from components.abstract_class.scraper_sub import (
+    PwShopPageSubScraper,
+)
 
 
 nextpage = "//a[contains(@title,'Next Page')]"
 
 
-class PwSevenStoreList:
+class PwSevenStoreListSubScraper(PwShopListSubScraper):
+    def __init__(self):
+        super().__init__(
+            not_found_xpath=".not_found_xpath",
+            shop_name="seven_store",
+        )
+
     def __name__(self) -> str:
         return "seven_store"
 
-    # def config(self) ->:
-    #     return ListConfig(
-    #         scroll_on=True,
-    #         reverse_not_found_result=True,
-    #         page_reload_after_cookies=False,
-    #         cookie_button_xpath=[
-    #             '//button[@class="btn btn-level1 accept-all-cookies"]'
-    #         ],
-    #         not_found_xpath='//div[contains(@id,"listing-list")]',
-    #         max_scroll=30,
-    #     )
-
-    async def extract_card_html(self, page) -> List[Tag] | None:
-        product_cards = await page.query_selector('//div[contains(@id,"listing-list")]')
+    async def extract_card_html(self) -> List[Tag] | None:
+        product_cards = await self.page.query_selector(
+            '//div[contains(@id,"listing-list")]'
+        )
         if product_cards:
             cards = await product_cards.inner_html()
             cards = BeautifulSoup(cards, "html.parser")
@@ -37,43 +40,48 @@ class PwSevenStoreList:
         else:
             return None
 
-    # def extract_info(self, card: Tag, brand_name: str) :
-    #     product_name = card.find("a", class_="f-hover-decor").text  # type: ignore
-    #     shop_product_name = product_name + " - " + card["data-nq-product"]  # type: ignore
-    #     price = card.find(attrs={"data-listing": "price"}).text.split(" RRP")[0]  # type: ignore
-
-    #     return ListScrapData(
-    #         shop_name=self.__name__(),
-    #         brand_name=brand_name,
-    #         shop_product_name=shop_product_name,
-    #         shop_product_img_url=card.img["src"],  # type: ignore
-    #         product_url=card.img["data-url"],  # type: ignore
-    #         price=price,
-    #     )
-
-    async def get_next_page(self, page: Page, page_num: int) -> bool:
+    async def has_next_page(self, page_num: int) -> bool:
         return False
 
+    def extract_info(self, card: Tag):
+        product_name = card.find("a", class_="f-hover-decor").text  # type: ignore
+        shop_product_name = product_name + " - " + card["data-nq-product"]  # type: ignore
+        price = card.find(attrs={"data-listing": "price"}).text.split(" RRP")[0]  # type: ignore
 
-class PwSevenStorePage:
+        return ListScrapData(
+            shop_name=self.shop_name,
+            brand_name=self.job,
+            shop_product_name=shop_product_name,
+            shop_product_img_url=card.img["src"],  # type: ignore
+            product_url=card.img["data-url"],  # type: ignore
+            price=price,
+        ).model_dump()
+
+
+class PwSevenStorePageSubScraper(PwShopPageSubScraper):
     def __name__(self) -> str:
         return "seven_store"
+
+    def __init__(self):
+        super().__init__()
+        self.cookie_button_xpath = [".not_found_page"]
 
     def get_cookie_button_xpath(self) -> List[str]:
         return []
 
-    async def get_size_info(self, page: Page) -> List[Dict[str, Any]]:
-        locator = page.locator(".product-sizes-title")
+    async def get_size(self) -> List[Dict[str, Any]]:
+        locator = self.page.locator(".product-sizes-title")
         await expect(locator).to_contain_text("Sizes", timeout=10000)
 
-        size_query = await page.query_selector_all(
+        size_query = await self.page.query_selector_all(
             '//div[contains(@class, "size-wrapper")]',
         )
 
         size_list = [await s.inner_text() for s in size_query]
 
         if not size_list:
-            return [{"shop_product_size": "-", "kor_product_size": "-"}]
+            print(f"Out of Stock : {self.job}")
+            raise Exception("Out of Stock")
 
         l = []
         for s in size_list:
@@ -87,8 +95,14 @@ class PwSevenStorePage:
 
         return l
 
-    async def get_product_id(self, page: Page) -> str:
-        product_id_text = await page.query_selector(
+    async def get_card_info(self):
+        product_id = await self.get_product_id()
+        original_price = await self.get_original_price()
+
+        return {"product_id": product_id, "original_price": original_price}
+
+    async def get_product_id(self):
+        product_id_text = await self.page.query_selector(
             '//meta[contains(@name, "description")]',
         )
 
@@ -99,3 +113,11 @@ class PwSevenStorePage:
             product_id = "-"
 
         return product_id.upper()
+
+    async def get_original_price(self):
+        xpath = '//div[@class="product-price"]/span'
+        if not await self.page.locator(xpath).is_visible():
+            xpath = ".product-price.sale"
+
+        result = await self.page.locator(xpath).inner_text()
+        return result

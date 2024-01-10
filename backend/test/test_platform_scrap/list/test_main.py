@@ -1,4 +1,3 @@
-import os
 import pytest
 from platform_scrap.list.main import PlatformListMain
 
@@ -12,13 +11,12 @@ def anyio_backend():
 
 
 @pytest.fixture(scope="module")
-async def KreamList():
+async def ScrapList():
     yield PlatformListMain(current_path)
 
 
 @pytest.mark.anyio
-async def test_PlatformList(KreamList: PlatformListMain):
-    await KreamList.init_pw_kream_scraper(
-        target_list=["the north face"], num_processor=1
+async def test_PlatformList(ScrapList: PlatformListMain):
+    await ScrapList.kream_execute(
+        target_list=["the north face"], num_processor=1, max_scroll=2
     )
-    await KreamList.execute()

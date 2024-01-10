@@ -1,30 +1,37 @@
 from typing import Callable
 from .scraper_sub import PwKreamPageSubScraper
 from components.browser_handler import PwKreamContextHanlder, PwPageHandler
-from components.abstract_class.scraper_main import PlatformScraper
+from components.abstract_class.scraper_main import Scraper
 
 
 class PlatformPageScraperFactory:
     def __init__(self, path: str):
         self.path = path
 
-    async def pw_kream(self):
+    async def kream(self, num_processor: int):
         pw_kream_browser = await PwKreamContextHanlder.start()
-        return PlatformPageScraper(self.path, pw_kream_browser, PwKreamPageSubScraper)
+        return PlatformPageScraper(
+            self.path, pw_kream_browser, num_processor, PwKreamPageSubScraper
+        )
 
 
-class PlatformPageScraper(PlatformScraper):
+class PlatformPageScraper(Scraper):
     def __init__(
         self,
         path: str,
         browser: PwKreamContextHanlder,
+        num_processor: int,
         sub_scraper: Callable[..., PwKreamPageSubScraper],
     ):
-        super().__init__(path, browser, sub_scraper, platform_type="kream")
-        self.path = path
+        super().__init__(path, browser, num_processor, sub_scraper)
+        self.browser: PwKreamContextHanlder
+        self.platform_type = "kream"
+
+    async def browser_login(self):
+        await self.browser.login()
 
     def set_sub_scraper_params(self):
-        pass
+        return {}
 
     async def save_scrap_config_to_temp_file(self):
         config = {

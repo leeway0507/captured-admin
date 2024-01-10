@@ -1,0 +1,552 @@
+{
+    "scrap_time": "20240110-005220",
+    "num_of_plan": 68,
+    "num_processor": 8,
+    "db_update": false,
+    "job": [
+        {
+            "shop_product_card_id": 636,
+            "product_url": "https://www.consortium.co.uk/adidas-originals-by-midwest-kids-jacket-mwk-black-cardboard-h62574.html",
+            "shop_name": "consortium",
+            "brand_name": "adidas",
+            "product_id": "H62574",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 1213,
+            "product_url": "https://www.consortium.co.uk/patagonia-microdini-hooded-fleece-pitch-blue-26210-pibl.html",
+            "shop_name": "consortium",
+            "brand_name": "patagonia",
+            "product_id": "26210-PIBL",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 168,
+            "product_url": "https://www.consortium.co.uk/adidas-originals-tobacco-silver-green-pantone-aluminium-gy7397.html",
+            "shop_name": "consortium",
+            "brand_name": "adidas",
+            "product_id": "GY7397",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 3347,
+            "product_url": "https://www.consortium.co.uk/adidas-originals-gazelle-bold-core-black-cloud-white-cloud-white-ie0876.html",
+            "shop_name": "consortium",
+            "brand_name": "adidas",
+            "product_id": "IE0876",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 116,
+            "product_url": "https://www.consortium.co.uk/adidas-originals-handball-spezial-collegiate-navy-clear-sky-gum-5-bd7633.html",
+            "shop_name": "consortium",
+            "brand_name": "adidas",
+            "product_id": "BD7633",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 2182,
+            "product_url": "https://www.sevenstore.com/footwear/sneakers/adidas-core-black-white-gum-handball-spezial-trainer/",
+            "shop_name": "seven_store",
+            "brand_name": "adidas",
+            "product_id": "DB3021",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 637,
+            "product_url": "https://www.consortium.co.uk/adidas-by-undefeated-pack-jacket-orange-dy3262.html",
+            "shop_name": "consortium",
+            "brand_name": "adidas",
+            "product_id": "DY3262",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 1214,
+            "product_url": "https://www.consortium.co.uk/patagonia-microdini-hooded-fleece-tidepool-blue-26210-tidb.html",
+            "shop_name": "consortium",
+            "brand_name": "patagonia",
+            "product_id": "26210-TIDB",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 4638,
+            "product_url": "https://www.sevenstore.com/outerwear/coats-jackets/nike-blackanthracitesummit-white-acg-arctic-wolf-fleece-jacket/",
+            "shop_name": "seven_store",
+            "brand_name": "nike acg",
+            "product_id": "FN0372-010",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 118,
+            "product_url": "https://www.consortium.co.uk/adidas-originals-handball-spezial-core-black-cloud-white-gum-5-db3021.html",
+            "shop_name": "consortium",
+            "brand_name": "adidas",
+            "product_id": "DB3021",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 170,
+            "product_url": "https://www.consortium.co.uk/adidas-originals-tobacco-gruen-collegiate-orange-fox-orange-gum-gx6939.html",
+            "shop_name": "consortium",
+            "brand_name": "adidas",
+            "product_id": "GX6939",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 4073,
+            "product_url": "https://www.consortium.co.uk/clarks-originals-wallabee-boot-black-suede-26155517.html",
+            "shop_name": "consortium",
+            "brand_name": "clarks originals",
+            "product_id": "26155517",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 648,
+            "product_url": "https://www.consortium.co.uk/adidas-originals-v-stripes-pant-noble-indigo-white.html",
+            "shop_name": "consortium",
+            "brand_name": "adidas",
+            "product_id": "CE4814",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 1218,
+            "product_url": "https://www.consortium.co.uk/patagonia-microdini-1-2-zip-fleece-pullover-plume-grey-26200-plgy.html",
+            "shop_name": "consortium",
+            "brand_name": "patagonia",
+            "product_id": "26200-PLGY",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 135,
+            "product_url": "https://www.consortium.co.uk/adidas-originals-gazelle-indoor-core-black-footwear-white-core-black-h06259.html",
+            "shop_name": "consortium",
+            "brand_name": "adidas",
+            "product_id": "H06259",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 2185,
+            "product_url": "https://www.sevenstore.com/footwear/sneakers/adidas-core-blackftwr-whitecore-black-gazelle-indoor-sneaker/",
+            "shop_name": "seven_store",
+            "brand_name": "adidas",
+            "product_id": "H06259",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 177,
+            "product_url": "https://www.consortium.co.uk/adidas-originals-bermuda-collegiate-purple-cream-white-dark-purple-ie7427.html",
+            "shop_name": "consortium",
+            "brand_name": "adidas",
+            "product_id": "IE7427",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 4096,
+            "product_url": "https://www.consortium.co.uk/clarks-originals-coal-london-maple-suede-26171491.html",
+            "shop_name": "consortium",
+            "brand_name": "clarks originals",
+            "product_id": "26171491",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 1171,
+            "product_url": "https://www.consortium.co.uk/patagonia-fitz-roy-icon-uprisal-pullover-hooded-sweatshirt-basin-green-39666-bsng.html",
+            "shop_name": "consortium",
+            "brand_name": "patagonia",
+            "product_id": "39666-BSNG",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 1246,
+            "product_url": "https://www.consortium.co.uk/patagonia-reversible-shelled-microdini-jacket-bayou-blue-26215-bybl.html",
+            "shop_name": "consortium",
+            "brand_name": "patagonia",
+            "product_id": "26215-BYBL",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 142,
+            "product_url": "https://www.consortium.co.uk/adidas-originals-gazelle-shadow-navy-clear-blue-gum-5-ig4988.html",
+            "shop_name": "consortium",
+            "brand_name": "adidas",
+            "product_id": "IG4988",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 178,
+            "product_url": "https://www.consortium.co.uk/adidas-originals-bermuda-collegiate-burgundy-cream-white-maroon-ie7426.html",
+            "shop_name": "consortium",
+            "brand_name": "adidas",
+            "product_id": "IE7426",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 4097,
+            "product_url": "https://www.consortium.co.uk/clarks-originals-coal-london-black-suede-26171744.html",
+            "shop_name": "consortium",
+            "brand_name": "clarks originals",
+            "product_id": "26171744",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 1173,
+            "product_url": "https://www.consortium.co.uk/patagonia-fitz-roy-icon-uprisal-pullover-hooded-sweatshirt-ink-black-39666-inbk.html",
+            "shop_name": "consortium",
+            "brand_name": "patagonia",
+            "product_id": "39666-INBK",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 1252,
+            "product_url": "https://www.consortium.co.uk/patagonia-funhoggers-anorak-pullover-jacket-classic-tan-20325-csc.html",
+            "shop_name": "consortium",
+            "brand_name": "patagonia",
+            "product_id": "20325-CSC",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 143,
+            "product_url": "https://www.consortium.co.uk/adidas-originals-gazelle-preloved-red-off-white-cream-white-gy7339.html",
+            "shop_name": "consortium",
+            "brand_name": "adidas",
+            "product_id": "GY7339",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 251,
+            "product_url": "https://www.consortium.co.uk/adidas-originals-stan-smith-80s-footwear-white-footwear-white-green-if0202.html",
+            "shop_name": "consortium",
+            "brand_name": "adidas",
+            "product_id": "IF0202",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 4104,
+            "product_url": "https://www.consortium.co.uk/clarks-originals-by-ronnie-fieg-rossendale-8th-st-collection-stone-26170225.html",
+            "shop_name": "consortium",
+            "brand_name": "clarks originals",
+            "product_id": "26170225",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 1201,
+            "product_url": "https://www.consortium.co.uk/patagonia-synchilla-snap-t-fleece-pullover-oatmeal-heather-25450-oat.html",
+            "shop_name": "consortium",
+            "brand_name": "patagonia",
+            "product_id": "25450-OAT",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 1323,
+            "product_url": "https://www.consortium.co.uk/patagonia-everyday-beanie-black-33430-blk.html",
+            "shop_name": "consortium",
+            "brand_name": "patagonia",
+            "product_id": "33430-BLK",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 146,
+            "product_url": "https://www.consortium.co.uk/adidas-originals-gazelle-85-clear-sky-footwear-white-gold-metallic-ig5003.html",
+            "shop_name": "consortium",
+            "brand_name": "adidas",
+            "product_id": "IG5003",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 253,
+            "product_url": "https://www.consortium.co.uk/adidas-originals-stan-smith-80s-footwear-white-footwear-white-green-fz5597.html",
+            "shop_name": "consortium",
+            "brand_name": "adidas",
+            "product_id": "FZ5597",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 4105,
+            "product_url": "https://www.consortium.co.uk/clarks-originals-by-ronnie-fieg-rossendale-8th-st-collection-cola-suede-26170226.html",
+            "shop_name": "consortium",
+            "brand_name": "clarks originals",
+            "product_id": "26170226",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 1204,
+            "product_url": "https://www.consortium.co.uk/patagonia-synchilla-fleece-anorak-new-navy-w-smolder-blue-22980-nesm.html",
+            "shop_name": "consortium",
+            "brand_name": "patagonia",
+            "product_id": "22980-NESM",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 1355,
+            "product_url": "https://www.consortium.co.uk/women-s-our-legacy-cardigan-mole-grey-mohair-w4236cm.html",
+            "shop_name": "consortium",
+            "brand_name": "our legacy women",
+            "product_id": "W4236CM",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 155,
+            "product_url": "https://www.consortium.co.uk/adidas-originals-gazelle-85-core-black-footwear-white-gold-metallic-fz5594.html",
+            "shop_name": "consortium",
+            "brand_name": "adidas",
+            "product_id": "FZ5594",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 353,
+            "product_url": "https://www.consortium.co.uk/adidas-originals-adimatic-panton-panton-crystal-white-hq6901.html",
+            "shop_name": "consortium",
+            "brand_name": "adidas",
+            "product_id": "HQ6901",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 4106,
+            "product_url": "https://www.consortium.co.uk/clarks-originals-by-ronnie-fieg-maycliffe-8th-st-collection-sand-suede-26173371.html",
+            "shop_name": "consortium",
+            "brand_name": "clarks originals",
+            "product_id": "26173371",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 1207,
+            "product_url": "https://www.consortium.co.uk/patagonia-retro-pile-fleece-jacket-obsidian-plum-22801-obpl.html",
+            "shop_name": "consortium",
+            "brand_name": "patagonia",
+            "product_id": "22801-OBPL",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 1409,
+            "product_url": "https://www.consortium.co.uk/women-s-patagonia-microdini-1-2-zip-fleece-pullover-obsidian-plum-26260-obpl.html",
+            "shop_name": "consortium",
+            "brand_name": "patagonia women",
+            "product_id": "26260-OBPL",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 156,
+            "product_url": "https://www.consortium.co.uk/adidas-originals-gazelle-85-bluebird-footwear-white-gold-metallic-fz5593.html",
+            "shop_name": "consortium",
+            "brand_name": "adidas",
+            "product_id": "FZ5593",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 354,
+            "product_url": "https://www.consortium.co.uk/adidas-originals-adimatic-panton-core-black-gum-3-hq6903.html",
+            "shop_name": "consortium",
+            "brand_name": "adidas",
+            "product_id": "HQ6903",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 1209,
+            "product_url": "https://www.consortium.co.uk/patagonia-retro-pile-fleece-jacket-el-cap-khaki-22801-elkh.html",
+            "shop_name": "consortium",
+            "brand_name": "patagonia",
+            "product_id": "22801-ELKH",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 4108,
+            "product_url": "https://www.consortium.co.uk/clarks-originals-by-ronnie-fieg-maycliffe-8th-st-collection-maple-26170245.html",
+            "shop_name": "consortium",
+            "brand_name": "clarks originals",
+            "product_id": "26170245",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 1411,
+            "product_url": "https://www.consortium.co.uk/women-s-patagonia-microdini-1-2-zip-fleece-pullover-black-26260-blk.html",
+            "shop_name": "consortium",
+            "brand_name": "patagonia women",
+            "product_id": "26260-BLK",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 165,
+            "product_url": "https://www.consortium.co.uk/adidas-originals-munchen-scarlet-matte-silver-gum-gy7402.html",
+            "shop_name": "consortium",
+            "brand_name": "adidas",
+            "product_id": "GY7402",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 619,
+            "product_url": "https://www.consortium.co.uk/adidas-originals-by-human-made-windbreaker-hm-collegiate-navy-gm4256.html",
+            "shop_name": "consortium",
+            "brand_name": "adidas",
+            "product_id": "GM4256",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 4116,
+            "product_url": "https://www.consortium.co.uk/patagonia-lightweight-synchilla-snap-t-pullover-fleece-oatmeal-heather.html",
+            "shop_name": "consortium",
+            "brand_name": "patagonia",
+            "product_id": "25551-OAT",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 4896,
+            "product_url": "https://www.sevenstore.com/outerwear/coats-jackets/the-north-face-tnf-black-fabric-mix-shirt-jacket/",
+            "shop_name": "seven_store",
+            "brand_name": "the north face",
+            "product_id": "A81LC",
+            "status": "failed: Timeout 30000ms exceeded."
+        },
+        {
+            "shop_product_card_id": 4646,
+            "product_url": "https://www.sevenstore.com/tops/shirts/nike-khakilt-iron-oresummit-white-acg-drifit-uv-devastation-trail-shirt/",
+            "shop_name": "seven_store",
+            "brand_name": "nike acg",
+            "product_id": "DN3936-248",
+            "status": "failed: Timeout 30000ms exceeded."
+        },
+        {
+            "shop_product_card_id": 2187,
+            "product_url": "https://www.sevenstore.com/footwear/sneakers/adidas-collegiate-purplecream-whitedark-purple-bermuda-sneaker/",
+            "shop_name": "seven_store",
+            "brand_name": "adidas",
+            "product_id": "IE7427",
+            "status": "failed: Timeout 30000ms exceeded."
+        },
+        {
+            "shop_product_card_id": 4916,
+            "product_url": "https://www.sevenstore.com/outerwear/coats-jackets/the-north-face-tnf-black-seasonal-mountain-jacket/",
+            "shop_name": "seven_store",
+            "brand_name": "the north face",
+            "product_id": "no",
+            "status": "failed: Locator expected to contain text 'Sizes'\nActual value: None \nCall log:\nLocatorAssertions.to_contain_text with timeout 10000ms\n  - waiting for locator(\".product-sizes-title\")\n"
+        },
+        {
+            "shop_product_card_id": 4647,
+            "product_url": "https://www.sevenstore.com/tops/shirts/nike-blacksummit-white-acg-drifit-uv-devastation-trail-shirt/",
+            "shop_name": "seven_store",
+            "brand_name": "nike acg",
+            "product_id": "DN3936-010",
+            "status": "failed: Locator expected to contain text 'Sizes'\nActual value: None \nCall log:\nLocatorAssertions.to_contain_text with timeout 10000ms\n  - waiting for locator(\".product-sizes-title\")\n"
+        },
+        {
+            "shop_product_card_id": 4648,
+            "product_url": "https://www.sevenstore.com/tops/shirts/nike-neutral-olivesummit-white-acg-drifit-uv-devastation-trail-shirt/",
+            "shop_name": "seven_store",
+            "brand_name": "nike acg",
+            "product_id": null,
+            "status": "failed: Locator expected to contain text 'Sizes'\nActual value: None \nCall log:\nLocatorAssertions.to_contain_text with timeout 10000ms\n  - waiting for locator(\".product-sizes-title\")\n"
+        },
+        {
+            "shop_product_card_id": 2188,
+            "product_url": "https://www.sevenstore.com/footwear/sneakers/adidas-collegiate-burgundycream-whitemaroon-bermuda-sneaker/",
+            "shop_name": "seven_store",
+            "brand_name": "adidas",
+            "product_id": "IE7426",
+            "status": "failed: Timeout 30000ms exceeded."
+        },
+        {
+            "shop_product_card_id": 2290,
+            "product_url": "https://www.sevenstore.com/tops/hoodies/human-made-grey-heart-logo-printed-hoodie/",
+            "shop_name": "seven_store",
+            "brand_name": "human made",
+            "product_id": "HM26CS039GREY",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 4924,
+            "product_url": "https://www.sevenstore.com/tops/knitwear/needles-purple-mohair-cardigan/",
+            "shop_name": "seven_store",
+            "brand_name": "needles",
+            "product_id": "NS278",
+            "status": "failed: Timeout 30000ms exceeded."
+        },
+        {
+            "shop_product_card_id": 2335,
+            "product_url": "https://www.sevenstore.com/tops/hoodies/human-made-grey-heavyweight-bear-hoodie/",
+            "shop_name": "seven_store",
+            "brand_name": "human made",
+            "product_id": "HM2CS005",
+            "status": "failed: Locator expected to contain text 'Sizes'\nActual value: None \nCall log:\nLocatorAssertions.to_contain_text with timeout 10000ms\n  - waiting for locator(\".product-sizes-title\")\n"
+        },
+        {
+            "shop_product_card_id": 3340,
+            "product_url": "https://www.consortium.co.uk/adidas-originals-samba-og-shadow-olive-preloved-green-gum-ig6175.html",
+            "shop_name": "consortium",
+            "brand_name": "adidas",
+            "product_id": "IG6175",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 3342,
+            "product_url": "https://www.consortium.co.uk/adidas-originals-gazelle-indoor-wonder-clay-clear-pink-gum-ie2946.html",
+            "shop_name": "consortium",
+            "brand_name": "adidas",
+            "product_id": "IE2946",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 3346,
+            "product_url": "https://www.consortium.co.uk/adidas-originals-gazelle-indoor-semi-green-spark-almost-yellow-cream-white-ie2948.html",
+            "shop_name": "consortium",
+            "brand_name": "adidas",
+            "product_id": "IE2948",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 4649,
+            "product_url": "https://www.sevenstore.com/outerwear/coats-jackets/nike-green-abyssblackwolf-greywolf-grey-acg-oregon-series-micro-shell-jacket/",
+            "shop_name": "seven_store",
+            "brand_name": "nike acg",
+            "product_id": "DV9217-301",
+            "status": "failed: Timeout 30000ms exceeded."
+        },
+        {
+            "shop_product_card_id": 4925,
+            "product_url": "https://www.sevenstore.com/tops/knitwear/needles-olive-mohair-cardigan4092996/",
+            "shop_name": "seven_store",
+            "brand_name": "needles",
+            "product_id": "NS279",
+            "status": "failed: Timeout 30000ms exceeded."
+        },
+        {
+            "shop_product_card_id": 4935,
+            "product_url": "https://www.sevenstore.com/outerwear/coats-jackets/needles-ivy-green-poly-smooth-track-jacket/",
+            "shop_name": "seven_store",
+            "brand_name": "needles",
+            "product_id": "NS244",
+            "status": "failed: Locator expected to contain text 'Sizes'\nActual value: None \nCall log:\nLocatorAssertions.to_contain_text with timeout 10000ms\n  - waiting for locator(\".product-sizes-title\")\n"
+        },
+        {
+            "shop_product_card_id": 4650,
+            "product_url": "https://www.sevenstore.com/outerwear/coats-jackets/nike-khakisummit-white-acg-cinder-cone-jacket/",
+            "shop_name": "seven_store",
+            "brand_name": "nike acg",
+            "product_id": "DB0978-247",
+            "status": "failed: Timeout 30000ms exceeded."
+        },
+        {
+            "shop_product_card_id": 4651,
+            "product_url": "https://www.sevenstore.com/bottoms/casual-trousers/nike-khakisummit-white-acg-trail-pant/",
+            "shop_name": "seven_store",
+            "brand_name": "nike acg",
+            "product_id": "CV0660-248",
+            "status": "failed: Timeout 30000ms exceeded."
+        },
+        {
+            "shop_product_card_id": 4653,
+            "product_url": "https://www.sevenstore.com/bottoms/casual-trousers/nike-neutral-olivelt-orewood-brown-acg-trail-zipoff-pant/",
+            "shop_name": "seven_store",
+            "brand_name": "nike acg",
+            "product_id": "DX6646-276",
+            "status": "failed: Timeout 30000ms exceeded."
+        },
+        {
+            "shop_product_card_id": 4895,
+            "product_url": "https://www.sevenstore.com/outerwear/coats-jackets/the-north-face-khaki-stone-seasonal-mountain-jacket/",
+            "shop_name": "seven_store",
+            "brand_name": "the north face",
+            "product_id": "NF0A5IG3JK3",
+            "status": "failed: Timeout 30000ms exceeded."
+        }
+    ]
+}

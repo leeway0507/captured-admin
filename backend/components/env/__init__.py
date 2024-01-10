@@ -28,6 +28,8 @@ class DevEnv(BaseSettings):
     SHOP_PRODUCT_LIST_DIR: str
     SHOP_PRODUCT_PAGE_DIR: str
 
+    SLACK_TOKEN: str
+
     model_config = SettingsConfigDict(env_file=".env.dev")
 
 

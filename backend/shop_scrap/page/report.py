@@ -3,10 +3,6 @@ from components.file_manager import ScrapReportDataBase
 from components.abstract_class.report import PlatformReport
 
 
-class ShopListReportData(ScrapReportDataBase):
-    shop_name: str
-
-
 class ShopPageReport(PlatformReport):
     ## self.save_report()
 
@@ -14,11 +10,10 @@ class ShopPageReport(PlatformReport):
         scrap_config = await self.load_scrap_config()
         scrap_status = await self.preprocessed_scrap_status()
 
-        return ShopListReportData(
+        return ScrapReportDataBase(
             scrap_time=scrap_config["scrap_time"],
             num_of_plan=scrap_config["num_of_plan"],
             num_processor=scrap_config["num_processor"],
-            shop_name=scrap_config["shop_name"],
             job=scrap_status,
         )
 

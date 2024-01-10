@@ -1,0 +1,14 @@
+{
+    "scrap_time": "20240108-102903",
+    "num_of_plan": 1,
+    "num_processor": 1,
+    "db_update": false,
+    "job": [
+        {
+            "job": "the north face",
+            "status": "success"
+        }
+    ],
+    "brand_name": "the north face",
+    "platform_type": "kream"
+}

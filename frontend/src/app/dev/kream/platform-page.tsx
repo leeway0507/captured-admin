@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useReducer, useRef, useState } from "react";
-import { InitProductPage } from "./fetch";
+import { ScrapPlatformPage } from "./fetch-scrap";
 import { useRouter } from "next/navigation";
 import { toast } from "react-toastify";
 import Select from "react-select";
@@ -12,7 +12,7 @@ export interface scrapingProps {
 
 const initialState = {
     searchType: "scrapDate",
-    searchValue: null,
+    searchValue: "lastScrap",
     numProcess: 1,
 };
 
@@ -41,7 +41,7 @@ export const handleProductDtailSubmit = async (
     enableButton: () => void,
     disableButton: () => void
 ) => {
-    if (state.searchValue === "") {
+    if (state.searchType !== "scrapDate" && state.searchValue === "") {
         return toast.error("값을 입력해주세요.");
     }
     if (state.numProcess === 0) {
@@ -56,10 +56,10 @@ export const handleProductDtailSubmit = async (
 
     disableButton();
 
-    await InitProductPage(state.searchType, state.searchValue, state.numProcess)
+    await ScrapPlatformPage(state.searchType, state.searchValue, state.numProcess)
         .then((res) => {
-            const { scrap_status, ...restData } = res.data;
-            scrap_status === "success" ? setName(restData.scrap_name) : toast.error("에러 발생");
+            const { scrap_status, report_name } = res.data;
+            scrap_status === "success" ? setName(report_name) : toast.error("에러 발생");
             enableButton();
         })
         .catch((e) => {

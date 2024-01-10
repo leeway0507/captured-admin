@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useReducer, useRef, useState } from "react";
-import { InitProductCardList } from "./fetch";
+import { ScrapPlatformList } from "./fetch-scrap";
 import { toast } from "react-toastify";
 import { useRouter } from "next/navigation";
 interface scrapingProps {
@@ -38,12 +38,12 @@ export const handleRestartListSubmit = async (
 
     disableButton();
 
-    await InitProductCardList(state.brandName, state.maxScroll, state.minWish, state.minVolume)
+    await ScrapPlatformList(state.brandName, state.maxScroll, state.minWish, state.minVolume)
         .then((res) => {
             res.status === 200 ? toast.success("요청 성공") : toast.error(`에러 발생 :${res.status}`);
             enableButton();
-            const { scrap_name, ...restData } = res.data;
-            setName(scrap_name);
+            const { report_name, ...restData } = res.data;
+            setName(report_name);
         })
         .catch((e) => {
             toast.error("네트워크 에러 발생");

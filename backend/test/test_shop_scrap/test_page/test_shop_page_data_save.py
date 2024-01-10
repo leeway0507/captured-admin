@@ -23,7 +23,7 @@ def DataSave():
 async def test_init_config(DataSave: ShopPageDataSave):
     await DataSave.init_config()
 
-    assert DataSave.shop_name == "consortium"
+    assert DataSave.scrap_time
 
 
 @pytest.mark.anyio

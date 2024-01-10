@@ -1,8 +1,10 @@
 from typing import List
-from platform_scrap.list.scraper_main import PlatformListScraperFactory
+from platform_scrap.list.scraper_main import (
+    PlatformListScraperFactory,
+    PwKreamListScraper,
+)
 from platform_scrap.list.report import PlatformListReport
 from platform_scrap.list.data_save import PlatformListDataSave
-from components.abstract_class.scraper_main import PlatformScraper
 
 
 class PlatformListMain:
@@ -19,15 +21,22 @@ class PlatformListMain:
         return self._main_scraper
 
     @main_scraper.setter
-    def main_scraper(self, main_scraper: PlatformScraper):
+    def main_scraper(self, main_scraper: PwKreamListScraper):
         self._main_scraper = main_scraper
 
-    async def execute(self):
+    async def kream_execute(
+        self,
+        target_list: List[str],
+        num_processor: int,
+        max_scroll: int = 20,
+        min_volume: int = 50,
+        min_wish: int = 50,
+    ):
+        self.main_scraper = await self.main_scraper_factory.kream(
+            target_list, num_processor, max_scroll, min_volume, min_wish
+        )
         await self.main_scraper.scrap()
-        await self.Report.save_report()
+        report_name = await self.Report.save_report()
         await self.DataSave.save_scrap_data()
 
-    async def init_pw_kream_scraper(self, target_list: List[str], num_processor: int):
-        self.main_scraper = await self.main_scraper_factory.pw_kream()
-        self.main_scraper.target_list = target_list
-        self.main_scraper.late_binding(num_processor)
+        return report_name

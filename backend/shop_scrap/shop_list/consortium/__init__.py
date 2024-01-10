@@ -15,13 +15,13 @@ class PwConsortiumListSubScraper(PwShopListSubScraper):
         return "consortium"
 
     def __init__(self):
-        super().__init__()
-        self.scroll_on = False
-        self.shop_name = "consortium"
-        self.reverse_not_found_result = True
-        self.page_reload_after_cookies = False
-        self.cookie_button_xpath = ["#newsletter-modal > a"]
-        self.not_found_xpath = '//ul[contains(@class,"products-grid")]'
+        super().__init__(
+            shop_name="consortium",
+            reverse_not_found_result=True,
+            page_reload_after_cookies=False,
+            cookie_button_xpath=["#newsletter-modal > a"],
+            not_found_xpath='//ul[contains(@class,"products-grid")]',
+        )
 
     # concrete_method
     async def extract_card_html(self) -> List[Tag] | None:
@@ -137,25 +137,33 @@ class PwConsortiumPageSubScraper(PwShopPageSubScraper):
 
     def size_template(self, size: List[str]):
         if not size:
-            return [{"shop_product_size": "-", "kor_product_size": "-"}]
+            print(f"Out of Stock : {self.job}")
+            raise Exception("Out of Stock")
         return [
             {"shop_product_size": s, "kor_product_size": s.split("-")[0].strip()}
             for s in size
         ]
 
-    async def get_product_id(self) -> str:
+    async def get_card_info(self):
         product_id = await self.scrap_product_id_from_html()
-        return await self.product_id_template(product_id)
+        product_id = self.product_id_template(product_id)
+        original_price = await self.scrap_original_price_from_html()
+        return {"product_id": product_id, "original_price": original_price}
 
     async def scrap_product_id_from_html(self):
         element = await self.page.query_selector('//*[@id="detailsPanel"]/div')
         product_id = await element.inner_text()  # type: ignore
         return product_id.lower()
 
-    async def product_id_template(self, text: str):
+    def product_id_template(self, text: str):
         product_id = "-"
 
         if "product code" in text:
             product_id = text.split("product code")[1].strip()
 
         return product_id.upper()
+
+    async def scrap_original_price_from_html(self):
+        xpath = '//div[@class="product-sales"]//span[@class="price"]'
+        element = await self.page.query_selector(xpath)
+        return await element.inner_text()  # type: ignore
