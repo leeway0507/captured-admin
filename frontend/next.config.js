@@ -7,6 +7,7 @@ const nextConfig = {
             "kream-phinf.pstatic.net",
             "www.sevenstore.com",
             "cdn.afew-store.com",
+            "d1r7wlqxs7xy7.cloudfront.net",
         ],
     },
 };

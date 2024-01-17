@@ -1,6 +1,6 @@
 import pytest
 
-from shop_scrap.page.scraper_main import ShopPageScraperFactory, PwShopPageScraper
+from shop_scrap.page.scraper_main import ShopPageScraperFactory
 
 curr_path = __file__.rsplit("/", 1)[0]
 

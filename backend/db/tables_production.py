@@ -19,7 +19,9 @@ class ProductInfoTable(MyBase):
 
     sku = Column(INTEGER, primary_key=True)
     brand = Column(VARCHAR(50))
+    kor_brand = Column(VARCHAR(50))
     product_name = Column(VARCHAR(255))
+    kor_product_name = Column(VARCHAR(255))
     product_id = Column(VARCHAR(255))
     shipping_fee = Column(INTEGER)
     price = Column(INTEGER)
@@ -29,9 +31,9 @@ class ProductInfoTable(MyBase):
     category = Column(VARCHAR(50))
     category_spec = Column(VARCHAR(50))
     img_type = Column(VARCHAR(10))
-    price_desc_cursor = Column(VARCHAR(100))
-    price_asc_cursor = Column(VARCHAR(100))
-    deploy = Column(INTEGER)
+    price_desc_cursor = Column(VARCHAR(100), index=True)
+    price_asc_cursor = Column(VARCHAR(100), index=True)
+    deploy = Column(INTEGER, index=True)
 
     class Config:
         orm_mode = str

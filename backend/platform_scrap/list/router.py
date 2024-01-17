@@ -8,7 +8,7 @@ platform_list = APIRouter()
 ScrapList = PlatformListMain(get_path("platform_list"))
 
 
-@platform_list.get("scrap")
+@platform_list.get("/scrap")
 async def scrap(brandName: str, maxScroll: int, minVolume: int, minWish: int):
     target_list = brandName.split(",")
     report_name = await ScrapList.kream_execute(

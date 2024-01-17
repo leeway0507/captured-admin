@@ -30,13 +30,14 @@ class ShopPageScraperFactory:
             PwConsortiumPageSubScraper,
         )
 
-    async def size_batch(self, target_list: List, num_processor: int):
+    async def size_batch(self, target_list: List, num_processor: int, scrap_time: str):
         return PwSizeBatchScraper(
             target_list,
             self.path,
             await self.browser,
             num_processor,
             PwConsortiumPageSubScraper,
+            scrap_time,
         )
 
 
@@ -94,11 +95,29 @@ class PwShopPageScraper(Scraper):
 
 
 class PwSizeBatchScraper(PwShopPageScraper):
+    def __init__(
+        self,
+        target_list: List,
+        path: str,
+        browser: PwContextHandler,
+        num_processor: int,
+        sub_scraper_class: Callable[..., PwShopPageSubScraper],
+        scrap_time: str,
+    ):
+        super().__init__(target_list, path, browser, num_processor, sub_scraper_class)
+        self.scrap_time = scrap_time
+
+    async def init(self):
+        self.TempFile.init()
+        self._check_necessary_property()
+        await self.save_scrap_config_to_temp_file()
+
     async def main(self):
         """
         기존 main method에서 init을 제외함.
         SizeBatchMain class에서 scraper 불러올 시 init 수행하는 것으로 변경
         """
+
         await self.browser_login()
         await self.execute_sub_processors()
         print(f"scrap done")

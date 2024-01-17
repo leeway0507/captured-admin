@@ -28,6 +28,8 @@ class DevEnv(BaseSettings):
     SHOP_PRODUCT_LIST_DIR: str
     SHOP_PRODUCT_PAGE_DIR: str
 
+    SIZE_BATCH_DIR: str
+
     SLACK_TOKEN: str
 
     model_config = SettingsConfigDict(env_file=".env.dev")
@@ -52,7 +54,13 @@ prod_env = ProdEnv(**dotenv_values(".env.production"))  # type: ignore
 
 
 def get_path(
-    report_type: Literal["shop_page", "shop_list", "platform_page", "platform_list"]
+    report_type: Literal[
+        "shop_page",
+        "shop_list",
+        "platform_page",
+        "platform_list",
+        "size_batch",
+    ]
 ):
     match report_type:
         case "shop_page":
@@ -66,3 +74,6 @@ def get_path(
 
         case "platform_list":
             return dev_env.PLATFORM_PRODUCT_LIST_DIR
+
+        case "size_batch":
+            return dev_env.SIZE_BATCH_DIR

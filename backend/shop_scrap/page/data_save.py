@@ -18,11 +18,11 @@ class ShopPageDataSave(DataSave):
         super().__init__(path)
 
     def folder_path(self):
-        return os.path.join(self.path)
+        return os.path.join(self.path, self.scrap_time)
 
     def file_path(self):
         file_name = self.scrap_time + ".parquet.gzip"
-        file_path = os.path.join(self.folder_path(), "data", file_name)
+        file_path = os.path.join(self.folder_path(), file_name)
         return file_path
 
     async def save_scrap_data(self):
@@ -62,13 +62,11 @@ class ShopPageDataSave(DataSave):
     def save_preprocessed_data(self, list_data: List[Dict]):
         folder_path = self.folder_path()
 
-        size_path = os.path.join(
-            folder_path, "data", f"{self.scrap_time}-size.parquet.gzip"
-        )
+        size_path = os.path.join(folder_path, f"shop_scrap_page_size_data.parquet.gzip")
         self._save_size_data_to_parquet(size_path, list_data)
 
         card_info_path = os.path.join(
-            folder_path, "data", f"{self.scrap_time}-card_info.parquet.gzip"
+            folder_path, f"shop_scrap_page_card_data.parquet.gzip"
         )
         self._save_card_info_data_to_parquet(card_info_path, list_data)
 
@@ -103,7 +101,7 @@ class ShopPageDataSave(DataSave):
         self._save_parquet(file_path, l)
 
     def _get_price_info(self, price: str):
-        from ..utils.currency import Currency
+        from components.currency import Currency
 
         currency = Currency()
 

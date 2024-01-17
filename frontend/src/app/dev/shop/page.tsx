@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import { CloseCustomPageBrowser } from "./fetch";
+import { CloseCustomPageBrowser } from "./fetch-scrap";
 import { toast } from "react-toastify";
 import ShopCardList from "./shop-card-list";
 import ShopCardPage from "./shop-card-page";

@@ -88,3 +88,12 @@ class ShopProductSizeSchema(BaseModel):
     kor_product_size: str
     available: bool
     updated_at: datetime
+
+
+class SizeTableRowSchema(BaseModel):
+    model_config = ConfigDict(alias_generator=to_camel, populate_by_name=True)
+    shop_name: str
+    shop_product_card_id: int
+    shop_product_size: str
+    kor_product_size: str
+    updated_at: datetime

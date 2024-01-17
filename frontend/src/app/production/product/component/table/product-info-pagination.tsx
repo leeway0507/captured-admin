@@ -1,6 +1,6 @@
 "use client";
 import { useSearchParams } from "next/navigation";
-import { getProduct } from "@/app/production/product/component/fetch";
+import { getProductData } from "../fetch";
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import Select from "react-select";
@@ -27,7 +27,7 @@ const ProductInfoPagination = ({
         const limit = searchParams.get("limit");
 
         if (page && limit) {
-            getProduct(Number(page), Number(limit)).then((res) => {
+            getProductData(Number(page)).then((res) => {
                 setPageData(res.data);
             });
         }

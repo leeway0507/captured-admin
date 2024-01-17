@@ -49,3 +49,18 @@ def get_secret(env: str) -> Dict[str, str]:
         "host": config.DB_HOST,
         "db_name": config.DB_NAME,
     }
+
+
+class CustomDB:
+    def __init__(self, session: sessionmaker):
+        self.session = session
+
+    async def execute_and_commit(self, stmt):
+        async with self.session() as db:  # type:ignore
+            await db.execute(stmt)
+            await db.commit()
+
+    async def execute(self, stmt):
+        async with self.session() as db:  # type:ignore
+            data = await db.execute(stmt)
+        return data.all()

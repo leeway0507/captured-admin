@@ -5,7 +5,7 @@ import { CreateproductCardProps } from "@/app/types/type";
 import { BasicTable, TableData } from "@/app/components/default-table/default-table";
 import ProductInfoPagination from "./product-info-pagination";
 import { useEffect, useState } from "react";
-import { getProduct } from "../fetch";
+import { getProductData } from "../fetch";
 
 export interface pageDataProps {
     data: CreateproductCardProps[];
@@ -21,14 +21,15 @@ export const ProductInfoTable = () => {
     });
 
     useEffect(() => {
-        getProduct(1).then((res) => {
+        //init page
+        getProductData(1).then((res) => {
             setNewPageData(res.data);
         });
     }, []);
 
     const { data, currentPage, lastPage } = newPageData;
     // @ts-ignore
-    const table = TableData({ data: newPageData.data, columns: productCardColumns });
+    const table = TableData({ data: data, columns: productCardColumns });
 
     return (
         <div>

@@ -1,56 +1,41 @@
 import { CreateproductCardProps } from "@/app/types/type";
 
-export const getProduct = async (page: number, limit: number = 50) => {
-    const url = `${process.env.NEXT_PUBLIC_API_URL}/api/production/get-category`;
+export const getProductData = async (page: number) => {
+    const url = `${process.env.NEXT_PUBLIC_API_URL}/api/table/production-table`;
     const queryParams = new URLSearchParams({
         page: page.toString(),
-        limit: limit.toString(),
     });
 
     const res = await fetch(url + "?" + queryParams);
     return { status: res.status, data: await res.json() };
 };
 
-export const createProduct = async (data: CreateproductCardProps) => {
-    const req = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/production/create-product`, {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json",
-        },
+export const updateProductData = async (data: CreateproductCardProps) => {
+    const url = `${process.env.NEXT_PUBLIC_API_URL}/api/table/production-table`;
+    const req = await fetch(url, {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),
     });
     return { status: req.status, data: await req.json() };
 };
 
-export const updateProduct = async (data: CreateproductCardProps) => {
-    const req = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/production/update-product`, {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
-    });
-    return { status: req.status, data: await req.json() };
-};
-
-export const updateProductDeploy = async (sku: number, status: number) => {
-    const url = `${process.env.NEXT_PUBLIC_API_URL}/api/production/update-product-deploy-status`;
+export const patchProductData = async (sku: number, column: string, value: any) => {
+    const url = `${process.env.NEXT_PUBLIC_API_URL}/api/table/production-table`;
     const queryParams = new URLSearchParams({
         sku: sku.toString(),
-        status: status.toString(),
+        column,
+        value,
     });
 
-    const res = await fetch(url + "?" + queryParams);
+    const res = await fetch(url + "?" + queryParams, { method: "PATCH" });
     return { status: res.status, data: await res.json() };
 };
 
-export const deleteProduct = async (sku: number) => {
-    const url = `${process.env.NEXT_PUBLIC_API_URL}/api/production/delete-product`;
-    const queryParams = new URLSearchParams({
-        sku: sku.toString(),
-    });
+export const deleteProductData = async (sku: number) => {
+    const url = `${process.env.NEXT_PUBLIC_API_URL}/api/table/production-table/${sku}`;
 
-    const res = await fetch(url + "?" + queryParams);
+    const res = await fetch(url, { method: "DELETE" });
     return { status: res.status, data: await res.json() };
 };
 

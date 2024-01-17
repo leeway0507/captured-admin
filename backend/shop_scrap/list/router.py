@@ -8,7 +8,7 @@ shop_list = APIRouter()
 ShopList = ShopListMain(get_path("shop_list"))
 
 
-@shop_list.get("scrap")
+@shop_list.get("/scrap")
 async def scrap(shopName: str, brandName: str, numProcess: int):
     target_list = brandName.split(",")
     report_name = await ShopList.execute(shopName, target_list, numProcess)

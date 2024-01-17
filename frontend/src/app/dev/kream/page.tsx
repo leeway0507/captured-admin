@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import { CloseKreamBrowser } from "./fetch";
+import { CloseKreamBrowser } from "./fetch-scrap";
 import PlatformList from "./platform-list";
 import PlatformPage from "./platform-page";
 import ReproduceReport from "./reproduce-report";

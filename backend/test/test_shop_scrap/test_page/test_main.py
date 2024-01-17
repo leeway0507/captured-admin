@@ -1,6 +1,7 @@
 import os
 import pytest
 from shop_scrap.page.main import ShopPageMain
+from db.dev_db import admin_session_local
 
 current_path = __file__.rsplit("/", 1)[0]
 
@@ -12,8 +13,8 @@ def anyio_backend():
 
 
 @pytest.fixture(scope="module")
-async def ShopPage():
-    yield ShopPageMain(current_path)
+async def ShopPage(test_session):
+    yield ShopPageMain(current_path, test_session)
 
 
 @pytest.mark.anyio

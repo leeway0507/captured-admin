@@ -2,7 +2,7 @@ import os
 import json
 from typing import List, Dict
 from shop_scrap.page.main import ShopPageMain
-from .batch_data_processor import SizeBatchProcessor
+from shop_scrap.size_batch.batch_data_processor import SizeBatchProcessor
 from db.scrap_data_sync_db import ShopPageDataSyncDB, SizeDataSyncProdDB
 from sqlalchemy.orm import sessionmaker
 from components.messanger.slack import send_slack_message
@@ -25,40 +25,49 @@ class SizeBatchMain(ShopPageMain):
         path: str,
         prod_session: sessionmaker,
         dev_session: sessionmaker,
+        admin_session: sessionmaker,
     ):
-        super().__init__(path, dev_session)
+        super().__init__(path, admin_session)
         self.path = path
+        self.admin_session = admin_session
         self.prod_session = prod_session
         self.dev_session = dev_session
         self.slack_chennel_id = "C06D5UGUL6R"
 
-    async def execute(self, batch_size: int = 100, num_processor: int = 6):
-        await self.init(batch_size, num_processor)
-        await self.scrap_candidate_page()
-        await self.sync_scrap_data_to_shop_db()
+    async def execute(
+        self, scrap_time: str, batch_size: int = 100, num_processor: int = 6
+    ):
+        await self.init(batch_size, num_processor, scrap_time)
+        # await self.scrap_candidate_page()
+        # await self.sync_scrap_data_to_shop_db()
         await self.create_prod_batch_data()
         await self.sync_prod_batch_data_to_prod_db()
         self.send_status_to_sns(f"{self.scrap_time} Done!!")
 
-    async def init(self, batch_size: int, num_processor: int):
+    async def init(self, batch_size: int, num_processor: int, scrap_time: str):
         self.batch_size = batch_size
         self.num_processor = num_processor
+        self.scrap_time = scrap_time
+
         self.target_list = await self.extract_target_list()
         self.main_scraper = await self.main_scraper_factory.size_batch(
-            self.target_list, self.num_processor
+            self.target_list, self.num_processor, self.scrap_time
         )
         await self.main_scraper.init()
         self.TempFile = self.main_scraper.TempFile
-        self.scrap_time = self.main_scraper.scrap_time
+
         self.SizeBatchProcessor = SizeBatchProcessor(
-            self.dev_session, self.prod_session, self.path, self.scrap_time
+            self.admin_session, self.prod_session, self.path, self.scrap_time
         )
+
         self.ShopPageSyncDB = ShopPageDataSyncDB(
-            self.dev_session, self.path, self.scrap_time
+            self.admin_session, self.path, self.scrap_time
         )
+
         self.ShopDataSyncProdDB = SizeDataSyncProdDB(
             self.dev_session, self.prod_session, self.path, self.scrap_time
         )
+
         return await self.save_meta_data()
 
     @logExcutionResult
@@ -83,7 +92,8 @@ class SizeBatchMain(ShopPageMain):
         self.send_status_to_sns(scrap_info + text)
 
     def send_status_to_sns(self, text: str):
-        send_slack_message(self.slack_chennel_id, text)
+        # send_slack_message(self.slack_chennel_id, text)
+        ...
 
     @logExcutionResult
     async def scrap_candidate_page(self):
@@ -93,8 +103,7 @@ class SizeBatchMain(ShopPageMain):
         return {"status": "success"}
 
     async def extract_target_list(self):
-        target_list = await self.Target.extract_data(str(self.batch_size))
-        return target_list
+        return await self.Target.extract_data(str(self.batch_size))
 
     async def sync_scrap_data_to_shop_db(self):
         await self.ShopPageSyncDB.sync_data()

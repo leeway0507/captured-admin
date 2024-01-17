@@ -4,6 +4,7 @@ from shop_scrap.size_batch import SizeBatchMain
 
 
 current_path = __file__.rsplit("/", 1)[0]
+scrap_time = "19920507-123456"
 # pytestmark = pytest.mark.asyncio(scope="module")
 
 
@@ -14,19 +15,22 @@ def anyio_backend():
 
 @pytest.fixture(scope="module")
 async def Batch(test_session):
-    batch = SizeBatchMain(current_path, test_session, test_session)
-    await batch.init(batch_size=100, num_processor=8)
+    batch = SizeBatchMain(current_path, test_session, test_session, test_session)
+    await batch.init(batch_size=4, num_processor=4, scrap_time=scrap_time)
     yield batch
 
 
 # @pytest.mark.anyio
-# async def test_logExcutionResult(Batch: SizeBatchMain):
+# async def test_logExcution(Batch: SizeBatchMain):
 #     await Batch._test_logExcutionResult()
 
 
-# @pytest.mark.anyio
-# async def test_extract_target_list(Batch: SizeBatchMain):
-#     await Batch.extract_target_list()
+@pytest.mark.anyio
+async def test_extract_target_list(Batch: SizeBatchMain):
+    data = await Batch.extract_target_list()
+
+    print("target_list")
+    print(data)
 
 
 # @pytest.mark.anyio
@@ -49,6 +53,6 @@ async def Batch(test_session):
 #     await Batch.sync_prod_batch_data_to_prod_db()
 
 
-@pytest.mark.anyio
-async def test_execute_size_batch(Batch: SizeBatchMain):
-    await Batch.execute(100, 6)
+# @pytest.mark.anyio
+# async def test_execute_size_batch(Batch: SizeBatchMain):
+#     await Batch.execute(scrap_time, 2, 2)

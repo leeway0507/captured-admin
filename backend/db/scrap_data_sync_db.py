@@ -35,15 +35,15 @@ class ScrapDataSyncDBFactory:
 
 
 class ScrapDataSyncDB(ABC):
-    def __init__(self, dev_session: sessionmaker, path: str, scrap_time: str) -> None:
+    def __init__(self, session: sessionmaker, path: str, scrap_time: str) -> None:
         self.scrap_time = scrap_time
-        self.dev_session = dev_session
+        self.session = session
         self.path = path
         self.Report = ScrapReport(os.path.join(self.path, "_report"))
         self.Report.report_file_name = scrap_time
 
     async def execute(self, stmt):
-        async with self.dev_session() as db:  # type:ignore
+        async with self.session() as db:  # type:ignore
             await db.execute(stmt)
             await db.commit()
 
@@ -96,7 +96,7 @@ class ShopListDataSyncDB(ScrapDataSyncDB):
 
 class ShopPageDataSyncDB(ScrapDataSyncDB):
     def get_folder_path(self):
-        return os.path.join(self.path, "data")
+        return os.path.join(self.path, self.scrap_time)
 
     async def sync_data(self):
         await self.delete_shop_size()
@@ -106,7 +106,7 @@ class ShopPageDataSyncDB(ScrapDataSyncDB):
         await self.check_sold_out_items()
 
     async def delete_shop_size(self):
-        data = super()._load_db_data(f"{self.scrap_time}-size")
+        data = super()._load_db_data("shop_scrap_page_size_data")
         unique_id = self.get_unique_id(data)
         await super().execute(self.delete_shop_size_stmt(unique_id))
 
@@ -120,7 +120,7 @@ class ShopPageDataSyncDB(ScrapDataSyncDB):
         return stmt
 
     async def insert_shop_size(self):
-        data = super()._load_db_data(f"{self.scrap_time}-size")
+        data = super()._load_db_data("shop_scrap_page_size_data")
         size_data = self.get_size(data)
         await super().execute(self.insert_shop_size_stmt(size_data))
 
@@ -131,7 +131,7 @@ class ShopPageDataSyncDB(ScrapDataSyncDB):
         return insert(ShopProductSizeTable).values(size_data)
 
     async def upsert_card_info(self):
-        data = super()._load_db_data(f"{self.scrap_time}-card_info")
+        data = super()._load_db_data("shop_scrap_page_card_data")
         card_info_without_prod_id = self.get_card_info_without_prod_id(data)
         await super().execute(self.upsert_card_info_stmt(card_info_without_prod_id))
 
@@ -152,7 +152,7 @@ class ShopPageDataSyncDB(ScrapDataSyncDB):
         return stmt
 
     async def update_product_id(self):
-        data = super()._load_db_data(f"{self.scrap_time}-card_info")
+        data = super()._load_db_data("shop_scrap_page_card_data")
         product_info = self.get_data_for_update_product_id(data)
         await self.execute_for_update_product_id(
             self.update_product_id_stmt(),
@@ -168,7 +168,7 @@ class ShopPageDataSyncDB(ScrapDataSyncDB):
         )
 
     async def execute_for_update_product_id(self, stmt, data):
-        async with self.dev_session() as db:  # type:ignore
+        async with self.session() as db:  # type:ignore
             await db.execute(stmt, data)
             await db.commit()
 
@@ -221,13 +221,13 @@ class SizeDataSyncProdDB(ScrapDataSyncDB):
         return os.path.join(self.path, self.scrap_time)
 
     async def sync_data(self):
-        await self.sync_to_prod()
         await self.sync_to_dev()
+        await self.sync_to_prod()
 
     async def sync_to_prod(self):
         await self.execute_prod(self.prepare_to_insert_prod_size())
 
-        data = super()._load_db_data("prod_size_data")
+        data = super()._load_db_data("batch_prod_size_data")
         await self.execute_prod(self.insert_prod_size(data))
 
     def insert_prod_size(self, data: List[Dict]):
@@ -246,11 +246,11 @@ class SizeDataSyncProdDB(ScrapDataSyncDB):
     async def sync_to_dev(self):
         await super().execute(self.prepare_to_insert_prod_size())
 
-        data = super()._load_db_data("prod_size_data")
-        await super().execute(self.insert_prod_size(data))
-
-        data = super()._load_db_data("prod_card_data")
+        data = super()._load_db_data("batch_prod_card_data")
         await super().execute(self.insert_prod_card(data))
+
+        data = super()._load_db_data("batch_prod_size_data")
+        await super().execute(self.insert_prod_size(data))
 
     def insert_prod_card(self, data: List[Dict]):
         stmt = insert(ProductInfoTable).values(data)

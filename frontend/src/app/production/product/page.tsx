@@ -14,7 +14,9 @@ export default function Page() {
 
     const defaultData: CreateproductCardProps = {
         brand: "",
+        korBrand: "",
         productName: "",
+        korProductName: "",
         productId: "",
         price: 0,
         shippingFee: 0,

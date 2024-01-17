@@ -1,10 +1,10 @@
 from typing import Protocol, List, Optional
 from sqlalchemy import select
 from db.tables_shop import ShopProductCardTable
-from db.dev_db import session_local
 from pydantic import BaseModel
 from db.tables_shop import MyBase
 from sqlalchemy.orm import sessionmaker
+from datetime import datetime
 
 
 class TargetModel(BaseModel):
@@ -62,11 +62,13 @@ class AllStrategy:
     @staticmethod
     def stmt(value: int):
         return (
-            select(ShopProductCardTable)
-            .where(
-                ShopProductCardTable.candidate == 2,
-                ShopProductCardTable.sold_out == 0,
+            (
+                select(ShopProductCardTable).where(
+                    ShopProductCardTable.candidate == 2,
+                    ShopProductCardTable.sold_out == 0,
+                )
             )
+            .order_by(ShopProductCardTable.updated_at.asc())
             .limit(value)
         )
 

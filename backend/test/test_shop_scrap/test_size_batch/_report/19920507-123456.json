@@ -1,0 +1,24 @@
+{
+    "scrap_time": "19920507-123456",
+    "num_of_plan": 2,
+    "num_processor": 2,
+    "db_update": false,
+    "job": [
+        {
+            "shop_product_card_id": 116,
+            "product_url": "https://www.consortium.co.uk/adidas-originals-handball-spezial-collegiate-navy-clear-sky-gum-5-bd7633.html",
+            "shop_name": "consortium",
+            "brand_name": "adidas",
+            "product_id": "BD7633",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 118,
+            "product_url": "https://www.consortium.co.uk/adidas-originals-handball-spezial-core-black-cloud-white-gum-5-db3021.html",
+            "shop_name": "consortium",
+            "brand_name": "adidas",
+            "product_id": "DB3021",
+            "status": "success"
+        }
+    ]
+}

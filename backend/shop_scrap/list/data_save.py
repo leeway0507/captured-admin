@@ -5,7 +5,7 @@ import os
 import pandas as pd
 
 from components.abstract_class.data_save import DataSave
-from ..utils.currency import Currency
+from components.currency import Currency
 from model.db_model_shop import ShopProductCardSchema
 
 

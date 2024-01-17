@@ -1,7 +1,9 @@
 export interface CreateproductCardProps {
     sku?: number;
     brand: string;
+    korBrand: string;
     productName: string;
+    korProductName: string;
     productId: string;
     price: number;
     shippingFee: number;
@@ -12,6 +14,23 @@ export interface CreateproductCardProps {
     imgType: string;
     deploy?: number;
     searchInfo?: string;
+}
+export interface productCardProps {
+    shopProductCardId: number;
+    shopProductName: string;
+    shopProductImgUrl: string;
+    productUrl: string;
+    shopName: string;
+    brandName: string;
+    productId: string;
+    korPrice: number;
+    usPrice: number;
+    originalPriceCurrency: string;
+    originalPrice: number;
+    soldOut: boolean;
+    candidate: number;
+    updatedAt: string;
+    coupon: number;
 }
 export interface userAddressProps {
     addressId: string;
