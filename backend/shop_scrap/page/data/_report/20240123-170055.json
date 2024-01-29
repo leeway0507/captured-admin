@@ -1,0 +1,104 @@
+{
+    "scrap_time": "20240123-170055",
+    "num_of_plan": 12,
+    "num_processor": 1,
+    "db_update": true,
+    "job": [
+        {
+            "shop_product_card_id": 6192,
+            "product_url": "https://www.urbanindustry.co.uk/products/adidas-originals-handball-spezial-shoes-bright-blue-vivid-red-gold-metallic-fx5675",
+            "shop_name": "urban_industry",
+            "brand_name": "adidas originals",
+            "product_id": null,
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 6193,
+            "product_url": "https://www.urbanindustry.co.uk/products/adidas-originals-samba-og-shoes-carbon-better-scarlet-gum-4-ig6173",
+            "shop_name": "urban_industry",
+            "brand_name": "adidas originals",
+            "product_id": null,
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 6197,
+            "product_url": "https://www.urbanindustry.co.uk/products/adidas-originals-grf-t-shirt-black-is1413",
+            "shop_name": "urban_industry",
+            "brand_name": "adidas originals",
+            "product_id": null,
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 6199,
+            "product_url": "https://www.urbanindustry.co.uk/products/adidas-originals-hyperturf-shoes-earstr-cblack-cgreen-hq6606",
+            "shop_name": "urban_industry",
+            "brand_name": "adidas originals",
+            "product_id": null,
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 6208,
+            "product_url": "https://www.urbanindustry.co.uk/products/adidas-originals-hyperturf-shoes-grey-one-core-black-grey-five-hp2832",
+            "shop_name": "urban_industry",
+            "brand_name": "adidas originals",
+            "product_id": null,
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 6211,
+            "product_url": "https://www.urbanindustry.co.uk/products/adidas-originals-handball-spezial-shoes-oat-core-black-crystal-white-if9014",
+            "shop_name": "urban_industry",
+            "brand_name": "adidas originals",
+            "product_id": null,
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 6212,
+            "product_url": "https://www.urbanindustry.co.uk/products/adidas-originals-all-team-shoes-preloved-yellow-preloved-brown-off-white-id2122",
+            "shop_name": "urban_industry",
+            "brand_name": "adidas originals",
+            "product_id": null,
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 6213,
+            "product_url": "https://www.urbanindustry.co.uk/products/adidas-originals-hyperturf-shoes-ftwr-white-grey-one-beam-orange-fz6580",
+            "shop_name": "urban_industry",
+            "brand_name": "adidas originals",
+            "product_id": null,
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 6217,
+            "product_url": "https://www.urbanindustry.co.uk/products/adidas-originals-hyperturf-shoes-sand-strata-earth-strata-shadow-red-hq6605",
+            "shop_name": "urban_industry",
+            "brand_name": "adidas originals",
+            "product_id": null,
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 6218,
+            "product_url": "https://www.urbanindustry.co.uk/products/adidas-originals-handball-spezial-shoes-maroon-core-black-crystal-white-ig6184",
+            "shop_name": "urban_industry",
+            "brand_name": "adidas originals",
+            "product_id": null,
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 6220,
+            "product_url": "https://www.urbanindustry.co.uk/products/adidas-originals-allteam-shoes-collegiate-green-pantone-off-white-id2123",
+            "shop_name": "urban_industry",
+            "brand_name": "adidas originals",
+            "product_id": null,
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 6223,
+            "product_url": "https://www.urbanindustry.co.uk/products/adidas-originals-samba-og-shoes-shadow-violet-preloved-green-fum-4-ig6175",
+            "shop_name": "urban_industry",
+            "brand_name": "adidas originals",
+            "product_id": null,
+            "status": "success"
+        }
+    ]
+}

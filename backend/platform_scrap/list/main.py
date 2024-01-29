@@ -5,14 +5,18 @@ from platform_scrap.list.scraper_main import (
 )
 from platform_scrap.list.report import PlatformListReport
 from platform_scrap.list.data_save import PlatformListDataSave
+from db.scrap_data_sync_db import load_sync_db
+from db.dev_db import admin_session_local
 
 
 class PlatformListMain:
     def __init__(self, path: str):
+        self.path = path
         self.main_scraper_factory = PlatformListScraperFactory(path)
         self.Report = PlatformListReport(path)
         self.DataSave = PlatformListDataSave(path)
         self._main_scraper = None
+        self.sync_db = load_sync_db("platform_list")(admin_session_local, path)
 
     @property
     def main_scraper(self):
@@ -40,3 +44,8 @@ class PlatformListMain:
         await self.DataSave.save_scrap_data()
 
         return report_name
+
+    async def sync(self, scrap_time: str):
+        self.sync_db.scrap_time = scrap_time
+        await self.sync_db.sync_data()
+        return {"status": "success"}

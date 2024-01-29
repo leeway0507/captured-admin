@@ -36,7 +36,6 @@ const createTableData = (costTableDataSet: costTableDataSetProps) => {
     const { shopInfo: shopInfoRaw, shopCard, currency, kreamMatch, prodCard } = costTableDataSet;
 
     const buyingCurrency = currency.data;
-    console.log(buyingCurrency);
     return shopCard.map((row) => {
         const shopInfo = shopInfoRaw.find((shopInfo) => shopInfo.shopName === row.shopName);
         const product = prodCard.find((prod) => prod.productId === row.productId);

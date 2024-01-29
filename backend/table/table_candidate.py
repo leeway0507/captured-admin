@@ -1,6 +1,6 @@
 import json
 from typing import List, Dict
-from sqlalchemy import select, update
+from sqlalchemy import select, update, insert
 
 
 from db.dev_db import AdminDB

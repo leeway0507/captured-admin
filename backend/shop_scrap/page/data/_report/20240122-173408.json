@@ -1,0 +1,968 @@
+{
+    "scrap_time": "20240122-173408",
+    "num_of_plan": 120,
+    "num_processor": 1,
+    "db_update": false,
+    "job": [
+        {
+            "shop_product_card_id": 2182,
+            "product_url": "https://www.sevenstore.com/footwear/sneakers/adidas-core-black-white-gum-handball-spezial-trainer/",
+            "shop_name": "seven_store",
+            "brand_name": "adidas",
+            "product_id": "DB3021",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 2185,
+            "product_url": "https://www.sevenstore.com/footwear/sneakers/adidas-core-blackftwr-whitecore-black-gazelle-indoor-sneaker/",
+            "shop_name": "seven_store",
+            "brand_name": "adidas",
+            "product_id": "H06259",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 2188,
+            "product_url": "https://www.sevenstore.com/footwear/sneakers/adidas-collegiate-burgundycream-whitemaroon-bermuda-sneaker/",
+            "shop_name": "seven_store",
+            "brand_name": "adidas",
+            "product_id": "IE7426",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 2290,
+            "product_url": "https://www.sevenstore.com/tops/hoodies/human-made-grey-heart-logo-printed-hoodie/",
+            "shop_name": "seven_store",
+            "brand_name": "human made",
+            "product_id": "HM26CS039GREY",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 4619,
+            "product_url": "https://www.sevenstore.com/tops/hoodies/maison-kitsune-grey-melange-chillax-fox-classic-hoodie/",
+            "shop_name": "seven_store",
+            "brand_name": "maison kitsune",
+            "product_id": null,
+            "status": "sub scraper failed: Locator expected to contain text 'Sizes'\nActual value: None \nCall log:\nLocatorAssertions.to_contain_text with timeout 10000ms\n  - waiting for locator(\".product-sizes-title\")\n"
+        },
+        {
+            "shop_product_card_id": 4620,
+            "product_url": "https://www.sevenstore.com/tops/shirts/maison-kitsune-khaki-tonal-fox-head-longsleeve-shirt/",
+            "shop_name": "seven_store",
+            "brand_name": "maison kitsune",
+            "product_id": null,
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 4621,
+            "product_url": "https://www.sevenstore.com/tops/short-sleeve-tshirts/maison-kitsune-white-fox-head-patch-classic-polo-shirt/",
+            "shop_name": "seven_store",
+            "brand_name": "maison kitsune",
+            "product_id": null,
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 4625,
+            "product_url": "https://www.sevenstore.com/tops/short-sleeve-tshirts/maison-kitsune-bottle-green-tonal-fox-head-comfort-tshirt/",
+            "shop_name": "seven_store",
+            "brand_name": "maison kitsune",
+            "product_id": null,
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 4626,
+            "product_url": "https://www.sevenstore.com/tops/short-sleeve-tshirts/maison-kitsune-black-tonal-fox-head-patch-oversized-tshirt/",
+            "shop_name": "seven_store",
+            "brand_name": "maison kitsune",
+            "product_id": null,
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 4627,
+            "product_url": "https://www.sevenstore.com/tops/short-sleeve-tshirts/maison-kitsune-navy-fox-head-patch-classic-tshirt/",
+            "shop_name": "seven_store",
+            "brand_name": "maison kitsune",
+            "product_id": null,
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 4628,
+            "product_url": "https://www.sevenstore.com/tops/short-sleeve-tshirts/maison-kitsune-black-fox-head-patch-classic-tshirt/",
+            "shop_name": "seven_store",
+            "brand_name": "maison kitsune",
+            "product_id": null,
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 4629,
+            "product_url": "https://www.sevenstore.com/tops/short-sleeve-tshirts/maison-kitsune-white-fox-head-patch-classic-tshirt/",
+            "shop_name": "seven_store",
+            "brand_name": "maison kitsune",
+            "product_id": null,
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 4630,
+            "product_url": "https://www.sevenstore.com/tops/short-sleeve-tshirts/maison-kitsune-anthracite-double-fox-head-patch-classic-tshirt/",
+            "shop_name": "seven_store",
+            "brand_name": "maison kitsune",
+            "product_id": null,
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 4631,
+            "product_url": "https://www.sevenstore.com/tops/short-sleeve-tshirts/maison-kitsune-latte-double-fox-head-patch-classic-tshirt/",
+            "shop_name": "seven_store",
+            "brand_name": "maison kitsune",
+            "product_id": null,
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 4632,
+            "product_url": "https://www.sevenstore.com/tops/short-sleeve-tshirts/maison-kitsune-black-mini-handwriting-classic-tshirt/",
+            "shop_name": "seven_store",
+            "brand_name": "maison kitsune",
+            "product_id": null,
+            "status": "sub scraper failed: Target page, context or browser has been closed"
+        },
+        {
+            "shop_product_card_id": 4680,
+            "product_url": "https://www.sevenstore.com/mens-footwear/footwear/clarks-originals-black-wallabee-shoe4056156/",
+            "shop_name": "seven_store",
+            "brand_name": "clarks originals",
+            "product_id": null,
+            "status": "sub scraper failed: Target page, context or browser has been closed"
+        },
+        {
+            "shop_product_card_id": 4681,
+            "product_url": "https://www.sevenstore.com/footwear/shoes/clarks-originals-dark-grey-sde-wallabee-suede-shoe/",
+            "shop_name": "seven_store",
+            "brand_name": "clarks originals",
+            "product_id": null,
+            "status": "sub scraper failed: Target page, context or browser has been closed"
+        },
+        {
+            "shop_product_card_id": 4684,
+            "product_url": "https://www.sevenstore.com/footwear/shoes/clarks-originals-dark-sand-suede-wallabee-eden-shoe/",
+            "shop_name": "seven_store",
+            "brand_name": "clarks originals",
+            "product_id": null,
+            "status": "sub scraper failed: Target page, context or browser has been closed"
+        },
+        {
+            "shop_product_card_id": 4685,
+            "product_url": "https://www.sevenstore.com/footwear/shoes/clarks-originals-black-sde-wallabee-eden-shoe/",
+            "shop_name": "seven_store",
+            "brand_name": "clarks originals",
+            "product_id": null,
+            "status": "sub scraper failed: Target page, context or browser has been closed"
+        },
+        {
+            "shop_product_card_id": 4686,
+            "product_url": "https://www.sevenstore.com/footwear/sneakers/clarks-originals-black-suede-trek-cup-suede-sneaker/",
+            "shop_name": "seven_store",
+            "brand_name": "clarks originals",
+            "product_id": null,
+            "status": "sub scraper failed: Target page, context or browser has been closed"
+        },
+        {
+            "shop_product_card_id": 4781,
+            "product_url": "https://www.sevenstore.com/footwear/sneakers/new-balance-silver-metallic-1906-refined-future-sneaker/",
+            "shop_name": "seven_store",
+            "brand_name": "new balance",
+            "product_id": null,
+            "status": "sub scraper failed: Target page, context or browser has been closed"
+        },
+        {
+            "shop_product_card_id": 4783,
+            "product_url": "https://www.sevenstore.com/footwear/sneakers/new-balance-concrete-2002r-goretex-sneaker/",
+            "shop_name": "seven_store",
+            "brand_name": "new balance",
+            "product_id": null,
+            "status": "sub scraper failed: Target page, context or browser has been closed"
+        },
+        {
+            "shop_product_card_id": 4785,
+            "product_url": "https://www.sevenstore.com/footwear/sneakers/new-balance-castlerockblack-2002-sneaker/",
+            "shop_name": "seven_store",
+            "brand_name": "new balance",
+            "product_id": null,
+            "status": "sub scraper failed: Target page, context or browser has been closed"
+        },
+        {
+            "shop_product_card_id": 4790,
+            "product_url": "https://www.sevenstore.com/launches/new-balance-grey-9060-sneaker/",
+            "shop_name": "seven_store",
+            "brand_name": "new balance",
+            "product_id": null,
+            "status": "sub scraper failed: Target page, context or browser has been closed"
+        },
+        {
+            "shop_product_card_id": 4793,
+            "product_url": "https://www.sevenstore.com/footwear/sneakers/new-balance-grey-matter-9060-sneaker/",
+            "shop_name": "seven_store",
+            "brand_name": "new balance",
+            "product_id": null,
+            "status": "sub scraper failed: Target page, context or browser has been closed"
+        },
+        {
+            "shop_product_card_id": 4794,
+            "product_url": "https://www.sevenstore.com/footwear/sneakers/new-balance-black-580-sneaker4090337/",
+            "shop_name": "seven_store",
+            "brand_name": "new balance",
+            "product_id": null,
+            "status": "sub scraper failed: Target page, context or browser has been closed"
+        },
+        {
+            "shop_product_card_id": 4795,
+            "product_url": "https://www.sevenstore.com/footwear/sneakers/new-balance-kombu-580-sneaker/",
+            "shop_name": "seven_store",
+            "brand_name": "new balance",
+            "product_id": null,
+            "status": "sub scraper failed: Target page, context or browser has been closed"
+        },
+        {
+            "shop_product_card_id": 4800,
+            "product_url": "https://www.sevenstore.com/launches/new-balance-dark-moss-2002rdn-refined-future-sneaker/",
+            "shop_name": "seven_store",
+            "brand_name": "new balance",
+            "product_id": null,
+            "status": "sub scraper failed: Target page, context or browser has been closed"
+        },
+        {
+            "shop_product_card_id": 4809,
+            "product_url": "https://www.sevenstore.com/launches/new-balance-white-1906-protection-pack-sneaker/",
+            "shop_name": "seven_store",
+            "brand_name": "new balance",
+            "product_id": null,
+            "status": "sub scraper failed: Target page, context or browser has been closed"
+        },
+        {
+            "shop_product_card_id": 4810,
+            "product_url": "https://www.sevenstore.com/footwear/sneakers/new-balance-team-royal-1906-sneaker/",
+            "shop_name": "seven_store",
+            "brand_name": "new balance",
+            "product_id": null,
+            "status": "sub scraper failed: Target page, context or browser has been closed"
+        },
+        {
+            "shop_product_card_id": 4814,
+            "product_url": "https://www.sevenstore.com/footwear/sneakers/new-balance-team-away-grey-610v1-goretex-sneaker/",
+            "shop_name": "seven_store",
+            "brand_name": "new balance",
+            "product_id": null,
+            "status": "sub scraper failed: Target page, context or browser has been closed"
+        },
+        {
+            "shop_product_card_id": 4815,
+            "product_url": "https://www.sevenstore.com/footwear/sneakers/new-balance-covert-green-610-sneaker/",
+            "shop_name": "seven_store",
+            "brand_name": "new balance",
+            "product_id": null,
+            "status": "sub scraper failed: Target page, context or browser has been closed"
+        },
+        {
+            "shop_product_card_id": 4816,
+            "product_url": "https://www.sevenstore.com/footwear/sneakers/new-balance-timberwolfwhite-610-sneaker/",
+            "shop_name": "seven_store",
+            "brand_name": "new balance",
+            "product_id": null,
+            "status": "sub scraper failed: Target page, context or browser has been closed"
+        },
+        {
+            "shop_product_card_id": 4817,
+            "product_url": "https://www.sevenstore.com/footwear/sneakers/new-balance-tanblack-610-sneaker/",
+            "shop_name": "seven_store",
+            "brand_name": "new balance",
+            "product_id": null,
+            "status": "sub scraper failed: Target page, context or browser has been closed"
+        },
+        {
+            "shop_product_card_id": 4843,
+            "product_url": "https://www.sevenstore.com/footwear/sneakers/new-balance-blackwhite-made-in-the-us-990v5-sneaker/",
+            "shop_name": "seven_store",
+            "brand_name": "new balance",
+            "product_id": null,
+            "status": "sub scraper failed: Target page, context or browser has been closed"
+        },
+        {
+            "shop_product_card_id": 4844,
+            "product_url": "https://www.sevenstore.com/footwear/sneakers/new-balance-grey-miuk-m991-sneaker4089737/",
+            "shop_name": "seven_store",
+            "brand_name": "new balance",
+            "product_id": null,
+            "status": "sub scraper failed: Target page, context or browser has been closed"
+        },
+        {
+            "shop_product_card_id": 4854,
+            "product_url": "https://www.sevenstore.com/outerwear/coats-jackets/the-north-face-x-special-projects-tnf-black-x-undercover-zipoff-fleece-jacket/",
+            "shop_name": "seven_store",
+            "brand_name": "the north face",
+            "product_id": null,
+            "status": "sub scraper failed: Target page, context or browser has been closed"
+        },
+        {
+            "shop_product_card_id": 4856,
+            "product_url": "https://www.sevenstore.com/tops/hoodies/the-north-face-x-special-projects-tnf-blackaviator-navy-x-undercover-dotknit-double-hoodie/",
+            "shop_name": "seven_store",
+            "brand_name": "the north face",
+            "product_id": null,
+            "status": "sub scraper failed: Target page, context or browser has been closed"
+        },
+        {
+            "shop_product_card_id": 4858,
+            "product_url": "https://www.sevenstore.com/tops/sweatshirts/the-north-face-x-special-projects-tnf-black-x-undercover-futurefleece-crewneck/",
+            "shop_name": "seven_store",
+            "brand_name": "the north face",
+            "product_id": null,
+            "status": "sub scraper failed: Target page, context or browser has been closed"
+        },
+        {
+            "shop_product_card_id": 4873,
+            "product_url": "https://www.sevenstore.com/accessories/bags/the-north-face-tnf-blackasphalt-grey-borealis-classic-backpack/",
+            "shop_name": "seven_store",
+            "brand_name": "the north face",
+            "product_id": null,
+            "status": "sub scraper failed: Target page, context or browser has been closed"
+        },
+        {
+            "shop_product_card_id": 4881,
+            "product_url": "https://www.sevenstore.com/outerwear/coats-jackets/the-north-face-tnf-black-versa-velour-nuptse-jacket/",
+            "shop_name": "seven_store",
+            "brand_name": "the north face",
+            "product_id": null,
+            "status": "sub scraper failed: Target page, context or browser has been closed"
+        },
+        {
+            "shop_product_card_id": 4882,
+            "product_url": "https://www.sevenstore.com/outerwear/coats-jackets/the-north-face-coal-brown-versa-velour-nuptse-jacket/",
+            "shop_name": "seven_store",
+            "brand_name": "the north face",
+            "product_id": null,
+            "status": "sub scraper failed: Target page, context or browser has been closed"
+        },
+        {
+            "shop_product_card_id": 4883,
+            "product_url": "https://www.sevenstore.com/outerwear/coats-jackets/the-north-face-almond-butter-versa-velour-nuptse-jacket/",
+            "shop_name": "seven_store",
+            "brand_name": "the north face",
+            "product_id": null,
+            "status": "sub scraper failed: Target page, context or browser has been closed"
+        },
+        {
+            "shop_product_card_id": 4884,
+            "product_url": "https://www.sevenstore.com/outerwear/coats-jackets/the-north-face-coal-browntnf-black-1996-retro-nuptse-jacket/",
+            "shop_name": "seven_store",
+            "brand_name": "the north face",
+            "product_id": null,
+            "status": "sub scraper failed: Target page, context or browser has been closed"
+        },
+        {
+            "shop_product_card_id": 4885,
+            "product_url": "https://www.sevenstore.com/outerwear/coats-jackets/the-north-face-orchid-pink-1996-retro-nuptse-jacket/",
+            "shop_name": "seven_store",
+            "brand_name": "the north face",
+            "product_id": null,
+            "status": "sub scraper failed: Target page, context or browser has been closed"
+        },
+        {
+            "shop_product_card_id": 4886,
+            "product_url": "https://www.sevenstore.com/outerwear/coats-jackets/the-north-face-denim-bluetnf-black-1992-reversible-nuptse-jacket/",
+            "shop_name": "seven_store",
+            "brand_name": "the north face",
+            "product_id": null,
+            "status": "sub scraper failed: Target page, context or browser has been closed"
+        },
+        {
+            "shop_product_card_id": 4888,
+            "product_url": "https://www.sevenstore.com/outerwear/coats-jackets/the-north-face-black-himalayan-down-parka-coat/",
+            "shop_name": "seven_store",
+            "brand_name": "the north face",
+            "product_id": null,
+            "status": "sub scraper failed: Target page, context or browser has been closed"
+        },
+        {
+            "shop_product_card_id": 4893,
+            "product_url": "https://www.sevenstore.com/outerwear/coats-jackets/the-north-face-shady-bluenew-taupe-green-78-lowfi-hitek-windjammer-jacket/",
+            "shop_name": "seven_store",
+            "brand_name": "the north face",
+            "product_id": null,
+            "status": "sub scraper failed: Target page, context or browser has been closed"
+        },
+        {
+            "shop_product_card_id": 4895,
+            "product_url": "https://www.sevenstore.com/outerwear/coats-jackets/the-north-face-khaki-stone-seasonal-mountain-jacket/",
+            "shop_name": "seven_store",
+            "brand_name": "the north face",
+            "product_id": "NF0A5IG3JK3",
+            "status": "sub scraper failed: Target page, context or browser has been closed"
+        },
+        {
+            "shop_product_card_id": 4900,
+            "product_url": "https://www.sevenstore.com/bottoms/casual-trousers/the-north-face-black-horizon-circular-short/",
+            "shop_name": "seven_store",
+            "brand_name": "the north face",
+            "product_id": null,
+            "status": "sub scraper failed: Target page, context or browser has been closed"
+        },
+        {
+            "shop_product_card_id": 4904,
+            "product_url": "https://www.sevenstore.com/tops/hoodies/the-north-face-tnf-black-alpine-hoodie/",
+            "shop_name": "seven_store",
+            "brand_name": "the north face",
+            "product_id": null,
+            "status": "sub scraper failed: Target page, context or browser has been closed"
+        },
+        {
+            "shop_product_card_id": 4918,
+            "product_url": "https://www.sevenstore.com/outerwear/coats-jackets/human-made-green-tiger-stadium-jacket/",
+            "shop_name": "seven_store",
+            "brand_name": "human made",
+            "product_id": null,
+            "status": "sub scraper failed: Target page, context or browser has been closed"
+        },
+        {
+            "shop_product_card_id": 4919,
+            "product_url": "https://www.sevenstore.com/outerwear/coats-jackets/human-made-olive-drab-dog-herringbone-coverall-jacket/",
+            "shop_name": "seven_store",
+            "brand_name": "human made",
+            "product_id": null,
+            "status": "sub scraper failed: Target page, context or browser has been closed"
+        },
+        {
+            "shop_product_card_id": 4924,
+            "product_url": "https://www.sevenstore.com/tops/knitwear/needles-purple-mohair-cardigan/",
+            "shop_name": "seven_store",
+            "brand_name": "needles",
+            "product_id": "NS278",
+            "status": "sub scraper failed: Target page, context or browser has been closed"
+        },
+        {
+            "shop_product_card_id": 4931,
+            "product_url": "https://www.sevenstore.com/tops/shirts/needles-black-7-cuts-zipped-flannel-shirt/",
+            "shop_name": "seven_store",
+            "brand_name": "needles",
+            "product_id": null,
+            "status": "sub scraper failed: Target page, context or browser has been closed"
+        },
+        {
+            "shop_product_card_id": 4932,
+            "product_url": "https://www.sevenstore.com/tops/shirts/needles-brown-7-cuts-flannel-shirt/",
+            "shop_name": "seven_store",
+            "brand_name": "needles",
+            "product_id": null,
+            "status": "sub scraper failed: Target page, context or browser has been closed"
+        },
+        {
+            "shop_product_card_id": 4940,
+            "product_url": "https://www.sevenstore.com/outerwear/coats-jackets/needles-wine-poly-smooth-track-jacket/",
+            "shop_name": "seven_store",
+            "brand_name": "needles",
+            "product_id": null,
+            "status": "sub scraper failed: Target page, context or browser has been closed"
+        },
+        {
+            "shop_product_card_id": 4941,
+            "product_url": "https://www.sevenstore.com/outerwear/coats-jackets/needles-navy-poly-smooth-track-jacket/",
+            "shop_name": "seven_store",
+            "brand_name": "needles",
+            "product_id": null,
+            "status": "sub scraper failed: Target page, context or browser has been closed"
+        },
+        {
+            "shop_product_card_id": 4942,
+            "product_url": "https://www.sevenstore.com/bottoms/trackpants/needles-navy-poly-smooth-narrow-track-pant/",
+            "shop_name": "seven_store",
+            "brand_name": "needles",
+            "product_id": null,
+            "status": "sub scraper failed: Target page, context or browser has been closed"
+        },
+        {
+            "shop_product_card_id": 4943,
+            "product_url": "https://www.sevenstore.com/bottoms/trackpants/needles-ivy-green-poly-smooth-narrow-track-pant/",
+            "shop_name": "seven_store",
+            "brand_name": "needles",
+            "product_id": null,
+            "status": "sub scraper failed: Target page, context or browser has been closed"
+        },
+        {
+            "shop_product_card_id": 4944,
+            "product_url": "https://www.sevenstore.com/bottoms/trackpants/needles-wine-poly-smooth-narrow-track-pant/",
+            "shop_name": "seven_store",
+            "brand_name": "needles",
+            "product_id": null,
+            "status": "sub scraper failed: Target page, context or browser has been closed"
+        },
+        {
+            "shop_product_card_id": 4945,
+            "product_url": "https://www.sevenstore.com/bottoms/trackpants/needles-ivy-green-poly-smooth-zipped-track-pant/",
+            "shop_name": "seven_store",
+            "brand_name": "needles",
+            "product_id": null,
+            "status": "sub scraper failed: Target page, context or browser has been closed"
+        },
+        {
+            "shop_product_card_id": 4946,
+            "product_url": "https://www.sevenstore.com/bottoms/trackpants/needles-navy-poly-smooth-zipped-track-pant/",
+            "shop_name": "seven_store",
+            "brand_name": "needles",
+            "product_id": null,
+            "status": "sub scraper failed: Target page, context or browser has been closed"
+        },
+        {
+            "shop_product_card_id": 4952,
+            "product_url": "https://www.sevenstore.com/tops/shirts/needles-off-white-one-up-short-sleeve-shirt/",
+            "shop_name": "seven_store",
+            "brand_name": "needles",
+            "product_id": null,
+            "status": "sub scraper failed: Target page, context or browser has been closed"
+        },
+        {
+            "shop_product_card_id": 4956,
+            "product_url": "https://www.sevenstore.com/accessories/hats-gloves/needles-star-poly-baseball-cap/",
+            "shop_name": "seven_store",
+            "brand_name": "needles",
+            "product_id": null,
+            "status": "sub scraper failed: Target page, context or browser has been closed"
+        },
+        {
+            "shop_product_card_id": 4957,
+            "product_url": "https://www.sevenstore.com/bottoms/casual-trousers/needles-emerald-poly-smooth-narrow-track-pant/",
+            "shop_name": "seven_store",
+            "brand_name": "needles",
+            "product_id": null,
+            "status": "sub scraper failed: Target page, context or browser has been closed"
+        },
+        {
+            "shop_product_card_id": 5024,
+            "product_url": "https://www.sevenstore.com/footwear/sneakers/salomon-s-lab-falconalmond-milkbright-green-xt6-mindful-2-sneaker/",
+            "shop_name": "seven_store",
+            "brand_name": "salomon s lab",
+            "product_id": null,
+            "status": "sub scraper failed: Target page, context or browser has been closed"
+        },
+        {
+            "shop_product_card_id": 5027,
+            "product_url": "https://www.sevenstore.com/footwear/sneakers/salomon-s-lab-dried-herbdeep-lichen-greenbright-green-xt6-sneaker/",
+            "shop_name": "seven_store",
+            "brand_name": "salomon s lab",
+            "product_id": null,
+            "status": "sub scraper failed: Target page, context or browser has been closed"
+        },
+        {
+            "shop_product_card_id": 5028,
+            "product_url": "https://www.sevenstore.com/footwear/sneakers/salomon-s-lab-blackplum-kittenblue-bonnet-xt4-og-sneaker/",
+            "shop_name": "seven_store",
+            "brand_name": "salomon s lab",
+            "product_id": null,
+            "status": "sub scraper failed: Target page, context or browser has been closed"
+        },
+        {
+            "shop_product_card_id": 5029,
+            "product_url": "https://www.sevenstore.com/footwear/sneakers/salomon-s-lab-whitegreen-ashcoral-xt4-sneaker/",
+            "shop_name": "seven_store",
+            "brand_name": "salomon s lab",
+            "product_id": null,
+            "status": "sub scraper failed: Target page, context or browser has been closed"
+        },
+        {
+            "shop_product_card_id": 5033,
+            "product_url": "https://www.sevenstore.com/footwear/sneakers/salomon-s-lab-feather-grayplum-kittenwinter-pear-rx-moc-30/",
+            "shop_name": "seven_store",
+            "brand_name": "salomon s lab",
+            "product_id": null,
+            "status": "sub scraper failed: Target page, context or browser has been closed"
+        },
+        {
+            "shop_product_card_id": 5468,
+            "product_url": "https://www.sevenstore.com/footwear/sneakers/keen-safarisea-moss-jasper-ii-sneaker/",
+            "shop_name": "seven_store",
+            "brand_name": "keen",
+            "product_id": null,
+            "status": "sub scraper failed: Target page, context or browser has been closed"
+        },
+        {
+            "shop_product_card_id": 5469,
+            "product_url": "https://www.sevenstore.com/footwear/sneakers/keen-canteennaval-academy-jasper-ii-sneaker/",
+            "shop_name": "seven_store",
+            "brand_name": "keen",
+            "product_id": null,
+            "status": "sub scraper failed: Target page, context or browser has been closed"
+        },
+        {
+            "shop_product_card_id": 5471,
+            "product_url": "https://www.sevenstore.com/footwear/sneakers/keen-cuban-beige-x-hiking-patrol-jasper-rocks-sneaker/",
+            "shop_name": "seven_store",
+            "brand_name": "keen",
+            "product_id": null,
+            "status": "sub scraper failed: Target page, context or browser has been closed"
+        },
+        {
+            "shop_product_card_id": 5472,
+            "product_url": "https://www.sevenstore.com/footwear/sneakers/keen-phantasmal-red-x-hiking-patrol-jasper-rocks-sneaker/",
+            "shop_name": "seven_store",
+            "brand_name": "keen",
+            "product_id": null,
+            "status": "sub scraper failed: Target page, context or browser has been closed"
+        },
+        {
+            "shop_product_card_id": 5474,
+            "product_url": "https://www.sevenstore.com/outerwear/coats-jackets/arcteryx-black-atom-lt-jacket4053331/",
+            "shop_name": "seven_store",
+            "brand_name": "arcteryx",
+            "product_id": null,
+            "status": "sub scraper failed: Target page, context or browser has been closed"
+        },
+        {
+            "shop_product_card_id": 5527,
+            "product_url": "https://www.sevenstore.com/outerwear/coats-jackets/stussy-blue-leopard-sherpa-reversible-jacket/",
+            "shop_name": "seven_store",
+            "brand_name": "stüssy",
+            "product_id": null,
+            "status": "sub scraper failed: Target page, context or browser has been closed"
+        },
+        {
+            "shop_product_card_id": 5529,
+            "product_url": "https://www.sevenstore.com/accessories/hats-gloves/stussy-rose-big-stock-bucket-hat/",
+            "shop_name": "seven_store",
+            "brand_name": "stüssy",
+            "product_id": null,
+            "status": "sub scraper failed: Target page, context or browser has been closed"
+        },
+        {
+            "shop_product_card_id": 5530,
+            "product_url": "https://www.sevenstore.com/outerwear/coats-jackets/stussy-khaki-distressed-canvas-shop-jacket/",
+            "shop_name": "seven_store",
+            "brand_name": "stüssy",
+            "product_id": null,
+            "status": "sub scraper failed: Target page, context or browser has been closed"
+        },
+        {
+            "shop_product_card_id": 5532,
+            "product_url": "https://www.sevenstore.com/outerwear/overshirts/stussy-black-padded-tech-over-shirt/",
+            "shop_name": "seven_store",
+            "brand_name": "stüssy",
+            "product_id": null,
+            "status": "sub scraper failed: Target page, context or browser has been closed"
+        },
+        {
+            "shop_product_card_id": 5533,
+            "product_url": "https://www.sevenstore.com/tops/hoodies/stussy-lt-pink-stock-logo-hoodie/",
+            "shop_name": "seven_store",
+            "brand_name": "stüssy",
+            "product_id": null,
+            "status": "sub scraper failed: Target page, context or browser has been closed"
+        },
+        {
+            "shop_product_card_id": 5546,
+            "product_url": "https://www.sevenstore.com/accessories/hats-gloves/stussy-green-big-stock-bucket-hat/",
+            "shop_name": "seven_store",
+            "brand_name": "stüssy",
+            "product_id": null,
+            "status": "sub scraper failed: Target page, context or browser has been closed"
+        },
+        {
+            "shop_product_card_id": 5548,
+            "product_url": "https://www.sevenstore.com/outerwear/coats-jackets/stussy-light-denim-sherpa-reversible-jacket/",
+            "shop_name": "seven_store",
+            "brand_name": "stüssy",
+            "product_id": null,
+            "status": "sub scraper failed: Target page, context or browser has been closed"
+        },
+        {
+            "shop_product_card_id": 5549,
+            "product_url": "https://www.sevenstore.com/tops/sweatshirts/stussy-black-pigmented-dyed-sweatshirt/",
+            "shop_name": "seven_store",
+            "brand_name": "stüssy",
+            "product_id": null,
+            "status": "sub scraper failed: Target page, context or browser has been closed"
+        },
+        {
+            "shop_product_card_id": 5550,
+            "product_url": "https://www.sevenstore.com/accessories/hats-gloves/stussy-green-basic-stock-low-pro-cap/",
+            "shop_name": "seven_store",
+            "brand_name": "stüssy",
+            "product_id": null,
+            "status": "sub scraper failed: Target page, context or browser has been closed"
+        },
+        {
+            "shop_product_card_id": 5558,
+            "product_url": "https://www.sevenstore.com/bottoms/casual-trousers/stussy-cream-ripstop-cargo-beach-pant/",
+            "shop_name": "seven_store",
+            "brand_name": "stüssy",
+            "product_id": null,
+            "status": "sub scraper failed: Target page, context or browser has been closed"
+        },
+        {
+            "shop_product_card_id": 5559,
+            "product_url": "https://www.sevenstore.com/bottoms/casual-trousers/stussy-bone-brushed-beach-pant/",
+            "shop_name": "seven_store",
+            "brand_name": "stüssy",
+            "product_id": null,
+            "status": "sub scraper failed: Target page, context or browser has been closed"
+        },
+        {
+            "shop_product_card_id": 5567,
+            "product_url": "https://www.sevenstore.com/tops/knitwear/comme-des-garons-shirt-green-bearbrick-merino-cardigan/",
+            "shop_name": "seven_store",
+            "brand_name": "comme des garçons",
+            "product_id": null,
+            "status": "sub scraper failed: Target page, context or browser has been closed"
+        },
+        {
+            "shop_product_card_id": 5576,
+            "product_url": "https://www.sevenstore.com/accessories/wallets/comme-des-garons-wallet-green-sa8100-classic-leather-wallet4045381/",
+            "shop_name": "seven_store",
+            "brand_name": "comme des garçons",
+            "product_id": null,
+            "status": "sub scraper failed: Target page, context or browser has been closed"
+        },
+        {
+            "shop_product_card_id": 5579,
+            "product_url": "https://www.sevenstore.com/outerwear/coats-jackets/comme-des-garons-play-blue-kway-hoodie/",
+            "shop_name": "seven_store",
+            "brand_name": "comme des garçons",
+            "product_id": null,
+            "status": "sub scraper failed: Target page, context or browser has been closed"
+        },
+        {
+            "shop_product_card_id": 5583,
+            "product_url": "https://www.sevenstore.com/footwear/sneakers/comme-des-garons-play-black-multi-heart-chuck-taylor-70-low-sneaker/",
+            "shop_name": "seven_store",
+            "brand_name": "comme des garçons",
+            "product_id": null,
+            "status": "sub scraper failed: Target page, context or browser has been closed"
+        },
+        {
+            "shop_product_card_id": 5591,
+            "product_url": "https://www.sevenstore.com/accessories/wallets/comme-des-garons-wallet-black-sa8100-classic-leather-wallet/",
+            "shop_name": "seven_store",
+            "brand_name": "comme des garçons",
+            "product_id": null,
+            "status": "sub scraper failed: Target page, context or browser has been closed"
+        },
+        {
+            "shop_product_card_id": 5599,
+            "product_url": "https://www.sevenstore.com/footwear/sneakers/comme-des-garons-play-black-multi-heart-chuck-taylor-70-hi-sneaker/",
+            "shop_name": "seven_store",
+            "brand_name": "comme des garçons",
+            "product_id": null,
+            "status": "sub scraper failed: Target page, context or browser has been closed"
+        },
+        {
+            "shop_product_card_id": 5636,
+            "product_url": "https://www.sevenstore.com/footwear/sneakers/the-north-face-tnf-blacktnf-white-thermoball-traction-v-mule/",
+            "shop_name": "seven_store",
+            "brand_name": "the north face",
+            "product_id": null,
+            "status": "sub scraper failed: Target page, context or browser has been closed"
+        },
+        {
+            "shop_product_card_id": 5639,
+            "product_url": "https://www.sevenstore.com/outerwear/coats-jackets/the-north-face-tnf-black-denali-fleece-jacket/",
+            "shop_name": "seven_store",
+            "brand_name": "the north face",
+            "product_id": null,
+            "status": "sub scraper failed: Target page, context or browser has been closed"
+        },
+        {
+            "shop_product_card_id": 5641,
+            "product_url": "https://www.sevenstore.com/accessories/hats-gloves/needles-polka-dot-poly-baseball-cap/",
+            "shop_name": "seven_store",
+            "brand_name": "needles",
+            "product_id": null,
+            "status": "sub scraper failed: Target page, context or browser has been closed"
+        },
+        {
+            "shop_product_card_id": 5642,
+            "product_url": "https://www.sevenstore.com/footwear/shoes/dr-martens-peach-beige-desert-oasis-suede-adrian-snaffle/",
+            "shop_name": "seven_store",
+            "brand_name": "dr. martens",
+            "product_id": null,
+            "status": "sub scraper failed: Target page, context or browser has been closed"
+        },
+        {
+            "shop_product_card_id": 5644,
+            "product_url": "https://www.sevenstore.com/footwear/shoes/dr-martens-black-x-undercover-1461-shoe/",
+            "shop_name": "seven_store",
+            "brand_name": "dr. martens",
+            "product_id": null,
+            "status": "sub scraper failed: Target page, context or browser has been closed"
+        },
+        {
+            "shop_product_card_id": 5645,
+            "product_url": "https://www.sevenstore.com/footwear/shoes/dr-martens-black-long-napped-suede-8053-suede-shoe/",
+            "shop_name": "seven_store",
+            "brand_name": "dr. martens",
+            "product_id": null,
+            "status": "sub scraper failed: Target page, context or browser has been closed"
+        },
+        {
+            "shop_product_card_id": 5646,
+            "product_url": "https://www.sevenstore.com/footwear/shoes/dr-martens-blue-x-undercover-1461-shoe/",
+            "shop_name": "seven_store",
+            "brand_name": "dr. martens",
+            "product_id": null,
+            "status": "sub scraper failed: Target page, context or browser has been closed"
+        },
+        {
+            "shop_product_card_id": 5647,
+            "product_url": "https://www.sevenstore.com/footwear/shoes/dr-martens-black-quilon-penton-bex-leather-loafer/",
+            "shop_name": "seven_store",
+            "brand_name": "dr. martens",
+            "product_id": null,
+            "status": "sub scraper failed: Target page, context or browser has been closed"
+        },
+        {
+            "shop_product_card_id": 5648,
+            "product_url": "https://www.sevenstore.com/footwear/shoes/dr-martens-deep-purple-long-napped-suede-8053-suede-shoe/",
+            "shop_name": "seven_store",
+            "brand_name": "dr. martens",
+            "product_id": null,
+            "status": "sub scraper failed: Target page, context or browser has been closed"
+        },
+        {
+            "shop_product_card_id": 5649,
+            "product_url": "https://www.sevenstore.com/footwear/boots/dr-martens-moss-green-long-napped-suede-mb-939-suede-ankle-boot/",
+            "shop_name": "seven_store",
+            "brand_name": "dr. martens",
+            "product_id": null,
+            "status": "sub scraper failed: Target page, context or browser has been closed"
+        },
+        {
+            "shop_product_card_id": 5650,
+            "product_url": "https://www.sevenstore.com/footwear/shoes/dr-martens-pale-olive-desert-oasis-suede-adrian-snaffle-loafer/",
+            "shop_name": "seven_store",
+            "brand_name": "dr. martens",
+            "product_id": null,
+            "status": "sub scraper failed: Target page, context or browser has been closed"
+        },
+        {
+            "shop_product_card_id": 5651,
+            "product_url": "https://www.sevenstore.com/footwear/shoes/dr-martens-cherry-red-x-undercover-1461-shoe/",
+            "shop_name": "seven_store",
+            "brand_name": "dr. martens",
+            "product_id": null,
+            "status": "sub scraper failed: Target page, context or browser has been closed"
+        },
+        {
+            "shop_product_card_id": 5652,
+            "product_url": "https://www.sevenstore.com/footwear/shoes/dr-martens-blackwhite-x-pleasures-1461-bex-shoe/",
+            "shop_name": "seven_store",
+            "brand_name": "dr. martens",
+            "product_id": null,
+            "status": "sub scraper failed: Target page, context or browser has been closed"
+        },
+        {
+            "shop_product_card_id": 5653,
+            "product_url": "https://www.sevenstore.com/footwear/shoes/dr-martens-autumn-spice-repello-calf-python-emboss-adrian-snaffle-loafer/",
+            "shop_name": "seven_store",
+            "brand_name": "dr. martens",
+            "product_id": null,
+            "status": "sub scraper failed: Target page, context or browser has been closed"
+        },
+        {
+            "shop_product_card_id": 5654,
+            "product_url": "https://www.sevenstore.com/footwear/shoes/dr-martens-moss-green-repello-calf-python-emboss-adrian-snaffle-loafer/",
+            "shop_name": "seven_store",
+            "brand_name": "dr. martens",
+            "product_id": null,
+            "status": "sub scraper failed: Target page, context or browser has been closed"
+        },
+        {
+            "shop_product_card_id": 5660,
+            "product_url": "https://www.sevenstore.com/footwear/sneakers/new-balance-team-away-grey-086-2002-stealth-sneaker/",
+            "shop_name": "seven_store",
+            "brand_name": "new balance",
+            "product_id": null,
+            "status": "sub scraper failed: Target page, context or browser has been closed"
+        },
+        {
+            "shop_product_card_id": 5661,
+            "product_url": "https://www.sevenstore.com/footwear/sneakers/new-balance-beige-9060-sneaker/",
+            "shop_name": "seven_store",
+            "brand_name": "new balance",
+            "product_id": null,
+            "status": "sub scraper failed: Target page, context or browser has been closed"
+        },
+        {
+            "shop_product_card_id": 5662,
+            "product_url": "https://www.sevenstore.com/footwear/sneakers/new-balance-munsell-white-1906-sneaker/",
+            "shop_name": "seven_store",
+            "brand_name": "new balance",
+            "product_id": null,
+            "status": "sub scraper failed: Target page, context or browser has been closed"
+        },
+        {
+            "shop_product_card_id": 5663,
+            "product_url": "https://www.sevenstore.com/footwear/sneakers/new-balance-navywhite-610-lunar-new-year-sneaker/",
+            "shop_name": "seven_store",
+            "brand_name": "new balance",
+            "product_id": null,
+            "status": "sub scraper failed: Target page, context or browser has been closed"
+        },
+        {
+            "shop_product_card_id": 5665,
+            "product_url": "https://www.sevenstore.com/footwear/sneakers/new-balance-beigelime-1906-lunar-new-year-sneaker/",
+            "shop_name": "seven_store",
+            "brand_name": "new balance",
+            "product_id": null,
+            "status": "sub scraper failed: Target page, context or browser has been closed"
+        },
+        {
+            "shop_product_card_id": 5670,
+            "product_url": "https://www.sevenstore.com/footwear/sneakers/new-balance-greygreywhite-mius-993-sneaker/",
+            "shop_name": "seven_store",
+            "brand_name": "new balance",
+            "product_id": null,
+            "status": "sub scraper failed: Target page, context or browser has been closed"
+        },
+        {
+            "shop_product_card_id": 5675,
+            "product_url": "https://www.sevenstore.com/footwear/sneakers/new-balance-castlerock-1906-sneaker/",
+            "shop_name": "seven_store",
+            "brand_name": "new balance",
+            "product_id": null,
+            "status": "sub scraper failed: Target page, context or browser has been closed"
+        },
+        {
+            "shop_product_card_id": 5676,
+            "product_url": "https://www.sevenstore.com/footwear/sneakers/new-balance-greenbeige-610-lunar-new-year-sneaker/",
+            "shop_name": "seven_store",
+            "brand_name": "new balance",
+            "product_id": null,
+            "status": "sub scraper failed: Target page, context or browser has been closed"
+        },
+        {
+            "shop_product_card_id": 5677,
+            "product_url": "https://www.sevenstore.com/footwear/sneakers/new-balance-pinkbeige-1906-lunar-new-year-sneaker/",
+            "shop_name": "seven_store",
+            "brand_name": "new balance",
+            "product_id": null,
+            "status": "sub scraper failed: Target page, context or browser has been closed"
+        },
+        {
+            "shop_product_card_id": 5682,
+            "product_url": "https://www.sevenstore.com/footwear/sneakers/hoka-one-one-white-lunar-rock-mafate-speed-2-sneaker/",
+            "shop_name": "seven_store",
+            "brand_name": "hoka one one",
+            "product_id": null,
+            "status": "sub scraper failed: Target page, context or browser has been closed"
+        },
+        {
+            "shop_product_card_id": 5683,
+            "product_url": "https://www.sevenstore.com/footwear/sneakers/hoka-one-one-blackblack-kaha-2-low-goretex-sneaker/",
+            "shop_name": "seven_store",
+            "brand_name": "hoka one one",
+            "product_id": null,
+            "status": "sub scraper failed: Target page, context or browser has been closed"
+        },
+        {
+            "shop_product_card_id": 5685,
+            "product_url": "https://www.sevenstore.com/footwear/sneakers/hoka-one-one-black-black-anacapa-breeze-low-sneaker/",
+            "shop_name": "seven_store",
+            "brand_name": "hoka one one",
+            "product_id": null,
+            "status": "sub scraper failed: Target page, context or browser has been closed"
+        }
+    ]
+}

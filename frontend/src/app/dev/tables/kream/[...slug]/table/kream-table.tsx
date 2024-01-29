@@ -1,6 +1,5 @@
 "use client";
 
-import { getCoreRowModel, useReactTable, getPaginationRowModel } from "@tanstack/react-table";
 import DefaultTable from "@/app/components/default-table/default-table";
 import { kreamTableColumns } from "./header";
 
@@ -15,7 +14,7 @@ export interface kreamTableRawDataProps {
     tradingVolume?: number;
     wish: number;
     review: number;
-    updated_at: Date;
+    updatedAt: Date;
 }
 
 export const KreamTable = ({ tableData }: { tableData: kreamTableRawDataProps[] }) => {

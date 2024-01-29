@@ -1,0 +1,14 @@
+{
+    "scrap_time": "20240123-110112",
+    "num_of_plan": 1,
+    "num_processor": 1,
+    "db_update": true,
+    "job": [
+        {
+            "job": "puma",
+            "status": "success"
+        }
+    ],
+    "brand_name": "puma",
+    "platform_type": "kream"
+}

@@ -1,0 +1,56 @@
+{
+    "scrap_time": "20240122-164134",
+    "num_of_plan": 6,
+    "num_processor": 1,
+    "db_update": true,
+    "job": [
+        {
+            "shop_product_card_id": 4638,
+            "product_url": "https://www.sevenstore.com/outerwear/coats-jackets/nike-blackanthracitesummit-white-acg-arctic-wolf-fleece-jacket/",
+            "shop_name": "seven_store",
+            "brand_name": "nike acg",
+            "product_id": "FN0372-010",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 4646,
+            "product_url": "https://www.sevenstore.com/tops/shirts/nike-khakilt-iron-oresummit-white-acg-drifit-uv-devastation-trail-shirt/",
+            "shop_name": "seven_store",
+            "brand_name": "nike acg",
+            "product_id": "DN3936-248",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 4649,
+            "product_url": "https://www.sevenstore.com/outerwear/coats-jackets/nike-green-abyssblackwolf-greywolf-grey-acg-oregon-series-micro-shell-jacket/",
+            "shop_name": "seven_store",
+            "brand_name": "nike acg",
+            "product_id": "DV9217-301",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 4650,
+            "product_url": "https://www.sevenstore.com/outerwear/coats-jackets/nike-khakisummit-white-acg-cinder-cone-jacket/",
+            "shop_name": "seven_store",
+            "brand_name": "nike acg",
+            "product_id": "DB0978-247",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 4653,
+            "product_url": "https://www.sevenstore.com/bottoms/casual-trousers/nike-neutral-olivelt-orewood-brown-acg-trail-zipoff-pant/",
+            "shop_name": "seven_store",
+            "brand_name": "nike acg",
+            "product_id": "DX6646-276",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 4673,
+            "product_url": "https://www.sevenstore.com/launches/nike-vachetta-tanblacknight-blue-acg-air-mada/",
+            "shop_name": "seven_store",
+            "brand_name": "nike acg",
+            "product_id": null,
+            "status": "success"
+        }
+    ]
+}

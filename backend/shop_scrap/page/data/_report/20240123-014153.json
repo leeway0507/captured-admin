@@ -1,0 +1,144 @@
+{
+    "scrap_time": "20240123-014153",
+    "num_of_plan": 17,
+    "num_processor": 4,
+    "db_update": true,
+    "job": [
+        {
+            "shop_product_card_id": 4888,
+            "product_url": "https://www.sevenstore.com/outerwear/coats-jackets/the-north-face-black-himalayan-down-parka-coat/",
+            "shop_name": "seven_store",
+            "brand_name": "the north face",
+            "product_id": null,
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 4854,
+            "product_url": "https://www.sevenstore.com/outerwear/coats-jackets/the-north-face-x-special-projects-tnf-black-x-undercover-zipoff-fleece-jacket/",
+            "shop_name": "seven_store",
+            "brand_name": "the north face",
+            "product_id": null,
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 4882,
+            "product_url": "https://www.sevenstore.com/outerwear/coats-jackets/the-north-face-coal-brown-versa-velour-nuptse-jacket/",
+            "shop_name": "seven_store",
+            "brand_name": "the north face",
+            "product_id": null,
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 5636,
+            "product_url": "https://www.sevenstore.com/footwear/sneakers/the-north-face-tnf-blacktnf-white-thermoball-traction-v-mule/",
+            "shop_name": "seven_store",
+            "brand_name": "the north face",
+            "product_id": null,
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 4893,
+            "product_url": "https://www.sevenstore.com/outerwear/coats-jackets/the-north-face-shady-bluenew-taupe-green-78-lowfi-hitek-windjammer-jacket/",
+            "shop_name": "seven_store",
+            "brand_name": "the north face",
+            "product_id": null,
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 4883,
+            "product_url": "https://www.sevenstore.com/outerwear/coats-jackets/the-north-face-almond-butter-versa-velour-nuptse-jacket/",
+            "shop_name": "seven_store",
+            "brand_name": "the north face",
+            "product_id": null,
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 4856,
+            "product_url": "https://www.sevenstore.com/tops/hoodies/the-north-face-x-special-projects-tnf-blackaviator-navy-x-undercover-dotknit-double-hoodie/",
+            "shop_name": "seven_store",
+            "brand_name": "the north face",
+            "product_id": null,
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 5639,
+            "product_url": "https://www.sevenstore.com/outerwear/coats-jackets/the-north-face-tnf-black-denali-fleece-jacket/",
+            "shop_name": "seven_store",
+            "brand_name": "the north face",
+            "product_id": null,
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 4895,
+            "product_url": "https://www.sevenstore.com/outerwear/coats-jackets/the-north-face-khaki-stone-seasonal-mountain-jacket/",
+            "shop_name": "seven_store",
+            "brand_name": "the north face",
+            "product_id": "NF0A5IG3JK3",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 4858,
+            "product_url": "https://www.sevenstore.com/tops/sweatshirts/the-north-face-x-special-projects-tnf-black-x-undercover-futurefleece-crewneck/",
+            "shop_name": "seven_store",
+            "brand_name": "the north face",
+            "product_id": null,
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 4900,
+            "product_url": "https://www.sevenstore.com/bottoms/casual-trousers/the-north-face-black-horizon-circular-short/",
+            "shop_name": "seven_store",
+            "brand_name": "the north face",
+            "product_id": null,
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 4873,
+            "product_url": "https://www.sevenstore.com/accessories/bags/the-north-face-tnf-blackasphalt-grey-borealis-classic-backpack/",
+            "shop_name": "seven_store",
+            "brand_name": "the north face",
+            "product_id": null,
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 4881,
+            "product_url": "https://www.sevenstore.com/outerwear/coats-jackets/the-north-face-tnf-black-versa-velour-nuptse-jacket/",
+            "shop_name": "seven_store",
+            "brand_name": "the north face",
+            "product_id": null,
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 4884,
+            "product_url": "https://www.sevenstore.com/outerwear/coats-jackets/the-north-face-coal-browntnf-black-1996-retro-nuptse-jacket/",
+            "shop_name": "seven_store",
+            "brand_name": "the north face",
+            "product_id": null,
+            "status": "sub scraper failed: Locator expected to contain text 'Sizes'\nActual value: None \nCall log:\nLocatorAssertions.to_contain_text with timeout 10000ms\n  - waiting for locator(\".product-sizes-title\")\n"
+        },
+        {
+            "shop_product_card_id": 4885,
+            "product_url": "https://www.sevenstore.com/outerwear/coats-jackets/the-north-face-orchid-pink-1996-retro-nuptse-jacket/",
+            "shop_name": "seven_store",
+            "brand_name": "the north face",
+            "product_id": null,
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 4904,
+            "product_url": "https://www.sevenstore.com/tops/hoodies/the-north-face-tnf-black-alpine-hoodie/",
+            "shop_name": "seven_store",
+            "brand_name": "the north face",
+            "product_id": null,
+            "status": "sub scraper failed: Locator expected to contain text 'Sizes'\nActual value: None \nCall log:\nLocatorAssertions.to_contain_text with timeout 10000ms\n  - waiting for locator(\".product-sizes-title\")\n"
+        },
+        {
+            "shop_product_card_id": 4886,
+            "product_url": "https://www.sevenstore.com/outerwear/coats-jackets/the-north-face-denim-bluetnf-black-1992-reversible-nuptse-jacket/",
+            "shop_name": "seven_store",
+            "brand_name": "the north face",
+            "product_id": null,
+            "status": "success"
+        }
+    ]
+}

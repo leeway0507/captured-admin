@@ -1,5 +1,5 @@
 import Main from "./main";
-import { getKreamProductCardList } from "./fetch";
+import { getKreamProdCardByBrandName } from "./fetch";
 
 export default async function Page({
     params,
@@ -10,9 +10,8 @@ export default async function Page({
 }) {
     const [searchType, content] = params.slug;
 
-    const searchTypeDecoded = decodeURIComponent(searchType);
     const contentDecoded = decodeURIComponent(content);
-    const kreamProductCardList = await getKreamProductCardList(searchTypeDecoded, contentDecoded);
+    const kreamProductCardList = await getKreamProdCardByBrandName(contentDecoded);
     return (
         <>
             <Main kreamProductCardList={kreamProductCardList.data} />

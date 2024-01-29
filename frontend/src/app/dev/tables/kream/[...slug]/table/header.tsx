@@ -4,7 +4,7 @@ import Link from "next/link";
 
 import { kreamTableRawDataProps } from "./kream-table";
 import { createColumnHelper } from "@tanstack/react-table";
-import { OpenKreamDetail } from "@/app/components/default-table/default-header-function";
+import { OpenKreamDetailWithHover } from "@/app/components/default-table/default-header-function";
 
 const columnHelper = createColumnHelper<kreamTableRawDataProps>();
 
@@ -54,6 +54,14 @@ export const kreamTableColumns = [
 
     columnHelper.display({
         header: "상세정보",
-        cell: (props) => OpenKreamDetail("kreamId", String(props.row.original.kreamId), undefined),
+        cell: (props) =>
+            OpenKreamDetailWithHover(
+                "kreamId",
+                String(props.row.original.productId),
+                props.row.original.retailPrice! > 0 ? props.row.original.retailPrice! : 1000000
+            ),
+    }),
+    columnHelper.accessor("updatedAt", {
+        header: "업데이트",
     }),
 ];

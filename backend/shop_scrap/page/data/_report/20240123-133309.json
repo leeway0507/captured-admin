@@ -1,0 +1,184 @@
+{
+    "scrap_time": "20240123-133309",
+    "num_of_plan": 22,
+    "num_processor": 4,
+    "db_update": true,
+    "job": [
+        {
+            "shop_product_card_id": 4551,
+            "product_url": "https://www.sevenstore.com/launches/puma-puma-blacksugared-almond-x-fenty-creeper-phatty-sneaker/",
+            "shop_name": "seven_store",
+            "brand_name": "puma",
+            "product_id": null,
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 4596,
+            "product_url": "https://www.sevenstore.com/footwear/sneakers/puma-puma-blackyellow-sizzle-clyde-og-sneaker/",
+            "shop_name": "seven_store",
+            "brand_name": "puma",
+            "product_id": null,
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 4606,
+            "product_url": "https://www.sevenstore.com/footwear/sneakers/puma-puma-blacklight-strawgum-colibri-og/",
+            "shop_name": "seven_store",
+            "brand_name": "puma",
+            "product_id": null,
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 4586,
+            "product_url": "https://www.sevenstore.com/footwear/sneakers/puma-pristinepristineinky-blue-x-rhuigi-clyde-q3-sneaker/",
+            "shop_name": "seven_store",
+            "brand_name": "puma",
+            "product_id": null,
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 4607,
+            "product_url": "https://www.sevenstore.com/footwear/sneakers/puma-puma-navypumpkin-pie-colibri-sneaker/",
+            "shop_name": "seven_store",
+            "brand_name": "puma",
+            "product_id": null,
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 4597,
+            "product_url": "https://www.sevenstore.com/footwear/sneakers/puma-pristinesedate-graypuma-white-x-rhuigi-clyde-q3-sneaker/",
+            "shop_name": "seven_store",
+            "brand_name": "puma",
+            "product_id": null,
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 4554,
+            "product_url": "https://www.sevenstore.com/footwear/sneakers/puma-pink-palermo-fc-sneaker/",
+            "shop_name": "seven_store",
+            "brand_name": "puma",
+            "product_id": null,
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 4587,
+            "product_url": "https://www.sevenstore.com/footwear/sneakers/puma-black-x-nanamica-clyde-gtx-sneaker/",
+            "shop_name": "seven_store",
+            "brand_name": "puma",
+            "product_id": null,
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 4602,
+            "product_url": "https://www.sevenstore.com/footwear/sneakers/puma-parisian-nightpuma-whitepristine-clyde-og-sneaker/",
+            "shop_name": "seven_store",
+            "brand_name": "puma",
+            "product_id": null,
+            "status": "sub scraper failed: Locator expected to contain text 'Sizes'\nActual value: None \nCall log:\nLocatorAssertions.to_contain_text with timeout 10000ms\n  - waiting for locator(\".product-sizes-title\")\n"
+        },
+        {
+            "shop_product_card_id": 4592,
+            "product_url": "https://www.sevenstore.com/footwear/sneakers/puma-whisper-whitepuma-white-clyde-prm-sneaker/",
+            "shop_name": "seven_store",
+            "brand_name": "puma",
+            "product_id": null,
+            "status": "sub scraper failed: Locator expected to contain text 'Sizes'\nActual value: None \nCall log:\nLocatorAssertions.to_contain_text with timeout 10000ms\n  - waiting for locator(\".product-sizes-title\")\n"
+        },
+        {
+            "shop_product_card_id": 4608,
+            "product_url": "https://www.sevenstore.com/footwear/sneakers/puma-ultra-bluerickie-orange-super-team-handy-sneaker/",
+            "shop_name": "seven_store",
+            "brand_name": "puma",
+            "product_id": null,
+            "status": "sub scraper failed: Locator expected to contain text 'Sizes'\nActual value: None \nCall log:\nLocatorAssertions.to_contain_text with timeout 10000ms\n  - waiting for locator(\".product-sizes-title\")\n"
+        },
+        {
+            "shop_product_card_id": 4556,
+            "product_url": "https://www.sevenstore.com/footwear/sneakers/puma-puma-blackfrosted-ivory-clyde-teasel-sneaker/",
+            "shop_name": "seven_store",
+            "brand_name": "puma",
+            "product_id": null,
+            "status": "sub scraper failed: Locator expected to contain text 'Sizes'\nActual value: None \nCall log:\nLocatorAssertions.to_contain_text with timeout 10000ms\n  - waiting for locator(\".product-sizes-title\")\n"
+        },
+        {
+            "shop_product_card_id": 4557,
+            "product_url": "https://www.sevenstore.com/footwear/sneakers/puma-sedate-graycashew-clyde-teasel-sneaker/",
+            "shop_name": "seven_store",
+            "brand_name": "puma",
+            "product_id": null,
+            "status": "sub scraper failed: Target page, context or browser has been closed"
+        },
+        {
+            "shop_product_card_id": 4593,
+            "product_url": "https://www.sevenstore.com/footwear/sneakers/puma-puma-blackrickie-orange-clyde-vintage-sneaker/",
+            "shop_name": "seven_store",
+            "brand_name": "puma",
+            "product_id": null,
+            "status": "sub scraper failed: Target page, context or browser has been closed"
+        },
+        {
+            "shop_product_card_id": 4603,
+            "product_url": "https://www.sevenstore.com/footwear/sneakers/puma-yellow-sizzlearchive-green-colibri-sneaker/",
+            "shop_name": "seven_store",
+            "brand_name": "puma",
+            "product_id": null,
+            "status": "sub scraper failed: Target page, context or browser has been closed"
+        },
+        {
+            "shop_product_card_id": 4609,
+            "product_url": "https://www.sevenstore.com/footwear/sneakers/puma-clyde-royalpuma-white-super-team-og-sneaker/",
+            "shop_name": "seven_store",
+            "brand_name": "puma",
+            "product_id": null,
+            "status": "sub scraper failed: Target page, context or browser has been closed"
+        },
+        {
+            "shop_product_card_id": 4566,
+            "product_url": "https://www.sevenstore.com/accessories/hats-gloves/puma-tan-x-noah-5-panel-cap/",
+            "shop_name": "seven_store",
+            "brand_name": "puma",
+            "product_id": null,
+            "status": "sub scraper failed: Target page, context or browser has been closed"
+        },
+        {
+            "shop_product_card_id": 4594,
+            "product_url": "https://www.sevenstore.com/footwear/sneakers/puma-puma-whitepuma-navy-clyde-vintage-sneaker/",
+            "shop_name": "seven_store",
+            "brand_name": "puma",
+            "product_id": null,
+            "status": "sub scraper failed: Target page, context or browser has been closed"
+        },
+        {
+            "shop_product_card_id": 4604,
+            "product_url": "https://www.sevenstore.com/footwear/sneakers/puma-verdant-greenpuma-whitepristine-clyde-og-sneaker/",
+            "shop_name": "seven_store",
+            "brand_name": "puma",
+            "product_id": null,
+            "status": "sub scraper failed: Target page, context or browser has been closed"
+        },
+        {
+            "shop_product_card_id": 4567,
+            "product_url": "https://www.sevenstore.com/accessories/scarves/puma-red-x-noah-scarf/",
+            "shop_name": "seven_store",
+            "brand_name": "puma",
+            "product_id": null,
+            "status": "sub scraper failed: Target page, context or browser has been closed"
+        },
+        {
+            "shop_product_card_id": 4595,
+            "product_url": "https://www.sevenstore.com/footwear/sneakers/puma-puma-blackfor-all-time-red-clyde-og-sneaker/",
+            "shop_name": "seven_store",
+            "brand_name": "puma",
+            "product_id": null,
+            "status": "sub scraper failed: Target page, context or browser has been closed"
+        },
+        {
+            "shop_product_card_id": 4605,
+            "product_url": "https://www.sevenstore.com/footwear/sneakers/puma-puma-team-royalfor-all-time-redgum-colibri-og/",
+            "shop_name": "seven_store",
+            "brand_name": "puma",
+            "product_id": null,
+            "status": "sub scraper failed: Target page, context or browser has been closed"
+        }
+    ]
+}

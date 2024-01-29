@@ -17,7 +17,7 @@ class PlatformListScraperFactory:
         min_volume: int = 50,
         min_wish: int = 50,
     ):
-        pw_kream_browser = await PwKreamContextHanlder.start()
+        pw_kream_browser = await PwKreamContextHanlder.start(allow_cookie=True)
         return PwKreamListScraper(
             self.path,
             pw_kream_browser,

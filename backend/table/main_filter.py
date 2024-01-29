@@ -82,8 +82,6 @@ def create_filter_query_dict(
     if price:
         l = create_price_range(price)
         f_d["price_filter"] = ProductInfoTable.price.between(l[0], l[1])
-    if size_array:
-        f_d["size_array_filter"] = SizeTable.size.in_(size_array.split(","))
 
     filter = {k: v for k, v in f_d.items() if v is not None}
     return filter

@@ -28,7 +28,7 @@ async def test_consortium(Fac: ShopPageScraperFactory):
         {
             "shop_name": "consortium",
             "shop_product_card_id": "67890",
-            "product_url": "https://www.consortium.co.uk/adidas-originals-gazelle-indoor-bliss-pink-core-black-collegiate-purple-ie7002.html",
+            "product_url": "https://www.consortium.co.uk/patagonia-lightweight-synchilla-snap-t-pullover-fleece-oatmeal-heather.html",
         },
     ]
     scraper = await Fac.playwright(target_list, 1)

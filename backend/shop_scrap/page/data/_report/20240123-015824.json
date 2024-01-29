@@ -1,0 +1,40 @@
+{
+    "scrap_time": "20240123-015824",
+    "num_of_plan": 4,
+    "num_processor": 2,
+    "db_update": true,
+    "job": [
+        {
+            "shop_product_card_id": 5468,
+            "product_url": "https://www.sevenstore.com/footwear/sneakers/keen-safarisea-moss-jasper-ii-sneaker/",
+            "shop_name": "seven_store",
+            "brand_name": "keen",
+            "product_id": null,
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 5471,
+            "product_url": "https://www.sevenstore.com/footwear/sneakers/keen-cuban-beige-x-hiking-patrol-jasper-rocks-sneaker/",
+            "shop_name": "seven_store",
+            "brand_name": "keen",
+            "product_id": null,
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 5472,
+            "product_url": "https://www.sevenstore.com/footwear/sneakers/keen-phantasmal-red-x-hiking-patrol-jasper-rocks-sneaker/",
+            "shop_name": "seven_store",
+            "brand_name": "keen",
+            "product_id": null,
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 5469,
+            "product_url": "https://www.sevenstore.com/footwear/sneakers/keen-canteennaval-academy-jasper-ii-sneaker/",
+            "shop_name": "seven_store",
+            "brand_name": "keen",
+            "product_id": null,
+            "status": "success"
+        }
+    ]
+}

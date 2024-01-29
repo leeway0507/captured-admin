@@ -5,6 +5,7 @@ import os
 from components.abstract_class.data_save import DataSave
 from model.db_model_shop import ShopProductSizeSchema
 from ..utils.size_converter import convert_size
+from components.currency import Currency
 
 
 class ShopPageData(ShopProductSizeSchema):
@@ -17,6 +18,8 @@ class ShopPageDataSave(DataSave):
     def __init__(self, path: str):
         super().__init__(path)
 
+        self.currency = Currency()
+
     def folder_path(self):
         return os.path.join(self.path, self.scrap_time)
 
@@ -28,8 +31,8 @@ class ShopPageDataSave(DataSave):
     async def save_scrap_data(self):
         await self.init_config()
         super().create_folder()
-        list_data = await self.load_scrap_data()
-        preprocessed_data = self.filter_data(list_data)
+        scrap_data = await self.load_scrap_data()
+        preprocessed_data = self.filter_data(scrap_data)
         self.save_preprocessed_data(preprocessed_data)
 
     async def init_config(self):
@@ -39,12 +42,12 @@ class ShopPageDataSave(DataSave):
     async def load_scrap_data(self):
         return await self.TempFile.load_temp_file("product_card_page")
 
-    def filter_data(self, list_data: List[Dict]) -> List[Dict]:
+    def filter_data(self, scrap_data: List[Dict]) -> List[Dict]:
         update_time = datetime.now().replace(microsecond=0)
-        list_data = super()._adaptor(list_data)
+        scrap_data = super()._adaptor(scrap_data)
 
         lst = []
-        for card in list_data:
+        for card in scrap_data:
             for size in card["size"]:
                 lst.append(
                     ShopPageData(
@@ -101,13 +104,9 @@ class ShopPageDataSave(DataSave):
         self._save_parquet(file_path, l)
 
     def _get_price_info(self, price: str):
-        from components.currency import Currency
-
-        currency = Currency()
-
-        _, curr_name, origin_price = currency.get_price_info(price)
-        (_, _, us_price) = currency.change_currency_to_custom_usd(price)
-        (_, _, kor_price) = currency.change_currency_to_buying_won(price)
+        _, curr_name, origin_price = self.currency.get_price_info(price)
+        (_, _, us_price) = self.currency.change_currency_to_custom_usd(price)
+        (_, _, kor_price) = self.currency.change_currency_to_buying_won(price)
 
         return {
             "original_price_currency": curr_name,

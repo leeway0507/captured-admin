@@ -3,10 +3,10 @@ import Image from "next/image";
 import Link from "next/link";
 import BaseModal from "./modal";
 import { useEffect, useState } from "react";
-import { getKreamProductCardList, getKreamProductSizeInfo } from "../fetch";
+import { getKreamProdCard, getKreamMarketPrice } from "../fetch";
 import { kreamTableRawDataProps } from "../table/kream-table";
 
-interface productSizeProps {
+interface marketPriceProps {
     kreamProductSize: string;
     buy: number;
     sell: number;
@@ -33,16 +33,16 @@ const KreamProductModal = ({
     const closeModal = () => setIsOpen(false);
 
     const [kreamProductCard, setKreamProductCard] = useState<kreamTableRawDataProps | undefined>(undefined);
-    const [kreamProductSize, setKreamProductSize] = useState<productSizeProps[] | undefined>(undefined);
-    const [scrapDate, setScrapDate] = useState<string[] | undefined>(undefined);
+    const [kreamProductSize, setKreamProductSize] = useState<marketPriceProps[] | undefined>(undefined);
+    const [scrapDate, setScrapDate] = useState<string | undefined>(undefined);
 
     useEffect(() => {
-        getKreamProductCardList(searchType, String(value)).then((res) => {
+        getKreamProdCard(String(value)).then((res) => {
             setKreamProductCard(res.data[0]);
         });
-        getKreamProductSizeInfo(searchType, String(value)).then((res) => {
-            setKreamProductSize(res.data.sizeData);
-            setScrapDate(res.data.scrapDate);
+        getKreamMarketPrice(String(value)).then((res) => {
+            setKreamProductSize(res.data.data);
+            setScrapDate(res.data.baseDate);
         });
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
@@ -73,10 +73,8 @@ const KreamProductModal = ({
             <div>
                 <div className="flex text-base w-full">
                     <div>
-                        <span>스크랩 날짜 : </span>
-                        <span>
-                            {scrapDate[0].replace("T00:00:00", "")} - {scrapDate[1].replace("T00:00:00", "")}
-                        </span>
+                        <span>스크랩 기준일 : </span>
+                        <span>{scrapDate.split("T")[0]} ~ NOW</span>
                     </div>
                     <div>
                         <span className="ps-4">제품 원가 : </span>

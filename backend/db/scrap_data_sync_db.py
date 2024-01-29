@@ -4,25 +4,31 @@ import pandas as pd
 
 from db.tables_shop import ShopProductCardTable, ShopProductSizeTable
 from db.tables_production import SizeTable, ProductInfoTable
+from db.tables_kream import (
+    KreamProductCardTable,
+    KreamBuyAndSellTable,
+    KreamProductIdBridgeTable,
+    KreamTradingVolumeTable,
+)
 from model.db_model_shop import ShopProductSizeSchema
 
 from sqlalchemy.dialects.mysql import insert
-from sqlalchemy import delete, update, bindparam, and_, delete, null
+from sqlalchemy import delete, update, bindparam, and_, delete, null, or_
 from sqlalchemy.orm import sessionmaker
 from abc import ABC, abstractmethod
 from components.file_manager import ScrapReport
 
 
-def load_sync_db(file_name):
+def load_sync_db(file_name) -> type["ScrapDataSyncDB"]:
     return getattr(ScrapDataSyncDBFactory(), file_name)()
 
 
 class ScrapDataSyncDBFactory:
-    def kream_list(self):
-        ...
+    def platform_list(self) -> type["PlatformListDataSyncDB"]:
+        return PlatformListDataSyncDB
 
-    def kream_page(self):
-        ...
+    def platform_page(self) -> type["PlatformPageDataSyncDB"]:
+        return PlatformPageDataSyncDB
 
     def shop_list(self) -> type["ShopListDataSyncDB"]:
         return ShopListDataSyncDB
@@ -35,11 +41,21 @@ class ScrapDataSyncDBFactory:
 
 
 class ScrapDataSyncDB(ABC):
-    def __init__(self, session: sessionmaker, path: str, scrap_time: str) -> None:
-        self.scrap_time = scrap_time
+    def __init__(self, session: sessionmaker, path: str) -> None:
         self.session = session
         self.path = path
         self.Report = ScrapReport(os.path.join(self.path, "_report"))
+        self._scrap_time = None
+
+    @property
+    def scrap_time(self):
+        if self._scrap_time:
+            return self._scrap_time
+        raise (ValueError("self._scrap_time is None"))
+
+    @scrap_time.setter
+    def scrap_time(self, scrap_time: str):
+        self._scrap_time = scrap_time
         self.Report.report_file_name = scrap_time
 
     async def execute(self, stmt):
@@ -64,21 +80,87 @@ class ScrapDataSyncDB(ABC):
         return self.Report.get_report()
 
 
-class KreamList(ScrapDataSyncDB):
-    ...
-
-
-class KreamPage(ScrapDataSyncDB):
-    ...
-
-
-class ShopListDataSyncDB(ScrapDataSyncDB):
-    # def __init__(self, path: str, scrap_time: str) -> None:
-    #     super().__init__(path, scrap_time)
-
+class PlatformListDataSyncDB(ScrapDataSyncDB):
     async def sync_data(self):
         data = super()._load_db_data(self.scrap_time)
         await super().execute(self.insert_shop_card(data))
+        self.Report.update_report({"db_update": True})
+
+    def get_folder_path(self):
+        return os.path.join(self.path, "kream")
+
+    def insert_shop_card(self, data: List[Dict]):
+        stmt = insert(KreamProductCardTable).values(data)
+        stmt = stmt.on_duplicate_key_update(
+            trading_volume=stmt.inserted.trading_volume,
+            wish=stmt.inserted.wish,
+            review=stmt.inserted.review,
+            updated_at=stmt.inserted.updated_at,
+        )
+        return stmt
+
+
+class PlatformPageDataSyncDB(ScrapDataSyncDB):
+    def get_folder_path(self):
+        report_data = super().get_report_data()
+        return os.path.join(self.path, report_data["folder_name"])
+
+    async def sync_data(self):
+        await self.sync_buy_and_sell()
+        await self.sync_product_detail()
+        await self.sync_trading_volume()
+        await self.sync_product_bridge()
+        self.Report.update_report({"db_update": True})
+
+    async def sync_buy_and_sell(self):
+        data = super()._load_db_data(self.scrap_time + "-buy_and_sell")
+        await super().execute(self.insert_buy_and_sell(data))
+
+    def insert_buy_and_sell(self, data: List[Dict]):
+        stmt = insert(KreamBuyAndSellTable).values(data)
+        stmt = stmt.on_duplicate_key_update(
+            buy=stmt.inserted.buy,
+            sell=stmt.inserted.sell,
+            updated_at=stmt.inserted.updated_at,
+        )
+        return stmt
+
+    async def sync_product_detail(self):
+        data = super()._load_db_data(self.scrap_time + "-product_detail")
+        await super().execute(self.insert_product_detail(data))
+
+    def insert_product_detail(self, data: List[Dict]):
+        stmt = insert(KreamProductCardTable).values(data)
+        stmt = stmt.on_duplicate_key_update(
+            retail_price=stmt.inserted.retail_price,
+            product_release_date=stmt.inserted.product_release_date,
+            color=stmt.inserted.color,
+            updated_at=stmt.inserted.updated_at,
+        )
+        return stmt
+
+    async def sync_trading_volume(self):
+        data = super()._load_db_data(self.scrap_time + "-trading_volume")
+        await super().execute(self.insert_trading_volume(data))
+
+    def insert_trading_volume(self, data: List[Dict]):
+        stmt = insert(KreamTradingVolumeTable).values(data)
+        return stmt
+
+    async def sync_product_bridge(self):
+        data = super()._load_db_data(self.scrap_time + "-product_bridge")
+        await super().execute(self.insert_product_bridge(data))
+
+    def insert_product_bridge(self, data: List[Dict]):
+        stmt = insert(KreamProductIdBridgeTable).values(data).prefix_with("IGNORE")
+        return stmt
+
+
+class ShopListDataSyncDB(ScrapDataSyncDB):
+    async def sync_data(self):
+        data = super()._load_db_data(self.scrap_time)
+        await super().execute(self.insert_shop_card(data))
+        self.Report.update_report({"db_update": True})
 
     def get_folder_path(self):
         report_data = super().get_report_data()
@@ -90,6 +172,7 @@ class ShopListDataSyncDB(ScrapDataSyncDB):
             kor_price=stmt.inserted.kor_price,
             us_price=stmt.inserted.us_price,
             original_price=stmt.inserted.original_price,
+            updated_at=stmt.inserted.updated_at,
         )
         return stmt
 
@@ -104,6 +187,7 @@ class ShopPageDataSyncDB(ScrapDataSyncDB):
         await self.upsert_card_info()
         await self.update_product_id()
         await self.check_sold_out_items()
+        self.Report.update_report({"db_update": True})
 
     async def delete_shop_size(self):
         data = super()._load_db_data("shop_scrap_page_size_data")
@@ -176,10 +260,11 @@ class ShopPageDataSyncDB(ScrapDataSyncDB):
         stmt = (
             update(ShopProductCardTable)
             .where(
-                and_(
-                    ShopProductCardTable.shop_product_card_id == bindparam("key"),
-                    ShopProductCardTable.product_id.in_([null(), "-"]),
-                )
+                ShopProductCardTable.shop_product_card_id == bindparam("key"),
+                or_(
+                    ShopProductCardTable.product_id == null(),
+                    ShopProductCardTable.product_id == "-",
+                ),
             )
             .values(product_id=bindparam("value"))
         )
@@ -214,8 +299,9 @@ class SizeDataSyncProdDB(ScrapDataSyncDB):
         path: str,
         scrap_time: str,
     ) -> None:
-        super().__init__(dev_session, path, scrap_time)
+        super().__init__(dev_session, path)
         self.prod_session = prod_session
+        self.scrap_time = scrap_time
 
     def get_folder_path(self):
         return os.path.join(self.path, self.scrap_time)

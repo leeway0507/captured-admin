@@ -35,13 +35,6 @@ class ScrapReport:
         self._report_file_name = value
         self.report_file_path = os.path.join(self.report_path, value + ".json")
 
-    def __new__(cls, report_path: str):
-        """싱글톤 패턴 적용"""
-        if cls._instance is None:
-            cls._instance = super().__new__(cls)
-        cls._instance.report_path = report_path
-        return cls._instance
-
     def get_report_list(self):
         file_list = os.listdir(self.report_path)
         file_list = [f.split(".json")[0] for f in file_list]

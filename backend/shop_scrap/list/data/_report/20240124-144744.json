@@ -1,0 +1,14 @@
+{
+    "scrap_time": "20240124-144744",
+    "num_of_plan": 1,
+    "num_processor": 1,
+    "db_update": true,
+    "job": [
+        {
+            "job": "keen",
+            "status": "success"
+        }
+    ],
+    "brand_name": "keen",
+    "shop_name": "urban_industry"
+}

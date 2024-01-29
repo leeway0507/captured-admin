@@ -25,8 +25,25 @@ async def test_get_data(Size: SizeTable):
     raw_data = await Size.get_data(["db3021"])
     # print(raw_data)
 
-    meta = Size.get_meta(raw_data)
-    print(meta)
+    meta = await Size.get_meta(raw_data)
+
+    size_data = Size.size_data(meta, raw_data)
+    print(size_data)
+
+
+@pytest.mark.anyio
+async def test_shop_info(Size: SizeTable):
+    shop_info = await Size.shop_info()
+    assert isinstance(shop_info, list)
+
+
+@pytest.mark.anyio
+async def test_price_data(Size: SizeTable):
+    raw_data = await Size.get_data(["db3021"])
+    # print(raw_data)
+
+    price = await Size.price_data(raw_data)
+    print(price)
 
     # size_data = Size.size_data(meta, raw_data)
     # print(size_data)

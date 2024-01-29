@@ -85,6 +85,15 @@ class PwKreamPageSubScraper(SubScraper):
             soup.get_text(strip=True, separator="|").split("|") for soup in soup_list
         ]
 
+    async def get_soup_all(self, query: str) -> List[Tag]:
+        elem = self.page.locator(query)
+        if not await elem.first.is_visible():
+            return []
+
+        return [
+            BeautifulSoup(await e.inner_html(), "html.parser") for e in await elem.all()
+        ]
+
     async def _scrap_product_title(self) -> str:
         title = await self.page.locator("p.title").first.text_content()
         return title if title else "No Title"
@@ -98,10 +107,10 @@ class PwKreamPageSubScraper(SubScraper):
     def _preprocess_review(self, raw_review: str):
         review = raw_review.strip().split(" ")
         if len(review) == 1:
-            review = 0
+            review = "0"
         else:
             review = review[-1].strip()
-        return int(review)
+        return int(review.replace(",", ""))
 
     async def _scrap_product_img_url(self):
         img_url = await self.page.locator(".picture.product_img").first.inner_html()
@@ -110,7 +119,7 @@ class PwKreamPageSubScraper(SubScraper):
 
     async def _scrap_brand(self):
         brand = await self.page.locator(
-            "div.product-branding-feed-container > div > div > div > span "
+            '//div[@class="product-branding-feed-container"]//div[@class="title"]'
         ).text_content()
 
         return brand if brand else "No brand"
@@ -358,13 +367,6 @@ class PwKreamPageSubScraper(SubScraper):
                 return [x[0], x[1], False, x[2].strip()]
 
         return list(map(lambda tags: preprocess_items(tags), body_list))
-
-    async def get_soup_all(self, value: str) -> List[Tag]:
-        await self.page.wait_for_timeout(2000)
-        e_list = await self.page.query_selector_all(value)
-        if len(e_list) == 0:
-            return []
-        return [BeautifulSoup(await e.inner_html(), "html.parser") for e in e_list]
 
 
 def convert_str_to_int(value: str) -> int:

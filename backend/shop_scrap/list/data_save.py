@@ -12,6 +12,7 @@ from model.db_model_shop import ShopProductCardSchema
 class ShopListDataSave(DataSave):
     def __init__(self, path: str):
         super().__init__(path)
+        self.currency = Currency()
 
     async def init_config(self):
         config = await self.load_scrap_config()
@@ -38,7 +39,6 @@ class ShopListDataSave(DataSave):
         self.save_preprocessed_data(preprocessed_data)
 
     def preprocess_data(self, list_data: List[Dict]) -> List[Dict]:
-        currency = Currency()
         list_data = self._adaptor(list_data)
 
         # currency
@@ -46,11 +46,11 @@ class ShopListDataSave(DataSave):
         for card in list_data:
             price = card["price"]
 
-            _, curr_name, origin_price = currency.get_price_info(price)
+            _, curr_name, origin_price = self.currency.get_price_info(price)
 
-            (_, _, us_price) = currency.change_currency_to_custom_usd(price)
+            (_, _, us_price) = self.currency.change_currency_to_custom_usd(price)
 
-            (_, _, kor_price) = currency.change_currency_to_buying_won(price)
+            (_, _, kor_price) = self.currency.change_currency_to_buying_won(price)
 
             lst.append(
                 ShopProductCardSchema(

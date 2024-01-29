@@ -1,0 +1,14 @@
+{
+    "scrap_time": "20240122-124336",
+    "num_of_plan": 1,
+    "num_processor": 1,
+    "db_update": false,
+    "job": [
+        {
+            "job": "nike acg",
+            "status": "success"
+        }
+    ],
+    "brand_name": "nike acg",
+    "shop_name": "seven_store"
+}

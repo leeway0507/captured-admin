@@ -1,4 +1,5 @@
-from typing import Protocol, List, Optional
+import json
+from typing import Protocol, List, Optional, Dict, Any
 from sqlalchemy import select
 from db.tables_shop import ShopProductCardTable
 from pydantic import BaseModel
@@ -20,11 +21,11 @@ class TargetExractor:
         self.strategy: TargetExtreactStrategy = AllStrategy
         self.session = session
 
-    async def extract_data(self, value: str) -> List:
+    async def extract_data(self, value: str | Dict) -> List:
         result = await self.get_target_values(value)
         return [TargetModel(**r.to_dict()).model_dump() for r in result]
 
-    async def get_target_values(self, value: str):
+    async def get_target_values(self, value: str | Dict):
         target_value = self.strategy.convert_value(value)
         stmt = self.strategy.stmt(target_value)
         return await self.execute_stmt(stmt)
@@ -38,9 +39,11 @@ class TargetExractor:
 def load_target_strategy(target_name: str) -> "TargetExtreactStrategy":
     target_dict = {
         "all": AllStrategy,
-        "product_id": ProductIdStrategy,
-        "shop_product_card": ShopProductCardIdStrategy,
-        "shop_name": ShopNameStrategy,
+        "productId": ProductIdStrategy,
+        "shopProductCard": ShopProductCardIdStrategy,
+        "shopName": ShopNameStrategy,
+        "shopNameBrandName": ShopNameBrandNameStrategy,
+        "lastScrap": lastScrapStrategy,
     }
     if not target_name in target_dict.keys():
         raise ValueError(f"{target_name} is not in {target_dict.keys()}")
@@ -54,7 +57,7 @@ class TargetExtreactStrategy(Protocol):
         ...
 
     @staticmethod
-    def convert_value(v: str) -> int | List[int]:
+    def convert_value(v: Any) -> int | list[str] | Dict:
         ...
 
 
@@ -117,3 +120,36 @@ class ShopNameStrategy:
     @staticmethod
     def convert_value(v: str):
         return v.split(",")
+
+
+class ShopNameBrandNameStrategy:
+    @staticmethod
+    def stmt(value: dict):
+        return select(ShopProductCardTable).where(
+            ShopProductCardTable.candidate == 2,
+            ShopProductCardTable.sold_out == 0,
+            ShopProductCardTable.shop_name.in_(value["shopName"]),
+            ShopProductCardTable.brand_name.in_(value["brandName"]),
+        )
+
+    @staticmethod
+    def convert_value(v: str):
+        json_file = json.loads(v)
+        return {
+            "shopName": json_file["shopName"].split(","),
+            "brandName": json_file["brandName"].split(","),
+        }
+
+
+class lastScrapStrategy:
+    @staticmethod
+    def stmt(value: List[datetime]):
+        return select(ShopProductCardTable).where(
+            ShopProductCardTable.sold_out == 0,
+            ShopProductCardTable.updated_at > value[0],
+        )
+
+    @staticmethod
+    def convert_value(v: str):
+        x = datetime.strptime(v, "%Y%m%d-%H%M%S")
+        return [x]

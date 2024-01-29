@@ -31,3 +31,6 @@ class FileManager:
         """폴더 존재 X인 경우 폴더 생성"""
         if not os.path.exists(path):
             os.makedirs(path, exist_ok=True)
+
+    def work_dir(self, *dir: str):
+        return os.path.join(*dir)

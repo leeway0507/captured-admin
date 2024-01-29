@@ -1,0 +1,120 @@
+{
+    "scrap_time": "20240123-000452",
+    "num_of_plan": 14,
+    "num_processor": 4,
+    "db_update": true,
+    "job": [
+        {
+            "shop_product_card_id": 4924,
+            "product_url": "https://www.sevenstore.com/tops/knitwear/needles-purple-mohair-cardigan/",
+            "shop_name": "seven_store",
+            "brand_name": "needles",
+            "product_id": "NS278",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 4945,
+            "product_url": "https://www.sevenstore.com/bottoms/trackpants/needles-ivy-green-poly-smooth-zipped-track-pant/",
+            "shop_name": "seven_store",
+            "brand_name": "needles",
+            "product_id": null,
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 4931,
+            "product_url": "https://www.sevenstore.com/tops/shirts/needles-black-7-cuts-zipped-flannel-shirt/",
+            "shop_name": "seven_store",
+            "brand_name": "needles",
+            "product_id": null,
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 4946,
+            "product_url": "https://www.sevenstore.com/bottoms/trackpants/needles-navy-poly-smooth-zipped-track-pant/",
+            "shop_name": "seven_store",
+            "brand_name": "needles",
+            "product_id": null,
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 4957,
+            "product_url": "https://www.sevenstore.com/bottoms/casual-trousers/needles-emerald-poly-smooth-narrow-track-pant/",
+            "shop_name": "seven_store",
+            "brand_name": "needles",
+            "product_id": null,
+            "status": "sub scraper failed: Locator expected to contain text 'Sizes'\nActual value: None \nCall log:\nLocatorAssertions.to_contain_text with timeout 10000ms\n  - waiting for locator(\".product-sizes-title\")\n"
+        },
+        {
+            "shop_product_card_id": 4941,
+            "product_url": "https://www.sevenstore.com/outerwear/coats-jackets/needles-navy-poly-smooth-track-jacket/",
+            "shop_name": "seven_store",
+            "brand_name": "needles",
+            "product_id": null,
+            "status": "sub scraper failed: Locator expected to contain text 'Sizes'\nActual value: None \nCall log:\nLocatorAssertions.to_contain_text with timeout 10000ms\n  - waiting for locator(\".product-sizes-title\")\n"
+        },
+        {
+            "shop_product_card_id": 5641,
+            "product_url": "https://www.sevenstore.com/accessories/hats-gloves/needles-polka-dot-poly-baseball-cap/",
+            "shop_name": "seven_store",
+            "brand_name": "needles",
+            "product_id": null,
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 4942,
+            "product_url": "https://www.sevenstore.com/bottoms/trackpants/needles-navy-poly-smooth-narrow-track-pant/",
+            "shop_name": "seven_store",
+            "brand_name": "needles",
+            "product_id": null,
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 4932,
+            "product_url": "https://www.sevenstore.com/tops/shirts/needles-brown-7-cuts-flannel-shirt/",
+            "shop_name": "seven_store",
+            "brand_name": "needles",
+            "product_id": null,
+            "status": "sub scraper failed: Locator expected to contain text 'Sizes'\nActual value: None \nCall log:\nLocatorAssertions.to_contain_text with timeout 10000ms\n  - waiting for locator(\".product-sizes-title\")\n"
+        },
+        {
+            "shop_product_card_id": 4952,
+            "product_url": "https://www.sevenstore.com/tops/shirts/needles-off-white-one-up-short-sleeve-shirt/",
+            "shop_name": "seven_store",
+            "brand_name": "needles",
+            "product_id": null,
+            "status": "sub scraper failed: Locator expected to contain text 'Sizes'\nActual value: None \nCall log:\nLocatorAssertions.to_contain_text with timeout 10000ms\n  - waiting for locator(\".product-sizes-title\")\n"
+        },
+        {
+            "shop_product_card_id": 4943,
+            "product_url": "https://www.sevenstore.com/bottoms/trackpants/needles-ivy-green-poly-smooth-narrow-track-pant/",
+            "shop_name": "seven_store",
+            "brand_name": "needles",
+            "product_id": null,
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 4956,
+            "product_url": "https://www.sevenstore.com/accessories/hats-gloves/needles-star-poly-baseball-cap/",
+            "shop_name": "seven_store",
+            "brand_name": "needles",
+            "product_id": null,
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 4944,
+            "product_url": "https://www.sevenstore.com/bottoms/trackpants/needles-wine-poly-smooth-narrow-track-pant/",
+            "shop_name": "seven_store",
+            "brand_name": "needles",
+            "product_id": null,
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 4940,
+            "product_url": "https://www.sevenstore.com/outerwear/coats-jackets/needles-wine-poly-smooth-track-jacket/",
+            "shop_name": "seven_store",
+            "brand_name": "needles",
+            "product_id": null,
+            "status": "sub scraper failed: Locator expected to contain text 'Sizes'\nActual value: None \nCall log:\nLocatorAssertions.to_contain_text with timeout 10000ms\n  - waiting for locator(\".product-sizes-title\")\n"
+        }
+    ]
+}

@@ -1,6 +1,13 @@
 import { getCandidateTable } from "../fetch";
 import { CostTable } from "./cost-table";
 
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+    title: "후보 테이블",
+    description: "...",
+};
+
 export default async function Page({
     params,
     searchParams,

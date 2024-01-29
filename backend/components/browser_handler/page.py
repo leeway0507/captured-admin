@@ -1,7 +1,7 @@
 import json
 from typing import Protocol, List, Type
 import os
-
+from random import randint
 
 import playwright.async_api as pw
 from bs4 import Tag, BeautifulSoup
@@ -17,7 +17,9 @@ class PageHandler(Protocol):
     def get_page(self) -> pw.Page:
         ...
 
-    async def scroll_down(self, max_scroll: int, time_delay: float) -> None:
+    async def scroll_down(
+        self, max_scroll: int, time_delay: int, step_size: int
+    ) -> None:
         ...
 
     async def check_curr_page_is_not_found_page(self, selector: str) -> bool:
@@ -47,7 +49,7 @@ class PwPageHandler(pw.Page):
                 button = await self.page.query_selector(xpath)
                 if button:
                     await button.evaluate("node => node.click()")
-                    await self.page.wait_for_timeout(1000)
+                    await self.page.wait_for_timeout(randint(100, 2000))
 
         if query_list:
             await self.save_cookies()
@@ -66,7 +68,9 @@ class PwPageHandler(pw.Page):
         with open(path, "w") as file:
             file.write(json.dumps(cookies, indent=2, default=str))
 
-    async def scroll_down(self, max_scroll: int = 10, time_delay: float = 500):
+    async def scroll_down(
+        self, max_scroll: int = 10, time_delay: int = 1000, step_size: int = 1000
+    ):
         """
         스크롤 다운
 
@@ -81,8 +85,12 @@ class PwPageHandler(pw.Page):
         i = 0
         while i < max_scroll:
             i += 1
-            await self.page.evaluate("(async () => { window.scrollBy(0, 400); })()")
-            await self.page.wait_for_timeout(time_delay)
+            await self.page.evaluate(
+                "(async () => { window.scrollBy(0, step_size); })()".replace(
+                    "step_size", str(randint(100, time_delay))
+                )
+            )
+            await self.page.wait_for_timeout(randint(100, time_delay))
 
     async def check_curr_page_is_not_found_page(self, selector: str) -> bool:
         not_found_page = await self.page.query_selector(selector)

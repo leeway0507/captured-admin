@@ -8,6 +8,7 @@ from components.abstract_class.scraper_sub import PwShopPageSubScraper
 from components.browser_handler import PwContextHandler, PwPageHandler
 from ..shop_list.consortium import PwConsortiumPageSubScraper
 from ..shop_list.seven_store import PwSevenStorePageSubScraper
+from ..shop_list.urban_industry import PwUrbanIndustryPageSubScraper
 
 
 class ShopPageScraperFactory:
@@ -18,7 +19,7 @@ class ShopPageScraperFactory:
     @property
     async def browser(self):
         if not self._browser:
-            self._browser = await PwContextHandler().start()
+            self._browser = await PwContextHandler.start(allow_proxy=False)
         return self._browser
 
     async def playwright(self, target_list: List, num_processor: int):
@@ -40,6 +41,17 @@ class ShopPageScraperFactory:
             scrap_time,
         )
 
+    @classmethod
+    def pw_sub_scraper_list(cls):
+        method_list = dir(PwShopPageSubScraperFactory)
+        return [m for m in method_list if not "__" in m]
+
+    @classmethod
+    def pw_sub_scraper_brand(cls, shop_name: str):
+        sub_scraper = getattr(PwShopPageSubScraperFactory(), shop_name)()
+        brand_list = sub_scraper._load_brand_list()
+        return brand_list["brand_list"]
+
 
 class PwShopPageSubScraperFactory:
     def consortium(self):
@@ -47,6 +59,9 @@ class PwShopPageSubScraperFactory:
 
     def seven_store(self):
         return PwSevenStorePageSubScraper()
+
+    def urban_industry(self):
+        return PwUrbanIndustryPageSubScraper()
 
 
 class PwShopPageScraper(Scraper):
@@ -74,8 +89,8 @@ class PwShopPageScraper(Scraper):
         for job in jobs:
             sub_scraper = getattr(PwShopPageSubScraperFactory(), job["shop_name"])()
             sub_scraper.late_binding(page_handler=page, **self.set_sub_scraper_params())
-            status = await self.execute_job(sub_scraper, job)
-            await self.save_scrap_status_to_temp_file(job, status)
+            status = await super().execute_job(sub_scraper, job)
+            await super().save_scrap_status_to_temp_file(job, status)
 
         if sub_scraper:
             await sub_scraper.page_handler.close_page()

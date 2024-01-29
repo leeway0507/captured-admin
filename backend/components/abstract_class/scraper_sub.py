@@ -4,6 +4,7 @@ from ..browser_handler import PageHandler, PwPageHandler
 from bs4 import Tag
 from pydantic import BaseModel
 from ..env import dev_env
+from random import randint
 
 
 class SubScraper(ABC):
@@ -66,10 +67,10 @@ class PwShopListSubScraper(SubScraper):
         reverse_not_found_result: bool = False,
         page_reload_after_cookies: bool = False,
         cookie_button_xpath: List[str] = [],
-        wait_until_load: int = 2000,
         using_scroll=False,
         scroll_down_time_delay=1000,
         max_scroll: int = 10,
+        scroll_step_size: int = 400,
     ):
         super().__init__()
         self.not_found_xpath: str = not_found_xpath
@@ -77,10 +78,10 @@ class PwShopListSubScraper(SubScraper):
         self.reverse_not_found_result: bool = reverse_not_found_result
         self.page_reload_after_cookies: bool = page_reload_after_cookies
         self.cookie_button_xpath: List[str] = cookie_button_xpath
-        self.wait_until_load: int = wait_until_load
         self.using_scroll = using_scroll
         self.scroll_down_time_delay = scroll_down_time_delay
         self.max_scroll: int = max_scroll
+        self.scroll_step_size: int = scroll_step_size
 
     def late_binding(self, page_handler: PwPageHandler, shop_name: str):
         self.page_handler = page_handler
@@ -88,9 +89,9 @@ class PwShopListSubScraper(SubScraper):
         self.shop_name = shop_name
 
     async def execute(self) -> Tuple[str, List[ListScrapData] | List]:
+        await self.page_handler.sleep_until(randint(0, 3000))
         await self.load_page()
         await self.handle_cookies()
-
         return (
             await self.scrap_data()
             if not await self.item_is_not_found()
@@ -100,7 +101,7 @@ class PwShopListSubScraper(SubScraper):
     async def load_page(self):
         url = self.get_url()
         await self.page_handler.go_to(url)
-        await self.page_handler.sleep_until(self.wait_until_load)
+        await self.page_handler.sleep_until(randint(500, 3000))
 
     def get_url(self) -> str:
         brand_list = self._load_brand_list()["data"]
@@ -167,7 +168,9 @@ class PwShopListSubScraper(SubScraper):
     async def page_scroll(self):
         if self.using_scroll:
             await self.page_handler.scroll_down(
-                max_scroll=self.max_scroll, time_delay=self.scroll_down_time_delay
+                max_scroll=self.max_scroll,
+                time_delay=self.scroll_down_time_delay,
+                step_size=self.scroll_step_size,
             )
 
     @abstractmethod
@@ -189,7 +192,6 @@ class PwShopListSubScraper(SubScraper):
 class PwShopPageSubScraper(SubScraper):
     def __init__(self):
         self._cookie_button_xpath = None
-        self.wait_until_load = 2000
 
     @property
     def cookie_button_xpath(self):
@@ -224,10 +226,19 @@ class PwShopPageSubScraper(SubScraper):
             "card_info": card_info,
         }
 
+    def _load_brand_list(self):
+        import os
+        import json
+
+        path = os.path.join(dev_env.SHOP_LIST_DIR, self.__name__(), "brand_list.json")
+
+        with open(path) as f:
+            return json.load(f)
+
     async def load_page(self):
         url = self.get_url()
         await self.page_handler.go_to(url)
-        await self.page_handler.sleep_until(self.wait_until_load)
+        await self.page_handler.sleep_until(randint(1000, 2000))
 
     def get_url(self) -> str:
         return self.job["product_url"]

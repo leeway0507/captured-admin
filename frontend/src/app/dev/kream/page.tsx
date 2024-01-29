@@ -19,7 +19,7 @@ export default function Main() {
     return (
         <div className="flex flex-col mx-auto">
             <div className="w-full flex-right py-4 gap-8">
-                <Link href="/dev/kream/scrap-result/result-list">
+                <Link href="/dev/kream/report/all">
                     <button className="black-bar w-[300px] p-4 text-xl">수집결과 보기</button>
                 </Link>
                 <button className="black-bar w-[300px] p-4 text-xl" onClick={handleCloseBrowser}>

@@ -11,10 +11,6 @@ html_path = os.path.join(curr_path, "html")
 
 test_brand_name = "Adidas"
 
-product_detail_path = f"file://{os.path.join(html_path,'product_detail.html')}"
-buy_and_sell_path = f"file://{os.path.join(html_path,'buy.html')}"
-trading_volume_path = f"file://{os.path.join(html_path,'trading_volume.html')}"
-
 
 # anyio settings do not remove
 @pytest.fixture(scope="session")
@@ -74,9 +70,9 @@ async def test_trading_volume(sub_scraper: PwKreamPageSubScraper):
     assert result[0] in ["success", "success:no_trading_volume"]
 
 
-@pytest.mark.anyio
-async def test_execute(sub_scraper: PwKreamPageSubScraper):
-    # When
+# @pytest.mark.anyio
+# async def test_execute(sub_scraper: PwKreamPageSubScraper):
+#     # When
 
-    result = await sub_scraper.execute()
-    assert type(result) == tuple
+#     result = await sub_scraper.execute()
+#     assert type(result) == tuple

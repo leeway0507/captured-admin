@@ -9,7 +9,7 @@ class PlatformPageScraperFactory:
         self.path = path
 
     async def kream(self, num_processor: int):
-        pw_kream_browser = await PwKreamContextHanlder.start()
+        pw_kream_browser = await PwKreamContextHanlder.start(allow_cookie=True)
         return PlatformPageScraper(
             self.path, pw_kream_browser, num_processor, PwKreamPageSubScraper
         )

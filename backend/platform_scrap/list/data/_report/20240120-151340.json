@@ -1,0 +1,14 @@
+{
+    "scrap_time": "20240120-151340",
+    "num_of_plan": 1,
+    "num_processor": 1,
+    "db_update": true,
+    "job": [
+        {
+            "job": "adidas",
+            "status": "success"
+        }
+    ],
+    "brand_name": "adidas",
+    "platform_type": "kream"
+}

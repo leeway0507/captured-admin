@@ -164,6 +164,8 @@ class PwConsortiumPageSubScraper(PwShopPageSubScraper):
         return product_id.upper()
 
     async def scrap_original_price_from_html(self):
-        xpath = '//div[@class="product-sales"]//span[@class="price"]'
+        xpath = '//div[@class="product-sales"]//span[@class="special-price"]'
+        if not await self.page.locator(xpath).is_visible():
+            xpath = '//div[@class="product-sales"]//span[@class="price"]'
         element = await self.page.query_selector(xpath)
         return await element.inner_text()  # type: ignore

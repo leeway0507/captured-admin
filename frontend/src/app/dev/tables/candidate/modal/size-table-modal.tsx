@@ -13,6 +13,7 @@ export type sizeProps = {
 
 export type sizeMetaProps = {
     shop: string[];
+    price: { [key: string]: number };
     size: sizeRowDataProps[];
 };
 
@@ -67,7 +68,8 @@ const SizeTableModal = ({
                         onClick={() => handleShop(v)}
                         key={v}
                         className={`${selectedShopName.includes(v) ? enable : disable} py-2 `}>
-                        {v}
+                        <div>{v}</div>
+                        <div>({size.meta.price[v].toLocaleString()})</div>
                     </button>
                 ))}
             </div>

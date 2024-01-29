@@ -11,8 +11,8 @@ class PlatformListReport(PlatformReport):
     ## self.save_report()
 
     async def create_report_template(self) -> ScrapReportDataBase:
-        scrap_config = await self.load_scrap_config()
-        scrap_status = await self.load_scrap_status()
+        scrap_config = await super().load_scrap_config()
+        scrap_status = await super().load_scrap_status()
 
         return PlatformListReportData(
             scrap_time=scrap_config["scrap_time"],

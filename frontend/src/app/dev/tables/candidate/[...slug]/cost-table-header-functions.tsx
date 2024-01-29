@@ -1,6 +1,6 @@
 "use client";
 import { deleteCandidateCard, patchCandidateCard, updateCandidateCard, getSizeData } from "../fetch";
-import { getKreamColor } from "../fetch";
+import { getKreamData } from "../fetch";
 import { useState, useCallback } from "react";
 import { toast } from "react-toastify";
 import RegisterProductFormModal from "@/app/production/product/component/modal/register-product-form-modal";
@@ -12,10 +12,7 @@ export const candidateClass = "p-2 h-[150px] flex-center cursor-pointer";
 
 export const updateToDB = (props: any) => {
     const { shopProductCardId, coupon, productId } = props.row.original;
-    const value = {
-        coupon: coupon,
-        product_id: productId,
-    };
+    const value = { coupon, productId };
     const handler = async () => {
         await updateCandidateCard(shopProductCardId, value).then((res) => {
             res.status === 200 ? toast.success("업데이트 성공") : toast.error("업데이트 실패");
@@ -29,11 +26,11 @@ export const updateToDB = (props: any) => {
 };
 
 export const GetSizeTable = (props: any) => {
-    const { productId, shopName } = props.row.original;
+    const { shopProductCardId, shopName } = props.row.original;
     const [isOpen, setIsOpen] = useState(false);
     const [size, setSize] = useState<sizeProps>();
     const openToggle = async () => {
-        await getSizeData(productId).then((res) => {
+        await getSizeData(shopProductCardId).then((res) => {
             setSize(res.data);
             res.data.meta.shop.length === 0 ? toast.info("사이즈가 존재하지 않습니다.") : setIsOpen(true);
         });
@@ -53,15 +50,18 @@ export const GetSizeTable = (props: any) => {
 };
 
 export const SendDraft = (props: any) => {
-    const sku = props.row.original.prodCard?.sku;
+    const sku = props.row.original.productInfo?.sku;
+
     const [isOpen, setIsOpen] = useState(false);
 
-    const { brandName, shopProductName, productId } = props.row.original;
+    const { brandName, shopProductName, productId, korBrand, korProductName } = props.row.original;
     const { sellPrice20P, sellPrice10P } = GetPrices(props);
     const shippingFee = 15000;
     const avgRetailPrice = Math.round((sellPrice10P + sellPrice20P) / 2);
     const [defaultData, setDefaultData] = useState({
         brand: brandName,
+        korBrand: korBrand,
+        korProductName: korProductName,
         productName: shopProductName.replaceAll("-", " "),
         productId: productId,
         price: Math.round((avgRetailPrice - shippingFee) / 1000) * 1000,
@@ -74,9 +74,9 @@ export const SendDraft = (props: any) => {
     });
 
     const openToggle = () => {
-        getKreamColor(productId).then((res) => {
+        getKreamData(productId).then((res) => {
             setIsOpen(true);
-            setDefaultData((old) => ({ ...old, color: res.data.color ?? "/" }));
+            setDefaultData((old) => ({ ...old, color: res.data[0]?.color ?? "/" }));
         });
     };
 
@@ -90,9 +90,8 @@ export const SendDraft = (props: any) => {
             )}
         </>
     ) : (
-        <div className="bg-green-600 text-white p-2">
-            <div>배포 중</div>
-            <div>sku:{sku}</div>
+        <div className="bg-green-600 text-white p-2 text-sm">
+            <div>SKU:{sku}</div>
         </div>
     );
 };

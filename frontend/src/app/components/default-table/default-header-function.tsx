@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import Select from "react-select";
-// import KreamProductModal from "@/app/dev/tables/kream/[...slug]/modal/kream-product-modal";
+import KreamProductModal from "@/app/dev/tables/kream/[...slug]/modal/kream-product-modal";
 
 export const TableCell = (props: any) => {
     const { row, column, table, getValue } = props;
@@ -48,6 +48,47 @@ const openToggle = (productId: string) => {
     );
 };
 
+export const OpenKreamDetailWithHover = (
+    searchType: string,
+    value: string,
+    cost: number,
+    isKreamMatch: boolean = true
+) => {
+    const [isOpen, setIsOpen] = useState(false);
+
+    return (
+        <>
+            {isKreamMatch ? (
+                <button
+                    className="bg-orange-600 hover:bg-orange-700 p-2  text-white whitespace-nowrap"
+                    onMouseOver={() => {
+                        setIsOpen(true);
+                    }}>
+                    {" "}
+                    크림정보{" "}
+                </button>
+            ) : (
+                <button
+                    className="bg-gray-200 hover:bg-gray-300 p-2 whitespace-nowrap"
+                    onClick={() => {
+                        openToggle(value);
+                    }}>
+                    {" "}
+                    찾아보기{" "}
+                </button>
+            )}
+            {isOpen && (
+                <KreamProductModal
+                    searchType={searchType}
+                    value={value}
+                    isOpen={isOpen}
+                    setIsOpen={setIsOpen}
+                    cost={Math.round(cost)}
+                />
+            )}
+        </>
+    );
+};
 export const OpenKreamDetail = (searchType: string, value: string, cost: number, isKreamMatch: boolean = true) => {
     const [isOpen, setIsOpen] = useState(false);
 
@@ -72,7 +113,7 @@ export const OpenKreamDetail = (searchType: string, value: string, cost: number,
                     찾아보기{" "}
                 </button>
             )}
-            {/* {isOpen && (
+            {isOpen && (
                 <KreamProductModal
                     searchType={searchType}
                     value={value}
@@ -80,7 +121,7 @@ export const OpenKreamDetail = (searchType: string, value: string, cost: number,
                     setIsOpen={setIsOpen}
                     cost={Math.round(cost)}
                 />
-            )} */}
+            )}
         </>
     );
 };

@@ -1,12 +1,21 @@
 "use client";
 import Link from "next/link";
-import Image from "next/image";
-import { useState } from "react";
+import { loadShopListName } from "../../shop/fetch-scrap";
+import { useState, useEffect } from "react";
 
 const childClass = "w-[130px] 2xl:w-[180px] h-[130px] 2xl:h-[180px] flex-center";
 
 const ShopList = () => {
-    const shopArray = JSON.parse(process.env.NEXT_PUBLIC_SHOP_ARRAY!);
+    const [shopArray, setShopArray] = useState<string[]>([""]);
+
+    useEffect(() => {
+        const d = async () => {
+            var c = await loadShopListName();
+            setShopArray(c.data);
+        };
+
+        d();
+    }, []);
 
     return (
         <div className="grid grid-cols-6 gap-1">

@@ -4,6 +4,7 @@ import { getProductData } from "../fetch";
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import Select from "react-select";
+import { ThumbnailUploadBtn, ThumbnailMetaUpdateBtn, ImageUploadBtn } from "./image-upload";
 
 const ProductInfoPagination = ({
     currentPage,
@@ -90,6 +91,9 @@ const ProductInfoPagination = ({
                     setPageSize(Number(e.value));
                 }}
             />
+            <ThumbnailUploadBtn />
+            <ThumbnailMetaUpdateBtn />
+            <ImageUploadBtn />
         </div>
     );
 };

@@ -8,6 +8,7 @@ const nextConfig = {
             "www.sevenstore.com",
             "cdn.afew-store.com",
             "d1r7wlqxs7xy7.cloudfront.net",
+            "www.urbanindustry.co.uk",
         ],
     },
 };

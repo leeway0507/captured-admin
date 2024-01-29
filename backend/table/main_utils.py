@@ -49,29 +49,21 @@ async def get_production_table_data(
     filter = create_filter_query_dict(**request_filter)
     sort_type, column, order_by = create_order_by_filter(request_filter.get("sort_by"))
 
-    # group_by
-    group_by = SizeTable.sku
-    if "size_array" in filter.keys():
-        group_by = ProductInfoTable.sku
-
     db = session_local()
     result = await db.execute(
-        select(ProductInfoTable, func.group_concat(SizeTable.size).label("size"))
-        .join(SizeTable, ProductInfoTable.sku == SizeTable.sku)
+        select(ProductInfoTable)
         .where(
             *filter.values(),
             column < current_cursor,
-            SizeTable.available == 1,
             ProductInfoTable.deploy != -1,
         )
-        .group_by(group_by)
         .order_by(*order_by)
         .limit(limit)
     )
     await db.close()  # type: ignore
 
     data = [
-        ProductInfoDBSchema(**row[0].to_dict(), size=row[1]).model_dump(by_alias=True)
+        ProductInfoDBSchema(**row[0].to_dict()).model_dump(by_alias=True)
         for row in result
     ]
     return ProductResponseSchema(data=data, currentPage=page, lastPage=last_page)

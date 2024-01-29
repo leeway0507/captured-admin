@@ -1,59 +1,35 @@
-export async function getScrapList() {
-    const url = `${process.env.NEXT_PUBLIC_API_URL}/api/dev/kream/get-platform-list-report-list`;
+//list
+export const getPlatformListReportAll = async () => {
+    const url = `${process.env.NEXT_PUBLIC_API_URL}/api/platform/list/report/list`;
     const res = await fetch(url);
     return { status: res.status, data: await res.json() };
-}
-
-export async function getScrapListReport(scrapName: string) {
-    const url = `${process.env.NEXT_PUBLIC_API_URL}/api/dev/kream/get-platform-list-report?scrapName=${scrapName}`;
+};
+export const getPlatformListReportItem = async (reportName: string) => {
+    const url = `${process.env.NEXT_PUBLIC_API_URL}/api/platform/list/report/item/${reportName}`;
     const res = await fetch(url);
     return { status: res.status, data: await res.json() };
-}
+};
 
-export async function getScrapPageReport(scrapName: string) {
-    const url = `${process.env.NEXT_PUBLIC_API_URL}/api/dev/kream/get-platform-page-report?scrapName=${scrapName}`;
+export const insertPlatformListData = async (scrapTime: string) => {
+    const url = `${process.env.NEXT_PUBLIC_API_URL}/api/platform/list/sync_db/${scrapTime}`;
+    const res = await fetch(url, { method: "POST" });
+    return { status: res.status, data: await res.json() };
+};
+
+//page
+export const getPlatformPageReportAll = async () => {
+    const url = `${process.env.NEXT_PUBLIC_API_URL}/api/platform/page/report/list`;
     const res = await fetch(url);
     return { status: res.status, data: await res.json() };
-}
-
-export async function getScrapPage() {
-    const url = `${process.env.NEXT_PUBLIC_API_URL}/api/dev/kream/get-platform-page-report-list`;
+};
+export const getPlatformPageReportItem = async (reportName: string) => {
+    const url = `${process.env.NEXT_PUBLIC_API_URL}/api/platform/page/report/item/${reportName}`;
     const res = await fetch(url);
     return { status: res.status, data: await res.json() };
-}
+};
 
-export async function insertListScrapToDB(platformType: string, scrapTime: string) {
-    const url = `${process.env.NEXT_PUBLIC_API_URL}/api/dev/kream/db/update-scrap-kream-product-card-list`;
-
-    const queryParams = new URLSearchParams({
-        platformType,
-        scrapTime,
-    });
-
-    const res = await fetch(url + "?" + queryParams);
+export const insertPlatformPageData = async (scrapType: string, scrapTime: string) => {
+    const url = `${process.env.NEXT_PUBLIC_API_URL}/api/platform/page/sync_db/${scrapTime}`;
+    const res = await fetch(url, { method: "POST" });
     return { status: res.status, data: await res.json() };
-}
-
-export async function insertPageScrapToDB(searchValue: string, scrapTime: string) {
-    const url = `${process.env.NEXT_PUBLIC_API_URL}/api/dev/kream/db/update-all-detail-kream-to-db`;
-
-    const queryParams = new URLSearchParams({
-        searchValue,
-        scrapTime,
-    });
-
-    const res = await fetch(url + "?" + queryParams);
-    return { status: res.status, data: await res.json() };
-}
-
-export async function RestartSavingCreatelog(scrapName: string) {
-    const url = `${process.env.NEXT_PUBLIC_API_URL}/api/dev/kream/restart-saving-create-log?scrapName=${scrapName}`;
-    const res = await fetch(url);
-    return { status: res.status, data: await res.json() };
-}
-
-export async function RestartSavingLastScrapedFiles(brandName: string) {
-    const url = `${process.env.NEXT_PUBLIC_API_URL}/api/dev/kream/restart-saving-last-scraped-files?brandName=${brandName}`;
-    const res = await fetch(url);
-    return { status: res.status, data: await res.json() };
-}
+};

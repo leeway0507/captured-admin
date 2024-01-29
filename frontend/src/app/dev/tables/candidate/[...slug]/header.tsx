@@ -105,7 +105,7 @@ export const productCardColumns = [
             );
         },
     }),
-    columnHelper.accessor("brandName", {
+    columnHelper.accessor("shopProductName", {
         header: "이미지(링크)",
         cell: (props) => (
             <div className="flex-center flex-col">
@@ -122,40 +122,14 @@ export const productCardColumns = [
                 </div>
 
                 <div>{props.row.original.shopName}</div>
-                <div>{props.row.original.brandName}</div>
+                <div>{props.row.original.shopProductName}</div>
             </div>
         ),
         meta: {
             type: "text",
         },
     }),
-    // columnHelper.accessor("brandName", {
-    //     header: "이미지(링크)",
-    //     cell: (props) => (
-    //         <div className="flex-center flex-col">
-    //             <Link
-    //                 href={props.row.original.productUrl}
-    //                 target="_blank"
-    //                 rel="noreferrer"
-    //                 className="underline text-blue-700 pointer-cursor hover:opacity-80">
-    //                 <div className="relative h-[150px] w-[150px] ">
-    //                     <Image
-    //                         src={props.row.original.shopProductImgUrl}
-    //                         alt={props.row.original.shopProductName}
-    //                         fill
-    //                         sizes="150px"
-    //                         style={{ objectFit: "contain" }}
-    //                     />
-    //                 </div>
-    //             </Link>
-    //             <div>{props.row.original.shopName}</div>
-    //             <div>{props.row.original.brandName}</div>
-    //         </div>
-    //     ),
-    //     meta: {
-    //         type: "text",
-    //     },
-    // }),
+
     columnHelper.accessor((original) => original.productInfo?.sku, {
         header: "기능",
         cell: features,

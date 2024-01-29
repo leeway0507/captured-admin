@@ -43,6 +43,7 @@ class ProdEnv(BaseSettings):
 
     PRODUCTION_SIZE_BATCH: str
     PRODUCT_IMAGE_DIR: str
+    PRODUCT_THUMBNAIL_DIR: str
 
     CLOUDFRONT_DISTRIBUTION_ID: str
 

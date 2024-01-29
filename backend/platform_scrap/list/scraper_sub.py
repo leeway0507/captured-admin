@@ -106,7 +106,7 @@ class PwKreamListSubScraper(SubScraper):
         )
 
     def _get_kream_id(self, card: Tag) -> int:
-        return int(card.find("a", class_="item_inner")["href"].split("/")[-1])  # type: ignore
+        return int(card.find("a", class_="item_inner")["href"].split("/")[-1].split("?")[0])  # type: ignore
 
     def _get_kream_product_img_url(self, card: Tag) -> str:
         return card.find("img", class_="image full_width")["src"]  # type: ignore

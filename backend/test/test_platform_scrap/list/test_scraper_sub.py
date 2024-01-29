@@ -48,6 +48,8 @@ async def test_extract_card_list_from_page(sub_scraper: PwKreamListSubScraper):
     # When
     raw_card = await sub_scraper._extract_card_list_from_page()
 
+    print(raw_card)
+
     assert type(raw_card[0]) == BeautifulSoup  # type:ignore
 
 

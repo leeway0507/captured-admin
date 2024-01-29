@@ -38,8 +38,8 @@ class SizeBatchMain(ShopPageMain):
         self, scrap_time: str, batch_size: int = 100, num_processor: int = 6
     ):
         await self.init(batch_size, num_processor, scrap_time)
-        # await self.scrap_candidate_page()
-        # await self.sync_scrap_data_to_shop_db()
+        await self.scrap_candidate_page()
+        await self.sync_scrap_data_to_shop_db()
         await self.create_prod_batch_data()
         await self.sync_prod_batch_data_to_prod_db()
         self.send_status_to_sns(f"{self.scrap_time} Done!!")
@@ -60,9 +60,8 @@ class SizeBatchMain(ShopPageMain):
             self.admin_session, self.prod_session, self.path, self.scrap_time
         )
 
-        self.ShopPageSyncDB = ShopPageDataSyncDB(
-            self.admin_session, self.path, self.scrap_time
-        )
+        self.ShopPageSyncDB = ShopPageDataSyncDB(self.admin_session, self.path)
+        self.ShopPageSyncDB.scrap_time = self.scrap_time
 
         self.ShopDataSyncProdDB = SizeDataSyncProdDB(
             self.dev_session, self.prod_session, self.path, self.scrap_time

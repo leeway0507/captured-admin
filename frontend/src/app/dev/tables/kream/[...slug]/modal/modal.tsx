@@ -22,7 +22,7 @@ const BaseModal = (props: kreamDetailModalProps) => {
                     leave="ease-in duration-200"
                     leaveFrom="opacity-100"
                     leaveTo="opacity-0">
-                    <div className="fixed inset-0 bg-black bg-opacity-60" />
+                    <div className="fixed inset-0" />
                 </Transition.Child>
 
                 <div className="fixed inset-0 overflow-y-auto">
@@ -37,7 +37,9 @@ const BaseModal = (props: kreamDetailModalProps) => {
                             leaveTo="opacity-0 scale-80">
                             <Dialog.Panel className="w-full max-w-[50vw] max-h-[90vh] h-full overflow-auto bg-white p-6 text-left align-middle">
                                 <div className="mt-2">
-                                    <div className="text-sm text-gray-500 pb-4">{content}</div>
+                                    <div className="text-sm text-gray-500 pb-4" onMouseLeave={closeModal}>
+                                        {content}
+                                    </div>
                                 </div>
                             </Dialog.Panel>
                         </Transition.Child>

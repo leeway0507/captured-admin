@@ -3,7 +3,7 @@ import BaseModal from "./base-modal";
 import { CreateproductCardProps } from "@/app/types/type";
 import { useEffect, useReducer } from "react";
 import CustomInput from "@/app/production/prod-components/custom-input/cusotm-input";
-import { createProduct } from "../fetch";
+import { createProductData } from "../fetch";
 import { toast } from "react-toastify";
 import Select from "react-select";
 import envJson from "@/app/env.json";
@@ -15,10 +15,20 @@ type CategorySpec = {
     [key: string]: string[]; // Index signature
 };
 
+const korBrandArr = envJson.NEXT_PUBLIC_KOR_BRAND_OBJECT;
+
 const reducer = (state: CreateproductCardProps, action: { type: string; payload: any }) => {
     switch (action.type) {
         case "brand":
-            return { ...state, brand: action.payload };
+            console.log("korBrandArr[action.payload as keyof typeof korBrandArr]");
+            console.log(korBrandArr[action.payload as keyof typeof korBrandArr]);
+            return {
+                ...state,
+                brand: action.payload,
+                korBrand: korBrandArr[action.payload as keyof typeof korBrandArr],
+            };
+        case "korProductName":
+            return { ...state, korProductName: action.payload };
         case "productName":
             return { ...state, productName: action.payload };
         case "productId":
@@ -86,7 +96,7 @@ const RegisterProductFormModal = ({
                 if (v[1] === "") return toast.error(`${v[0]}이 비어있습니다.}`);
             });
 
-        return await createProduct(state).then((res) =>
+        return await createProductData(state).then((res) =>
             res.status === 200
                 ? (closeModal(), toast.success(`제품 등록에 성공했습니다. sku : ${res.data.sku}`, { autoClose: 5000 }))
                 : toast.error("제품 등록에 실패했습니다.")
@@ -139,17 +149,25 @@ const RegisterProductFormModal = ({
                     />
                 </div>
                 <div className="grid grid-cols-2 gap-8">
-                    <div className="col-span-2">
-                        <CustomInput
-                            label={"Product Name"}
-                            value={state.productName}
-                            setValue={(e) => dispatch({ type: "productName", payload: e })}
-                            id="productName"
-                            info=""
-                            checkPolicy={() => true}
-                            type="text"
-                        />
-                    </div>
+                    <CustomInput
+                        label={"Product Name"}
+                        value={state.productName}
+                        setValue={(e) => dispatch({ type: "productName", payload: e })}
+                        id="productName"
+                        info=""
+                        checkPolicy={() => true}
+                        type="text"
+                    />
+                    <CustomInput
+                        label={"Kor Product Name"}
+                        value={state.korProductName}
+                        setValue={(e) => dispatch({ type: "korProductName", payload: e })}
+                        id="korProductName"
+                        info=""
+                        checkPolicy={() => true}
+                        type="text"
+                    />
+
                     <CustomInput
                         label={"Product ID"}
                         value={state.productId}

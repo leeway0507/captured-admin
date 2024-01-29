@@ -1,0 +1,1064 @@
+{
+    "scrap_time": "20240124-214855",
+    "num_of_plan": 132,
+    "num_processor": 6,
+    "db_update": true,
+    "job": [
+        {
+            "shop_product_card_id": 4009,
+            "product_url": "https://www.consortium.co.uk/veja-wata-ii-low-white-pierre-pl0101401b.html",
+            "shop_name": "consortium",
+            "brand_name": "véja",
+            "product_id": "PL0101401B",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 6220,
+            "product_url": "https://www.urbanindustry.co.uk/products/adidas-originals-allteam-shoes-collegiate-green-pantone-off-white-id2123",
+            "shop_name": "urban_industry",
+            "brand_name": "adidas originals",
+            "product_id": "ID2123",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 118,
+            "product_url": "https://www.consortium.co.uk/adidas-originals-handball-spezial-core-black-cloud-white-gum-5-db3021.html",
+            "shop_name": "consortium",
+            "brand_name": "adidas",
+            "product_id": "DB3021",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 6438,
+            "product_url": "https://www.urbanindustry.co.uk/products/patagonia-torrentshell-3l-jacket-obsidian-plum",
+            "shop_name": "urban_industry",
+            "brand_name": "patagonia",
+            "product_id": "85241",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 361,
+            "product_url": "https://www.consortium.co.uk/adidas-superturf-adventure-savanna-magic-earth-hemp-gw3518.html",
+            "shop_name": "consortium",
+            "brand_name": "adidas",
+            "product_id": "GW3518",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 1214,
+            "product_url": "https://www.consortium.co.uk/patagonia-microdini-hooded-fleece-tidepool-blue-26210-tidb.html",
+            "shop_name": "consortium",
+            "brand_name": "patagonia",
+            "product_id": "26210-TIDB",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 6223,
+            "product_url": "https://www.urbanindustry.co.uk/products/adidas-originals-samba-og-shoes-shadow-violet-preloved-green-fum-4-ig6175",
+            "shop_name": "urban_industry",
+            "brand_name": "adidas originals",
+            "product_id": "IG6175",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 120,
+            "product_url": "https://www.consortium.co.uk/adidas-originals-hand-2-semi-lucid-blue-footwear-white-matte-gold-id2115.html",
+            "shop_name": "consortium",
+            "brand_name": "adidas",
+            "product_id": "ID2115",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 4061,
+            "product_url": "https://www.consortium.co.uk/clarks-originals-wallabee-black-hair-on-26174031.html",
+            "shop_name": "consortium",
+            "brand_name": "clarks originals",
+            "product_id": "26174031",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 6465,
+            "product_url": "https://www.urbanindustry.co.uk/products/the-north-face-1996-retro-nuptse-jacket-boysenberry-tnf-black-nf0a3c8dkk9",
+            "shop_name": "urban_industry",
+            "brand_name": "the north face",
+            "product_id": "NF0A3C8DKK9",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 1215,
+            "product_url": "https://www.consortium.co.uk/patagonia-microdini-1-2-zip-fleece-pullover-tidepool-blue-26200-tidb.html",
+            "shop_name": "consortium",
+            "brand_name": "patagonia",
+            "product_id": "26200-TIDB",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 362,
+            "product_url": "https://www.consortium.co.uk/adidas-originals-hyperturf-earth-brown-core-black-collegiate-green-hq6606.html",
+            "shop_name": "consortium",
+            "brand_name": "adidas",
+            "product_id": "HQ6606",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 6272,
+            "product_url": "https://www.urbanindustry.co.uk/products/columbia-birchwood-jacket-stone-green",
+            "shop_name": "urban_industry",
+            "brand_name": "columbia",
+            "product_id": "2051121",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 121,
+            "product_url": "https://www.consortium.co.uk/adidas-originals-hand-2-collegiate-green-footwear-white-matte-gold-id2114.html",
+            "shop_name": "consortium",
+            "brand_name": "adidas",
+            "product_id": "ID2114",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 1216,
+            "product_url": "https://www.consortium.co.uk/patagonia-microdini-1-2-zip-fleece-pullover-wax-red-26200-wax.html",
+            "shop_name": "consortium",
+            "brand_name": "patagonia",
+            "product_id": "26200-WAX",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 382,
+            "product_url": "https://www.consortium.co.uk/adidas-originals-mexicana-day-of-the-dead-core-black-core-black-off-white-h01824.html",
+            "shop_name": "consortium",
+            "brand_name": "adidas",
+            "product_id": "H01824",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 6471,
+            "product_url": "https://www.urbanindustry.co.uk/products/the-north-face-norm-6-panel-cap-almond-butter",
+            "shop_name": "urban_industry",
+            "brand_name": "the north face",
+            "product_id": "NF0A3SH3I0J",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 4063,
+            "product_url": "https://www.consortium.co.uk/clarks-originals-wallabee-black-leather-26155514.html",
+            "shop_name": "consortium",
+            "brand_name": "clarks originals",
+            "product_id": "26155514",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 6274,
+            "product_url": "https://www.urbanindustry.co.uk/products/columbia-puffect-hooded-jacket-black",
+            "shop_name": "urban_industry",
+            "brand_name": "columbia",
+            "product_id": "2008413",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 126,
+            "product_url": "https://www.consortium.co.uk/adidas-originals-gazelle-indoor-blue-fusion-cloud-white-gold-metallic-hq8717.html",
+            "shop_name": "consortium",
+            "brand_name": "adidas",
+            "product_id": "HQ8717",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 1218,
+            "product_url": "https://www.consortium.co.uk/patagonia-microdini-1-2-zip-fleece-pullover-plume-grey-26200-plgy.html",
+            "shop_name": "consortium",
+            "brand_name": "patagonia",
+            "product_id": "26200-PLGY",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 4073,
+            "product_url": "https://www.consortium.co.uk/clarks-originals-wallabee-boot-black-suede-26155517.html",
+            "shop_name": "consortium",
+            "brand_name": "clarks originals",
+            "product_id": "26155517",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 6472,
+            "product_url": "https://www.urbanindustry.co.uk/products/the-north-face-printed-campshire-fleece-hoodie-sulphur-moss-mountain-geo-print-nf0a84hxovh",
+            "shop_name": "urban_industry",
+            "brand_name": "the north face",
+            "product_id": "NF0A84HXOVH",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 531,
+            "product_url": "https://www.consortium.co.uk/adidas-skateboarding-busenitz-vintage-gold-beige-impact-yellow-gum-5-gy6903.html",
+            "shop_name": "consortium",
+            "brand_name": "adidas",
+            "product_id": "GY6903",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 6276,
+            "product_url": "https://www.urbanindustry.co.uk/products/columbia-mountainside-heavyweight-fleece-night-wave-metal-1911083",
+            "shop_name": "urban_industry",
+            "brand_name": "columbia",
+            "product_id": "1911083",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 127,
+            "product_url": "https://www.consortium.co.uk/adidas-originals-gazelle-indoor-bold-orange-cloud-white-gum-hq8718.html",
+            "shop_name": "consortium",
+            "brand_name": "adidas",
+            "product_id": "HQ8718",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 4096,
+            "product_url": "https://www.consortium.co.uk/clarks-originals-coal-london-maple-suede-26171491.html",
+            "shop_name": "consortium",
+            "brand_name": "clarks originals",
+            "product_id": "26171491",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 1232,
+            "product_url": "https://www.consortium.co.uk/patagonia-classic-retro-x-fleece-jacket-new-navy-w-wax-red-23056-newa.html",
+            "shop_name": "consortium",
+            "brand_name": "patagonia",
+            "product_id": "23056-NEWA",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 543,
+            "product_url": "https://www.consortium.co.uk/adidas-skateboarding-3mc-core-black-cloud-white-better-scarlet-hr0065.html",
+            "shop_name": "consortium",
+            "brand_name": "adidas",
+            "product_id": "HR0065",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 6475,
+            "product_url": "https://www.urbanindustry.co.uk/products/the-north-face-high-pile-1-4-fleece-khaki-stone",
+            "shop_name": "urban_industry",
+            "brand_name": "the north face",
+            "product_id": "NF0A5GFJLK5",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 6287,
+            "product_url": "https://www.urbanindustry.co.uk/products/columbia-omni-tech-ampli-dry-shell-jacket-metal-night-wave-zip-1932854",
+            "shop_name": "urban_industry",
+            "brand_name": "columbia",
+            "product_id": "1932854",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 4097,
+            "product_url": "https://www.consortium.co.uk/clarks-originals-coal-london-black-suede-26171744.html",
+            "shop_name": "consortium",
+            "brand_name": "clarks originals",
+            "product_id": "26171744",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 1252,
+            "product_url": "https://www.consortium.co.uk/patagonia-funhoggers-anorak-pullover-jacket-classic-tan-20325-csc.html",
+            "shop_name": "consortium",
+            "brand_name": "patagonia",
+            "product_id": "20325-CSC",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 129,
+            "product_url": "https://www.consortium.co.uk/adidas-originals-gazelle-indoor-collegiate-green-haze-sky-victory-gold-ig9979.html",
+            "shop_name": "consortium",
+            "brand_name": "adidas",
+            "product_id": "IG9979",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 587,
+            "product_url": "https://www.consortium.co.uk/adidas-skateboarding-shmoofoil-butterfly-pullover-hooded-sweatshirt-black-multicolour-hc2197.html",
+            "shop_name": "consortium",
+            "brand_name": "adidas",
+            "product_id": "HC2197",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 6477,
+            "product_url": "https://www.urbanindustry.co.uk/products/the-north-face-rmst-denali-jacket-tnf-black",
+            "shop_name": "urban_industry",
+            "brand_name": "the north face",
+            "product_id": "NF0A7UQ8JK3",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 6305,
+            "product_url": "https://www.urbanindustry.co.uk/products/columbia-silver-falls-hooded-jacket-black",
+            "shop_name": "urban_industry",
+            "brand_name": "columbia",
+            "product_id": "2034506",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 1279,
+            "product_url": "https://www.consortium.co.uk/patagonia-isthmus-parka-ink-black-27022-inbk.html",
+            "shop_name": "consortium",
+            "brand_name": "patagonia",
+            "product_id": "27022-INBK",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 4104,
+            "product_url": "https://www.consortium.co.uk/clarks-originals-by-ronnie-fieg-rossendale-8th-st-collection-stone-26170225.html",
+            "shop_name": "consortium",
+            "brand_name": "clarks originals",
+            "product_id": "26170225",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 140,
+            "product_url": "https://www.consortium.co.uk/adidas-originals-gazelle-maroon-chalk-white-gum-ig4990.html",
+            "shop_name": "consortium",
+            "brand_name": "adidas",
+            "product_id": "IG4990",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 6482,
+            "product_url": "https://www.urbanindustry.co.uk/products/the-north-face-ampato-quilted-liner-jacket-tnf-black",
+            "shop_name": "urban_industry",
+            "brand_name": "the north face",
+            "product_id": "NF0A852AJK3",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 619,
+            "product_url": "https://www.consortium.co.uk/adidas-originals-by-human-made-windbreaker-hm-collegiate-navy-gm4256.html",
+            "shop_name": "consortium",
+            "brand_name": "adidas",
+            "product_id": "GM4256",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 6308,
+            "product_url": "https://www.urbanindustry.co.uk/products/columbia-bulo-point-ii-down-jacket-black",
+            "shop_name": "urban_industry",
+            "brand_name": "columbia",
+            "product_id": "1985473",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 4105,
+            "product_url": "https://www.consortium.co.uk/clarks-originals-by-ronnie-fieg-rossendale-8th-st-collection-cola-suede-26170226.html",
+            "shop_name": "consortium",
+            "brand_name": "clarks originals",
+            "product_id": "26170226",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 1283,
+            "product_url": "https://www.consortium.co.uk/patagonia-reversible-silent-down-fleece-jacket-basin-green-20670-bsng.html",
+            "shop_name": "consortium",
+            "brand_name": "patagonia",
+            "product_id": "20670-BSNG",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 143,
+            "product_url": "https://www.consortium.co.uk/adidas-originals-gazelle-preloved-red-off-white-cream-white-gy7339.html",
+            "shop_name": "consortium",
+            "brand_name": "adidas",
+            "product_id": "GY7339",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 6340,
+            "product_url": "https://www.urbanindustry.co.uk/products/new-balance-mt580ve2-shoes-black-mt580ve2",
+            "shop_name": "urban_industry",
+            "brand_name": "new balance",
+            "product_id": "MT580VE2",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 636,
+            "product_url": "https://www.consortium.co.uk/adidas-originals-by-midwest-kids-jacket-mwk-black-cardboard-h62574.html",
+            "shop_name": "consortium",
+            "brand_name": "adidas",
+            "product_id": "H62574",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 6483,
+            "product_url": "https://www.urbanindustry.co.uk/products/the-north-face-extreme-pile-pullover-jacket-gardenia-white-sulphur-moss-nf0a7urnn5i",
+            "shop_name": "urban_industry",
+            "brand_name": "the north face",
+            "product_id": "NF0A7URNN5I",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 4106,
+            "product_url": "https://www.consortium.co.uk/clarks-originals-by-ronnie-fieg-maycliffe-8th-st-collection-sand-suede-26173371.html",
+            "shop_name": "consortium",
+            "brand_name": "clarks originals",
+            "product_id": "26173371",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 1355,
+            "product_url": "https://www.consortium.co.uk/women-s-our-legacy-cardigan-mole-grey-mohair-w4236cm.html",
+            "shop_name": "consortium",
+            "brand_name": "our legacy women",
+            "product_id": "W4236CM",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 146,
+            "product_url": "https://www.consortium.co.uk/adidas-originals-gazelle-85-clear-sky-footwear-white-gold-metallic-ig5003.html",
+            "shop_name": "consortium",
+            "brand_name": "adidas",
+            "product_id": "IG5003",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 6344,
+            "product_url": "https://www.urbanindustry.co.uk/products/new-balance-ml610tbl-shoes-arctic-grey-ml610tbl",
+            "shop_name": "urban_industry",
+            "brand_name": "new balance",
+            "product_id": "ML610TBL",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 6489,
+            "product_url": "https://www.urbanindustry.co.uk/products/the-north-face-extreme-pile-full-zip-jacket-misty-sage-fallen-leaves-print",
+            "shop_name": "urban_industry",
+            "brand_name": "the north face",
+            "product_id": "NF0A7URLOPH",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 637,
+            "product_url": "https://www.consortium.co.uk/adidas-by-undefeated-pack-jacket-orange-dy3262.html",
+            "shop_name": "consortium",
+            "brand_name": "adidas",
+            "product_id": "DY3262",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 4108,
+            "product_url": "https://www.consortium.co.uk/clarks-originals-by-ronnie-fieg-maycliffe-8th-st-collection-maple-26170245.html",
+            "shop_name": "consortium",
+            "brand_name": "clarks originals",
+            "product_id": "26170245",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 155,
+            "product_url": "https://www.consortium.co.uk/adidas-originals-gazelle-85-core-black-footwear-white-gold-metallic-fz5594.html",
+            "shop_name": "consortium",
+            "brand_name": "adidas",
+            "product_id": "FZ5594",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 1388,
+            "product_url": "https://www.consortium.co.uk/women-s-patagonia-retro-pile-fleece-marsupial-new-navy-22835-nena.html",
+            "shop_name": "consortium",
+            "brand_name": "patagonia women",
+            "product_id": "22835-NENA",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 6357,
+            "product_url": "https://www.urbanindustry.co.uk/products/new-balance-ou576ook-shoes-orange-alloy-grey-violet-ou576ook",
+            "shop_name": "urban_industry",
+            "brand_name": "new balance",
+            "product_id": "OU576OOK",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 6496,
+            "product_url": "https://www.urbanindustry.co.uk/products/the-north-face-1996-retro-nuptse-jacket-pine-needle-summit-navy",
+            "shop_name": "urban_industry",
+            "brand_name": "the north face",
+            "product_id": "NF0A3C8DOAS",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 4116,
+            "product_url": "https://www.consortium.co.uk/patagonia-lightweight-synchilla-snap-t-pullover-fleece-oatmeal-heather.html",
+            "shop_name": "consortium",
+            "brand_name": "patagonia",
+            "product_id": "25551-OAT",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 643,
+            "product_url": "https://www.consortium.co.uk/adidas-originals-by-wales-bonner-sweatpant-wonder-white-in3008.html",
+            "shop_name": "consortium",
+            "brand_name": "adidas",
+            "product_id": "IN3008",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 165,
+            "product_url": "https://www.consortium.co.uk/adidas-originals-munchen-scarlet-matte-silver-gum-gy7402.html",
+            "shop_name": "consortium",
+            "brand_name": "adidas",
+            "product_id": "GY7402",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 6373,
+            "product_url": "https://www.urbanindustry.co.uk/products/new-balance-ml610tbg-True-brown-product-code-enter",
+            "shop_name": "urban_industry",
+            "brand_name": "new balance",
+            "product_id": "-",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 1393,
+            "product_url": "https://www.consortium.co.uk/women-s-patagonia-retro-pile-fleece-jacket-salt-grey-w-light-plume-grey-22795-salg.html",
+            "shop_name": "consortium",
+            "brand_name": "patagonia women",
+            "product_id": "22795-SALG",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 6500,
+            "product_url": "https://www.urbanindustry.co.uk/products/the-north-face-ampato-quilted-liner-jacket-sulphur-moss-nf0a852ai0n",
+            "shop_name": "urban_industry",
+            "brand_name": "the north face",
+            "product_id": "NF0A852AI0N",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 647,
+            "product_url": "https://www.consortium.co.uk/adidas-originals-v-stripes-pant-raw-steel-white.html",
+            "shop_name": "consortium",
+            "brand_name": "adidas",
+            "product_id": "CE4813",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 6185,
+            "product_url": "https://www.urbanindustry.co.uk/products/adidas-originals-grf-t-shirt-wonder-white-iu0217",
+            "shop_name": "urban_industry",
+            "brand_name": "adidas originals",
+            "product_id": null,
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 6378,
+            "product_url": "https://www.urbanindustry.co.uk/products/new-balance-m991pty-shoes-sequoia-m991pty",
+            "shop_name": "urban_industry",
+            "brand_name": "new balance",
+            "product_id": "M991PTY",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 172,
+            "product_url": "https://www.consortium.co.uk/adidas-originals-state-series-or-oregon-shadow-maroon-core-black-core-black-id2081.html",
+            "shop_name": "consortium",
+            "brand_name": "adidas",
+            "product_id": "ID2081",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 6504,
+            "product_url": "https://www.urbanindustry.co.uk/products/the-north-face-matterhorn-face-long-sleeve-t-shirt-gardenia-white",
+            "shop_name": "urban_industry",
+            "brand_name": "the north face",
+            "product_id": "NF0A854BN3N",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 1397,
+            "product_url": "https://www.consortium.co.uk/women-s-patagonia-retro-pile-fleece-jacket-nest-brown-22795-nesb.html",
+            "shop_name": "consortium",
+            "brand_name": "patagonia women",
+            "product_id": "22795-NESB",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 751,
+            "product_url": "https://www.consortium.co.uk/a-p-c-vpc-t-shirt-white-dark-navy-cobqx-h26586.html",
+            "shop_name": "consortium",
+            "brand_name": "a.p.c.",
+            "product_id": "COBQX-H26586",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 6192,
+            "product_url": "https://www.urbanindustry.co.uk/products/adidas-originals-handball-spezial-shoes-bright-blue-vivid-red-gold-metallic-fx5675",
+            "shop_name": "urban_industry",
+            "brand_name": "adidas originals",
+            "product_id": "FX5675",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 6384,
+            "product_url": "https://www.urbanindustry.co.uk/products/new-balance-uni-ssentials-french-terry-sweatpant-green-up21500-vda",
+            "shop_name": "urban_industry",
+            "brand_name": "new balance",
+            "product_id": "UP21500VDA",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 6512,
+            "product_url": "https://www.urbanindustry.co.uk/products/the-north-face-transverse-2l-dyrvent-jacket-tnf-black-nf0a852ejk3",
+            "shop_name": "urban_industry",
+            "brand_name": "the north face",
+            "product_id": "NF0A852EJK3",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 1409,
+            "product_url": "https://www.consortium.co.uk/women-s-patagonia-microdini-1-2-zip-fleece-pullover-obsidian-plum-26260-obpl.html",
+            "shop_name": "consortium",
+            "brand_name": "patagonia women",
+            "product_id": "26260-OBPL",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 177,
+            "product_url": "https://www.consortium.co.uk/adidas-originals-bermuda-collegiate-purple-cream-white-dark-purple-ie7427.html",
+            "shop_name": "consortium",
+            "brand_name": "adidas",
+            "product_id": "IE7427",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 1080,
+            "product_url": "https://www.consortium.co.uk/our-legacy-haven-jacket-black-pankow-check-m4236hbp.html",
+            "shop_name": "consortium",
+            "brand_name": "our legacy",
+            "product_id": "M4236HBP",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 6193,
+            "product_url": "https://www.urbanindustry.co.uk/products/adidas-originals-samba-og-shoes-carbon-better-scarlet-gum-4-ig6173",
+            "shop_name": "urban_industry",
+            "brand_name": "adidas originals",
+            "product_id": "IG6173",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 6385,
+            "product_url": "https://www.urbanindustry.co.uk/products/new-balance-ou576ggk-shoes-eden-alloy-grey-violet-ou576ggk",
+            "shop_name": "urban_industry",
+            "brand_name": "new balance",
+            "product_id": "OU576GGK",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 178,
+            "product_url": "https://www.consortium.co.uk/adidas-originals-bermuda-collegiate-burgundy-cream-white-maroon-ie7426.html",
+            "shop_name": "consortium",
+            "brand_name": "adidas",
+            "product_id": "IE7426",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 1411,
+            "product_url": "https://www.consortium.co.uk/women-s-patagonia-microdini-1-2-zip-fleece-pullover-black-26260-blk.html",
+            "shop_name": "consortium",
+            "brand_name": "patagonia women",
+            "product_id": "26260-BLK",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 6520,
+            "product_url": "https://www.urbanindustry.co.uk/products/arcteryx-squamish-hoodie-smoke-bluff",
+            "shop_name": "urban_industry",
+            "brand_name": "arc'teryx",
+            "product_id": "X000007411S",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 1170,
+            "product_url": "https://www.consortium.co.uk/patagonia-p-6-logo-uprisal-pullover-hooded-sweatshirt-gravel-heather-39622-glh.html",
+            "shop_name": "consortium",
+            "brand_name": "patagonia",
+            "product_id": "39622-GLH",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 6396,
+            "product_url": "https://www.urbanindustry.co.uk/products/new-balance-mt580vtg-shoes-white-white-mt580vtg",
+            "shop_name": "urban_industry",
+            "brand_name": "new balance",
+            "product_id": "MT580VTG",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 6197,
+            "product_url": "https://www.urbanindustry.co.uk/products/adidas-originals-grf-t-shirt-black-is1413",
+            "shop_name": "urban_industry",
+            "brand_name": "adidas originals",
+            "product_id": "IS1413",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 6523,
+            "product_url": "https://www.urbanindustry.co.uk/products/arcteryx-atom-hoodie-smoke-bluff",
+            "shop_name": "urban_industry",
+            "brand_name": "arc'teryx",
+            "product_id": "X000007487",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 179,
+            "product_url": "https://www.consortium.co.uk/adidas-originals-bermuda-bold-gold-almost-yellow-premium-yellow-id4574.html",
+            "shop_name": "consortium",
+            "brand_name": "adidas",
+            "product_id": "ID4574",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 1424,
+            "product_url": "https://www.consortium.co.uk/women-s-patagonia-classic-retro-x-fleece-jacket-natural-w-smolder-blue-23074-ntsb.html",
+            "shop_name": "consortium",
+            "brand_name": "patagonia women",
+            "product_id": "23074-NTSB",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 6399,
+            "product_url": "https://www.urbanindustry.co.uk/products/new-balance-mt580ab2-shoes-workwear-honeycomb",
+            "shop_name": "urban_industry",
+            "brand_name": "new balance",
+            "product_id": "-",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 1173,
+            "product_url": "https://www.consortium.co.uk/patagonia-fitz-roy-icon-uprisal-pullover-hooded-sweatshirt-ink-black-39666-inbk.html",
+            "shop_name": "consortium",
+            "brand_name": "patagonia",
+            "product_id": "39666-INBK",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 6524,
+            "product_url": "https://www.urbanindustry.co.uk/products/arcteryx-cerium-hooded-jacket-black",
+            "shop_name": "urban_industry",
+            "brand_name": "arc'teryx",
+            "product_id": "X000007313",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 6199,
+            "product_url": "https://www.urbanindustry.co.uk/products/adidas-originals-hyperturf-shoes-earstr-cblack-cgreen-hq6606",
+            "shop_name": "urban_industry",
+            "brand_name": "adidas originals",
+            "product_id": "HQ6606",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 3330,
+            "product_url": "https://www.consortium.co.uk/adidas-spezial-gazelle-spzl-dark-green-footwear-white-off-white-if5787.html",
+            "shop_name": "consortium",
+            "brand_name": "adidas",
+            "product_id": "IF5787",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 251,
+            "product_url": "https://www.consortium.co.uk/adidas-originals-stan-smith-80s-footwear-white-footwear-white-green-if0202.html",
+            "shop_name": "consortium",
+            "brand_name": "adidas",
+            "product_id": "IF0202",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 1201,
+            "product_url": "https://www.consortium.co.uk/patagonia-synchilla-snap-t-fleece-pullover-oatmeal-heather-25450-oat.html",
+            "shop_name": "consortium",
+            "brand_name": "patagonia",
+            "product_id": "25450-OAT",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 6421,
+            "product_url": "https://www.urbanindustry.co.uk/products/patagonia-classic-retro-x-vest-pitch-blue-23048",
+            "shop_name": "urban_industry",
+            "brand_name": "patagonia",
+            "product_id": "23048",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 6525,
+            "product_url": "https://www.urbanindustry.co.uk/products/arcteryx-atom-vest-black",
+            "shop_name": "urban_industry",
+            "brand_name": "arc'teryx",
+            "product_id": "X000007475",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 3333,
+            "product_url": "https://www.consortium.co.uk/adidas-spezial-samba-deco-spzl-core-black-lucid-lime-gum-5-if5738.html",
+            "shop_name": "consortium",
+            "brand_name": "adidas",
+            "product_id": "IF5738",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 6208,
+            "product_url": "https://www.urbanindustry.co.uk/products/adidas-originals-hyperturf-shoes-grey-one-core-black-grey-five-hp2832",
+            "shop_name": "urban_industry",
+            "brand_name": "adidas originals",
+            "product_id": "HP2832",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 252,
+            "product_url": "https://www.consortium.co.uk/adidas-originals-stan-smith-80s-core-black-core-black-grey-six-if7270.html",
+            "shop_name": "consortium",
+            "brand_name": "adidas",
+            "product_id": "IF7270",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 6423,
+            "product_url": "https://www.urbanindustry.co.uk/products/patagonia-torrentshell-3l-jacket-nouveau-green",
+            "shop_name": "urban_industry",
+            "brand_name": "patagonia",
+            "product_id": "85241",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 1202,
+            "product_url": "https://www.consortium.co.uk/patagonia-synchilla-snap-t-pullover-black-w-forge-grey-25450-bfo.html",
+            "shop_name": "consortium",
+            "brand_name": "patagonia",
+            "product_id": "25450-BFO",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 6527,
+            "product_url": "https://www.urbanindustry.co.uk/products/arcteryx-atom-hoodie-black-sapphire",
+            "shop_name": "urban_industry",
+            "brand_name": "arc'teryx",
+            "product_id": "X000007487",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 3340,
+            "product_url": "https://www.consortium.co.uk/adidas-originals-samba-og-shadow-olive-preloved-green-gum-ig6175.html",
+            "shop_name": "consortium",
+            "brand_name": "adidas",
+            "product_id": "IG6175",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 6211,
+            "product_url": "https://www.urbanindustry.co.uk/products/adidas-originals-handball-spezial-shoes-oat-core-black-crystal-white-if9014",
+            "shop_name": "urban_industry",
+            "brand_name": "adidas originals",
+            "product_id": "IF9014",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 6427,
+            "product_url": "https://www.urbanindustry.co.uk/products/patagonia-retro-pile-jacket-nouveau-green-22801",
+            "shop_name": "urban_industry",
+            "brand_name": "patagonia",
+            "product_id": "22801",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 6528,
+            "product_url": "https://www.urbanindustry.co.uk/products/arcteryx-thorium-hoodie-black",
+            "shop_name": "urban_industry",
+            "brand_name": "arc'teryx",
+            "product_id": "X000007380",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 3342,
+            "product_url": "https://www.consortium.co.uk/adidas-originals-gazelle-indoor-wonder-clay-clear-pink-gum-ie2946.html",
+            "shop_name": "consortium",
+            "brand_name": "adidas",
+            "product_id": "IE2946",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 1204,
+            "product_url": "https://www.consortium.co.uk/patagonia-synchilla-fleece-anorak-new-navy-w-smolder-blue-22980-nesm.html",
+            "shop_name": "consortium",
+            "brand_name": "patagonia",
+            "product_id": "22980-NESM",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 253,
+            "product_url": "https://www.consortium.co.uk/adidas-originals-stan-smith-80s-footwear-white-footwear-white-green-fz5597.html",
+            "shop_name": "consortium",
+            "brand_name": "adidas",
+            "product_id": "FZ5597",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 6432,
+            "product_url": "https://www.urbanindustry.co.uk/products/patagonia-retro-pile-vest-el-cap-khaki",
+            "shop_name": "urban_industry",
+            "brand_name": "patagonia",
+            "product_id": "22821-KHA",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 6212,
+            "product_url": "https://www.urbanindustry.co.uk/products/adidas-originals-all-team-shoes-preloved-yellow-preloved-brown-off-white-id2122",
+            "shop_name": "urban_industry",
+            "brand_name": "adidas originals",
+            "product_id": "ID2122",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 6530,
+            "product_url": "https://www.urbanindustry.co.uk/products/arcteryx-captive-arcword-long-sleeve-t-shirt-arctic-silk",
+            "shop_name": "urban_industry",
+            "brand_name": "arc'teryx",
+            "product_id": "X000006544",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 342,
+            "product_url": "https://www.consortium.co.uk/adidas-originals-supermodified-ynuk-power-red-core-black-off-white-ie2176.html",
+            "shop_name": "consortium",
+            "brand_name": "adidas",
+            "product_id": "IE2176",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 3346,
+            "product_url": "https://www.consortium.co.uk/adidas-originals-gazelle-indoor-semi-green-spark-almost-yellow-cream-white-ie2948.html",
+            "shop_name": "consortium",
+            "brand_name": "adidas",
+            "product_id": "IE2948",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 1207,
+            "product_url": "https://www.consortium.co.uk/patagonia-retro-pile-fleece-jacket-obsidian-plum-22801-obpl.html",
+            "shop_name": "consortium",
+            "brand_name": "patagonia",
+            "product_id": "22801-OBPL",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 6213,
+            "product_url": "https://www.urbanindustry.co.uk/products/adidas-originals-hyperturf-shoes-ftwr-white-grey-one-beam-orange-fz6580",
+            "shop_name": "urban_industry",
+            "brand_name": "adidas originals",
+            "product_id": "FZ6580",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 6433,
+            "product_url": "https://www.urbanindustry.co.uk/products/patagonia-fitz-roy-icon-uprisal-pullover-hoody-gravel-heather",
+            "shop_name": "urban_industry",
+            "brand_name": "patagonia",
+            "product_id": "39666",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 6534,
+            "product_url": "https://www.urbanindustry.co.uk/products/arcteryx-gamma-hoodie-black-sapphire",
+            "shop_name": "urban_industry",
+            "brand_name": "arc'teryx",
+            "product_id": "X000007465",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 3347,
+            "product_url": "https://www.consortium.co.uk/adidas-originals-gazelle-bold-core-black-cloud-white-cloud-white-ie0876.html",
+            "shop_name": "consortium",
+            "brand_name": "adidas",
+            "product_id": "IE0876",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 1208,
+            "product_url": "https://www.consortium.co.uk/patagonia-retro-pile-fleece-jacket-new-navy.html",
+            "shop_name": "consortium",
+            "brand_name": "patagonia",
+            "product_id": "22801-NENA",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 353,
+            "product_url": "https://www.consortium.co.uk/adidas-originals-adimatic-panton-panton-crystal-white-hq6901.html",
+            "shop_name": "consortium",
+            "brand_name": "adidas",
+            "product_id": "HQ6901",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 6217,
+            "product_url": "https://www.urbanindustry.co.uk/products/adidas-originals-hyperturf-shoes-sand-strata-earth-strata-shadow-red-hq6605",
+            "shop_name": "urban_industry",
+            "brand_name": "adidas originals",
+            "product_id": "HQ6605",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 6535,
+            "product_url": "https://www.urbanindustry.co.uk/products/arcteryx-beta-jacket-black-sapphire",
+            "shop_name": "urban_industry",
+            "brand_name": "arc'teryx",
+            "product_id": "X000006876",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 3386,
+            "product_url": "https://www.consortium.co.uk/adidas-spezial-chilcott-hat-sesame-ip1723.html",
+            "shop_name": "consortium",
+            "brand_name": "adidas",
+            "product_id": "IP1723",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 1211,
+            "product_url": "https://www.consortium.co.uk/patagonia-retro-pile-fleece-jacket-black-22801-blk.html",
+            "shop_name": "consortium",
+            "brand_name": "patagonia",
+            "product_id": "22801-BLK",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 6218,
+            "product_url": "https://www.urbanindustry.co.uk/products/adidas-originals-handball-spezial-shoes-maroon-core-black-crystal-white-ig6184",
+            "shop_name": "urban_industry",
+            "brand_name": "adidas originals",
+            "product_id": "IG6184",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 354,
+            "product_url": "https://www.consortium.co.uk/adidas-originals-adimatic-panton-core-black-gum-3-hq6903.html",
+            "shop_name": "consortium",
+            "brand_name": "adidas",
+            "product_id": "HQ6903",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 355,
+            "product_url": "https://www.consortium.co.uk/adidas-originals-adimatic-ynuk-dark-green-core-black-off-white-ie2164.html",
+            "shop_name": "consortium",
+            "brand_name": "adidas",
+            "product_id": "IE2164",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 1213,
+            "product_url": "https://www.consortium.co.uk/patagonia-microdini-hooded-fleece-pitch-blue-26210-pibl.html",
+            "shop_name": "consortium",
+            "brand_name": "patagonia",
+            "product_id": "26210-PIBL",
+            "status": "success"
+        }
+    ]
+}

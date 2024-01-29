@@ -296,7 +296,7 @@ async def test_trading_volume_extract_trading_volume(
     scrap_result = await trading_volume_scraper._extract_trading_volume()
 
     # Then
-    assert scrap_result[0] == "success"
+    assert scrap_result[0] == "success:no_trading_volume"
 
 
 ####

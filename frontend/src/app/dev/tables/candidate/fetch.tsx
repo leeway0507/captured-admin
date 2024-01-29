@@ -1,5 +1,5 @@
 export const getCandidateTable = async (searchType: string, content: string) => {
-    const url = `${process.env.NEXT_PUBLIC_API_URL}/api/table/candidate-table`;
+    const url = `${process.env.NEXT_PUBLIC_API_URL}/api/table/candidate`;
     const queryParams = new URLSearchParams({
         searchType,
         content,
@@ -10,7 +10,7 @@ export const getCandidateTable = async (searchType: string, content: string) => 
 };
 
 export const updateCandidateCard = async (shopProductCardId: number, value: object) => {
-    const url = `${process.env.NEXT_PUBLIC_API_URL}/api/table/candidate-table`;
+    const url = `${process.env.NEXT_PUBLIC_API_URL}/api/table/candidate`;
     const body = {
         shopProductCardId,
         value,
@@ -26,7 +26,7 @@ export const updateCandidateCard = async (shopProductCardId: number, value: obje
 };
 
 export const patchCandidateCard = async (shopProductCardId: number, column: string, content: any) => {
-    const url = `${process.env.NEXT_PUBLIC_API_URL}/api/table/candidate-table`;
+    const url = `${process.env.NEXT_PUBLIC_API_URL}/api/table/candidate`;
     const queryParams = new URLSearchParams({
         shopProductCardId: shopProductCardId.toString(),
         column,
@@ -38,7 +38,7 @@ export const patchCandidateCard = async (shopProductCardId: number, column: stri
 };
 
 export const deleteCandidateCard = async (shopProductCardId: number) => {
-    const url = `${process.env.NEXT_PUBLIC_API_URL}/api/table/candidate-table/${shopProductCardId}`;
+    const url = `${process.env.NEXT_PUBLIC_API_URL}/api/table/candidate/${shopProductCardId}`;
 
     const res = await fetch(url, {
         method: "DELETE",
@@ -46,8 +46,14 @@ export const deleteCandidateCard = async (shopProductCardId: number) => {
     return { status: res.status, data: await res.json() };
 };
 
-export const getSizeData = async (productId: string) => {
-    const url = `${process.env.NEXT_PUBLIC_API_URL}/api/table/size-table/${productId}`;
+export const getSizeData = async (shopProductCardId: string) => {
+    const url = `${process.env.NEXT_PUBLIC_API_URL}/api/table/size/${shopProductCardId}`;
+    const res = await fetch(url);
+    return { status: res.status, data: await res.json() };
+};
+
+export const getKreamData = async (productId: string) => {
+    const url = `${process.env.NEXT_PUBLIC_API_URL}/api/table/kream-table/productId/${productId}`;
     const res = await fetch(url);
     return { status: res.status, data: await res.json() };
 };

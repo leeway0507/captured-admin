@@ -20,6 +20,9 @@ class PwSevenStoreListSubScraper(PwShopListSubScraper):
         super().__init__(
             not_found_xpath=".not_found_xpath",
             shop_name="seven_store",
+            using_scroll=True,
+            max_scroll=20,
+            scroll_step_size=1000,
         )
 
     def __name__(self) -> str:

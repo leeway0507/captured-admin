@@ -88,7 +88,7 @@ export default function PlatformPage() {
 
     useEffect(() => {
         if (scrapName === "") return;
-        router.push(`/dev/kream/scrap-result/page/${scrapName}-kream`);
+        router.push(`dev/kream/report/page/${scrapName}`);
     }, [scrapName, router]);
 
     return (

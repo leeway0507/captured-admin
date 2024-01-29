@@ -1,0 +1,30 @@
+{
+    "scrap_time": "20240124-151957",
+    "num_of_plan": 5,
+    "num_processor": 1,
+    "db_update": true,
+    "job": [
+        {
+            "job": "columbia",
+            "status": "success"
+        },
+        {
+            "job": "new balance",
+            "status": "success"
+        },
+        {
+            "job": "patagonia",
+            "status": "success"
+        },
+        {
+            "job": "the north face",
+            "status": "success"
+        },
+        {
+            "job": "arc'teryx",
+            "status": "success"
+        }
+    ],
+    "brand_name": "columbia,new balance,patagonia,the north face,arc'teryx",
+    "shop_name": "urban_industry"
+}

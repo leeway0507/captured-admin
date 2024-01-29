@@ -11,7 +11,7 @@ cleanup() {
         # Check if the PID is not empty before using it
         if [ -n "$pid" ]; then
             echo "Found PID $pid for port $port. Killing the process..."
-            kill "$pid"
+            kill -9 "$pid"
         fi
     done
 }

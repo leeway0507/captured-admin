@@ -4,11 +4,11 @@ from components.file_manager import ScrapReport, ScrapReportDataBase, ScrapTempF
 from abc import ABC, abstractmethod
 
 
-class PlatformReport(ABC):
+class PlatformReport(ScrapReport):
     def __init__(self, path):
         self.path = path
+        super().__init__(report_path=os.path.join(path, "_report"))
         self.TempFile = ScrapTempFile(os.path.join(path, "_temp"))
-        self.Report = ScrapReport(os.path.join(path, "_report"))
 
     # concrete_method
 
@@ -34,9 +34,7 @@ class PlatformReport(ABC):
     async def save_report(self):
         template = await self.create_report_template()
 
-        self.Report.report_file_name = template.scrap_time
+        self.report_file_name = template.scrap_time
 
-        await self.Report.create_report_with_scrap_time_as_file_name(
-            report_data=template
-        )
+        await super().create_report_with_scrap_time_as_file_name(report_data=template)
         return template.scrap_time

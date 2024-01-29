@@ -1,0 +1,14 @@
+{
+    "scrap_time": "20240122-124553",
+    "num_of_plan": 1,
+    "num_processor": 1,
+    "db_update": true,
+    "job": [
+        {
+            "job": "adidas",
+            "status": "success"
+        }
+    ],
+    "brand_name": "adidas",
+    "shop_name": "seven_store"
+}

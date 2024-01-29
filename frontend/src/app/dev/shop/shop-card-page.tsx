@@ -1,9 +1,10 @@
 "use client";
 import { useRouter } from "next/navigation";
-import { useReducer, useRef, useEffect, useState } from "react";
-import { ScrapShopPage, getShopPageList } from "./fetch-scrap";
+import React, { useReducer, useRef, useEffect, useState, ButtonHTMLAttributes } from "react";
+import { ScrapShopPage, loadShopPageName, loadShopPageBrandName } from "./fetch-scrap";
 import { toast } from "react-toastify";
 import Select from "react-select";
+import ShopBrandSelect from "./shop-brand-select";
 
 const initialState = {
     searchType: "all",
@@ -17,103 +18,6 @@ export interface searchProps {
     numProcess: number;
 }
 
-const reducer = (state: searchProps, action: any) => {
-    switch (action.type) {
-        case "searchType":
-            return { ...state, searchType: action.payload };
-        case "content":
-            return { ...state, content: action.payload };
-        case "numProcess":
-            return { ...state, numProcess: action.payload };
-        default:
-            return state;
-    }
-};
-
-export const handleScrapProductPage = async (
-    state: searchProps,
-    setName: (scrapName: string) => void,
-    enableButton: () => void,
-    disableButton: () => void
-) => {
-    if (state.searchType === "") {
-        return toast.error("검색 타입을 선택하세요.");
-    }
-    if (state.content === "") {
-        return toast.error("값을 입력하세요.");
-    }
-
-    const start = confirm(`수집을 시작합니다.`);
-
-    if (!start) {
-        return;
-    }
-
-    disableButton();
-    await ScrapShopPage(state.searchType, state.content, state.numProcess)
-        .then((res) => {
-            const { scrap_status, ...restData } = res.data;
-            scrap_status === "success"
-                ? (setName(restData.scrap_name), enableButton())
-                : (toast.error("에러 발생"), enableButton());
-        })
-        .catch((e) => {
-            console.log(e);
-            toast.error("네트워크 에러 발생");
-            enableButton();
-        });
-};
-
-const InputList = ({
-    searchType,
-    value,
-    dispatch,
-}: {
-    searchType: string;
-    value: string;
-    dispatch: (e: any) => void;
-}) => {
-    const [shopOptions, setShopOptions] = useState([""]);
-
-    useEffect(() => {
-        if (searchType === "shopName") {
-            getShopPageList().then((res) => {
-                setShopOptions(res.data.map((item: any) => ({ label: item, value: item })));
-                console.log(res.data.map((item: any) => ({ label: item, value: item })));
-            });
-        }
-    }, [searchType]);
-
-    const Input = (
-        <>
-            <label htmlFor="content">값 입력</label>
-            <input
-                value={value}
-                type="text"
-                name="content"
-                id="content"
-                onChange={(e) => dispatch({ type: "content", payload: e.target.value })}
-                className="border border-main-black h-[50px] rounded-md px-4"
-            />
-            <span className="text-xs">전체 수집 선택시 최대 수집 페이지 입력</span>
-        </>
-    );
-    const storeSelect = (
-        <>
-            <div className="text-xl">스토어 선택</div>
-            <Select
-                className="w-[200px] h-[50px]"
-                defaultValue={shopOptions[0]}
-                instanceId="searchType"
-                options={shopOptions}
-                onChange={(e) => dispatch({ type: "content", payload: e.value })}
-            />
-        </>
-    );
-
-    return <>{searchType === "shopName" ? storeSelect : Input}</>;
-};
-
 export default function ShopCardPage() {
     const submitRef = useRef<HTMLButtonElement>(null);
     const [state, dispatch] = useReducer(reducer, initialState);
@@ -121,28 +25,14 @@ export default function ShopCardPage() {
 
     const router = useRouter();
 
-    const enableButton = () => {
-        if (submitRef.current) {
-            submitRef.current.disabled = false;
-        }
-    };
-
-    const disableButton = () => {
-        if (submitRef.current) {
-            submitRef.current.disabled = true;
-        }
-    };
-
     useEffect(() => {
         if (scrapName === "") return;
-        router.push(`/dev/shop/scrap-result/page/${scrapName}`);
+        router.push(`/dev/shop/report/page/${scrapName}`);
     }, [scrapName, router]);
 
-    const customOnChange = (e: any) => {
-        return dispatch({ type: "content", payload: e.value });
-    };
-
     const selectCat = [
+        { value: "shopNameBrandName", label: "사이트명(브랜드)" },
+        { value: "lastScrap", label: "최종수집 제품" },
         { value: "shopName", label: "사이트명" },
         { value: "productId", label: "제품 아이디" },
         { value: "shopProductCardId", label: "SKU" },
@@ -166,7 +56,7 @@ export default function ShopCardPage() {
                     />
                 </div>
                 <div className="min-w-[150px] flex flex-col">
-                    <InputList searchType={state.searchType} value={state.content} dispatch={dispatch} />
+                    <InputList searchType={state.searchType} content={state.content} dispatch={dispatch} />
                 </div>
             </div>
             <div className="min-w-[150px] flex flex-col">
@@ -185,9 +75,112 @@ export default function ShopCardPage() {
             <button
                 ref={submitRef}
                 className="black-bar-with-disabled min-w-[150px] text-xl "
-                onClick={() => handleScrapProductPage(state, setScrapName, enableButton, disableButton)}>
+                onClick={() => handleScrapProductPage(state, setScrapName, submitRef)}>
                 요청하기
             </button>
         </div>
     );
 }
+
+const reducer = (state: searchProps, action: any) => {
+    switch (action.type) {
+        case "searchType":
+            return { ...state, searchType: action.payload };
+        case "content":
+            return { ...state, content: action.payload };
+        case "numProcess":
+            return { ...state, numProcess: action.payload };
+        default:
+            return state;
+    }
+};
+
+export const handleScrapProductPage = async (
+    state: searchProps,
+    setName: (scrapName: string) => void,
+    ref: React.RefObject<HTMLButtonElement>
+) => {
+    const enableButton = () => {
+        if (ref.current) {
+            ref.current.disabled = false;
+        }
+    };
+
+    const disableButton = () => {
+        if (ref.current) {
+            ref.current.disabled = true;
+        }
+    };
+    if (state.searchType === "") {
+        return toast.error("검색 타입을 선택하세요.");
+    }
+    if (state.content === "") {
+        return toast.error("값을 입력하세요.");
+    }
+
+    const start = confirm(`수집을 시작합니다.`);
+
+    if (!start) {
+        return;
+    }
+
+    disableButton();
+    await ScrapShopPage(state.searchType, state.content, state.numProcess)
+        .then((res) => {
+            const { scrap_status, report_name } = res.data;
+            scrap_status === "success"
+                ? (setName(report_name), enableButton())
+                : (toast.error("에러 발생"), enableButton());
+        })
+        .catch((e) => {
+            console.log(e);
+            toast.error("네트워크 에러 발생");
+            enableButton();
+        });
+};
+
+const InputList = ({
+    searchType,
+    content,
+    dispatch,
+}: {
+    searchType: string;
+    content: string;
+    dispatch: (e: any) => void;
+}) => {
+    const [shopSelect, setShopSelect] = useState("");
+    const [brandSelect, setBrandSelect] = useState([""]);
+
+    const Input = (
+        <>
+            <label htmlFor="content">값 입력</label>
+            <input
+                value={content}
+                type="text"
+                name="content"
+                id="content"
+                onChange={(e) => dispatch({ type: "content", payload: e.target.value })}
+                className="border border-main-black h-[50px] rounded-md px-4"
+            />
+            <span className="text-xs">전체 수집 선택시 최대 수집 페이지 입력</span>
+        </>
+    );
+    const storeSelect = (
+        <>
+            <div className="min-w-[300px] flex flex-row gap-2">
+                <ShopBrandSelect
+                    shopSelect={shopSelect}
+                    setShopSelect={(e) => setShopSelect(e.value)}
+                    brandSelect={brandSelect}
+                    setBrandSelect={(e) => setBrandSelect(e)}
+                />
+            </div>
+        </>
+    );
+
+    useEffect(() => {
+        dispatch({ type: "content", payload: { shopName: shopSelect, brandName: brandSelect } });
+    }, [dispatch, shopSelect, brandSelect]);
+
+    return <>{searchType === "shopNameBrandName" ? storeSelect : Input}</>;
+};

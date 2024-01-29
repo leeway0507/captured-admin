@@ -1,20 +1,17 @@
-export const getKreamProductCardList = async (searchType: string, content: string) => {
-    const url = `${process.env.NEXT_PUBLIC_API_URL}/api/dev/kream/get-kream-product-detail-list`;
-    const queryParams = new URLSearchParams({
-        searchType,
-        content,
-    });
-
-    const res = await fetch(url + "?" + queryParams);
+export const getKreamProdCard = async (productId: string) => {
+    const url = `${process.env.NEXT_PUBLIC_API_URL}/api/table/kream/product/productId/${productId}`;
+    const res = await fetch(url);
     return { status: res.status, data: await res.json() };
 };
 
-export const getKreamProductSizeInfo = async (searchType: string, content: string) => {
-    const url = `${process.env.NEXT_PUBLIC_API_URL}/api/dev/kream/get-kream-product-size-info`;
-    const queryParams = new URLSearchParams({
-        searchType,
-        content,
-    });
-    const res = await fetch(url + "?" + queryParams);
+export const getKreamProdCardByBrandName = async (brandName: string) => {
+    const url = `${process.env.NEXT_PUBLIC_API_URL}/api/table/kream/product/brandName/${brandName}`;
+    const res = await fetch(url);
+    return { status: res.status, data: await res.json() };
+};
+
+export const getKreamMarketPrice = async (productId: string) => {
+    const url = `${process.env.NEXT_PUBLIC_API_URL}/api/table/kream/market-price/${productId}`;
+    const res = await fetch(url);
     return { status: res.status, data: await res.json() };
 };

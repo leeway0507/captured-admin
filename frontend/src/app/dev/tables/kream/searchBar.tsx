@@ -15,7 +15,7 @@ const SearchBar = () => {
         if (search.content === "") {
             return toast.error("값을 입력해주세요.");
         }
-        router.push(`/dev/tables/kream-table/${search.searchType}/${search.content}`);
+        router.push(`/dev/tables/kream/${search.searchType}/${search.content}`);
     };
 
     const selectCat = [

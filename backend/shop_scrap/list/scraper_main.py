@@ -8,6 +8,7 @@ from components.abstract_class.scraper_sub import PwShopListSubScraper
 from components.browser_handler import PwContextHandler, PwPageHandler
 from ..shop_list.consortium import PwConsortiumListSubScraper
 from ..shop_list.seven_store import PwSevenStoreListSubScraper
+from ..shop_list.urban_industry import PwUrbanIndustryListSubScraper
 
 
 class ShopListScraperFactory:
@@ -18,7 +19,7 @@ class ShopListScraperFactory:
     @property
     async def browser(self):
         if not self._browser:
-            self._browser = await PwContextHandler().start()
+            self._browser = await PwContextHandler.start()
         return self._browser
 
     async def playwright(self, shop_name: str, target_list: List, num_processor: int):
@@ -31,6 +32,17 @@ class ShopListScraperFactory:
             shop_name,
         )
 
+    @classmethod
+    def pw_sub_scraper_list(cls):
+        method_list = dir(PwShopListSubScraperFactory)
+        return [m for m in method_list if not "__" in m]
+
+    @classmethod
+    def pw_sub_scraper_brand(cls, shop_name: str):
+        sub_scraper = getattr(PwShopListSubScraperFactory(), shop_name)()
+        brand_list = sub_scraper._load_brand_list()
+        return brand_list["brand_list"]
+
 
 class PwShopListSubScraperFactory:
     def consortium(self):
@@ -38,6 +50,9 @@ class PwShopListSubScraperFactory:
 
     def seven_store(self):
         return PwSevenStoreListSubScraper()
+
+    def urban_industry(self):
+        return PwUrbanIndustryListSubScraper()
 
 
 class PwShopListScraper(Scraper):

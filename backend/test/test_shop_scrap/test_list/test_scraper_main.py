@@ -17,6 +17,16 @@ async def Fac():
     yield factory
 
 
+@pytest.mark.anyio
+async def test_shop_list():
+    print(ShopListScraperFactory.pw_sub_scraper_list())
+
+
+@pytest.mark.anyio
+async def test_brand_list():
+    print(ShopListScraperFactory.pw_sub_scraper_brand("consortium"))
+
+
 # @pytest.mark.anyio
 # async def test_consortium(Fac: ShopListScraperFactory):
 #     target_list = ["a.p.c. children", "a.p.c."]
@@ -24,8 +34,8 @@ async def Fac():
 #     await scraper.scrap()
 
 
-@pytest.mark.anyio
-async def test_seven_store(Fac: ShopListScraperFactory):
-    target_list = ["arcteryx", "asics"]
-    scraper = await Fac.playwright("seven_store", target_list, 2)
-    await scraper.scrap()
+# @pytest.mark.anyio
+# async def test_seven_store(Fac: ShopListScraperFactory):
+#     target_list = ["arcteryx", "asics"]
+#     scraper = await Fac.playwright("seven_store", target_list, 2)
+#     await scraper.scrap()

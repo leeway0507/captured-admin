@@ -2,12 +2,29 @@ import json
 from abc import ABC, abstractmethod
 import os
 import base64
+from random import randint
 
 import playwright.async_api as pw
 from playwright.async_api import async_playwright
 
 from components.env import dev_env
 from .page import PageHandler, PwPageHandler
+
+from stem import Signal
+from stem.control import Controller
+from components.subprocess import check_port_open
+
+user_agent_string = [
+    "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36",
+    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36",
+    "Mozilla/5.0 (Linux; Android 12; SM-G991B) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36",
+    "Mozilla/5.0 (iPad; CPU OS 15_4 like Mac OS X) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36",
+    "Mozilla/5.0 (iPhone; CPU iPhone OS 15_4 like Mac OS X) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36"
+    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36",
+    "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36",
+    "Mozilla/5.0 (Macintosh; Intel Mac OS X 13_1) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.1 Safari/605.1.15",
+    "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+]
 
 
 class ContextHandler(ABC):
@@ -41,23 +58,63 @@ class PwContextHandler(ContextHandler):
         if cls._instance is None:
             cls._instance = super().__new__(cls)
             cls._instance.context = None  # Initialize context to None
+
+        cls.allow_cookie = False
+        cls.allow_proxy = False
         return cls._instance
 
     @classmethod
-    async def start(cls):
+    async def start(cls, allow_proxy: bool = False, allow_cookie: bool = False):
         if cls._instance is None or cls._instance.context is None:
             self = cls()
-            self.context = await self._init_pw()
+            self.context = await self._init_pw(allow_proxy, allow_cookie)
             return self
         else:
             return cls._instance
 
-    async def _init_pw(self) -> pw.BrowserContext:
+    @classmethod
+    async def re_start(cls, allow_proxy: bool = False, allow_cookie: bool = False):
+        self = cls()
+        self.context = await self._init_pw(allow_proxy, allow_cookie)
+        return self
+
+    async def _init_pw(
+        self, allow_proxy: bool, allow_cookie: bool
+    ) -> pw.BrowserContext:
+        config = {"headless": False, "timeout": 5000}
+        # tor proxy 제거
+        # if allow_proxy:
+        #     proxy_exist = self.get_new_ip()
+        #     if proxy_exist:
+        #         config.update({"proxy": {"server": "socks5://localhost:9050"}})
+        #     else:
+        #         raise (ImportError("9051 포트가 꺼져있습니다. Proxy 사용을 위해선 docker tor를 실행하세요."))
+
         pw = await async_playwright().start()
-        self.browser = await pw.firefox.launch(headless=False, timeout=5000)
-        self.context = await self.browser.new_context()
-        await self.load_cookies()
+        self.browser = await pw.chromium.launch(**config)
+        self.context = await self.browser.new_context(
+            user_agent=user_agent_string[randint(0, len(user_agent_string))]
+        )
+        # header 내 webdriver 제거
+        await self.context.add_init_script(
+            "Object.defineProperty(navigator, 'webdriver', {get: () => undefined})"
+        )
+        if allow_cookie == True:
+            await self.load_cookies()
+
+        print("----- 브라우저 옵션 -----")
+        print(f"allow_proxy : {allow_proxy}")
+        print(f"allow_cookie : {allow_cookie}")
         return self.context
+
+    def get_new_ip(self):
+        if check_port_open(9051):
+            with Controller.from_port(port=9051) as controller:  # type:ignore
+                controller.authenticate()
+                controller.signal(Signal.NEWNYM)  # type:ignore
+            return True
+        else:
+            return False
 
     async def create_page(self) -> "PwPageHandler":
         page = await self.context.new_page()

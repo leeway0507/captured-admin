@@ -8,6 +8,7 @@ from platform_scrap.list.router import platform_list
 from platform_scrap.page.router import platform_page
 from shop_scrap.list.router import shop_list
 from shop_scrap.page.router import shop_page
+from shop_scrap.shop_info import shop_info
 from table.router import table
 
 
@@ -17,6 +18,7 @@ origins = [
     "http://localhost:3000",
     "http://localhost:4000",
     "http://127.0.0.1:4000",
+    "http://0.0.0.0:4000",
 ]
 
 
@@ -29,6 +31,7 @@ app.add_middleware(
 )
 
 
+app.include_router(shop_info, prefix="/api/shop_info", tags=["SHOP INFO"])
 app.include_router(table, prefix="/api/table", tags=["TABLE"])
 app.include_router(platform_list, prefix="/api/platform/list", tags=["PLATFORM LIST"])
 app.include_router(platform_page, prefix="/api/platform/page", tags=["PLATFORM PAGE"])

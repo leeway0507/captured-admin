@@ -1,0 +1,86 @@
+{
+    "scrap_time": "20240122-143545",
+    "num_of_plan": 19,
+    "num_processor": 3,
+    "db_update": true,
+    "job": [
+        {
+            "job": "adidas",
+            "status": "success"
+        },
+        {
+            "job": "keen",
+            "status": "success"
+        },
+        {
+            "job": "nike acg",
+            "status": "success"
+        },
+        {
+            "job": "our legacy",
+            "status": "success"
+        },
+        {
+            "job": "arcteryx",
+            "status": "success"
+        },
+        {
+            "job": "maison kitsune",
+            "status": "success"
+        },
+        {
+            "job": "puma",
+            "status": "success"
+        },
+        {
+            "job": "maison mihara yasuhiro",
+            "status": "success"
+        },
+        {
+            "job": "clarks originals",
+            "status": "success"
+        },
+        {
+            "job": "moncler",
+            "status": "success"
+        },
+        {
+            "job": "stüssy",
+            "status": "success"
+        },
+        {
+            "job": "comme des garçons",
+            "status": "success"
+        },
+        {
+            "job": "the north face",
+            "status": "success"
+        },
+        {
+            "job": "needles",
+            "status": "success"
+        },
+        {
+            "job": "dr. martens",
+            "status": "success"
+        },
+        {
+            "job": "new balance",
+            "status": "success"
+        },
+        {
+            "job": "hoka one one",
+            "status": "success"
+        },
+        {
+            "job": "human made",
+            "status": "success"
+        },
+        {
+            "job": "nike",
+            "status": "success"
+        }
+    ],
+    "brand_name": "adidas,arcteryx,clarks originals,comme des garçons,dr. martens,hoka one one,human made,keen,maison kitsune,maison mihara yasuhiro,moncler,needles,new balance,nike,nike acg,our legacy,puma,stüssy,the north face",
+    "shop_name": "seven_store"
+}

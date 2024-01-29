@@ -31,5 +31,5 @@ class updateShopProductCardSchema(BaseModel):
 
     model_config = ConfigDict(alias_generator=to_camel, populate_by_name=True)
 
-    shop_product_card_id: int
-    value: Dict[str, Any]
+    coupon: float
+    product_id: str

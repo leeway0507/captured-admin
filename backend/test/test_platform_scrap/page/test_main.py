@@ -32,7 +32,7 @@ async def ScrapPage():
 async def test_check_None_to_lastScrape(
     ScrapPage: PlatformPageMain,
 ):
-    ScrapPage.set_values("scrapDate", None)
+    ScrapPage.set_value("scrapDate", None)
 
     assert (ScrapPage.searchType, ScrapPage.value) == ("scrapDate", "lastScrap")
 
@@ -41,7 +41,7 @@ async def test_check_None_to_lastScrape(
 async def test_check_value_is_lastScrap(
     ScrapPage: PlatformPageMain,
 ):
-    ScrapPage.set_values("kreamId", "74749")
+    ScrapPage.set_value("kreamId", "74749")
 
     assert (ScrapPage.searchType, ScrapPage.value) == ("kreamId", "74749")
 
@@ -51,14 +51,14 @@ async def test_check_value_is_lastScrap_error(
     ScrapPage: PlatformPageMain,
 ):
     with pytest.raises(ValueError):
-        ScrapPage.set_values("kreamId", None)
+        ScrapPage.set_value("kreamId", None)
 
 
 @pytest.mark.anyio
 async def test_extract_folder_name_and_target_data_kream_id(
     ScrapPage: PlatformPageMain,
 ):
-    ScrapPage.set_values("kreamId", "74749")
+    ScrapPage.set_value("kreamId", "74749")
     result = ScrapPage.extract_folder_name_and_target_data()
 
     assert result == ("kream_id", ["74749"])
@@ -66,14 +66,14 @@ async def test_extract_folder_name_and_target_data_kream_id(
 
 @pytest.mark.anyio
 async def test_get_target_list_by_scrap_date(ScrapPage: PlatformPageMain):
-    ScrapPage.set_values("scrapDate", "lastScrap")
+    ScrapPage.set_value("scrapDate", "lastScrap")
     target_list = ScrapPage.get_target_list_by_scrap_date()
     assert isinstance(target_list[0], int)
 
 
 @pytest.mark.anyio
 async def test_get_brand_name_by_scrap_date(ScrapPage: PlatformPageMain):
-    ScrapPage.set_values("scrapDate", "lastScrap")
+    ScrapPage.set_value("scrapDate", "lastScrap")
     folder_name = ScrapPage.get_brand_name_by_scrap_date()
 
     assert folder_name == "the north face"
@@ -83,7 +83,7 @@ async def test_get_brand_name_by_scrap_date(ScrapPage: PlatformPageMain):
 async def test_extract_folder_name_and_target_data_scrapDate(
     ScrapPage: PlatformPageMain,
 ):
-    ScrapPage.set_values("scrapDate", "lastScrap")
+    ScrapPage.set_value("scrapDate", "lastScrap")
     result = ScrapPage.extract_folder_name_and_target_data()
 
     assert isinstance(result, tuple)
