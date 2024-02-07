@@ -44,6 +44,10 @@ class SizeBatchMain(ShopPageMain):
         await self.sync_prod_batch_data_to_prod_db()
         self.send_status_to_sns(f"{self.scrap_time} Done!!")
 
+    async def execute_sync_db(self, scrap_time: str):
+        await self.init(100, 1, scrap_time)
+        await self.sync_prod_batch_data_to_prod_db()
+
     async def init(self, batch_size: int, num_processor: int, scrap_time: str):
         self.batch_size = batch_size
         self.num_processor = num_processor

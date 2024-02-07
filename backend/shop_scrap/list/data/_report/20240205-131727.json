@@ -1,0 +1,14 @@
+{
+    "scrap_time": "20240205-131727",
+    "num_of_plan": 1,
+    "num_processor": 1,
+    "db_update": false,
+    "job": [
+        {
+            "job": "acne studios",
+            "status": "sub scraper failed: Unexpected token \"\" while parsing selector \"\""
+        }
+    ],
+    "brand_name": "acne studios",
+    "shop_name": "endclothing"
+}

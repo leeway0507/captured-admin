@@ -102,7 +102,7 @@ class CandidateTable:
 class LoadStrategy:
     def brand(self, content: str):
         return select(ShopProductCardTable).where(
-            ShopProductCardTable.brand_name == content,
+            ShopProductCardTable.brand_name.like("%" + content + "%"),
             ShopProductCardTable.candidate != -1,
             ShopProductCardTable.sold_out != 1,
         )

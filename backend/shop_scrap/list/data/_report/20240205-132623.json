@@ -1,0 +1,14 @@
+{
+    "scrap_time": "20240205-132623",
+    "num_of_plan": 1,
+    "num_processor": 1,
+    "db_update": true,
+    "job": [
+        {
+            "job": "arc'teryx",
+            "status": "success"
+        }
+    ],
+    "brand_name": "arc'teryx",
+    "shop_name": "endclothing"
+}

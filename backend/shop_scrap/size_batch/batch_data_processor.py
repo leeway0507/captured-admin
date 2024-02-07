@@ -55,7 +55,7 @@ class SizeBatchProcessor:  # BatchMaker
 
     async def _shop_card_data(self):
         stmt = select(ShopProductCardTable).where(
-            ShopProductCardTable.candidate == 2,
+            ShopProductCardTable.candidate == 2, ShopProductCardTable.sold_out == False
         )
         return await self._execute_stmt(self.admin_session, stmt)
 

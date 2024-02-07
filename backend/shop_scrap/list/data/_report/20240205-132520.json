@@ -1,0 +1,14 @@
+{
+    "scrap_time": "20240205-132520",
+    "num_of_plan": 1,
+    "num_processor": 1,
+    "db_update": false,
+    "job": [
+        {
+            "job": "arc'teryx",
+            "status": "sub scraper failed: Unexpected token \"\" while parsing selector \"\""
+        }
+    ],
+    "brand_name": "arc'teryx",
+    "shop_name": "endclothing"
+}

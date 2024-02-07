@@ -4,37 +4,38 @@ from typing import Dict
 
 from sqlalchemy.orm import sessionmaker, Session
 from sqlalchemy.ext.asyncio import create_async_engine
+from sshtunnel import SSHTunnelForwarder
+
+from sqlalchemy import select
+from sqlalchemy.orm import sessionmaker
+from db.tables_production import ProductInfoTable
+from sqlalchemy.ext.asyncio import AsyncSession
+
 from components.env import dev_env, prod_env
 
 
-def connect_db(
-    username: str, password: str, host: str, db_name: str, **_kwargs
-) -> Session:
-    """
-    sseion 연결
-
-    Args:
-        username (str): db username
-        password (str): db password
-        host (str): db host
-        db_name (str): db name
-
-    Returns:
-        sessionmaker : 연결된 db ssesion
-
-    """
-
-    ###############
-    # DB Session using Sqlalchemy.orm
-
-    engine = conn_engine(username, password, host, db_name)
-    session_local = sessionmaker(bind=engine)
-    return session_local()
-
-
-def conn_engine(username: str, password: str, host: str, db_name: str, **_kwargs):
-    db_url = f"mysql+aiomysql://{username}:{password}@{host}:3306/{db_name}"
+def conn_engine(
+    username: str, password: str, host: str, db_name: str, port: str, **_kwargs
+):
+    db_url = f"mysql+aiomysql://{username}:{password}@{host}:{port}/{db_name}"
     return create_async_engine(db_url)
+
+
+def sshtunnelInstance():
+    # SSH config
+    ssh_host = "43.201.98.25"
+    ssh_port = 22
+    ssh_username = "ubuntu"
+    ssh_private_key = "/Users/yangwoolee/.ssh/captured.pem"
+    db_host = "db-captured.cheoqn0aa7xs.ap-northeast-2.rds.amazonaws.com"
+
+    tunnel = SSHTunnelForwarder(
+        ssh_host,
+        ssh_username=ssh_username,
+        ssh_pkey=ssh_private_key,
+        remote_bind_address=(db_host, 3306),
+    )
+    return tunnel
 
 
 def get_secret(env: str) -> Dict[str, str]:

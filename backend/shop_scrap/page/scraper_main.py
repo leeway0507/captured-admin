@@ -9,6 +9,9 @@ from components.browser_handler import PwContextHandler, PwPageHandler
 from ..shop_list.consortium import PwConsortiumPageSubScraper
 from ..shop_list.seven_store import PwSevenStorePageSubScraper
 from ..shop_list.urban_industry import PwUrbanIndustryPageSubScraper
+from ..shop_list._18montrose import Pw18montrosePageSubScraper
+from ..shop_list.harresoe import PwHarresoePageSubScraper
+from ..shop_list.endclothing import PwEndClothingPageSubScraper
 
 
 class ShopPageScraperFactory:
@@ -62,6 +65,15 @@ class PwShopPageSubScraperFactory:
 
     def urban_industry(self):
         return PwUrbanIndustryPageSubScraper()
+
+    def _18montrose(self):
+        return Pw18montrosePageSubScraper()
+
+    def harresoe(self):
+        return PwHarresoePageSubScraper()
+
+    def endclothing(self):  # -> Any:
+        return PwEndClothingPageSubScraper()
 
 
 class PwShopPageScraper(Scraper):

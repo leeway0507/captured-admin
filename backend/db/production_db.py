@@ -1,8 +1,14 @@
-from .connection import conn_engine, get_secret, CustomDB
+from .connection import conn_engine, get_secret, CustomDB, sshtunnelInstance
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.ext.asyncio import AsyncSession
 
-db_engine = conn_engine(**get_secret("production"))
+## ssh
+tunnel = sshtunnelInstance()
+tunnel.start()
+
+sec = get_secret("production")
+sec.update({"port": tunnel.local_bind_port})
+db_engine = conn_engine(**sec)
 prod_session_local = sessionmaker(bind=db_engine, class_=AsyncSession)  # type: ignore
 
 

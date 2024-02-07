@@ -10,6 +10,7 @@ from shop_scrap.list.router import shop_list
 from shop_scrap.page.router import shop_page
 from shop_scrap.shop_info import shop_info
 from table.router import table
+from db.production_db import tunnel
 
 
 app = FastAPI()
@@ -53,7 +54,10 @@ from uvicorn.config import LOGGING_CONFIG
 import uvicorn
 
 if __name__ == "__main__":
-    LOGGING_CONFIG["formatters"]["access"][
-        "fmt"
-    ] = '%(levelprefix)s %(asctime)s - %(client_addr)s - "%(request_line)s" %(status_code)s'
-    uvicorn.run("main:app", port=8005, reload=True, host="0.0.0.0")
+    try:
+        LOGGING_CONFIG["formatters"]["access"][
+            "fmt"
+        ] = '%(levelprefix)s %(asctime)s - %(client_addr)s - "%(request_line)s" %(status_code)s'
+        uvicorn.run("main:app", port=8005, reload=True, host="0.0.0.0")
+    finally:
+        tunnel.close()

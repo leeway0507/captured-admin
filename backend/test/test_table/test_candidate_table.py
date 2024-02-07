@@ -42,7 +42,7 @@ async def test_load_table_shop(Candidate: CandidateTable):
 
 @pytest.mark.anyio
 async def test_get(Candidate: CandidateTable):
-    data = await Candidate._shop_card_list("brand", "adidas")
+    data = await Candidate._shop_card_list("brand", "stone island")
 
     assert isinstance(data[0], dict)
 

@@ -157,6 +157,7 @@ class PwShopListSubScraper(SubScraper):
         while True:
             await self.page_scroll()
 
+            await self.page_handler.sleep_until(randint(500, 5000))
             raw_card_data += await self.extract_card_html()
 
             if not await self.has_next_page(page_num):

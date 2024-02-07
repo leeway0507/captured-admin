@@ -29,26 +29,21 @@ user_agent_string = [
 
 class ContextHandler(ABC):
     @classmethod
-    async def start(cls):
-        ...
+    async def start(cls): ...
 
     @abstractmethod
-    async def create_page(self) -> PageHandler:
-        ...
+    async def create_page(self) -> PageHandler: ...
 
     @abstractmethod
-    async def load_cookies(self) -> None:
-        ...
+    async def load_cookies(self) -> None: ...
 
     @abstractmethod
-    async def close_context(self) -> None:
-        ...
+    async def close_context(self) -> None: ...
 
 
 class PlatformContextHandler(ContextHandler):
     @abstractmethod
-    async def login(self):
-        ...
+    async def login(self): ...
 
 
 class PwContextHandler(ContextHandler):
@@ -93,7 +88,8 @@ class PwContextHandler(ContextHandler):
         pw = await async_playwright().start()
         self.browser = await pw.chromium.launch(**config)
         self.context = await self.browser.new_context(
-            user_agent=user_agent_string[randint(0, len(user_agent_string))]
+            user_agent=user_agent_string[randint(0, len(user_agent_string) - 1)],
+            viewport={"width": 1280, "height": 1440},
         )
         # header 내 webdriver 제거
         await self.context.add_init_script(

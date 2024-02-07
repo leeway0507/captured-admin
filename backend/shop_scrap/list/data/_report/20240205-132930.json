@@ -1,0 +1,14 @@
+{
+    "scrap_time": "20240205-132930",
+    "num_of_plan": 1,
+    "num_processor": 1,
+    "db_update": true,
+    "job": [
+        {
+            "job": "alexander mcqueen",
+            "status": "success"
+        }
+    ],
+    "brand_name": "alexander mcqueen",
+    "shop_name": "endclothing"
+}

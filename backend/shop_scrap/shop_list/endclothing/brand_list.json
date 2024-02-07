@@ -1,0 +1,3254 @@
+{
+    "brand_list": [
+        "a.p.c.",
+        "aape by a bathing ape",
+        "acne studios",
+        "adidas",
+        "air jordan",
+        "alexander mcqueen",
+        "ami paris",
+        "andersson bell",
+        "arc'teryx",
+        "asics",
+        "autry",
+        "balenciaga",
+        "barbour",
+        "birkenstock",
+        "burberry",
+        "c.p. company",
+        "calvin klein",
+        "canada goose",
+        "carhartt wip",
+        "celine",
+        "clarks originals",
+        "coach",
+        "columbia",
+        "comme des garçons",
+        "converse",
+        "danton",
+        "dr. martens",
+        "engineered garments",
+        "fear of god",
+        "fear of god essentials",
+        "fred perry",
+        "g-shock",
+        "givenchy",
+        "golden goose",
+        "gucci",
+        "helinox",
+        "hoka",
+        "human made",
+        "jacquemus",
+        "keen",
+        "kenzo",
+        "lacoste",
+        "lee",
+        "levi’s vintage clothing",
+        "mackintosh",
+        "maison kitsuné",
+        "maison margiela",
+        "maison mihara yasuhiro",
+        "mizuno",
+        "mm6 maison margiela",
+        "moncler",
+        "needles",
+        "new balance",
+        "new era",
+        "nike",
+        "nike sb",
+        "nudie jeans co",
+        "oakley",
+        "obey",
+        "our legacy",
+        "patagonia",
+        "paul smith",
+        "polo ralph lauren",
+        "puma",
+        "ray-ban",
+        "reebok",
+        "salomon",
+        "sporty & rich",
+        "stone island",
+        "stussy",
+        "superga",
+        "the north face",
+        "timberland",
+        "umbro",
+        "vans",
+        "veja",
+        "wales bonner",
+        "wooyoungmi",
+        "y-3"
+    ],
+    "data": [
+        { "shop_name": "endclothing", "brand_name": "032c", "brand_url": "https://www.endclothing.com/kr/brands/032c" },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "1017 alyx 9sm",
+            "brand_url": "https://www.endclothing.com/kr/brands/1017-alyx-9sm"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "3.paradis",
+            "brand_url": "https://www.endclothing.com/kr/brands/3-paradis"
+        },
+        { "shop_name": "endclothing", "brand_name": "424", "brand_url": "https://www.endclothing.com/kr/brands/424" },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "66° north",
+            "brand_url": "https://www.endclothing.com/kr/brands/66-north"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "a bathing ape eyewear",
+            "brand_url": "https://www.endclothing.com/kr/brands/a-bathing-ape-eyewear"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "a kind of guise",
+            "brand_url": "https://www.endclothing.com/kr/brands/a-kind-of-guise"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "a-cold-wall*",
+            "brand_url": "https://www.endclothing.com/kr/brands/a-cold-wall"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "a.p.c.",
+            "brand_url": "https://www.endclothing.com/kr/brands/a-p-c"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "aape by a bathing ape",
+            "brand_url": "https://www.endclothing.com/kr/brands/aape-by-a-bathing-ape"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "aarke",
+            "brand_url": "https://www.endclothing.com/kr/brands/aarke"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "abrams & chronicle",
+            "brand_url": "https://www.endclothing.com/kr/brands/abrams-chronicle"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "ace & tate",
+            "brand_url": "https://www.endclothing.com/kr/brands/ace-tate"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "acne studios",
+            "brand_url": "https://www.endclothing.com/kr/brands/acne-studios"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "acne studios mini",
+            "brand_url": "https://www.endclothing.com/kr/brands/acne-studios-mini"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "acqua di parma",
+            "brand_url": "https://www.endclothing.com/kr/brands/acqua-di-parma"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "acronym",
+            "brand_url": "https://www.endclothing.com/kr/brands/acronym"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "adidas",
+            "brand_url": "https://www.endclothing.com/kr/brands/adidas"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "adidas consortium",
+            "brand_url": "https://www.endclothing.com/kr/brands/adidas-consortium"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "adidas spezial",
+            "brand_url": "https://www.endclothing.com/kr/brands/adidas-spezial"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "adidas terrex",
+            "brand_url": "https://www.endclothing.com/kr/brands/adidas-terrex"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "adieu",
+            "brand_url": "https://www.endclothing.com/kr/brands/adieu"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "adsum",
+            "brand_url": "https://www.endclothing.com/kr/brands/adsum"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "advisory board crystals",
+            "brand_url": "https://www.endclothing.com/kr/brands/advisory-board-crystals"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "aesop",
+            "brand_url": "https://www.endclothing.com/kr/brands/aesop"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "affxwrks",
+            "brand_url": "https://www.endclothing.com/kr/brands/affxwrks"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "afield out",
+            "brand_url": "https://www.endclothing.com/kr/brands/afield-out"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "agaric fly",
+            "brand_url": "https://www.endclothing.com/kr/brands/agaric-fly"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "air jordan",
+            "brand_url": "https://www.endclothing.com/kr/brands/air-jordan"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "aitor throup's thedsa",
+            "brand_url": "https://www.endclothing.com/kr/brands/aitor-throups-thedsa"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "akila",
+            "brand_url": "https://www.endclothing.com/kr/brands/akila"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "alba optics",
+            "brand_url": "https://www.endclothing.com/kr/brands/alba-optics"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "albam",
+            "brand_url": "https://www.endclothing.com/kr/brands/albam"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "alessi",
+            "brand_url": "https://www.endclothing.com/kr/brands/alessi"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "alexander mcqueen",
+            "brand_url": "https://www.endclothing.com/kr/brands/alexander-mcqueen"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "alighieri",
+            "brand_url": "https://www.endclothing.com/kr/brands/alighieri"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "all blues",
+            "brand_url": "https://www.endclothing.com/kr/brands/all-blues"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "all gone",
+            "brand_url": "https://www.endclothing.com/kr/brands/all-gone"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "alltimers",
+            "brand_url": "https://www.endclothing.com/kr/brands/alltimers"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "ally capellino",
+            "brand_url": "https://www.endclothing.com/kr/brands/ally-capellino"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "alpha industries",
+            "brand_url": "https://www.endclothing.com/kr/brands/alpha-industries"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "ambush",
+            "brand_url": "https://www.endclothing.com/kr/brands/ambush"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "ameos",
+            "brand_url": "https://www.endclothing.com/kr/brands/ameos"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "ami paris",
+            "brand_url": "https://www.endclothing.com/kr/brands/ami-paris"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "amiri",
+            "brand_url": "https://www.endclothing.com/kr/brands/amiri"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "anatome",
+            "brand_url": "https://www.endclothing.com/kr/brands/anatome"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "and wander",
+            "brand_url": "https://www.endclothing.com/kr/brands/and-wander"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "anderson's",
+            "brand_url": "https://www.endclothing.com/kr/brands/andersons"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "andersson bell",
+            "brand_url": "https://www.endclothing.com/kr/brands/andersson-bell"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "andrew",
+            "brand_url": "https://www.endclothing.com/kr/brands/andrew"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "anglan",
+            "brand_url": "https://www.endclothing.com/kr/brands/anglan"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "anglepoise",
+            "brand_url": "https://www.endclothing.com/kr/brands/anglepoise"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "anonymous ism",
+            "brand_url": "https://www.endclothing.com/kr/brands/anonymous-ism"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "apotheke fragrance",
+            "brand_url": "https://www.endclothing.com/kr/brands/apotheke-fragrance"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "arc'teryx",
+            "brand_url": "https://www.endclothing.com/kr/brands/arc-teryx"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "arc'teryx veilance",
+            "brand_url": "https://www.endclothing.com/kr/brands/arcteryx-veilance"
+        },
+        { "shop_name": "endclothing", "brand_name": "arcs", "brand_url": "https://www.endclothing.com/kr/brands/arcs" },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "areaware",
+            "brand_url": "https://www.endclothing.com/kr/brands/areaware"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "aries",
+            "brand_url": "https://www.endclothing.com/kr/brands/aries"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "armor-lux",
+            "brand_url": "https://www.endclothing.com/kr/brands/armor-lux"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "arpenteur",
+            "brand_url": "https://www.endclothing.com/kr/brands/arpenteur"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "artek",
+            "brand_url": "https://www.endclothing.com/kr/brands/artek"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "artifact by superga",
+            "brand_url": "https://www.endclothing.com/kr/brands/artifact-by-superga"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "asics",
+            "brand_url": "https://www.endclothing.com/kr/brands/asics"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "assouline",
+            "brand_url": "https://www.endclothing.com/kr/brands/assouline"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "astorflex",
+            "brand_url": "https://www.endclothing.com/kr/brands/astorflex"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "attirecare",
+            "brand_url": "https://www.endclothing.com/kr/brands/attirecare"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "auralee",
+            "brand_url": "https://www.endclothing.com/kr/brands/auralee"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "autry",
+            "brand_url": "https://www.endclothing.com/kr/brands/autry"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "awake ny",
+            "brand_url": "https://www.endclothing.com/kr/brands/awake-ny"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "axel arigato",
+            "brand_url": "https://www.endclothing.com/kr/brands/axel-arigato"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "ayamé socks",
+            "brand_url": "https://www.endclothing.com/kr/brands/ayame-socks"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "aykasa",
+            "brand_url": "https://www.endclothing.com/kr/brands/aykasa"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "b&o play by bang & olufsen",
+            "brand_url": "https://www.endclothing.com/kr/brands/b-o-play-by-bang-olufsen"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "baebsy",
+            "brand_url": "https://www.endclothing.com/kr/brands/baebsy"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "baina",
+            "brand_url": "https://www.endclothing.com/kr/brands/baina"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "balenciaga",
+            "brand_url": "https://www.endclothing.com/kr/brands/balenciaga"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "balenciaga eyewear",
+            "brand_url": "https://www.endclothing.com/kr/brands/balenciaga-eyewear"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "balmain",
+            "brand_url": "https://www.endclothing.com/kr/brands/balmain"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "baracuta",
+            "brand_url": "https://www.endclothing.com/kr/brands/baracuta"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "barbour",
+            "brand_url": "https://www.endclothing.com/kr/brands/barbour"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "barena",
+            "brand_url": "https://www.endclothing.com/kr/brands/barena"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "bass weejuns",
+            "brand_url": "https://www.endclothing.com/kr/brands/bass-weejuns"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "basshu",
+            "brand_url": "https://www.endclothing.com/kr/brands/basshu"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "battenwear",
+            "brand_url": "https://www.endclothing.com/kr/brands/battenwear"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "baxter of california",
+            "brand_url": "https://www.endclothing.com/kr/brands/baxter-of-california"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "beams japan",
+            "brand_url": "https://www.endclothing.com/kr/brands/beams-japan"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "beams plus",
+            "brand_url": "https://www.endclothing.com/kr/brands/beams-plus"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "bedwin & the heartbreakers",
+            "brand_url": "https://www.endclothing.com/kr/brands/bedwin-the-heartbreakers"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "belstaff",
+            "brand_url": "https://www.endclothing.com/kr/brands/belstaff"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "bianca chandon",
+            "brand_url": "https://www.endclothing.com/kr/brands/bianca-chandon"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "billionaire boys club",
+            "brand_url": "https://www.endclothing.com/kr/brands/billionaire-boys-club"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "biocol labs",
+            "brand_url": "https://www.endclothing.com/kr/brands/biocol-labs"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "birkenstock",
+            "brand_url": "https://www.endclothing.com/kr/brands/birkenstock"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "bisous skateboards",
+            "brand_url": "https://www.endclothing.com/kr/brands/bisous-skateboards"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "blackstock & weber",
+            "brand_url": "https://www.endclothing.com/kr/brands/blackstock-weber"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "blank expression",
+            "brand_url": "https://www.endclothing.com/kr/brands/blank-expression"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "bleue burnham",
+            "brand_url": "https://www.endclothing.com/kr/brands/bleue-burnham"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "blue blue japan",
+            "brand_url": "https://www.endclothing.com/kr/brands/blue-blue-japan"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "blue flowers",
+            "brand_url": "https://www.endclothing.com/kr/brands/blue-flowers"
+        },
+        { "shop_name": "endclothing", "brand_name": "bode", "brand_url": "https://www.endclothing.com/kr/brands/bode" },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "boiler room",
+            "brand_url": "https://www.endclothing.com/kr/brands/boiler-room"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "bongusta",
+            "brand_url": "https://www.endclothing.com/kr/brands/bongusta"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "bonnie clyde",
+            "brand_url": "https://www.endclothing.com/kr/brands/bonnie-clyde"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "bornn",
+            "brand_url": "https://www.endclothing.com/kr/brands/bornn"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "bottega veneta eyewear",
+            "brand_url": "https://www.endclothing.com/kr/brands/bottega-veneta-eyewear"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "boy smells",
+            "brand_url": "https://www.endclothing.com/kr/brands/boy-smells"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "boyhood",
+            "brand_url": "https://www.endclothing.com/kr/brands/boyhood"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "brain dead",
+            "brand_url": "https://www.endclothing.com/kr/brands/brain-dead"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "bram's fruit",
+            "brand_url": "https://www.endclothing.com/kr/brands/brams-fruit"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "braun",
+            "brand_url": "https://www.endclothing.com/kr/brands/braun"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "bricks & wood",
+            "brand_url": "https://www.endclothing.com/kr/brands/bricks-wood"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "bronze 56k",
+            "brand_url": "https://www.endclothing.com/kr/brands/bronze-56k"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "brutes ceramics",
+            "brand_url": "https://www.endclothing.com/kr/brands/brutes-ceramics"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "burberry",
+            "brand_url": "https://www.endclothing.com/kr/brands/burberry"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "butter goods",
+            "brand_url": "https://www.endclothing.com/kr/brands/butter-goods"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "by parra",
+            "brand_url": "https://www.endclothing.com/kr/brands/by-parra"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "byborre",
+            "brand_url": "https://www.endclothing.com/kr/brands/byborre"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "byredo",
+            "brand_url": "https://www.endclothing.com/kr/brands/byredo"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "c.o. bigelow",
+            "brand_url": "https://www.endclothing.com/kr/brands/co-bigelow"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "c.p. company",
+            "brand_url": "https://www.endclothing.com/kr/brands/cp-company"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "c.p. company undersixteen",
+            "brand_url": "https://www.endclothing.com/kr/brands/c-p-company-undersixteen"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "café mountain",
+            "brand_url": "https://www.endclothing.com/kr/brands/cafe-mountain"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "calvin klein",
+            "brand_url": "https://www.endclothing.com/kr/brands/calvin-klein"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "camp high",
+            "brand_url": "https://www.endclothing.com/kr/brands/camp-high"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "canada goose",
+            "brand_url": "https://www.endclothing.com/kr/brands/canada-goose"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "candlehand",
+            "brand_url": "https://www.endclothing.com/kr/brands/candlehand"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "carhartt wip",
+            "brand_url": "https://www.endclothing.com/kr/brands/carhartt"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "carne bollente",
+            "brand_url": "https://www.endclothing.com/kr/brands/carne-bollente"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "carrier goods pres. purple mountain observatory",
+            "brand_url": "https://www.endclothing.com/kr/brands/carrier-goods"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "carrots by anwar carrots",
+            "brand_url": "https://www.endclothing.com/kr/brands/carrots-by-anwar-carrots"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "casablanca",
+            "brand_url": "https://www.endclothing.com/kr/brands/casablanca"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "casall",
+            "brand_url": "https://www.endclothing.com/kr/brands/casall"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "cassina",
+            "brand_url": "https://www.endclothing.com/kr/brands/cassina"
+        },
+        { "shop_name": "endclothing", "brand_name": "cayl", "brand_url": "https://www.endclothing.com/kr/brands/cayl" },
+        { "shop_name": "endclothing", "brand_name": "cdlp", "brand_url": "https://www.endclothing.com/kr/brands/cdlp" },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "celine",
+            "brand_url": "https://www.endclothing.com/kr/brands/celine"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "centred.",
+            "brand_url": "https://www.endclothing.com/kr/brands/centred"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "chaco",
+            "brand_url": "https://www.endclothing.com/kr/brands/chaco"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "champion reverse weave",
+            "brand_url": "https://www.endclothing.com/kr/brands/champion-reverse-weave"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "checks downtown",
+            "brand_url": "https://www.endclothing.com/kr/brands/checks-downtown"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "chup by glen clyde company",
+            "brand_url": "https://www.endclothing.com/kr/brands/glen-clyde-company"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "ciele athletics",
+            "brand_url": "https://www.endclothing.com/kr/brands/ciele-athletics"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "clarks originals",
+            "brand_url": "https://www.endclothing.com/kr/brands/clarks-originals"
+        },
+        { "shop_name": "endclothing", "brand_name": "clot", "brand_url": "https://www.endclothing.com/kr/brands/clot" },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "cmf comfy outdoor garment",
+            "brand_url": "https://www.endclothing.com/kr/brands/cmf-comfy-outdoor-garment"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "coach",
+            "brand_url": "https://www.endclothing.com/kr/brands/coach"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "cole buxton",
+            "brand_url": "https://www.endclothing.com/kr/brands/cole-buxton"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "colorful standard",
+            "brand_url": "https://www.endclothing.com/kr/brands/colorful-standard"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "colour range",
+            "brand_url": "https://www.endclothing.com/kr/brands/colour-range"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "columbia",
+            "brand_url": "https://www.endclothing.com/kr/brands/columbia"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "comme des garçons",
+            "brand_url": "https://www.endclothing.com/kr/brands/comme-des-garcons"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "comme des garçons black",
+            "brand_url": "https://www.endclothing.com/kr/brands/comme-des-garcons-black"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "comme des garçons homme",
+            "brand_url": "https://www.endclothing.com/kr/brands/comme-des-garcons-homme"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "comme des garçons homme plus",
+            "brand_url": "https://www.endclothing.com/kr/brands/comme-des-garcons-homme-plus"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "comme des garçons parfums",
+            "brand_url": "https://www.endclothing.com/kr/brands/comme-des-garcons-parfum"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "comme des garçons play",
+            "brand_url": "https://www.endclothing.com/kr/brands/comme-des-garcons-play"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "comme des garçons play kids",
+            "brand_url": "https://www.endclothing.com/kr/brands/comme-des-garcons-play-kids"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "comme des garçons shirt",
+            "brand_url": "https://www.endclothing.com/kr/brands/comme-des-garcons-shirt"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "comme des garçons wallets",
+            "brand_url": "https://www.endclothing.com/kr/brands/comme-des-garcons-wallets"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "comme si",
+            "brand_url": "https://www.endclothing.com/kr/brands/comme-si"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "common projects",
+            "brand_url": "https://www.endclothing.com/kr/brands/common-projects"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "completedworks",
+            "brand_url": "https://www.endclothing.com/kr/brands/completedworks"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "converse",
+            "brand_url": "https://www.endclothing.com/kr/brands/converse"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "corridor",
+            "brand_url": "https://www.endclothing.com/kr/brands/corridor"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "cote&ciel",
+            "brand_url": "https://www.endclothing.com/kr/brands/cote-ciel"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "cotodama",
+            "brand_url": "https://www.endclothing.com/kr/brands/cotodama"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "cotopaxi",
+            "brand_url": "https://www.endclothing.com/kr/brands/cotopaxi"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "country of origin",
+            "brand_url": "https://www.endclothing.com/kr/brands/country-of-origin"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "craig green",
+            "brand_url": "https://www.endclothing.com/kr/brands/craig-green"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "crep protect",
+            "brand_url": "https://www.endclothing.com/kr/brands/crep-protect"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "crisp sheets",
+            "brand_url": "https://www.endclothing.com/kr/brands/crisp-sheets"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "crocs",
+            "brand_url": "https://www.endclothing.com/kr/brands/crocs"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "cubitts",
+            "brand_url": "https://www.endclothing.com/kr/brands/cubitts"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "daily paper",
+            "brand_url": "https://www.endclothing.com/kr/brands/daily-paper"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "daiwa",
+            "brand_url": "https://www.endclothing.com/kr/brands/daiwa"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "dancer",
+            "brand_url": "https://www.endclothing.com/kr/brands/dancer"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "danner",
+            "brand_url": "https://www.endclothing.com/kr/brands/danner"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "danton",
+            "brand_url": "https://www.endclothing.com/kr/brands/danton"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "david shrigley",
+            "brand_url": "https://www.endclothing.com/kr/brands/david-shrigley"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "dear letterman",
+            "brand_url": "https://www.endclothing.com/kr/brands/dear-letterman"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "decka",
+            "brand_url": "https://www.endclothing.com/kr/brands/decka"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "deiji studios",
+            "brand_url": "https://www.endclothing.com/kr/brands/deiji-studios"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "denham",
+            "brand_url": "https://www.endclothing.com/kr/brands/denham"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "devá states",
+            "brand_url": "https://www.endclothing.com/kr/brands/deva-states"
+        },
+        { "shop_name": "endclothing", "brand_name": "dfns", "brand_url": "https://www.endclothing.com/kr/brands/dfns" },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "dickies",
+            "brand_url": "https://www.endclothing.com/kr/brands/dickies"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "diemme",
+            "brand_url": "https://www.endclothing.com/kr/brands/diemme"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "digawel",
+            "brand_url": "https://www.endclothing.com/kr/brands/digawel"
+        },
+        { "shop_name": "endclothing", "brand_name": "dime", "brand_url": "https://www.endclothing.com/kr/brands/dime" },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "dior homme",
+            "brand_url": "https://www.endclothing.com/kr/brands/dior-homme"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "district vision",
+            "brand_url": "https://www.endclothing.com/kr/brands/district-vision"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "dolce & gabbana eyewear",
+            "brand_url": "https://www.endclothing.com/kr/brands/dolce-gabbana-eyewear"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "dr. martens",
+            "brand_url": "https://www.endclothing.com/kr/brands/dr-martens"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "drake's",
+            "brand_url": "https://www.endclothing.com/kr/brands/drake-s"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "dries van noten",
+            "brand_url": "https://www.endclothing.com/kr/brands/dries-van-noten"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "drôle de monsieur",
+            "brand_url": "https://www.endclothing.com/kr/brands/drole-de-monsieur"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "drool",
+            "brand_url": "https://www.endclothing.com/kr/brands/drool"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "druthers",
+            "brand_url": "https://www.endclothing.com/kr/brands/druthers"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "dusen dusen",
+            "brand_url": "https://www.endclothing.com/kr/brands/dusen-dusen"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "earl of east",
+            "brand_url": "https://www.endclothing.com/kr/brands/earl-of-east"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "east pacific trade",
+            "brand_url": "https://www.endclothing.com/kr/brands/east-pacific-trade"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "eastlogue\t",
+            "brand_url": "https://www.endclothing.com/kr/brands/eastlogue"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "eastpak",
+            "brand_url": "https://www.endclothing.com/kr/brands/eastpak"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "easymoc",
+            "brand_url": "https://www.endclothing.com/kr/brands/easymoc"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "ebbets field flannels",
+            "brand_url": "https://www.endclothing.com/kr/brands/ebbets-field-flannels"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "eden power corp",
+            "brand_url": "https://www.endclothing.com/kr/brands/eden-power-corp"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "edwin",
+            "brand_url": "https://www.endclothing.com/kr/brands/edwin"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "eliou",
+            "brand_url": "https://www.endclothing.com/kr/brands/eliou"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "ellie mercer",
+            "brand_url": "https://www.endclothing.com/kr/brands/ellie-mercer"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "elliker",
+            "brand_url": "https://www.endclothing.com/kr/brands/elliker"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "elmer gloves",
+            "brand_url": "https://www.endclothing.com/kr/brands/elmer-gloves"
+        },
+        { "shop_name": "endclothing", "brand_name": "end.", "brand_url": "https://www.endclothing.com/kr/brands/end" },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "endless joy",
+            "brand_url": "https://www.endclothing.com/kr/brands/endless-joy"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "engineered garments",
+            "brand_url": "https://www.endclothing.com/kr/brands/engineered-garments"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "epperson mountaineering",
+            "brand_url": "https://www.endclothing.com/kr/brands/epperson-mountaineering"
+        },
+        { "shop_name": "endclothing", "brand_name": "erl", "brand_url": "https://www.endclothing.com/kr/brands/erl" },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "etq. amsterdam",
+            "brand_url": "https://www.endclothing.com/kr/brands/etq-amsterdam"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "f.c. real bristol",
+            "brand_url": "https://www.endclothing.com/kr/brands/fc-real-bristol"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "f/ce.",
+            "brand_url": "https://www.endclothing.com/kr/brands/f-ce"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "face vessel",
+            "brand_url": "https://www.endclothing.com/kr/brands/face-vessel"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "falcon enamelware",
+            "brand_url": "https://www.endclothing.com/kr/brands/falcon-enamelware"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "fazeek",
+            "brand_url": "https://www.endclothing.com/kr/brands/fazeek"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "fdmtl",
+            "brand_url": "https://www.endclothing.com/kr/brands/fdmtl"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "fear of god",
+            "brand_url": "https://www.endclothing.com/kr/brands/fear-of-god"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "fear of god essentials",
+            "brand_url": "https://www.endclothing.com/kr/brands/fear-of-god-essentials"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "fellow",
+            "brand_url": "https://www.endclothing.com/kr/brands/fellow"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "ferm living",
+            "brand_url": "https://www.endclothing.com/kr/brands/ferm-living"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "filling pieces",
+            "brand_url": "https://www.endclothing.com/kr/brands/filling-pieces"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "filson",
+            "brand_url": "https://www.endclothing.com/kr/brands/filson"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "first arrows",
+            "brand_url": "https://www.endclothing.com/kr/brands/first-arrows"
+        },
+        { "shop_name": "endclothing", "brand_name": "fisn", "brand_url": "https://www.endclothing.com/kr/brands/fisn" },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "fjällräven",
+            "brand_url": "https://www.endclothing.com/kr/brands/fjallraven"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "flagstuff",
+            "brand_url": "https://www.endclothing.com/kr/brands/flagstuff"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "flatlist",
+            "brand_url": "https://www.endclothing.com/kr/brands/flatlist"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "flower mountain",
+            "brand_url": "https://www.endclothing.com/kr/brands/flower-mountain"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "floyd",
+            "brand_url": "https://www.endclothing.com/kr/brands/floyd"
+        },
+        { "shop_name": "endclothing", "brand_name": "folk", "brand_url": "https://www.endclothing.com/kr/brands/folk" },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "foret",
+            "brand_url": "https://www.endclothing.com/kr/brands/foret"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "forgo",
+            "brand_url": "https://www.endclothing.com/kr/brands/forgo"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "fracap",
+            "brand_url": "https://www.endclothing.com/kr/brands/fracap"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "fred perry",
+            "brand_url": "https://www.endclothing.com/kr/brands/fred-perry"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "freshthings",
+            "brand_url": "https://www.endclothing.com/kr/brands/freshthings"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "frizbee ceramics",
+            "brand_url": "https://www.endclothing.com/kr/brands/frizbee-ceramics"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "frizmworks",
+            "brand_url": "https://www.endclothing.com/kr/brands/frizmworks"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "fucking awesome",
+            "brand_url": "https://www.endclothing.com/kr/brands/fucking-awesome"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "futur",
+            "brand_url": "https://www.endclothing.com/kr/brands/futur"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "g-shock",
+            "brand_url": "https://www.endclothing.com/kr/brands/g-shock"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "garbstore",
+            "brand_url": "https://www.endclothing.com/kr/brands/garbstore"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "garrett leight",
+            "brand_url": "https://www.endclothing.com/kr/brands/garrett-leight"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "general admission",
+            "brand_url": "https://www.endclothing.com/kr/brands/general-admission"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "gentle monster",
+            "brand_url": "https://www.endclothing.com/kr/brands/gentle-monster"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "gestalten",
+            "brand_url": "https://www.endclothing.com/kr/brands/gestalten"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "gimaguas",
+            "brand_url": "https://www.endclothing.com/kr/brands/gimaguas"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "gimme 5",
+            "brand_url": "https://www.endclothing.com/kr/brands/gimme-5"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "gitman vintage",
+            "brand_url": "https://www.endclothing.com/kr/brands/gitman-vintage"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "givenchy",
+            "brand_url": "https://www.endclothing.com/kr/brands/givenchy"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "golden goose",
+            "brand_url": "https://www.endclothing.com/kr/brands/golden-goose"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "goldwin",
+            "brand_url": "https://www.endclothing.com/kr/brands/goldwin"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "good morning tapes",
+            "brand_url": "https://www.endclothing.com/kr/brands/good-morning-tapes"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "good news",
+            "brand_url": "https://www.endclothing.com/kr/brands/good-news"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "goopimade",
+            "brand_url": "https://www.endclothing.com/kr/brands/goopimade"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "gr10k",
+            "brand_url": "https://www.endclothing.com/kr/brands/gr10k"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "gramicci",
+            "brand_url": "https://www.endclothing.com/kr/brands/gramicci"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "grand collection",
+            "brand_url": "https://www.endclothing.com/kr/brands/grand-collection"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "grenson",
+            "brand_url": "https://www.endclothing.com/kr/brands/grenson"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "grown alchemist",
+            "brand_url": "https://www.endclothing.com/kr/brands/grown-alchemist"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "gucci",
+            "brand_url": "https://www.endclothing.com/kr/brands/gucci-jewellery"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "gucci eyewear",
+            "brand_url": "https://www.endclothing.com/kr/brands/gucci-eyewear"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "gurus roomshoes",
+            "brand_url": "https://www.endclothing.com/kr/brands/gurus-roomshoes"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "hachiman",
+            "brand_url": "https://www.endclothing.com/kr/brands/hachiman"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "haeckels",
+            "brand_url": "https://www.endclothing.com/kr/brands/haeckels"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "haglöfs",
+            "brand_url": "https://www.endclothing.com/kr/brands/haglofs"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "hanz de fuko",
+            "brand_url": "https://www.endclothing.com/kr/brands/hanz-de-fuko"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "hario",
+            "brand_url": "https://www.endclothing.com/kr/brands/hario"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "harmony",
+            "brand_url": "https://www.endclothing.com/kr/brands/harmony"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "hasami porcelain",
+            "brand_url": "https://www.endclothing.com/kr/brands/hasami-porcelain"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "hatton labs",
+            "brand_url": "https://www.endclothing.com/kr/brands/hatton-labs"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "haven",
+            "brand_url": "https://www.endclothing.com/kr/brands/haven"
+        },
+        { "shop_name": "endclothing", "brand_name": "hay", "brand_url": "https://www.endclothing.com/kr/brands/hay" },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "helinox",
+            "brand_url": "https://www.endclothing.com/kr/brands/helinox"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "helmut lang",
+            "brand_url": "https://www.endclothing.com/kr/brands/helmut-lang"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "hender scheme",
+            "brand_url": "https://www.endclothing.com/kr/brands/hender-scheme"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "herbar",
+            "brand_url": "https://www.endclothing.com/kr/brands/herbar"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "heresy",
+            "brand_url": "https://www.endclothing.com/kr/brands/heresy"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "heron preston",
+            "brand_url": "https://www.endclothing.com/kr/brands/heron-preston"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "hestra",
+            "brand_url": "https://www.endclothing.com/kr/brands/hestra"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "hightide & penco",
+            "brand_url": "https://www.endclothing.com/kr/brands/hightide-penco"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "hikerdelic",
+            "brand_url": "https://www.endclothing.com/kr/brands/hikerdelic"
+        },
+        { "shop_name": "endclothing", "brand_name": "hobo", "brand_url": "https://www.endclothing.com/kr/brands/hobo" },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "hockey",
+            "brand_url": "https://www.endclothing.com/kr/brands/hockey"
+        },
+        { "shop_name": "endclothing", "brand_name": "hoka", "brand_url": "https://www.endclothing.com/kr/brands/hoka" },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "holubar",
+            "brand_url": "https://www.endclothing.com/kr/brands/holubar"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "homework",
+            "brand_url": "https://www.endclothing.com/kr/brands/homework"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "homme plissé issey miyake",
+            "brand_url": "https://www.endclothing.com/kr/brands/homme-plisse-issey-miyake"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "hommey",
+            "brand_url": "https://www.endclothing.com/kr/brands/hommey"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "honey fucking dijon",
+            "brand_url": "https://www.endclothing.com/kr/brands/honey-fucking-dijon"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "honor the gift",
+            "brand_url": "https://www.endclothing.com/kr/brands/honor-the-gift"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "horace",
+            "brand_url": "https://www.endclothing.com/kr/brands/horace"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "horizn studios",
+            "brand_url": "https://www.endclothing.com/kr/brands/horizn-studios"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "house doctor",
+            "brand_url": "https://www.endclothing.com/kr/brands/house-doctor"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "howlin'",
+            "brand_url": "https://www.endclothing.com/kr/brands/howlin-by-morrison"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "human made",
+            "brand_url": "https://www.endclothing.com/kr/brands/human-made"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "hydroflask",
+            "brand_url": "https://www.endclothing.com/kr/brands/hydroflask"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "icecream",
+            "brand_url": "https://www.endclothing.com/kr/brands/icecream"
+        },
+        { "shop_name": "endclothing", "brand_name": "idea", "brand_url": "https://www.endclothing.com/kr/brands/idea" },
+        { "shop_name": "endclothing", "brand_name": "iggy", "brand_url": "https://www.endclothing.com/kr/brands/iggy" },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "indispensable",
+            "brand_url": "https://www.endclothing.com/kr/brands/indispensable"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "instru(men-tal) by mihara",
+            "brand_url": "https://www.endclothing.com/kr/brands/instrumental-by-mihara"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "inverallan",
+            "brand_url": "https://www.endclothing.com/kr/brands/inverallan"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "isabel marant",
+            "brand_url": "https://www.endclothing.com/kr/brands/isabel-marant"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "jacquemus",
+            "brand_url": "https://www.endclothing.com/kr/brands/jacquemus"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "jacques marie mage",
+            "brand_url": "https://www.endclothing.com/kr/brands/jacques-marie-mage"
+        },
+        { "shop_name": "endclothing", "brand_name": "jam", "brand_url": "https://www.endclothing.com/kr/brands/jam" },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "jamieson's of shetland",
+            "brand_url": "https://www.endclothing.com/kr/brands/jamieson-s-of-shetland"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "jason markk",
+            "brand_url": "https://www.endclothing.com/kr/brands/jason-markk"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "jil sander",
+            "brand_url": "https://www.endclothing.com/kr/brands/jil-sander"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "john elliott",
+            "brand_url": "https://www.endclothing.com/kr/brands/john-elliott"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "john smedley",
+            "brand_url": "https://www.endclothing.com/kr/brands/john-smedley"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "joy resolve",
+            "brand_url": "https://www.endclothing.com/kr/brands/joy-resolve"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "jungles jungles",
+            "brand_url": "https://www.endclothing.com/kr/brands/jungles-jungles"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "junya watanabe man",
+            "brand_url": "https://www.endclothing.com/kr/brands/junya-watanabe-man"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "jw anderson",
+            "brand_url": "https://www.endclothing.com/kr/brands/jw-anderson"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "k-swiss",
+            "brand_url": "https://www.endclothing.com/kr/brands/k-swiss"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "k-way",
+            "brand_url": "https://www.endclothing.com/kr/brands/k-way"
+        },
+        { "shop_name": "endclothing", "brand_name": "kamo", "brand_url": "https://www.endclothing.com/kr/brands/kamo" },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "kapka",
+            "brand_url": "https://www.endclothing.com/kr/brands/kapka"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "karhu",
+            "brand_url": "https://www.endclothing.com/kr/brands/karhu"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "karu research",
+            "brand_url": "https://www.endclothing.com/kr/brands/karu-research"
+        },
+        { "shop_name": "endclothing", "brand_name": "kavu", "brand_url": "https://www.endclothing.com/kr/brands/kavu" },
+        { "shop_name": "endclothing", "brand_name": "keen", "brand_url": "https://www.endclothing.com/kr/brands/keen" },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "kenzo",
+            "brand_url": "https://www.endclothing.com/kr/brands/kenzo"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "kestin",
+            "brand_url": "https://www.endclothing.com/kr/brands/kestin"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "kinfill",
+            "brand_url": "https://www.endclothing.com/kr/brands/kinfill"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "kinto",
+            "brand_url": "https://www.endclothing.com/kr/brands/kinto"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "kiosk48th",
+            "brand_url": "https://www.endclothing.com/kr/brands/kiosk48th"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "kjp studio",
+            "brand_url": "https://www.endclothing.com/kr/brands/kjp-studio"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "klättermusen",
+            "brand_url": "https://www.endclothing.com/kr/brands/klattermusen"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "kleman",
+            "brand_url": "https://www.endclothing.com/kr/brands/kleman"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "krink",
+            "brand_url": "https://www.endclothing.com/kr/brands/krink"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "ksubi",
+            "brand_url": "https://www.endclothing.com/kr/brands/ksubi"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "lacoste",
+            "brand_url": "https://www.endclothing.com/kr/brands/lacoste"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "lady white co.",
+            "brand_url": "https://www.endclothing.com/kr/brands/lady-white-co"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "lanvin",
+            "brand_url": "https://www.endclothing.com/kr/brands/lanvin"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "last resort ab",
+            "brand_url": "https://www.endclothing.com/kr/brands/last-resort-ab"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "late checkout",
+            "brand_url": "https://www.endclothing.com/kr/brands/late-checkout"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "le gramme",
+            "brand_url": "https://www.endclothing.com/kr/brands/le-gramme"
+        },
+        { "shop_name": "endclothing", "brand_name": "lee", "brand_url": "https://www.endclothing.com/kr/brands/lee" },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "les tien",
+            "brand_url": "https://www.endclothing.com/kr/brands/les-tien"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "levi’s vintage clothing",
+            "brand_url": "https://www.endclothing.com/kr/brands/levi-s-vintage"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "lex pott",
+            "brand_url": "https://www.endclothing.com/kr/brands/lex-pott"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "lexxola",
+            "brand_url": "https://www.endclothing.com/kr/brands/lexxola"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "li-ning",
+            "brand_url": "https://www.endclothing.com/kr/brands/li-ning"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "liam owen",
+            "brand_url": "https://www.endclothing.com/kr/brands/liam-owen"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "liquiproof",
+            "brand_url": "https://www.endclothing.com/kr/brands/liquiproof"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "lite year",
+            "brand_url": "https://www.endclothing.com/kr/brands/lite-year"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "lmc",
+            "brand_url": "https://www.endclothing.com/kr/brands/lost-management-cities"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "lo-fi",
+            "brand_url": "https://www.endclothing.com/kr/brands/lo-fi"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "loewe",
+            "brand_url": "https://www.endclothing.com/kr/brands/loewe"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "london undercover",
+            "brand_url": "https://www.endclothing.com/kr/brands/london-undercover"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "mackintosh",
+            "brand_url": "https://www.endclothing.com/kr/brands/mackintosh"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "magenta",
+            "brand_url": "https://www.endclothing.com/kr/brands/magenta"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "magic castles",
+            "brand_url": "https://www.endclothing.com/kr/brands/magic-castles"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "maharishi",
+            "brand_url": "https://www.endclothing.com/kr/brands/maharishi"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "maison balzac",
+            "brand_url": "https://www.endclothing.com/kr/brands/maison-balzac"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "maison kitsuné",
+            "brand_url": "https://www.endclothing.com/kr/brands/maison-kitsune"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "maison margiela",
+            "brand_url": "https://www.endclothing.com/kr/brands/maison-margiela"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "maison mihara yasuhiro",
+            "brand_url": "https://www.endclothing.com/kr/brands/maison-mihara-yasuhiro"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "malin + goetz",
+            "brand_url": "https://www.endclothing.com/kr/brands/malin-goetz"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "manastash",
+            "brand_url": "https://www.endclothing.com/kr/brands/manastash"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "manors golf",
+            "brand_url": "https://www.endclothing.com/kr/brands/manors-golf"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "maple",
+            "brand_url": "https://www.endclothing.com/kr/brands/maple"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "marcelo burlon county of milan",
+            "brand_url": "https://www.endclothing.com/kr/brands/marcelo-burlon-county-of-milan"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "marcelo burlon eyewear",
+            "brand_url": "https://www.endclothing.com/kr/brands/marcelo-burlon-eyewear"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "margaret howell",
+            "brand_url": "https://www.endclothing.com/kr/brands/margaret-howell"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "market",
+            "brand_url": "https://www.endclothing.com/kr/brands/market"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "marloe marloe",
+            "brand_url": "https://www.endclothing.com/kr/brands/marloe-marloe"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "marni",
+            "brand_url": "https://www.endclothing.com/kr/brands/marni"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "marset",
+            "brand_url": "https://www.endclothing.com/kr/brands/marset"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "martine ali",
+            "brand_url": "https://www.endclothing.com/kr/brands/martine-ali"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "martine rose",
+            "brand_url": "https://www.endclothing.com/kr/brands/martine-rose"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "marvis",
+            "brand_url": "https://www.endclothing.com/kr/brands/marvis"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "master-piece",
+            "brand_url": "https://www.endclothing.com/kr/brands/master-piece"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "mastermind japan",
+            "brand_url": "https://www.endclothing.com/kr/brands/mastermind-japan"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "mastermind world",
+            "brand_url": "https://www.endclothing.com/kr/brands/mastermind-world"
+        },
+        { "shop_name": "endclothing", "brand_name": "mcq", "brand_url": "https://www.endclothing.com/kr/brands/mcq" },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "medicom",
+            "brand_url": "https://www.endclothing.com/kr/brands/medicom"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "mellow ceramics",
+            "brand_url": "https://www.endclothing.com/kr/brands/mellow-ceramics"
+        },
+        { "shop_name": "endclothing", "brand_name": "menu", "brand_url": "https://www.endclothing.com/kr/brands/menu" },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "mephisto",
+            "brand_url": "https://www.endclothing.com/kr/brands/mephisto"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "merrell 1trl",
+            "brand_url": "https://www.endclothing.com/kr/brands/merrell-1-trl"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "mfpen",
+            "brand_url": "https://www.endclothing.com/kr/brands/mfpen"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "mhl by margaret howell",
+            "brand_url": "https://www.endclothing.com/kr/brands/mhl-by-margaret-howell"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "miansai",
+            "brand_url": "https://www.endclothing.com/kr/brands/miansai"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "michael marriott",
+            "brand_url": "https://www.endclothing.com/kr/brands/michael-marriott"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "mikia",
+            "brand_url": "https://www.endclothing.com/kr/brands/mikia"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "miles",
+            "brand_url": "https://www.endclothing.com/kr/brands/miles"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "milo made",
+            "brand_url": "https://www.endclothing.com/kr/brands/milo-made"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "missoni",
+            "brand_url": "https://www.endclothing.com/kr/brands/missoni"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "mister green",
+            "brand_url": "https://www.endclothing.com/kr/brands/mister-green"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "mizuno",
+            "brand_url": "https://www.endclothing.com/kr/brands/mizuno"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "mki miyuki-zoku",
+            "brand_url": "https://www.endclothing.com/kr/brands/mki-miyuki-zoku"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "mm6 maison margiela",
+            "brand_url": "https://www.endclothing.com/kr/brands/mm6-maison-margiela"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "moncler",
+            "brand_url": "https://www.endclothing.com/kr/brands/moncler"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "moncler eyewear",
+            "brand_url": "https://www.endclothing.com/kr/brands/moncler-eyewear"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "moncler genius",
+            "brand_url": "https://www.endclothing.com/kr/brands/moncler-genius"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "moncler grenoble",
+            "brand_url": "https://www.endclothing.com/kr/brands/moncler-grenoble"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "monitaly",
+            "brand_url": "https://www.endclothing.com/kr/brands/monitaly"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "monokel",
+            "brand_url": "https://www.endclothing.com/kr/brands/monokel-eyewear"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "montane",
+            "brand_url": "https://www.endclothing.com/kr/brands/montane"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "moonstar",
+            "brand_url": "https://www.endclothing.com/kr/brands/moonstar"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "moscot",
+            "brand_url": "https://www.endclothing.com/kr/brands/moscot"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "mr maria",
+            "brand_url": "https://www.endclothing.com/kr/brands/mr-maria"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "msftsrep",
+            "brand_url": "https://www.endclothing.com/kr/brands/msftsrep"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "museum of peace and quiet",
+            "brand_url": "https://www.endclothing.com/kr/brands/museum-of-peace-and-quiet"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "nalgene",
+            "brand_url": "https://www.endclothing.com/kr/brands/nalgene"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "nanamica",
+            "brand_url": "https://www.endclothing.com/kr/brands/nanamica"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "nancy",
+            "brand_url": "https://www.endclothing.com/kr/brands/nancy"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "nanga",
+            "brand_url": "https://www.endclothing.com/kr/brands/nanga"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "nanushka",
+            "brand_url": "https://www.endclothing.com/kr/brands/nanushka"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "napapijri",
+            "brand_url": "https://www.endclothing.com/kr/brands/napapijri"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "native union",
+            "brand_url": "https://www.endclothing.com/kr/brands/native-union"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "needles",
+            "brand_url": "https://www.endclothing.com/kr/brands/needles"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "neighborhood",
+            "brand_url": "https://www.endclothing.com/kr/brands/neighborhood"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "neil barrett",
+            "brand_url": "https://www.endclothing.com/kr/brands/neil-barrett"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "neuw denim",
+            "brand_url": "https://www.endclothing.com/kr/brands/neuw-denim"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "new balance",
+            "brand_url": "https://www.endclothing.com/kr/brands/new-balance"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "new era",
+            "brand_url": "https://www.endclothing.com/kr/brands/new-era"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "newgate clocks",
+            "brand_url": "https://www.endclothing.com/kr/brands/newgate-clocks"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "nigel cabourn",
+            "brand_url": "https://www.endclothing.com/kr/brands/nigel-cabourn"
+        },
+        { "shop_name": "endclothing", "brand_name": "nike", "brand_url": "https://www.endclothing.com/kr/brands/nike" },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "nike sb",
+            "brand_url": "https://www.endclothing.com/kr/brands/nike-sb"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "niko june",
+            "brand_url": "https://www.endclothing.com/kr/brands/niko-june"
+        },
+        { "shop_name": "endclothing", "brand_name": "nn07", "brand_url": "https://www.endclothing.com/kr/brands/nn07" },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "noma t.d.",
+            "brand_url": "https://www.endclothing.com/kr/brands/noma-t-d"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "nomess",
+            "brand_url": "https://www.endclothing.com/kr/brands/nomess"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "nonnative",
+            "brand_url": "https://www.endclothing.com/kr/brands/nonnative"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "noon goons",
+            "brand_url": "https://www.endclothing.com/kr/brands/noon-goons"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "norbit by hiroshi nozawa",
+            "brand_url": "https://www.endclothing.com/kr/brands/norbit-by-hiroshi-nozawa"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "norda",
+            "brand_url": "https://www.endclothing.com/kr/brands/norda"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "norse projects",
+            "brand_url": "https://www.endclothing.com/kr/brands/norse-projects"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "nortvi",
+            "brand_url": "https://www.endclothing.com/kr/brands/nortvi"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "novesta",
+            "brand_url": "https://www.endclothing.com/kr/brands/novesta"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "nudie jeans co",
+            "brand_url": "https://www.endclothing.com/kr/brands/nudie"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "numbering",
+            "brand_url": "https://www.endclothing.com/kr/brands/numbering"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "oakley",
+            "brand_url": "https://www.endclothing.com/kr/brands/oakley"
+        },
+        { "shop_name": "endclothing", "brand_name": "obey", "brand_url": "https://www.endclothing.com/kr/brands/obey" },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "objects iv life",
+            "brand_url": "https://www.endclothing.com/kr/brands/objects-iv-life"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "officine générale",
+            "brand_url": "https://www.endclothing.com/kr/brands/officine-generale"
+        },
+        { "shop_name": "endclothing", "brand_name": "ølåf", "brand_url": "https://www.endclothing.com/kr/brands/olaf" },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "oliver peoples",
+            "brand_url": "https://www.endclothing.com/kr/brands/oliver-peoples"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "oliver spencer",
+            "brand_url": "https://www.endclothing.com/kr/brands/oliver-spencer"
+        },
+        { "shop_name": "endclothing", "brand_name": "on", "brand_url": "https://www.endclothing.com/kr/brands/on" },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "oofos",
+            "brand_url": "https://www.endclothing.com/kr/brands/oofos"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "organic basics",
+            "brand_url": "https://www.endclothing.com/kr/brands/organic-basics"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "orslow",
+            "brand_url": "https://www.endclothing.com/kr/brands/orslow"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "osprey",
+            "brand_url": "https://www.endclothing.com/kr/brands/osprey"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "ostrya",
+            "brand_url": "https://www.endclothing.com/kr/brands/ostrya"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "other",
+            "brand_url": "https://www.endclothing.com/kr/brands/other"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "otherware",
+            "brand_url": "https://www.endclothing.com/kr/brands/otherware"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "our legacy",
+            "brand_url": "https://www.endclothing.com/kr/brands/our-legacy"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "over over",
+            "brand_url": "https://www.endclothing.com/kr/brands/over-over"
+        },
+        { "shop_name": "endclothing", "brand_name": "oyoy", "brand_url": "https://www.endclothing.com/kr/brands/oyoy" },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "p.f. candle co.",
+            "brand_url": "https://www.endclothing.com/kr/brands/p-f-candle-co"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "paccbet",
+            "brand_url": "https://www.endclothing.com/kr/brands/paccbet"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "padmore & barnes",
+            "brand_url": "https://www.endclothing.com/kr/brands/padmore-barnes"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "palm angels",
+            "brand_url": "https://www.endclothing.com/kr/brands/palm-angels"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "palmes",
+            "brand_url": "https://www.endclothing.com/kr/brands/palmes"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "pangaia",
+            "brand_url": "https://www.endclothing.com/kr/brands/pangaia"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "paperboy",
+            "brand_url": "https://www.endclothing.com/kr/brands/paperboy"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "paraboot",
+            "brand_url": "https://www.endclothing.com/kr/brands/paraboot"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "parel studios",
+            "brand_url": "https://www.endclothing.com/kr/brands/parel-studios"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "paria farzaneh",
+            "brand_url": "https://www.endclothing.com/kr/brands/paria-farzaneh"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "pas normal studios",
+            "brand_url": "https://www.endclothing.com/kr/brands/pas-normal-studios"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "pass~port",
+            "brand_url": "https://www.endclothing.com/kr/brands/pass-port"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "patagonia",
+            "brand_url": "https://www.endclothing.com/kr/brands/patagonia"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "patricks",
+            "brand_url": "https://www.endclothing.com/kr/brands/patricks"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "patta",
+            "brand_url": "https://www.endclothing.com/kr/brands/patta"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "paul smith",
+            "brand_url": "https://www.endclothing.com/kr/brands/paul-smith"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "peanuts",
+            "brand_url": "https://www.endclothing.com/kr/brands/peanuts"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "pearl octopuss.y",
+            "brand_url": "https://www.endclothing.com/kr/brands/pearl-octopuss-y"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "pearls before swine",
+            "brand_url": "https://www.endclothing.com/kr/brands/pearls-before-swine"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "pendleton",
+            "brand_url": "https://www.endclothing.com/kr/brands/pendleton"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "phaidon",
+            "brand_url": "https://www.endclothing.com/kr/brands/phaidon"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "phenomenon",
+            "brand_url": "https://www.endclothing.com/kr/brands/phenomenon"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "piilgrim",
+            "brand_url": "https://www.endclothing.com/kr/brands/piilgrim"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "pilgrim surf + supply",
+            "brand_url": "https://www.endclothing.com/kr/brands/pilgrim-surf-supply"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "places+faces",
+            "brand_url": "https://www.endclothing.com/kr/brands/places-faces"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "pleasures",
+            "brand_url": "https://www.endclothing.com/kr/brands/pleasures"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "polar skate co.",
+            "brand_url": "https://www.endclothing.com/kr/brands/polar-skate-co"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "polaroid originals",
+            "brand_url": "https://www.endclothing.com/kr/brands/polaroid"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "polo ralph lauren",
+            "brand_url": "https://www.endclothing.com/kr/brands/polo-ralph-lauren"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "pop trading company",
+            "brand_url": "https://www.endclothing.com/kr/brands/pop-trading-company"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "porter-yoshida & co.",
+            "brand_url": "https://www.endclothing.com/kr/brands/porter"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "portuguese flannel",
+            "brand_url": "https://www.endclothing.com/kr/brands/portuguese-flannel"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "post general",
+            "brand_url": "https://www.endclothing.com/kr/brands/post-general"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "poten",
+            "brand_url": "https://www.endclothing.com/kr/brands/poten"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "prada eyewear",
+            "brand_url": "https://www.endclothing.com/kr/brands/prada-eyewear"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "provider store",
+            "brand_url": "https://www.endclothing.com/kr/brands/provider-store"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "publications",
+            "brand_url": "https://www.endclothing.com/kr/brands/publications"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "puebco",
+            "brand_url": "https://www.endclothing.com/kr/brands/puebco"
+        },
+        { "shop_name": "endclothing", "brand_name": "puma", "brand_url": "https://www.endclothing.com/kr/brands/puma" },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "purple brand",
+            "brand_url": "https://www.endclothing.com/kr/brands/purple-brand"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "pyrenex",
+            "brand_url": "https://www.endclothing.com/kr/brands/pyrenex"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "quiet golf",
+            "brand_url": "https://www.endclothing.com/kr/brands/quiet-golf"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "raf simons",
+            "brand_url": "https://www.endclothing.com/kr/brands/raf-simons"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "rag & bone",
+            "brand_url": "https://www.endclothing.com/kr/brands/rag-bone"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "rains",
+            "brand_url": "https://www.endclothing.com/kr/brands/rains"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "rapha",
+            "brand_url": "https://www.endclothing.com/kr/brands/rapha"
+        },
+        { "shop_name": "endclothing", "brand_name": "rats", "brand_url": "https://www.endclothing.com/kr/brands/rats" },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "ray-ban",
+            "brand_url": "https://www.endclothing.com/kr/brands/ray-ban"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "re=comb",
+            "brand_url": "https://www.endclothing.com/kr/brands/re-comb"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "reception",
+            "brand_url": "https://www.endclothing.com/kr/brands/reception"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "red wing",
+            "brand_url": "https://www.endclothing.com/kr/brands/red-wing"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "reebok",
+            "brand_url": "https://www.endclothing.com/kr/brands/reebok"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "reese cooper",
+            "brand_url": "https://www.endclothing.com/kr/brands/reese-cooper"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "reigning champ",
+            "brand_url": "https://www.endclothing.com/kr/brands/reigning-champ"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "represent",
+            "brand_url": "https://www.endclothing.com/kr/brands/represent"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "retaw",
+            "brand_url": "https://www.endclothing.com/kr/brands/retaw"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "retrosuperfuture",
+            "brand_url": "https://www.endclothing.com/kr/brands/retrosuperfuture"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "rhude",
+            "brand_url": "https://www.endclothing.com/kr/brands/rhude"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "rick owens",
+            "brand_url": "https://www.endclothing.com/kr/brands/rick-owens"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "rider",
+            "brand_url": "https://www.endclothing.com/kr/brands/rider"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "rittle king",
+            "brand_url": "https://www.endclothing.com/kr/brands/rittle-king"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "rivers",
+            "brand_url": "https://www.endclothing.com/kr/brands/rivers"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "rizzoli",
+            "brand_url": "https://www.endclothing.com/kr/brands/rizzoli"
+        },
+        { "shop_name": "endclothing", "brand_name": "roa", "brand_url": "https://www.endclothing.com/kr/brands/roa" },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "rostersox",
+            "brand_url": "https://www.endclothing.com/kr/brands/rostersox"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "rotary hero",
+            "brand_url": "https://www.endclothing.com/kr/brands/rotary-hero"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "rototo",
+            "brand_url": "https://www.endclothing.com/kr/brands/rototo"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "rrl by ralph lauren",
+            "brand_url": "https://www.endclothing.com/kr/brands/rrl"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "rumpl",
+            "brand_url": "https://www.endclothing.com/kr/brands/rumpl"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "s.k. manor hill",
+            "brand_url": "https://www.endclothing.com/kr/brands/s-k-manor-hill"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "s.n.s. herning",
+            "brand_url": "https://www.endclothing.com/kr/brands/sns-herning"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "sacai",
+            "brand_url": "https://www.endclothing.com/kr/brands/sacai"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "sachajuan",
+            "brand_url": "https://www.endclothing.com/kr/brands/sachajuan"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "sage nation",
+            "brand_url": "https://www.endclothing.com/kr/brands/sage-nation"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "saint laurent sunglasses",
+            "brand_url": "https://www.endclothing.com/kr/brands/saint-laurent-sunglasses"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "salomon",
+            "brand_url": "https://www.endclothing.com/kr/brands/salomon"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "salt & stone",
+            "brand_url": "https://www.endclothing.com/kr/brands/salt-stone"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "sanders",
+            "brand_url": "https://www.endclothing.com/kr/brands/sanders"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "sandqvist",
+            "brand_url": "https://www.endclothing.com/kr/brands/sandqvist"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "sans (ceuticals)",
+            "brand_url": "https://www.endclothing.com/kr/brands/sans-ceuticals"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "satisfy",
+            "brand_url": "https://www.endclothing.com/kr/brands/satisfy"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "satta",
+            "brand_url": "https://www.endclothing.com/kr/brands/satta"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "saucony",
+            "brand_url": "https://www.endclothing.com/kr/brands/saucony"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "save khaki",
+            "brand_url": "https://www.endclothing.com/kr/brands/save-khaki"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "sci-fi fantasy",
+            "brand_url": "https://www.endclothing.com/kr/brands/sci-fi-fantasy"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "sebago",
+            "brand_url": "https://www.endclothing.com/kr/brands/sebago"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "seiko",
+            "brand_url": "https://www.endclothing.com/kr/brands/seiko"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "service works",
+            "brand_url": "https://www.endclothing.com/kr/brands/service-works"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "shoes like pottery",
+            "brand_url": "https://www.endclothing.com/kr/brands/shoes-like-pottery"
+        },
+        { "shop_name": "endclothing", "brand_name": "sigg", "brand_url": "https://www.endclothing.com/kr/brands/sigg" },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "simple",
+            "brand_url": "https://www.endclothing.com/kr/brands/simple"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "simuero",
+            "brand_url": "https://www.endclothing.com/kr/brands/simuero"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "skateboard cafe",
+            "brand_url": "https://www.endclothing.com/kr/brands/skateboard-cafe"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "sky high farm",
+            "brand_url": "https://www.endclothing.com/kr/brands/sky-high-farm"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "sleepers",
+            "brand_url": "https://www.endclothing.com/kr/brands/sleepers"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "slowdown studio",
+            "brand_url": "https://www.endclothing.com/kr/brands/slowdown-studio"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "sneakers er",
+            "brand_url": "https://www.endclothing.com/kr/brands/sneakers-er"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "snow peak",
+            "brand_url": "https://www.endclothing.com/kr/brands/snow-peak"
+        },
+        { "shop_name": "endclothing", "brand_name": "soar", "brand_url": "https://www.endclothing.com/kr/brands/soar" },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "socksss",
+            "brand_url": "https://www.endclothing.com/kr/brands/socksss"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "soho home",
+            "brand_url": "https://www.endclothing.com/kr/brands/soho-home"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "sophie lou jacobsen",
+            "brand_url": "https://www.endclothing.com/kr/brands/sophie-lou-jacobsen"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "sophnet.",
+            "brand_url": "https://www.endclothing.com/kr/brands/sophnet"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "soulland",
+            "brand_url": "https://www.endclothing.com/kr/brands/soulland"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "sounds",
+            "brand_url": "https://www.endclothing.com/kr/brands/sounds"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "south2 west8",
+            "brand_url": "https://www.endclothing.com/kr/brands/south2-west8"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "space available",
+            "brand_url": "https://www.endclothing.com/kr/brands/space-available"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "sperry topsider",
+            "brand_url": "https://www.endclothing.com/kr/brands/sperry"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "sporty & rich",
+            "brand_url": "https://www.endclothing.com/kr/brands/sporty-rich"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "stampd",
+            "brand_url": "https://www.endclothing.com/kr/brands/stampd"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "stan ray",
+            "brand_url": "https://www.endclothing.com/kr/brands/stan-ray"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "stance",
+            "brand_url": "https://www.endclothing.com/kr/brands/stance"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "steamery",
+            "brand_url": "https://www.endclothing.com/kr/brands/steamery"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "stepney workers club",
+            "brand_url": "https://www.endclothing.com/kr/brands/stepney-workers-club"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "stone island",
+            "brand_url": "https://www.endclothing.com/kr/brands/stone-island"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "stone island junior",
+            "brand_url": "https://www.endclothing.com/kr/brands/stone-island-junior"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "stone island shadow project",
+            "brand_url": "https://www.endclothing.com/kr/brands/stone-island-shadow-project"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "story mfg.",
+            "brand_url": "https://www.endclothing.com/kr/brands/story-mfg"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "studio arhoj",
+            "brand_url": "https://www.endclothing.com/kr/brands/studio-arhoj"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "studio brae",
+            "brand_url": "https://www.endclothing.com/kr/brands/studio-brae"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "studio nicholson",
+            "brand_url": "https://www.endclothing.com/kr/brands/studio-nicholson"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "studio the blue boy",
+            "brand_url": "https://www.endclothing.com/kr/brands/studio-the-blue-boy"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "stussy",
+            "brand_url": "https://www.endclothing.com/kr/brands/stussy"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "stutterheim",
+            "brand_url": "https://www.endclothing.com/kr/brands/stutterheim"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "sub sun",
+            "brand_url": "https://www.endclothing.com/kr/brands/sub-sun"
+        },
+        { "shop_name": "endclothing", "brand_name": "subu", "brand_url": "https://www.endclothing.com/kr/brands/subu" },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "suicoke",
+            "brand_url": "https://www.endclothing.com/kr/brands/suicoke"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "sun buddies",
+            "brand_url": "https://www.endclothing.com/kr/brands/sun-buddies"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "sunflower",
+            "brand_url": "https://www.endclothing.com/kr/brands/sunflower"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "sunnei",
+            "brand_url": "https://www.endclothing.com/kr/brands/sunnei"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "sunspel",
+            "brand_url": "https://www.endclothing.com/kr/brands/sunspel"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "superga",
+            "brand_url": "https://www.endclothing.com/kr/brands/superga"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "superplastic",
+            "brand_url": "https://www.endclothing.com/kr/brands/superplastic"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "taikan",
+            "brand_url": "https://www.endclothing.com/kr/brands/taikan"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "taion",
+            "brand_url": "https://www.endclothing.com/kr/brands/taion"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "takahiromiyashita thesoloist.",
+            "brand_url": "https://www.endclothing.com/kr/brands/takahiromiyashita-the-soloist"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "tarvas",
+            "brand_url": "https://www.endclothing.com/kr/brands/tarvas"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "taschen",
+            "brand_url": "https://www.endclothing.com/kr/brands/taschen"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "teatora",
+            "brand_url": "https://www.endclothing.com/kr/brands/teatora"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "tekla fabrics",
+            "brand_url": "https://www.endclothing.com/kr/brands/tekla-fabrics"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "ten c",
+            "brand_url": "https://www.endclothing.com/kr/brands/ten-c"
+        },
+        { "shop_name": "endclothing", "brand_name": "teva", "brand_url": "https://www.endclothing.com/kr/brands/teva" },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "thames",
+            "brand_url": "https://www.endclothing.com/kr/brands/thames"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "thames & hudson",
+            "brand_url": "https://www.endclothing.com/kr/brands/thames-hudson"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "the art of ping pong",
+            "brand_url": "https://www.endclothing.com/kr/brands/the-art-of-ping-pong"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "the conran shop",
+            "brand_url": "https://www.endclothing.com/kr/brands/the-conran-shop"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "the future is on mars",
+            "brand_url": "https://www.endclothing.com/kr/brands/the-future-is-on-mars"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "the great frog",
+            "brand_url": "https://www.endclothing.com/kr/brands/the-great-frog"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "the national skateboard co.",
+            "brand_url": "https://www.endclothing.com/kr/brands/the-national-skateboard-co"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "the north face",
+            "brand_url": "https://www.endclothing.com/kr/brands/the-north-face"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "the north face ue",
+            "brand_url": "https://www.endclothing.com/kr/brands/the-north-face-ue"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "the nue co.",
+            "brand_url": "https://www.endclothing.com/kr/brands/the-nue-co"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "the ouze",
+            "brand_url": "https://www.endclothing.com/kr/brands/the-ouze"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "the real mccoy's",
+            "brand_url": "https://www.endclothing.com/kr/brands/the-real-mccoys"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "the trilogy tapes",
+            "brand_url": "https://www.endclothing.com/kr/brands/the-trilogy-tapes"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "third drawer down",
+            "brand_url": "https://www.endclothing.com/kr/brands/third-drawer-down"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "thisisneverthat",
+            "brand_url": "https://www.endclothing.com/kr/brands/thisisneverthat"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "thom browne",
+            "brand_url": "https://www.endclothing.com/kr/brands/thom-browne"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "thunders love",
+            "brand_url": "https://www.endclothing.com/kr/brands/thunders-love"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "tilak",
+            "brand_url": "https://www.endclothing.com/kr/brands/tilak"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "timberland",
+            "brand_url": "https://www.endclothing.com/kr/brands/timberland"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "timeless pearly",
+            "brand_url": "https://www.endclothing.com/kr/brands/timeless-pearly"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "times new roman",
+            "brand_url": "https://www.endclothing.com/kr/brands/times-new-roman"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "timex",
+            "brand_url": "https://www.endclothing.com/kr/brands/timex"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "tired skateboards",
+            "brand_url": "https://www.endclothing.com/kr/brands/tired-skateboards"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "tobias birk nielsen",
+            "brand_url": "https://www.endclothing.com/kr/brands/tobias-birk-nielsen"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "tom wood",
+            "brand_url": "https://www.endclothing.com/kr/brands/tom-wood"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "tommy jeans",
+            "brand_url": "https://www.endclothing.com/kr/brands/tommy-jeans"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "topo designs",
+            "brand_url": "https://www.endclothing.com/kr/brands/topo-designs"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "tricker's",
+            "brand_url": "https://www.endclothing.com/kr/brands/trickers"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "trusco",
+            "brand_url": "https://www.endclothing.com/kr/brands/trusco"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "umbro",
+            "brand_url": "https://www.endclothing.com/kr/brands/umbro"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "undercover",
+            "brand_url": "https://www.endclothing.com/kr/brands/undercover"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "undercoverism",
+            "brand_url": "https://www.endclothing.com/kr/brands/undercoverism"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "uniform bridge",
+            "brand_url": "https://www.endclothing.com/kr/brands/uniform-bridge"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "uniform experiment",
+            "brand_url": "https://www.endclothing.com/kr/brands/uniform-experiment"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "unifrom",
+            "brand_url": "https://www.endclothing.com/kr/brands/unifrom"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "universal works",
+            "brand_url": "https://www.endclothing.com/kr/brands/universal-works"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "valentino",
+            "brand_url": "https://www.endclothing.com/kr/brands/valentino"
+        },
+        { "shop_name": "endclothing", "brand_name": "vans", "brand_url": "https://www.endclothing.com/kr/brands/vans" },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "vans vault",
+            "brand_url": "https://www.endclothing.com/kr/brands/vans-vault"
+        },
+        { "shop_name": "endclothing", "brand_name": "veil", "brand_url": "https://www.endclothing.com/kr/brands/veil" },
+        { "shop_name": "endclothing", "brand_name": "veja", "brand_url": "https://www.endclothing.com/kr/brands/veja" },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "velva sheen",
+            "brand_url": "https://www.endclothing.com/kr/brands/velva-sheen"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "velvet canyon",
+            "brand_url": "https://www.endclothing.com/kr/brands/velvet-canyon"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "versace",
+            "brand_url": "https://www.endclothing.com/kr/brands/versace"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "vetements",
+            "brand_url": "https://www.endclothing.com/kr/brands/vetements"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "vinny’s",
+            "brand_url": "https://www.endclothing.com/kr/brands/vinnys"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "vision streetwear",
+            "brand_url": "https://www.endclothing.com/kr/brands/vision-streetwear"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "viso project",
+            "brand_url": "https://www.endclothing.com/kr/brands/viso-project"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "visvim",
+            "brand_url": "https://www.endclothing.com/kr/brands/visvim"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "vitra",
+            "brand_url": "https://www.endclothing.com/kr/brands/vitra"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "vtmnts",
+            "brand_url": "https://www.endclothing.com/kr/brands/vtmnts"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "wacko maria",
+            "brand_url": "https://www.endclothing.com/kr/brands/wacko-maria"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "wales bonner",
+            "brand_url": "https://www.endclothing.com/kr/brands/wales-bonner"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "wawwa",
+            "brand_url": "https://www.endclothing.com/kr/brands/wawwa"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "wax london",
+            "brand_url": "https://www.endclothing.com/kr/brands/wax-london"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "wild one",
+            "brand_url": "https://www.endclothing.com/kr/brands/wild-one"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "wood wood",
+            "brand_url": "https://www.endclothing.com/kr/brands/wood-wood"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "woolrich",
+            "brand_url": "https://www.endclothing.com/kr/brands/woolrich"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "wooyoungmi",
+            "brand_url": "https://www.endclothing.com/kr/brands/wooyoungmi"
+        },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "wtaps",
+            "brand_url": "https://www.endclothing.com/kr/brands/wtaps"
+        },
+        { "shop_name": "endclothing", "brand_name": "y-3", "brand_url": "https://www.endclothing.com/kr/brands/y-3" },
+        { "shop_name": "endclothing", "brand_name": "ymc", "brand_url": "https://www.endclothing.com/kr/brands/ymc" },
+        {
+            "shop_name": "endclothing",
+            "brand_name": "yod and co",
+            "brand_url": "https://www.endclothing.com/kr/brands/yod-and-co"
+        },
+        { "shop_name": "endclothing", "brand_name": "yogi", "brand_url": "https://www.endclothing.com/kr/brands/yogi" }
+    ]
+}

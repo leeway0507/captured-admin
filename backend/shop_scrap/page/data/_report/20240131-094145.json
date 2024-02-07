@@ -1,0 +1,120 @@
+{
+    "scrap_time": "20240131-094145",
+    "num_of_plan": 14,
+    "num_processor": 1,
+    "db_update": true,
+    "job": [
+        {
+            "shop_product_card_id": 6537,
+            "product_url": "https://www.18montrose.com/stone-island-brushed-organic-cotton-garment-dyed-old-effect-600553#colcode=60055303",
+            "shop_name": "_18montrose",
+            "brand_name": "stone island-sale",
+            "product_id": null,
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 6547,
+            "product_url": "https://www.18montrose.com/stone-island-supima-cotton-twil-jacket-622152#colcode=62215218",
+            "shop_name": "_18montrose",
+            "brand_name": "stone island-sale",
+            "product_id": null,
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 6557,
+            "product_url": "https://www.18montrose.com/stone-island-bellows-overshirt-626331#colcode=62633103",
+            "shop_name": "_18montrose",
+            "brand_name": "stone island-sale",
+            "product_id": null,
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 6609,
+            "product_url": "https://www.18montrose.com/stone-island-ribbed-knit-312971#colcode=31297118",
+            "shop_name": "_18montrose",
+            "brand_name": "stone island-sale",
+            "product_id": null,
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 6627,
+            "product_url": "https://www.18montrose.com/stone-island-crinkle-rep-overshirt-566504#colcode=56650403",
+            "shop_name": "_18montrose",
+            "brand_name": "stone island-sale",
+            "product_id": null,
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 6634,
+            "product_url": "https://www.18montrose.com/stone-island-soft-cotton-gauzed-effect-319756#colcode=31975603",
+            "shop_name": "_18montrose",
+            "brand_name": "stone island-sale",
+            "product_id": null,
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 6639,
+            "product_url": "https://www.18montrose.com/stone-island-crinkle-rep-down-jacket-566514#colcode=56651403",
+            "shop_name": "_18montrose",
+            "brand_name": "stone island-sale",
+            "product_id": null,
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 6642,
+            "product_url": "https://www.18montrose.com/stone-island-skin-touch-nylon-tc-626329#colcode=62632902",
+            "shop_name": "_18montrose",
+            "brand_name": "stone island-sale",
+            "product_id": null,
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 6653,
+            "product_url": "https://www.18montrose.com/stone-island-stone-loose-cargo-tr-sn34-518826#colcode=51882603",
+            "shop_name": "_18montrose",
+            "brand_name": "stone island-sale",
+            "product_id": null,
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 6659,
+            "product_url": "https://www.18montrose.com/stone-island-nylon-metal-overshirt-613153#colcode=61315303",
+            "shop_name": "_18montrose",
+            "brand_name": "stone island-sale",
+            "product_id": null,
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 6677,
+            "product_url": "https://www.18montrose.com/stone-island-crinkle-rep-jacket-598014#colcode=59801403",
+            "shop_name": "_18montrose",
+            "brand_name": "stone island-sale",
+            "product_id": null,
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 6680,
+            "product_url": "https://www.18montrose.com/stone-island-compass-logo-bomber-jacket-620804#colcode=62080403",
+            "shop_name": "_18montrose",
+            "brand_name": "stone island-sale",
+            "product_id": null,
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 6694,
+            "product_url": "https://www.18montrose.com/stone-island-compass-rain-jacket-569183#colcode=56918303",
+            "shop_name": "_18montrose",
+            "brand_name": "stone island-sale",
+            "product_id": null,
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 6699,
+            "product_url": "https://www.18montrose.com/stone-island-nylon-metal-compass-logo-cap-392583#colcode=39258318",
+            "shop_name": "_18montrose",
+            "brand_name": "stone island-sale",
+            "product_id": null,
+            "status": "success"
+        }
+    ]
+}

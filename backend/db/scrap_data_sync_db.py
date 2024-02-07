@@ -64,8 +64,7 @@ class ScrapDataSyncDB(ABC):
             await db.commit()
 
     @abstractmethod
-    async def sync_data(self):
-        ...
+    async def sync_data(self): ...
 
     def _load_db_data(self, file_name: str):
         folder_path = self.get_folder_path()
@@ -73,8 +72,7 @@ class ScrapDataSyncDB(ABC):
         return pd.read_parquet(file_path).to_dict("records")
 
     @abstractmethod
-    def get_folder_path(self) -> str:
-        ...
+    def get_folder_path(self) -> str: ...
 
     def get_report_data(self):
         return self.Report.get_report()
@@ -186,7 +184,7 @@ class ShopPageDataSyncDB(ScrapDataSyncDB):
         await self.insert_shop_size()
         await self.upsert_card_info()
         await self.update_product_id()
-        await self.check_sold_out_items()
+        await self.update_sold_out_status()
         self.Report.update_report({"db_update": True})
 
     async def delete_shop_size(self):
@@ -270,9 +268,9 @@ class ShopPageDataSyncDB(ScrapDataSyncDB):
         )
         return stmt
 
-    async def check_sold_out_items(self):
-        sold_out = self.sold_out_items()
-        await super().execute(self.check_sold_out_items_stmt(sold_out))
+    async def update_sold_out_status(self):
+        sold_out_item_id = self.sold_out_items()
+        await super().execute(self.update_sold_out_items_stmt(sold_out_item_id))
 
     def sold_out_items(self):
         self.Report.report_file_name = self.scrap_time
@@ -282,11 +280,11 @@ class ShopPageDataSyncDB(ScrapDataSyncDB):
             job["shop_product_card_id"] for job in jobs if job["status"] != "success"
         ]
 
-    def check_sold_out_items_stmt(self, data: List):
+    def update_sold_out_items_stmt(self, data: List):
         stmt = (
             update(ShopProductCardTable)
             .where(ShopProductCardTable.shop_product_card_id.in_(data))
-            .values(sold_out=1)
+            .values(sold_out=1, candidate=0)
         )
         return stmt
 

@@ -3,7 +3,7 @@ from sqlalchemy.orm import sessionmaker
 from sqlalchemy.ext.asyncio import AsyncSession
 from components.env import dev_env
 
-db_engine = conn_engine(**get_secret("dev"))
+db_engine = conn_engine(**get_secret("dev"), port="3306")
 
 # admin table
 admin_session_local = sessionmaker(bind=db_engine, class_=AsyncSession)  # type: ignore
@@ -15,6 +15,7 @@ dev_session_local = sessionmaker(
         dev_env.DB_PASSWORD,
         dev_env.DB_HOST,
         dev_env.DEV_DB_NAME,
+        "3306",
     ),
     class_=AsyncSession,  # type: ignore
 )

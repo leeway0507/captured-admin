@@ -1,0 +1,14 @@
+{
+    "scrap_time": "20240205-131502",
+    "num_of_plan": 1,
+    "num_processor": 1,
+    "db_update": true,
+    "job": [
+        {
+            "job": "one brand sale",
+            "status": "success"
+        }
+    ],
+    "brand_name": "one brand sale",
+    "shop_name": "harresoe"
+}

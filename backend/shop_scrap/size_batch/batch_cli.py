@@ -23,9 +23,12 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="A simple command-line interface.")
 
     # Define command-line arguments
-    parser.add_argument("--batch_size", default=100, help="scrap size")
+    parser.add_argument("--batch_size", default=200, help="scrap size")
     parser.add_argument("--num_processor", default=6, help="processor size")
     parser.add_argument("--scrap_time", default=None, help="set_scrap_time")
+    parser.add_argument(
+        "--sync_only", default=False, help="sync scrap_result to prod db"
+    )
 
     # Parse the command-line arguments
     args = parser.parse_args()
@@ -44,10 +47,17 @@ if __name__ == "__main__":
     )
 
     loop = asyncio.get_event_loop()
-    loop.run_until_complete(
-        size_batch.execute(
-            batch_size=args.batch_size,
-            num_processor=args.num_processor,
-            scrap_time=scrap_time,
+    if args.sync_only:
+        print("start sync only")
+        if not args.scrap_time:
+            raise ValueError("Scrap Time Arg is 'None' ")
+
+        loop.run_until_complete(size_batch.execute_sync_db(args.scrap_time))
+    else:
+        loop.run_until_complete(
+            size_batch.execute(
+                batch_size=args.batch_size,
+                num_processor=args.num_processor,
+                scrap_time=scrap_time,
+            )
         )
-    )

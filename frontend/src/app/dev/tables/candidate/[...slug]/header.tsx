@@ -42,12 +42,12 @@ const openPageToggle = (url: string) => {
 };
 
 export const productCardColumns = [
-    columnHelper.accessor("shopProductCardId", {
+    columnHelper.accessor("candidate", {
         header: "추적여부/제품번호",
         cell: (props) => (
             <>
                 <div
-                    id={`status-${props.getValue()}`}
+                    id={`status-${props.row.original.shopProductCardId}`}
                     className={`${
                         props.row.original.candidate === 0
                             ? "bg-red-200"
@@ -55,7 +55,7 @@ export const productCardColumns = [
                             ? "bg-yellow-200"
                             : "bg-green-200"
                     } ${candidateClass} flex-col`}
-                    data-id={props.getValue()}
+                    data-id={props.row.original.shopProductCardId}
                     data-status={props.row.original.candidate}
                     onClick={handleCandidate}>
                     <div>
@@ -66,11 +66,11 @@ export const productCardColumns = [
                             : "수집중"}
                     </div>
                     <div>({props.row.original.candidate})</div>
-                    <div className="text-black">({props.getValue()})</div>
+                    <div className="text-black">({props.row.original.shopProductCardId})</div>
                 </div>
                 <div
                     className={`bg-orange-200 flex-center h-[100px] mt-2`}
-                    data-id={props.getValue()}
+                    data-id={props.row.original.shopProductCardId}
                     data-status={1}
                     onClick={handleRemoveCandidate}>
                     후보 제거
