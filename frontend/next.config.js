@@ -12,6 +12,7 @@ const nextConfig = {
             "www.18montrose.com",
             "harresoe.com",
             "media.endclothing.com",
+            "img.ssensemedia.com",
         ],
     },
 };

@@ -1,0 +1,248 @@
+{
+    "scrap_time": "20240208-184815",
+    "num_of_plan": 30,
+    "num_processor": 1,
+    "db_update": false,
+    "job": [
+        {
+            "shop_product_card_id": 14112,
+            "product_url": "https://www.ssense.com/en-kr/women/product/maison-kitsune/beige-fox-head-patch-cardigan/12044331",
+            "shop_name": "ssense",
+            "brand_name": "maison kitsuné",
+            "product_id": "no product id",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 14115,
+            "product_url": "https://www.ssense.com/en-kr/women/product/maison-kitsune/navy-tricolor-fox-t-shirt/12016921",
+            "shop_name": "ssense",
+            "brand_name": "maison kitsuné",
+            "product_id": "no product id",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 14116,
+            "product_url": "https://www.ssense.com/en-kr/women/product/maison-kitsune/blue-dressed-fox-shirt/12167801",
+            "shop_name": "ssense",
+            "brand_name": "maison kitsuné",
+            "product_id": "no product id",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 14123,
+            "product_url": "https://www.ssense.com/en-kr/women/product/maison-kitsune/white-fox-head-polo/13743441",
+            "shop_name": "ssense",
+            "brand_name": "maison kitsuné",
+            "product_id": "no product id",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 14126,
+            "product_url": "https://www.ssense.com/en-kr/women/product/maison-kitsune/navy-dressed-fox-polo/12167751",
+            "shop_name": "ssense",
+            "brand_name": "maison kitsuné",
+            "product_id": "no product id",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 14128,
+            "product_url": "https://www.ssense.com/en-kr/women/product/maison-kitsune/gray-mini-fox-head-sweater/12167691",
+            "shop_name": "ssense",
+            "brand_name": "maison kitsuné",
+            "product_id": "no product id",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 14129,
+            "product_url": "https://www.ssense.com/en-kr/women/product/maison-kitsune/blue-dressed-fox-sweatshirt/12167661",
+            "shop_name": "ssense",
+            "brand_name": "maison kitsuné",
+            "product_id": "no product id",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 14151,
+            "product_url": "https://www.ssense.com/en-kr/women/product/maison-kitsune/black-double-fox-head-sweatshirt/10571471",
+            "shop_name": "ssense",
+            "brand_name": "maison kitsuné",
+            "product_id": "no product id",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 14168,
+            "product_url": "https://www.ssense.com/en-kr/women/product/vivienne-westwood/gray-bea-cardigan/13734721",
+            "shop_name": "ssense",
+            "brand_name": "vivienne westwood",
+            "product_id": null,
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 14173,
+            "product_url": "https://www.ssense.com/en-kr/women/product/vivienne-westwood/black-bebe-sweater/13489211",
+            "shop_name": "ssense",
+            "brand_name": "vivienne westwood",
+            "product_id": null,
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 14179,
+            "product_url": "https://www.ssense.com/en-kr/women/product/vivienne-westwood/black-orb-double-frame-bag/13404661",
+            "shop_name": "ssense",
+            "brand_name": "vivienne westwood",
+            "product_id": null,
+            "status": "sub scraper failed: 'NoneType' object has no attribute 'find_all'"
+        },
+        {
+            "shop_product_card_id": 14181,
+            "product_url": "https://www.ssense.com/en-kr/women/product/vivienne-westwood/black-bea-cardigan/13489101",
+            "shop_name": "ssense",
+            "brand_name": "vivienne westwood",
+            "product_id": null,
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 14192,
+            "product_url": "https://www.ssense.com/en-kr/women/product/vivienne-westwood/off-white-bebe-sweater/13489191",
+            "shop_name": "ssense",
+            "brand_name": "vivienne westwood",
+            "product_id": null,
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 14195,
+            "product_url": "https://www.ssense.com/en-kr/women/product/vivienne-westwood/beige-athletic-sweatshirt/13734661",
+            "shop_name": "ssense",
+            "brand_name": "vivienne westwood",
+            "product_id": null,
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 14201,
+            "product_url": "https://www.ssense.com/en-kr/women/product/vivienne-westwood/black-mini-round-bag/13404321",
+            "shop_name": "ssense",
+            "brand_name": "vivienne westwood",
+            "product_id": null,
+            "status": "sub scraper failed: 'NoneType' object has no attribute 'find_all'"
+        },
+        {
+            "shop_product_card_id": 14203,
+            "product_url": "https://www.ssense.com/en-kr/women/product/vivienne-westwood/white-football-shirt/13488621",
+            "shop_name": "ssense",
+            "brand_name": "vivienne westwood",
+            "product_id": null,
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 14204,
+            "product_url": "https://www.ssense.com/en-kr/women/product/vivienne-westwood/gold-corrine-hair-clip/13764791",
+            "shop_name": "ssense",
+            "brand_name": "vivienne westwood",
+            "product_id": null,
+            "status": "sub scraper failed: 'NoneType' object has no attribute 'find_all'"
+        },
+        {
+            "shop_product_card_id": 14207,
+            "product_url": "https://www.ssense.com/en-kr/women/product/vivienne-westwood/green-mini-archive-yasmine-bag/13404171",
+            "shop_name": "ssense",
+            "brand_name": "vivienne westwood",
+            "product_id": null,
+            "status": "sub scraper failed: 'NoneType' object has no attribute 'find_all'"
+        },
+        {
+            "shop_product_card_id": 14209,
+            "product_url": "https://www.ssense.com/en-kr/women/product/vivienne-westwood/black-orb-keychain/13735171",
+            "shop_name": "ssense",
+            "brand_name": "vivienne westwood",
+            "product_id": null,
+            "status": "sub scraper failed: 'NoneType' object has no attribute 'find_all'"
+        },
+        {
+            "shop_product_card_id": 14210,
+            "product_url": "https://www.ssense.com/en-kr/women/product/vivienne-westwood/white-toulouse-shirt/13488501",
+            "shop_name": "ssense",
+            "brand_name": "vivienne westwood",
+            "product_id": null,
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 14211,
+            "product_url": "https://www.ssense.com/en-kr/women/product/vivienne-westwood/pink-krall-shirt/13734641",
+            "shop_name": "ssense",
+            "brand_name": "vivienne westwood",
+            "product_id": null,
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 14213,
+            "product_url": "https://www.ssense.com/en-kr/women/product/vivienne-westwood/off-white-hebo-t-shirt/13489331",
+            "shop_name": "ssense",
+            "brand_name": "vivienne westwood",
+            "product_id": null,
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 14217,
+            "product_url": "https://www.ssense.com/en-kr/women/product/vivienne-westwood/gold-annalisa-hair-clip/13764841",
+            "shop_name": "ssense",
+            "brand_name": "vivienne westwood",
+            "product_id": null,
+            "status": "sub scraper failed: 'NoneType' object has no attribute 'find_all'"
+        },
+        {
+            "shop_product_card_id": 14219,
+            "product_url": "https://www.ssense.com/en-kr/women/product/vivienne-westwood/pink-bea-cardigan/13734761",
+            "shop_name": "ssense",
+            "brand_name": "vivienne westwood",
+            "product_id": null,
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 14220,
+            "product_url": "https://www.ssense.com/en-kr/women/product/vivienne-westwood/off-white-bea-sweater/13489161",
+            "shop_name": "ssense",
+            "brand_name": "vivienne westwood",
+            "product_id": null,
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 14228,
+            "product_url": "https://www.ssense.com/en-kr/women/product/vivienne-westwood/black-bea-sweater/13489181",
+            "shop_name": "ssense",
+            "brand_name": "vivienne westwood",
+            "product_id": null,
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 14238,
+            "product_url": "https://www.ssense.com/en-kr/women/product/vivienne-westwood/black-small-kelly-bag/13403981",
+            "shop_name": "ssense",
+            "brand_name": "vivienne westwood",
+            "product_id": null,
+            "status": "sub scraper failed: (\"Ssense : 'Access to this page has been denied'\", {'shop_product_card_id': 14238, 'product_url': 'https://www.ssense.com/en-kr/women/product/vivienne-westwood/black-small-kelly-bag/13403981', 'shop_name': 'ssense', 'brand_name': 'vivienne westwood', 'product_id': None})"
+        },
+        {
+            "shop_product_card_id": 14254,
+            "product_url": "https://www.ssense.com/en-kr/women/product/vivienne-westwood/black-athletic-sweatshirt/13734671",
+            "shop_name": "ssense",
+            "brand_name": "vivienne westwood",
+            "product_id": null,
+            "status": "sub scraper failed: (\"Ssense : 'Access to this page has been denied'\", {'shop_product_card_id': 14254, 'product_url': 'https://www.ssense.com/en-kr/women/product/vivienne-westwood/black-athletic-sweatshirt/13734671', 'shop_name': 'ssense', 'brand_name': 'vivienne westwood', 'product_id': None})"
+        },
+        {
+            "shop_product_card_id": 14269,
+            "product_url": "https://www.ssense.com/en-kr/women/product/vivienne-westwood/navy-bea-turtleneck/11711611",
+            "shop_name": "ssense",
+            "brand_name": "vivienne westwood",
+            "product_id": null,
+            "status": "sub scraper failed: (\"Ssense : 'Access to this page has been denied'\", {'shop_product_card_id': 14269, 'product_url': 'https://www.ssense.com/en-kr/women/product/vivienne-westwood/navy-bea-turtleneck/11711611', 'shop_name': 'ssense', 'brand_name': 'vivienne westwood', 'product_id': None})"
+        },
+        {
+            "shop_product_card_id": 14304,
+            "product_url": "https://www.ssense.com/en-kr/women/product/vivienne-westwood/black-half-moon-card-holder/13404761",
+            "shop_name": "ssense",
+            "brand_name": "vivienne westwood",
+            "product_id": null,
+            "status": "sub scraper failed: (\"Ssense : 'Access to this page has been denied'\", {'shop_product_card_id': 14304, 'product_url': 'https://www.ssense.com/en-kr/women/product/vivienne-westwood/black-half-moon-card-holder/13404761', 'shop_name': 'ssense', 'brand_name': 'vivienne westwood', 'product_id': None})"
+        }
+    ]
+}

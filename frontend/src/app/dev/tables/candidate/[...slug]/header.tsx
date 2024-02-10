@@ -12,6 +12,7 @@ import {
     SendDraft,
     GetSizeTable,
 } from "./cost-table-header-functions";
+import Link from "next/link";
 
 const columnHelper = createColumnHelper<costTableDataProps>();
 
@@ -122,7 +123,13 @@ export const productCardColumns = [
                 </div>
 
                 <div>{props.row.original.shopName}</div>
-                <div>{props.row.original.shopProductName}</div>
+                <Link
+                    href={`https://google.com/search?q=${props.row.original.shopProductName}`}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="text-blue-700 font-bold cursor-pointer">
+                    {props.row.original.shopProductName}
+                </Link>
             </div>
         ),
         meta: {

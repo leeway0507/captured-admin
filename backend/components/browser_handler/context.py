@@ -6,6 +6,8 @@ from random import randint
 
 import playwright.async_api as pw
 from playwright.async_api import async_playwright
+from playwright_stealth import stealth_async
+
 
 from components.env import dev_env
 from .page import PageHandler, PwPageHandler
@@ -76,7 +78,12 @@ class PwContextHandler(ContextHandler):
     async def _init_pw(
         self, allow_proxy: bool, allow_cookie: bool
     ) -> pw.BrowserContext:
-        config = {"headless": False, "timeout": 5000}
+        config = {
+            "executable_path": "/Applications/Brave Browser.app/Contents/MacOS/Brave Browser",
+            "headless": False,
+            "timeout": 5000,
+        }
+
         # tor proxy 제거
         # if allow_proxy:
         #     proxy_exist = self.get_new_ip()
@@ -88,7 +95,7 @@ class PwContextHandler(ContextHandler):
         pw = await async_playwright().start()
         self.browser = await pw.chromium.launch(**config)
         self.context = await self.browser.new_context(
-            user_agent=user_agent_string[randint(0, len(user_agent_string) - 1)],
+            # user_agent=user_agent_string[randint(0, len(user_agent_string) - 1)],
             viewport={"width": 1280, "height": 1440},
         )
         # header 내 webdriver 제거
@@ -114,6 +121,7 @@ class PwContextHandler(ContextHandler):
 
     async def create_page(self) -> "PwPageHandler":
         page = await self.context.new_page()
+        await stealth_async(page)
         return PwPageHandler(page)
 
     async def load_cookies(self):

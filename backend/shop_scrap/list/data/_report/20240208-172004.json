@@ -1,0 +1,14 @@
+{
+    "scrap_time": "20240208-172004",
+    "num_of_plan": 1,
+    "num_processor": 1,
+    "db_update": true,
+    "job": [
+        {
+            "job": "maison kitsuné sale",
+            "status": "success"
+        }
+    ],
+    "brand_name": "maison kitsuné sale",
+    "shop_name": "ssense"
+}

@@ -119,12 +119,16 @@ function calcCustomAndVAT(
     isDdp: boolean,
     fromUsShipping: boolean
 ) {
-    if (usPrice < 150) return [0, 0];
-    if (usPrice < 200 && fromUsShipping) return [0, 0];
-    if (isDdp) return [0, 0];
-
     const customFee = (korPrice + intlShipKorPrice) * customRate;
     const VATFee = (korPrice + intlShipKorPrice + customFee) * VATRate;
+
+    if (isDdp) {
+        const VATDdpFee = (korPrice + intlShipKorPrice) * VATRate;
+        return [0, VATDdpFee];
+    }
+    if (usPrice < 150) return [0, 0];
+    if (usPrice < 200 && fromUsShipping) return [0, 0];
+
     return [customFee, VATFee];
 }
 

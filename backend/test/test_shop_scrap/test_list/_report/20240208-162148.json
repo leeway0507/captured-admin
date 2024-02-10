@@ -1,0 +1,14 @@
+{
+    "scrap_time": "20240208-162148",
+    "num_of_plan": 1,
+    "num_processor": 1,
+    "db_update": false,
+    "job": [
+        {
+            "job": "ami alexandre mattiussi",
+            "status": "success"
+        }
+    ],
+    "brand_name": "ami alexandre mattiussi",
+    "shop_name": "ssense"
+}

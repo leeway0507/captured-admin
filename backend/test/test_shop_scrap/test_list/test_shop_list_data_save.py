@@ -5,8 +5,6 @@ from shop_scrap.list.data_save import ShopListDataSave
 
 current_path = __file__.rsplit("/", 1)[0]
 
-report_path = os.path.join(current_path, "_report")
-
 
 # anyio settings do not remove
 @pytest.fixture(scope="session")
@@ -23,7 +21,8 @@ def DataSave():
 async def test_init_config(DataSave: ShopListDataSave):
     await DataSave.init_config()
 
-    assert DataSave.shop_name == "consortium"
+    assert DataSave.shop_name == "ssense"
+    # 실패 시 scrap_config.json 파일 복사여부 체크
 
 
 @pytest.mark.anyio

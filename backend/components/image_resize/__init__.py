@@ -1,10 +1,13 @@
 from .image_resizer import ImageResizer
 from .uploader import S3ImgUploader
+import os
+import sys
 from .thumbnail_uploader import S3ThumbnailUploader
 
 
 class ImageResizeManager:
     def __init__(self, local_path: str) -> None:
+        self.local_path = local_path
         self.resizer = ImageResizer(local_path)
         self.s3 = S3ImgUploader(local_path)
 
@@ -15,6 +18,9 @@ class ImageResizeManager:
         self.resizer.resize()
         self.s3.upload_all()
         return sku
+
+    def load_curr_image_sku(self):
+        return os.listdir(self.local_path)
 
     def update_image(self, sku: str, file_name: str):
         self.s3.sku = sku
@@ -27,8 +33,10 @@ class ImageResizeManager:
 
         self.s3.update_image(file_name + ".webp")
 
-    def update_thumbnail_image(self):
+    def update_thumbnail_image(self, sku: str):
+        self.resizer.sku = sku
         self.resizer.create_thumbnail()
 
-    def update_product_images(self, file_name: str):
+    def update_product_images(self, sku: str, file_name: str):
+        self.resizer.sku = sku
         self.resizer.optimize_image(file_name)

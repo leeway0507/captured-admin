@@ -1,0 +1,3988 @@
+{
+    "brand_list": [
+        "a.p.c.",
+        "aape by a bathing ape",
+        "acne studios",
+        "ader error",
+        "adidas originals",
+        "alexander mcqueen",
+        "ami alexandre mattiussi",
+        "andersson bell",
+        "asics",
+        "autry",
+        "balenciaga",
+        "bape",
+        "barbour",
+        "burberry",
+        "c.p. company",
+        "calvin klein",
+        "carhartt work in progress",
+        "clarks originals",
+        "comme des garçons homme",
+        "converse",
+        "crocs",
+        "fear of god",
+        "fred perry",
+        "ganni",
+        "givenchy",
+        "golden goose",
+        "gucci",
+        "hugo",
+        "jacquemus",
+        "jil sander",
+        "jiyongkim",
+        "kenzo",
+        "lacoste",
+        "lemaire",
+        "levi's",
+        "maison kitsuné",
+        "maison kitsuné sale",
+        "maison margiela",
+        "marc jacobs",
+        "mcq alexander mcqueen",
+        "mm6 maison margiela",
+        "montblanc",
+        "needles",
+        "new balance",
+        "nike jordan",
+        "our legacy",
+        "palm angels",
+        "paul smith",
+        "polo ralph lauren",
+        "porter - yoshida & co",
+        "ralph lauren purple label",
+        "rlx ralph lauren",
+        "salomon",
+        "sporty & rich",
+        "stone island",
+        "stüssy",
+        "the north face",
+        "theory",
+        "vans",
+        "veja",
+        "vivienne westwood",
+        "vivienne westwood sale",
+        "wales bonner",
+        "wooyoungmi",
+        "yohji yamamoto",
+        "yuki hashimoto"
+    ],
+    "data": [
+        {
+            "shop_name": "ssense",
+            "brand_name": "vivienne westwood sale",
+            "brand_url": "https://www.ssense.com/en-kr/women/sale/designers/vivienne-westwood"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "maison kitsuné sale",
+            "brand_url": "https://www.ssense.com/en-kr/women/sale/designers/maison-kitsune"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "_j.l - a.l_",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/jean-luc-a-lavelle"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "(di)vision",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/division"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "032c",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/032c"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "1017 alyx 9sm",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/alyx"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "11 by boris bidjan saberi",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/11-by-boris-bidjan-saberi"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "132 5. issey miyake",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/issey-miyake-132-5"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "3.1 phillip lim",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/31-phillip-lim"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "3man",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/3man"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "424",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/424"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "44 label group",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/44-label-group"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "4sdesigns",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/4sdesigns"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "66°north",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/66anddegnorth"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "7 days active",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/7-days-active"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "73 london",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/73-london"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "99%is-",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/99-is"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "a better feeling",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/a-better-feeling"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "a personal note 73",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/a-personal-note"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "a-cold-wall*",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/a-cold-wall"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "a. a. spectrum",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/a-a-spectrum"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "a.p.c.",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/apc"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "aape by a bathing ape",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/aape"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "aaron esh",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/aaron-esh"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "abaga velli",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/abaga-velli"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "acne studios",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/acne-studios"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "adam jones",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/adam-jones"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "ader error",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/ader-error"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "adidas originals",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/adidas-originals"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "adidas x human made",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/adidas-x-human-made"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "adidas x humanrace by pharrell williams",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/adidas-x-humanrace-by-pharrell-williams"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "adidas x ivy park",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/adidas-x-ivy-park"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "adieu",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/adieu"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "adish",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/adish"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "adsum",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/adsum"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "advisory board crystals",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/advisory-board-crystal"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "adyar",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/adyar"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "ænrmòus",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/aenrmandograveus"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "affxwrks",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/affix"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "afield out",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/afield-out"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "agnona",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/agnona"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "agr",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/agr"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "ahluwalia",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/ahluwalia-studio"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "ahluwalia &paulsmith",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/ahluwalia-and-paul-smith"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "aïe",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/aandiumle"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "airei",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/airei"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "aitor throup’s thedsa",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/thedsa"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "akoni",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/akoni"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "alan crocetti",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/alan-crocetti"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "alchemist",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/alchemist"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "alexander mcqueen",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/alexander-mcqueen"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "alighieri",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/alighieri"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "alled-martinez",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/alled-martinez"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "alo",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/alo"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "altu",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/altu"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "ambush",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/ambush"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "ami alexandre mattiussi",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/ami-alexandre-mattiussi"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "amiri",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/amiri"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "amomento",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/amomento"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "and wander",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/and-wander"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "andersson bell",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/andersson-bell"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "andreādamo",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/admo"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "andrej gronau",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/andrej-gronau"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "ann demeulemeester",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/ann-demeulemeester"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "anna sui",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/anna-sui"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "anonymous club",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/anonymous-club"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "another aspect",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/another-aspect"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "applied art forms",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/applied-art-forms"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "après research",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/aprandegraves-research"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "archival reinvent",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/archival-reinvent"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "aries",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/aries"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "arturo obegero",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/arturo-obegero"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "ashley williams",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/ashley-williams"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "asics",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/asics"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "aspesi",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/aspesi"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "at.kollektive",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/atkollektive"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "attachment",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/attachment"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "auralee",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/auralee"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "autry",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/autry"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "awake ny",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/awake-ny"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "axel arigato",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/axel-arigato"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "aztech mountain",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/aztech-mountain"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "baffin",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/baffin"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "balenciaga",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/balenciaga"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "bally",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/bally"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "balmain",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/balmain"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "bao bao issey miyake",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/bao-bao-issey-miyake"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "bape",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/bape"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "barbour",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/barbour"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "barena",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/barena"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "bather",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/bather"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "bbuc",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/brillibrilliant-unicorn"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "beams plus",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/beams-plus"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "bed j.w. ford",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/bed-jw-ford"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "belstaff",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/belstaff"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "benjamin edgar",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/benjamin-edgar"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "berner kühl",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/berner-kanduumlhl"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "bethany williams",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/bethany-williams"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "bianca saunders",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/bianca-saunders"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "billionaire boys club",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/billionaire-boys-club"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "birrot",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/birrot"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "blæst",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/blaest"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "bless",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/bless"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "bleue burnham",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/bleue-burnham"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "blk dnm",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/blk-dnm"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "bloke",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/bloke"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "bluemarble",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/bluemarble"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "bode",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/bode"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "bonnie clyde",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/bonnie-clyde"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "bonsai",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/bonsai"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "boramy viguier",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/boramy-viguier"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "boris bidjan saberi",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/boris-bidjan-saberi"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "boss",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/boss-hugo-boss"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "both",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/both"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "bottega veneta",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/bottega-veneta"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "botter",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/botter"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "brain dead",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/brain-dead"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "briko",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/briko"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "brioni",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/brioni"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "brownstone",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/brownstone"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "brunello cucinelli",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/brunello-cucinelli"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "bryan jimenèz",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/bryan-jimenez"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "burberry",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/burberry"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "butler svc",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/butler"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "by walid",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/by-walid"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "byborre",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/byborre"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "c.p. company",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/cp-company"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "c2h4",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/c2h4"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "calvin klein",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/calvin-klein"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "calvin klein underwear",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/calvin-klein-underwear"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "calvinluo",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/calvinluo"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "camiel fortgens",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/camiel-fortgens"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "camperlab",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/camperlab"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "carhartt work in progress",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/carhartt-work-in-progress"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "carlota barrera",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/carlota-barrera"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "carne bollente",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/carne-bollente"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "carson wach",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/carson-wach"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "casablanca",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/casablanca"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "casey casey",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/casey-casey"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "castañer",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/castaner"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "cayl",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/cayl"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "ccp",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/ccp"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "cdlp",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/cdlp"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "cfcl",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/cfcl"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "charles jeffrey loverboy",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/charles-jeffrey-loverboy"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "charlie constantinou",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/charlie-constantinou"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "chemist creations",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/chemist-creations"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "chen peng",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/chen-peng"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "chet lo",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/chet-lo"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "children of the discordance",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/children-of-the-discordance"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "chimi",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/chimi"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "chin teo",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/chin-teo"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "chopova lowena",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/chopova-lowena"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "christian louboutin",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/christian-louboutin"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "clarks originals",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/clarks-originals"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "clean waves",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/clean-waves"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "clot",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/clot"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "cmf outdoor garment",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/cmf-comfy-outdoor-garment"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "cmmn swdn",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/cmmn-swdn"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "coach 1941",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/coach-1941"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "collina strada",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/collina-strada"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "come back as a flower",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/come-back-as-a-flower"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "commas",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/commas"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "comme des garçons homme",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/comme-des-garcons-homme"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "comme des garçons homme deux",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/comme-des-garcons-homme-deux"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "comme des garçons homme plus",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/comme-des-garcons-homme-plus"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "comme des garçons shirt",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/comme-des-garcons-shirt"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "commission",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/commission"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "common projects",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/common-projects"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "completedworks",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/completedworks"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "connor mcknight",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/connor-mcknight"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "converse",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/converse"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "coperni",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/coperni"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "cordera",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/monica-cordera"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "cormio",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/cormio"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "cornerstone",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/cornerstone"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "corridor",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/corridor"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "côte&ciel",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/cote-and-ciel"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "cotton citizen",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/cotton-citizen"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "courrèges",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/courreges"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "cowgirl blue co",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/cowgirl"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "craig green",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/craig-green"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "crocs",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/crocs"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "cutler and gross",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/cutler-and-gross"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "daiwa pier39",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/daiwa-pier39"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "dancer",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/dancer"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "daniel w. fletcher",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/daniel-w-fletcher"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "danner",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/danner"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "darkpark",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/darkpark"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "davi paris",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/davi-paris"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "de bonne facture",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/de-bonne-facture"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "dear letterman",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/dear-letterman"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "descente allterrain",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/descente-allterrain"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "devá states",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/deva-states"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "deveaux new york",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/deveaux-new-york"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "diemme",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/diemme"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "diesel",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/diesel"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "dime",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/dime"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "dion lee",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/dion-lee"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "dior homme",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/dior-homme"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "district vision",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/district-vision"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "dita",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/dita"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "dolce & gabbana",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/dolce-and-gabbana"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "doppiaa",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/doppiaa"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "double rainbouu",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/double-rainbouu"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "doublet",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/doublet"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "dr. martens",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/dr-martens"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "drae",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/drae"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "drake's",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/drakes"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "drew house",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/drew-house"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "dries van noten",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/dries-van-noten"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "drôle de monsieur",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/drandocircle-de-monsieur"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "dsquared2",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/dsquared2"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "dunhill",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/dunhill"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "dunst",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/dunst"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "eckhaus latta",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/eckhaus-latta"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "eden power corp",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/eden-power-corp"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "edward cuming",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/edward-cuming"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "egonlab",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/egonlab"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "ekn",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/ekn-footwear"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "éliou",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/andeacuteliou"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "ellie mercer",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/ellie-mercer"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "emanuele bicocchi",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/emanuele-bicocchi"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "emporio armani",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/emporio-armani"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "endless joy",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/endless-joy"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "enfants riches déprimés",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/enfants-riches-deprimes"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "engineered garments",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/engineered-garments"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "entire studios",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/entire-studios"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "erdem",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/erdem"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "erl",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/erl"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "ermenegildo zegna",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/ermenegildo-zegna"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "ermenegildo zegna couture",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/ermenegildo-zegna-couture"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "ernest w. baker",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/ernest-w-baker"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "essentials",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/essentials"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "etro",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/etro"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "études",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/etudes"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "extreme cashmere",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/extreme-cashmere"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "eytys",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/eytys"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "f-lagstuf-f",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/f-lagstuf-f"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "f/ce.®",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/f-ce"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "factor's",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/factors"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "faith connexion",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/faith-connexion"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "faris",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/faris"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "fdmtl",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/fdmtl"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "fear of god",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/fear-of-god"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "fendi",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/fendi"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "feng chen wang",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/feng-chen-wang"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "ferragamo",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/salvatore-ferragamo"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "fffpostalservice",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/fffpostalservice"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "filippa k",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/filippa-k"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "fiorucci",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/fiorucci"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "flatlist eyewear",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/flatlist-eyewear"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "floyd",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/floyd"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "frame",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/frame"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "fred perry",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/fred-perry"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "frédérique constant",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/frandeacutedandeacuterique-constant"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "frei-mut",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/frei-mut"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "frenckenberger",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/frenckenberger"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "full circle energy",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/full-circle-energy"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "fumito ganryu",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/fumito-ganryu"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "gabriela coll garments",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/gabriela-coll-garments"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "gabriela hearst",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/gabriela-hearst"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "ganni",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/ganni"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "garrett leight",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/garrett-leight"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "gauchere",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/gauchere"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "gcds",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/gcds"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "gentle fullness",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/gentle-fullness"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "georges wendell",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/georges-wendell"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "georgia kemball",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/georgia-kemball"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "gerrit jacob",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/gerrit-jacob"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "ghiaia cashmere",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/ghiaia"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "gianvito rossi",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/gianvito-rossi"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "gil rodriguez",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/gil-rodriguez"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "gimaguas",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/gimaguas"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "giorgio armani",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/giorgio-armani"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "giuseppe zanotti",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/giuseppe-zanotti"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "givenchy",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/givenchy"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "globe-trotter",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/globe-trotter"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "gmbh",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/gmbh"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "golden goose",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/golden-goose"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "goldwin",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/goldwin"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "goldwin 0",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/goldwin-0"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "good news",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/good-news"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "gr10k",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/gr10k"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "gramicci",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/gramicci"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "greg lauren",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/greg-lauren"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "grey ant",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/grey-ant"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "gucci",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/gucci"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "guess usa",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/guess-usa"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "guidi",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/guidi"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "haider ackermann",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/haider-ackermann"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "han kjobenhavn",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/han-kjobenhavn"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "hannah jewett",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/hannah-jewett"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "harago",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/harago"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "harmony",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/harmony"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "hatton labs",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/hatton-labs"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "haulier",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/haulier"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "head of state",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/head-of-state"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "hed mayner",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/hed-mayner"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "heliot emil",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/heliot-emil"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "helmut lang",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/helmut-lang"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "henrik vibskov",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/henrik-vibskov"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "hereu",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/hereu"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "herno",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/herno"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "heron preston",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/heron-preston"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "hgbb studio",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/hgbb-studio"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "hh-118389225",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/hh-118389225"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "hokita",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/hokita"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "holden",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/holden"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "holubar",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/holubar"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "homme plissé issey miyake",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/homme-plisse-issey-miyake"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "honey fucking dijon",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/honey-fucking-dijon"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "hood by air",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/hood-by-air"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "hope",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/hope-mens"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "houdini",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/houdini"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "howlin'",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/howlin"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "hugo",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/hugo-hugo-boss"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "hugo kreit",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/hugo-kreit"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "human recreational services",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/human-recreational-services"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "husbands",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/husbands"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "hyein seo",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/hyein-seo"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "icecream",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/icecream"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "illesteva",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/illesteva"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "in gold we trust paris",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/in-gold-we-trust"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "incotex red x facetasm",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/incotex-red-x-facetasm"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "innerraum",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/innerraum"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "isa boulder",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/isa-boulder"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "isabel benenato",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/isabel-benenato"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "isabel marant",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/isabel-marant"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "isaia",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/isaia"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "izzue",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/izzue"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "j.hannah",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/jhannah"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "jacquemus",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/jacquemus"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "jacques",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/jacques"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "jacques marie mage",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/jacques-marie-mage"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "jam",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/jam"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "jan-jan van essche",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/jan-jan-van-essche"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "jean paul gaultier",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/jean-paul-gaultier"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "jerih",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/jerih"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "jieda",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/jieda"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "jil sander",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/jil-sander"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "jiyongkim",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/jiyong-kim"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "john elliott",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/john-elliott"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "johnlawrencesullivan",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/johnlawrencesullivan"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "joseph",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/joseph"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "judy turner",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/judy-turner"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "julius",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/julius"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "juntae kim",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/juntae-kim"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "junya watanabe",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/junya-watanabe"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "just cavalli",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/just-cavalli"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "justine clenquet",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/justine-clenquet"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "juun.j",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/juunj"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "jw anderson",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/jw-anderson"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "k.ngsley",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/kngsley"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "kanghyuk",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/kanghyuk"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "kanuk",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/kanuk"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "kara",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/kara"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "karu research",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/karu-research"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "kenzo",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/kenzo"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "khanh brice nguyen",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/khanh-brice-nguyen"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "kidill",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/kidill"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "kids worldwide",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/kids-worldwide"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "kidsuper",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/kid-super"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "kijun",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/kijun"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "kiko kostadinov",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/kiko-kostadinov"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "king & tuckfield",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/king-and-tuckfield"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "klättermusen",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/klattermusen"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "kozaburo",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/kozaburo"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "ksubi",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/ksubi"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "kuboraum",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/kuboraum"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "kuro",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/kuro"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "kusikohc",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/kusikohc"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "label under construction",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/label-under-construction"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "labrum",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/labrum"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "lacoste",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/lacoste"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "lady white co.",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/lady-white-co"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "lanvin",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/lanvin"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "late checkout",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/late-checkout"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "le gramme",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/le-gramme"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "le17septembre",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/le17septembre"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "lemaire",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/lemaire"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "les tien",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/les-tien"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "levi's",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/levis"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "levi's made & crafted",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/levis-made-and-crafted"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "levi's vintage clothing",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/levis-vintage-clothing"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "lexxola",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/lexxola"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "lgn louis gabriel nouchi",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/louis-gabriel-nouchi"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "li-ning",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/li-ning"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "liam hodges",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/liam-hodges"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "liberal youth ministry",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/liberal-youth-ministry"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "linda farrow",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/linda-farrow"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "lisa yang",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/lisa-yang"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "lng",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/lng"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "loewe",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/loewe"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "lorette colé duprat",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/lorette-colandeacute-duprat"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "low classic",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/low-classic"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "lownn",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/lownn"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "lu'u dan",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/luu-dan"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "luar",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/luar"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "ludovic de saint sernin",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/ludovic-de-saint-sernin"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "lukhanyo mdingi",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/lukhanyo-mdingi"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "lunetterie générale",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/lunetterie-gandeacutenandeacuterale"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "m.a. martin asbjørn",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/ma-martin-asbjandoslashrn"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "maap",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/maap"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "mackage",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/mackage"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "madhappy",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/madhappy"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "magliano",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/magliano"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "maharishi",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/maharishi"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "maiden name",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/maiden-name"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "mainline:rus/fr.ca/de",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/mainlinerus-frca-de"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "maisie wilen",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/maisie-wilen"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "maison kitsuné",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/maison-kitsune"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "maison margiela",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/maison-margiela"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "malibu sandals",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/malibu-sandals"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "mammut",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/mammut"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "manolo blahnik",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/manolo-blahnik"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "manors golf",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/manors-golf"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "maple",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/maple"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "marc jacobs",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/marc-jacobs"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "marcelo burlon county of milan",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/marcelo-burlon-county-of-milan"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "margaret howell",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/margaret-howell"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "marina yee",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/marina-yee"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "marine serre",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/marine-serre"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "marni",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/marni"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "marsèll",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/marsell"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "marshall columbia",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/marshall-columbia"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "martin asbjørn",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/martin-asbjandoslashrn"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "martine ali",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/martine-ali"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "martine rose",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/martine-rose"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "maryam nassir zadeh",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/maryam-nassir-zadeh"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "massimo alba",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/massimo-alba"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "master-piece",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/master-piece-co"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "mastermind japan",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/mastermind-japan"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "mastermind world",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/mastermind-world"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "matsuda",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/matsuda"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "max mara",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/max-mara"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "maximilian davis",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/maximilian"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "mcq",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/mcq"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "mcq alexander mcqueen",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/mcq-alexander-mcqueen"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "meanswhile",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/meanswhile"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "merrell 1trl",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/merrell-1trl"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "meryll rogge",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/meryll-rogge"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "meta campania collective",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/meta-campania-collective-sagl"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "mfpen",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/mfpen"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "mhl by margaret howell",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/mhl-by-margaret-howell"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "miharayasuhiro",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/miharayasuhiro"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "misbhv",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/misbhv"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "missoni",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/missoni"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "mm6 maison margiela",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/mm6-maison-margiela"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "molly goddard",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/molly-goddard"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "montblanc",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/montblanc"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "moon boot",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/moon-boot"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "moose knuckles",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/moose-knuckles-x-post-malone"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "moose knuckles x eckhaus latta",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/moose-knuckles-x-eckhaus-latta"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "moschino",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/moschino"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "mowalola",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/mowalola"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "mr. saturday",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/mr-saturday"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "msgm",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/msgm"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "mugler",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/mugler"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "museum of peace & quiet",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/museum-of-peace-and-quiet"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "mykita",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/mykita"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "n.hoolywood",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/n-hoolywood"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "nahmias",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/nahmias"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "naked & famous denim",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/naked-and-famous-denim"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "namacheko",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/namacheko"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "namesake",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/namesake"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "nanamica",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/nanamica"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "nanga",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/nanga"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "nanushka",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/nanushka"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "napa by martine rose",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/napa-x-martine-rose"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "nasaseasons",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/nasaseasons"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "needles",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/needles"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "neighborhood",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/neighborhood"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "neil barrett",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/neil-barrett"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "nemen®",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/nemen"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "new balance",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/new-balance"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "nicholas daley",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/nicholas-daley"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "nicolas andreas taralis",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/nicolas-andreas-taralis"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "nigel cabourn",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/nigel-cabourn"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "nike jordan",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/jordan"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "nili lotan",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/nili-lotan"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "nn07",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/nn07"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "noah",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/noah"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "nobis",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/nobis"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "noma t.d.",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/noma-td"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "non",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/non"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "noon goons",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/noon-goons"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "norda",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/norda"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "norse projects",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/norse-projects"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "norse projects arktisk",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/arktisk"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "notsonormal",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/notsonormal"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "nudie jeans",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/nudie-jeans"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "numbering",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/numbering"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "nvrfrgt",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/nvrfrgt"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "oakley",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/oakley"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "oamc",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/oamc"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "objects iv life",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/objects-iv-life"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "octi",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/octi"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "officine creative",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/officine-creative"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "officine générale",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/officine-gandeacutenandeacuterale"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "oliver peoples",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/oliver-peoples"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "olly shinder",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/olly-shinder"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "omar afridi",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/omar-afridi"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "on",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/on-running"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "online ceramics",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/online-ceramics"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "open yy",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/theopen-product"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "opening ceremony",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/opening-ceremony"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "ostrya",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/ostrya"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "ottolinger",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/ottolinger"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "ottomila",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/ottomila"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "our legacy",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/our-legacy"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "outdoor voices",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/outdoor-voices"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "over over",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/over-over"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "overcoat",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/overcoat"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "paco rabanne",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/paco-rabanne"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "padmore & barnes",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/padmore-and-barnes"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "palm angels",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/palm-angels"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "palmer",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/palmer"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "palmes",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/palmes"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "panconesi",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/marco-panconesi"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "pangaia",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/pangaia"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "parajumpers",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/parajumpers"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "parel studios",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/parel"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "paria /farzaneh",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/paria-farzaneh"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "parnell mooney",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/parnell-mooney"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "pas normal studios",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/pas-normal-studios"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "paul smith",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/paul-smith"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "paul stuart",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/paul-stuart"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "pearl octopuss.y",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/pearl-octopussy"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "pearls before swine",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/pearls-before-swine"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "pedaled",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/pedaled"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "perfect moment",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/perfect-moment"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "perks and mini",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/perks-and-mini"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "persol",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/persol"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "pet-tree-kor",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/pet-tree-kor"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "peter do",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/peter-do"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "phileo",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/phileo"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "phipps",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/phipps"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "phlemuns",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/phlemuns"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "pierre hardy",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/pierre-hardy"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "pilgrim surf + supply",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/pilgrim-surf-and-supply"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "places+faces",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/places-and-faces"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "pm projects",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/pm-projects"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "polo ralph lauren",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/polo-ralph-lauren"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "polythene* optics",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/polythene-optics"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "ponder.er",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/ponderer"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "pop trading company",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/pop-trading-company"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "port tanger",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/port-tanger"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "porter - yoshida & co",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/porter-yoshida-and-co"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "post archive faction (paf)",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/post-archive-faction"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "pottery",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/pottery"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "praying",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/praying"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "president's",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/presidents"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "projekt produkt",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/projekt-produkt"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "ps by paul smith",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/ps-by-paul-smith"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "r13",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/r13"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "raf simons",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/raf-simons"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "rag & bone",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/rag-and-bone"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "raga malak",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/raga-malak"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "rainmaker kyoto",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/rainmaker-kyoto"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "rains",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/rains"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "ralph lauren purple label",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/ralph-lauren-purple-label"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "random identities",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/random-identities"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "randt",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/randt"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "ranra",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/arnar-mandaacuter-jandoacutensson"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "rassvet",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/rassvet-6"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "räthel & wolf",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/randaumlthel-and-wolf"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "ratio et motus",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/ratio-et-motus"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "ray-ban",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/ray-ban"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "re/done",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/re-done"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "recto",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/recto"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "red wing heritage",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/red-wing-heritage"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "reebok by pyer moss",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/reebok-by-pyer-moss"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "reebok classics",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/reebok-classics"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "reese cooper",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/reese-cooper"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "reigning champ",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/reigning-champ"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "remi relief",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/remi-relief"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "represent",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/represent"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "retrosuperfuture",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/super"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "rhude",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/rhude"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "rick owens",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/rick-owens"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "rick owens drkshdw",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/rick-owens-drkshdw"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "rier",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/rier"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "ring jacket",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/ring-jacket"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "rito structure",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/rito-structure"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "rk",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/randa-rk"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "rlx ralph lauren",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/rlx"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "roa",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/roa"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "robyn lynch",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/robyn-lynch"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "rochambeau",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/rochambeau"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "rochas homme",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/rochas-homme"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "rocky mountain featherbed",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/rocky-mountain-featherbed"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "rombaut",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/rombaut"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "rrl",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/rrl"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "rta",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/rta"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "s.k. manor hill",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/sk-manor-hill"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "s.r. studio. la. ca.",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/sterling-ruby-studio"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "s.s.daley",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/ssdaley"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "sacai",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/sacai"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "sage nation",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/sage-nation"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "saint laurent",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/saint-laurent"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "saintwoods",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/saintwoods"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "salie 66",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/salie66"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "salomon",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/salomon"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "samsøe samsøe",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/samsandoslashe-samsandoslash"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "sankuanz",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/sankuanz"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "santangelo",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/santangelo"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "santoni",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/santoni"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "sapio",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/sapio"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "sasquatchfabrix.",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/sasquatchfabrix"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "satisfy",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/satisfy"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "satta",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/satta"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "saturdays nyc",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/saturdays-nyc"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "saucony",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/saucony"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "saul nash",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/saul-nash"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "sc103",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/sc103"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "schnayderman's",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/schnaydermans"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "schott",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/schott"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "sean suen",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/sean-suen"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "seb brown",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/seb-brown"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "sebago",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/sebago"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "sebastien ami.",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/sebastien-ami"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "sébline",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/sandeacutebline"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "second/layer",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/second-layer"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "secret of manna",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/secret-of-manna"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "seekings",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/seekings"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "séfr",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/sandeacutefr"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "serapis",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/serapis"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "sergio tacchini",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/sergio-tacchini"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "seventh",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/seventh"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "simon miller",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/simon-miller"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "simone rocha",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/simone-rocha"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "sir.",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/sir"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "situationist",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/situationist"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "sky high farm workwear",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/sky-high-farm"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "smythson",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/smythson"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "snow peak",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/snow-peak"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "soar running",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/soar-running"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "socksss",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/socksss"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "solid homme",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/solid-homme"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "solitude studios",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/solitude-studios"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "song for the mute",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/song-for-the-mute"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "sophie buhai",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/sophie-buhai"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "sophnet.",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/sophnet"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "soshiotsuki",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/soshiotsuki"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "soulland",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/soulland"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "south2 west8",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/south2-west8"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "spencer badu",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/sp-badu"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "sportalm",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/sportalm"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "sporty & rich",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/sporty-and-rich"
+        },
+        { "shop_name": "ssense", "brand_name": "ssense works", "brand_url": "/en-kr/men/sale/designers/ssense-works" },
+        {
+            "shop_name": "ssense",
+            "brand_name": "stain shade",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/stain-shade"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "stefan cooke",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/stefan-cooke"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "stein",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/stein"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "stella mccartney",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/stella-mccartney"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "steven passaro",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/steven-passaro"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "stockholm (surfboard) club",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/stockholm-surfboard-club"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "stolen girlfriends club",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/stolen-girlfriends-club"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "stone island",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/stone-island"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "stone island shadow project",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/stone-island-shadow-project"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "story mfg.",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/story-mfg"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "stray rats",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/stray-rats"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "strongthe",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/strongthe"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "studio nicholson",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/studio-nicholson"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "stüssy",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/stussy"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "stutterheim",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/stutterheim"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "subu",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/subu"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "suicoke",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/suicoke"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "sulvam",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/sulvam"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "sunflower",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/sunflower"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "sunnei",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/sunnei"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "sunspel",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/sunspel"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "sweetlimejuice",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/sweetlimejuice"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "system",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/system"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "t/sehne",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/t-sehne"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "taakk",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/taakk"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "taiga takahashi",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/taiga-takahashi"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "taion",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/taion"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "takahiromiyashita thesoloist.",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/takahiromiyashita-thesoloist"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "tanaka",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/tanaka"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "tanner fletcher",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/tanner-fletcher"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "tekla",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/tekla"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "templa",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/templa"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "ten c",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/ten-c"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "teva",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/teva"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "th products",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/th"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "thames mmxx.",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/thames-mmxx"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "the arrivals®",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/the-arrivals"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "the elder statesman",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/the-elder-statesman"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "the frankie shop",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/the-frankie-shop"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "the letters",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/the-letters"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "the north face",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/the-north-face"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "the row",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/the-row"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "the very warm",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/the-very-warm"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "the viridi-anne",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/the-viridi-anne"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "the world is your oyster",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/theworldisyouroyster"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "thebe magugu",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/thebe-magugu"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "theophilio",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/theophilio"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "theory",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/theory"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "thierry lasry",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/thierry-lasry"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "thisisneverthat",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/thisisneverthat"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "thom browne",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/thom-browne"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "thom/krom",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/thom-krom"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "tiger of sweden",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/tiger-of-sweden"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "tiger of sweden jeans",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/tiger-of-sweden-jeans"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "tms.site",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/tmssite"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "toga virilis",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/toga-virilis"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "tokyo james",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/tokyo-james"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "tom ford",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/tom-ford"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "tom sachs",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/tom-sachs"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "tom wood",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/tom-wood"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "tombogo™",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/tombogo"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "tommy jeans",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/tommy-collection"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "tommy jeans x martine rose",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/tommy-jeans-x-martine-rose"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "toogood",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/toogood"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "total luxury spa",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/total-luxury-spa"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "true tribe",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/true-tribe"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "ts(s)",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/tss"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "tsau",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/tsau"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "ugo cacciatori",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/ugo-cacciatori"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "uma wang",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/uma-wang"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "uncertain factor",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/uncertain-factor"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "undercover",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/undercover"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "undercoverism",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/undercoverism"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "uniform experiment",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/unifom-experiment"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "uniforme",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/uniforme-paris"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "universal works",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/universal-works"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "unna",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/unna"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "valentino",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/valentino"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "valentino garavani",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/valentino-garavani"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "vans",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/vans"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "veert",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/veert"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "veilance",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/veilance"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "vein",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/vein"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "veja",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/veja"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "vejas maksimas",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/vejas"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "veneda carter",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/veneda-carter"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "versace",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/versace"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "versace jeans couture",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/versace-jeans-couture"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "versace underwear",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/versace-underwear"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "vetements",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/vetements"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "viktor&rolf mister mister",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/viktor-and-rolf-mister-mister"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "vince",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/vince"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "vinny’s",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/vinnys"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "virón",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/viron"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "visvim",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/visvim"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "vitelli",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/vitelli"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "vivendii",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/vivendii"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "vivienne westwood",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/vivienne-westwood"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "vtmnts",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/vtmnts"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "vyner articles",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/vyner-articles"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "wacko maria",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/wacko-maria"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "wales bonner",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/wales-bonner"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "walter van beirendonck",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/walter-van-beirendonck"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "wardrobe.nyc",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/wardrobenyc"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "we11done",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/we11done"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "whim golf",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/whim-golf"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "white mountaineering®︎",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/white-mountaineering"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "who decides war",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/who-decides-war-by-mrdr-brvdo"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "winnie new york",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/winnie"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "wolford",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/wolford"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "won hundred",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/won-hundred"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "wood wood",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/wood-wood"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "wooyoungmi",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/wooyoungmi"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "wynn hamlyn",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/wynn-hamlyn"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "xander zhou",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/xander-zhou"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "xenia telunts",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/xenia-telunts"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "xlim",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/xlim"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "y-3",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/y-3"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "y's",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/ys"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "y/project",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/y-project"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "ymc",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/ymc"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "yohji yamamoto",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/yohji-yamamoto"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "young n sang",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/young-n-sang"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "youth",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/youth"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "youths in balaclava",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/youths-in-balaclava"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "yuichi toyama.",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/yuichi-toyama"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "yuki hashimoto",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/yuki-hashimoto"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "yulong xia",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/yulong-xia"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "yume yume",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/yume-yume"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "yves salomon - army",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/army-by-yves-salomon"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "z zegna",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/z-zegna"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "zankov",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/zankov"
+        },
+        {
+            "shop_name": "ssense",
+            "brand_name": "zegna",
+            "brand_url": "https://www.ssense.com/en-kr/men/sale/designers/zegna"
+        }
+    ]
+}

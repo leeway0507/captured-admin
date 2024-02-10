@@ -12,6 +12,7 @@ from ..shop_list.urban_industry import PwUrbanIndustryPageSubScraper
 from ..shop_list._18montrose import Pw18montrosePageSubScraper
 from ..shop_list.harresoe import PwHarresoePageSubScraper
 from ..shop_list.endclothing import PwEndClothingPageSubScraper
+from ..shop_list.ssense import PwSsensePageSubScraper
 
 
 class ShopPageScraperFactory:
@@ -74,6 +75,9 @@ class PwShopPageSubScraperFactory:
 
     def endclothing(self):  # -> Any:
         return PwEndClothingPageSubScraper()
+
+    def ssense(self):
+        return PwSsensePageSubScraper()
 
 
 class PwShopPageScraper(Scraper):

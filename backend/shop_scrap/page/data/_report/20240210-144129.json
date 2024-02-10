@@ -1,0 +1,96 @@
+{
+    "scrap_time": "20240210-144129",
+    "num_of_plan": 11,
+    "num_processor": 1,
+    "db_update": true,
+    "job": [
+        {
+            "shop_product_card_id": 14168,
+            "product_url": "https://www.ssense.com/en-kr/women/product/vivienne-westwood/gray-bea-cardigan/13734721",
+            "shop_name": "ssense",
+            "brand_name": "vivienne westwood",
+            "product_id": "no product id",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 14173,
+            "product_url": "https://www.ssense.com/en-kr/women/product/vivienne-westwood/black-bebe-sweater/13489211",
+            "shop_name": "ssense",
+            "brand_name": "vivienne westwood",
+            "product_id": "no product id",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 14179,
+            "product_url": "https://www.ssense.com/en-kr/women/product/vivienne-westwood/black-orb-double-frame-bag/13404661",
+            "shop_name": "ssense",
+            "brand_name": "vivienne westwood",
+            "product_id": "no product id",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 14181,
+            "product_url": "https://www.ssense.com/en-kr/women/product/vivienne-westwood/black-bea-cardigan/13489101",
+            "shop_name": "ssense",
+            "brand_name": "vivienne westwood",
+            "product_id": "no product id",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 14192,
+            "product_url": "https://www.ssense.com/en-kr/women/product/vivienne-westwood/off-white-bebe-sweater/13489191",
+            "shop_name": "ssense",
+            "brand_name": "vivienne westwood",
+            "product_id": "no product id",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 14195,
+            "product_url": "https://www.ssense.com/en-kr/women/product/vivienne-westwood/beige-athletic-sweatshirt/13734661",
+            "shop_name": "ssense",
+            "brand_name": "vivienne westwood",
+            "product_id": "no product id",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 14201,
+            "product_url": "https://www.ssense.com/en-kr/women/product/vivienne-westwood/black-mini-round-bag/13404321",
+            "shop_name": "ssense",
+            "brand_name": "vivienne westwood",
+            "product_id": "no product id",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 14203,
+            "product_url": "https://www.ssense.com/en-kr/women/product/vivienne-westwood/white-football-shirt/13488621",
+            "shop_name": "ssense",
+            "brand_name": "vivienne westwood",
+            "product_id": "no product id",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 14204,
+            "product_url": "https://www.ssense.com/en-kr/women/product/vivienne-westwood/gold-corrine-hair-clip/13764791",
+            "shop_name": "ssense",
+            "brand_name": "vivienne westwood",
+            "product_id": "no product id",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 14207,
+            "product_url": "https://www.ssense.com/en-kr/women/product/vivienne-westwood/green-mini-archive-yasmine-bag/13404171",
+            "shop_name": "ssense",
+            "brand_name": "vivienne westwood",
+            "product_id": "no product id",
+            "status": "success"
+        },
+        {
+            "shop_product_card_id": 14209,
+            "product_url": "https://www.ssense.com/en-kr/women/product/vivienne-westwood/black-orb-keychain/13735171",
+            "shop_name": "ssense",
+            "brand_name": "vivienne westwood",
+            "product_id": "no product id",
+            "status": "success"
+        }
+    ]
+}

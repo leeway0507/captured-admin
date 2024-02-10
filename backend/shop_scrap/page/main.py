@@ -31,8 +31,7 @@ class ShopPageMain:
     async def execute(self, searchType: str, value: str | Dict, num_processor: int):
         target_list = await self.extract_target_list(searchType, value)
         print("shop_page : target_list")
-        print("shop_page : target_list")
-        print(target_list)
+        print(len(target_list))
         self.main_scraper = await self.main_scraper_factory.playwright(
             target_list, num_processor
         )

@@ -70,24 +70,45 @@ class ImageResizer:
 
     def create_thumbnail(self):
         file_path = os.path.join(self.work_dir, "thumbnail.png")
-        img = self.crop_image(file_path, size=700)
-        img_with_white_bg = Image.new("RGBA", img.size, "WHITE")
-        img_with_white_bg.paste(img, (0, 0), img)
+        prod_img = self.crop_image(file_path, size=700)
+        prod_img = prod_img.convert("RGBA")
+
+        # prod_wtih_gray_bg = Image.open(os.path.join(self.path, "gray_bg.png"))
+        # prod_wtih_gray_bg = prod_wtih_gray_bg.resize(prod_img.size)
+        # prod_wtih_gray_bg.paste(prod_img, (0, 0), prod_img)
 
         # Create a new image with a transparent square of size 1000x1000
         new_size = (1000, 1000)
-        centered_image = Image.new("RGB", new_size, "white")
+        transparent_bg = Image.new("RGBA", new_size)
 
         paste_position = (
-            (new_size[0] - img.width) // 2,
-            (new_size[1] - img.height) // 2,
+            (new_size[0] - prod_img.width) // 2,
+            (new_size[1] - prod_img.height) // 2,
         )
 
-        centered_image.paste(img_with_white_bg, paste_position)
+        transparent_bg.paste(prod_img, paste_position, prod_img)
 
         resize_file_path = self.resize_file_path("thumbnail.webp")
-        return centered_image.save(
+        return transparent_bg.save(
             resize_file_path, quality=100, optimize=False, format="WEBP"
+        )
+
+    def create_logo_thumbnail(self, name: str):
+        file_path = os.path.join(self.work_dir, name)
+        prod_img = self.crop_image(file_path, size=700)
+        prod_img = prod_img.convert("RGBA")
+
+        # prod_wtih_gray_bg = Image.open(os.path.join(self.path, "gray_bg.png"))
+        # prod_wtih_gray_bg = prod_wtih_gray_bg.resize(prod_img.size)
+        # prod_wtih_gray_bg.paste(prod_img, (0, 0), prod_img)
+
+        # Create a new image with a transparent square of size 1000x1000
+        transparent_bg = Image.new("RGBA", prod_img.size)
+        transparent_bg.paste(prod_img, (0, 0), prod_img)
+
+        resize_file_path = self.resize_file_path(name)
+        return transparent_bg.save(
+            resize_file_path, quality=100, optimize=False, format="png"
         )
 
     def crop_image(self, file_path: str, size: int = 700):
