@@ -4,9 +4,9 @@ from pathlib import Path
 from PIL import Image
 import pillow_avif  # don't delete this line
 from dotenv import dotenv_values
-import shutil
-import time
+
 from components.file_manager import FileManager
+from components.bg_removal import BgRemovalModel
 
 
 config = dotenv_values(".env.production")
@@ -29,6 +29,7 @@ class ImageResizer:
         self.File = FileManager(path)
         self._sku = None
         self.work_dir = ""
+        self.model = BgRemovalModel()
 
     @property
     def sku(self):
@@ -41,6 +42,53 @@ class ImageResizer:
         self._sku = sku
         self.work_dir = os.path.join(self.path, sku)
         self._create_resize_folder()
+
+    def resize_v2(self):
+        for file_name in os.listdir(self.work_dir):
+            if file_name.split(".")[0] in ["main", "sub-1", "sub-2", "sub-3", "sub-4"]:
+                self.preprocess_image(file_name)
+
+    def preprocess_image(self, file_name: str):
+        file_path = os.path.join(self.work_dir, file_name)
+        prod_img = self.remove_bg(file_path)
+        prod_img = self.crop_image_v2(prod_img, size=900)
+        prod_img = prod_img.convert("RGBA")
+
+        # Create a new image with a transparent square of size 1000x1000
+        new_size = (1000, 1000)
+        paste_position = (
+            (new_size[0] - prod_img.width) // 2,
+            (new_size[1] - prod_img.height) // 2,
+        )
+
+        transparent_bg = Image.new("RGBA", new_size)
+        transparent_bg.paste(prod_img, paste_position, prod_img)
+
+        resize_file_name = file_name.split(".")[0] + ".png"
+        resize_file_path = self.resize_file_path(resize_file_name)
+
+        return transparent_bg.save(
+            resize_file_path, quality=100, optimize=True, format="PNG"
+        )
+
+    def remove_bg(self, file_path: str):
+        self.model.file_path = file_path
+        image = self.model.load_image()
+        return self.model.remove_bg(image)
+
+    def crop_image_v2(self, prod_img: Image.Image, size: int = 700):
+
+        bbox = prod_img.getbbox()
+        cropped_image = prod_img.crop(bbox)
+
+        if cropped_image.width >= cropped_image.height:
+            aspect_ratio = cropped_image.width / cropped_image.height
+            target_height = round(size / aspect_ratio)
+            return cropped_image.resize((size, target_height))
+        else:
+            aspect_ratio = cropped_image.height / cropped_image.width
+            target_width = round(size / aspect_ratio)
+            return cropped_image.resize((target_width, size))
 
     def resize(self):
         for file_name in os.listdir(self.work_dir):

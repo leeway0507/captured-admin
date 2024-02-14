@@ -58,7 +58,9 @@ class PwKreamListSubScraper(SubScraper):
     async def execute(self, time_delay=500) -> Tuple[str, List]:
         await self._go_to_page()
         await self.page_handler.scroll_down(
-            max_scroll=self.max_scroll, time_delay=time_delay
+            max_scroll=self.max_scroll,
+            time_delay=time_delay,
+            step_size=1000,
         )
         return await self.get_product_card_list()
 
