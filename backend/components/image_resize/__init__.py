@@ -1,8 +1,7 @@
-from .image_resizer import ImageResizer
+from components.image_resizer import ImageResizer
 from .uploader import S3ImgUploader
-import os
-import sys
 from .thumbnail_uploader import S3ThumbnailUploader
+import os
 
 
 class ImageResizeManager:

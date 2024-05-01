@@ -24,7 +24,6 @@ def conn_engine(
 def sshtunnelInstance():
     # SSH config
     ssh_host = "43.201.98.25"
-    ssh_port = 22
     ssh_username = "ubuntu"
     ssh_private_key = "/Users/yangwoolee/.ssh/captured.pem"
     db_host = "db-captured.cheoqn0aa7xs.ap-northeast-2.rds.amazonaws.com"

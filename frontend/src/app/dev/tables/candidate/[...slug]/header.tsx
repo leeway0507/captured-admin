@@ -39,7 +39,9 @@ const openPageToggle = (url: string) => {
     const height = 800; // 팝업의 세로 길이 : 500
     const left = window.screenX + (window.outerWidth - width) / 2;
     const top = window.screenY + (window.outerHeight - height) / 2;
-    window.open(url, "kream", `width=${width},height=${height},left=${left},top=${top}`);
+    const x = window.open(url, "kream", `width=${width},height=${height},left=${left},top=${top}`);
+    console.log("xxxxx");
+    console.log(x?.innerHeight);
 };
 
 export const productCardColumns = [

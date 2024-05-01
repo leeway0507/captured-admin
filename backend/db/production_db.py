@@ -8,6 +8,8 @@ tunnel.start()
 
 sec = get_secret("production")
 sec.update({"port": tunnel.local_bind_port})
+print("tunnel.local_bind_port")
+print(tunnel.local_bind_port)
 db_engine = conn_engine(**sec)
 prod_session_local = sessionmaker(bind=db_engine, class_=AsyncSession)  # type: ignore
 

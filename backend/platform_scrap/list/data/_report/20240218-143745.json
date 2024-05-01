@@ -1,0 +1,14 @@
+{
+    "scrap_time": "20240218-143745",
+    "num_of_plan": 1,
+    "num_processor": 1,
+    "db_update": false,
+    "job": [
+        {
+            "job": "Arc'teryx",
+            "status": "sub scraper failed: Target page, context or browser has been closed"
+        }
+    ],
+    "brand_name": "Arc'teryx",
+    "platform_type": "kream"
+}

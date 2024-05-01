@@ -1,0 +1,354 @@
+{
+  "brand_list": [
+    "a.p.c.",
+    "acne studios",
+    "adidas originals",
+    "aesop",
+    "all blues™",
+    "ami - alexandre mattiussi",
+    "andersen-andersen",
+    "anissa kermiche",
+    "arc'teryx",
+    "auralee",
+    "awake ny",
+    "barbour",
+    "barena venezi",
+    "berner kühl",
+    "birkenstock",
+    "bode",
+    "clarks originals",
+    "comme des garçons homme",
+    "comme des garçons parfums",
+    "comme des garçons play",
+    "comme des garçons shirt",
+    "comme des garçons wallet",
+    "danton",
+    "drake's",
+    "eight & bob",
+    "engineered garments",
+    "erl",
+    "flatlist",
+    "green factory",
+    "hario",
+    "human made",
+    "jacquemus",
+    "keen",
+    "lemaire",
+    "maison kitsuné",
+    "maison margiela",
+    "maison mihara yasuhiro",
+    "marni",
+    "moncler",
+    "moncler genius",
+    "needles",
+    "new balance",
+    "niko june",
+    "norse projects",
+    "ormaie paris",
+    "oscar jacobson",
+    "our legacy",
+    "palmes",
+    "paraboot",
+    "patagonia",
+    "paul smith",
+    "porter - yoshida & co.",
+    "ps paul smith",
+    "salomon",
+    "stone island",
+    "story mfg.",
+    "stüssy",
+    "tekla"
+  ],
+  "data": [
+    {
+      "shop_name": "harresoe",
+      "brand_name": "a.p.c.",
+      "brand_url": "https://www.harresoe.com/collections/a-p-c"
+    },
+    {
+      "shop_name": "harresoe",
+      "brand_name": "acne studios",
+      "brand_url": "https://www.harresoe.com/collections/acne-studios"
+    },
+    {
+      "shop_name": "harresoe",
+      "brand_name": "adidas originals",
+      "brand_url": "https://www.harresoe.com/collections/adidas-originals"
+    },
+    {
+      "shop_name": "harresoe",
+      "brand_name": "aesop",
+      "brand_url": "https://www.harresoe.com/collections/aesop"
+    },
+    {
+      "shop_name": "harresoe",
+      "brand_name": "all blues™",
+      "brand_url": "https://harresoe.com/collections/all-blues"
+    },
+    {
+      "shop_name": "harresoe",
+      "brand_name": "ami - alexandre mattiussi",
+      "brand_url": "https://www.harresoe.com/collections/ami-alexandre-mattiussi"
+    },
+    {
+      "shop_name": "harresoe",
+      "brand_name": "andersen-andersen",
+      "brand_url": "https://www.harresoe.com/collections/andersen-andersen"
+    },
+    {
+      "shop_name": "harresoe",
+      "brand_name": "anissa kermiche",
+      "brand_url": "https://www.harresoe.com/collections/anissa-kermiche"
+    },
+    {
+      "shop_name": "harresoe",
+      "brand_name": "arc'teryx",
+      "brand_url": "https://www.harresoe.com/collections/arcteryx"
+    },
+    {
+      "shop_name": "harresoe",
+      "brand_name": "auralee",
+      "brand_url": "https://www.harresoe.com/collections/auralee"
+    },
+    {
+      "shop_name": "harresoe",
+      "brand_name": "awake ny",
+      "brand_url": "https://www.harresoe.com/collections/awake-ny"
+    },
+    {
+      "shop_name": "harresoe",
+      "brand_name": "barbour",
+      "brand_url": "https://www.harresoe.com/collections/barbour"
+    },
+    {
+      "shop_name": "harresoe",
+      "brand_name": "barena venezia",
+      "brand_url": "https://www.harresoe.com/collections/barena-venezia"
+    },
+    {
+      "shop_name": "harresoe",
+      "brand_name": "berner kühl",
+      "brand_url": "https://www.harresoe.com/collections/berner-kuhl"
+    },
+    {
+      "shop_name": "harresoe",
+      "brand_name": "birkenstock",
+      "brand_url": "https://www.harresoe.com/collections/birkenstock"
+    },
+    {
+      "shop_name": "harresoe",
+      "brand_name": "bode",
+      "brand_url": "https://www.harresoe.com/collections/bode"
+    },
+    {
+      "shop_name": "harresoe",
+      "brand_name": "clarks originals",
+      "brand_url": "https://www.harresoe.com/collections/clarks-originals"
+    },
+    {
+      "shop_name": "harresoe",
+      "brand_name": "comme des garçons homme",
+      "brand_url": "https://www.harresoe.com/collections/comme-des-garcons-homme"
+    },
+    {
+      "shop_name": "harresoe",
+      "brand_name": "comme des garçons parfums",
+      "brand_url": "https://www.harresoe.com/collections/comme-des-garcons-parfums"
+    },
+    {
+      "shop_name": "harresoe",
+      "brand_name": "comme des garçons play",
+      "brand_url": "https://www.harresoe.com/collections/comme-des-garcons-play"
+    },
+    {
+      "shop_name": "harresoe",
+      "brand_name": "comme des garçons shirt",
+      "brand_url": "https://www.harresoe.com/collections/comme-des-garcons-shirt"
+    },
+    {
+      "shop_name": "harresoe",
+      "brand_name": "comme des garçons wallet",
+      "brand_url": "https://www.harresoe.com/collections/comme-des-garcons-wallet"
+    },
+    {
+      "shop_name": "harresoe",
+      "brand_name": "danton",
+      "brand_url": "https://www.harresoe.com/collections/danton"
+    },
+    {
+      "shop_name": "harresoe",
+      "brand_name": "drake's",
+      "brand_url": "https://www.harresoe.com/collections/drakes"
+    },
+    {
+      "shop_name": "harresoe",
+      "brand_name": "eight & bob",
+      "brand_url": "https://www.harresoe.com/collections/eight-bob"
+    },
+    {
+      "shop_name": "harresoe",
+      "brand_name": "engineered garments",
+      "brand_url": "https://www.harresoe.com/collections/engineered-garments"
+    },
+    {
+      "shop_name": "harresoe",
+      "brand_name": "erl",
+      "brand_url": "https://www.harresoe.com/collections/erl"
+    },
+    {
+      "shop_name": "harresoe",
+      "brand_name": "flatlist",
+      "brand_url": "https://www.harresoe.com/collections/flatlist"
+    },
+    {
+      "shop_name": "harresoe",
+      "brand_name": "green factory",
+      "brand_url": "https://www.harresoe.com/collections/green-factory"
+    },
+    {
+      "shop_name": "harresoe",
+      "brand_name": "hario",
+      "brand_url": "https://www.harresoe.com/collections/hario"
+    },
+    {
+      "shop_name": "harresoe",
+      "brand_name": "human made",
+      "brand_url": "https://www.harresoe.com/collections/human-made"
+    },
+    {
+      "shop_name": "harresoe",
+      "brand_name": "jacquemus",
+      "brand_url": "https://harresoe.com/collections/jacquemus"
+    },
+    {
+      "shop_name": "harresoe",
+      "brand_name": "keen",
+      "brand_url": "https://www.harresoe.com/collections/keen"
+    },
+    {
+      "shop_name": "harresoe",
+      "brand_name": "lemaire",
+      "brand_url": "https://www.harresoe.com/collections/lemaire"
+    },
+    {
+      "shop_name": "harresoe",
+      "brand_name": "maison kitsuné",
+      "brand_url": "https://www.harresoe.com/collections/maison-kitsune"
+    },
+    {
+      "shop_name": "harresoe",
+      "brand_name": "maison margiela",
+      "brand_url": "https://www.harresoe.com/collections/maison-margiela"
+    },
+    {
+      "shop_name": "harresoe",
+      "brand_name": "maison mihara yasuhiro",
+      "brand_url": "https://www.harresoe.com/collections/maison-mihara-yasuhiro"
+    },
+    {
+      "shop_name": "harresoe",
+      "brand_name": "marni",
+      "brand_url": "https://www.harresoe.com/collections/marni"
+    },
+    {
+      "shop_name": "harresoe",
+      "brand_name": "moncler",
+      "brand_url": "https://www.harresoe.com/collections/moncler"
+    },
+    {
+      "shop_name": "harresoe",
+      "brand_name": "moncler genius",
+      "brand_url": "https://www.harresoe.com/collections/moncler-genius-1952"
+    },
+    {
+      "shop_name": "harresoe",
+      "brand_name": "needles",
+      "brand_url": "https://www.harresoe.com/collections/needles"
+    },
+    {
+      "shop_name": "harresoe",
+      "brand_name": "new balance",
+      "brand_url": "https://www.harresoe.com/collections/new-balance"
+    },
+    {
+      "shop_name": "harresoe",
+      "brand_name": "niko june",
+      "brand_url": "https://www.harresoe.com/collections/niko-june"
+    },
+    {
+      "shop_name": "harresoe",
+      "brand_name": "norse projects",
+      "brand_url": "https://www.harresoe.com/collections/norse-projects"
+    },
+    {
+      "shop_name": "harresoe",
+      "brand_name": "ormaie paris",
+      "brand_url": "https://www.harresoe.com/collections/ormaie-paris"
+    },
+    {
+      "shop_name": "harresoe",
+      "brand_name": "oscar jacobson",
+      "brand_url": "https://www.harresoe.com/collections/oscar-jacobson"
+    },
+    {
+      "shop_name": "harresoe",
+      "brand_name": "our legacy",
+      "brand_url": "https://www.harresoe.com/collections/our-legacy"
+    },
+    {
+      "shop_name": "harresoe",
+      "brand_name": "palmes",
+      "brand_url": "https://www.harresoe.com/collections/palmes"
+    },
+    {
+      "shop_name": "harresoe",
+      "brand_name": "paraboot",
+      "brand_url": "https://www.harresoe.com/collections/paraboot"
+    },
+    {
+      "shop_name": "harresoe",
+      "brand_name": "patagonia",
+      "brand_url": "https://www.harresoe.com/collections/patagonia"
+    },
+    {
+      "shop_name": "harresoe",
+      "brand_name": "paul smith",
+      "brand_url": "https://www.harresoe.com/collections/paul-smith"
+    },
+    {
+      "shop_name": "harresoe",
+      "brand_name": "porter - yoshida & co.",
+      "brand_url": "https://www.harresoe.com/collections/porter-yoshida-company"
+    },
+    {
+      "shop_name": "harresoe",
+      "brand_name": "ps paul smith",
+      "brand_url": "https://www.harresoe.com/collections/ps-paul-smith"
+    },
+    {
+      "shop_name": "harresoe",
+      "brand_name": "salomon",
+      "brand_url": "https://www.harresoe.com/collections/salomon"
+    },
+    {
+      "shop_name": "harresoe",
+      "brand_name": "stone island",
+      "brand_url": "https://www.harresoe.com/collections/stone-island"
+    },
+    {
+      "shop_name": "harresoe",
+      "brand_name": "story mfg.",
+      "brand_url": "https://www.harresoe.com/collections/story-mfg"
+    },
+    {
+      "shop_name": "harresoe",
+      "brand_name": "stüssy",
+      "brand_url": "https://www.harresoe.com/collections/stussy"
+    },
+    {
+      "shop_name": "harresoe",
+      "brand_name": "tekla",
+      "brand_url": "https://www.harresoe.com/collections/tekla"
+    }
+  ]
+}

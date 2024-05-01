@@ -77,7 +77,7 @@ class S3ImgUploader(S3Uploader):
     @sku.setter
     def sku(self, sku: str):
         self._sku = sku
-        self.local_resize_dir = os.path.join(self.local_path, sku, "resize")
+        self.local_resize_dir = os.path.join(self.local_path, sku, "upload")
         self.s3_dir = os.path.join(self.s3_path, sku)
 
     def upload_all(self):

@@ -1,6 +1,8 @@
 import pytest
-from components.image_resize.image_resizer import ImageResizer
+from components.image_resizer import ImageResizer
 import os
+from os.path import join
+from tqdm import tqdm
 
 current_path = __file__.rsplit("/", 1)[0]
 sku = "test"
@@ -8,34 +10,52 @@ sku = "test"
 
 @pytest.fixture(scope="module")
 def Resizer():
-    image = ImageResizer(current_path)
+    path = join(current_path, "product")
+    # path = current_path
+    image = ImageResizer(path)
     image.sku = sku
     yield image
 
 
-def test_resize_v2(Resizer: ImageResizer):
-    Resizer.resize_v2()
-    resize_path = os.path.join(current_path, sku, "resize")
+def test_exctract_product(Resizer: ImageResizer):
+    for sku in tqdm(os.listdir(join(current_path, "product"))):
+        if sku == ".DS_Store":
+            continue
+        resize_path = join(current_path, "product", sku)
+        if os.path.exists(resize_path):
+            Resizer.sku = str(sku)
+            Resizer.resize_v2()
 
-    assert os.path.exists(os.path.join(resize_path, "main.png"))
-    # shutil.rmtree(resize_path)
 
-
-# def test_preprocess_image(Resizer: ImageResizer):
-#     file_name = "main.avif"
-#     Resizer.preprocess_image(file_name)
+# def test_resize_v2(Resizer: ImageResizer):
+#     Resizer.resize_v2()
 #     resize_path = os.path.join(current_path, sku, "resize")
-
 #     assert os.path.exists(os.path.join(resize_path, "main.webp"))
 #     # shutil.rmtree(resize_path)
 
 
-# def test_optimize_image(Resizer: ImageResizer):
-#     file_name = "main.avif"
-#     Resizer.optimize_image(file_name)
-#     resize_path = os.path.join(current_path, sku, "resize")
+# def test_preprocess_resize_image(Resizer: ImageResizer):
+#     file_name = "main.jpg"
+#     img = Resizer.preprocess_resize_image(file_name)
+#     file_path = os.path.join(
+#         current_path, sku, "test_preprocess_resize_image", "test.webp"
+#     )
+#     img.save(file_path, quality=100, optimize=True, format="webp")
 
-#     assert os.path.exists(os.path.join(resize_path, "main.webp"))
+#     assert os.path.exists(file_path)
+#     # shutil.rmtree(file_path)
+
+
+# def test_preprocess_bg_remove_image(Resizer: ImageResizer):
+#     # file_name = "main.jpg"
+#     file_name = "sub-3.webp"
+#     img = Resizer.preprocess_bg_remove_image(file_name)
+#     file_path = os.path.join(
+#         current_path, sku, "test_preprocess_resize_image", "test.webp"
+#     )
+#     img.save(file_path, quality=100, optimize=True, format="webp")
+
+#     assert os.path.exists(file_path)
 #     # shutil.rmtree(resize_path)
 
 

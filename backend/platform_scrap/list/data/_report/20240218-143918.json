@@ -1,0 +1,14 @@
+{
+    "scrap_time": "20240218-143918",
+    "num_of_plan": 1,
+    "num_processor": 1,
+    "db_update": true,
+    "job": [
+        {
+            "job": "Arc'teryx",
+            "status": "success"
+        }
+    ],
+    "brand_name": "Arc'teryx",
+    "platform_type": "kream"
+}
