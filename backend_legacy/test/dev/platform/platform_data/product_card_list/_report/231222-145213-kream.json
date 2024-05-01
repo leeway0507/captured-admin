@@ -1,7 +1,0 @@
-{
-    "scrap_time": "231222-145213",
-    "num_of_plan": 1,
-    "num_process": 1,
-    "scrap_log": [{ "platform_type": "kream", "brand_name": "paloma wool", "status": "success : 1 \uac1c" }],
-    "db_update": true
-}
